@@ -4,10 +4,10 @@ The most useful contributions are **benchmark suites in new languages**, **new c
 
 ## Adding a suite
 
-1. Create a folder named after your suite in `src/bench/suites/`, e.g. `src/bench/suites/es-native/`. Use lowercase letters, digits and dashes, and pick a name that says what the suite contains. Two conventions:
+1. Create a folder named after your suite in `src/bench/suites/`, e.g. `src/bench/suites/es-legal/`. Use lowercase letters, digits and dashes, and pick a name that says what the suite contains. Two conventions:
    - `<name>-<lang>` for the **same cases translated** into several languages (`core-fr`, `core-en`). Add `core-es` by translating the files of [`src/bench/core/`](src/bench/core/): add an `es` side to every case, keep the question ids, types and option keys, and create `core-es/suite.ts` like `core-fr/suite.ts`. The comparison screen then pairs each case with its translation.
-   - `<lang>-native` (or any other descriptive name) for cases written directly in one language, which are not translations of another suite (`es-native`, `pt-br-legal`).
-2. Add a `suite.ts` exporting `suite` (see the example in the [README](README.md#adding-a-benchmark-suite), or start from [`fr-native/suite.ts`](src/bench/suites/fr-native/suite.ts)).
+   - any other descriptive name for cases written directly in one language, which are not translations of another suite (`es-legal`, `pt-br-support`).
+2. Add a `suite.ts` exporting `suite` (see the example in the [README](README.md#adding-a-benchmark-suite), or start from [`multilingual/suite.ts`](src/bench/suites/multilingual/suite.ts)).
 3. Run `yarn validate`, then `yarn dev` and pick your suite in the **Benchmark** tab.
 
 The suite is discovered automatically. If it fails validation, the app skips it and logs the reason in the browser console.
@@ -30,7 +30,7 @@ The suite is discovered automatically. If it fails validation, the app skips it 
 | `id` | Unique within the suite. Reports are matched case by case on this id, so don't rename it. |
 | `name`, `description`, `category` | Free text. Results are grouped by `category`. |
 | `complexity` | `simple` or `complexe` (hard). |
-| `length` | `court` (short), `moyen` (medium), `long` or `très long` (very long). In the French suite (input tokens with Jev): ~300–450, ~500–650, ~1 000–1 500 and ~3 500–4 800. |
+| `length` | `court` (short), `moyen` (medium), `long` or `très long` (very long). In `core-fr` (input tokens with Jev, roughly): ~300–450, ~500–650, ~1 000–1 500 and ~3 500–4 800. |
 | `lang` | Language of this case. Control cases in another language are fine: set their own `lang`. |
 | `request` | The System One request without `model`: `state` (string or JSON), `questions`, optional `images`. |
 | `expected` | One expectation per question id. |
@@ -51,14 +51,13 @@ The suite is discovered automatically. If it fails validation, the app skips it 
 ## What makes a good case
 
 - **One defensible answer.** If two careful native speakers could disagree, use a range or a list of acceptable answers, or drop the question.
-- **Cover the same skills as `fr-native` and `en-native`.** Sentiment, moderation, routing, reasoning traps, long documents and one very long case make suites comparable across languages, while their content stays different.
 - **Get the answers checked.** Ask someone (or a model) to answer your questions blind, then look at every disagreement: either the expected answer is wrong, or the question needs a clearer wording or a range.
-- **Write natively, don't translate.** Idioms, irony, politeness conventions, dates, currencies and legal concepts are where models struggle in a given language. A translated English case mostly tests translation.
+- **Translate idiomatically.** When adding a language to core, adapt names, currencies, date and number formats as a native speaker would write them, without changing the answers. For a suite of your own, write natively: idioms, irony, politeness conventions and legal concepts are where models struggle in a given language.
 - **Mix difficulty.** A few easy cases catch broken setups; the hard ones (sarcasm, negation, numbers, long context with a detail buried in the middle) separate models.
 - **Vary length.** Latency and accuracy both depend on the number of input tokens.
 - **Explain non-obvious answers** in a comment next to `expected`, e.g. the arithmetic behind it.
 - **No personal data.** Use invented names, addresses and numbers.
-- **Deterministic content.** If you generate a long state (logs, catalogs), use a seeded generator as in `fr-native/suite.ts`, so every run sends exactly the same request.
+- **Deterministic content.** If you generate a long state (logs, catalogs), use a seeded generator as in [`core/documents.ts`](src/bench/core/documents.ts), so every run sends exactly the same request.
 
 ## Contributing reports
 

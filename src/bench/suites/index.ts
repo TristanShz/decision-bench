@@ -4,8 +4,8 @@ import { validateSuite } from './validate.ts'
 /** Suite des rapports enregistrés avant l'introduction des suites multiples. */
 export const LEGACY_SUITE_ID = 'multilingual'
 /** Suite proposée par défaut, et ordre d'affichage du sélecteur. */
-export const DEFAULT_SUITE_ID = 'fr-native'
-const ORDER = ['core-fr', 'core-en', 'fr-native', 'en-native', 'multilingual']
+export const DEFAULT_SUITE_ID = 'core-fr'
+const ORDER = ['core-fr', 'core-en', 'multilingual']
 
 // Chaque dossier src/bench/suites/<id>/suite.ts est découvert automatiquement : rien à enregistrer ici.
 const modules = import.meta.glob<{ suite: BenchSuite }>('./*/suite.ts', { eager: true })

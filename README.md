@@ -4,21 +4,16 @@
 
 Decision models (TypeSafe's Jev, OpenAI, Microsoft and Perplexity decision models, or open-weight models such as Clef served by llama.cpp) don't generate text. They take a `state` and a set of questions and return **calibrated probabilities**: yes/no (`noul`), one option among several (`choice`) or a level on a scale (`score`). They all speak the same `POST /v1/systemone` contract.
 
-Almost every public evaluation of these models is in English. This project ships **a French benchmark suite, an English one written the same way, and a mixed multilingual suite**, a web app to run it against any endpoint, and the raw reports so you can check the numbers yourself. Suites are plain TypeScript files, so **adding a benchmark in your own language takes one folder** (see [Adding a benchmark suite](#adding-a-benchmark-suite)).
+Almost every public evaluation of these models is in English. This project ships **a 325-question benchmark in French and the same one translated into English**, plus a smaller mixed multilingual suite, a web app to run it against any endpoint, and the raw reports so you can check the numbers yourself. Suites are plain TypeScript files, so **adding a benchmark in your own language takes one folder** (see [Adding a benchmark suite](#adding-a-benchmark-suite)).
 
 ## Suites
 
 | Suite | Cases | Questions | Content |
 |---|---:|---:|---|
 | `core-fr` / `core-en` — Core | 90 + 90 | 325 + 325 | **The same cases in French and in English, simply translated.** Built to separate strong models: multi-condition policies, arithmetic on tables, dates and units, negation and quantifiers, reported speech, implicature, calibration, subtle phishing and payment fraud, distress signals, routing at the border of two teams, email threads where a later message overrides an earlier one, contracts with a distant exception clause, changelogs, incident timelines, and long JSON datasets with planted needles. |
-| `fr-native` — Français natif | 26 | 86 | Written directly in French: litotes, irony, *ne… que* and double negation, register, French date and number formats, residential lease law, co-ownership meeting minutes, bank statement. |
-| `en-native` — English native | 24 | 76 | Written directly in English: understatement, idioms, US dates, phishing, expense policy, incident postmortem, sales call, support queue. |
 | `multilingual` — Multilingue | 23 | 80 | The original suite: 8 French cases, 12 English, 1 German, 1 Spanish, 1 code. Frozen so the results below stay comparable. |
 
-**Naming convention:** `<name>-<lang>` suites contain the same cases translated (`core-fr` = `core-en`), so comparing them isolates the effect of the language. `<lang>-native` suites are written directly in one language and are not translations of each other.
-
-> [!IMPORTANT]
-> `fr-native` and `en-native` **do not contain the same cases**. Neither is a translation of the other: each one is written directly in its language and tests what is hard in that language (French number formats and litotes, English understatement and US dates…). They cover the same skills (sentiment, moderation, routing, reasoning traps, long documents, a very long needle-in-a-haystack case), so their scores show how a model handles each language's pitfalls, not the effect of the language alone.
+**Naming convention:** `<name>-<lang>` suites contain the same cases translated (`core-fr` = `core-en`), so comparing them isolates the effect of the language.
 
 Every expected answer was checked by an independent blind annotation pass; questions where annotators could reasonably disagree were reworded or accept a range of answers.
 
@@ -91,19 +86,19 @@ Reading is solved: every model finds the needle in a 45-order JSON dataset or th
 These are the questions that separate the models. If you use a decision model on rules that involve amounts, compute the amounts in your code and pass them in the `state`.
 
 <details>
-<summary>Results on the other suites (<code>fr-native</code>, <code>en-native</code>, <code>multilingual</code>)</summary>
+<summary>Results on the <code>multilingual</code> suite</summary>
 
-These suites are smaller (76 to 86 questions) and easier: every model scores above 91 % and no difference between models is significant. `fr-native` and `en-native` do not contain the same cases, so comparing them does not isolate the language; the core pair above does.
+The original suite: 80 questions, mostly in English, frozen so older reports stay comparable. It is smaller and easier than core: every model scores above 91 % and no difference between models is significant.
 
-| Model | `fr-native` quality | `en-native` quality | `multilingual` quality |
-|---|---:|---:|---:|
-| `perplexity/pplx-decider-v1.1-27b` | 98.8 % (97–100) | 98.5 % (97–100) | 97.9 % (96–100) |
-| `openai/gpt-6-luna-decisions` | 98.2 % (96–100) | 94.1 % (90–98) | 95.0 % (91–99) |
-| `microsoft/microsoft-decision-1` | 96.4 % (93–100) | 96.0 % (93–99) | 95.3 % (92–99) |
-| `typesafe/jev-1.13` | 96.8 % (96–98) | 95.1 % (93–97) | 96.8 % (95–98) |
-| Clef 27B Q8_0 | 94.7 % (92–97) | 92.5 % (89–96) | 92.5 % (88–97) |
+| Model | Quality (95 % CI) |
+|---|---:|
+| `perplexity/pplx-decider-v1.1-27b` | 97.9 % (96–100) |
+| `typesafe/jev-1.13` | 96.8 % (95–98) |
+| `microsoft/microsoft-decision-1` | 95.3 % (92–99) |
+| `openai/gpt-6-luna-decisions` | 95.0 % (91–99) |
+| Clef 27B Q8_0 | 92.5 % (88–97) |
 
-Full tables: `yarn results fr-native en-native multilingual`.
+Full table: `yarn results multilingual`.
 
 </details>
 
@@ -134,7 +129,7 @@ How each question type is graded:
 
 All three first answers count as correct, but only the first one is a confident *no*. This is why Jev ranks higher on accuracy than on quality: it is often right, with less confidence.
 
-Use **accuracy** if your code acts on the decision alone (`if noul > 0.5`), and **quality** if it uses the probabilities themselves: thresholds, ranking, combining several answers. On ambiguous cases (“Mouais, ça ira”), the expected answer is a probability *range*, and quality measures the distance to that range rather than certainty.
+Use **accuracy** if your code acts on the decision alone (`if noul > 0.5`), and **quality** if it uses the probabilities themselves: thresholds, ranking, combining several answers. On ambiguous cases (a customer who only replies “Ok.”), the expected answer is a probability *range*, and quality measures the distance to that range rather than certainty.
 
 ¹ Self-hosted on a Framework Desktop: AMD Ryzen AI Max+ 395, Radeon 8060S integrated GPU, 128 GB of unified memory, llama.cpp with the ROCm backend and flash attention. The model runs entirely on the integrated GPU, so latency reflects that machine, not the model: the API models above run on datacenter hardware. Setup and measurements in [docs/self-hosting.md](docs/self-hosting.md).
 
@@ -183,12 +178,12 @@ Click **Models** in the header (or open the model picker) to connect a model onc
 A suite is a folder in `src/bench/suites/` containing a `suite.ts` file. It is picked up automatically: no registry to edit.
 
 ```ts
-// src/bench/suites/de-native/suite.ts
+// src/bench/suites/de-support/suite.ts
 import type { BenchSuite } from '../../types'
 
 export const suite: BenchSuite = {
-  id: 'de-native', // must match the folder name
-  name: 'Deutsch nativ',
+  id: 'de-support', // must match the folder name
+  name: 'Kundensupport (DE)',
   description: 'Decisions written in German: support, contracts, reviews…',
   lang: 'de',
   version: '1', // bump whenever a case changes
@@ -235,8 +230,6 @@ src/
     suites/            benchmark suites, one folder per suite
       core-fr/         core benchmark in French
       core-en/         same cases in English
-      fr-native/       cases written in French
-      en-native/       different cases written in English
       multilingual/    original suite, mixed languages
       validate.ts      suite checks (used by the app and `yarn validate`)
     runner.ts          runs a suite against a target
