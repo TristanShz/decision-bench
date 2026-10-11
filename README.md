@@ -85,7 +85,7 @@ All three first answers count as correct, but only the first one is a confident 
 
 Use **accuracy** if your code acts on the decision alone (`if noul > 0.5`), and **quality** if it uses the probabilities themselves: thresholds, ranking, combining several answers. On ambiguous cases (“Mouais, ça ira”), the expected answer is a probability *range*, and quality measures the distance to that range rather than certainty.
 
-¹ Self-hosted on an AMD Ryzen AI Max+ 395 iGPU: latency reflects that machine, not the model. Hardware notes in [docs/self-hosting.md](docs/self-hosting.md).
+¹ Self-hosted on a Framework Desktop: AMD Ryzen AI Max+ 395, Radeon 8060S integrated GPU, 128 GB of unified memory, llama.cpp with the ROCm backend and flash attention. The model runs entirely on the integrated GPU, so latency reflects that machine, not the model: the API models above run on datacenter hardware. Setup and measurements in [docs/self-hosting.md](docs/self-hosting.md).
 
 > [!NOTE]
 > These suites are small: on the French suite, one missed question costs 1.2 points of accuracy. Treat the rankings as a first signal, and add cases if you want stronger conclusions.

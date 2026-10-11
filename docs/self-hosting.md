@@ -4,7 +4,10 @@ Measurements from 2026-10-10.
 
 ## Setup
 
-- **Machine:** AMD Ryzen AI Max+ 395 (Radeon 8060S iGPU, `gfx1151`, unified memory)
+- **Machine:** Framework Desktop, AMD Ryzen AI Max+ 395 (16 Zen 5 cores)
+- **GPU:** Radeon 8060S integrated GPU (`gfx1151`), all layers offloaded (`-ngl all`)
+- **Memory:** 128 GB of unified memory shared by the CPU and the GPU, enough to hold the 27B model in Q8_0 with room to spare
+- **Backend:** ROCm, with flash attention (see the Vulkan comparison below)
 - **Model:** Clef 27B, Q8_0 (26.75 GiB)
 - **Server:** llama-server, build `1623d8ce4` (b11546), API `POST /v1/systemone`
 
