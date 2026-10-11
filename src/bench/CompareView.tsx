@@ -118,7 +118,12 @@ function compareCases(reports: BenchReport[]) {
 function warningsFor(reports: BenchReport[], missing: string[]): string[] {
   const w: string[] = []
   const distinct = (f: (r: BenchReport) => unknown) => new Set(reports.map(f)).size > 1
-  if (distinct((r) => r.suiteId ?? LEGACY_SUITE_ID)) w.push(`Suites différentes (${reports.map((r, i) => `${LETTERS[i]} : ${r.suiteId ?? LEGACY_SUITE_ID}`).join(', ')}) : seuls les cas communs sont comparés.`)
+  const suite = (r: BenchReport) => r.suiteId ?? LEGACY_SUITE_ID
+  // Convention <nom>-<langue> : mêmes cas traduits (core-fr, core-en).
+  const family = (r: BenchReport) => suite(r).replace(/-[a-z]{2}$/, '')
+  if (distinct(suite) && !distinct(family) && !distinct((r) => r.suiteVersion))
+    w.push(`Même benchmark en plusieurs langues (${reports.map((r, i) => `${LETTERS[i]} : ${suite(r)}`).join(', ')}) : chaque cas est comparé à sa traduction.`)
+  else if (distinct(suite)) w.push(`Suites différentes (${reports.map((r, i) => `${LETTERS[i]} : ${r.suiteId ?? LEGACY_SUITE_ID}`).join(', ')}) : seuls les cas communs sont comparés.`)
   else if (distinct((r) => r.suiteVersion)) w.push(`Versions de suite différentes (${reports.map((r, i) => `${LETTERS[i]} : v${r.suiteVersion}`).join(', ')}).`)
   if (distinct((r) => r.settings.concurrency)) w.push('Concurrence différente : les débits et latences ne sont pas directement comparables.')
   if (distinct((r) => r.settings.repetitions)) w.push('Nombre d’essais différent.')

@@ -1,6 +1,6 @@
 {
-  "id": "2026-10-11-160715-jev-openrouter",
-  "name": "Jev - Openrouter — 11/10/2026 16:07:15",
+  "id": "2026-10-11-160715-fr-native-jev-openrouter",
+  "name": "Jev - Openrouter — Français natif — 11/10/2026 16:07:15",
   "createdAt": "2026-10-11T14:07:15.417Z",
   "suiteId": "fr-native",
   "suiteVersion": "1",
@@ -56,7 +56,7 @@
           "ms": 239.40000000596046,
           "clientMs": 239.40000000596046,
           "inputTokens": 379,
-          "cost": 0.000015918,
+          "cost": 1.5918e-05,
           "answers": {
             "is_positive": {
               "type": "noul",
@@ -95,7 +95,7 @@
           "ms": 239.1000000089407,
           "clientMs": 239.1000000089407,
           "inputTokens": 379,
-          "cost": 0.000015918,
+          "cost": 1.5918e-05,
           "answers": {
             "is_positive": {
               "type": "noul",
@@ -134,7 +134,7 @@
           "ms": 276.5,
           "clientMs": 276.5,
           "inputTokens": 379,
-          "cost": 0.000015918,
+          "cost": 1.5918e-05,
           "answers": {
             "is_positive": {
               "type": "noul",
@@ -200,7 +200,7 @@
           "ms": 259.29999999701977,
           "clientMs": 259.29999999701977,
           "inputTokens": 361,
-          "cost": 0.000015162,
+          "cost": 1.5162e-05,
           "answers": {
             "is_compliment": {
               "type": "noul",
@@ -235,7 +235,7 @@
           "ms": 238.70000000298023,
           "clientMs": 238.70000000298023,
           "inputTokens": 361,
-          "cost": 0.000015162,
+          "cost": 1.5162e-05,
           "answers": {
             "is_compliment": {
               "type": "noul",
@@ -270,7 +270,7 @@
           "ms": 245.90000000596046,
           "clientMs": 245.90000000596046,
           "inputTokens": 361,
-          "cost": 0.000015162,
+          "cost": 1.5162e-05,
           "answers": {
             "is_compliment": {
               "type": "noul",
@@ -334,7 +334,7 @@
           "ms": 220.6000000089407,
           "clientMs": 220.6000000089407,
           "inputTokens": 439,
-          "cost": 0.000018438,
+          "cost": 1.8438e-05,
           "answers": {
             "is_ironic": {
               "type": "noul",
@@ -366,7 +366,7 @@
           "ms": 247.19999998807907,
           "clientMs": 247.19999998807907,
           "inputTokens": 439,
-          "cost": 0.000018438,
+          "cost": 1.8438e-05,
           "answers": {
             "is_ironic": {
               "type": "noul",
@@ -398,7 +398,7 @@
           "ms": 232,
           "clientMs": 232,
           "inputTokens": 439,
-          "cost": 0.000018438,
+          "cost": 1.8438e-05,
           "answers": {
             "is_ironic": {
               "type": "noul",
@@ -452,7 +452,7 @@
           "ms": 252.80000001192093,
           "clientMs": 252.80000001192093,
           "inputTokens": 281,
-          "cost": 0.000011802,
+          "cost": 1.1802e-05,
           "answers": {
             "is_satisfied": {
               "type": "noul",
@@ -468,7 +468,7 @@
           "ms": 240.30000001192093,
           "clientMs": 240.30000001192093,
           "inputTokens": 281,
-          "cost": 0.000011802,
+          "cost": 1.1802e-05,
           "answers": {
             "is_satisfied": {
               "type": "noul",
@@ -484,7 +484,7 @@
           "ms": 250.20000000298023,
           "clientMs": 250.20000000298023,
           "inputTokens": 281,
-          "cost": 0.000011802,
+          "cost": 1.1802e-05,
           "answers": {
             "is_satisfied": {
               "type": "noul",
@@ -529,7 +529,7 @@
           "ms": 277.79999999701977,
           "clientMs": 277.79999999701977,
           "inputTokens": 402,
-          "cost": 0.000016884,
+          "cost": 1.6884e-05,
           "answers": {
             "received_nothing": {
               "type": "noul",
@@ -560,7 +560,7 @@
           "ms": 384,
           "clientMs": 384,
           "inputTokens": 402,
-          "cost": 0.000016884,
+          "cost": 1.6884e-05,
           "answers": {
             "received_nothing": {
               "type": "noul",
@@ -591,7 +591,7 @@
           "ms": 265.70000000298023,
           "clientMs": 265.70000000298023,
           "inputTokens": 402,
-          "cost": 0.000016884,
+          "cost": 1.6884e-05,
           "answers": {
             "received_nothing": {
               "type": "noul",
@@ -651,7 +651,7 @@
           "ms": 239.70000000298023,
           "clientMs": 239.70000000298023,
           "inputTokens": 421,
-          "cost": 0.000017682,
+          "cost": 1.7682e-05,
           "answers": {
             "is_certain": {
               "type": "noul",
@@ -682,7 +682,7 @@
           "ms": 270.40000000596046,
           "clientMs": 270.40000000596046,
           "inputTokens": 421,
-          "cost": 0.000017682,
+          "cost": 1.7682e-05,
           "answers": {
             "is_certain": {
               "type": "noul",
@@ -713,7 +713,7 @@
           "ms": 241.79999999701977,
           "clientMs": 241.79999999701977,
           "inputTokens": 421,
-          "cost": 0.000017682,
+          "cost": 1.7682e-05,
           "answers": {
             "is_certain": {
               "type": "noul",
@@ -776,7 +776,7 @@
           "ms": 249.70000000298023,
           "clientMs": 249.70000000298023,
           "inputTokens": 387,
-          "cost": 0.000016254,
+          "cost": 1.6254e-05,
           "answers": {
             "is_formal": {
               "type": "noul",
@@ -815,7 +815,7 @@
           "ms": 241.80000001192093,
           "clientMs": 241.80000001192093,
           "inputTokens": 387,
-          "cost": 0.000016254,
+          "cost": 1.6254e-05,
           "answers": {
             "is_formal": {
               "type": "noul",
@@ -854,7 +854,7 @@
           "ms": 361.8999999910593,
           "clientMs": 361.8999999910593,
           "inputTokens": 387,
-          "cost": 0.000016254,
+          "cost": 1.6254e-05,
           "answers": {
             "is_formal": {
               "type": "noul",
@@ -922,7 +922,7 @@
           "ms": 250.3999999910593,
           "clientMs": 250.3999999910593,
           "inputTokens": 499,
-          "cost": 0.000020958,
+          "cost": 2.0958e-05,
           "answers": {
             "tone_appropriate": {
               "type": "noul",
@@ -953,7 +953,7 @@
           "ms": 259.3999999910593,
           "clientMs": 259.3999999910593,
           "inputTokens": 499,
-          "cost": 0.000020958,
+          "cost": 2.0958e-05,
           "answers": {
             "tone_appropriate": {
               "type": "noul",
@@ -984,7 +984,7 @@
           "ms": 305.09999999403954,
           "clientMs": 305.09999999403954,
           "inputTokens": 499,
-          "cost": 0.000020958,
+          "cost": 2.0958e-05,
           "answers": {
             "tone_appropriate": {
               "type": "noul",
@@ -1039,7 +1039,7 @@
           "ms": 284.79999999701977,
           "clientMs": 284.79999999701977,
           "inputTokens": 455,
-          "cost": 0.00001911,
+          "cost": 1.911e-05,
           "answers": {
             "tool": {
               "type": "choice",
@@ -1068,7 +1068,7 @@
           "ms": 250.29999999701977,
           "clientMs": 250.29999999701977,
           "inputTokens": 455,
-          "cost": 0.00001911,
+          "cost": 1.911e-05,
           "answers": {
             "tool": {
               "type": "choice",
@@ -1097,7 +1097,7 @@
           "ms": 329.09999999403954,
           "clientMs": 329.09999999403954,
           "inputTokens": 455,
-          "cost": 0.00001911,
+          "cost": 1.911e-05,
           "answers": {
             "tool": {
               "type": "choice",
@@ -1160,7 +1160,7 @@
           "ms": 227.20000000298023,
           "clientMs": 227.20000000298023,
           "inputTokens": 435,
-          "cost": 0.00001827,
+          "cost": 1.827e-05,
           "answers": {
             "is_toxic": {
               "type": "noul",
@@ -1195,7 +1195,7 @@
           "ms": 232.3999999910593,
           "clientMs": 232.3999999910593,
           "inputTokens": 435,
-          "cost": 0.00001827,
+          "cost": 1.827e-05,
           "answers": {
             "is_toxic": {
               "type": "noul",
@@ -1230,7 +1230,7 @@
           "ms": 241.59999999403954,
           "clientMs": 241.59999999403954,
           "inputTokens": 435,
-          "cost": 0.00001827,
+          "cost": 1.827e-05,
           "answers": {
             "is_toxic": {
               "type": "noul",
@@ -1294,7 +1294,7 @@
           "ms": 256.09999999403954,
           "clientMs": 256.09999999403954,
           "inputTokens": 424,
-          "cost": 0.000017808,
+          "cost": 1.7808e-05,
           "answers": {
             "is_threat": {
               "type": "noul",
@@ -1325,7 +1325,7 @@
           "ms": 240.40000000596046,
           "clientMs": 240.40000000596046,
           "inputTokens": 424,
-          "cost": 0.000017808,
+          "cost": 1.7808e-05,
           "answers": {
             "is_threat": {
               "type": "noul",
@@ -1356,7 +1356,7 @@
           "ms": 238,
           "clientMs": 238,
           "inputTokens": 424,
-          "cost": 0.000017808,
+          "cost": 1.7808e-05,
           "answers": {
             "is_threat": {
               "type": "noul",
@@ -1416,7 +1416,7 @@
           "ms": 297.70000000298023,
           "clientMs": 297.70000000298023,
           "inputTokens": 445,
-          "cost": 0.00001869,
+          "cost": 1.869e-05,
           "answers": {
             "is_toxic": {
               "type": "noul",
@@ -1447,7 +1447,7 @@
           "ms": 247.79999999701977,
           "clientMs": 247.79999999701977,
           "inputTokens": 445,
-          "cost": 0.00001869,
+          "cost": 1.869e-05,
           "answers": {
             "is_toxic": {
               "type": "noul",
@@ -1478,7 +1478,7 @@
           "ms": 250.30000001192093,
           "clientMs": 250.30000001192093,
           "inputTokens": 445,
-          "cost": 0.00001869,
+          "cost": 1.869e-05,
           "answers": {
             "is_toxic": {
               "type": "noul",
@@ -1533,7 +1533,7 @@
           "ms": 269.80000001192093,
           "clientMs": 269.80000001192093,
           "inputTokens": 370,
-          "cost": 0.00001554,
+          "cost": 1.554e-05,
           "answers": {
             "month": {
               "type": "choice",
@@ -1558,7 +1558,7 @@
           "ms": 251.20000000298023,
           "clientMs": 251.20000000298023,
           "inputTokens": 370,
-          "cost": 0.00001554,
+          "cost": 1.554e-05,
           "answers": {
             "month": {
               "type": "choice",
@@ -1583,7 +1583,7 @@
           "ms": 236,
           "clientMs": 236,
           "inputTokens": 370,
-          "cost": 0.00001554,
+          "cost": 1.554e-05,
           "answers": {
             "month": {
               "type": "choice",
@@ -1637,7 +1637,7 @@
           "ms": 298.29999999701977,
           "clientMs": 298.29999999701977,
           "inputTokens": 491,
-          "cost": 0.000020622,
+          "cost": 2.0622e-05,
           "answers": {
             "total_over_1000": {
               "type": "noul",
@@ -1668,7 +1668,7 @@
           "ms": 294.20000000298023,
           "clientMs": 294.20000000298023,
           "inputTokens": 491,
-          "cost": 0.000020622,
+          "cost": 2.0622e-05,
           "answers": {
             "total_over_1000": {
               "type": "noul",
@@ -1699,7 +1699,7 @@
           "ms": 282.70000000298023,
           "clientMs": 282.70000000298023,
           "inputTokens": 491,
-          "cost": 0.000020622,
+          "cost": 2.0622e-05,
           "answers": {
             "total_over_1000": {
               "type": "noul",
@@ -1754,7 +1754,7 @@
           "ms": 230.40000000596046,
           "clientMs": 230.40000000596046,
           "inputTokens": 426,
-          "cost": 0.000017892,
+          "cost": 1.7892e-05,
           "answers": {
             "final_price": {
               "type": "choice",
@@ -1781,7 +1781,7 @@
           "ms": 283.20000000298023,
           "clientMs": 283.20000000298023,
           "inputTokens": 426,
-          "cost": 0.000017892,
+          "cost": 1.7892e-05,
           "answers": {
             "final_price": {
               "type": "choice",
@@ -1808,7 +1808,7 @@
           "ms": 239.29999999701977,
           "clientMs": 239.29999999701977,
           "inputTokens": 426,
-          "cost": 0.000017892,
+          "cost": 1.7892e-05,
           "answers": {
             "final_price": {
               "type": "choice",
@@ -1859,7 +1859,7 @@
           "ms": 245.20000000298023,
           "clientMs": 245.20000000298023,
           "inputTokens": 412,
-          "cost": 0.000017304,
+          "cost": 1.7304e-05,
           "answers": {
             "julie_remote": {
               "type": "noul",
@@ -1885,7 +1885,7 @@
           "ms": 249.70000000298023,
           "clientMs": 249.70000000298023,
           "inputTokens": 412,
-          "cost": 0.000017304,
+          "cost": 1.7304e-05,
           "answers": {
             "julie_remote": {
               "type": "noul",
@@ -1911,7 +1911,7 @@
           "ms": 261.29999999701977,
           "clientMs": 261.29999999701977,
           "inputTokens": 412,
-          "cost": 0.000017304,
+          "cost": 1.7304e-05,
           "answers": {
             "julie_remote": {
               "type": "noul",
@@ -1964,7 +1964,7 @@
           "ms": 255.20000000298023,
           "clientMs": 255.20000000298023,
           "inputTokens": 396,
-          "cost": 0.000016632,
+          "cost": 1.6632e-05,
           "answers": {
             "call_emergency": {
               "type": "noul",
@@ -1999,7 +1999,7 @@
           "ms": 324.79999999701977,
           "clientMs": 324.79999999701977,
           "inputTokens": 396,
-          "cost": 0.000016632,
+          "cost": 1.6632e-05,
           "answers": {
             "call_emergency": {
               "type": "noul",
@@ -2034,7 +2034,7 @@
           "ms": 273.29999999701977,
           "clientMs": 273.29999999701977,
           "inputTokens": 396,
-          "cost": 0.000016632,
+          "cost": 1.6632e-05,
           "answers": {
             "call_emergency": {
               "type": "noul",
@@ -2098,7 +2098,7 @@
           "ms": 265.5,
           "clientMs": 265.5,
           "inputTokens": 516,
-          "cost": 0.000021672,
+          "cost": 2.1672e-05,
           "answers": {
             "right": {
               "type": "choice",
@@ -2130,7 +2130,7 @@
           "ms": 300.20000000298023,
           "clientMs": 300.20000000298023,
           "inputTokens": 516,
-          "cost": 0.000021672,
+          "cost": 2.1672e-05,
           "answers": {
             "right": {
               "type": "choice",
@@ -2162,7 +2162,7 @@
           "ms": 275.29999999701977,
           "clientMs": 275.29999999701977,
           "inputTokens": 516,
-          "cost": 0.000021672,
+          "cost": 2.1672e-05,
           "answers": {
             "right": {
               "type": "choice",
@@ -2218,7 +2218,7 @@
           "ms": 289.29999999701977,
           "clientMs": 289.29999999701977,
           "inputTokens": 483,
-          "cost": 0.000020286,
+          "cost": 2.0286e-05,
           "answers": {
             "supported": {
               "type": "noul",
@@ -2251,7 +2251,7 @@
           "ms": 277.40000000596046,
           "clientMs": 277.40000000596046,
           "inputTokens": 483,
-          "cost": 0.000020286,
+          "cost": 2.0286e-05,
           "answers": {
             "supported": {
               "type": "noul",
@@ -2284,7 +2284,7 @@
           "ms": 234.59999999403954,
           "clientMs": 234.59999999403954,
           "inputTokens": 483,
-          "cost": 0.000020286,
+          "cost": 2.0286e-05,
           "answers": {
             "supported": {
               "type": "noul",
@@ -2341,7 +2341,7 @@
           "ms": 251.29999999701977,
           "clientMs": 251.29999999701977,
           "inputTokens": 398,
-          "cost": 0.000016716,
+          "cost": 1.6716e-05,
           "answers": {
             "same_as_a": {
               "type": "noul",
@@ -2361,7 +2361,7 @@
           "ms": 282.5,
           "clientMs": 282.5,
           "inputTokens": 398,
-          "cost": 0.000016716,
+          "cost": 1.6716e-05,
           "answers": {
             "same_as_a": {
               "type": "noul",
@@ -2381,7 +2381,7 @@
           "ms": 308.8999999910593,
           "clientMs": 308.8999999910593,
           "inputTokens": 398,
-          "cost": 0.000016716,
+          "cost": 1.6716e-05,
           "answers": {
             "same_as_a": {
               "type": "noul",
@@ -2465,7 +2465,7 @@
           "ms": 260.20000000298023,
           "clientMs": 260.20000000298023,
           "inputTokens": 637,
-          "cost": 0.000026754,
+          "cost": 2.6754e-05,
           "answers": {
             "has_elevator": {
               "type": "noul",
@@ -2534,7 +2534,7 @@
           "ms": 235.6000000089407,
           "clientMs": 235.6000000089407,
           "inputTokens": 637,
-          "cost": 0.000026754,
+          "cost": 2.6754e-05,
           "answers": {
             "has_elevator": {
               "type": "noul",
@@ -2603,7 +2603,7 @@
           "ms": 255.59999999403954,
           "clientMs": 255.59999999403954,
           "inputTokens": 637,
-          "cost": 0.000026754,
+          "cost": 2.6754e-05,
           "answers": {
             "has_elevator": {
               "type": "noul",
@@ -2701,7 +2701,7 @@
           "ms": 231.59999999403954,
           "clientMs": 231.59999999403954,
           "inputTokens": 657,
-          "cost": 0.000027594,
+          "cost": 2.7594e-05,
           "answers": {
             "eligible": {
               "type": "noul",
@@ -2733,7 +2733,7 @@
           "ms": 264.8999999910593,
           "clientMs": 264.8999999910593,
           "inputTokens": 657,
-          "cost": 0.000027594,
+          "cost": 2.7594e-05,
           "answers": {
             "eligible": {
               "type": "noul",
@@ -2765,7 +2765,7 @@
           "ms": 224,
           "clientMs": 224,
           "inputTokens": 657,
-          "cost": 0.000027594,
+          "cost": 2.7594e-05,
           "answers": {
             "eligible": {
               "type": "noul",
@@ -2836,7 +2836,7 @@
           "ms": 222.40000000596046,
           "clientMs": 222.40000000596046,
           "inputTokens": 731,
-          "cost": 0.000030702,
+          "cost": 3.0702e-05,
           "answers": {
             "intent": {
               "type": "choice",
@@ -2882,7 +2882,7 @@
           "ms": 242.70000000298023,
           "clientMs": 242.70000000298023,
           "inputTokens": 731,
-          "cost": 0.000030702,
+          "cost": 3.0702e-05,
           "answers": {
             "intent": {
               "type": "choice",
@@ -2928,7 +2928,7 @@
           "ms": 252.19999998807907,
           "clientMs": 252.19999998807907,
           "inputTokens": 731,
-          "cost": 0.000030702,
+          "cost": 3.0702e-05,
           "answers": {
             "intent": {
               "type": "choice",
@@ -3023,7 +3023,7 @@
           "ms": 238,
           "clientMs": 238,
           "inputTokens": 1626,
-          "cost": 0.000068292,
+          "cost": 6.8292e-05,
           "answers": {
             "tenant_notice": {
               "type": "choice",
@@ -3077,7 +3077,7 @@
           "ms": 239.6000000089407,
           "clientMs": 239.6000000089407,
           "inputTokens": 1626,
-          "cost": 0.000068292,
+          "cost": 6.8292e-05,
           "answers": {
             "tenant_notice": {
               "type": "choice",
@@ -3131,7 +3131,7 @@
           "ms": 279.5,
           "clientMs": 279.5,
           "inputTokens": 1626,
-          "cost": 0.000068292,
+          "cost": 6.8292e-05,
           "answers": {
             "tenant_notice": {
               "type": "choice",
@@ -3229,7 +3229,7 @@
           "ms": 298,
           "clientMs": 298,
           "inputTokens": 1653,
-          "cost": 0.000069426,
+          "cost": 6.9426e-05,
           "answers": {
             "facade_adopted": {
               "type": "noul",
@@ -3277,7 +3277,7 @@
           "ms": 240.79999999701977,
           "clientMs": 240.79999999701977,
           "inputTokens": 1653,
-          "cost": 0.000069426,
+          "cost": 6.9426e-05,
           "answers": {
             "facade_adopted": {
               "type": "noul",
@@ -3325,7 +3325,7 @@
           "ms": 252.5,
           "clientMs": 252.5,
           "inputTokens": 1653,
-          "cost": 0.000069426,
+          "cost": 6.9426e-05,
           "answers": {
             "facade_adopted": {
               "type": "noul",

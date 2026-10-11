@@ -28,11 +28,15 @@ const slug = (s: string) =>
     .replace(/^-|-$/g, '')
     .slice(0, 40) || 'cible'
 
-export function reportId(label: string, date = new Date()) {
+/** Fichier reports/<date>-<benchmark>-<modèle>.json, pour distinguer les rapports d'un coup d'œil. */
+export function reportId(suiteId: string, label: string, date = new Date()) {
   const p = (n: number) => String(n).padStart(2, '0')
   const d = `${date.getFullYear()}-${p(date.getMonth() + 1)}-${p(date.getDate())}-${p(date.getHours())}${p(date.getMinutes())}${p(date.getSeconds())}`
-  return `${d}-${slug(label)}`
+  return `${d}-${suiteId}-${slug(label)}`
 }
+
+/** Nom par défaut d'un rapport : modèle et benchmark. */
+export const defaultReportName = (label: string, suiteName: string, when: string) => `${label} — ${suiteName} — ${when}`
 
 interface RunOptions {
   target: Target
@@ -101,8 +105,8 @@ export async function runBenchmark({ target, suite, cases, settings, name, notes
   onProgress({ done, total, phase: 'done' }, snapshot())
 
   return {
-    id: reportId(target.label),
-    name: name.trim() || `${target.label} — ${new Date().toLocaleString('fr-FR')}`,
+    id: reportId(suite.id, target.label),
+    name: name.trim() || defaultReportName(target.label, suite.name, new Date().toLocaleString('fr-FR')),
     notes: notes?.trim() || undefined,
     createdAt: new Date().toISOString(),
     suiteId: suite.id,

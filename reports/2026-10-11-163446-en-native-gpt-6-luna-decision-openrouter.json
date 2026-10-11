@@ -1,14 +1,14 @@
 {
-  "id": "2026-10-11-163420-perplexity-decider-v1-api-openrouter",
-  "name": "self-host-english",
-  "createdAt": "2026-10-11T14:34:20.969Z",
+  "id": "2026-10-11-163446-en-native-gpt-6-luna-decision-openrouter",
+  "name": "GPT 6 Luna Decision - Openrouter — English native — 11/10/2026 16:34:46",
+  "createdAt": "2026-10-11T14:34:46.089Z",
   "suiteId": "en-native",
   "suiteVersion": "1",
   "target": {
     "kind": "systemone",
-    "label": "Perplexity Decider v1 — API Openrouter",
-    "url": "https://openrouter.ai/api/",
-    "model": "perplexity/pplx-decider-v1.1-27b",
+    "label": "GPT 6 Luna Decision - Openrouter",
+    "url": "https://openrouter.ai/api",
+    "model": "openai/gpt-6-luna-decisions",
     "proxy": false
   },
   "settings": {
@@ -17,7 +17,7 @@
     "concurrency": 1,
     "timeoutMs": 120000
   },
-  "durationMs": 20159.5,
+  "durationMs": 19565.29999999702,
   "cases": [
     {
       "meta": {
@@ -53,22 +53,22 @@
           "rep": 1,
           "ok": true,
           "status": 200,
-          "ms": 282.30000001192093,
-          "clientMs": 282.30000001192093,
-          "inputTokens": 330,
-          "cost": 0.0000066,
+          "ms": 284.6000000089407,
+          "clientMs": 284.6000000089407,
+          "inputTokens": 444,
+          "cost": 4.44e-05,
           "answers": {
             "is_positive": {
               "type": "noul",
-              "noul": 0.9996443250373603
+              "noul": 1
             },
             "mentions_noise": {
               "type": "noul",
-              "noul": 0.9877148283343595
+              "noul": 1
             },
             "sentiment": {
               "type": "score",
-              "score": 3.5329759261481426,
+              "score": 3.9,
               "legend": {
                 "0": "Very negative",
                 "1": "Negative",
@@ -77,37 +77,37 @@
                 "4": "Very positive"
               },
               "probabilities": {
-                "0": 0.00047486901984148587,
-                "1": 0.0008126852567665303,
-                "2": 0.002769927499099346,
-                "3": 0.4571466870039931,
-                "4": 0.5387958312202996
+                "0": 0,
+                "1": 0,
+                "2": 0,
+                "3": 0.1,
+                "4": 0.9
               },
-              "confidence": 0.7664879630740713
+              "confidence": 0.92
             }
           },
-          "at": 282.90000000596046
+          "at": 285.09999999403954
         },
         {
           "rep": 2,
           "ok": true,
           "status": 200,
-          "ms": 307.79999999701977,
-          "clientMs": 307.79999999701977,
-          "inputTokens": 330,
-          "cost": 0.0000066,
+          "ms": 288.09999999403954,
+          "clientMs": 288.09999999403954,
+          "inputTokens": 444,
+          "cost": 4.44e-05,
           "answers": {
             "is_positive": {
               "type": "noul",
-              "noul": 0.9996443250373603
+              "noul": 1
             },
             "mentions_noise": {
               "type": "noul",
-              "noul": 0.9877148283343595
+              "noul": 1
             },
             "sentiment": {
               "type": "score",
-              "score": 3.5329759261481426,
+              "score": 3.9,
               "legend": {
                 "0": "Very negative",
                 "1": "Negative",
@@ -116,37 +116,37 @@
                 "4": "Very positive"
               },
               "probabilities": {
-                "0": 0.00047486901984148587,
-                "1": 0.0008126852567665303,
-                "2": 0.002769927499099346,
-                "3": 0.4571466870039931,
-                "4": 0.5387958312202996
+                "0": 0,
+                "1": 0,
+                "2": 0,
+                "3": 0.1,
+                "4": 0.9
               },
-              "confidence": 0.7664879630740713
+              "confidence": 0.92
             }
           },
-          "at": 7077.70000000298
+          "at": 6996.899999991059
         },
         {
           "rep": 3,
           "ok": true,
           "status": 200,
-          "ms": 233.59999999403954,
-          "clientMs": 233.59999999403954,
-          "inputTokens": 330,
-          "cost": 0.0000066,
+          "ms": 295.80000001192093,
+          "clientMs": 295.80000001192093,
+          "inputTokens": 444,
+          "cost": 4.44e-05,
           "answers": {
             "is_positive": {
               "type": "noul",
-              "noul": 0.9996443250373603
+              "noul": 1
             },
             "mentions_noise": {
               "type": "noul",
-              "noul": 0.9877148283343595
+              "noul": 1
             },
             "sentiment": {
               "type": "score",
-              "score": 3.5329759261481426,
+              "score": 3.9,
               "legend": {
                 "0": "Very negative",
                 "1": "Negative",
@@ -155,16 +155,16 @@
                 "4": "Very positive"
               },
               "probabilities": {
-                "0": 0.00047486901984148587,
-                "1": 0.0008126852567665303,
-                "2": 0.002769927499099346,
-                "3": 0.4571466870039931,
-                "4": 0.5387958312202996
+                "0": 0,
+                "1": 0,
+                "2": 0,
+                "3": 0.1,
+                "4": 0.9
               },
-              "confidence": 0.7664879630740713
+              "confidence": 0.92
             }
           },
-          "at": 13832.800000011921
+          "at": 13088.39999999106
         }
       ]
     },
@@ -197,18 +197,18 @@
           "rep": 1,
           "ok": true,
           "status": 200,
-          "ms": 221.1000000089407,
-          "clientMs": 221.1000000089407,
-          "inputTokens": 231,
-          "cost": 0.00000462,
+          "ms": 314.69999998807907,
+          "clientMs": 314.69999998807907,
+          "inputTokens": 298,
+          "cost": 2.98e-05,
           "answers": {
             "demo_successful": {
               "type": "noul",
-              "noul": 0.0005124311447675183
+              "noul": 0
             },
             "manager_view": {
               "type": "score",
-              "score": 0.44768519782014304,
+              "score": 0.92,
               "legend": {
                 "0": "Very bad",
                 "1": "Bad",
@@ -217,33 +217,33 @@
                 "4": "Very good"
               },
               "probabilities": {
-                "0": 0.585846465318691,
-                "1": 0.38978103790939544,
-                "2": 0.017317566206497312,
-                "3": 0.004950694763912101,
-                "4": 0.002104235801504161
+                "0": 0.31,
+                "1": 0.5,
+                "2": 0.16,
+                "3": 0.02,
+                "4": 0.01
               },
-              "confidence": 0.7761574010899285
+              "confidence": 0.55
             }
           },
-          "at": 505.1000000089407
+          "at": 600.8999999910593
         },
         {
           "rep": 2,
           "ok": true,
           "status": 200,
-          "ms": 243.5,
-          "clientMs": 243.5,
-          "inputTokens": 231,
-          "cost": 0.00000462,
+          "ms": 236.8999999910593,
+          "clientMs": 236.8999999910593,
+          "inputTokens": 298,
+          "cost": 2.98e-05,
           "answers": {
             "demo_successful": {
               "type": "noul",
-              "noul": 0.0005124311447675183
+              "noul": 0
             },
             "manager_view": {
               "type": "score",
-              "score": 0.44768519782014304,
+              "score": 0.92,
               "legend": {
                 "0": "Very bad",
                 "1": "Bad",
@@ -252,33 +252,33 @@
                 "4": "Very good"
               },
               "probabilities": {
-                "0": 0.585846465318691,
-                "1": 0.38978103790939544,
-                "2": 0.017317566206497312,
-                "3": 0.004950694763912101,
-                "4": 0.002104235801504161
+                "0": 0.31,
+                "1": 0.5,
+                "2": 0.16,
+                "3": 0.02,
+                "4": 0.01
               },
-              "confidence": 0.7761574010899285
+              "confidence": 0.55
             }
           },
-          "at": 7322.800000011921
+          "at": 7235.399999991059
         },
         {
           "rep": 3,
           "ok": true,
           "status": 200,
-          "ms": 224,
-          "clientMs": 224,
-          "inputTokens": 231,
-          "cost": 0.00000462,
+          "ms": 164.09999999403954,
+          "clientMs": 164.09999999403954,
+          "inputTokens": 298,
+          "cost": 2.98e-05,
           "answers": {
             "demo_successful": {
               "type": "noul",
-              "noul": 0.0005124311447675183
+              "noul": 0
             },
             "manager_view": {
               "type": "score",
-              "score": 0.44768519782014304,
+              "score": 0.92,
               "legend": {
                 "0": "Very bad",
                 "1": "Bad",
@@ -287,16 +287,16 @@
                 "4": "Very good"
               },
               "probabilities": {
-                "0": 0.585846465318691,
-                "1": 0.38978103790939544,
-                "2": 0.017317566206497312,
-                "3": 0.004950694763912101,
-                "4": 0.002104235801504161
+                "0": 0.31,
+                "1": 0.5,
+                "2": 0.16,
+                "3": 0.02,
+                "4": 0.01
               },
-              "confidence": 0.7761574010899285
+              "confidence": 0.55
             }
           },
-          "at": 14058.20000000298
+          "at": 13253.89999999106
         }
       ]
     },
@@ -326,61 +326,61 @@
           "rep": 1,
           "ok": true,
           "status": 200,
-          "ms": 229.79999999701977,
-          "clientMs": 229.79999999701977,
-          "inputTokens": 225,
-          "cost": 0.0000045,
+          "ms": 235.40000000596046,
+          "clientMs": 235.40000000596046,
+          "inputTokens": 332,
+          "cost": 3.32e-05,
           "answers": {
             "is_sarcastic": {
               "type": "noul",
-              "noul": 0.9995412328876422
+              "noul": 1
             },
             "is_enthusiastic": {
               "type": "noul",
-              "noul": 0.00013740634672800635
+              "noul": 0
             }
           },
-          "at": 735.5
+          "at": 836.8999999910593
         },
         {
           "rep": 2,
           "ok": true,
           "status": 200,
-          "ms": 224.09999999403954,
-          "clientMs": 224.09999999403954,
-          "inputTokens": 225,
-          "cost": 0.0000045,
+          "ms": 265,
+          "clientMs": 265,
+          "inputTokens": 332,
+          "cost": 3.32e-05,
           "answers": {
             "is_sarcastic": {
               "type": "noul",
-              "noul": 0.9995412328876422
+              "noul": 1
             },
             "is_enthusiastic": {
               "type": "noul",
-              "noul": 0.00013740634672800635
+              "noul": 0
             }
           },
-          "at": 7548
+          "at": 7501.29999999702
         },
         {
           "rep": 3,
           "ok": true,
           "status": 200,
-          "ms": 285.59999999403954,
-          "clientMs": 285.59999999403954,
-          "inputTokens": 225,
-          "cost": 0.0000045,
+          "ms": 270.79999999701977,
+          "clientMs": 270.79999999701977,
+          "inputTokens": 332,
+          "cost": 3.32e-05,
           "answers": {
             "is_sarcastic": {
               "type": "noul",
-              "noul": 0.9995412328876422
+              "noul": 1
             },
             "is_enthusiastic": {
               "type": "noul",
-              "noul": 0.00013740634672800635
+              "noul": 0
             }
           },
-          "at": 14344.800000011921
+          "at": 13525.5
         }
       ]
     },
@@ -415,91 +415,91 @@
           "rep": 1,
           "ok": true,
           "status": 200,
-          "ms": 289.29999999701977,
-          "clientMs": 289.29999999701977,
-          "inputTokens": 372,
-          "cost": 0.00000744,
+          "ms": 324.69999998807907,
+          "clientMs": 324.69999998807907,
+          "inputTokens": 459,
+          "cost": 4.59e-05,
           "answers": {
             "onboarding_hard": {
               "type": "noul",
-              "noul": 0.00021753327120732605
+              "noul": 0
             },
             "migration_done": {
               "type": "noul",
-              "noul": 0.0007497371237082123
+              "noul": 0.04
             },
             "main_risk": {
               "type": "choice",
               "choice": "migration",
               "probabilities": {
-                "onboarding": 0.00011697699721466428,
-                "migration": 0.9995422172172563,
-                "none": 0.00034080578552895857
+                "onboarding": 0,
+                "migration": 1,
+                "none": 0
               },
-              "confidence": 0.9993133258258845
+              "confidence": 1
             }
           },
-          "at": 1025.7000000029802
+          "at": 1161.8999999910593
         },
         {
           "rep": 2,
           "ok": true,
           "status": 200,
-          "ms": 295,
-          "clientMs": 295,
-          "inputTokens": 372,
-          "cost": 0.00000744,
+          "ms": 263.40000000596046,
+          "clientMs": 263.40000000596046,
+          "inputTokens": 459,
+          "cost": 4.59e-05,
           "answers": {
             "onboarding_hard": {
               "type": "noul",
-              "noul": 0.00021753327120732605
+              "noul": 0
             },
             "migration_done": {
               "type": "noul",
-              "noul": 0.0007497371237082123
+              "noul": 0.04
             },
             "main_risk": {
               "type": "choice",
               "choice": "migration",
               "probabilities": {
-                "onboarding": 0.00011697699721466428,
-                "migration": 0.9995422172172563,
-                "none": 0.00034080578552895857
+                "onboarding": 0,
+                "migration": 1,
+                "none": 0
               },
-              "confidence": 0.9993133258258845
+              "confidence": 1
             }
           },
-          "at": 7844
+          "at": 7765.399999991059
         },
         {
           "rep": 3,
           "ok": true,
           "status": 200,
-          "ms": 307.09999999403954,
-          "clientMs": 307.09999999403954,
-          "inputTokens": 372,
-          "cost": 0.00000744,
+          "ms": 304.59999999403954,
+          "clientMs": 304.59999999403954,
+          "inputTokens": 459,
+          "cost": 4.59e-05,
           "answers": {
             "onboarding_hard": {
               "type": "noul",
-              "noul": 0.00021753327120732605
+              "noul": 0
             },
             "migration_done": {
               "type": "noul",
-              "noul": 0.0007497371237082123
+              "noul": 0.04
             },
             "main_risk": {
               "type": "choice",
               "choice": "migration",
               "probabilities": {
-                "onboarding": 0.00011697699721466428,
-                "migration": 0.9995422172172563,
-                "none": 0.00034080578552895857
+                "onboarding": 0,
+                "migration": 1,
+                "none": 0
               },
-              "confidence": 0.9993133258258845
+              "confidence": 1
             }
           },
-          "at": 14653
+          "at": 13831.09999999404
         }
       ]
     },
@@ -527,49 +527,49 @@
           "rep": 1,
           "ok": true,
           "status": 200,
-          "ms": 453.90000000596046,
-          "clientMs": 453.90000000596046,
-          "inputTokens": 86,
-          "cost": 0.00000172,
+          "ms": 305.19999998807907,
+          "clientMs": 305.19999998807907,
+          "inputTokens": 155,
+          "cost": 1.55e-05,
           "answers": {
             "is_satisfied": {
               "type": "noul",
-              "noul": 0.8207148645697983
+              "noul": 0.5
             }
           },
-          "at": 1480.4000000059605
+          "at": 1468
         },
         {
           "rep": 2,
           "ok": true,
           "status": 200,
-          "ms": 243.90000000596046,
-          "clientMs": 243.90000000596046,
-          "inputTokens": 86,
-          "cost": 0.00000172,
+          "ms": 278.1000000089407,
+          "clientMs": 278.1000000089407,
+          "inputTokens": 155,
+          "cost": 1.55e-05,
           "answers": {
             "is_satisfied": {
               "type": "noul",
-              "noul": 0.8207148645697983
+              "noul": 0.5
             }
           },
-          "at": 8089.4000000059605
+          "at": 8045.70000000298
         },
         {
           "rep": 3,
           "ok": true,
           "status": 200,
-          "ms": 221.59999999403954,
-          "clientMs": 221.59999999403954,
-          "inputTokens": 86,
-          "cost": 0.00000172,
+          "ms": 306.30000001192093,
+          "clientMs": 306.30000001192093,
+          "inputTokens": 155,
+          "cost": 1.55e-05,
           "answers": {
             "is_satisfied": {
               "type": "noul",
-              "noul": 0.8207148645697983
+              "noul": 0.5
             }
           },
-          "at": 14875.5
+          "at": 14139.20000000298
         }
       ]
     },
@@ -604,124 +604,124 @@
           "rep": 1,
           "ok": true,
           "status": 200,
-          "ms": 240.1000000089407,
-          "clientMs": 240.1000000089407,
-          "inputTokens": 388,
-          "cost": 0.00000776,
+          "ms": 248.29999999701977,
+          "clientMs": 248.29999999701977,
+          "inputTokens": 427,
+          "cost": 4.27e-05,
           "answers": {
             "department": {
               "type": "choice",
               "choice": "billing",
               "probabilities": {
-                "billing": 0.9997881633140091,
-                "technical": 0.00005225475912857232,
-                "sales": 0.00015958192686239242
+                "billing": 1,
+                "technical": 0,
+                "sales": 0
               },
-              "confidence": 0.9996822449710137
+              "confidence": 1
             },
             "refund_requested": {
               "type": "noul",
-              "noul": 0.9995765650659486
+              "noul": 1
             },
             "frustration": {
               "type": "score",
-              "score": 0.034666814010012294,
+              "score": 0,
               "legend": {
                 "0": "Calm",
                 "1": "Frustrated",
                 "2": "Very angry"
               },
               "probabilities": {
-                "0": 0.9661077229683045,
-                "1": 0.03311774005337865,
-                "2": 0.0007745369783168238
+                "0": 1,
+                "1": 0,
+                "2": 0
               },
-              "confidence": 0.9653331859899877
+              "confidence": 1
             }
           },
-          "at": 1721.800000011921
+          "at": 1717
         },
         {
           "rep": 2,
           "ok": true,
           "status": 200,
-          "ms": 271.20000000298023,
-          "clientMs": 271.20000000298023,
-          "inputTokens": 388,
-          "cost": 0.00000776,
+          "ms": 165.3999999910593,
+          "clientMs": 165.3999999910593,
+          "inputTokens": 427,
+          "cost": 4.27e-05,
           "answers": {
             "department": {
               "type": "choice",
               "choice": "billing",
               "probabilities": {
-                "billing": 0.9997881633140091,
-                "technical": 0.00005225475912857232,
-                "sales": 0.00015958192686239242
+                "billing": 1,
+                "technical": 0,
+                "sales": 0
               },
-              "confidence": 0.9996822449710137
+              "confidence": 1
             },
             "refund_requested": {
               "type": "noul",
-              "noul": 0.9995765650659486
+              "noul": 1
             },
             "frustration": {
               "type": "score",
-              "score": 0.034666814010012294,
+              "score": 0,
               "legend": {
                 "0": "Calm",
                 "1": "Frustrated",
                 "2": "Very angry"
               },
               "probabilities": {
-                "0": 0.9661077229683045,
-                "1": 0.03311774005337865,
-                "2": 0.0007745369783168238
+                "0": 1,
+                "1": 0,
+                "2": 0
               },
-              "confidence": 0.9653331859899877
+              "confidence": 1
             }
           },
-          "at": 8361.10000000894
+          "at": 8211.89999999106
         },
         {
           "rep": 3,
           "ok": true,
           "status": 200,
-          "ms": 276.3999999910593,
-          "clientMs": 276.3999999910593,
-          "inputTokens": 388,
-          "cost": 0.00000776,
+          "ms": 258.69999998807907,
+          "clientMs": 258.69999998807907,
+          "inputTokens": 427,
+          "cost": 4.27e-05,
           "answers": {
             "department": {
               "type": "choice",
               "choice": "billing",
               "probabilities": {
-                "billing": 0.9997881633140091,
-                "technical": 0.00005225475912857232,
-                "sales": 0.00015958192686239242
+                "billing": 1,
+                "technical": 0,
+                "sales": 0
               },
-              "confidence": 0.9996822449710137
+              "confidence": 1
             },
             "refund_requested": {
               "type": "noul",
-              "noul": 0.9995765650659486
+              "noul": 1
             },
             "frustration": {
               "type": "score",
-              "score": 0.034666814010012294,
+              "score": 0,
               "legend": {
                 "0": "Calm",
                 "1": "Frustrated",
                 "2": "Very angry"
               },
               "probabilities": {
-                "0": 0.9661077229683045,
-                "1": 0.03311774005337865,
-                "2": 0.0007745369783168238
+                "0": 1,
+                "1": 0,
+                "2": 0
               },
-              "confidence": 0.9653331859899877
+              "confidence": 1
             }
           },
-          "at": 15152.70000000298
+          "at": 14399
         }
       ]
     },
@@ -751,88 +751,88 @@
           "rep": 1,
           "ok": true,
           "status": 200,
-          "ms": 233.20000000298023,
-          "clientMs": 233.20000000298023,
-          "inputTokens": 284,
-          "cost": 0.00000568,
+          "ms": 180.8999999910593,
+          "clientMs": 180.8999999910593,
+          "inputTokens": 352,
+          "cost": 3.52e-05,
           "answers": {
             "tool": {
               "type": "choice",
               "choice": "calendar_lookup",
               "probabilities": {
-                "get_weather": 0.00008355877051660468,
-                "create_reminder": 0.00030252319890047976,
-                "send_email": 0.00008384446062518954,
-                "search_web": 0.00007786149890997715,
-                "calendar_lookup": 0.9988704886174936,
-                "none": 0.0005817234535541488
+                "get_weather": 0.01,
+                "create_reminder": 0.05,
+                "send_email": 0.01,
+                "search_web": 0.01,
+                "calendar_lookup": 0.87,
+                "none": 0.05
               },
-              "confidence": 0.9986445863409923
+              "confidence": 0.84
             },
             "creates_something": {
               "type": "noul",
-              "noul": 0.00014454829229914706
+              "noul": 0
             }
           },
-          "at": 1956.4000000059605
+          "at": 1898.8999999910593
         },
         {
           "rep": 2,
           "ok": true,
           "status": 200,
-          "ms": 281.19999998807907,
-          "clientMs": 281.19999998807907,
-          "inputTokens": 284,
-          "cost": 0.00000568,
+          "ms": 209.3999999910593,
+          "clientMs": 209.3999999910593,
+          "inputTokens": 352,
+          "cost": 3.52e-05,
           "answers": {
             "tool": {
               "type": "choice",
               "choice": "calendar_lookup",
               "probabilities": {
-                "get_weather": 0.00008355877051660468,
-                "create_reminder": 0.00030252319890047976,
-                "send_email": 0.00008384446062518954,
-                "search_web": 0.00007786149890997715,
-                "calendar_lookup": 0.9988704886174936,
-                "none": 0.0005817234535541488
+                "get_weather": 0.01,
+                "create_reminder": 0.05,
+                "send_email": 0.01,
+                "search_web": 0.01,
+                "calendar_lookup": 0.87,
+                "none": 0.05
               },
-              "confidence": 0.9986445863409923
+              "confidence": 0.84
             },
             "creates_something": {
               "type": "noul",
-              "noul": 0.00014454829229914706
+              "noul": 0
             }
           },
-          "at": 8643
+          "at": 8422.20000000298
         },
         {
           "rep": 3,
           "ok": true,
           "status": 200,
-          "ms": 248.29999999701977,
-          "clientMs": 248.29999999701977,
-          "inputTokens": 284,
-          "cost": 0.00000568,
+          "ms": 169.5,
+          "clientMs": 169.5,
+          "inputTokens": 352,
+          "cost": 3.52e-05,
           "answers": {
             "tool": {
               "type": "choice",
               "choice": "calendar_lookup",
               "probabilities": {
-                "get_weather": 0.00008355877051660468,
-                "create_reminder": 0.00030252319890047976,
-                "send_email": 0.00008384446062518954,
-                "search_web": 0.00007786149890997715,
-                "calendar_lookup": 0.9988704886174936,
-                "none": 0.0005817234535541488
+                "get_weather": 0.01,
+                "create_reminder": 0.05,
+                "send_email": 0.01,
+                "search_web": 0.01,
+                "calendar_lookup": 0.87,
+                "none": 0.05
               },
-              "confidence": 0.9986445863409923
+              "confidence": 0.84
             },
             "creates_something": {
               "type": "noul",
-              "noul": 0.00014454829229914706
+              "noul": 0
             }
           },
-          "at": 15402.800000011921
+          "at": 14570.20000000298
         }
       ]
     },
@@ -867,94 +867,94 @@
           "rep": 1,
           "ok": true,
           "status": 200,
-          "ms": 256.59999999403954,
-          "clientMs": 256.59999999403954,
-          "inputTokens": 348,
-          "cost": 0.00000696,
+          "ms": 184.70000000298023,
+          "clientMs": 184.70000000298023,
+          "inputTokens": 462,
+          "cost": 4.62e-05,
           "answers": {
             "is_threat": {
               "type": "noul",
-              "noul": 0.9735266100896024
+              "noul": 1
             },
             "has_profanity": {
               "type": "noul",
-              "noul": 0.0020615222808401403
+              "noul": 0
             },
             "category": {
               "type": "choice",
               "choice": "threat",
               "probabilities": {
-                "ok": 0.013866936896158978,
-                "spam": 0.0001425575944039084,
-                "harassment": 0.009249483523088874,
-                "threat": 0.9767410219863483
+                "ok": 0,
+                "spam": 0,
+                "harassment": 0.01,
+                "threat": 0.99
               },
-              "confidence": 0.9689880293151311
+              "confidence": 0.99
             }
           },
-          "at": 2213.6000000089407
+          "at": 2084.2999999970198
         },
         {
           "rep": 2,
           "ok": true,
           "status": 200,
-          "ms": 235.20000000298023,
-          "clientMs": 235.20000000298023,
-          "inputTokens": 348,
-          "cost": 0.00000696,
+          "ms": 285.6000000089407,
+          "clientMs": 285.6000000089407,
+          "inputTokens": 462,
+          "cost": 4.62e-05,
           "answers": {
             "is_threat": {
               "type": "noul",
-              "noul": 0.9735266100896024
+              "noul": 1
             },
             "has_profanity": {
               "type": "noul",
-              "noul": 0.0020615222808401403
+              "noul": 0
             },
             "category": {
               "type": "choice",
               "choice": "threat",
               "probabilities": {
-                "ok": 0.013866936896158978,
-                "spam": 0.0001425575944039084,
-                "harassment": 0.009249483523088874,
-                "threat": 0.9767410219863483
+                "ok": 0,
+                "spam": 0,
+                "harassment": 0.01,
+                "threat": 0.99
               },
-              "confidence": 0.9689880293151311
+              "confidence": 0.99
             }
           },
-          "at": 8879.70000000298
+          "at": 8709.70000000298
         },
         {
           "rep": 3,
           "ok": true,
           "status": 200,
-          "ms": 302.1000000089407,
-          "clientMs": 302.1000000089407,
-          "inputTokens": 348,
-          "cost": 0.00000696,
+          "ms": 284,
+          "clientMs": 284,
+          "inputTokens": 462,
+          "cost": 4.62e-05,
           "answers": {
             "is_threat": {
               "type": "noul",
-              "noul": 0.9735266100896024
+              "noul": 1
             },
             "has_profanity": {
               "type": "noul",
-              "noul": 0.0020615222808401403
+              "noul": 0
             },
             "category": {
               "type": "choice",
               "choice": "threat",
               "probabilities": {
-                "ok": 0.013866936896158978,
-                "spam": 0.0001425575944039084,
-                "harassment": 0.009249483523088874,
-                "threat": 0.9767410219863483
+                "ok": 0,
+                "spam": 0,
+                "harassment": 0.01,
+                "threat": 0.99
               },
-              "confidence": 0.9689880293151311
+              "confidence": 0.99
             }
           },
-          "at": 15706.60000000894
+          "at": 14855.29999999702
         }
       ]
     },
@@ -989,94 +989,94 @@
           "rep": 1,
           "ok": true,
           "status": 200,
-          "ms": 269.70000000298023,
-          "clientMs": 269.70000000298023,
-          "inputTokens": 373,
-          "cost": 0.00000746,
+          "ms": 223.90000000596046,
+          "clientMs": 223.90000000596046,
+          "inputTokens": 471,
+          "cost": 4.71e-05,
           "answers": {
             "is_toxic": {
               "type": "noul",
-              "noul": 0.014715581557221517
+              "noul": 0.04
             },
             "should_remove": {
               "type": "noul",
-              "noul": 0.001000595083818324
+              "noul": 0
             },
             "category": {
               "type": "choice",
               "choice": "ok",
               "probabilities": {
-                "ok": 0.9825734285940487,
-                "spam": 0.00017546714638445234,
-                "harassment": 0.017003851711615822,
-                "threat": 0.00024725254795102396
+                "ok": 0.98,
+                "spam": 0,
+                "harassment": 0.02,
+                "threat": 0
               },
-              "confidence": 0.9767645714587316
+              "confidence": 0.97
             }
           },
-          "at": 2484.2000000029802
+          "at": 2309.5
         },
         {
           "rep": 2,
           "ok": true,
           "status": 200,
-          "ms": 250.29999999701977,
-          "clientMs": 250.29999999701977,
-          "inputTokens": 373,
-          "cost": 0.00000746,
+          "ms": 305,
+          "clientMs": 305,
+          "inputTokens": 471,
+          "cost": 4.71e-05,
           "answers": {
             "is_toxic": {
               "type": "noul",
-              "noul": 0.014715581557221517
+              "noul": 0.04
             },
             "should_remove": {
               "type": "noul",
-              "noul": 0.001000595083818324
+              "noul": 0
             },
             "category": {
               "type": "choice",
               "choice": "ok",
               "probabilities": {
-                "ok": 0.9825734285940487,
-                "spam": 0.00017546714638445234,
-                "harassment": 0.017003851711615822,
-                "threat": 0.00024725254795102396
+                "ok": 0.98,
+                "spam": 0,
+                "harassment": 0.02,
+                "threat": 0
               },
-              "confidence": 0.9767645714587316
+              "confidence": 0.97
             }
           },
-          "at": 9132
+          "at": 9015.59999999404
         },
         {
           "rep": 3,
           "ok": true,
           "status": 200,
-          "ms": 250.6000000089407,
-          "clientMs": 250.6000000089407,
-          "inputTokens": 373,
-          "cost": 0.00000746,
+          "ms": 261.5,
+          "clientMs": 261.5,
+          "inputTokens": 471,
+          "cost": 4.71e-05,
           "answers": {
             "is_toxic": {
               "type": "noul",
-              "noul": 0.014715581557221517
+              "noul": 0.04
             },
             "should_remove": {
               "type": "noul",
-              "noul": 0.001000595083818324
+              "noul": 0
             },
             "category": {
               "type": "choice",
               "choice": "ok",
               "probabilities": {
-                "ok": 0.9825734285940487,
-                "spam": 0.00017546714638445234,
-                "harassment": 0.017003851711615822,
-                "threat": 0.00024725254795102396
+                "ok": 0.98,
+                "spam": 0,
+                "harassment": 0.02,
+                "threat": 0
               },
-              "confidence": 0.9767645714587316
+              "confidence": 0.97
             }
           },
-          "at": 15958.300000011921
+          "at": 15119.20000000298
         }
       ]
     },
@@ -1111,73 +1111,73 @@
           "rep": 1,
           "ok": true,
           "status": 200,
-          "ms": 225.5,
-          "clientMs": 225.5,
-          "inputTokens": 481,
-          "cost": 0.00000962,
+          "ms": 291.20000000298023,
+          "clientMs": 291.20000000298023,
+          "inputTokens": 533,
+          "cost": 5.33e-05,
           "answers": {
             "is_phishing": {
               "type": "noul",
-              "noul": 0.9999379372177855
+              "noul": 0.99
             },
             "legit_domain": {
               "type": "noul",
-              "noul": 0.000058754976668536464
+              "noul": 0
             },
             "asks_credentials": {
               "type": "noul",
-              "noul": 0.9995055402778567
+              "noul": 1
             }
           },
-          "at": 2710
+          "at": 2601.5999999940395
         },
         {
           "rep": 2,
           "ok": true,
           "status": 200,
-          "ms": 286.79999999701977,
-          "clientMs": 286.79999999701977,
-          "inputTokens": 481,
-          "cost": 0.00000962,
+          "ms": 333.1000000089407,
+          "clientMs": 333.1000000089407,
+          "inputTokens": 533,
+          "cost": 5.33e-05,
           "answers": {
             "is_phishing": {
               "type": "noul",
-              "noul": 0.9999379372177855
+              "noul": 0.99
             },
             "legit_domain": {
               "type": "noul",
-              "noul": 0.000058754976668536464
+              "noul": 0
             },
             "asks_credentials": {
               "type": "noul",
-              "noul": 0.9995055402778567
+              "noul": 1
             }
           },
-          "at": 9419.800000011921
+          "at": 9350.5
         },
         {
           "rep": 3,
           "ok": true,
           "status": 200,
-          "ms": 363.20000000298023,
-          "clientMs": 363.20000000298023,
-          "inputTokens": 481,
-          "cost": 0.00000962,
+          "ms": 170.79999999701977,
+          "clientMs": 170.79999999701977,
+          "inputTokens": 533,
+          "cost": 5.33e-05,
           "answers": {
             "is_phishing": {
               "type": "noul",
-              "noul": 0.9999379372177855
+              "noul": 0.99
             },
             "legit_domain": {
               "type": "noul",
-              "noul": 0.000058754976668536464
+              "noul": 0
             },
             "asks_credentials": {
               "type": "noul",
-              "noul": 0.9995055402778567
+              "noul": 1
             }
           },
-          "at": 16322.5
+          "at": 15290.89999999106
         }
       ]
     },
@@ -1207,76 +1207,76 @@
           "rep": 1,
           "ok": true,
           "status": 200,
-          "ms": 282.59999999403954,
-          "clientMs": 282.59999999403954,
-          "inputTokens": 253,
-          "cost": 0.00000506,
+          "ms": 188.5,
+          "clientMs": 188.5,
+          "inputTokens": 299,
+          "cost": 2.99e-05,
           "answers": {
             "start_month": {
               "type": "choice",
               "choice": "april",
               "probabilities": {
-                "april": 0.9983394739536214,
-                "may": 0.0016605260463785614
+                "april": 0.91,
+                "may": 0.09
               },
-              "confidence": 0.9966789479072429
+              "confidence": 0.82
             },
             "ends_2027": {
               "type": "noul",
-              "noul": 0.9763337407859382
+              "noul": 1
             }
           },
-          "at": 2992.9000000059605
+          "at": 2791
         },
         {
           "rep": 2,
           "ok": true,
           "status": 200,
-          "ms": 235.09999999403954,
-          "clientMs": 235.09999999403954,
-          "inputTokens": 253,
-          "cost": 0.00000506,
+          "ms": 258.5,
+          "clientMs": 258.5,
+          "inputTokens": 299,
+          "cost": 2.99e-05,
           "answers": {
             "start_month": {
               "type": "choice",
               "choice": "april",
               "probabilities": {
-                "april": 0.9983394739536214,
-                "may": 0.0016605260463785614
+                "april": 0.91,
+                "may": 0.09
               },
-              "confidence": 0.9966789479072429
+              "confidence": 0.82
             },
             "ends_2027": {
               "type": "noul",
-              "noul": 0.9763337407859382
+              "noul": 1
             }
           },
-          "at": 9657
+          "at": 9609.79999999702
         },
         {
           "rep": 3,
           "ok": true,
           "status": 200,
-          "ms": 251.6000000089407,
-          "clientMs": 251.6000000089407,
-          "inputTokens": 253,
-          "cost": 0.00000506,
+          "ms": 328.70000000298023,
+          "clientMs": 328.70000000298023,
+          "inputTokens": 299,
+          "cost": 2.99e-05,
           "answers": {
             "start_month": {
               "type": "choice",
               "choice": "april",
               "probabilities": {
-                "april": 0.9983394739536214,
-                "may": 0.0016605260463785614
+                "april": 0.91,
+                "may": 0.09
               },
-              "confidence": 0.9966789479072429
+              "confidence": 0.82
             },
             "ends_2027": {
               "type": "noul",
-              "noul": 0.9763337407859382
+              "noul": 1
             }
           },
-          "at": 16575.30000001192
+          "at": 15620.89999999106
         }
       ]
     },
@@ -1306,82 +1306,82 @@
           "rep": 1,
           "ok": true,
           "status": 200,
-          "ms": 242.20000000298023,
-          "clientMs": 242.20000000298023,
-          "inputTokens": 255,
-          "cost": 0.0000051,
+          "ms": 325.6000000089407,
+          "clientMs": 325.6000000089407,
+          "inputTokens": 315,
+          "cost": 3.15e-05,
           "answers": {
             "enough_flour": {
               "type": "noul",
-              "noul": 0.0013969400354396566
+              "noul": 0
             },
             "shortfall": {
               "type": "choice",
               "choice": "one",
               "probabilities": {
-                "none": 0.0006924324491416921,
-                "one": 0.9991290062759832,
-                "two": 0.00011337024545282456,
-                "three": 0.00006519102942227715
+                "none": 0.19,
+                "one": 0.42,
+                "two": 0.16,
+                "three": 0.23
               },
-              "confidence": 0.9988386750346443
+              "confidence": 0.23
             }
           },
-          "at": 3236.9000000059605
+          "at": 3117.7000000029802
         },
         {
           "rep": 2,
           "ok": true,
           "status": 200,
-          "ms": 246,
-          "clientMs": 246,
-          "inputTokens": 255,
-          "cost": 0.0000051,
+          "ms": 156.40000000596046,
+          "clientMs": 156.40000000596046,
+          "inputTokens": 315,
+          "cost": 3.15e-05,
           "answers": {
             "enough_flour": {
               "type": "noul",
-              "noul": 0.0013969400354396566
+              "noul": 0
             },
             "shortfall": {
               "type": "choice",
               "choice": "one",
               "probabilities": {
-                "none": 0.0006924324491416921,
-                "one": 0.9991290062759832,
-                "two": 0.00011337024545282456,
-                "three": 0.00006519102942227715
+                "none": 0.19,
+                "one": 0.42,
+                "two": 0.16,
+                "three": 0.23
               },
-              "confidence": 0.9988386750346443
+              "confidence": 0.23
             }
           },
-          "at": 9904.20000000298
+          "at": 9767.39999999106
         },
         {
           "rep": 3,
           "ok": true,
           "status": 200,
-          "ms": 233.79999999701977,
-          "clientMs": 233.79999999701977,
-          "inputTokens": 255,
-          "cost": 0.0000051,
+          "ms": 294.5,
+          "clientMs": 294.5,
+          "inputTokens": 315,
+          "cost": 3.15e-05,
           "answers": {
             "enough_flour": {
               "type": "noul",
-              "noul": 0.0013969400354396566
+              "noul": 0
             },
             "shortfall": {
               "type": "choice",
               "choice": "one",
               "probabilities": {
-                "none": 0.0006924324491416921,
-                "one": 0.9991290062759832,
-                "two": 0.00011337024545282456,
-                "three": 0.00006519102942227715
+                "none": 0.19,
+                "one": 0.42,
+                "two": 0.16,
+                "three": 0.23
               },
-              "confidence": 0.9988386750346443
+              "confidence": 0.23
             }
           },
-          "at": 16810
+          "at": 15916.39999999106
         }
       ]
     },
@@ -1411,79 +1411,79 @@
           "rep": 1,
           "ok": true,
           "status": 200,
-          "ms": 248.40000000596046,
-          "clientMs": 248.40000000596046,
-          "inputTokens": 253,
-          "cost": 0.00000506,
+          "ms": 570.5,
+          "clientMs": 570.5,
+          "inputTokens": 305,
+          "cost": 3.05e-05,
           "answers": {
             "back_to_original": {
               "type": "noul",
-              "noul": 0.00021891614469262124
+              "noul": 0.93
             },
             "direction": {
               "type": "choice",
               "choice": "lower",
               "probabilities": {
-                "higher": 0.000447052360834249,
-                "lower": 0.9985005489465304,
-                "same": 0.0010523986926353089
+                "higher": 0.17,
+                "lower": 0.82,
+                "same": 0.01
               },
-              "confidence": 0.9977508234197956
+              "confidence": 0.73
             }
           },
-          "at": 3485.6000000089407
+          "at": 3688.8999999910593
         },
         {
           "rep": 2,
           "ok": true,
           "status": 200,
-          "ms": 245.90000000596046,
-          "clientMs": 245.90000000596046,
-          "inputTokens": 253,
-          "cost": 0.00000506,
+          "ms": 265.29999999701977,
+          "clientMs": 265.29999999701977,
+          "inputTokens": 305,
+          "cost": 3.05e-05,
           "answers": {
             "back_to_original": {
               "type": "noul",
-              "noul": 0.00021891614469262124
+              "noul": 0.93
             },
             "direction": {
               "type": "choice",
               "choice": "lower",
               "probabilities": {
-                "higher": 0.000447052360834249,
-                "lower": 0.9985005489465304,
-                "same": 0.0010523986926353089
+                "higher": 0.17,
+                "lower": 0.82,
+                "same": 0.01
               },
-              "confidence": 0.9977508234197956
+              "confidence": 0.73
             }
           },
-          "at": 10151.40000000596
+          "at": 10033.89999999106
         },
         {
           "rep": 3,
           "ok": true,
           "status": 200,
-          "ms": 237.29999999701977,
-          "clientMs": 237.29999999701977,
-          "inputTokens": 253,
-          "cost": 0.00000506,
+          "ms": 287.5,
+          "clientMs": 287.5,
+          "inputTokens": 305,
+          "cost": 3.05e-05,
           "answers": {
             "back_to_original": {
               "type": "noul",
-              "noul": 0.00021891614469262124
+              "noul": 0.93
             },
             "direction": {
               "type": "choice",
               "choice": "lower",
               "probabilities": {
-                "higher": 0.000447052360834249,
-                "lower": 0.9985005489465304,
-                "same": 0.0010523986926353089
+                "higher": 0.17,
+                "lower": 0.82,
+                "same": 0.01
               },
-              "confidence": 0.9977508234197956
+              "confidence": 0.73
             }
           },
-          "at": 17048.20000000298
+          "at": 16204.79999999702
         }
       ]
     },
@@ -1513,79 +1513,79 @@
           "rep": 1,
           "ok": true,
           "status": 200,
-          "ms": 227.90000000596046,
-          "clientMs": 227.90000000596046,
-          "inputTokens": 230,
-          "cost": 0.0000046,
+          "ms": 157.29999999701977,
+          "clientMs": 157.29999999701977,
+          "inputTokens": 302,
+          "cost": 3.02e-05,
           "answers": {
             "dana_intern": {
               "type": "noul",
-              "noul": 0.00006832866168067699
+              "noul": 0.03
             },
             "lee_intern": {
               "type": "choice",
               "choice": "unknown",
               "probabilities": {
-                "yes": 0.0022594174788171458,
-                "no": 0.0005555511348795293,
-                "unknown": 0.9971850313863033
+                "yes": 0,
+                "no": 0.01,
+                "unknown": 0.99
               },
-              "confidence": 0.995777547079455
+              "confidence": 0.99
             }
           },
-          "at": 3713.800000011921
+          "at": 3847.2999999970198
         },
         {
           "rep": 2,
           "ok": true,
           "status": 200,
-          "ms": 265.8999999910593,
-          "clientMs": 265.8999999910593,
-          "inputTokens": 230,
-          "cost": 0.0000046,
+          "ms": 271,
+          "clientMs": 271,
+          "inputTokens": 302,
+          "cost": 3.02e-05,
           "answers": {
             "dana_intern": {
               "type": "noul",
-              "noul": 0.00006832866168067699
+              "noul": 0.03
             },
             "lee_intern": {
               "type": "choice",
               "choice": "unknown",
               "probabilities": {
-                "yes": 0.0022594174788171458,
-                "no": 0.0005555511348795293,
-                "unknown": 0.9971850313863033
+                "yes": 0,
+                "no": 0.01,
+                "unknown": 0.99
               },
-              "confidence": 0.995777547079455
+              "confidence": 0.99
             }
           },
-          "at": 10419
+          "at": 10306.29999999702
         },
         {
           "rep": 3,
           "ok": true,
           "status": 200,
-          "ms": 318.70000000298023,
-          "clientMs": 318.70000000298023,
-          "inputTokens": 230,
-          "cost": 0.0000046,
+          "ms": 236,
+          "clientMs": 236,
+          "inputTokens": 302,
+          "cost": 3.02e-05,
           "answers": {
             "dana_intern": {
               "type": "noul",
-              "noul": 0.00006832866168067699
+              "noul": 0.03
             },
             "lee_intern": {
               "type": "choice",
               "choice": "unknown",
               "probabilities": {
-                "yes": 0.0022594174788171458,
-                "no": 0.0005555511348795293,
-                "unknown": 0.9971850313863033
+                "yes": 0,
+                "no": 0.01,
+                "unknown": 0.99
               },
-              "confidence": 0.995777547079455
+              "confidence": 0.99
             }
           },
-          "at": 17367.90000000596
+          "at": 16441.29999999702
         }
       ]
     },
@@ -1615,79 +1615,79 @@
           "rep": 1,
           "ok": true,
           "status": 200,
-          "ms": 222.3999999910593,
-          "clientMs": 222.3999999910593,
-          "inputTokens": 241,
-          "cost": 0.00000482,
+          "ms": 181.8999999910593,
+          "clientMs": 181.8999999910593,
+          "inputTokens": 299,
+          "cost": 2.99e-05,
           "answers": {
             "shopify_2018": {
               "type": "noul",
-              "noul": 0.9992838960876682
+              "noul": 1
             },
             "current_employer": {
               "type": "choice",
               "choice": "stripe",
               "probabilities": {
-                "shopify": 0.00010284041665702644,
-                "stripe": 0.9998174306722946,
-                "unknown": 0.00007972891104841685
+                "shopify": 0.01,
+                "stripe": 0.97,
+                "unknown": 0.02
               },
-              "confidence": 0.9997261460084417
+              "confidence": 0.96
             }
           },
-          "at": 3937.2000000029802
+          "at": 4029.8999999910593
         },
         {
           "rep": 2,
           "ok": true,
           "status": 200,
-          "ms": 226.6000000089407,
-          "clientMs": 226.6000000089407,
-          "inputTokens": 241,
-          "cost": 0.00000482,
+          "ms": 294.40000000596046,
+          "clientMs": 294.40000000596046,
+          "inputTokens": 299,
+          "cost": 2.99e-05,
           "answers": {
             "shopify_2018": {
               "type": "noul",
-              "noul": 0.9992838960876682
+              "noul": 1
             },
             "current_employer": {
               "type": "choice",
               "choice": "stripe",
               "probabilities": {
-                "shopify": 0.00010284041665702644,
-                "stripe": 0.9998174306722946,
-                "unknown": 0.00007972891104841685
+                "shopify": 0.01,
+                "stripe": 0.97,
+                "unknown": 0.02
               },
-              "confidence": 0.9997261460084417
+              "confidence": 0.96
             }
           },
-          "at": 10646.10000000894
+          "at": 10601.59999999404
         },
         {
           "rep": 3,
           "ok": true,
           "status": 200,
-          "ms": 222.79999999701977,
-          "clientMs": 222.79999999701977,
-          "inputTokens": 241,
-          "cost": 0.00000482,
+          "ms": 170.5,
+          "clientMs": 170.5,
+          "inputTokens": 299,
+          "cost": 2.99e-05,
           "answers": {
             "shopify_2018": {
               "type": "noul",
-              "noul": 0.9992838960876682
+              "noul": 1
             },
             "current_employer": {
               "type": "choice",
               "choice": "stripe",
               "probabilities": {
-                "shopify": 0.00010284041665702644,
-                "stripe": 0.9998174306722946,
-                "unknown": 0.00007972891104841685
+                "shopify": 0.01,
+                "stripe": 0.97,
+                "unknown": 0.02
               },
-              "confidence": 0.9997261460084417
+              "confidence": 0.96
             }
           },
-          "at": 17592.5
+          "at": 16612.70000000298
         }
       ]
     },
@@ -1722,73 +1722,73 @@
           "rep": 1,
           "ok": true,
           "status": 200,
-          "ms": 278.1000000089407,
-          "clientMs": 278.1000000089407,
-          "inputTokens": 469,
-          "cost": 0.00000938,
+          "ms": 223,
+          "clientMs": 223,
+          "inputTokens": 533,
+          "cost": 5.33e-05,
           "answers": {
             "supported": {
               "type": "noul",
-              "noul": 0.014784449718825584
+              "noul": 0.01
             },
             "causation_shown": {
               "type": "noul",
-              "noul": 0.005630827159660565
+              "noul": 0
             },
             "association_found": {
               "type": "noul",
-              "noul": 0.9984116802901082
+              "noul": 1
             }
           },
-          "at": 4216.20000000298
+          "at": 4253.5999999940395
         },
         {
           "rep": 2,
           "ok": true,
           "status": 200,
-          "ms": 289.20000000298023,
-          "clientMs": 289.20000000298023,
-          "inputTokens": 469,
-          "cost": 0.00000938,
+          "ms": 280.20000000298023,
+          "clientMs": 280.20000000298023,
+          "inputTokens": 533,
+          "cost": 5.33e-05,
           "answers": {
             "supported": {
               "type": "noul",
-              "noul": 0.014784449718825584
+              "noul": 0.01
             },
             "causation_shown": {
               "type": "noul",
-              "noul": 0.005630827159660565
+              "noul": 0
             },
             "association_found": {
               "type": "noul",
-              "noul": 0.9984116802901082
+              "noul": 1
             }
           },
-          "at": 10936.300000011921
+          "at": 10882.5
         },
         {
           "rep": 3,
           "ok": true,
           "status": 200,
-          "ms": 312.29999999701977,
-          "clientMs": 312.29999999701977,
-          "inputTokens": 469,
-          "cost": 0.00000938,
+          "ms": 244.1000000089407,
+          "clientMs": 244.1000000089407,
+          "inputTokens": 533,
+          "cost": 5.33e-05,
           "answers": {
             "supported": {
               "type": "noul",
-              "noul": 0.014784449718825584
+              "noul": 0.01
             },
             "causation_shown": {
               "type": "noul",
-              "noul": 0.005630827159660565
+              "noul": 0
             },
             "association_found": {
               "type": "noul",
-              "noul": 0.9984116802901082
+              "noul": 1
             }
           },
-          "at": 17905.90000000596
+          "at": 16857.79999999702
         }
       ]
     },
@@ -1818,82 +1818,82 @@
           "rep": 1,
           "ok": true,
           "status": 200,
-          "ms": 298.30000001192093,
-          "clientMs": 298.30000001192093,
-          "inputTokens": 410,
-          "cost": 0.0000082,
+          "ms": 320.09999999403954,
+          "clientMs": 320.09999999403954,
+          "inputTokens": 365,
+          "cost": 3.65e-05,
           "answers": {
             "meets_all": {
               "type": "noul",
-              "noul": 0.3200811435479856
+              "noul": 0.64
             },
             "missing": {
               "type": "choice",
               "choice": "experience",
               "probabilities": {
-                "python": 0.00031223588957556226,
-                "experience": 0.9625325339324794,
-                "authorization": 0.0005394949810221815,
-                "none": 0.03661573519692279
+                "python": 0.05,
+                "experience": 0.89,
+                "authorization": 0.02,
+                "none": 0.04
               },
-              "confidence": 0.9500433785766392
+              "confidence": 0.85
             }
           },
-          "at": 4514.9000000059605
+          "at": 4574.29999999702
         },
         {
           "rep": 2,
           "ok": true,
           "status": 200,
-          "ms": 286.1000000089407,
-          "clientMs": 286.1000000089407,
-          "inputTokens": 410,
-          "cost": 0.0000082,
+          "ms": 282.70000000298023,
+          "clientMs": 282.70000000298023,
+          "inputTokens": 365,
+          "cost": 3.65e-05,
           "answers": {
             "meets_all": {
               "type": "noul",
-              "noul": 0.3200811435479856
+              "noul": 0.64
             },
             "missing": {
               "type": "choice",
               "choice": "experience",
               "probabilities": {
-                "python": 0.00031223588957556226,
-                "experience": 0.9625325339324794,
-                "authorization": 0.0005394949810221815,
-                "none": 0.03661573519692279
+                "python": 0.05,
+                "experience": 0.89,
+                "authorization": 0.02,
+                "none": 0.04
               },
-              "confidence": 0.9500433785766392
+              "confidence": 0.85
             }
           },
-          "at": 11224.40000000596
+          "at": 11166.5
         },
         {
           "rep": 3,
           "ok": true,
           "status": 200,
-          "ms": 235,
-          "clientMs": 235,
-          "inputTokens": 410,
-          "cost": 0.0000082,
+          "ms": 253.20000000298023,
+          "clientMs": 253.20000000298023,
+          "inputTokens": 365,
+          "cost": 3.65e-05,
           "answers": {
             "meets_all": {
               "type": "noul",
-              "noul": 0.3200811435479856
+              "noul": 0.64
             },
             "missing": {
               "type": "choice",
               "choice": "experience",
               "probabilities": {
-                "python": 0.00031223588957556226,
-                "experience": 0.9625325339324794,
-                "authorization": 0.0005394949810221815,
-                "none": 0.03661573519692279
+                "python": 0.05,
+                "experience": 0.89,
+                "authorization": 0.02,
+                "none": 0.04
               },
-              "confidence": 0.9500433785766392
+              "confidence": 0.85
             }
           },
-          "at": 18142.70000000298
+          "at": 17112.09999999404
         }
       ]
     },
@@ -1928,97 +1928,97 @@
           "rep": 1,
           "ok": true,
           "status": 200,
-          "ms": 307.79999999701977,
-          "clientMs": 307.79999999701977,
-          "inputTokens": 603,
-          "cost": 0.00001206,
+          "ms": 208.90000000596046,
+          "clientMs": 208.90000000596046,
+          "inputTokens": 571,
+          "cost": 5.71e-05,
           "answers": {
             "has_bug": {
               "type": "noul",
-              "noul": 0.9997745079086598
+              "noul": 1
             },
             "issue_type": {
               "type": "choice",
               "choice": "async_not_awaited",
               "probabilities": {
-                "async_not_awaited": 0.9996550930531728,
-                "sql_injection": 0.000039815650700487684,
-                "xss": 0.000013010993384813265,
-                "off_by_one": 0.000004670696029725714,
-                "none": 0.00028740960671203383
+                "async_not_awaited": 1,
+                "sql_injection": 0,
+                "xss": 0,
+                "off_by_one": 0,
+                "none": 0
               },
-              "confidence": 0.9995688663164659
+              "confidence": 1
             },
             "returns_zero": {
               "type": "noul",
-              "noul": 0.9993627990307403
+              "noul": 0.98
             }
           },
-          "at": 4823.5
+          "at": 4783.79999999702
         },
         {
           "rep": 2,
           "ok": true,
           "status": 200,
-          "ms": 304.29999999701977,
-          "clientMs": 304.29999999701977,
-          "inputTokens": 603,
-          "cost": 0.00001206,
+          "ms": 156.09999999403954,
+          "clientMs": 156.09999999403954,
+          "inputTokens": 571,
+          "cost": 5.71e-05,
           "answers": {
             "has_bug": {
               "type": "noul",
-              "noul": 0.9997745079086598
+              "noul": 1
             },
             "issue_type": {
               "type": "choice",
               "choice": "async_not_awaited",
               "probabilities": {
-                "async_not_awaited": 0.9996550930531728,
-                "sql_injection": 0.000039815650700487684,
-                "xss": 0.000013010993384813265,
-                "off_by_one": 0.000004670696029725714,
-                "none": 0.00028740960671203383
+                "async_not_awaited": 1,
+                "sql_injection": 0,
+                "xss": 0,
+                "off_by_one": 0,
+                "none": 0
               },
-              "confidence": 0.9995688663164659
+              "confidence": 1
             },
             "returns_zero": {
               "type": "noul",
-              "noul": 0.9993627990307403
+              "noul": 0.98
             }
           },
-          "at": 11529.60000000894
+          "at": 11323.59999999404
         },
         {
           "rep": 3,
           "ok": true,
           "status": 200,
-          "ms": 237.1000000089407,
-          "clientMs": 237.1000000089407,
-          "inputTokens": 603,
-          "cost": 0.00001206,
+          "ms": 282.40000000596046,
+          "clientMs": 282.40000000596046,
+          "inputTokens": 571,
+          "cost": 5.71e-05,
           "answers": {
             "has_bug": {
               "type": "noul",
-              "noul": 0.9997745079086598
+              "noul": 1
             },
             "issue_type": {
               "type": "choice",
               "choice": "async_not_awaited",
               "probabilities": {
-                "async_not_awaited": 0.9996550930531728,
-                "sql_injection": 0.000039815650700487684,
-                "xss": 0.000013010993384813265,
-                "off_by_one": 0.000004670696029725714,
-                "none": 0.00028740960671203383
+                "async_not_awaited": 1,
+                "sql_injection": 0,
+                "xss": 0,
+                "off_by_one": 0,
+                "none": 0
               },
-              "confidence": 0.9995688663164659
+              "confidence": 1
             },
             "returns_zero": {
               "type": "noul",
-              "noul": 0.9993627990307403
+              "noul": 0.98
             }
           },
-          "at": 18380.90000000596
+          "at": 17395.5
         }
       ]
     },
@@ -2048,85 +2048,85 @@
           "rep": 1,
           "ok": true,
           "status": 200,
-          "ms": 313.70000000298023,
-          "clientMs": 313.70000000298023,
-          "inputTokens": 507,
-          "cost": 0.00001014,
+          "ms": 276.30000001192093,
+          "clientMs": 276.30000001192093,
+          "inputTokens": 443,
+          "cost": 4.43e-05,
           "answers": {
             "eligible": {
               "type": "noul",
-              "noul": 0.0005374234836054645
+              "noul": 0.65
             },
             "reason": {
               "type": "choice",
               "choice": "window",
               "probabilities": {
-                "window": 0.9997881604546239,
-                "opened": 0.000056097178534057955,
-                "accessories": 0.000010904511276690782,
-                "final_sale": 0.0000036463273620475737,
-                "none": 0.0001411915282033253
+                "window": 0.93,
+                "opened": 0.02,
+                "accessories": 0,
+                "final_sale": 0,
+                "none": 0.05
               },
-              "confidence": 0.9997352005682799
+              "confidence": 0.91
             }
           },
-          "at": 5138
+          "at": 5061.20000000298
         },
         {
           "rep": 2,
           "ok": true,
           "status": 200,
-          "ms": 308.59999999403954,
-          "clientMs": 308.59999999403954,
-          "inputTokens": 507,
-          "cost": 0.00001014,
+          "ms": 154.20000000298023,
+          "clientMs": 154.20000000298023,
+          "inputTokens": 443,
+          "cost": 4.43e-05,
           "answers": {
             "eligible": {
               "type": "noul",
-              "noul": 0.0005374234836054645
+              "noul": 0.65
             },
             "reason": {
               "type": "choice",
               "choice": "window",
               "probabilities": {
-                "window": 0.9997881604546239,
-                "opened": 0.000056097178534057955,
-                "accessories": 0.000010904511276690782,
-                "final_sale": 0.0000036463273620475737,
-                "none": 0.0001411915282033253
+                "window": 0.93,
+                "opened": 0.02,
+                "accessories": 0,
+                "final_sale": 0,
+                "none": 0.05
               },
-              "confidence": 0.9997352005682799
+              "confidence": 0.91
             }
           },
-          "at": 11839.70000000298
+          "at": 11478.79999999702
         },
         {
           "rep": 3,
           "ok": true,
           "status": 200,
-          "ms": 239.8999999910593,
-          "clientMs": 239.8999999910593,
-          "inputTokens": 507,
-          "cost": 0.00001014,
+          "ms": 175.09999999403954,
+          "clientMs": 175.09999999403954,
+          "inputTokens": 443,
+          "cost": 4.43e-05,
           "answers": {
             "eligible": {
               "type": "noul",
-              "noul": 0.0005374234836054645
+              "noul": 0.65
             },
             "reason": {
               "type": "choice",
               "choice": "window",
               "probabilities": {
-                "window": 0.9997881604546239,
-                "opened": 0.000056097178534057955,
-                "accessories": 0.000010904511276690782,
-                "final_sale": 0.0000036463273620475737,
-                "none": 0.0001411915282033253
+                "window": 0.93,
+                "opened": 0.02,
+                "accessories": 0,
+                "final_sale": 0,
+                "none": 0.05
               },
-              "confidence": 0.9997352005682799
+              "confidence": 0.91
             }
           },
-          "at": 18621.70000000298
+          "at": 17573.39999999106
         }
       ]
     },
@@ -2196,178 +2196,178 @@
           "rep": 1,
           "ok": true,
           "status": 200,
-          "ms": 370.29999999701977,
-          "clientMs": 370.29999999701977,
-          "inputTokens": 1905,
-          "cost": 0.0000381,
+          "ms": 431.80000001192093,
+          "clientMs": 431.80000001192093,
+          "inputTokens": 1592,
+          "cost": 0.0001592,
           "answers": {
             "awd": {
               "type": "noul",
-              "noul": 0.9993519589020995
+              "noul": 1
             },
             "under_70k": {
               "type": "noul",
-              "noul": 0.999832016955586
+              "noul": 1
             },
             "had_accident": {
               "type": "noul",
-              "noul": 0.00029032599857594375
+              "noul": 0
             },
             "negotiable": {
               "type": "noul",
-              "noul": 0.4179682474340937
+              "noul": 1
             },
             "accepts_trade": {
               "type": "noul",
-              "noul": 0.0002679295918745742
+              "noul": 0
             },
             "card_payment": {
               "type": "noul",
-              "noul": 0.0007041254336641946
+              "noul": 0
             },
             "shipping": {
               "type": "noul",
-              "noul": 0.00035428543950705843
+              "noul": 0
             },
             "new_tires": {
               "type": "noul",
-              "noul": 0.9991956219354445
+              "noul": 1
             },
             "has_cosmetic_damage": {
               "type": "noul",
-              "noul": 0.999020263727233
+              "noul": 1
             },
             "owners": {
               "type": "choice",
               "choice": "one",
               "probabilities": {
-                "one": 0.9975471878401809,
-                "two": 0.0014587985841706627,
-                "three_plus": 0.0001283759247373985,
-                "unknown": 0.000865637650910914
+                "one": 0.97,
+                "two": 0.02,
+                "three_plus": 0,
+                "unknown": 0.01
               },
-              "confidence": 0.9967295837869079
+              "confidence": 0.96
             }
           },
-          "at": 5508.9000000059605
+          "at": 5493.70000000298
         },
         {
           "rep": 2,
           "ok": true,
           "status": 200,
-          "ms": 350.59999999403954,
-          "clientMs": 350.59999999403954,
-          "inputTokens": 1905,
-          "cost": 0.0000381,
+          "ms": 421.79999999701977,
+          "clientMs": 421.79999999701977,
+          "inputTokens": 1592,
+          "cost": 0.0001592,
           "answers": {
             "awd": {
               "type": "noul",
-              "noul": 0.9993519589020995
+              "noul": 1
             },
             "under_70k": {
               "type": "noul",
-              "noul": 0.999832016955586
+              "noul": 1
             },
             "had_accident": {
               "type": "noul",
-              "noul": 0.00029032599857594375
+              "noul": 0
             },
             "negotiable": {
               "type": "noul",
-              "noul": 0.4179682474340937
+              "noul": 1
             },
             "accepts_trade": {
               "type": "noul",
-              "noul": 0.0002679295918745742
+              "noul": 0
             },
             "card_payment": {
               "type": "noul",
-              "noul": 0.0007041254336641946
+              "noul": 0
             },
             "shipping": {
               "type": "noul",
-              "noul": 0.00035428543950705843
+              "noul": 0
             },
             "new_tires": {
               "type": "noul",
-              "noul": 0.9991956219354445
+              "noul": 1
             },
             "has_cosmetic_damage": {
               "type": "noul",
-              "noul": 0.999020263727233
+              "noul": 1
             },
             "owners": {
               "type": "choice",
               "choice": "one",
               "probabilities": {
-                "one": 0.9975471878401809,
-                "two": 0.0014587985841706627,
-                "three_plus": 0.0001283759247373985,
-                "unknown": 0.000865637650910914
+                "one": 0.97,
+                "two": 0.02,
+                "three_plus": 0,
+                "unknown": 0.01
               },
-              "confidence": 0.9967295837869079
+              "confidence": 0.96
             }
           },
-          "at": 12192.20000000298
+          "at": 11901.09999999404
         },
         {
           "rep": 3,
           "ok": true,
           "status": 200,
-          "ms": 380,
-          "clientMs": 380,
-          "inputTokens": 1905,
-          "cost": 0.0000381,
+          "ms": 206.79999999701977,
+          "clientMs": 206.79999999701977,
+          "inputTokens": 1592,
+          "cost": 0.0001592,
           "answers": {
             "awd": {
               "type": "noul",
-              "noul": 0.9993519589020995
+              "noul": 1
             },
             "under_70k": {
               "type": "noul",
-              "noul": 0.999832016955586
+              "noul": 1
             },
             "had_accident": {
               "type": "noul",
-              "noul": 0.00029032599857594375
+              "noul": 0
             },
             "negotiable": {
               "type": "noul",
-              "noul": 0.4179682474340937
+              "noul": 1
             },
             "accepts_trade": {
               "type": "noul",
-              "noul": 0.0002679295918745742
+              "noul": 0
             },
             "card_payment": {
               "type": "noul",
-              "noul": 0.0007041254336641946
+              "noul": 0
             },
             "shipping": {
               "type": "noul",
-              "noul": 0.00035428543950705843
+              "noul": 0
             },
             "new_tires": {
               "type": "noul",
-              "noul": 0.9991956219354445
+              "noul": 1
             },
             "has_cosmetic_damage": {
               "type": "noul",
-              "noul": 0.999020263727233
+              "noul": 1
             },
             "owners": {
               "type": "choice",
               "choice": "one",
               "probabilities": {
-                "one": 0.9975471878401809,
-                "two": 0.0014587985841706627,
-                "three_plus": 0.0001283759247373985,
-                "unknown": 0.000865637650910914
+                "one": 0.97,
+                "two": 0.02,
+                "three_plus": 0,
+                "unknown": 0.01
               },
-              "confidence": 0.9967295837869079
+              "confidence": 0.96
             }
           },
-          "at": 19003
+          "at": 17781.39999999106
         }
       ]
     },
@@ -2417,109 +2417,109 @@
           "rep": 1,
           "ok": true,
           "status": 200,
-          "ms": 297.30000001192093,
-          "clientMs": 297.30000001192093,
-          "inputTokens": 4118,
-          "cost": 0.00008236,
+          "ms": 281.29999999701977,
+          "clientMs": 281.29999999701977,
+          "inputTokens": 1464,
+          "cost": 0.0001464,
           "answers": {
             "hotel_ok": {
               "type": "noul",
-              "noul": 0.00006080328497241465
+              "noul": 0.89
             },
             "dinner_full": {
               "type": "noul",
-              "noul": 0.0009244885254352689
+              "noul": 0
             },
             "dinner_under_cap": {
               "type": "noul",
-              "noul": 0.9996900385127213
+              "noul": 1
             },
             "uber_ok": {
               "type": "noul",
-              "noul": 0.000013142315996310287
+              "noul": 0
             },
             "on_time": {
               "type": "noul",
-              "noul": 0.999927481129202
+              "noul": 1
             },
             "coffee_receipt": {
               "type": "noul",
-              "noul": 0.00001952615462131875
+              "noul": 0
             }
           },
-          "at": 5806.9000000059605
+          "at": 5776.5999999940395
         },
         {
           "rep": 2,
           "ok": true,
           "status": 200,
-          "ms": 250.29999999701977,
-          "clientMs": 250.29999999701977,
-          "inputTokens": 4118,
-          "cost": 0.00008236,
+          "ms": 192.90000000596046,
+          "clientMs": 192.90000000596046,
+          "inputTokens": 1464,
+          "cost": 0.0001464,
           "answers": {
             "hotel_ok": {
               "type": "noul",
-              "noul": 0.00006080328497241465
+              "noul": 0.89
             },
             "dinner_full": {
               "type": "noul",
-              "noul": 0.0009244885254352689
+              "noul": 0
             },
             "dinner_under_cap": {
               "type": "noul",
-              "noul": 0.9996900385127213
+              "noul": 1
             },
             "uber_ok": {
               "type": "noul",
-              "noul": 0.000013142315996310287
+              "noul": 0
             },
             "on_time": {
               "type": "noul",
-              "noul": 0.999927481129202
+              "noul": 1
             },
             "coffee_receipt": {
               "type": "noul",
-              "noul": 0.00001952615462131875
+              "noul": 0
             }
           },
-          "at": 12443.800000011921
+          "at": 12094.79999999702
         },
         {
           "rep": 3,
           "ok": true,
           "status": 200,
-          "ms": 251.90000000596046,
-          "clientMs": 251.90000000596046,
-          "inputTokens": 4118,
-          "cost": 0.00008236,
+          "ms": 429.6000000089407,
+          "clientMs": 429.6000000089407,
+          "inputTokens": 1464,
+          "cost": 0.0001464,
           "answers": {
             "hotel_ok": {
               "type": "noul",
-              "noul": 0.00006080328497241465
+              "noul": 0.89
             },
             "dinner_full": {
               "type": "noul",
-              "noul": 0.0009244885254352689
+              "noul": 0
             },
             "dinner_under_cap": {
               "type": "noul",
-              "noul": 0.9996900385127213
+              "noul": 1
             },
             "uber_ok": {
               "type": "noul",
-              "noul": 0.000013142315996310287
+              "noul": 0
             },
             "on_time": {
               "type": "noul",
-              "noul": 0.999927481129202
+              "noul": 1
             },
             "coffee_receipt": {
               "type": "noul",
-              "noul": 0.00001952615462131875
+              "noul": 0
             }
           },
-          "at": 19255.40000000596
+          "at": 18211.59999999404
         }
       ]
     },
@@ -2572,56 +2572,56 @@
           "rep": 1,
           "ok": true,
           "status": 200,
-          "ms": 262.6000000089407,
-          "clientMs": 262.6000000089407,
-          "inputTokens": 5275,
-          "cost": 0.0001055,
+          "ms": 318.70000000298023,
+          "clientMs": 318.70000000298023,
+          "inputTokens": 1544,
+          "cost": 0.0001544,
           "answers": {
             "root_cause": {
               "type": "choice",
               "choice": "expired_certificate",
               "probabilities": {
-                "expired_certificate": 0.9999571269438129,
-                "bad_deploy": 0.000025524147083444126,
-                "database": 0.00000474595158144504,
-                "ddos": 0.0000014329338934890841,
-                "dns": 0.00001117002362871051
+                "expired_certificate": 1,
+                "bad_deploy": 0,
+                "database": 0,
+                "ddos": 0,
+                "dns": 0
               },
-              "confidence": 0.999946408679766
+              "confidence": 1
             },
             "duration": {
               "type": "choice",
               "choice": "30_to_60",
               "probabilities": {
-                "under_15": 0.000009733886347709412,
-                "15_to_30": 0.00001465381068460183,
-                "30_to_60": 0.999115318810279,
-                "over_60": 0.000860293492688451
+                "under_15": 0,
+                "15_to_30": 0,
+                "30_to_60": 1,
+                "over_60": 0
               },
-              "confidence": 0.998820425080372
+              "confidence": 1
             },
             "all_failed": {
               "type": "noul",
-              "noul": 0.00009458295575043295
+              "noul": 0
             },
             "double_charged": {
               "type": "noul",
-              "noul": 0.00003098661606810804
+              "noul": 0
             },
             "alerting_owner": {
               "type": "choice",
               "choice": "Tomas",
               "probabilities": {
-                "Priya": 0.00003548756451945778,
-                "Tomas": 0.9998832536043054,
-                "Wei": 0.00006147094042111257,
-                "unassigned": 0.000019787890753984223
+                "Priya": 0,
+                "Tomas": 1,
+                "Wei": 0,
+                "unassigned": 0
               },
-              "confidence": 0.9998443381390739
+              "confidence": 1
             },
             "severity": {
               "type": "score",
-              "score": 1.9918429492409804,
+              "score": 2,
               "legend": {
                 "0": "SEV4 — cosmetic",
                 "1": "SEV3 — minor",
@@ -2629,70 +2629,70 @@
                 "3": "SEV1 — full outage"
               },
               "probabilities": {
-                "0": 0.0001015285372830655,
-                "1": 0.00994676676136977,
-                "2": 0.9879589316244306,
-                "3": 0.0019927730769164933
+                "0": 0,
+                "1": 0,
+                "2": 1,
+                "3": 0
               },
-              "confidence": 0.9878574030871476
+              "confidence": 1
             }
           },
-          "at": 6070.4000000059605
+          "at": 6096.20000000298
         },
         {
           "rep": 2,
           "ok": true,
           "status": 200,
-          "ms": 411.1000000089407,
-          "clientMs": 411.1000000089407,
-          "inputTokens": 5275,
-          "cost": 0.0001055,
+          "ms": 172.29999999701977,
+          "clientMs": 172.29999999701977,
+          "inputTokens": 1544,
+          "cost": 0.0001544,
           "answers": {
             "root_cause": {
               "type": "choice",
               "choice": "expired_certificate",
               "probabilities": {
-                "expired_certificate": 0.9999571269438129,
-                "bad_deploy": 0.000025524147083444126,
-                "database": 0.00000474595158144504,
-                "ddos": 0.0000014329338934890841,
-                "dns": 0.00001117002362871051
+                "expired_certificate": 1,
+                "bad_deploy": 0,
+                "database": 0,
+                "ddos": 0,
+                "dns": 0
               },
-              "confidence": 0.999946408679766
+              "confidence": 1
             },
             "duration": {
               "type": "choice",
               "choice": "30_to_60",
               "probabilities": {
-                "under_15": 0.000009733886347709412,
-                "15_to_30": 0.00001465381068460183,
-                "30_to_60": 0.999115318810279,
-                "over_60": 0.000860293492688451
+                "under_15": 0,
+                "15_to_30": 0,
+                "30_to_60": 1,
+                "over_60": 0
               },
-              "confidence": 0.998820425080372
+              "confidence": 1
             },
             "all_failed": {
               "type": "noul",
-              "noul": 0.00009458295575043295
+              "noul": 0
             },
             "double_charged": {
               "type": "noul",
-              "noul": 0.00003098661606810804
+              "noul": 0
             },
             "alerting_owner": {
               "type": "choice",
               "choice": "Tomas",
               "probabilities": {
-                "Priya": 0.00003548756451945778,
-                "Tomas": 0.9998832536043054,
-                "Wei": 0.00006147094042111257,
-                "unassigned": 0.000019787890753984223
+                "Priya": 0,
+                "Tomas": 1,
+                "Wei": 0,
+                "unassigned": 0
               },
-              "confidence": 0.9998443381390739
+              "confidence": 1
             },
             "severity": {
               "type": "score",
-              "score": 1.9918429492409804,
+              "score": 2,
               "legend": {
                 "0": "SEV4 — cosmetic",
                 "1": "SEV3 — minor",
@@ -2700,70 +2700,70 @@
                 "3": "SEV1 — full outage"
               },
               "probabilities": {
-                "0": 0.0001015285372830655,
-                "1": 0.00994676676136977,
-                "2": 0.9879589316244306,
-                "3": 0.0019927730769164933
+                "0": 0,
+                "1": 0,
+                "2": 1,
+                "3": 0
               },
-              "confidence": 0.9878574030871476
+              "confidence": 1
             }
           },
-          "at": 12855.800000011921
+          "at": 12268.09999999404
         },
         {
           "rep": 3,
           "ok": true,
           "status": 200,
-          "ms": 247.59999999403954,
-          "clientMs": 247.59999999403954,
-          "inputTokens": 5275,
-          "cost": 0.0001055,
+          "ms": 264.59999999403954,
+          "clientMs": 264.59999999403954,
+          "inputTokens": 1544,
+          "cost": 0.0001544,
           "answers": {
             "root_cause": {
               "type": "choice",
               "choice": "expired_certificate",
               "probabilities": {
-                "expired_certificate": 0.9999571269438129,
-                "bad_deploy": 0.000025524147083444126,
-                "database": 0.00000474595158144504,
-                "ddos": 0.0000014329338934890841,
-                "dns": 0.00001117002362871051
+                "expired_certificate": 1,
+                "bad_deploy": 0,
+                "database": 0,
+                "ddos": 0,
+                "dns": 0
               },
-              "confidence": 0.999946408679766
+              "confidence": 1
             },
             "duration": {
               "type": "choice",
               "choice": "30_to_60",
               "probabilities": {
-                "under_15": 0.000009733886347709412,
-                "15_to_30": 0.00001465381068460183,
-                "30_to_60": 0.999115318810279,
-                "over_60": 0.000860293492688451
+                "under_15": 0,
+                "15_to_30": 0,
+                "30_to_60": 1,
+                "over_60": 0
               },
-              "confidence": 0.998820425080372
+              "confidence": 1
             },
             "all_failed": {
               "type": "noul",
-              "noul": 0.00009458295575043295
+              "noul": 0
             },
             "double_charged": {
               "type": "noul",
-              "noul": 0.00003098661606810804
+              "noul": 0
             },
             "alerting_owner": {
               "type": "choice",
               "choice": "Tomas",
               "probabilities": {
-                "Priya": 0.00003548756451945778,
-                "Tomas": 0.9998832536043054,
-                "Wei": 0.00006147094042111257,
-                "unassigned": 0.000019787890753984223
+                "Priya": 0,
+                "Tomas": 1,
+                "Wei": 0,
+                "unassigned": 0
               },
-              "confidence": 0.9998443381390739
+              "confidence": 1
             },
             "severity": {
               "type": "score",
-              "score": 1.9918429492409804,
+              "score": 2,
               "legend": {
                 "0": "SEV4 — cosmetic",
                 "1": "SEV3 — minor",
@@ -2771,15 +2771,15 @@
                 "3": "SEV1 — full outage"
               },
               "probabilities": {
-                "0": 0.0001015285372830655,
-                "1": 0.00994676676136977,
-                "2": 0.9879589316244306,
-                "3": 0.0019927730769164933
+                "0": 0,
+                "1": 0,
+                "2": 1,
+                "3": 0
               },
-              "confidence": 0.9878574030871476
+              "confidence": 1
             }
           },
-          "at": 19503.5
+          "at": 18476.89999999106
         }
       ]
     },
@@ -2832,49 +2832,49 @@
           "rep": 1,
           "ok": true,
           "status": 200,
-          "ms": 306.1000000089407,
-          "clientMs": 306.1000000089407,
-          "inputTokens": 4557,
-          "cost": 0.00009114,
+          "ms": 335,
+          "clientMs": 335,
+          "inputTokens": 1472,
+          "cost": 0.0001472,
           "answers": {
             "main_objection": {
               "type": "choice",
               "choice": "security",
               "probabilities": {
-                "price": 0.00008941360629226279,
-                "security": 0.9997814462264928,
-                "features": 0.00008633802868167013,
-                "timing": 0.000042802138533155685
+                "price": 0,
+                "security": 1,
+                "features": 0,
+                "timing": 0
               },
-              "confidence": 0.999708594968657
+              "confidence": 1
             },
             "budget_ok": {
               "type": "noul",
-              "noul": 0.9998531949213867
+              "noul": 1
             },
             "signer_present": {
               "type": "noul",
-              "noul": 0.00010058590846007138
+              "noul": 0
             },
             "next_meeting": {
               "type": "noul",
-              "noul": 0.9999037644498073
+              "noul": 1
             },
             "stage": {
               "type": "choice",
               "choice": "evaluation",
               "probabilities": {
-                "discovery": 0.0006513169037739596,
-                "evaluation": 0.9865256080355506,
-                "negotiation": 0.012680137800519752,
-                "closed_won": 0.00008344762367994603,
-                "closed_lost": 0.00005948963647590331
+                "discovery": 0,
+                "evaluation": 1,
+                "negotiation": 0,
+                "closed_won": 0,
+                "closed_lost": 0
               },
-              "confidence": 0.9831570100444381
+              "confidence": 1
             },
             "interest": {
               "type": "score",
-              "score": 2.4579836332140075,
+              "score": 2.01,
               "legend": {
                 "0": "Not interested",
                 "1": "Lukewarm",
@@ -2882,63 +2882,63 @@
                 "3": "Very eager to buy"
               },
               "probabilities": {
-                "0": 0.000304526983995524,
-                "1": 0.0012538023488413304,
-                "2": 0.5385951811363232,
-                "3": 0.45984648953083995
+                "0": 0,
+                "1": 0,
+                "2": 0.99,
+                "3": 0.01
               },
-              "confidence": 0.5382906541523277
+              "confidence": 0.99
             }
           },
-          "at": 6377.100000008941
+          "at": 6432.0999999940395
         },
         {
           "rep": 2,
           "ok": true,
           "status": 200,
-          "ms": 298.70000000298023,
-          "clientMs": 298.70000000298023,
-          "inputTokens": 4557,
-          "cost": 0.00009114,
+          "ms": 286.6000000089407,
+          "clientMs": 286.6000000089407,
+          "inputTokens": 1472,
+          "cost": 0.0001472,
           "answers": {
             "main_objection": {
               "type": "choice",
               "choice": "security",
               "probabilities": {
-                "price": 0.00008941360629226279,
-                "security": 0.9997814462264928,
-                "features": 0.00008633802868167013,
-                "timing": 0.000042802138533155685
+                "price": 0,
+                "security": 1,
+                "features": 0,
+                "timing": 0
               },
-              "confidence": 0.999708594968657
+              "confidence": 1
             },
             "budget_ok": {
               "type": "noul",
-              "noul": 0.9998531949213867
+              "noul": 1
             },
             "signer_present": {
               "type": "noul",
-              "noul": 0.00010058590846007138
+              "noul": 0
             },
             "next_meeting": {
               "type": "noul",
-              "noul": 0.9999037644498073
+              "noul": 1
             },
             "stage": {
               "type": "choice",
               "choice": "evaluation",
               "probabilities": {
-                "discovery": 0.0006513169037739596,
-                "evaluation": 0.9865256080355506,
-                "negotiation": 0.012680137800519752,
-                "closed_won": 0.00008344762367994603,
-                "closed_lost": 0.00005948963647590331
+                "discovery": 0,
+                "evaluation": 1,
+                "negotiation": 0,
+                "closed_won": 0,
+                "closed_lost": 0
               },
-              "confidence": 0.9831570100444381
+              "confidence": 1
             },
             "interest": {
               "type": "score",
-              "score": 2.4579836332140075,
+              "score": 2.01,
               "legend": {
                 "0": "Not interested",
                 "1": "Lukewarm",
@@ -2946,63 +2946,63 @@
                 "3": "Very eager to buy"
               },
               "probabilities": {
-                "0": 0.000304526983995524,
-                "1": 0.0012538023488413304,
-                "2": 0.5385951811363232,
-                "3": 0.45984648953083995
+                "0": 0,
+                "1": 0,
+                "2": 0.99,
+                "3": 0.01
               },
-              "confidence": 0.5382906541523277
+              "confidence": 0.99
             }
           },
-          "at": 13156.40000000596
+          "at": 12555.79999999702
         },
         {
           "rep": 3,
           "ok": true,
           "status": 200,
-          "ms": 265.59999999403954,
-          "clientMs": 265.59999999403954,
-          "inputTokens": 4557,
-          "cost": 0.00009114,
+          "ms": 906.9000000059605,
+          "clientMs": 906.9000000059605,
+          "inputTokens": 1472,
+          "cost": 0.0001472,
           "answers": {
             "main_objection": {
               "type": "choice",
               "choice": "security",
               "probabilities": {
-                "price": 0.00008941360629226279,
-                "security": 0.9997814462264928,
-                "features": 0.00008633802868167013,
-                "timing": 0.000042802138533155685
+                "price": 0,
+                "security": 1,
+                "features": 0,
+                "timing": 0
               },
-              "confidence": 0.999708594968657
+              "confidence": 1
             },
             "budget_ok": {
               "type": "noul",
-              "noul": 0.9998531949213867
+              "noul": 1
             },
             "signer_present": {
               "type": "noul",
-              "noul": 0.00010058590846007138
+              "noul": 0
             },
             "next_meeting": {
               "type": "noul",
-              "noul": 0.9999037644498073
+              "noul": 1
             },
             "stage": {
               "type": "choice",
               "choice": "evaluation",
               "probabilities": {
-                "discovery": 0.0006513169037739596,
-                "evaluation": 0.9865256080355506,
-                "negotiation": 0.012680137800519752,
-                "closed_won": 0.00008344762367994603,
-                "closed_lost": 0.00005948963647590331
+                "discovery": 0,
+                "evaluation": 1,
+                "negotiation": 0,
+                "closed_won": 0,
+                "closed_lost": 0
               },
-              "confidence": 0.9831570100444381
+              "confidence": 1
             },
             "interest": {
               "type": "score",
-              "score": 2.4579836332140075,
+              "score": 2.01,
               "legend": {
                 "0": "Not interested",
                 "1": "Lukewarm",
@@ -3010,15 +3010,15 @@
                 "3": "Very eager to buy"
               },
               "probabilities": {
-                "0": 0.000304526983995524,
-                "1": 0.0012538023488413304,
-                "2": 0.5385951811363232,
-                "3": 0.45984648953083995
+                "0": 0,
+                "1": 0,
+                "2": 0.99,
+                "3": 0.01
               },
-              "confidence": 0.5382906541523277
+              "confidence": 0.99
             }
           },
-          "at": 19769.5
+          "at": 19384.79999999702
         }
       ]
     },
@@ -3053,97 +3053,97 @@
           "rep": 1,
           "ok": true,
           "status": 200,
-          "ms": 389.59999999403954,
-          "clientMs": 389.59999999403954,
-          "inputTokens": 11991,
-          "cost": 0.00023982,
+          "ms": 274.5,
+          "clientMs": 274.5,
+          "inputTokens": 3402,
+          "cost": 0.0003402,
           "answers": {
             "legal_threat": {
               "type": "noul",
-              "noul": 0.9999187632603866
+              "noul": 1
             },
             "legal_customer": {
               "type": "choice",
               "choice": "halvorsen",
               "probabilities": {
-                "acme": 0.000007549254814943272,
-                "bluefin": 0.000007533626434537108,
-                "cedar": 0.000009749246283517564,
-                "halvorsen": 0.9999398644851191,
-                "none": 0.000035303387347800804
+                "acme": 0,
+                "bluefin": 0,
+                "cedar": 0,
+                "halvorsen": 1,
+                "none": 0
               },
-              "confidence": 0.9999248306063987
+              "confidence": 1
             },
             "security_incident": {
               "type": "noul",
-              "noul": 0.00004124471135235127
+              "noul": 0
             }
           },
-          "at": 6769.100000008941
+          "at": 6707.5
         },
         {
           "rep": 2,
           "ok": true,
           "status": 200,
-          "ms": 440.30000001192093,
-          "clientMs": 440.30000001192093,
-          "inputTokens": 11991,
-          "cost": 0.00023982,
+          "ms": 233.3999999910593,
+          "clientMs": 233.3999999910593,
+          "inputTokens": 3402,
+          "cost": 0.0003402,
           "answers": {
             "legal_threat": {
               "type": "noul",
-              "noul": 0.9999187632603866
+              "noul": 1
             },
             "legal_customer": {
               "type": "choice",
               "choice": "halvorsen",
               "probabilities": {
-                "acme": 0.000007549254814943272,
-                "bluefin": 0.000007533626434537108,
-                "cedar": 0.000009749246283517564,
-                "halvorsen": 0.9999398644851191,
-                "none": 0.000035303387347800804
+                "acme": 0,
+                "bluefin": 0,
+                "cedar": 0,
+                "halvorsen": 1,
+                "none": 0
               },
-              "confidence": 0.9999248306063987
+              "confidence": 1
             },
             "security_incident": {
               "type": "noul",
-              "noul": 0.00004124471135235127
+              "noul": 0
             }
           },
-          "at": 13597.90000000596
+          "at": 12791
         },
         {
           "rep": 3,
           "ok": true,
           "status": 200,
-          "ms": 388.30000001192093,
-          "clientMs": 388.30000001192093,
-          "inputTokens": 11991,
-          "cost": 0.00023982,
+          "ms": 177.79999999701977,
+          "clientMs": 177.79999999701977,
+          "inputTokens": 3402,
+          "cost": 0.0003402,
           "answers": {
             "legal_threat": {
               "type": "noul",
-              "noul": 0.9999187632603866
+              "noul": 1
             },
             "legal_customer": {
               "type": "choice",
               "choice": "halvorsen",
               "probabilities": {
-                "acme": 0.000007549254814943272,
-                "bluefin": 0.000007533626434537108,
-                "cedar": 0.000009749246283517564,
-                "halvorsen": 0.9999398644851191,
-                "none": 0.000035303387347800804
+                "acme": 0,
+                "bluefin": 0,
+                "cedar": 0,
+                "halvorsen": 1,
+                "none": 0
               },
-              "confidence": 0.9999248306063987
+              "confidence": 1
             },
             "security_incident": {
               "type": "noul",
-              "noul": 0.00004124471135235127
+              "noul": 0
             }
           },
-          "at": 20158.30000001192
+          "at": 19564.70000000298
         }
       ]
     }
@@ -3155,38 +3155,38 @@
     "errorRate": 0,
     "latency": {
       "n": 72,
-      "mean": 278.90138888979953,
-      "min": 221.1000000089407,
-      "p50": 265.7499999925494,
-      "p90": 361.94000000208615,
-      "p95": 388.8850000038743,
-      "p99": 444.24400001019245,
-      "max": 453.90000000596046,
-      "stdev": 53.36242676001105
+      "mean": 270.64722222255335,
+      "min": 154.20000000298023,
+      "p50": 268.04999999701977,
+      "p90": 328.3900000035763,
+      "p95": 425.3100000023842,
+      "p99": 668.0560000017306,
+      "max": 906.9000000059605,
+      "stdev": 105.73333314988881
     },
-    "inputTokens": 102555,
-    "cost": 0.0020510999999999997,
-    "tokensPerSec": 5107.091813597257,
-    "msPerToken": 0.7253086379574589,
-    "requestsPerSec": 3.571517150722984,
-    "accuracy": 0.9868421052631579,
-    "quality": 0.9849633793276503,
+    "inputTokens": 50517,
+    "cost": 0.0050517,
+    "tokensPerSec": 2592.3968265340386,
+    "msPerToken": 0.5881925963218986,
+    "requestsPerSec": 3.6799844622883864,
+    "accuracy": 0.9473684210526315,
+    "quality": 0.9405263157894735,
     "consistency": 1,
     "byType": {
       "noul": {
         "questions": 51,
-        "accuracy": 0.9803921568627451,
-        "quality": 0.9800403303622786
+        "accuracy": 0.9215686274509803,
+        "quality": 0.9360784313725491
       },
       "score": {
         "questions": 5,
         "accuracy": 1,
-        "quality": 0.9959895152150642
+        "quality": 1
       },
       "choice": {
         "questions": 20,
         "accuracy": 1,
-        "quality": 0.9947606202174952
+        "quality": 0.937
       }
     },
     "byLength": [
@@ -3195,68 +3195,68 @@
         "cases": 17,
         "latency": {
           "n": 51,
-          "mean": 263.905882353584,
-          "min": 221.1000000089407,
-          "p50": 250.29999999701977,
-          "p90": 307.09999999403954,
-          "p95": 315.5,
-          "p99": 408.55000000447035,
-          "max": 453.90000000596046,
-          "stdev": 41.94349251991282
+          "mean": 260.7764705881184,
+          "min": 156.40000000596046,
+          "p50": 265.29999999701977,
+          "p90": 320.09999999403954,
+          "p95": 327.15000000596046,
+          "p99": 451.80000000447035,
+          "max": 570.5,
+          "stdev": 68.32468540308813
         },
-        "accuracy": 1,
-        "quality": 0.9866845894655022
+        "accuracy": 0.95,
+        "quality": 0.9285
       },
       {
         "key": "moyen",
         "cases": 3,
         "latency": {
           "n": 9,
-          "mean": 312.47777777579097,
-          "min": 237.1000000089407,
-          "p50": 308.59999999403954,
-          "p90": 372.2399999976158,
-          "p95": 376.1199999988079,
-          "p99": 379.2239999997616,
-          "max": 380,
-          "stdev": 50.51063694267343
+          "mean": 257.0444444467624,
+          "min": 154.20000000298023,
+          "p50": 208.90000000596046,
+          "p90": 423.8,
+          "p95": 427.80000000596044,
+          "p99": 431.00000001072885,
+          "max": 431.80000001192093,
+          "stdev": 106.6663151066568
         },
         "accuracy": 0.9333333333333333,
-        "quality": 0.9606227844863072
+        "quality": 0.9486666666666667
       },
       {
         "key": "long",
         "cases": 3,
         "latency": {
           "n": 9,
-          "mean": 287.9111111147536,
-          "min": 247.59999999403954,
-          "p50": 265.59999999403954,
-          "p90": 327.1000000089407,
-          "p95": 369.10000000894064,
-          "p99": 402.7000000089407,
-          "max": 411.1000000089407,
-          "stdev": 51.46079684064595
+          "mean": 354.21111111342907,
+          "min": 172.29999999701977,
+          "p50": 286.6000000089407,
+          "p90": 525.0600000083448,
+          "p95": 715.9800000071524,
+          "p99": 868.7160000061988,
+          "max": 906.9000000059605,
+          "stdev": 220.73994000182347
         },
-        "accuracy": 1,
-        "quality": 0.9989263388862546
+        "accuracy": 0.9444444444444444,
+        "quality": 0.9505555555555555
       },
       {
         "key": "très long",
         "cases": 1,
         "latency": {
           "n": 3,
-          "mean": 406.06666667262715,
-          "min": 388.30000001192093,
-          "p50": 389.59999999403954,
-          "p90": 430.16000000834464,
-          "p95": 435.2300000101328,
-          "p99": 439.2860000115633,
-          "max": 440.30000001192093,
-          "stdev": 29.65406099723578
+          "mean": 228.56666666269302,
+          "min": 177.79999999701977,
+          "p50": 233.3999999910593,
+          "p90": 266.27999999821185,
+          "p95": 270.38999999910595,
+          "p99": 273.67799999982117,
+          "max": 274.5,
+          "stdev": 48.53084929651877
         },
         "accuracy": 1,
-        "quality": 0.9999391276780512
+        "quality": 1
       }
     ],
     "byComplexity": [
@@ -3265,34 +3265,34 @@
         "cases": 19,
         "latency": {
           "n": 57,
-          "mean": 275.9719298259731,
-          "min": 221.1000000089407,
-          "p50": 256.59999999403954,
-          "p90": 315.70000000298023,
-          "p95": 393.8999999970197,
-          "p99": 446.28400000929827,
-          "max": 453.90000000596046,
-          "stdev": 53.5274887821936
+          "mean": 272.46315789536425,
+          "min": 154.20000000298023,
+          "p50": 270.79999999701977,
+          "p90": 325.0599999964237,
+          "p95": 353.92000000178774,
+          "p99": 718.5160000026218,
+          "max": 906.9000000059605,
+          "stdev": 111.12135681350567
         },
-        "accuracy": 1,
-        "quality": 0.990516673835992
+        "accuracy": 0.9272727272727272,
+        "quality": 0.9209090909090909
       },
       {
         "key": "simple",
         "cases": 5,
         "latency": {
           "n": 15,
-          "mean": 290.0333333323399,
-          "min": 225.5,
-          "p50": 281.19999998807907,
-          "p90": 367.459999999404,
-          "p95": 373.2099999979138,
-          "p99": 378.64199999958277,
-          "max": 380,
-          "stdev": 53.03451257188904
+          "mean": 263.74666666587194,
+          "min": 165.3999999910593,
+          "p50": 258.69999998807907,
+          "p90": 386.3200000017881,
+          "p95": 424.8000000014901,
+          "p99": 430.40000000983474,
+          "max": 431.80000001192093,
+          "stdev": 85.08794498465612
         },
-        "accuracy": 0.9523809523809523,
-        "quality": 0.9704190365677073
+        "accuracy": 1,
+        "quality": 0.9919047619047618
       }
     ],
     "byCategory": [
@@ -3301,14 +3301,14 @@
         "cases": 1,
         "latency": {
           "n": 3,
-          "mean": 306.4666666686535,
-          "min": 221.59999999403954,
-          "p50": 243.90000000596046,
-          "p90": 411.90000000596046,
-          "p95": 432.90000000596046,
-          "p99": 449.7000000059604,
-          "max": 453.90000000596046,
-          "stdev": 128.1669354176225
+          "mean": 296.53333333631355,
+          "min": 278.1000000089407,
+          "p50": 305.19999998807907,
+          "p90": 306.08000000715253,
+          "p95": 306.19000000953673,
+          "p99": 306.2780000114441,
+          "max": 306.30000001192093,
+          "stdev": 15.973206728194546
         },
         "accuracy": 1,
         "quality": 1
@@ -3318,187 +3318,187 @@
         "cases": 1,
         "latency": {
           "n": 3,
-          "mean": 283.06666666766006,
-          "min": 237.1000000089407,
-          "p50": 304.29999999701977,
-          "p90": 307.0999999970198,
-          "p95": 307.44999999701975,
-          "p99": 307.7299999970198,
-          "max": 307.79999999701977,
-          "stdev": 39.84674808294107
+          "mean": 215.80000000198683,
+          "min": 156.09999999403954,
+          "p50": 208.90000000596046,
+          "p90": 267.7000000059605,
+          "p95": 275.05000000596044,
+          "p99": 280.93000000596044,
+          "max": 282.40000000596046,
+          "stdev": 63.432089676375
         },
         "accuracy": 1,
-        "quality": 0.999597466664191
+        "quality": 0.9933333333333333
       },
       {
         "key": "Comprehension",
         "cases": 1,
         "latency": {
           "n": 3,
-          "mean": 297.1333333303531,
-          "min": 289.29999999701977,
-          "p50": 295,
-          "p90": 304.67999999523164,
-          "p95": 305.88999999463556,
-          "p99": 306.8579999941587,
-          "max": 307.09999999403954,
-          "stdev": 9.089737801348976
+          "mean": 297.566666662693,
+          "min": 263.40000000596046,
+          "p50": 304.59999999403954,
+          "p90": 320.67999998927115,
+          "p95": 322.68999998867514,
+          "p99": 324.2979999881983,
+          "max": 324.69999998807907,
+          "stdev": 31.249373317945235
         },
         "accuracy": 1,
-        "quality": 0.9995249822741136
+        "quality": 0.9866666666666667
       },
       {
         "key": "Extraction",
         "cases": 3,
         "latency": {
           "n": 9,
-          "mean": 321.40000000099343,
-          "min": 247.59999999403954,
-          "p50": 306.1000000089407,
-          "p90": 386.22000000178815,
-          "p95": 398.6600000053644,
-          "p99": 408.61200000822544,
-          "max": 411.1000000089407,
-          "stdev": 58.620388945580444
+          "mean": 371.6111111127668,
+          "min": 172.29999999701977,
+          "p50": 318.70000000298023,
+          "p90": 526.8200000107289,
+          "p95": 716.8600000083445,
+          "p99": 868.8920000064372,
+          "max": 906.9000000059605,
+          "stdev": 218.62687074614604
         },
-        "accuracy": 0.9545454545454546,
-        "quality": 0.9724260532237591
+        "accuracy": 1,
+        "quality": 0.9986363636363635
       },
       {
         "key": "Long context",
         "cases": 1,
         "latency": {
           "n": 3,
-          "mean": 406.06666667262715,
-          "min": 388.30000001192093,
-          "p50": 389.59999999403954,
-          "p90": 430.16000000834464,
-          "p95": 435.2300000101328,
-          "p99": 439.2860000115633,
-          "max": 440.30000001192093,
-          "stdev": 29.65406099723578
+          "mean": 228.56666666269302,
+          "min": 177.79999999701977,
+          "p50": 233.3999999910593,
+          "p90": 266.27999999821185,
+          "p95": 270.38999999910595,
+          "p99": 273.67799999982117,
+          "max": 274.5,
+          "stdev": 48.53084929651877
         },
         "accuracy": 1,
-        "quality": 0.9999391276780512
+        "quality": 1
       },
       {
         "key": "Moderation",
         "cases": 2,
         "latency": {
           "n": 6,
-          "mean": 260.75000000248355,
-          "min": 235.20000000298023,
-          "p50": 253.60000000149012,
-          "p90": 285.90000000596046,
-          "p95": 294.0000000074506,
-          "p99": 300.48000000864266,
-          "max": 302.1000000089407,
-          "stdev": 23.1178502485448
+          "mean": 257.45000000298023,
+          "min": 184.70000000298023,
+          "p50": 272.75,
+          "p90": 295.30000000447035,
+          "p95": 300.1500000022352,
+          "p99": 304.03000000044705,
+          "max": 305,
+          "stdev": 45.15062568707059
         },
         "accuracy": 1,
-        "quality": 0.9858438936246866
+        "quality": 0.9883333333333333
       },
       {
         "key": "Reasoning",
         "cases": 8,
         "latency": {
           "n": 24,
-          "mean": 260.35416666728753,
-          "min": 222.3999999910593,
-          "p50": 249.35000000149012,
-          "p90": 311.1899999961257,
-          "p95": 313.49000000208616,
-          "p99": 317.55000000298025,
-          "max": 318.70000000298023,
-          "stdev": 31.47567700302693
+          "mean": 260.1375000017385,
+          "min": 154.20000000298023,
+          "p50": 261.8999999985099,
+          "p90": 327.77000000476835,
+          "p95": 414.46500000804645,
+          "p99": 538.0930000020563,
+          "max": 570.5,
+          "stdev": 94.2267976873364
         },
-        "accuracy": 1,
-        "quality": 0.9972738877623841
+        "accuracy": 0.8571428571428571,
+        "quality": 0.8347619047619048
       },
       {
         "key": "Routing",
         "cases": 1,
         "latency": {
           "n": 3,
-          "mean": 254.23333332935968,
-          "min": 233.20000000298023,
-          "p50": 248.29999999701977,
-          "p90": 274.6199999898672,
-          "p95": 277.90999998897314,
-          "p99": 280.5419999882579,
-          "max": 281.19999998807907,
-          "stdev": 24.543906228774265
+          "mean": 186.59999999403954,
+          "min": 169.5,
+          "p50": 180.8999999910593,
+          "p90": 203.69999999105931,
+          "p95": 206.5499999910593,
+          "p99": 208.8299999910593,
+          "max": 209.3999999910593,
+          "stdev": 20.551642266425183
         },
         "accuracy": 1,
-        "quality": 0.9993629701625972
+        "quality": 0.935
       },
       {
         "key": "Security",
         "cases": 1,
         "latency": {
           "n": 3,
-          "mean": 291.8333333333333,
-          "min": 225.5,
-          "p50": 286.79999999701977,
-          "p90": 347.92000000178814,
-          "p95": 355.5600000023842,
-          "p99": 361.672000002861,
-          "max": 363.20000000298023,
-          "stdev": 68.98784917332199
+          "mean": 265.03333333631355,
+          "min": 170.79999999701977,
+          "p50": 291.20000000298023,
+          "p90": 324.7200000077486,
+          "p95": 328.91000000834464,
+          "p99": 332.2620000088215,
+          "max": 333.1000000089407,
+          "stdev": 84.25463390402166
         },
         "accuracy": 1,
-        "quality": 0.9997949075063245
+        "quality": 0.9966666666666666
       },
       {
         "key": "Sentiment",
         "cases": 3,
         "latency": {
           "n": 9,
-          "mean": 250.19999999966888,
-          "min": 221.1000000089407,
-          "p50": 233.59999999403954,
-          "p90": 290.0399999946356,
-          "p95": 298.91999999582765,
-          "p99": 306.02399999678136,
-          "max": 307.79999999701977,
-          "stdev": 32.696330069501435
+          "mean": 261.7111111101177,
+          "min": 164.09999999403954,
+          "p50": 270.79999999701977,
+          "p90": 299.58000000715253,
+          "p95": 307.1399999976158,
+          "p99": 313.1879999899864,
+          "max": 314.69999998807907,
+          "stdev": 44.887872651993135
         },
         "accuracy": 1,
-        "quality": 0.9980357926811237
+        "quality": 1
       },
       {
         "key": "Structured data",
         "cases": 1,
         "latency": {
           "n": 3,
-          "mean": 273.1333333402872,
-          "min": 235,
-          "p50": 286.1000000089407,
-          "p90": 295.86000001132487,
-          "p95": 297.08000001162293,
-          "p99": 298.05600001186133,
-          "max": 298.30000001192093,
-          "stdev": 33.5830810639714
+          "mean": 285.3333333333333,
+          "min": 253.20000000298023,
+          "p50": 282.70000000298023,
+          "p90": 312.6199999958277,
+          "p95": 316.3599999949336,
+          "p99": 319.3519999942183,
+          "max": 320.09999999403954,
+          "stdev": 33.52765027589162
         },
-        "accuracy": 1,
-        "quality": 0.821225695192247
+        "accuracy": 0.5,
+        "quality": 0.625
       },
       {
         "key": "Support",
         "cases": 1,
         "latency": {
           "n": 3,
-          "mean": 262.56666666766006,
-          "min": 240.1000000089407,
-          "p50": 271.20000000298023,
-          "p90": 275.35999999344347,
-          "p95": 275.8799999922514,
-          "p99": 276.2959999912977,
-          "max": 276.3999999910593,
-          "stdev": 19.629654429829255
+          "mean": 224.13333332538605,
+          "min": 165.3999999910593,
+          "p50": 248.29999999701977,
+          "p90": 256.6199999898672,
+          "p95": 257.65999998897314,
+          "p99": 258.4919999882579,
+          "max": 258.69999998807907,
+          "stdev": 51.12967175109147
         },
         "accuracy": 1,
-        "quality": 0.9940104404583172
+        "quality": 1
       }
     ],
     "byLang": [
@@ -3507,17 +3507,17 @@
         "cases": 24,
         "latency": {
           "n": 72,
-          "mean": 278.90138888979953,
-          "min": 221.1000000089407,
-          "p50": 265.7499999925494,
-          "p90": 361.94000000208615,
-          "p95": 388.8850000038743,
-          "p99": 444.24400001019245,
-          "max": 453.90000000596046,
-          "stdev": 53.36242676001105
+          "mean": 270.64722222255335,
+          "min": 154.20000000298023,
+          "p50": 268.04999999701977,
+          "p90": 328.3900000035763,
+          "p95": 425.3100000023842,
+          "p99": 668.0560000017306,
+          "max": 906.9000000059605,
+          "stdev": 105.73333314988881
         },
-        "accuracy": 0.9868421052631579,
-        "quality": 0.9849633793276503
+        "accuracy": 0.9473684210526315,
+        "quality": 0.9405263157894735
       }
     ]
   }

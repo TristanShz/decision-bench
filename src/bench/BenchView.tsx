@@ -6,7 +6,7 @@ import { load, save } from '../storage'
 import { CaseDetails } from './CaseDetails'
 import { CompareView } from './CompareView'
 import { ReportView } from './ReportView'
-import { runBenchmark, type Progress } from './runner'
+import { defaultReportName, runBenchmark, type Progress } from './runner'
 import { fmtMs, fmtPct, summarize } from './stats'
 import { deleteReport, downloadReport, listReports, loadReport, readReportFile, saveReport } from './store'
 import { DEFAULT_SUITE_ID, LEGACY_SUITE_ID, SUITES } from './suites'
@@ -105,7 +105,7 @@ export function BenchView({ models, onManage }: { models: ModelConnection[]; onM
           const elapsed = performance.now() - started
           setReport({
             id: 'live',
-            name: name.trim() || `${target.label} — en cours`,
+            name: name.trim() || defaultReportName(target.label, suite.name, 'en cours'),
             createdAt: new Date().toISOString(),
             suiteId: suite.id,
             suiteVersion: suite.version,
@@ -118,6 +118,8 @@ export function BenchView({ models, onManage }: { models: ModelConnection[]; onM
         },
       })
       setReport(final)
+      // Un nom saisi ne vaut que pour ce run : le suivant reprend le nom par défaut (modèle — benchmark — date).
+      setName('')
       if (!final.aborted) await persist(final)
     } catch (e) {
       setError((e as Error).message)
@@ -281,7 +283,7 @@ export function BenchView({ models, onManage }: { models: ModelConnection[]; onM
 
         <div className="section">
           <div className="grid2">
-            <div className="field"><label>Nom du rapport (optionnel)</label><input value={name} placeholder={`${target?.label ?? 'Modèle'} — ${new Date().toLocaleDateString('fr-FR')}`} onChange={(e) => setName(e.target.value)} /></div>
+            <div className="field"><label>Nom du rapport (optionnel)</label><input value={name} placeholder={defaultReportName(target?.label ?? 'Modèle', suite.name, new Date().toLocaleDateString('fr-FR'))} onChange={(e) => setName(e.target.value)} /></div>
             <div className="field"><label>Notes (config serveur, quantification…)</label><input value={notes} placeholder="ROCm + FA, -ub 8192" onChange={(e) => setNotes(e.target.value)} /></div>
           </div>
         </div>

@@ -1,14 +1,14 @@
 {
-  "id": "2026-10-10-122004-perplexity-decider-v1-api-openrouter",
-  "name": "Perplexity Decider v1 — API Openrouter — 10/10/2026 12:20:04",
-  "createdAt": "2026-10-10T10:20:04.569Z",
+  "id": "2026-10-10-121059-multilingual-gpt-6-luna-decisions-api-openrouter",
+  "name": "GPT 6 Luna Decisions — API Openrouter — Multilingue (suite d’origine) — 10/10/2026 12:10:59",
+  "createdAt": "2026-10-10T10:10:59.382Z",
   "suiteId": "multilingual",
   "suiteVersion": "1",
   "target": {
     "kind": "systemone",
-    "label": "Perplexity Decider v1 — API Openrouter",
+    "label": "GPT 6 Luna Decisions — API Openrouter",
     "url": "https://openrouter.ai/api/",
-    "model": "perplexity/pplx-decider-v1.1-27b",
+    "model": "openai/gpt-6-luna-decisions",
     "proxy": false
   },
   "settings": {
@@ -17,7 +17,7 @@
     "concurrency": 1,
     "timeoutMs": 120000
   },
-  "durationMs": 25127.800000000745,
+  "durationMs": 16769.300000000745,
   "cases": [
     {
       "meta": {
@@ -40,76 +40,76 @@
           "rep": 1,
           "ok": true,
           "status": 200,
-          "ms": 383.8999999985099,
-          "clientMs": 383.8999999985099,
-          "inputTokens": 122,
-          "cost": 0.00000244,
+          "ms": 324,
+          "clientMs": 324,
+          "inputTokens": 147,
+          "cost": 1.47e-05,
           "answers": {
             "language": {
               "type": "choice",
               "choice": "es",
               "probabilities": {
-                "fr": 0.0000757427403946122,
-                "en": 0.00006973703459203526,
-                "es": 0.9990683236404826,
-                "de": 0.000037667840159377396,
-                "it": 0.00017242675403562175,
-                "pt": 0.0005761019903356576
+                "fr": 0,
+                "en": 0.01,
+                "es": 0.98,
+                "de": 0,
+                "it": 0,
+                "pt": 0.01
               },
-              "confidence": 0.9988819883685791
+              "confidence": 0.98
             }
           },
-          "at": 384.69999999925494
+          "at": 324.69999999925494
         },
         {
           "rep": 2,
           "ok": true,
           "status": 200,
-          "ms": 314.9000000022352,
-          "clientMs": 314.9000000022352,
-          "inputTokens": 122,
-          "cost": 0.00000244,
+          "ms": 149.30000000074506,
+          "clientMs": 149.30000000074506,
+          "inputTokens": 147,
+          "cost": 1.47e-05,
           "answers": {
             "language": {
               "type": "choice",
               "choice": "es",
               "probabilities": {
-                "fr": 0.0000757427403946122,
-                "en": 0.00006973703459203526,
-                "es": 0.9990683236404826,
-                "de": 0.000037667840159377396,
-                "it": 0.00017242675403562175,
-                "pt": 0.0005761019903356576
+                "fr": 0,
+                "en": 0.01,
+                "es": 0.98,
+                "de": 0,
+                "it": 0,
+                "pt": 0.01
               },
-              "confidence": 0.9988819883685791
+              "confidence": 0.98
             }
           },
-          "at": 8033.10000000149
+          "at": 6218.699999999255
         },
         {
           "rep": 3,
           "ok": true,
           "status": 200,
-          "ms": 254.10000000149012,
-          "clientMs": 254.10000000149012,
-          "inputTokens": 122,
-          "cost": 0.00000244,
+          "ms": 217.19999999925494,
+          "clientMs": 217.19999999925494,
+          "inputTokens": 147,
+          "cost": 1.47e-05,
           "answers": {
             "language": {
               "type": "choice",
               "choice": "es",
               "probabilities": {
-                "fr": 0.0000757427403946122,
-                "en": 0.00006973703459203526,
-                "es": 0.9990683236404826,
-                "de": 0.000037667840159377396,
-                "it": 0.00017242675403562175,
-                "pt": 0.0005761019903356576
+                "fr": 0,
+                "en": 0.01,
+                "es": 0.98,
+                "de": 0,
+                "it": 0,
+                "pt": 0.01
               },
-              "confidence": 0.9988819883685791
+              "confidence": 0.98
             }
           },
-          "at": 17404.300000000745
+          "at": 12085.900000002235
         }
       ]
     },
@@ -142,18 +142,18 @@
           "rep": 1,
           "ok": true,
           "status": 200,
-          "ms": 299.0999999977648,
-          "clientMs": 299.0999999977648,
-          "inputTokens": 206,
-          "cost": 0.00000412,
+          "ms": 200.89999999850988,
+          "clientMs": 200.89999999850988,
+          "inputTokens": 284,
+          "cost": 2.84e-05,
           "answers": {
             "is_positive": {
               "type": "noul",
-              "noul": 0.9997513875925659
+              "noul": 1
             },
             "sentiment": {
               "type": "score",
-              "score": 3.7388192243050486,
+              "score": 3.99,
               "legend": {
                 "0": "Very negative",
                 "1": "Negative",
@@ -162,33 +162,33 @@
                 "4": "Very positive"
               },
               "probabilities": {
-                "0": 0.00039502002731376745,
-                "1": 0.00045546205616249513,
-                "2": 0.0011885886262542743,
-                "3": 0.2558571321647004,
-                "4": 0.7421037971255691
+                "0": 0,
+                "1": 0,
+                "2": 0,
+                "3": 0.01,
+                "4": 0.99
               },
-              "confidence": 0.8694096121525242
+              "confidence": 0.99
             }
           },
-          "at": 685
+          "at": 527
         },
         {
           "rep": 2,
           "ok": true,
           "status": 200,
-          "ms": 409.69999999925494,
-          "clientMs": 409.69999999925494,
-          "inputTokens": 206,
-          "cost": 0.00000412,
+          "ms": 425.8999999985099,
+          "clientMs": 425.8999999985099,
+          "inputTokens": 284,
+          "cost": 2.84e-05,
           "answers": {
             "is_positive": {
               "type": "noul",
-              "noul": 0.9997513875925659
+              "noul": 1
             },
             "sentiment": {
               "type": "score",
-              "score": 3.7388192243050486,
+              "score": 3.99,
               "legend": {
                 "0": "Very negative",
                 "1": "Negative",
@@ -197,33 +197,33 @@
                 "4": "Very positive"
               },
               "probabilities": {
-                "0": 0.00039502002731376745,
-                "1": 0.00045546205616249513,
-                "2": 0.0011885886262542743,
-                "3": 0.2558571321647004,
-                "4": 0.7421037971255691
+                "0": 0,
+                "1": 0,
+                "2": 0,
+                "3": 0.01,
+                "4": 0.99
               },
-              "confidence": 0.8694096121525242
+              "confidence": 0.99
             }
           },
-          "at": 8443.800000000745
+          "at": 6645.300000000745
         },
         {
           "rep": 3,
           "ok": true,
           "status": 200,
-          "ms": 293.79999999701977,
-          "clientMs": 293.79999999701977,
-          "inputTokens": 206,
-          "cost": 0.00000412,
+          "ms": 144.10000000149012,
+          "clientMs": 144.10000000149012,
+          "inputTokens": 284,
+          "cost": 2.84e-05,
           "answers": {
             "is_positive": {
               "type": "noul",
-              "noul": 0.9997513875925659
+              "noul": 1
             },
             "sentiment": {
               "type": "score",
-              "score": 3.7388192243050486,
+              "score": 3.99,
               "legend": {
                 "0": "Very negative",
                 "1": "Negative",
@@ -232,16 +232,16 @@
                 "4": "Very positive"
               },
               "probabilities": {
-                "0": 0.00039502002731376745,
-                "1": 0.00045546205616249513,
-                "2": 0.0011885886262542743,
-                "3": 0.2558571321647004,
-                "4": 0.7421037971255691
+                "0": 0,
+                "1": 0,
+                "2": 0,
+                "3": 0.01,
+                "4": 0.99
               },
-              "confidence": 0.8694096121525242
+              "confidence": 0.99
             }
           },
-          "at": 17701
+          "at": 12231.400000002235
         }
       ]
     },
@@ -279,22 +279,22 @@
           "rep": 1,
           "ok": true,
           "status": 200,
-          "ms": 361.5999999977648,
-          "clientMs": 361.5999999977648,
-          "inputTokens": 339,
-          "cost": 0.00000678,
+          "ms": 689,
+          "clientMs": 689,
+          "inputTokens": 454,
+          "cost": 4.54e-05,
           "answers": {
             "is_satisfied": {
               "type": "noul",
-              "noul": 0.004442981409874724
+              "noul": 0
             },
             "is_sarcastic": {
               "type": "noul",
-              "noul": 0.9997132134813519
+              "noul": 0.99
             },
             "sentiment": {
               "type": "score",
-              "score": 0.4096877730303587,
+              "score": 0.46,
               "legend": {
                 "0": "Très négatif",
                 "1": "Négatif",
@@ -303,37 +303,37 @@
                 "4": "Très positif"
               },
               "probabilities": {
-                "0": 0.6109749128942985,
-                "1": 0.3779495488123454,
-                "2": 0.0031683294743826535,
-                "3": 0.006227270006646038,
-                "4": 0.001679938812327481
+                "0": 0.87,
+                "1": 0.02,
+                "2": 0,
+                "3": 0,
+                "4": 0.11
               },
-              "confidence": 0.7951561134848206
+              "confidence": 0.62
             }
           },
-          "at": 1047.800000000745
+          "at": 1217.6000000014901
         },
         {
           "rep": 2,
           "ok": true,
           "status": 200,
-          "ms": 266.4000000022352,
-          "clientMs": 266.4000000022352,
-          "inputTokens": 339,
-          "cost": 0.00000678,
+          "ms": 171.80000000074506,
+          "clientMs": 171.80000000074506,
+          "inputTokens": 454,
+          "cost": 4.54e-05,
           "answers": {
             "is_satisfied": {
               "type": "noul",
-              "noul": 0.004477909260055347
+              "noul": 0
             },
             "is_sarcastic": {
               "type": "noul",
-              "noul": 0.9997132134813519
+              "noul": 0.99
             },
             "sentiment": {
               "type": "score",
-              "score": 0.4096877730303587,
+              "score": 0.46,
               "legend": {
                 "0": "Très négatif",
                 "1": "Négatif",
@@ -342,37 +342,37 @@
                 "4": "Très positif"
               },
               "probabilities": {
-                "0": 0.6109749128942985,
-                "1": 0.3779495488123454,
-                "2": 0.0031683294743826535,
-                "3": 0.006227270006646038,
-                "4": 0.001679938812327481
+                "0": 0.87,
+                "1": 0.02,
+                "2": 0,
+                "3": 0,
+                "4": 0.11
               },
-              "confidence": 0.7951561134848206
+              "confidence": 0.62
             }
           },
-          "at": 8710.800000000745
+          "at": 6818.5
         },
         {
           "rep": 3,
           "ok": true,
           "status": 200,
-          "ms": 471.8999999985099,
-          "clientMs": 471.8999999985099,
-          "inputTokens": 339,
-          "cost": 0.00000678,
+          "ms": 164.60000000149012,
+          "clientMs": 164.60000000149012,
+          "inputTokens": 454,
+          "cost": 4.54e-05,
           "answers": {
             "is_satisfied": {
               "type": "noul",
-              "noul": 0.004477909260055347
+              "noul": 0
             },
             "is_sarcastic": {
               "type": "noul",
-              "noul": 0.9997132134813519
+              "noul": 0.99
             },
             "sentiment": {
               "type": "score",
-              "score": 0.4096877730303587,
+              "score": 0.46,
               "legend": {
                 "0": "Très négatif",
                 "1": "Négatif",
@@ -381,16 +381,16 @@
                 "4": "Très positif"
               },
               "probabilities": {
-                "0": 0.6109749128942985,
-                "1": 0.3779495488123454,
-                "2": 0.0031683294743826535,
-                "3": 0.006227270006646038,
-                "4": 0.001679938812327481
+                "0": 0.87,
+                "1": 0.02,
+                "2": 0,
+                "3": 0,
+                "4": 0.11
               },
-              "confidence": 0.7951561134848206
+              "confidence": 0.62
             }
           },
-          "at": 18174.300000000745
+          "at": 12397.199999999255
         }
       ]
     },
@@ -425,94 +425,94 @@
           "rep": 1,
           "ok": true,
           "status": 200,
-          "ms": 348.80000000074506,
-          "clientMs": 348.80000000074506,
-          "inputTokens": 383,
-          "cost": 0.00000766,
+          "ms": 153.19999999925494,
+          "clientMs": 153.19999999925494,
+          "inputTokens": 470,
+          "cost": 4.7e-05,
           "answers": {
             "delivery_problem": {
               "type": "noul",
-              "noul": 0.9981289338756848
+              "noul": 1
             },
             "product_works": {
               "type": "noul",
-              "noul": 0.9996627878098009
+              "noul": 1
             },
             "main_complaint": {
               "type": "choice",
               "choice": "delivery",
               "probabilities": {
-                "delivery": 0.9998759423965128,
-                "quality": 0.00007991544427711714,
-                "price": 0.00002160363857559297,
-                "service": 0.00002253852063450224
+                "delivery": 1,
+                "quality": 0,
+                "price": 0,
+                "service": 0
               },
-              "confidence": 0.999834589862017
+              "confidence": 1
             }
           },
-          "at": 1398.1000000014901
+          "at": 1372.199999999255
         },
         {
           "rep": 2,
           "ok": true,
           "status": 200,
-          "ms": 345.5,
-          "clientMs": 345.5,
-          "inputTokens": 383,
-          "cost": 0.00000766,
+          "ms": 148.60000000149012,
+          "clientMs": 148.60000000149012,
+          "inputTokens": 470,
+          "cost": 4.7e-05,
           "answers": {
             "delivery_problem": {
               "type": "noul",
-              "noul": 0.9981289338756848
+              "noul": 1
             },
             "product_works": {
               "type": "noul",
-              "noul": 0.9996627878098009
+              "noul": 1
             },
             "main_complaint": {
               "type": "choice",
               "choice": "delivery",
               "probabilities": {
-                "delivery": 0.9998759423965128,
-                "quality": 0.00007991544427711714,
-                "price": 0.00002160363857559297,
-                "service": 0.00002253852063450224
+                "delivery": 1,
+                "quality": 0,
+                "price": 0,
+                "service": 0
               },
-              "confidence": 0.999834589862017
+              "confidence": 1
             }
           },
-          "at": 9056.89999999851
+          "at": 6968.900000002235
         },
         {
           "rep": 3,
           "ok": true,
           "status": 200,
-          "ms": 305.5,
-          "clientMs": 305.5,
-          "inputTokens": 383,
-          "cost": 0.00000766,
+          "ms": 262.80000000074506,
+          "clientMs": 262.80000000074506,
+          "inputTokens": 470,
+          "cost": 4.7e-05,
           "answers": {
             "delivery_problem": {
               "type": "noul",
-              "noul": 0.9981289338756848
+              "noul": 1
             },
             "product_works": {
               "type": "noul",
-              "noul": 0.9996627878098009
+              "noul": 1
             },
             "main_complaint": {
               "type": "choice",
               "choice": "delivery",
               "probabilities": {
-                "delivery": 0.9998759423965128,
-                "quality": 0.00007991544427711714,
-                "price": 0.00002160363857559297,
-                "service": 0.00002253852063450224
+                "delivery": 1,
+                "quality": 0,
+                "price": 0,
+                "service": 0
               },
-              "confidence": 0.999834589862017
+              "confidence": 1
             }
           },
-          "at": 18481.5
+          "at": 12661.5
         }
       ]
     },
@@ -550,124 +550,124 @@
           "rep": 1,
           "ok": true,
           "status": 200,
-          "ms": 284.3999999985099,
-          "clientMs": 284.3999999985099,
-          "inputTokens": 374,
-          "cost": 0.00000748,
+          "ms": 143.5,
+          "clientMs": 143.5,
+          "inputTokens": 432,
+          "cost": 4.32e-05,
           "answers": {
             "is_urgent": {
               "type": "noul",
-              "noul": 0.9995682378778071
+              "noul": 1
             },
             "department": {
               "type": "choice",
               "choice": "technical",
               "probabilities": {
-                "billing": 0.00006990997469851572,
-                "technical": 0.9998642739810274,
-                "sales": 0.00006581604427425265
+                "billing": 0,
+                "technical": 1,
+                "sales": 0
               },
-              "confidence": 0.9997964109715409
+              "confidence": 1
             },
             "frustration": {
               "type": "score",
-              "score": 1.9670005826650074,
+              "score": 1.93,
               "legend": {
                 "0": "Calm",
                 "1": "Frustrated",
                 "2": "Very angry"
               },
               "probabilities": {
-                "0": 0.0005448224659045334,
-                "1": 0.03190977240318353,
-                "2": 0.9675454051309119
+                "0": 0,
+                "1": 0.07,
+                "2": 0.93
               },
-              "confidence": 0.9670005826650074
+              "confidence": 0.9
             }
           },
-          "at": 1683.699999999255
+          "at": 1516.800000000745
         },
         {
           "rep": 2,
           "ok": true,
           "status": 200,
-          "ms": 296.1000000014901,
-          "clientMs": 296.1000000014901,
-          "inputTokens": 374,
-          "cost": 0.00000748,
+          "ms": 151.89999999850988,
+          "clientMs": 151.89999999850988,
+          "inputTokens": 432,
+          "cost": 4.32e-05,
           "answers": {
             "is_urgent": {
               "type": "noul",
-              "noul": 0.9995682378778071
+              "noul": 1
             },
             "department": {
               "type": "choice",
               "choice": "technical",
               "probabilities": {
-                "billing": 0.00006990997469851572,
-                "technical": 0.9998642739810274,
-                "sales": 0.00006581604427425265
+                "billing": 0,
+                "technical": 1,
+                "sales": 0
               },
-              "confidence": 0.9997964109715409
+              "confidence": 1
             },
             "frustration": {
               "type": "score",
-              "score": 1.9670005826650074,
+              "score": 1.93,
               "legend": {
                 "0": "Calm",
                 "1": "Frustrated",
                 "2": "Very angry"
               },
               "probabilities": {
-                "0": 0.0005448224659045334,
-                "1": 0.03190977240318353,
-                "2": 0.9675454051309119
+                "0": 0,
+                "1": 0.07,
+                "2": 0.93
               },
-              "confidence": 0.9670005826650074
+              "confidence": 0.9
             }
           },
-          "at": 9353.699999999255
+          "at": 7121.900000002235
         },
         {
           "rep": 3,
           "ok": true,
           "status": 200,
-          "ms": 296.29999999701977,
-          "clientMs": 296.29999999701977,
-          "inputTokens": 374,
-          "cost": 0.00000748,
+          "ms": 196.5,
+          "clientMs": 196.5,
+          "inputTokens": 432,
+          "cost": 4.32e-05,
           "answers": {
             "is_urgent": {
               "type": "noul",
-              "noul": 0.9995682378778071
+              "noul": 1
             },
             "department": {
               "type": "choice",
               "choice": "technical",
               "probabilities": {
-                "billing": 0.00006990997469851572,
-                "technical": 0.9998642739810274,
-                "sales": 0.00006581604427425265
+                "billing": 0,
+                "technical": 1,
+                "sales": 0
               },
-              "confidence": 0.9997964109715409
+              "confidence": 1
             },
             "frustration": {
               "type": "score",
-              "score": 1.9670005826650074,
+              "score": 1.93,
               "legend": {
                 "0": "Calm",
                 "1": "Frustrated",
                 "2": "Very angry"
               },
               "probabilities": {
-                "0": 0.0005448224659045334,
-                "1": 0.03190977240318353,
-                "2": 0.9675454051309119
+                "0": 0,
+                "1": 0.07,
+                "2": 0.93
               },
-              "confidence": 0.9670005826650074
+              "confidence": 0.9
             }
           },
-          "at": 18779.5
+          "at": 12859.699999999255
         }
       ]
     },
@@ -697,88 +697,88 @@
           "rep": 1,
           "ok": true,
           "status": 200,
-          "ms": 247.30000000074506,
-          "clientMs": 247.30000000074506,
-          "inputTokens": 292,
-          "cost": 0.00000584,
+          "ms": 167.19999999925494,
+          "clientMs": 167.19999999925494,
+          "inputTokens": 355,
+          "cost": 3.55e-05,
           "answers": {
             "tool": {
               "type": "choice",
               "choice": "create_reminder",
               "probabilities": {
-                "get_weather": 0.000051520540715667975,
-                "create_reminder": 0.9997117538323008,
-                "send_email": 0.00007352789495343413,
-                "search_web": 0.000024840396605948376,
-                "calendar_lookup": 0.00006308276167922217,
-                "none": 0.00007527457374504394
+                "get_weather": 0,
+                "create_reminder": 1,
+                "send_email": 0,
+                "search_web": 0,
+                "calendar_lookup": 0,
+                "none": 0
               },
-              "confidence": 0.999654104598761
+              "confidence": 1
             },
             "has_explicit_time": {
               "type": "noul",
-              "noul": 0.8647467416494617
+              "noul": 1
             }
           },
-          "at": 1931.8999999985099
+          "at": 1684.699999999255
         },
         {
           "rep": 2,
           "ok": true,
           "status": 200,
-          "ms": 410.1000000014901,
-          "clientMs": 410.1000000014901,
-          "inputTokens": 292,
-          "cost": 0.00000584,
+          "ms": 202.69999999925494,
+          "clientMs": 202.69999999925494,
+          "inputTokens": 355,
+          "cost": 3.55e-05,
           "answers": {
             "tool": {
               "type": "choice",
               "choice": "create_reminder",
               "probabilities": {
-                "get_weather": 0.000051520540715667975,
-                "create_reminder": 0.9997117538323008,
-                "send_email": 0.00007352789495343413,
-                "search_web": 0.000024840396605948376,
-                "calendar_lookup": 0.00006308276167922217,
-                "none": 0.00007527457374504394
+                "get_weather": 0,
+                "create_reminder": 1,
+                "send_email": 0,
+                "search_web": 0,
+                "calendar_lookup": 0,
+                "none": 0
               },
-              "confidence": 0.999654104598761
+              "confidence": 1
             },
             "has_explicit_time": {
               "type": "noul",
-              "noul": 0.8647467416494617
+              "noul": 1
             }
           },
-          "at": 9764.39999999851
+          "at": 7325.900000002235
         },
         {
           "rep": 3,
           "ok": true,
           "status": 200,
-          "ms": 312.4000000022352,
-          "clientMs": 312.4000000022352,
-          "inputTokens": 292,
-          "cost": 0.00000584,
+          "ms": 257.69999999925494,
+          "clientMs": 257.69999999925494,
+          "inputTokens": 355,
+          "cost": 3.55e-05,
           "answers": {
             "tool": {
               "type": "choice",
               "choice": "create_reminder",
               "probabilities": {
-                "get_weather": 0.000051520540715667975,
-                "create_reminder": 0.9997117538323008,
-                "send_email": 0.00007352789495343413,
-                "search_web": 0.000024840396605948376,
-                "calendar_lookup": 0.00006308276167922217,
-                "none": 0.00007527457374504394
+                "get_weather": 0,
+                "create_reminder": 1,
+                "send_email": 0,
+                "search_web": 0,
+                "calendar_lookup": 0,
+                "none": 0
               },
-              "confidence": 0.999654104598761
+              "confidence": 1
             },
             "has_explicit_time": {
               "type": "noul",
-              "noul": 0.8647467416494617
+              "noul": 1
             }
           },
-          "at": 19093.199999999255
+          "at": 13118.5
         }
       ]
     },
@@ -823,118 +823,118 @@
           "rep": 1,
           "ok": true,
           "status": 200,
-          "ms": 343.30000000074506,
-          "clientMs": 343.30000000074506,
-          "inputTokens": 656,
-          "cost": 0.00001312,
+          "ms": 162.90000000223517,
+          "clientMs": 162.90000000223517,
+          "inputTokens": 796,
+          "cost": 7.96e-05,
           "answers": {
             "is_spam": {
               "type": "noul",
-              "noul": 0.9992698005732248
+              "noul": 0.99
             },
             "has_personal_info": {
               "type": "noul",
-              "noul": 0.9996013835782402
+              "noul": 1
             },
             "is_toxic": {
               "type": "noul",
-              "noul": 0.0007171119835478769
+              "noul": 0
             },
             "is_threat": {
               "type": "noul",
-              "noul": 0.00008537941717865997
+              "noul": 0
             },
             "category": {
               "type": "choice",
               "choice": "spam",
               "probabilities": {
-                "ok": 0.0037603023101846914,
-                "spam": 0.9959455444833354,
-                "harassment": 0.00023127124616912053,
-                "hate": 0.00006288196031070499
+                "ok": 0,
+                "spam": 1,
+                "harassment": 0,
+                "hate": 0
               },
-              "confidence": 0.9945940593111139
+              "confidence": 1
             }
           },
-          "at": 2275.5
+          "at": 1848.4000000022352
         },
         {
           "rep": 2,
           "ok": true,
           "status": 200,
-          "ms": 314.5999999977648,
-          "clientMs": 314.5999999977648,
-          "inputTokens": 656,
-          "cost": 0.00001312,
+          "ms": 546.5,
+          "clientMs": 546.5,
+          "inputTokens": 796,
+          "cost": 7.96e-05,
           "answers": {
             "is_spam": {
               "type": "noul",
-              "noul": 0.9992698005732248
+              "noul": 0.99
             },
             "has_personal_info": {
               "type": "noul",
-              "noul": 0.9996013835782402
+              "noul": 1
             },
             "is_toxic": {
               "type": "noul",
-              "noul": 0.0007171119835478769
+              "noul": 0
             },
             "is_threat": {
               "type": "noul",
-              "noul": 0.00008537941717865997
+              "noul": 0
             },
             "category": {
               "type": "choice",
               "choice": "spam",
               "probabilities": {
-                "ok": 0.0037603023101846914,
-                "spam": 0.9959455444833354,
-                "harassment": 0.00023127124616912053,
-                "hate": 0.00006288196031070499
+                "ok": 0,
+                "spam": 1,
+                "harassment": 0,
+                "hate": 0
               },
-              "confidence": 0.9945940593111139
+              "confidence": 1
             }
           },
-          "at": 10081.5
+          "at": 7873.60000000149
         },
         {
           "rep": 3,
           "ok": true,
           "status": 200,
-          "ms": 460.30000000074506,
-          "clientMs": 460.30000000074506,
-          "inputTokens": 656,
-          "cost": 0.00001312,
+          "ms": 261.5,
+          "clientMs": 261.5,
+          "inputTokens": 796,
+          "cost": 7.96e-05,
           "answers": {
             "is_spam": {
               "type": "noul",
-              "noul": 0.9992698005732248
+              "noul": 0.99
             },
             "has_personal_info": {
               "type": "noul",
-              "noul": 0.9996013835782402
+              "noul": 1
             },
             "is_toxic": {
               "type": "noul",
-              "noul": 0.0007171119835478769
+              "noul": 0
             },
             "is_threat": {
               "type": "noul",
-              "noul": 0.00008537941717865997
+              "noul": 0
             },
             "category": {
               "type": "choice",
               "choice": "spam",
               "probabilities": {
-                "ok": 0.0037603023101846914,
-                "spam": 0.9959455444833354,
-                "harassment": 0.00023127124616912053,
-                "hate": 0.00006288196031070499
+                "ok": 0,
+                "spam": 1,
+                "harassment": 0,
+                "hate": 0
               },
-              "confidence": 0.9945940593111139
+              "confidence": 1
             }
           },
-          "at": 19555.199999999255
+          "at": 13381.300000000745
         }
       ]
     },
@@ -959,49 +959,49 @@
           "rep": 1,
           "ok": true,
           "status": 200,
-          "ms": 252.5,
-          "clientMs": 252.5,
-          "inputTokens": 177,
-          "cost": 0.00000354,
+          "ms": 393,
+          "clientMs": 393,
+          "inputTokens": 225,
+          "cost": 2.25e-05,
           "answers": {
             "same_person": {
               "type": "noul",
-              "noul": 0.24858958321803495
+              "noul": 0.59
             }
           },
-          "at": 2528.39999999851
+          "at": 2242.60000000149
         },
         {
           "rep": 2,
           "ok": true,
           "status": 200,
-          "ms": 243.19999999925494,
-          "clientMs": 243.19999999925494,
-          "inputTokens": 177,
-          "cost": 0.00000354,
+          "ms": 268.30000000074506,
+          "clientMs": 268.30000000074506,
+          "inputTokens": 225,
+          "cost": 2.25e-05,
           "answers": {
             "same_person": {
               "type": "noul",
-              "noul": 0.24858958321803495
+              "noul": 0.59
             }
           },
-          "at": 10326.39999999851
+          "at": 8143
         },
         {
           "rep": 3,
           "ok": true,
           "status": 200,
-          "ms": 240.19999999925494,
-          "clientMs": 240.19999999925494,
-          "inputTokens": 177,
-          "cost": 0.00000354,
+          "ms": 152.30000000074506,
+          "clientMs": 152.30000000074506,
+          "inputTokens": 225,
+          "cost": 2.25e-05,
           "answers": {
             "same_person": {
               "type": "noul",
-              "noul": 0.24858958321803495
+              "noul": 0.59
             }
           },
-          "at": 19797
+          "at": 13534.900000002235
         }
       ]
     },
@@ -1026,49 +1026,49 @@
           "rep": 1,
           "ok": true,
           "status": 200,
-          "ms": 297.69999999925494,
-          "clientMs": 297.69999999925494,
-          "inputTokens": 207,
-          "cost": 0.00000414,
+          "ms": 299.69999999925494,
+          "clientMs": 299.69999999925494,
+          "inputTokens": 244,
+          "cost": 2.44e-05,
           "answers": {
             "same_person": {
               "type": "noul",
-              "noul": 0.00006337539415226638
+              "noul": 0
             }
           },
-          "at": 2826.300000000745
+          "at": 2543.60000000149
         },
         {
           "rep": 2,
           "ok": true,
           "status": 200,
-          "ms": 370.69999999925494,
-          "clientMs": 370.69999999925494,
-          "inputTokens": 207,
-          "cost": 0.00000414,
+          "ms": 217.10000000149012,
+          "clientMs": 217.10000000149012,
+          "inputTokens": 244,
+          "cost": 2.44e-05,
           "answers": {
             "same_person": {
               "type": "noul",
-              "noul": 0.00006337539415226638
+              "noul": 0
             }
           },
-          "at": 10698
+          "at": 8361.199999999255
         },
         {
           "rep": 3,
           "ok": true,
           "status": 200,
-          "ms": 526.3999999985099,
-          "clientMs": 526.3999999985099,
-          "inputTokens": 207,
-          "cost": 0.00000414,
+          "ms": 161.19999999925494,
+          "clientMs": 161.19999999925494,
+          "inputTokens": 244,
+          "cost": 2.44e-05,
           "answers": {
             "same_person": {
               "type": "noul",
-              "noul": 0.00006337539415226638
+              "noul": 0
             }
           },
-          "at": 20325
+          "at": 13697.300000000745
         }
       ]
     },
@@ -1098,18 +1098,18 @@
           "rep": 1,
           "ok": true,
           "status": 200,
-          "ms": 299.5,
-          "clientMs": 299.5,
-          "inputTokens": 363,
-          "cost": 0.00000726,
+          "ms": 155.90000000223517,
+          "clientMs": 155.90000000223517,
+          "inputTokens": 362,
+          "cost": 3.62e-05,
           "answers": {
             "supported": {
               "type": "noul",
-              "noul": 0.002525949496305614
+              "noul": 0
             },
             "support_level": {
               "type": "score",
-              "score": 0.13052256073014096,
+              "score": 0,
               "legend": {
                 "0": "The source contradicts the claim",
                 "1": "The source does not address the claim",
@@ -1117,32 +1117,32 @@
                 "3": "The source fully supports the claim"
               },
               "probabilities": {
-                "0": 0.935158801364125,
-                "1": 0.0036879145128572276,
-                "2": 0.05662520615176946,
-                "3": 0.004528077971248265
+                "0": 1,
+                "1": 0,
+                "2": 0,
+                "3": 0
               },
-              "confidence": 0.9129849595132393
+              "confidence": 1
             }
           },
-          "at": 3126.5
+          "at": 2700.400000002235
         },
         {
           "rep": 2,
           "ok": true,
           "status": 200,
-          "ms": 282.30000000074506,
-          "clientMs": 282.30000000074506,
-          "inputTokens": 363,
-          "cost": 0.00000726,
+          "ms": 172.69999999925494,
+          "clientMs": 172.69999999925494,
+          "inputTokens": 362,
+          "cost": 3.62e-05,
           "answers": {
             "supported": {
               "type": "noul",
-              "noul": 0.002525949496305614
+              "noul": 0
             },
             "support_level": {
               "type": "score",
-              "score": 0.13052256073014096,
+              "score": 0,
               "legend": {
                 "0": "The source contradicts the claim",
                 "1": "The source does not address the claim",
@@ -1150,32 +1150,32 @@
                 "3": "The source fully supports the claim"
               },
               "probabilities": {
-                "0": 0.935158801364125,
-                "1": 0.0036879145128572276,
-                "2": 0.05662520615176946,
-                "3": 0.004528077971248265
+                "0": 1,
+                "1": 0,
+                "2": 0,
+                "3": 0
               },
-              "confidence": 0.9129849595132393
+              "confidence": 1
             }
           },
-          "at": 10981.800000000745
+          "at": 8535.10000000149
         },
         {
           "rep": 3,
           "ok": true,
           "status": 200,
-          "ms": 269.80000000074506,
-          "clientMs": 269.80000000074506,
-          "inputTokens": 363,
-          "cost": 0.00000726,
+          "ms": 208.5,
+          "clientMs": 208.5,
+          "inputTokens": 362,
+          "cost": 3.62e-05,
           "answers": {
             "supported": {
               "type": "noul",
-              "noul": 0.002525949496305614
+              "noul": 0
             },
             "support_level": {
               "type": "score",
-              "score": 0.13052256073014096,
+              "score": 0,
               "legend": {
                 "0": "The source contradicts the claim",
                 "1": "The source does not address the claim",
@@ -1183,15 +1183,15 @@
                 "3": "The source fully supports the claim"
               },
               "probabilities": {
-                "0": 0.935158801364125,
-                "1": 0.0036879145128572276,
-                "2": 0.05662520615176946,
-                "3": 0.004528077971248265
+                "0": 1,
+                "1": 0,
+                "2": 0,
+                "3": 0
               },
-              "confidence": 0.9129849595132393
+              "confidence": 1
             }
           },
-          "at": 20596.60000000149
+          "at": 13907.60000000149
         }
       ]
     },
@@ -1221,79 +1221,79 @@
           "rep": 1,
           "ok": true,
           "status": 200,
-          "ms": 342.5,
-          "clientMs": 342.5,
-          "inputTokens": 300,
-          "cost": 0.000006,
+          "ms": 260.3999999985099,
+          "clientMs": 260.3999999985099,
+          "inputTokens": 339,
+          "cost": 3.39e-05,
           "answers": {
             "change_correct": {
               "type": "noul",
-              "noul": 0.8199855594427604
+              "noul": 0.02
             },
             "error_direction": {
               "type": "choice",
-              "choice": "exact",
+              "choice": "too_little",
               "probabilities": {
-                "exact": 0.833647597490402,
-                "too_much": 0.0825447229301603,
-                "too_little": 0.08380767957943769
+                "exact": 0.05,
+                "too_much": 0.3,
+                "too_little": 0.65
               },
-              "confidence": 0.7504713962356028
+              "confidence": 0.48
             }
           },
-          "at": 3470.5
+          "at": 2961.900000002235
         },
         {
           "rep": 2,
           "ok": true,
           "status": 200,
-          "ms": 432.1000000014901,
-          "clientMs": 432.1000000014901,
-          "inputTokens": 300,
-          "cost": 0.000006,
+          "ms": 364.69999999925494,
+          "clientMs": 364.69999999925494,
+          "inputTokens": 339,
+          "cost": 3.39e-05,
           "answers": {
             "change_correct": {
               "type": "noul",
-              "noul": 0.8199855594427604
+              "noul": 0.02
             },
             "error_direction": {
               "type": "choice",
-              "choice": "exact",
+              "choice": "too_little",
               "probabilities": {
-                "exact": 0.833647597490402,
-                "too_much": 0.0825447229301603,
-                "too_little": 0.08380767957943769
+                "exact": 0.05,
+                "too_much": 0.3,
+                "too_little": 0.65
               },
-              "confidence": 0.7504713962356028
+              "confidence": 0.48
             }
           },
-          "at": 11414.89999999851
+          "at": 8900.800000000745
         },
         {
           "rep": 3,
           "ok": true,
           "status": 200,
-          "ms": 247.5,
-          "clientMs": 247.5,
-          "inputTokens": 300,
-          "cost": 0.000006,
+          "ms": 147.70000000298023,
+          "clientMs": 147.70000000298023,
+          "inputTokens": 339,
+          "cost": 3.39e-05,
           "answers": {
             "change_correct": {
               "type": "noul",
-              "noul": 0.8199855594427604
+              "noul": 0.02
             },
             "error_direction": {
               "type": "choice",
-              "choice": "exact",
+              "choice": "too_little",
               "probabilities": {
-                "exact": 0.833647597490402,
-                "too_much": 0.0825447229301603,
-                "too_little": 0.08380767957943769
+                "exact": 0.05,
+                "too_much": 0.3,
+                "too_little": 0.65
               },
-              "confidence": 0.7504713962356028
+              "confidence": 0.48
             }
           },
-          "at": 20846.39999999851
+          "at": 14056.400000002235
         }
       ]
     },
@@ -1323,79 +1323,79 @@
           "rep": 1,
           "ok": true,
           "status": 200,
-          "ms": 365.0999999977648,
-          "clientMs": 365.0999999977648,
-          "inputTokens": 251,
-          "cost": 0.00000502,
+          "ms": 140.30000000074506,
+          "clientMs": 140.30000000074506,
+          "inputTokens": 318,
+          "cost": 3.18e-05,
           "answers": {
             "paul_board": {
               "type": "noul",
-              "noul": 0.00004757287406556168
+              "noul": 0.06
             },
             "laura_board": {
               "type": "choice",
               "choice": "unknown",
               "probabilities": {
-                "yes": 0.0009627585266814584,
-                "no": 0.0003719957852607509,
-                "unknown": 0.9986652456880578
+                "yes": 0.06,
+                "no": 0,
+                "unknown": 0.94
               },
-              "confidence": 0.9979978685320867
+              "confidence": 0.91
             }
           },
-          "at": 3836.89999999851
+          "at": 3104.199999999255
         },
         {
           "rep": 2,
           "ok": true,
           "status": 200,
-          "ms": 289,
-          "clientMs": 289,
-          "inputTokens": 251,
-          "cost": 0.00000502,
+          "ms": 288.4000000022352,
+          "clientMs": 288.4000000022352,
+          "inputTokens": 318,
+          "cost": 3.18e-05,
           "answers": {
             "paul_board": {
               "type": "noul",
-              "noul": 0.00004757287406556168
+              "noul": 0.06
             },
             "laura_board": {
               "type": "choice",
               "choice": "unknown",
               "probabilities": {
-                "yes": 0.0009627585266814584,
-                "no": 0.0003719957852607509,
-                "unknown": 0.9986652456880578
+                "yes": 0.06,
+                "no": 0,
+                "unknown": 0.94
               },
-              "confidence": 0.9979978685320867
+              "confidence": 0.91
             }
           },
-          "at": 11705.10000000149
+          "at": 9190.60000000149
         },
         {
           "rep": 3,
           "ok": true,
           "status": 200,
-          "ms": 297.6000000014901,
-          "clientMs": 297.6000000014901,
-          "inputTokens": 251,
-          "cost": 0.00000502,
+          "ms": 164.09999999776483,
+          "clientMs": 164.09999999776483,
+          "inputTokens": 318,
+          "cost": 3.18e-05,
           "answers": {
             "paul_board": {
               "type": "noul",
-              "noul": 0.00004757287406556168
+              "noul": 0.06
             },
             "laura_board": {
               "type": "choice",
               "choice": "unknown",
               "probabilities": {
-                "yes": 0.0009627585266814584,
-                "no": 0.0003719957852607509,
-                "unknown": 0.9986652456880578
+                "yes": 0.06,
+                "no": 0,
+                "unknown": 0.94
               },
-              "confidence": 0.9979978685320867
+              "confidence": 0.91
             }
           },
-          "at": 21145.10000000149
+          "at": 14221.800000000745
         }
       ]
     },
@@ -1433,30 +1433,30 @@
           "rep": 1,
           "ok": true,
           "status": 200,
-          "ms": 295.6000000014901,
-          "clientMs": 295.6000000014901,
-          "inputTokens": 646,
-          "cost": 0.00001292,
+          "ms": 203.60000000149012,
+          "clientMs": 203.60000000149012,
+          "inputTokens": 532,
+          "cost": 5.32e-05,
           "answers": {
             "has_security_issue": {
               "type": "noul",
-              "noul": 0.9998727526144575
+              "noul": 1
             },
             "issue_type": {
               "type": "choice",
               "choice": "sql_injection",
               "probabilities": {
-                "sql_injection": 0.9998965579958364,
-                "xss": 0.00001425873377650306,
-                "race_condition": 0.000009701992140310504,
-                "performance": 0.000010466172061582966,
-                "none": 0.00006901510618514579
+                "sql_injection": 1,
+                "xss": 0,
+                "race_condition": 0,
+                "performance": 0,
+                "none": 0
               },
-              "confidence": 0.9998706974947954
+              "confidence": 1
             },
             "severity": {
               "type": "score",
-              "score": 3.8900632279566865,
+              "score": 3.27,
               "legend": {
                 "0": "None",
                 "1": "Low",
@@ -1465,45 +1465,45 @@
                 "4": "Critical"
               },
               "probabilities": {
-                "0": 0.0011351121722429185,
-                "1": 0.0009898679479203663,
-                "2": 0.0032724497035829547,
-                "3": 0.09588182010341474,
-                "4": 0.898720750072839
+                "0": 0,
+                "1": 0,
+                "2": 0.01,
+                "3": 0.71,
+                "4": 0.28
               },
-              "confidence": 0.9450316139783432
+              "confidence": 0.76
             }
           },
-          "at": 4133.39999999851
+          "at": 3308.699999999255
         },
         {
           "rep": 2,
           "ok": true,
           "status": 200,
-          "ms": 322.19999999925494,
-          "clientMs": 322.19999999925494,
-          "inputTokens": 646,
-          "cost": 0.00001292,
+          "ms": 179.60000000149012,
+          "clientMs": 179.60000000149012,
+          "inputTokens": 532,
+          "cost": 5.32e-05,
           "answers": {
             "has_security_issue": {
               "type": "noul",
-              "noul": 0.9998727526144575
+              "noul": 1
             },
             "issue_type": {
               "type": "choice",
               "choice": "sql_injection",
               "probabilities": {
-                "sql_injection": 0.9998965579958364,
-                "xss": 0.00001425873377650306,
-                "race_condition": 0.000009701992140310504,
-                "performance": 0.000010466172061582966,
-                "none": 0.00006901510618514579
+                "sql_injection": 1,
+                "xss": 0,
+                "race_condition": 0,
+                "performance": 0,
+                "none": 0
               },
-              "confidence": 0.9998706974947954
+              "confidence": 1
             },
             "severity": {
               "type": "score",
-              "score": 3.8900632279566865,
+              "score": 3.27,
               "legend": {
                 "0": "None",
                 "1": "Low",
@@ -1512,45 +1512,45 @@
                 "4": "Critical"
               },
               "probabilities": {
-                "0": 0.0011351121722429185,
-                "1": 0.0009898679479203663,
-                "2": 0.0032724497035829547,
-                "3": 0.09588182010341474,
-                "4": 0.898720750072839
+                "0": 0,
+                "1": 0,
+                "2": 0.01,
+                "3": 0.71,
+                "4": 0.28
               },
-              "confidence": 0.9450316139783432
+              "confidence": 0.76
             }
           },
-          "at": 12028.300000000745
+          "at": 9372.800000000745
         },
         {
           "rep": 3,
           "ok": true,
           "status": 200,
-          "ms": 280.1000000014901,
-          "clientMs": 280.1000000014901,
-          "inputTokens": 646,
-          "cost": 0.00001292,
+          "ms": 241.80000000074506,
+          "clientMs": 241.80000000074506,
+          "inputTokens": 532,
+          "cost": 5.32e-05,
           "answers": {
             "has_security_issue": {
               "type": "noul",
-              "noul": 0.9998727526144575
+              "noul": 1
             },
             "issue_type": {
               "type": "choice",
               "choice": "sql_injection",
               "probabilities": {
-                "sql_injection": 0.9998965579958364,
-                "xss": 0.00001425873377650306,
-                "race_condition": 0.000009701992140310504,
-                "performance": 0.000010466172061582966,
-                "none": 0.00006901510618514579
+                "sql_injection": 1,
+                "xss": 0,
+                "race_condition": 0,
+                "performance": 0,
+                "none": 0
               },
-              "confidence": 0.9998706974947954
+              "confidence": 1
             },
             "severity": {
               "type": "score",
-              "score": 3.8900632279566865,
+              "score": 3.27,
               "legend": {
                 "0": "None",
                 "1": "Low",
@@ -1559,16 +1559,16 @@
                 "4": "Critical"
               },
               "probabilities": {
-                "0": 0.0011351121722429185,
-                "1": 0.0009898679479203663,
-                "2": 0.0032724497035829547,
-                "3": 0.09588182010341474,
-                "4": 0.898720750072839
+                "0": 0,
+                "1": 0,
+                "2": 0.01,
+                "3": 0.71,
+                "4": 0.28
               },
-              "confidence": 0.9450316139783432
+              "confidence": 0.76
             }
           },
-          "at": 21426.89999999851
+          "at": 14464.60000000149
         }
       ]
     },
@@ -1598,18 +1598,18 @@
           "rep": 1,
           "ok": true,
           "status": 200,
-          "ms": 411.5999999977648,
-          "clientMs": 411.5999999977648,
-          "inputTokens": 289,
-          "cost": 0.00000578,
+          "ms": 222.30000000074506,
+          "clientMs": 222.30000000074506,
+          "inputTokens": 334,
+          "cost": 3.34e-05,
           "answers": {
             "call_emergency": {
               "type": "noul",
-              "noul": 0.9998764565844116
+              "noul": 1
             },
             "priority": {
               "type": "score",
-              "score": 2.997667527166058,
+              "score": 3,
               "legend": {
                 "0": "Consultation non urgente",
                 "1": "Consultation dans la journée",
@@ -1617,32 +1617,32 @@
                 "3": "Urgence vitale immédiate"
               },
               "probabilities": {
-                "0": 0.000029710246944549338,
-                "1": 0.000036004572055606786,
-                "2": 0.0021713329489964645,
-                "3": 0.9977629522320033
+                "0": 0,
+                "1": 0,
+                "2": 0,
+                "3": 1
               },
-              "confidence": 0.9984450181107057
+              "confidence": 1
             }
           },
-          "at": 4546.5
+          "at": 3531.60000000149
         },
         {
           "rep": 2,
           "ok": true,
           "status": 200,
-          "ms": 355.1000000014901,
-          "clientMs": 355.1000000014901,
-          "inputTokens": 289,
-          "cost": 0.00000578,
+          "ms": 157.10000000149012,
+          "clientMs": 157.10000000149012,
+          "inputTokens": 334,
+          "cost": 3.34e-05,
           "answers": {
             "call_emergency": {
               "type": "noul",
-              "noul": 0.9998764565844116
+              "noul": 1
             },
             "priority": {
               "type": "score",
-              "score": 2.997667527166058,
+              "score": 3,
               "legend": {
                 "0": "Consultation non urgente",
                 "1": "Consultation dans la journée",
@@ -1650,32 +1650,32 @@
                 "3": "Urgence vitale immédiate"
               },
               "probabilities": {
-                "0": 0.000029710246944549338,
-                "1": 0.000036004572055606786,
-                "2": 0.0021713329489964645,
-                "3": 0.9977629522320033
+                "0": 0,
+                "1": 0,
+                "2": 0,
+                "3": 1
               },
-              "confidence": 0.9984450181107057
+              "confidence": 1
             }
           },
-          "at": 12384.800000000745
+          "at": 9530.800000000745
         },
         {
           "rep": 3,
           "ok": true,
           "status": 200,
-          "ms": 290,
-          "clientMs": 290,
-          "inputTokens": 289,
-          "cost": 0.00000578,
+          "ms": 144.39999999850988,
+          "clientMs": 144.39999999850988,
+          "inputTokens": 334,
+          "cost": 3.34e-05,
           "answers": {
             "call_emergency": {
               "type": "noul",
-              "noul": 0.9998764565844116
+              "noul": 1
             },
             "priority": {
               "type": "score",
-              "score": 2.997667527166058,
+              "score": 3,
               "legend": {
                 "0": "Consultation non urgente",
                 "1": "Consultation dans la journée",
@@ -1683,15 +1683,15 @@
                 "3": "Urgence vitale immédiate"
               },
               "probabilities": {
-                "0": 0.000029710246944549338,
-                "1": 0.000036004572055606786,
-                "2": 0.0021713329489964645,
-                "3": 0.9977629522320033
+                "0": 0,
+                "1": 0,
+                "2": 0,
+                "3": 1
               },
-              "confidence": 0.9984450181107057
+              "confidence": 1
             }
           },
-          "at": 21718
+          "at": 14610.300000000745
         }
       ]
     },
@@ -1719,49 +1719,49 @@
           "rep": 1,
           "ok": true,
           "status": 200,
-          "ms": 252.40000000223517,
-          "clientMs": 252.40000000223517,
-          "inputTokens": 88,
-          "cost": 0.00000176,
+          "ms": 136.70000000298023,
+          "clientMs": 136.70000000298023,
+          "inputTokens": 156,
+          "cost": 1.56e-05,
           "answers": {
             "is_satisfied": {
               "type": "noul",
-              "noul": 0.8440427865225911
+              "noul": 0.5
             }
           },
-          "at": 4800.10000000149
+          "at": 3669.400000002235
         },
         {
           "rep": 2,
           "ok": true,
           "status": 200,
-          "ms": 214.60000000149012,
-          "clientMs": 214.60000000149012,
-          "inputTokens": 88,
-          "cost": 0.00000176,
+          "ms": 180.30000000074506,
+          "clientMs": 180.30000000074506,
+          "inputTokens": 156,
+          "cost": 1.56e-05,
           "answers": {
             "is_satisfied": {
               "type": "noul",
-              "noul": 0.8440427865225911
+              "noul": 0.5
             }
           },
-          "at": 12600.199999999255
+          "at": 9712.400000002235
         },
         {
           "rep": 3,
           "ok": true,
           "status": 200,
-          "ms": 232.5,
-          "clientMs": 232.5,
-          "inputTokens": 88,
-          "cost": 0.00000176,
+          "ms": 129.69999999925494,
+          "clientMs": 129.69999999925494,
+          "inputTokens": 156,
+          "cost": 1.56e-05,
           "answers": {
             "is_satisfied": {
               "type": "noul",
-              "noul": 0.8440427865225911
+              "noul": 0.5
             }
           },
-          "at": 21951.699999999255
+          "at": 14741
         }
       ]
     },
@@ -1799,22 +1799,22 @@
           "rep": 1,
           "ok": true,
           "status": 200,
-          "ms": 292.3999999985099,
-          "clientMs": 292.3999999985099,
-          "inputTokens": 635,
-          "cost": 0.0000127,
+          "ms": 277.5,
+          "clientMs": 277.5,
+          "inputTokens": 556,
+          "cost": 5.56e-05,
           "answers": {
             "mentions_scattering": {
               "type": "noul",
-              "noul": 0.9996475252437357
+              "noul": 1
             },
             "has_factual_error": {
               "type": "noul",
-              "noul": 0.0021298081999202093
+              "noul": 0.08
             },
             "grade": {
               "type": "score",
-              "score": 3.9767758205604227,
+              "score": 3.98,
               "legend": {
                 "0": "Off-topic or wrong",
                 "1": "Major misconceptions",
@@ -1823,37 +1823,37 @@
                 "4": "Complete, precise and well explained"
               },
               "probabilities": {
-                "0": 0.00015530305411144067,
-                "1": 0.0003060839766603056,
-                "2": 0.004197061466630696,
-                "3": 0.013290592359889792,
-                "4": 0.9820509591427079
+                "0": 0,
+                "1": 0,
+                "2": 0,
+                "3": 0.02,
+                "4": 0.98
               },
-              "confidence": 0.9883879102802111
+              "confidence": 0.98
             }
           },
-          "at": 5092.89999999851
+          "at": 3947.699999999255
         },
         {
           "rep": 2,
           "ok": true,
           "status": 200,
-          "ms": 304.80000000074506,
-          "clientMs": 304.80000000074506,
-          "inputTokens": 635,
-          "cost": 0.0000127,
+          "ms": 138.09999999776483,
+          "clientMs": 138.09999999776483,
+          "inputTokens": 556,
+          "cost": 5.56e-05,
           "answers": {
             "mentions_scattering": {
               "type": "noul",
-              "noul": 0.9996475252437357
+              "noul": 1
             },
             "has_factual_error": {
               "type": "noul",
-              "noul": 0.0021298081999202093
+              "noul": 0.08
             },
             "grade": {
               "type": "score",
-              "score": 3.9767758205604227,
+              "score": 3.98,
               "legend": {
                 "0": "Off-topic or wrong",
                 "1": "Major misconceptions",
@@ -1862,37 +1862,37 @@
                 "4": "Complete, precise and well explained"
               },
               "probabilities": {
-                "0": 0.00015530305411144067,
-                "1": 0.0003060839766603056,
-                "2": 0.004197061466630696,
-                "3": 0.013290592359889792,
-                "4": 0.9820509591427079
+                "0": 0,
+                "1": 0,
+                "2": 0,
+                "3": 0.02,
+                "4": 0.98
               },
-              "confidence": 0.9883879102802111
+              "confidence": 0.98
             }
           },
-          "at": 12906.60000000149
+          "at": 9851.5
         },
         {
           "rep": 3,
           "ok": true,
           "status": 200,
-          "ms": 395.5999999977648,
-          "clientMs": 395.5999999977648,
-          "inputTokens": 635,
-          "cost": 0.0000127,
+          "ms": 216.09999999776483,
+          "clientMs": 216.09999999776483,
+          "inputTokens": 556,
+          "cost": 5.56e-05,
           "answers": {
             "mentions_scattering": {
               "type": "noul",
-              "noul": 0.9996475252437357
+              "noul": 1
             },
             "has_factual_error": {
               "type": "noul",
-              "noul": 0.0021298081999202093
+              "noul": 0.08
             },
             "grade": {
               "type": "score",
-              "score": 3.9767758205604227,
+              "score": 3.98,
               "legend": {
                 "0": "Off-topic or wrong",
                 "1": "Major misconceptions",
@@ -1901,16 +1901,16 @@
                 "4": "Complete, precise and well explained"
               },
               "probabilities": {
-                "0": 0.00015530305411144067,
-                "1": 0.0003060839766603056,
-                "2": 0.004197061466630696,
-                "3": 0.013290592359889792,
-                "4": 0.9820509591427079
+                "0": 0,
+                "1": 0,
+                "2": 0,
+                "3": 0.02,
+                "4": 0.98
               },
-              "confidence": 0.9883879102802111
+              "confidence": 0.98
             }
           },
-          "at": 22348.39999999851
+          "at": 14958.400000002235
         }
       ]
     },
@@ -2010,229 +2010,229 @@
           "rep": 1,
           "ok": true,
           "status": 200,
-          "ms": 472.8999999985099,
-          "clientMs": 472.8999999985099,
-          "inputTokens": 2938,
-          "cost": 0.00005876,
+          "ms": 309.4000000022352,
+          "clientMs": 309.4000000022352,
+          "inputTokens": 2533,
+          "cost": 0.0002533,
           "answers": {
             "is_used": {
               "type": "noul",
-              "noul": 0.9998672776636243
+              "noul": 1
             },
             "is_smartphone": {
               "type": "noul",
-              "noul": 0.9998522549142137
+              "noul": 1
             },
             "is_android": {
               "type": "noul",
-              "noul": 0.00009433829337315971
+              "noul": 0
             },
             "mentions_storage": {
               "type": "noul",
-              "noul": 0.999814155400484
+              "noul": 1
             },
             "mentions_color": {
               "type": "noul",
-              "noul": 0.9998507617706992
+              "noul": 1
             },
             "price_under_500": {
               "type": "noul",
-              "noul": 0.9999263042820089
+              "noul": 1
             },
             "free_shipping": {
               "type": "noul",
-              "noul": 0.9998728966357247
+              "noul": 1
             },
             "battery_above_90": {
               "type": "noul",
-              "noul": 0.00010403387548670016
+              "noul": 0
             },
             "has_scratches": {
               "type": "noul",
-              "noul": 0.9991220499616468
+              "noul": 1
             },
             "screen_damaged": {
               "type": "noul",
-              "noul": 0.00007248799565144825
+              "noul": 0
             },
             "charger_included": {
               "type": "noul",
-              "noul": 0.00006731187606135113
+              "noul": 0
             },
             "original_box": {
               "type": "noul",
-              "noul": 0.9998636386285462
+              "noul": 1
             },
             "carrier_locked": {
               "type": "noul",
-              "noul": 0.0001130683308787119
+              "noul": 0
             },
             "pickup_possible": {
               "type": "noul",
-              "noul": 0.9998667979875591
+              "noul": 1
             },
             "professional_seller": {
               "type": "noul",
-              "noul": 0.00018517519837914096
+              "noul": 0
             },
             "accepts_trade": {
               "type": "noul",
-              "noul": 0.0006856344397626665
+              "noul": 0
             }
           },
-          "at": 5566.39999999851
+          "at": 4258
         },
         {
           "rep": 2,
           "ok": true,
           "status": 200,
-          "ms": 526.3000000007451,
-          "clientMs": 526.3000000007451,
-          "inputTokens": 2938,
-          "cost": 0.00005876,
+          "ms": 479.69999999925494,
+          "clientMs": 479.69999999925494,
+          "inputTokens": 2533,
+          "cost": 0.0002533,
           "answers": {
             "is_used": {
               "type": "noul",
-              "noul": 0.9998672776636243
+              "noul": 1
             },
             "is_smartphone": {
               "type": "noul",
-              "noul": 0.9998522549142137
+              "noul": 1
             },
             "is_android": {
               "type": "noul",
-              "noul": 0.00009433829337315971
+              "noul": 0
             },
             "mentions_storage": {
               "type": "noul",
-              "noul": 0.999814155400484
+              "noul": 1
             },
             "mentions_color": {
               "type": "noul",
-              "noul": 0.9998507617706992
+              "noul": 1
             },
             "price_under_500": {
               "type": "noul",
-              "noul": 0.9999263042820089
+              "noul": 1
             },
             "free_shipping": {
               "type": "noul",
-              "noul": 0.9998728966357247
+              "noul": 1
             },
             "battery_above_90": {
               "type": "noul",
-              "noul": 0.00010403387548670016
+              "noul": 0
             },
             "has_scratches": {
               "type": "noul",
-              "noul": 0.9991220499616468
+              "noul": 1
             },
             "screen_damaged": {
               "type": "noul",
-              "noul": 0.00007248799565144825
+              "noul": 0
             },
             "charger_included": {
               "type": "noul",
-              "noul": 0.00006731187606135113
+              "noul": 0
             },
             "original_box": {
               "type": "noul",
-              "noul": 0.9998636386285462
+              "noul": 1
             },
             "carrier_locked": {
               "type": "noul",
-              "noul": 0.0001130683308787119
+              "noul": 0
             },
             "pickup_possible": {
               "type": "noul",
-              "noul": 0.9998667979875591
+              "noul": 1
             },
             "professional_seller": {
               "type": "noul",
-              "noul": 0.00018517519837914096
+              "noul": 0
             },
             "accepts_trade": {
               "type": "noul",
-              "noul": 0.0006856344397626665
+              "noul": 0
             }
           },
-          "at": 13434.60000000149
+          "at": 10332.199999999255
         },
         {
           "rep": 3,
           "ok": true,
           "status": 200,
-          "ms": 517.8000000007451,
-          "clientMs": 517.8000000007451,
-          "inputTokens": 2938,
-          "cost": 0.00005876,
+          "ms": 204,
+          "clientMs": 204,
+          "inputTokens": 2533,
+          "cost": 0.0002533,
           "answers": {
             "is_used": {
               "type": "noul",
-              "noul": 0.9998672776636243
+              "noul": 1
             },
             "is_smartphone": {
               "type": "noul",
-              "noul": 0.9998522549142137
+              "noul": 1
             },
             "is_android": {
               "type": "noul",
-              "noul": 0.00009433829337315971
+              "noul": 0
             },
             "mentions_storage": {
               "type": "noul",
-              "noul": 0.999814155400484
+              "noul": 1
             },
             "mentions_color": {
               "type": "noul",
-              "noul": 0.9998507617706992
+              "noul": 1
             },
             "price_under_500": {
               "type": "noul",
-              "noul": 0.9999263042820089
+              "noul": 1
             },
             "free_shipping": {
               "type": "noul",
-              "noul": 0.9998728966357247
+              "noul": 1
             },
             "battery_above_90": {
               "type": "noul",
-              "noul": 0.00010403387548670016
+              "noul": 0
             },
             "has_scratches": {
               "type": "noul",
-              "noul": 0.9991220499616468
+              "noul": 1
             },
             "screen_damaged": {
               "type": "noul",
-              "noul": 0.00007248799565144825
+              "noul": 0
             },
             "charger_included": {
               "type": "noul",
-              "noul": 0.00006731187606135113
+              "noul": 0
             },
             "original_box": {
               "type": "noul",
-              "noul": 0.9998636386285462
+              "noul": 1
             },
             "carrier_locked": {
               "type": "noul",
-              "noul": 0.0001130683308787119
+              "noul": 0
             },
             "pickup_possible": {
               "type": "noul",
-              "noul": 0.9998667979875591
+              "noul": 1
             },
             "professional_seller": {
               "type": "noul",
-              "noul": 0.00018517519837914096
+              "noul": 0
             },
             "accepts_trade": {
               "type": "noul",
-              "noul": 0.0006856344397626665
+              "noul": 0
             }
           },
-          "at": 22868.10000000149
+          "at": 15163.60000000149
         }
       ]
     },
@@ -2267,91 +2267,91 @@
           "rep": 1,
           "ok": true,
           "status": 200,
-          "ms": 242.80000000074506,
-          "clientMs": 242.80000000074506,
-          "inputTokens": 993,
-          "cost": 0.00001986,
+          "ms": 216.89999999850988,
+          "clientMs": 216.89999999850988,
+          "inputTokens": 596,
+          "cost": 5.96e-05,
           "answers": {
             "paid_total_over_2000": {
               "type": "noul",
-              "noul": 0.6824119278474999
+              "noul": 0.22
             },
             "top_customer": {
               "type": "choice",
               "choice": "Globex",
               "probabilities": {
-                "Acme": 0.000716491839697359,
-                "Globex": 0.9953391143300547,
-                "Initech": 0.00394439383024803
+                "Acme": 0.35,
+                "Globex": 0.49,
+                "Initech": 0.16
               },
-              "confidence": 0.9930086714950821
+              "confidence": 0.24
             },
             "has_refund": {
               "type": "noul",
-              "noul": 0.999970139567788
+              "noul": 1
             }
           },
-          "at": 5809.800000000745
+          "at": 4475.900000002235
         },
         {
           "rep": 2,
           "ok": true,
           "status": 200,
-          "ms": 256.5,
-          "clientMs": 256.5,
-          "inputTokens": 993,
-          "cost": 0.00001986,
+          "ms": 305.9000000022352,
+          "clientMs": 305.9000000022352,
+          "inputTokens": 596,
+          "cost": 5.96e-05,
           "answers": {
             "paid_total_over_2000": {
               "type": "noul",
-              "noul": 0.6824119278474999
+              "noul": 0.22
             },
             "top_customer": {
               "type": "choice",
               "choice": "Globex",
               "probabilities": {
-                "Acme": 0.000716491839697359,
-                "Globex": 0.9953391143300547,
-                "Initech": 0.00394439383024803
+                "Acme": 0.35,
+                "Globex": 0.49,
+                "Initech": 0.16
               },
-              "confidence": 0.9930086714950821
+              "confidence": 0.24
             },
             "has_refund": {
               "type": "noul",
-              "noul": 0.999970139567788
+              "noul": 1
             }
           },
-          "at": 13692.699999999255
+          "at": 10639.60000000149
         },
         {
           "rep": 3,
           "ok": true,
           "status": 200,
-          "ms": 423.0999999977648,
-          "clientMs": 423.0999999977648,
-          "inputTokens": 993,
-          "cost": 0.00001986,
+          "ms": 161.39999999850988,
+          "clientMs": 161.39999999850988,
+          "inputTokens": 596,
+          "cost": 5.96e-05,
           "answers": {
             "paid_total_over_2000": {
               "type": "noul",
-              "noul": 0.6824119278474999
+              "noul": 0.22
             },
             "top_customer": {
               "type": "choice",
               "choice": "Globex",
               "probabilities": {
-                "Acme": 0.000716491839697359,
-                "Globex": 0.9953391143300547,
-                "Initech": 0.00394439383024803
+                "Acme": 0.35,
+                "Globex": 0.49,
+                "Initech": 0.16
               },
-              "confidence": 0.9930086714950821
+              "confidence": 0.24
             },
             "has_refund": {
               "type": "noul",
-              "noul": 0.999970139567788
+              "noul": 1
             }
           },
-          "at": 23293
+          "at": 15326.60000000149
         }
       ]
     },
@@ -2401,42 +2401,42 @@
           "rep": 1,
           "ok": true,
           "status": 200,
-          "ms": 279.8999999985099,
-          "clientMs": 279.8999999985099,
-          "inputTokens": 3289,
-          "cost": 0.00006578,
+          "ms": 519.2999999970198,
+          "clientMs": 519.2999999970198,
+          "inputTokens": 1326,
+          "cost": 0.0001326,
           "answers": {
             "category": {
               "type": "choice",
               "choice": "retard_livraison",
               "probabilities": {
-                "retard_livraison": 0.9998376463432657,
-                "produit_defectueux": 0.000025844948451602218,
-                "facturation": 0.000025497724204398975,
-                "demande_devis": 0.000006283521638773484,
-                "autre": 0.00010472746243961743
+                "retard_livraison": 1,
+                "produit_defectueux": 0,
+                "facturation": 0,
+                "demande_devis": 0,
+                "autre": 0
               },
-              "confidence": 0.9997970579290821
+              "confidence": 1
             },
             "has_deadline": {
               "type": "noul",
-              "noul": 0.9998846303824684
+              "noul": 1
             },
             "threatens_escalation": {
               "type": "noul",
-              "noul": 0.9997584653091997
+              "noul": 1
             },
             "asks_refund": {
               "type": "noul",
-              "noul": 0.9997282097785322
+              "noul": 1
             },
             "is_insulting": {
               "type": "noul",
-              "noul": 0.00011256333166346583
+              "noul": 0
             },
             "tone": {
               "type": "score",
-              "score": 1.9990683546365875,
+              "score": 2,
               "legend": {
                 "0": "Cordial et détendu",
                 "1": "Neutre",
@@ -2444,56 +2444,56 @@
                 "3": "Agressif"
               },
               "probabilities": {
-                "0": 0.00010097746943599528,
-                "1": 0.0009973050015929783,
-                "2": 0.9986341029519185,
-                "3": 0.00026761457705250225
+                "0": 0,
+                "1": 0,
+                "2": 1,
+                "3": 0
               },
-              "confidence": 0.9985331254824825
+              "confidence": 1
             }
           },
-          "at": 6090
+          "at": 4996.800000000745
         },
         {
           "rep": 2,
           "ok": true,
           "status": 200,
-          "ms": 485.30000000074506,
-          "clientMs": 485.30000000074506,
-          "inputTokens": 3289,
-          "cost": 0.00006578,
+          "ms": 195.59999999776483,
+          "clientMs": 195.59999999776483,
+          "inputTokens": 1326,
+          "cost": 0.0001326,
           "answers": {
             "category": {
               "type": "choice",
               "choice": "retard_livraison",
               "probabilities": {
-                "retard_livraison": 0.9998376463432657,
-                "produit_defectueux": 0.000025844948451602218,
-                "facturation": 0.000025497724204398975,
-                "demande_devis": 0.000006283521638773484,
-                "autre": 0.00010472746243961743
+                "retard_livraison": 1,
+                "produit_defectueux": 0,
+                "facturation": 0,
+                "demande_devis": 0,
+                "autre": 0
               },
-              "confidence": 0.9997970579290821
+              "confidence": 1
             },
             "has_deadline": {
               "type": "noul",
-              "noul": 0.9998846303824684
+              "noul": 1
             },
             "threatens_escalation": {
               "type": "noul",
-              "noul": 0.9997584653091997
+              "noul": 1
             },
             "asks_refund": {
               "type": "noul",
-              "noul": 0.9997282097785322
+              "noul": 1
             },
             "is_insulting": {
               "type": "noul",
-              "noul": 0.00011256333166346583
+              "noul": 0
             },
             "tone": {
               "type": "score",
-              "score": 1.9990683546365875,
+              "score": 2,
               "legend": {
                 "0": "Cordial et détendu",
                 "1": "Neutre",
@@ -2501,56 +2501,56 @@
                 "3": "Agressif"
               },
               "probabilities": {
-                "0": 0.00010097746943599528,
-                "1": 0.0009973050015929783,
-                "2": 0.9986341029519185,
-                "3": 0.00026761457705250225
+                "0": 0,
+                "1": 0,
+                "2": 1,
+                "3": 0
               },
-              "confidence": 0.9985331254824825
+              "confidence": 1
             }
           },
-          "at": 14179
+          "at": 10836.900000002235
         },
         {
           "rep": 3,
           "ok": true,
           "status": 200,
-          "ms": 407.4000000022352,
-          "clientMs": 407.4000000022352,
-          "inputTokens": 3289,
-          "cost": 0.00006578,
+          "ms": 223.39999999850988,
+          "clientMs": 223.39999999850988,
+          "inputTokens": 1326,
+          "cost": 0.0001326,
           "answers": {
             "category": {
               "type": "choice",
               "choice": "retard_livraison",
               "probabilities": {
-                "retard_livraison": 0.9998376463432657,
-                "produit_defectueux": 0.000025844948451602218,
-                "facturation": 0.000025497724204398975,
-                "demande_devis": 0.000006283521638773484,
-                "autre": 0.00010472746243961743
+                "retard_livraison": 1,
+                "produit_defectueux": 0,
+                "facturation": 0,
+                "demande_devis": 0,
+                "autre": 0
               },
-              "confidence": 0.9997970579290821
+              "confidence": 1
             },
             "has_deadline": {
               "type": "noul",
-              "noul": 0.9998846303824684
+              "noul": 1
             },
             "threatens_escalation": {
               "type": "noul",
-              "noul": 0.9997584653091997
+              "noul": 1
             },
             "asks_refund": {
               "type": "noul",
-              "noul": 0.9997282097785322
+              "noul": 1
             },
             "is_insulting": {
               "type": "noul",
-              "noul": 0.00011256333166346583
+              "noul": 0
             },
             "tone": {
               "type": "score",
-              "score": 1.9990683546365875,
+              "score": 2,
               "legend": {
                 "0": "Cordial et détendu",
                 "1": "Neutre",
@@ -2558,15 +2558,15 @@
                 "3": "Agressif"
               },
               "probabilities": {
-                "0": 0.00010097746943599528,
-                "1": 0.0009973050015929783,
-                "2": 0.9986341029519185,
-                "3": 0.00026761457705250225
+                "0": 0,
+                "1": 0,
+                "2": 1,
+                "3": 0
               },
-              "confidence": 0.9985331254824825
+              "confidence": 1
             }
           },
-          "at": 23703.699999999255
+          "at": 15551.300000000745
         }
       ]
     },
@@ -2611,45 +2611,45 @@
           "rep": 1,
           "ok": true,
           "status": 200,
-          "ms": 304.20000000298023,
-          "clientMs": 304.20000000298023,
-          "inputTokens": 3881,
-          "cost": 0.00007762,
+          "ms": 388.5999999977648,
+          "clientMs": 388.5999999977648,
+          "inputTokens": 1359,
+          "cost": 0.0001359,
           "answers": {
             "launch_decision": {
               "type": "choice",
               "choice": "maintenu",
               "probabilities": {
-                "maintenu": 0.9999576872806788,
-                "decale_janvier": 0.000013617373381929443,
-                "annule": 0.000009580680722579816,
-                "pas_de_decision": 0.000019114665216567103
+                "maintenu": 1,
+                "decale_janvier": 0,
+                "annule": 0,
+                "pas_de_decision": 0
               },
-              "confidence": 0.999943583040905
+              "confidence": 1
             },
             "go_nogo_owner": {
               "type": "choice",
               "choice": "Karim",
               "probabilities": {
-                "Sophie": 0.00011282047175281676,
-                "Karim": 0.9997760304714443,
-                "Ines": 0.0000421345776309907,
-                "Marc": 0.000015561067378176666,
-                "Julie": 0.00005345341179362862
+                "Sophie": 0,
+                "Karim": 1,
+                "Ines": 0,
+                "Marc": 0,
+                "Julie": 0
               },
-              "confidence": 0.9997200380893053
+              "confidence": 1
             },
             "budget_approved": {
               "type": "noul",
-              "noul": 0.0000650595172719508
+              "noul": 0
             },
             "sales_can_announce_date": {
               "type": "noul",
-              "noul": 0.00008858062018878148
+              "noul": 0
             },
             "tension_level": {
               "type": "score",
-              "score": 0.9568356227443885,
+              "score": 0.97,
               "legend": {
                 "0": "Aucune tension",
                 "1": "Désaccords légers et constructifs",
@@ -2657,59 +2657,59 @@
                 "3": "Conflit ouvert"
               },
               "probabilities": {
-                "0": 0.04996330616699767,
-                "1": 0.943708074832961,
-                "2": 0.005858309088695986,
-                "3": 0.00047030991134513426
+                "0": 0.03,
+                "1": 0.97,
+                "2": 0,
+                "3": 0
               },
-              "confidence": 0.943237764921616
+              "confidence": 0.97
             }
           },
-          "at": 6394.699999999255
+          "at": 5386.699999999255
         },
         {
           "rep": 2,
           "ok": true,
           "status": 200,
-          "ms": 298.30000000074506,
-          "clientMs": 298.30000000074506,
-          "inputTokens": 3881,
-          "cost": 0.00007762,
+          "ms": 163.5,
+          "clientMs": 163.5,
+          "inputTokens": 1359,
+          "cost": 0.0001359,
           "answers": {
             "launch_decision": {
               "type": "choice",
               "choice": "maintenu",
               "probabilities": {
-                "maintenu": 0.9999576872806788,
-                "decale_janvier": 0.000013617373381929443,
-                "annule": 0.000009580680722579816,
-                "pas_de_decision": 0.000019114665216567103
+                "maintenu": 1,
+                "decale_janvier": 0,
+                "annule": 0,
+                "pas_de_decision": 0
               },
-              "confidence": 0.999943583040905
+              "confidence": 1
             },
             "go_nogo_owner": {
               "type": "choice",
               "choice": "Karim",
               "probabilities": {
-                "Sophie": 0.00011282047175281676,
-                "Karim": 0.9997760304714443,
-                "Ines": 0.0000421345776309907,
-                "Marc": 0.000015561067378176666,
-                "Julie": 0.00005345341179362862
+                "Sophie": 0,
+                "Karim": 1,
+                "Ines": 0,
+                "Marc": 0,
+                "Julie": 0
               },
-              "confidence": 0.9997200380893053
+              "confidence": 1
             },
             "budget_approved": {
               "type": "noul",
-              "noul": 0.0000650595172719508
+              "noul": 0
             },
             "sales_can_announce_date": {
               "type": "noul",
-              "noul": 0.00008858062018878148
+              "noul": 0
             },
             "tension_level": {
               "type": "score",
-              "score": 0.9568356227443885,
+              "score": 0.97,
               "legend": {
                 "0": "Aucune tension",
                 "1": "Désaccords légers et constructifs",
@@ -2717,59 +2717,59 @@
                 "3": "Conflit ouvert"
               },
               "probabilities": {
-                "0": 0.04996330616699767,
-                "1": 0.943708074832961,
-                "2": 0.005858309088695986,
-                "3": 0.00047030991134513426
+                "0": 0.03,
+                "1": 0.97,
+                "2": 0,
+                "3": 0
               },
-              "confidence": 0.943237764921616
+              "confidence": 0.97
             }
           },
-          "at": 14478.89999999851
+          "at": 11001.300000000745
         },
         {
           "rep": 3,
           "ok": true,
           "status": 200,
-          "ms": 308.1000000014901,
-          "clientMs": 308.1000000014901,
-          "inputTokens": 3881,
-          "cost": 0.00007762,
+          "ms": 206.5,
+          "clientMs": 206.5,
+          "inputTokens": 1359,
+          "cost": 0.0001359,
           "answers": {
             "launch_decision": {
               "type": "choice",
               "choice": "maintenu",
               "probabilities": {
-                "maintenu": 0.9999576872806788,
-                "decale_janvier": 0.000013617373381929443,
-                "annule": 0.000009580680722579816,
-                "pas_de_decision": 0.000019114665216567103
+                "maintenu": 1,
+                "decale_janvier": 0,
+                "annule": 0,
+                "pas_de_decision": 0
               },
-              "confidence": 0.999943583040905
+              "confidence": 1
             },
             "go_nogo_owner": {
               "type": "choice",
               "choice": "Karim",
               "probabilities": {
-                "Sophie": 0.00011282047175281676,
-                "Karim": 0.9997760304714443,
-                "Ines": 0.0000421345776309907,
-                "Marc": 0.000015561067378176666,
-                "Julie": 0.00005345341179362862
+                "Sophie": 0,
+                "Karim": 1,
+                "Ines": 0,
+                "Marc": 0,
+                "Julie": 0
               },
-              "confidence": 0.9997200380893053
+              "confidence": 1
             },
             "budget_approved": {
               "type": "noul",
-              "noul": 0.0000650595172719508
+              "noul": 0
             },
             "sales_can_announce_date": {
               "type": "noul",
-              "noul": 0.00008858062018878148
+              "noul": 0
             },
             "tension_level": {
               "type": "score",
-              "score": 0.9568356227443885,
+              "score": 0.97,
               "legend": {
                 "0": "Aucune tension",
                 "1": "Désaccords légers et constructifs",
@@ -2777,15 +2777,15 @@
                 "3": "Conflit ouvert"
               },
               "probabilities": {
-                "0": 0.04996330616699767,
-                "1": 0.943708074832961,
-                "2": 0.005858309088695986,
-                "3": 0.00047030991134513426
+                "0": 0.03,
+                "1": 0.97,
+                "2": 0,
+                "3": 0
               },
-              "confidence": 0.943237764921616
+              "confidence": 0.97
             }
           },
-          "at": 24013.60000000149
+          "at": 15759.5
         }
       ]
     },
@@ -2843,54 +2843,54 @@
           "rep": 1,
           "ok": true,
           "status": 200,
-          "ms": 300.0999999977648,
-          "clientMs": 300.0999999977648,
-          "inputTokens": 6855,
-          "cost": 0.0001371,
+          "ms": 175.89999999850988,
+          "clientMs": 175.89999999850988,
+          "inputTokens": 1871,
+          "cost": 0.0001871,
           "answers": {
             "auto_renewal": {
               "type": "noul",
-              "noul": 0.9999099454530265
+              "noul": 1
             },
             "non_renewal_notice": {
               "type": "choice",
               "choice": "90_days",
               "probabilities": {
-                "30_days": 0.000008621208604652889,
-                "45_days": 0.000011903316583946186,
-                "60_days": 0.0000724174831142517,
-                "90_days": 0.9998974494420957,
-                "none": 0.000009608549601291378
+                "30_days": 0,
+                "45_days": 0,
+                "60_days": 0,
+                "90_days": 1,
+                "none": 0
               },
-              "confidence": 0.9998718118026195
+              "confidence": 1
             },
             "governing_law": {
               "type": "choice",
               "choice": "england",
               "probabilities": {
-                "france": 0.000034010169169041,
-                "england": 0.9999357691481442,
-                "us": 0.000011995596129772866,
-                "eu": 0.000006156833877794463,
-                "unspecified": 0.000012068252679050987
+                "france": 0,
+                "england": 1,
+                "us": 0,
+                "eu": 0,
+                "unspecified": 0
               },
-              "confidence": 0.9999197114351801
+              "confidence": 1
             },
             "termination_for_convenience": {
               "type": "noul",
-              "noul": 0.00003775898641979556
+              "noul": 0
             },
             "liability_capped": {
               "type": "noul",
-              "noul": 0.9998436939442868
+              "noul": 1
             },
             "eu_hosting": {
               "type": "noul",
-              "noul": 0.9999251098118856
+              "noul": 1
             },
             "customer_risk": {
               "type": "score",
-              "score": 1.8222010534494926,
+              "score": 2.04,
               "legend": {
                 "0": "Very favourable to Customer",
                 "1": "Balanced",
@@ -2898,68 +2898,68 @@
                 "3": "Very restrictive"
               },
               "probabilities": {
-                "0": 0.003290067877496837,
-                "1": 0.2147602086622912,
-                "2": 0.7384083255934343,
-                "3": 0.04354139786677758
+                "0": 0,
+                "1": 0,
+                "2": 0.96,
+                "3": 0.04
               },
-              "confidence": 0.7351182577159375
+              "confidence": 0.96
             }
           },
-          "at": 6696
+          "at": 5564.10000000149
         },
         {
           "rep": 2,
           "ok": true,
           "status": 200,
-          "ms": 416.1000000014901,
-          "clientMs": 416.1000000014901,
-          "inputTokens": 6855,
-          "cost": 0.0001371,
+          "ms": 192.60000000149012,
+          "clientMs": 192.60000000149012,
+          "inputTokens": 1871,
+          "cost": 0.0001871,
           "answers": {
             "auto_renewal": {
               "type": "noul",
-              "noul": 0.9999099454530265
+              "noul": 1
             },
             "non_renewal_notice": {
               "type": "choice",
               "choice": "90_days",
               "probabilities": {
-                "30_days": 0.000008621208604652889,
-                "45_days": 0.000011903316583946186,
-                "60_days": 0.0000724174831142517,
-                "90_days": 0.9998974494420957,
-                "none": 0.000009608549601291378
+                "30_days": 0,
+                "45_days": 0,
+                "60_days": 0,
+                "90_days": 1,
+                "none": 0
               },
-              "confidence": 0.9998718118026195
+              "confidence": 1
             },
             "governing_law": {
               "type": "choice",
               "choice": "england",
               "probabilities": {
-                "france": 0.000034010169169041,
-                "england": 0.9999357691481442,
-                "us": 0.000011995596129772866,
-                "eu": 0.000006156833877794463,
-                "unspecified": 0.000012068252679050987
+                "france": 0,
+                "england": 1,
+                "us": 0,
+                "eu": 0,
+                "unspecified": 0
               },
-              "confidence": 0.9999197114351801
+              "confidence": 1
             },
             "termination_for_convenience": {
               "type": "noul",
-              "noul": 0.00003775898641979556
+              "noul": 0
             },
             "liability_capped": {
               "type": "noul",
-              "noul": 0.9998436939442868
+              "noul": 1
             },
             "eu_hosting": {
               "type": "noul",
-              "noul": 0.9999251098118856
+              "noul": 1
             },
             "customer_risk": {
               "type": "score",
-              "score": 1.8222010534494926,
+              "score": 2.04,
               "legend": {
                 "0": "Very favourable to Customer",
                 "1": "Balanced",
@@ -2967,68 +2967,68 @@
                 "3": "Very restrictive"
               },
               "probabilities": {
-                "0": 0.003290067877496837,
-                "1": 0.2147602086622912,
-                "2": 0.7384083255934343,
-                "3": 0.04354139786677758
+                "0": 0,
+                "1": 0,
+                "2": 0.96,
+                "3": 0.04
               },
-              "confidence": 0.7351182577159375
+              "confidence": 0.96
             }
           },
-          "at": 14896.199999999255
+          "at": 11194.900000002235
         },
         {
           "rep": 3,
           "ok": true,
           "status": 200,
-          "ms": 311.9000000022352,
-          "clientMs": 311.9000000022352,
-          "inputTokens": 6855,
-          "cost": 0.0001371,
+          "ms": 244.89999999850988,
+          "clientMs": 244.89999999850988,
+          "inputTokens": 1871,
+          "cost": 0.0001871,
           "answers": {
             "auto_renewal": {
               "type": "noul",
-              "noul": 0.9999099454530265
+              "noul": 1
             },
             "non_renewal_notice": {
               "type": "choice",
               "choice": "90_days",
               "probabilities": {
-                "30_days": 0.000008621208604652889,
-                "45_days": 0.000011903316583946186,
-                "60_days": 0.0000724174831142517,
-                "90_days": 0.9998974494420957,
-                "none": 0.000009608549601291378
+                "30_days": 0,
+                "45_days": 0,
+                "60_days": 0,
+                "90_days": 1,
+                "none": 0
               },
-              "confidence": 0.9998718118026195
+              "confidence": 1
             },
             "governing_law": {
               "type": "choice",
               "choice": "england",
               "probabilities": {
-                "france": 0.000034010169169041,
-                "england": 0.9999357691481442,
-                "us": 0.000011995596129772866,
-                "eu": 0.000006156833877794463,
-                "unspecified": 0.000012068252679050987
+                "france": 0,
+                "england": 1,
+                "us": 0,
+                "eu": 0,
+                "unspecified": 0
               },
-              "confidence": 0.9999197114351801
+              "confidence": 1
             },
             "termination_for_convenience": {
               "type": "noul",
-              "noul": 0.00003775898641979556
+              "noul": 0
             },
             "liability_capped": {
               "type": "noul",
-              "noul": 0.9998436939442868
+              "noul": 1
             },
             "eu_hosting": {
               "type": "noul",
-              "noul": 0.9999251098118856
+              "noul": 1
             },
             "customer_risk": {
               "type": "score",
-              "score": 1.8222010534494926,
+              "score": 2.04,
               "legend": {
                 "0": "Very favourable to Customer",
                 "1": "Balanced",
@@ -3036,15 +3036,15 @@
                 "3": "Very restrictive"
               },
               "probabilities": {
-                "0": 0.003290067877496837,
-                "1": 0.2147602086622912,
-                "2": 0.7384083255934343,
-                "3": 0.04354139786677758
+                "0": 0,
+                "1": 0,
+                "2": 0.96,
+                "3": 0.04
               },
-              "confidence": 0.7351182577159375
+              "confidence": 0.96
             }
           },
-          "at": 24327.10000000149
+          "at": 16006.800000000745
         }
       ]
     },
@@ -3079,97 +3079,97 @@
           "rep": 1,
           "ok": true,
           "status": 200,
-          "ms": 444.5,
-          "clientMs": 444.5,
-          "inputTokens": 8378,
-          "cost": 0.00016756,
+          "ms": 258.29999999701977,
+          "clientMs": 258.29999999701977,
+          "inputTokens": 2194,
+          "cost": 0.0002194,
           "answers": {
             "audio_out_of_stock": {
               "type": "noul",
-              "noul": 0.000008898426143614547
+              "noul": 0
             },
             "video_out_of_stock": {
               "type": "noul",
-              "noul": 0.000006298215173047843
+              "noul": 0
             },
             "out_of_stock_category": {
               "type": "choice",
               "choice": "maison",
               "probabilities": {
-                "audio": 0.000004465118860766834,
-                "video": 0.000005032573162840829,
-                "informatique": 0.000005854015852796936,
-                "maison": 0.9999788887980904,
-                "sport": 0.0000057594940331786
+                "audio": 0,
+                "video": 0,
+                "informatique": 0,
+                "maison": 1,
+                "sport": 0
               },
-              "confidence": 0.9999736109976128
+              "confidence": 1
             }
           },
-          "at": 7142.89999999851
+          "at": 5823.699999999255
         },
         {
           "rep": 2,
           "ok": true,
           "status": 200,
-          "ms": 302.5,
-          "clientMs": 302.5,
-          "inputTokens": 8378,
-          "cost": 0.00016756,
+          "ms": 257,
+          "clientMs": 257,
+          "inputTokens": 2194,
+          "cost": 0.0002194,
           "answers": {
             "audio_out_of_stock": {
               "type": "noul",
-              "noul": 0.000008898426143614547
+              "noul": 0
             },
             "video_out_of_stock": {
               "type": "noul",
-              "noul": 0.000006298215173047843
+              "noul": 0
             },
             "out_of_stock_category": {
               "type": "choice",
               "choice": "maison",
               "probabilities": {
-                "audio": 0.000004465118860766834,
-                "video": 0.000005032573162840829,
-                "informatique": 0.000005854015852796936,
-                "maison": 0.9999788887980904,
-                "sport": 0.0000057594940331786
+                "audio": 0,
+                "video": 0,
+                "informatique": 0,
+                "maison": 1,
+                "sport": 0
               },
-              "confidence": 0.9999736109976128
+              "confidence": 1
             }
           },
-          "at": 15200.300000000745
+          "at": 11452.900000002235
         },
         {
           "rep": 3,
           "ok": true,
           "status": 200,
-          "ms": 397.8999999985099,
-          "clientMs": 397.8999999985099,
-          "inputTokens": 8378,
-          "cost": 0.00016756,
+          "ms": 363.6000000014901,
+          "clientMs": 363.6000000014901,
+          "inputTokens": 2194,
+          "cost": 0.0002194,
           "answers": {
             "audio_out_of_stock": {
               "type": "noul",
-              "noul": 0.000008898426143614547
+              "noul": 0
             },
             "video_out_of_stock": {
               "type": "noul",
-              "noul": 0.000006298215173047843
+              "noul": 0
             },
             "out_of_stock_category": {
               "type": "choice",
               "choice": "maison",
               "probabilities": {
-                "audio": 0.000004465118860766834,
-                "video": 0.000005032573162840829,
-                "informatique": 0.000005854015852796936,
-                "maison": 0.9999788887980904,
-                "sport": 0.0000057594940331786
+                "audio": 0,
+                "video": 0,
+                "informatique": 0,
+                "maison": 1,
+                "sport": 0
               },
-              "confidence": 0.9999736109976128
+              "confidence": 1
             }
           },
-          "at": 24726.800000000745
+          "at": 16372.10000000149
         }
       ]
     },
@@ -3212,42 +3212,42 @@
           "rep": 1,
           "ok": true,
           "status": 200,
-          "ms": 573.1000000014901,
-          "clientMs": 573.1000000014901,
-          "inputTokens": 17600,
-          "cost": 0.000352,
+          "ms": 244.30000000074506,
+          "clientMs": 244.30000000074506,
+          "inputTokens": 3661,
+          "cost": 0.0003661,
           "answers": {
             "root_cause": {
               "type": "choice",
               "choice": "memory",
               "probabilities": {
-                "memory": 0.9999629926037253,
-                "disk": 0.000013461269496968545,
-                "network": 0.000008160274515768186,
-                "auth": 0.0000010725081904077894,
-                "config": 0.000014313344071709695
+                "memory": 1,
+                "disk": 0,
+                "network": 0,
+                "auth": 0,
+                "config": 0
               },
-              "confidence": 0.9999537407546566
+              "confidence": 1
             },
             "affected_service": {
               "type": "choice",
               "choice": "orders",
               "probabilities": {
-                "api-gateway": 0.0009087899797999468,
-                "auth": 0.0000055617753825387465,
-                "orders": 0.9990302964417379,
-                "payments": 0.00002591783218915735,
-                "catalog": 0.00002943397089058216
+                "api-gateway": 0,
+                "auth": 0,
+                "orders": 1,
+                "payments": 0,
+                "catalog": 0
               },
-              "confidence": 0.9987878705521724
+              "confidence": 1
             },
             "users_impacted": {
               "type": "noul",
-              "noul": 0.9968310279126177
+              "noul": 0.87
             },
             "severity": {
               "type": "score",
-              "score": 1.7976776868341953,
+              "score": 1.99,
               "legend": {
                 "0": "SEV4 — cosmetic",
                 "1": "SEV3 — minor",
@@ -3255,56 +3255,56 @@
                 "3": "SEV1 — full outage"
               },
               "probabilities": {
-                "0": 0.003195112085121541,
-                "1": 0.19782847490108202,
-                "2": 0.7970800271082759,
-                "3": 0.0018963859055205702
+                "0": 0,
+                "1": 0.01,
+                "2": 0.99,
+                "3": 0
               },
-              "confidence": 0.7938849150231544
+              "confidence": 0.99
             }
           },
-          "at": 7717.5
+          "at": 6068.60000000149
         },
         {
           "rep": 2,
           "ok": true,
           "status": 200,
-          "ms": 1947.1000000014901,
-          "clientMs": 1947.1000000014901,
-          "inputTokens": 17600,
-          "cost": 0.000352,
+          "ms": 412.5,
+          "clientMs": 412.5,
+          "inputTokens": 3661,
+          "cost": 0.0003661,
           "answers": {
             "root_cause": {
               "type": "choice",
               "choice": "memory",
               "probabilities": {
-                "memory": 0.9999629926037253,
-                "disk": 0.000013461269496968545,
-                "network": 0.000008160274515768186,
-                "auth": 0.0000010725081904077894,
-                "config": 0.000014313344071709695
+                "memory": 1,
+                "disk": 0,
+                "network": 0,
+                "auth": 0,
+                "config": 0
               },
-              "confidence": 0.9999537407546566
+              "confidence": 1
             },
             "affected_service": {
               "type": "choice",
               "choice": "orders",
               "probabilities": {
-                "api-gateway": 0.0009087899797999468,
-                "auth": 0.0000055617753825387465,
-                "orders": 0.9990302964417379,
-                "payments": 0.00002591783218915735,
-                "catalog": 0.00002943397089058216
+                "api-gateway": 0,
+                "auth": 0,
+                "orders": 1,
+                "payments": 0,
+                "catalog": 0
               },
-              "confidence": 0.9987878705521724
+              "confidence": 1
             },
             "users_impacted": {
               "type": "noul",
-              "noul": 0.9968310279126177
+              "noul": 0.87
             },
             "severity": {
               "type": "score",
-              "score": 1.7976776868341953,
+              "score": 1.99,
               "legend": {
                 "0": "SEV4 — cosmetic",
                 "1": "SEV3 — minor",
@@ -3312,56 +3312,56 @@
                 "3": "SEV1 — full outage"
               },
               "probabilities": {
-                "0": 0.003195112085121541,
-                "1": 0.19782847490108202,
-                "2": 0.7970800271082759,
-                "3": 0.0018963859055205702
+                "0": 0,
+                "1": 0.01,
+                "2": 0.99,
+                "3": 0
               },
-              "confidence": 0.7938849150231544
+              "confidence": 0.99
             }
           },
-          "at": 17148.60000000149
+          "at": 11867.300000000745
         },
         {
           "rep": 3,
           "ok": true,
           "status": 200,
-          "ms": 398.19999999925494,
-          "clientMs": 398.19999999925494,
-          "inputTokens": 17600,
-          "cost": 0.000352,
+          "ms": 394.0999999977648,
+          "clientMs": 394.0999999977648,
+          "inputTokens": 3661,
+          "cost": 0.0003661,
           "answers": {
             "root_cause": {
               "type": "choice",
               "choice": "memory",
               "probabilities": {
-                "memory": 0.9999629926037253,
-                "disk": 0.000013461269496968545,
-                "network": 0.000008160274515768186,
-                "auth": 0.0000010725081904077894,
-                "config": 0.000014313344071709695
+                "memory": 1,
+                "disk": 0,
+                "network": 0,
+                "auth": 0,
+                "config": 0
               },
-              "confidence": 0.9999537407546566
+              "confidence": 1
             },
             "affected_service": {
               "type": "choice",
               "choice": "orders",
               "probabilities": {
-                "api-gateway": 0.0009087899797999468,
-                "auth": 0.0000055617753825387465,
-                "orders": 0.9990302964417379,
-                "payments": 0.00002591783218915735,
-                "catalog": 0.00002943397089058216
+                "api-gateway": 0,
+                "auth": 0,
+                "orders": 1,
+                "payments": 0,
+                "catalog": 0
               },
-              "confidence": 0.9987878705521724
+              "confidence": 1
             },
             "users_impacted": {
               "type": "noul",
-              "noul": 0.9968310279126177
+              "noul": 0.87
             },
             "severity": {
               "type": "score",
-              "score": 1.7976776868341953,
+              "score": 1.99,
               "legend": {
                 "0": "SEV4 — cosmetic",
                 "1": "SEV3 — minor",
@@ -3369,15 +3369,15 @@
                 "3": "SEV1 — full outage"
               },
               "probabilities": {
-                "0": 0.003195112085121541,
-                "1": 0.19782847490108202,
-                "2": 0.7970800271082759,
-                "3": 0.0018963859055205702
+                "0": 0,
+                "1": 0.01,
+                "2": 0.99,
+                "3": 0
               },
-              "confidence": 0.7938849150231544
+              "confidence": 0.99
             }
           },
-          "at": 25127
+          "at": 16768.300000000745
         }
       ]
     }
@@ -3389,38 +3389,38 @@
     "errorRate": 0,
     "latency": {
       "n": 69,
-      "mean": 362.8550724638221,
-      "min": 214.60000000149012,
-      "p50": 308.1000000014901,
-      "p90": 472.0999999985099,
-      "p95": 522.900000000745,
-      "p99": 1012.7800000014807,
-      "max": 1947.1000000014901,
-      "stdev": 210.0468690949305
+      "mean": 241.74927536225405,
+      "min": 129.69999999925494,
+      "p50": 206.5,
+      "p90": 393.21999999955295,
+      "p95": 458.1799999989566,
+      "p99": 592.099999999999,
+      "max": 689,
+      "stdev": 110.65734156418708
     },
-    "inputTokens": 147786,
-    "cost": 0.00295572,
-    "tokensPerSec": 5902.703998081959,
-    "msPerToken": 0.7917112299505084,
-    "requestsPerSec": 2.745962638989404,
-    "accuracy": 0.9875,
-    "quality": 0.9785875454449494,
+    "inputTokens": 58632,
+    "cost": 0.0058632,
+    "tokensPerSec": 3514.9604033413298,
+    "msPerToken": 0.4356932153480243,
+    "requestsPerSec": 4.114661911946053,
+    "accuracy": 0.9625,
+    "quality": 0.9496666666666668,
     "consistency": 1,
     "byType": {
       "choice": {
         "questions": 17,
-        "accuracy": 1,
-        "quality": 0.9894347714333643
+        "accuracy": 0.9411764705882353,
+        "quality": 0.9094117647058824
       },
       "noul": {
         "questions": 52,
-        "accuracy": 0.9807692307692307,
-        "quality": 0.9729430188015074
+        "accuracy": 0.9615384615384616,
+        "quality": 0.9526923076923077
       },
       "score": {
         "questions": 11,
         "accuracy": 1,
-        "quality": 0.9885068675954873
+        "quality": 0.9975757575757576
       }
     },
     "byLength": [
@@ -3429,68 +3429,68 @@
         "cases": 14,
         "latency": {
           "n": 42,
-          "mean": 322.1976190475481,
-          "min": 214.60000000149012,
-          "p50": 299.2999999988824,
-          "p90": 411.44999999813734,
-          "p95": 458.8900000007822,
-          "p99": 504.0549999985097,
-          "max": 526.3999999985099,
-          "stdev": 70.78640660464934
+          "mean": 226.34761904783193,
+          "min": 129.69999999925494,
+          "p50": 176.5,
+          "p90": 360.6299999993294,
+          "p95": 424.25499999858425,
+          "p99": 630.5749999999995,
+          "max": 689,
+          "stdev": 115.60782790185924
         },
-        "accuracy": 0.9666666666666667,
-        "quality": 0.956782736673295
+        "accuracy": 0.9333333333333333,
+        "quality": 0.9166666666666667
       },
       {
         "key": "moyen",
         "cases": 4,
         "latency": {
           "n": 12,
-          "mean": 360.8416666664804,
-          "min": 242.80000000074506,
-          "p50": 313.5,
-          "p90": 513.3100000005215,
-          "p95": 521.6250000007451,
-          "p99": 525.3650000007451,
-          "max": 526.3000000007451,
-          "stdev": 102.05547028496831
+          "mean": 244.5,
+          "min": 138.09999999776483,
+          "p50": 216.49999999813735,
+          "p90": 309.05000000223515,
+          "p95": 386.03500000089394,
+          "p99": 460.96699999958287,
+          "max": 479.69999999925494,
+          "stdev": 91.31228136098636
         },
-        "accuracy": 1,
-        "quality": 0.9868688918653747
+        "accuracy": 0.96,
+        "quality": 0.9451999999999999
       },
       {
         "key": "long",
         "cases": 3,
         "latency": {
           "n": 9,
-          "mean": 345.7000000009106,
-          "min": 279.8999999985099,
-          "p50": 308.1000000014901,
-          "p90": 429.9400000013411,
-          "p95": 457.6200000010431,
-          "p99": 479.7640000008047,
-          "max": 485.30000000074506,
-          "stdev": 71.75080138969918
+          "mean": 256.699999998841,
+          "min": 163.5,
+          "p50": 206.5,
+          "p90": 414.7399999976158,
+          "p95": 467.01999999731777,
+          "p99": 508.8439999970794,
+          "max": 519.2999999970198,
+          "stdev": 118.94402044570298
         },
         "accuracy": 1,
-        "quality": 0.9990806667057301
+        "quality": 0.9987037037037039
       },
       {
         "key": "très long",
         "cases": 2,
         "latency": {
           "n": 6,
-          "mean": 677.2166666667908,
-          "min": 302.5,
-          "p50": 421.34999999962747,
-          "p90": 1260.1000000014901,
-          "p95": 1603.6000000014901,
-          "p99": 1878.4000000014903,
-          "max": 1947.1000000014901,
-          "stdev": 628.312293105595
+          "mean": 321.6333333328366,
+          "min": 244.30000000074506,
+          "p50": 310.94999999925494,
+          "p90": 403.2999999988824,
+          "p95": 407.8999999994412,
+          "p99": 411.57999999988823,
+          "max": 412.5,
+          "stdev": 76.73121051227683
         },
         "accuracy": 1,
-        "quality": 0.9897638911513695
+        "quality": 0.980952380952381
       }
     ],
     "byComplexity": [
@@ -3499,34 +3499,34 @@
         "cases": 16,
         "latency": {
           "n": 48,
-          "mean": 365.47916666682187,
-          "min": 214.60000000149012,
-          "p50": 304.50000000186265,
-          "p90": 452.71999999955307,
-          "p95": 512.0149999992922,
-          "p99": 1301.3200000014917,
-          "max": 1947.1000000014901,
-          "stdev": 246.60485315448358
+          "mean": 241.91666666658907,
+          "min": 129.69999999925494,
+          "p50": 212.2999999988824,
+          "p90": 389.9199999984354,
+          "p95": 406.05999999921767,
+          "p99": 609.2409999985995,
+          "max": 689,
+          "stdev": 109.68022249066821
         },
-        "accuracy": 0.9795918367346939,
-        "quality": 0.9680503189166029
+        "accuracy": 0.9387755102040817,
+        "quality": 0.9184353741496598
       },
       {
         "key": "simple",
         "cases": 7,
         "latency": {
           "n": 21,
-          "mean": 356.8571428569655,
-          "min": 247.30000000074506,
-          "p50": 314.9000000022352,
-          "p90": 472.8999999985099,
-          "p95": 517.8000000007451,
-          "p99": 524.600000000745,
-          "max": 526.3000000007451,
-          "stdev": 83.9037875870226
+          "mean": 241.36666666663118,
+          "min": 143.5,
+          "p50": 202.69999999925494,
+          "p90": 425.8999999985099,
+          "p95": 479.69999999925494,
+          "p99": 533.139999999851,
+          "max": 546.5,
+          "stdev": 115.59854814526528
         },
         "accuracy": 1,
-        "quality": 0.9952431615703998
+        "quality": 0.9990322580645161
       }
     ],
     "byCategory": [
@@ -3535,14 +3535,14 @@
         "cases": 1,
         "latency": {
           "n": 3,
-          "mean": 233.16666666790843,
-          "min": 214.60000000149012,
-          "p50": 232.5,
-          "p90": 248.42000000178814,
-          "p95": 250.41000000201166,
-          "p99": 252.00200000219047,
-          "max": 252.40000000223517,
-          "stdev": 18.908816286289756
+          "mean": 148.9000000009934,
+          "min": 129.69999999925494,
+          "p50": 136.70000000298023,
+          "p90": 171.5800000011921,
+          "p95": 175.94000000096858,
+          "p99": 179.42800000078975,
+          "max": 180.30000000074506,
+          "stdev": 27.417512651612675
         },
         "accuracy": 1,
         "quality": 1
@@ -3552,204 +3552,204 @@
         "cases": 1,
         "latency": {
           "n": 3,
-          "mean": 317.6333333340784,
-          "min": 254.10000000149012,
-          "p50": 314.9000000022352,
-          "p90": 370.0999999992549,
-          "p95": 376.9999999988824,
-          "p99": 382.51999999858435,
-          "max": 383.8999999985099,
-          "stdev": 64.94315462875058
+          "mean": 230.16666666666666,
+          "min": 149.30000000074506,
+          "p50": 217.19999999925494,
+          "p90": 302.639999999851,
+          "p95": 313.31999999992547,
+          "p99": 321.8639999999851,
+          "max": 324,
+          "stdev": 88.06885563740876
         },
         "accuracy": 1,
-        "quality": 0.9990683236404826
+        "quality": 0.98
       },
       {
         "key": "Code",
         "cases": 1,
         "latency": {
           "n": 3,
-          "mean": 299.30000000074506,
-          "min": 280.1000000014901,
-          "p50": 295.6000000014901,
-          "p90": 316.87999999970197,
-          "p95": 319.5399999994785,
-          "p99": 321.66799999929964,
-          "max": 322.19999999925494,
-          "stdev": 21.292486936682963
+          "mean": 208.3333333345751,
+          "min": 179.60000000149012,
+          "p50": 203.60000000149012,
+          "p90": 234.16000000089406,
+          "p95": 237.98000000081956,
+          "p99": 241.03600000075994,
+          "max": 241.80000000074506,
+          "stdev": 31.368986807169893
         },
         "accuracy": 1,
-        "quality": 0.9999231035367645
+        "quality": 1
       },
       {
         "key": "Contexte long",
         "cases": 2,
         "latency": {
           "n": 6,
-          "mean": 677.2166666667908,
-          "min": 302.5,
-          "p50": 421.34999999962747,
-          "p90": 1260.1000000014901,
-          "p95": 1603.6000000014901,
-          "p99": 1878.4000000014903,
-          "max": 1947.1000000014901,
-          "stdev": 628.312293105595
+          "mean": 321.6333333328366,
+          "min": 244.30000000074506,
+          "p50": 310.94999999925494,
+          "p90": 403.2999999988824,
+          "p95": 407.8999999994412,
+          "p99": 411.57999999988823,
+          "max": 412.5,
+          "stdev": 76.73121051227683
         },
         "accuracy": 1,
-        "quality": 0.9897638911513695
+        "quality": 0.980952380952381
       },
       {
         "key": "Données structurées",
         "cases": 3,
         "latency": {
           "n": 9,
-          "mean": 317.01111111044884,
-          "min": 240.19999999925494,
-          "p50": 256.5,
-          "p90": 443.75999999791384,
-          "p95": 485.0799999982118,
-          "p99": 518.1359999984503,
-          "max": 526.3999999985099,
-          "stdev": 101.87772627508751
+          "mean": 241.75555555563835,
+          "min": 152.30000000074506,
+          "p50": 217.10000000149012,
+          "p90": 323.3200000017882,
+          "p95": 358.16000000089406,
+          "p99": 386.0320000001788,
+          "max": 393,
+          "stdev": 81.56727455196798
         },
         "accuracy": 0.8,
-        "quality": 0.7852494779138451
+        "quality": 0.6599999999999999
       },
       {
         "key": "Évaluation",
         "cases": 1,
         "latency": {
           "n": 3,
-          "mean": 330.93333333233994,
-          "min": 292.3999999985099,
-          "p50": 304.80000000074506,
-          "p90": 377.43999999836086,
-          "p95": 386.5199999980629,
-          "p99": 393.7839999978244,
-          "max": 395.5999999977648,
-          "stdev": 56.345126969656754
+          "mean": 210.56666666517654,
+          "min": 138.09999999776483,
+          "p50": 216.09999999776483,
+          "p90": 265.21999999955295,
+          "p95": 271.3599999997765,
+          "p99": 276.2719999999553,
+          "max": 277.5,
+          "stdev": 69.86453559197929
         },
         "accuracy": 1,
-        "quality": 0.9991725723479385
+        "quality": 0.9733333333333333
       },
       {
         "key": "Extraction",
         "cases": 2,
         "latency": {
           "n": 6,
-          "mean": 404.6000000008692,
-          "min": 298.30000000074506,
-          "p50": 390.5,
-          "p90": 522.0500000007451,
-          "p95": 524.1750000007451,
-          "p99": 525.8750000007451,
-          "max": 526.3000000007451,
-          "stdev": 112.23379170205564
+          "mean": 291.94999999987584,
+          "min": 163.5,
+          "p50": 257.9500000011176,
+          "p90": 434.1499999985099,
+          "p95": 456.9249999988824,
+          "p99": 475.14499999918047,
+          "max": 479.69999999925494,
+          "stdev": 123.63825864138187
         },
         "accuracy": 1,
-        "quality": 0.9991383828141764
+        "quality": 0.9995238095238095
       },
       {
         "key": "Juridique",
         "cases": 1,
         "latency": {
           "n": 3,
-          "mean": 342.7000000004967,
-          "min": 300.0999999977648,
-          "p50": 311.9000000022352,
-          "p90": 395.2600000016391,
-          "p95": 405.6800000015646,
-          "p99": 414.016000001505,
-          "max": 416.1000000014901,
-          "stdev": 63.83948621453457
+          "mean": 204.46666666616997,
+          "min": 175.89999999850988,
+          "p50": 192.60000000149012,
+          "p90": 234.43999999910594,
+          "p95": 239.6699999988079,
+          "p99": 243.8539999985695,
+          "max": 244.89999999850988,
+          "stdev": 35.9981018013168
         },
         "accuracy": 1,
-        "quality": 0.9999248869732885
+        "quality": 0.998095238095238
       },
       {
         "key": "Modération",
         "cases": 1,
         "latency": {
           "n": 3,
-          "mean": 372.733333333085,
-          "min": 314.5999999977648,
-          "p50": 343.30000000074506,
-          "p90": 436.9000000007451,
-          "p95": 448.600000000745,
-          "p99": 457.960000000745,
-          "max": 460.30000000074506,
-          "stdev": 77.1807186640976
+          "mean": 323.6333333340784,
+          "min": 162.90000000223517,
+          "p50": 261.5,
+          "p90": 489.5,
+          "p95": 518,
+          "p99": 540.8,
+          "max": 546.5,
+          "stdev": 199.20505348252104
         },
         "accuracy": 1,
-        "quality": 0.9988028474468148
+        "quality": 0.998
       },
       {
         "key": "Raisonnement",
         "cases": 3,
         "latency": {
           "n": 9,
-          "mean": 313.9333333335817,
-          "min": 247.5,
-          "p50": 297.6000000014901,
-          "p90": 378.4999999985099,
-          "p95": 405.29999999999995,
-          "p99": 426.7400000011921,
-          "max": 432.1000000014901,
-          "stdev": 56.85070360158467
+          "mean": 211.41111111144224,
+          "min": 140.30000000074506,
+          "p50": 172.69999999925494,
+          "p90": 303.66000000163916,
+          "p95": 334.180000000447,
+          "p99": 358.59599999949336,
+          "max": 364.69999999925494,
+          "stdev": 77.2717840550433
         },
-        "accuracy": 1,
-        "quality": 0.9343695600012447
+        "accuracy": 0.6666666666666666,
+        "quality": 0.6583333333333333
       },
       {
         "key": "Routage",
         "cases": 1,
         "latency": {
           "n": 3,
-          "mean": 323.2666666681568,
-          "min": 247.30000000074506,
-          "p50": 312.4000000022352,
-          "p90": 390.56000000163914,
-          "p95": 400.3300000015646,
-          "p99": 408.146000001505,
-          "max": 410.1000000014901,
-          "stdev": 81.94219507300153
+          "mean": 209.19999999925494,
+          "min": 167.19999999925494,
+          "p50": 202.69999999925494,
+          "p90": 246.69999999925494,
+          "p95": 252.19999999925494,
+          "p99": 256.5999999992549,
+          "max": 257.69999999925494,
+          "stdev": 45.59879384369722
         },
         "accuracy": 1,
-        "quality": 0.9322292477408812
+        "quality": 1
       },
       {
         "key": "Sentiment",
         "cases": 3,
         "latency": {
           "n": 9,
-          "mean": 344.69999999925494,
-          "min": 266.4000000022352,
-          "p50": 345.5,
-          "p90": 422.13999999910595,
-          "p95": 447.01999999880786,
-          "p99": 466.92399999856946,
-          "max": 471.8999999985099,
-          "stdev": 64.27052201399549
+          "mean": 262.3222222224706,
+          "min": 144.10000000149012,
+          "p50": 171.80000000074506,
+          "p90": 478.519999998808,
+          "p95": 583.7599999994038,
+          "p99": 667.9519999998807,
+          "max": 689,
+          "stdev": 183.42073749793707
         },
         "accuracy": 1,
-        "quality": 0.9990832498140735
+        "quality": 0.99875
       },
       {
         "key": "Support",
         "cases": 3,
         "latency": {
           "n": 9,
-          "mean": 345.12222222197386,
-          "min": 279.8999999985099,
-          "p50": 296.29999999701977,
-          "p90": 426.3399999983609,
-          "p95": 455.8199999995529,
-          "p99": 479.40400000050664,
-          "max": 485.30000000074506,
-          "stdev": 74.0046920440654
+          "mean": 217.11111111028328,
+          "min": 143.5,
+          "p50": 195.59999999776483,
+          "p90": 282.5799999982119,
+          "p95": 400.9399999976157,
+          "p99": 495.62799999713894,
+          "max": 519.2999999970198,
+          "stdev": 117.70273408432631
         },
         "accuracy": 1,
-        "quality": 0.9997561197750847
+        "quality": 1
       }
     ],
     "byLang": [
@@ -3758,85 +3758,85 @@
         "cases": 8,
         "latency": {
           "n": 24,
-          "mean": 359.30416666700813,
-          "min": 214.60000000149012,
-          "p50": 348.80000000074506,
-          "p90": 481.5800000000745,
-          "p95": 512.925000000745,
-          "p99": 524.345000000745,
-          "max": 526.3000000007451,
-          "stdev": 94.90475994424794
+          "mean": 264.06666666657355,
+          "min": 129.69999999925494,
+          "p50": 214.40000000037253,
+          "p90": 452.3699999988078,
+          "p95": 513.359999997355,
+          "p99": 649.9689999993145,
+          "max": 689,
+          "stdev": 140.5005544364614
         },
-        "accuracy": 1,
-        "quality": 0.9902272273866516
+        "accuracy": 0.9473684210526315,
+        "quality": 0.9486842105263159
       },
       {
         "key": "code",
         "cases": 1,
         "latency": {
           "n": 3,
-          "mean": 299.30000000074506,
-          "min": 280.1000000014901,
-          "p50": 295.6000000014901,
-          "p90": 316.87999999970197,
-          "p95": 319.5399999994785,
-          "p99": 321.66799999929964,
-          "max": 322.19999999925494,
-          "stdev": 21.292486936682963
+          "mean": 208.3333333345751,
+          "min": 179.60000000149012,
+          "p50": 203.60000000149012,
+          "p90": 234.16000000089406,
+          "p95": 237.98000000081956,
+          "p99": 241.03600000075994,
+          "max": 241.80000000074506,
+          "stdev": 31.368986807169893
         },
         "accuracy": 1,
-        "quality": 0.9999231035367645
+        "quality": 1
       },
       {
         "key": "de",
         "cases": 1,
         "latency": {
           "n": 3,
-          "mean": 333.266666666915,
-          "min": 305.5,
-          "p50": 345.5,
-          "p90": 348.14000000059605,
-          "p95": 348.47000000067055,
-          "p99": 348.73400000073013,
-          "max": 348.80000000074506,
-          "stdev": 24.103180979798214
+          "mean": 188.20000000049671,
+          "min": 148.60000000149012,
+          "p50": 153.19999999925494,
+          "p90": 240.88000000044704,
+          "p95": 251.84000000059604,
+          "p99": 260.60800000071526,
+          "max": 262.80000000074506,
+          "stdev": 64.64642294839406
         },
         "accuracy": 1,
-        "quality": 0.9992225546939996
+        "quality": 1
       },
       {
         "key": "en",
         "cases": 12,
         "latency": {
           "n": 36,
-          "mean": 376.75277777750875,
-          "min": 240.19999999925494,
-          "p50": 299.7999999988824,
-          "p90": 441.69999999925494,
-          "p95": 538.0749999992549,
-          "p99": 1466.2000000014882,
-          "max": 1947.1000000014901,
-          "stdev": 280.52709417035214
+          "mean": 235.08333333312638,
+          "min": 138.09999999776483,
+          "p50": 205.59999999962747,
+          "p90": 393.5499999988824,
+          "p95": 415.84999999962747,
+          "p99": 504.28999999947825,
+          "max": 546.5,
+          "stdev": 96.64177298512199
         },
         "accuracy": 0.9714285714285714,
-        "quality": 0.9617675341877261
+        "quality": 0.9412380952380953
       },
       {
         "key": "es",
         "cases": 1,
         "latency": {
           "n": 3,
-          "mean": 317.6333333340784,
-          "min": 254.10000000149012,
-          "p50": 314.9000000022352,
-          "p90": 370.0999999992549,
-          "p95": 376.9999999988824,
-          "p99": 382.51999999858435,
-          "max": 383.8999999985099,
-          "stdev": 64.94315462875058
+          "mean": 230.16666666666666,
+          "min": 149.30000000074506,
+          "p50": 217.19999999925494,
+          "p90": 302.639999999851,
+          "p95": 313.31999999992547,
+          "p99": 321.8639999999851,
+          "max": 324,
+          "stdev": 88.06885563740876
         },
         "accuracy": 1,
-        "quality": 0.9990683236404826
+        "quality": 0.98
       }
     ]
   }

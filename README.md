@@ -10,9 +10,12 @@ Almost every public evaluation of these models is in English. This project ships
 
 | Suite | Cases | Questions | Content |
 |---|---:|---:|---|
+| `core-fr` / `core-en` — Core | 20 + 20 | 59 + 59 | **The same cases in French and in English, simply translated.** Support triage, sentiment and sarcasm, moderation, phishing, routing, arithmetic and logic traps, résumé screening, medical triage, return policy, committee minutes, a 70-ticket support queue. |
 | `fr-native` — Français natif | 26 | 86 | Written directly in French: litotes, irony, *ne… que* and double negation, register, French date and number formats, residential lease law, co-ownership meeting minutes, bank statement. |
 | `en-native` — English native | 24 | 76 | Written directly in English: understatement, idioms, US dates, phishing, expense policy, incident postmortem, sales call, support queue. |
 | `multilingual` — Multilingue | 23 | 80 | The original suite: 8 French cases, 12 English, 1 German, 1 Spanish, 1 code. Frozen so the results below stay comparable. |
+
+**Naming convention:** `<name>-<lang>` suites contain the same cases translated (`core-fr` = `core-en`), so comparing them isolates the effect of the language. `<lang>-native` suites are written directly in one language and are not translations of each other.
 
 > [!IMPORTANT]
 > `fr-native` and `en-native` **do not contain the same cases**. Neither is a translation of the other: each one is written directly in its language and tests what is hard in that language (French number formats and litotes, English understatement and US dates…). They cover the same skills (sentiment, moderation, routing, reasoning traps, long documents, a very long needle-in-a-haystack case), so their scores show how a model handles each language's pitfalls, not the effect of the language alone.
@@ -20,6 +23,8 @@ Almost every public evaluation of these models is in English. This project ships
 Every expected answer was checked by an independent blind annotation pass; questions where annotators could reasonably disagree were reworded or accept a range of answers.
 
 ## Results
+
+The `core-fr` / `core-en` pair has not been run yet.
 
 ### French native suite
 
@@ -81,7 +86,7 @@ The English misses are mostly reasoning over rules:
 | `microsoft/microsoft-decision-1` | 97.7 % | 97.4 % | 95.4 % |
 | Clef 27B Q8_0 | 96.5 % | 93.4 % | 91.3 % |
 
-On these suites, **no model does worse in French than in English**, and the ranking is almost the same in both languages. The French and English suites cover the same skills with different content, so part of the gap comes from the cases themselves: the English suite has more multi-rule reasoning (expense and return policies, résumé screening), which is where most English misses are. A translated pair of suites would isolate the language effect, at the cost of testing translation-friendly content.
+On these suites, **no model does worse in French than in English**, and the ranking is almost the same in both languages. The French and English suites cover the same skills with different content, so part of the gap comes from the cases themselves: the English suite has more multi-rule reasoning (expense and return policies, résumé screening), which is where most English misses are. The `core-fr` / `core-en` pair, with identical cases in both languages, is the one that isolates the language effect.
 
 ### Multilingual suite
 
@@ -221,6 +226,9 @@ The full guide, including expectation formats and what makes a good case, is in 
 src/
   bench/
     suites/            benchmark suites, one folder per suite
+      core.ts          core benchmark, each case with its French and English version
+      core-fr/         core benchmark in French
+      core-en/         same cases in English
       fr-native/       cases written in French
       en-native/       different cases written in English
       multilingual/    original suite, mixed languages

@@ -1,6 +1,6 @@
 {
-  "id": "2026-10-11-163354-jev-openrouter",
-  "name": "self-host-english",
+  "id": "2026-10-11-163354-en-native-jev-openrouter",
+  "name": "Jev - Openrouter — English native — 11/10/2026 16:33:54",
   "createdAt": "2026-10-11T14:33:54.881Z",
   "suiteId": "en-native",
   "suiteVersion": "1",
@@ -56,7 +56,7 @@
           "ms": 249.09999999403954,
           "clientMs": 249.09999999403954,
           "inputTokens": 360,
-          "cost": 0.00001512,
+          "cost": 1.512e-05,
           "answers": {
             "is_positive": {
               "type": "noul",
@@ -95,7 +95,7 @@
           "ms": 261.20000000298023,
           "clientMs": 261.20000000298023,
           "inputTokens": 360,
-          "cost": 0.00001512,
+          "cost": 1.512e-05,
           "answers": {
             "is_positive": {
               "type": "noul",
@@ -134,7 +134,7 @@
           "ms": 262.29999999701977,
           "clientMs": 262.29999999701977,
           "inputTokens": 360,
-          "cost": 0.00001512,
+          "cost": 1.512e-05,
           "answers": {
             "is_positive": {
               "type": "noul",
@@ -200,7 +200,7 @@
           "ms": 245.3999999910593,
           "clientMs": 245.3999999910593,
           "inputTokens": 350,
-          "cost": 0.0000147,
+          "cost": 1.47e-05,
           "answers": {
             "demo_successful": {
               "type": "noul",
@@ -235,7 +235,7 @@
           "ms": 251.90000000596046,
           "clientMs": 251.90000000596046,
           "inputTokens": 350,
-          "cost": 0.0000147,
+          "cost": 1.47e-05,
           "answers": {
             "demo_successful": {
               "type": "noul",
@@ -270,7 +270,7 @@
           "ms": 261.90000000596046,
           "clientMs": 261.90000000596046,
           "inputTokens": 350,
-          "cost": 0.0000147,
+          "cost": 1.47e-05,
           "answers": {
             "demo_successful": {
               "type": "noul",
@@ -329,7 +329,7 @@
           "ms": 277,
           "clientMs": 277,
           "inputTokens": 315,
-          "cost": 0.00001323,
+          "cost": 1.323e-05,
           "answers": {
             "is_sarcastic": {
               "type": "noul",
@@ -349,7 +349,7 @@
           "ms": 318.6000000089407,
           "clientMs": 318.6000000089407,
           "inputTokens": 315,
-          "cost": 0.00001323,
+          "cost": 1.323e-05,
           "answers": {
             "is_sarcastic": {
               "type": "noul",
@@ -369,7 +369,7 @@
           "ms": 276.19999998807907,
           "clientMs": 276.19999998807907,
           "inputTokens": 315,
-          "cost": 0.00001323,
+          "cost": 1.323e-05,
           "answers": {
             "is_sarcastic": {
               "type": "noul",
@@ -418,7 +418,7 @@
           "ms": 236.59999999403954,
           "clientMs": 236.59999999403954,
           "inputTokens": 397,
-          "cost": 0.000016674,
+          "cost": 1.6674e-05,
           "answers": {
             "onboarding_hard": {
               "type": "noul",
@@ -448,7 +448,7 @@
           "ms": 262.5,
           "clientMs": 262.5,
           "inputTokens": 397,
-          "cost": 0.000016674,
+          "cost": 1.6674e-05,
           "answers": {
             "onboarding_hard": {
               "type": "noul",
@@ -478,7 +478,7 @@
           "ms": 255.29999999701977,
           "clientMs": 255.29999999701977,
           "inputTokens": 397,
-          "cost": 0.000016674,
+          "cost": 1.6674e-05,
           "answers": {
             "onboarding_hard": {
               "type": "noul",
@@ -530,7 +530,7 @@
           "ms": 308.09999999403954,
           "clientMs": 308.09999999403954,
           "inputTokens": 273,
-          "cost": 0.000011466,
+          "cost": 1.1466e-05,
           "answers": {
             "is_satisfied": {
               "type": "noul",
@@ -546,7 +546,7 @@
           "ms": 318.20000000298023,
           "clientMs": 318.20000000298023,
           "inputTokens": 273,
-          "cost": 0.000011466,
+          "cost": 1.1466e-05,
           "answers": {
             "is_satisfied": {
               "type": "noul",
@@ -562,7 +562,7 @@
           "ms": 239.79999999701977,
           "clientMs": 239.79999999701977,
           "inputTokens": 273,
-          "cost": 0.000011466,
+          "cost": 1.1466e-05,
           "answers": {
             "is_satisfied": {
               "type": "noul",
@@ -607,7 +607,7 @@
           "ms": 253.8999999910593,
           "clientMs": 253.8999999910593,
           "inputTokens": 428,
-          "cost": 0.000017976,
+          "cost": 1.7976e-05,
           "answers": {
             "department": {
               "type": "choice",
@@ -648,7 +648,7 @@
           "ms": 302.20000000298023,
           "clientMs": 302.20000000298023,
           "inputTokens": 428,
-          "cost": 0.000017976,
+          "cost": 1.7976e-05,
           "answers": {
             "department": {
               "type": "choice",
@@ -689,7 +689,7 @@
           "ms": 266.90000000596046,
           "clientMs": 266.90000000596046,
           "inputTokens": 428,
-          "cost": 0.000017976,
+          "cost": 1.7976e-05,
           "answers": {
             "department": {
               "type": "choice",
@@ -754,7 +754,7 @@
           "ms": 262.70000000298023,
           "clientMs": 262.70000000298023,
           "inputTokens": 442,
-          "cost": 0.000018564,
+          "cost": 1.8564e-05,
           "answers": {
             "tool": {
               "type": "choice",
@@ -783,7 +783,7 @@
           "ms": 274.5,
           "clientMs": 274.5,
           "inputTokens": 442,
-          "cost": 0.000018564,
+          "cost": 1.8564e-05,
           "answers": {
             "tool": {
               "type": "choice",
@@ -812,7 +812,7 @@
           "ms": 311.3999999910593,
           "clientMs": 311.3999999910593,
           "inputTokens": 442,
-          "cost": 0.000018564,
+          "cost": 1.8564e-05,
           "answers": {
             "tool": {
               "type": "choice",
@@ -870,7 +870,7 @@
           "ms": 240.1000000089407,
           "clientMs": 240.1000000089407,
           "inputTokens": 401,
-          "cost": 0.000016842,
+          "cost": 1.6842e-05,
           "answers": {
             "is_threat": {
               "type": "noul",
@@ -901,7 +901,7 @@
           "ms": 348.09999999403954,
           "clientMs": 348.09999999403954,
           "inputTokens": 401,
-          "cost": 0.000016842,
+          "cost": 1.6842e-05,
           "answers": {
             "is_threat": {
               "type": "noul",
@@ -932,7 +932,7 @@
           "ms": 275.6000000089407,
           "clientMs": 275.6000000089407,
           "inputTokens": 401,
-          "cost": 0.000016842,
+          "cost": 1.6842e-05,
           "answers": {
             "is_threat": {
               "type": "noul",
@@ -992,7 +992,7 @@
           "ms": 543.7999999970198,
           "clientMs": 543.7999999970198,
           "inputTokens": 410,
-          "cost": 0.00001722,
+          "cost": 1.722e-05,
           "answers": {
             "is_toxic": {
               "type": "noul",
@@ -1023,7 +1023,7 @@
           "ms": 258.5,
           "clientMs": 258.5,
           "inputTokens": 410,
-          "cost": 0.00001722,
+          "cost": 1.722e-05,
           "answers": {
             "is_toxic": {
               "type": "noul",
@@ -1054,7 +1054,7 @@
           "ms": 261.59999999403954,
           "clientMs": 261.59999999403954,
           "inputTokens": 410,
-          "cost": 0.00001722,
+          "cost": 1.722e-05,
           "answers": {
             "is_toxic": {
               "type": "noul",
@@ -1114,7 +1114,7 @@
           "ms": 241.1000000089407,
           "clientMs": 241.1000000089407,
           "inputTokens": 392,
-          "cost": 0.000016464,
+          "cost": 1.6464e-05,
           "answers": {
             "is_phishing": {
               "type": "noul",
@@ -1138,7 +1138,7 @@
           "ms": 432.1000000089407,
           "clientMs": 432.1000000089407,
           "inputTokens": 392,
-          "cost": 0.000016464,
+          "cost": 1.6464e-05,
           "answers": {
             "is_phishing": {
               "type": "noul",
@@ -1162,7 +1162,7 @@
           "ms": 271.09999999403954,
           "clientMs": 271.09999999403954,
           "inputTokens": 392,
-          "cost": 0.000016464,
+          "cost": 1.6464e-05,
           "answers": {
             "is_phishing": {
               "type": "noul",
@@ -1210,7 +1210,7 @@
           "ms": 285.79999999701977,
           "clientMs": 285.79999999701977,
           "inputTokens": 365,
-          "cost": 0.00001533,
+          "cost": 1.533e-05,
           "answers": {
             "start_month": {
               "type": "choice",
@@ -1235,7 +1235,7 @@
           "ms": 252,
           "clientMs": 252,
           "inputTokens": 365,
-          "cost": 0.00001533,
+          "cost": 1.533e-05,
           "answers": {
             "start_month": {
               "type": "choice",
@@ -1260,7 +1260,7 @@
           "ms": 266.09999999403954,
           "clientMs": 266.09999999403954,
           "inputTokens": 365,
-          "cost": 0.00001533,
+          "cost": 1.533e-05,
           "answers": {
             "start_month": {
               "type": "choice",
@@ -1309,7 +1309,7 @@
           "ms": 256.79999999701977,
           "clientMs": 256.79999999701977,
           "inputTokens": 382,
-          "cost": 0.000016044,
+          "cost": 1.6044e-05,
           "answers": {
             "enough_flour": {
               "type": "noul",
@@ -1336,7 +1336,7 @@
           "ms": 253.6000000089407,
           "clientMs": 253.6000000089407,
           "inputTokens": 382,
-          "cost": 0.000016044,
+          "cost": 1.6044e-05,
           "answers": {
             "enough_flour": {
               "type": "noul",
@@ -1363,7 +1363,7 @@
           "ms": 262.6000000089407,
           "clientMs": 262.6000000089407,
           "inputTokens": 382,
-          "cost": 0.000016044,
+          "cost": 1.6044e-05,
           "answers": {
             "enough_flour": {
               "type": "noul",
@@ -1414,7 +1414,7 @@
           "ms": 257.90000000596046,
           "clientMs": 257.90000000596046,
           "inputTokens": 378,
-          "cost": 0.000015876,
+          "cost": 1.5876e-05,
           "answers": {
             "back_to_original": {
               "type": "noul",
@@ -1440,7 +1440,7 @@
           "ms": 300.8999999910593,
           "clientMs": 300.8999999910593,
           "inputTokens": 378,
-          "cost": 0.000015876,
+          "cost": 1.5876e-05,
           "answers": {
             "back_to_original": {
               "type": "noul",
@@ -1466,7 +1466,7 @@
           "ms": 269.70000000298023,
           "clientMs": 269.70000000298023,
           "inputTokens": 378,
-          "cost": 0.000015876,
+          "cost": 1.5876e-05,
           "answers": {
             "back_to_original": {
               "type": "noul",
@@ -1516,7 +1516,7 @@
           "ms": 245,
           "clientMs": 245,
           "inputTokens": 366,
-          "cost": 0.000015372,
+          "cost": 1.5372e-05,
           "answers": {
             "dana_intern": {
               "type": "noul",
@@ -1542,7 +1542,7 @@
           "ms": 299.79999999701977,
           "clientMs": 299.79999999701977,
           "inputTokens": 366,
-          "cost": 0.000015372,
+          "cost": 1.5372e-05,
           "answers": {
             "dana_intern": {
               "type": "noul",
@@ -1568,7 +1568,7 @@
           "ms": 258.69999998807907,
           "clientMs": 258.69999998807907,
           "inputTokens": 366,
-          "cost": 0.000015372,
+          "cost": 1.5372e-05,
           "answers": {
             "dana_intern": {
               "type": "noul",
@@ -1618,7 +1618,7 @@
           "ms": 245.30000001192093,
           "clientMs": 245.30000001192093,
           "inputTokens": 372,
-          "cost": 0.000015624,
+          "cost": 1.5624e-05,
           "answers": {
             "shopify_2018": {
               "type": "noul",
@@ -1644,7 +1644,7 @@
           "ms": 248.70000000298023,
           "clientMs": 248.70000000298023,
           "inputTokens": 372,
-          "cost": 0.000015624,
+          "cost": 1.5624e-05,
           "answers": {
             "shopify_2018": {
               "type": "noul",
@@ -1670,7 +1670,7 @@
           "ms": 267.09999999403954,
           "clientMs": 267.09999999403954,
           "inputTokens": 372,
-          "cost": 0.000015624,
+          "cost": 1.5624e-05,
           "answers": {
             "shopify_2018": {
               "type": "noul",
@@ -1725,7 +1725,7 @@
           "ms": 238.5,
           "clientMs": 238.5,
           "inputTokens": 390,
-          "cost": 0.00001638,
+          "cost": 1.638e-05,
           "answers": {
             "supported": {
               "type": "noul",
@@ -1749,7 +1749,7 @@
           "ms": 349.79999999701977,
           "clientMs": 349.79999999701977,
           "inputTokens": 390,
-          "cost": 0.00001638,
+          "cost": 1.638e-05,
           "answers": {
             "supported": {
               "type": "noul",
@@ -1773,7 +1773,7 @@
           "ms": 275,
           "clientMs": 275,
           "inputTokens": 390,
-          "cost": 0.00001638,
+          "cost": 1.638e-05,
           "answers": {
             "supported": {
               "type": "noul",
@@ -1821,7 +1821,7 @@
           "ms": 246.5,
           "clientMs": 246.5,
           "inputTokens": 498,
-          "cost": 0.000020916,
+          "cost": 2.0916e-05,
           "answers": {
             "meets_all": {
               "type": "noul",
@@ -1848,7 +1848,7 @@
           "ms": 273.40000000596046,
           "clientMs": 273.40000000596046,
           "inputTokens": 498,
-          "cost": 0.000020916,
+          "cost": 2.0916e-05,
           "answers": {
             "meets_all": {
               "type": "noul",
@@ -1875,7 +1875,7 @@
           "ms": 260.90000000596046,
           "clientMs": 260.90000000596046,
           "inputTokens": 498,
-          "cost": 0.000020916,
+          "cost": 2.0916e-05,
           "answers": {
             "meets_all": {
               "type": "noul",
@@ -1931,7 +1931,7 @@
           "ms": 263.40000000596046,
           "clientMs": 263.40000000596046,
           "inputTokens": 528,
-          "cost": 0.000022176,
+          "cost": 2.2176e-05,
           "answers": {
             "has_bug": {
               "type": "noul",
@@ -1963,7 +1963,7 @@
           "ms": 245.70000000298023,
           "clientMs": 245.70000000298023,
           "inputTokens": 528,
-          "cost": 0.000022176,
+          "cost": 2.2176e-05,
           "answers": {
             "has_bug": {
               "type": "noul",
@@ -1995,7 +1995,7 @@
           "ms": 255.90000000596046,
           "clientMs": 255.90000000596046,
           "inputTokens": 528,
-          "cost": 0.000022176,
+          "cost": 2.2176e-05,
           "answers": {
             "has_bug": {
               "type": "noul",
@@ -2051,7 +2051,7 @@
           "ms": 227.59999999403954,
           "clientMs": 227.59999999403954,
           "inputTokens": 532,
-          "cost": 0.000022344,
+          "cost": 2.2344e-05,
           "answers": {
             "eligible": {
               "type": "noul",
@@ -2079,7 +2079,7 @@
           "ms": 255.29999999701977,
           "clientMs": 255.29999999701977,
           "inputTokens": 532,
-          "cost": 0.000022344,
+          "cost": 2.2344e-05,
           "answers": {
             "eligible": {
               "type": "noul",
@@ -2107,7 +2107,7 @@
           "ms": 292.8999999910593,
           "clientMs": 292.8999999910593,
           "inputTokens": 532,
-          "cost": 0.000022344,
+          "cost": 2.2344e-05,
           "answers": {
             "eligible": {
               "type": "noul",
@@ -2199,7 +2199,7 @@
           "ms": 273.29999999701977,
           "clientMs": 273.29999999701977,
           "inputTokens": 579,
-          "cost": 0.000024318,
+          "cost": 2.4318e-05,
           "answers": {
             "awd": {
               "type": "noul",
@@ -2258,7 +2258,7 @@
           "ms": 279.8999999910593,
           "clientMs": 279.8999999910593,
           "inputTokens": 579,
-          "cost": 0.000024318,
+          "cost": 2.4318e-05,
           "answers": {
             "awd": {
               "type": "noul",
@@ -2317,7 +2317,7 @@
           "ms": 248.5,
           "clientMs": 248.5,
           "inputTokens": 579,
-          "cost": 0.000024318,
+          "cost": 2.4318e-05,
           "answers": {
             "awd": {
               "type": "noul",
@@ -2420,7 +2420,7 @@
           "ms": 263.29999999701977,
           "clientMs": 263.29999999701977,
           "inputTokens": 1004,
-          "cost": 0.000042168,
+          "cost": 4.2168e-05,
           "answers": {
             "hotel_ok": {
               "type": "noul",
@@ -2456,7 +2456,7 @@
           "ms": 248.8999999910593,
           "clientMs": 248.8999999910593,
           "inputTokens": 1004,
-          "cost": 0.000042168,
+          "cost": 4.2168e-05,
           "answers": {
             "hotel_ok": {
               "type": "noul",
@@ -2492,7 +2492,7 @@
           "ms": 259.20000000298023,
           "clientMs": 259.20000000298023,
           "inputTokens": 1004,
-          "cost": 0.000042168,
+          "cost": 4.2168e-05,
           "answers": {
             "hotel_ok": {
               "type": "noul",
@@ -2575,7 +2575,7 @@
           "ms": 291,
           "clientMs": 291,
           "inputTokens": 1408,
-          "cost": 0.000059136,
+          "cost": 5.9136e-05,
           "answers": {
             "root_cause": {
               "type": "choice",
@@ -2646,7 +2646,7 @@
           "ms": 242.20000000298023,
           "clientMs": 242.20000000298023,
           "inputTokens": 1408,
-          "cost": 0.000059136,
+          "cost": 5.9136e-05,
           "answers": {
             "root_cause": {
               "type": "choice",
@@ -2717,7 +2717,7 @@
           "ms": 316.8999999910593,
           "clientMs": 316.8999999910593,
           "inputTokens": 1408,
-          "cost": 0.000059136,
+          "cost": 5.9136e-05,
           "answers": {
             "root_cause": {
               "type": "choice",
@@ -2835,7 +2835,7 @@
           "ms": 247.20000000298023,
           "clientMs": 247.20000000298023,
           "inputTokens": 1228,
-          "cost": 0.000051576,
+          "cost": 5.1576e-05,
           "answers": {
             "main_objection": {
               "type": "choice",
@@ -2899,7 +2899,7 @@
           "ms": 255.5,
           "clientMs": 255.5,
           "inputTokens": 1228,
-          "cost": 0.000051576,
+          "cost": 5.1576e-05,
           "answers": {
             "main_objection": {
               "type": "choice",
@@ -2963,7 +2963,7 @@
           "ms": 264.5,
           "clientMs": 264.5,
           "inputTokens": 1228,
-          "cost": 0.000051576,
+          "cost": 5.1576e-05,
           "answers": {
             "main_objection": {
               "type": "choice",
