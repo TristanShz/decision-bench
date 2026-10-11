@@ -41,6 +41,45 @@ Every model got the long documents right (lease, co-ownership minutes, a 135-lin
 | Clef | Implicit threat | Missed the intimidation in “Je sais où se trouve votre magasin… vous feriez mieux de retirer cet avis”. |
 | Clef | Logic | Answered “yes” where the statements do not allow a conclusion. |
 
+### English suite
+
+Suite `en` v1 · 24 cases, 76 questions · same settings · run on 2026-10-11.
+
+| Model | Accuracy | Quality | Stability | p50 latency | p95 latency | Cost / 1k requests | Missed questions |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| `typesafe/jev-1.13` (OpenRouter) | **99.6 %** | 95.1 % | 98.7 % | **263 ms** | **332 ms** | $0.030 | 1 (1 run of 3) |
+| `perplexity/pplx-decider-v1.1-27b` (OpenRouter) | 98.7 % | **98.5 %** | **100 %** | 266 ms | 389 ms | $0.028 | 1 |
+| `microsoft/microsoft-decision-1` (OpenRouter) | 97.4 % | 96.0 % | **100 %** | 328 ms | 454 ms | **$0.015** | 2 |
+| `openai/gpt-6-luna-decisions` (OpenRouter) | 94.7 % | 94.1 % | **100 %** | 268 ms | 425 ms | $0.070 | 4 |
+| Clef 27B Q8_0 (self-hosted, llama.cpp)¹ | 93.4 % | 92.5 % | **100 %** | 1 028 ms | 4 080 ms | — | 5 |
+
+The English misses are mostly reasoning over rules:
+
+| Model | Case | What happened |
+|---|---|---|
+| Jev, OpenAI, Clef | Expense policy | Accepted a $210 hotel in Denver: the cap is $250 only in tier-1 cities, $180 elsewhere. Jev hesitated (P(yes) ≈ 0.5) and got it wrong in 1 run of 3. |
+| Clef | Expense policy | Said a claim submitted 18 days after the trip was late (the deadline is 30 days). |
+| OpenAI | Percentage trap | Said +20 % then −20 % brings the price back to $100 (it is $96). |
+| OpenAI | Résumé screening | Accepted a candidate with 2.5 years of experience for a 3-year requirement. |
+| OpenAI | Return policy | Accepted a laptop return after 20 days (electronics: 15 days). |
+| Microsoft | Calibration | Answered “Fine.” with 87–89 % satisfaction, where an uncertain probability is expected. |
+| Microsoft | Code review | Did not see that `forEach` with an `async` callback makes the function return 0. |
+| Perplexity | Used car listing | Did not read “$18,900 OBO” (*or best offer*) as a negotiable price. |
+| Clef | Sarcasm, threat | Missed the sarcasm about a “quick sync” and the conditional threat “you’ll find out what happens when I see you”. |
+| Clef | Quantities | Said 7 cups of flour are enough for 4 batches of 2 cups. |
+
+### French vs English
+
+| Model | `fr` accuracy | `en` accuracy | `mixed` accuracy |
+|---|---:|---:|---:|
+| `typesafe/jev-1.13` | **100 %** | **99.6 %** | **99.6 %** |
+| `perplexity/pplx-decider-v1.1-27b` | 98.8 % | 98.7 % | 98.8 % |
+| `openai/gpt-6-luna-decisions` | 98.8 % | 94.7 % | 96.3 % |
+| `microsoft/microsoft-decision-1` | 97.7 % | 97.4 % | 95.4 % |
+| Clef 27B Q8_0 | 96.5 % | 93.4 % | 91.3 % |
+
+On these suites, **no model does worse in French than in English**, and the ranking is almost the same in both languages. The French and English suites cover the same skills with different content, so part of the gap comes from the cases themselves: the English suite has more multi-rule reasoning (expense and return policies, résumé screening), which is where most English misses are. A translated pair of suites would isolate the language effect, at the cost of testing translation-friendly content.
+
 ### Mixed suite
 
 Suite `mixed` v1 · 23 cases, 80 questions (8 in French) · same settings · run on 2026-10-10.
@@ -52,8 +91,6 @@ Suite `mixed` v1 · 23 cases, 80 questions (8 in French) · same settings · run
 | `openai/gpt-6-luna-decisions` (OpenRouter) | 96.3 % | 95.0 % | **100 %** | 94.7 % | **207 ms** | 458 ms | $0.085 |
 | `microsoft/microsoft-decision-1` (OpenRouter) | 95.4 % | 95.3 % | 98.8 % | 95.6 % | 319 ms | 478 ms | **$0.022** |
 | Clef 27B Q8_0 (self-hosted, llama.cpp)¹ | 91.3 % | 92.5 % | **100 %** | 92.1 % | 1 046 ms | 6 886 ms | — |
-
-The English suite has not been run yet: reports are welcome.
 
 ### Metrics
 

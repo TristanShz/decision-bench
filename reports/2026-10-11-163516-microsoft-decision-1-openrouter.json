@@ -1,0 +1,3524 @@
+{
+  "id": "2026-10-11-163516-microsoft-decision-1-openrouter",
+  "name": "self-host-english",
+  "createdAt": "2026-10-11T14:35:16.803Z",
+  "suiteId": "en",
+  "suiteVersion": "1",
+  "target": {
+    "kind": "systemone",
+    "label": "Microsoft Decision 1 — OpenRouter",
+    "url": "https://openrouter.ai/api/",
+    "model": "microsoft/microsoft-decision-1",
+    "proxy": false
+  },
+  "settings": {
+    "repetitions": 3,
+    "warmup": 1,
+    "concurrency": 1,
+    "timeoutMs": 120000
+  },
+  "durationMs": 24791.5,
+  "cases": [
+    {
+      "meta": {
+        "id": "review-positive",
+        "name": "Product review",
+        "category": "Sentiment",
+        "complexity": "simple",
+        "length": "court",
+        "lang": "en",
+        "questions": {
+          "is_positive": {
+            "type": "noul",
+            "expected": true,
+            "size": 2
+          },
+          "mentions_noise": {
+            "type": "noul",
+            "expected": true,
+            "size": 2
+          },
+          "sentiment": {
+            "type": "score",
+            "expected": [
+              3,
+              4
+            ],
+            "size": 5
+          }
+        }
+      },
+      "runs": [
+        {
+          "rep": 1,
+          "ok": true,
+          "status": 200,
+          "ms": 366.8999999910593,
+          "clientMs": 366.8999999910593,
+          "inputTokens": 93,
+          "cost": 3.906e-06,
+          "answers": {
+            "is_positive": {
+              "type": "noul",
+              "noul": 0.9991959135738344
+            },
+            "mentions_noise": {
+              "type": "noul",
+              "noul": 0.9982992774191556
+            },
+            "sentiment": {
+              "type": "score",
+              "score": 3.969716701226481,
+              "legend": {
+                "0": "Very negative",
+                "1": "Negative",
+                "2": "Neutral",
+                "3": "Positive",
+                "4": "Very positive"
+              },
+              "probabilities": {
+                "0": 1.8362286769399684e-05,
+                "1": 2.5098270243129103e-05,
+                "2": 0.00041792352126727886,
+                "3": 0.0292987077731778,
+                "4": 0.9702399081485424
+              },
+              "confidence": 0.962799885185678
+            }
+          },
+          "at": 367.6000000089407
+        },
+        {
+          "rep": 2,
+          "ok": true,
+          "status": 200,
+          "ms": 359.59999999403954,
+          "clientMs": 359.59999999403954,
+          "inputTokens": 93,
+          "cost": 3.906e-06,
+          "answers": {
+            "is_positive": {
+              "type": "noul",
+              "noul": 0.9991959133702047
+            },
+            "mentions_noise": {
+              "type": "noul",
+              "noul": 0.998073265146568
+            },
+            "sentiment": {
+              "type": "score",
+              "score": 3.969822002416192,
+              "legend": {
+                "0": "Very negative",
+                "1": "Negative",
+                "2": "Neutral",
+                "3": "Positive",
+                "4": "Very positive"
+              },
+              "probabilities": {
+                "0": 1.620549009453908e-05,
+                "1": 2.509955406263745e-05,
+                "2": 0.00036883525449089594,
+                "3": 0.02930020645225983,
+                "4": 0.970289653249092
+              },
+              "confidence": 0.962862066561365
+            }
+          },
+          "at": 8726.40000000596
+        },
+        {
+          "rep": 3,
+          "ok": true,
+          "status": 200,
+          "ms": 316.5,
+          "clientMs": 316.5,
+          "inputTokens": 93,
+          "cost": 3.906e-06,
+          "answers": {
+            "is_positive": {
+              "type": "noul",
+              "noul": 0.9990889478736263
+            },
+            "mentions_noise": {
+              "type": "noul",
+              "noul": 0.9980732653626873
+            },
+            "sentiment": {
+              "type": "score",
+              "score": 3.9698171923545575,
+              "legend": {
+                "0": "Very negative",
+                "1": "Negative",
+                "2": "Neutral",
+                "3": "Positive",
+                "4": "Very positive"
+              },
+              "probabilities": {
+                "0": 1.6205461493027574e-05,
+                "1": 2.6718289065066416e-05,
+                "2": 0.0003688346035234946,
+                "3": 0.029300161725228334,
+                "4": 0.9702880799206901
+              },
+              "confidence": 0.9628600999008627
+            }
+          },
+          "at": 16831.40000000596
+        }
+      ]
+    },
+    {
+      "meta": {
+        "id": "understatement",
+        "name": "Understatement",
+        "category": "Sentiment",
+        "complexity": "complexe",
+        "length": "court",
+        "lang": "en",
+        "questions": {
+          "demo_successful": {
+            "type": "noul",
+            "expected": false,
+            "size": 2
+          },
+          "manager_view": {
+            "type": "score",
+            "expected": [
+              0,
+              1
+            ],
+            "size": 5
+          }
+        }
+      },
+      "runs": [
+        {
+          "rep": 1,
+          "ok": true,
+          "status": 200,
+          "ms": 730.2000000029802,
+          "clientMs": 730.2000000029802,
+          "inputTokens": 81,
+          "cost": 3.402e-06,
+          "answers": {
+            "demo_successful": {
+              "type": "noul",
+              "noul": 0.0031726880121804193
+            },
+            "manager_view": {
+              "type": "score",
+              "score": 1.098991434003044,
+              "legend": {
+                "0": "Very bad",
+                "1": "Bad",
+                "2": "Average",
+                "3": "Good",
+                "4": "Very good"
+              },
+              "probabilities": {
+                "0": 0.07891509041536646,
+                "1": 0.7487255983046275,
+                "2": 0.16706326763581375,
+                "3": 0.005044874149979909,
+                "4": 0.00025116949421231927
+              },
+              "confidence": 0.6859069978807844
+            }
+          },
+          "at": 1098.9000000059605
+        },
+        {
+          "rep": 2,
+          "ok": true,
+          "status": 200,
+          "ms": 307.29999999701977,
+          "clientMs": 307.29999999701977,
+          "inputTokens": 81,
+          "cost": 3.402e-06,
+          "answers": {
+            "demo_successful": {
+              "type": "noul",
+              "noul": 0.0031726895275239688
+            },
+            "manager_view": {
+              "type": "score",
+              "score": 1.12003383727359,
+              "legend": {
+                "0": "Very bad",
+                "1": "Bad",
+                "2": "Average",
+                "3": "Good",
+                "4": "Very good"
+              },
+              "probabilities": {
+                "0": 0.07714181922103058,
+                "1": 0.7319011808929076,
+                "2": 0.1850536042610065,
+                "3": 0.005588134641551605,
+                "4": 0.00031526098350366624
+              },
+              "confidence": 0.6648764761161344
+            }
+          },
+          "at": 9034.40000000596
+        },
+        {
+          "rep": 3,
+          "ok": true,
+          "status": 200,
+          "ms": 373.79999999701977,
+          "clientMs": 373.79999999701977,
+          "inputTokens": 81,
+          "cost": 3.402e-06,
+          "answers": {
+            "demo_successful": {
+              "type": "noul",
+              "noul": 0.0031726880121804193
+            },
+            "manager_view": {
+              "type": "score",
+              "score": 1.0900174230436304,
+              "legend": {
+                "0": "Very bad",
+                "1": "Bad",
+                "2": "Average",
+                "3": "Good",
+                "4": "Very good"
+              },
+              "probabilities": {
+                "0": 0.07176111947285325,
+                "1": 0.7715046727223499,
+                "2": 0.151918273006104,
+                "3": 0.004587534885698522,
+                "4": 0.00022839991299423323
+              },
+              "confidence": 0.7143808409029374
+            }
+          },
+          "at": 17205.60000000894
+        }
+      ]
+    },
+    {
+      "meta": {
+        "id": "sarcasm",
+        "name": "Sarcasm",
+        "category": "Sentiment",
+        "complexity": "complexe",
+        "length": "court",
+        "lang": "en",
+        "questions": {
+          "is_sarcastic": {
+            "type": "noul",
+            "expected": true,
+            "size": 2
+          },
+          "is_enthusiastic": {
+            "type": "noul",
+            "expected": false,
+            "size": 2
+          }
+        }
+      },
+      "runs": [
+        {
+          "rep": 1,
+          "ok": true,
+          "status": 200,
+          "ms": 318.6000000089407,
+          "clientMs": 318.6000000089407,
+          "inputTokens": 74,
+          "cost": 3.108e-06,
+          "answers": {
+            "is_enthusiastic": {
+              "type": "noul",
+              "noul": 0.0010322335859320035
+            },
+            "is_sarcastic": {
+              "type": "noul",
+              "noul": 0.9890130589410535
+            }
+          },
+          "at": 1418.9000000059605
+        },
+        {
+          "rep": 2,
+          "ok": true,
+          "status": 200,
+          "ms": 364,
+          "clientMs": 364,
+          "inputTokens": 74,
+          "cost": 3.108e-06,
+          "answers": {
+            "is_enthusiastic": {
+              "type": "noul",
+              "noul": 0.0009110528057059765
+            },
+            "is_sarcastic": {
+              "type": "noul",
+              "noul": 0.9890130543787078
+            }
+          },
+          "at": 9400
+        },
+        {
+          "rep": 3,
+          "ok": true,
+          "status": 200,
+          "ms": 315.20000000298023,
+          "clientMs": 315.20000000298023,
+          "inputTokens": 74,
+          "cost": 3.108e-06,
+          "answers": {
+            "is_enthusiastic": {
+              "type": "noul",
+              "noul": 0.0010322335859320035
+            },
+            "is_sarcastic": {
+              "type": "noul",
+              "noul": 0.9890130589410535
+            }
+          },
+          "at": 17521.80000001192
+        }
+      ]
+    },
+    {
+      "meta": {
+        "id": "idioms",
+        "name": "Idioms",
+        "category": "Comprehension",
+        "complexity": "complexe",
+        "length": "court",
+        "lang": "en",
+        "questions": {
+          "onboarding_hard": {
+            "type": "noul",
+            "expected": false,
+            "size": 2
+          },
+          "migration_done": {
+            "type": "noul",
+            "expected": false,
+            "size": 2
+          },
+          "main_risk": {
+            "type": "choice",
+            "expected": "migration",
+            "size": 3
+          }
+        }
+      },
+      "runs": [
+        {
+          "rep": 1,
+          "ok": true,
+          "status": 200,
+          "ms": 330.59999999403954,
+          "clientMs": 330.59999999403954,
+          "inputTokens": 117,
+          "cost": 4.914e-06,
+          "answers": {
+            "main_risk": {
+              "type": "choice",
+              "choice": "migration",
+              "probabilities": {
+                "migration": 0.9993084773978732,
+                "none": 0.00026107782820502254,
+                "onboarding": 0.0004304447739218284
+              },
+              "confidence": 0.9989627160968098
+            },
+            "migration_done": {
+              "type": "noul",
+              "noul": 0.001700726202879206
+            },
+            "onboarding_hard": {
+              "type": "noul",
+              "noul": 0.0011695130119992836
+            }
+          },
+          "at": 1751.2000000029802
+        },
+        {
+          "rep": 2,
+          "ok": true,
+          "status": 200,
+          "ms": 345,
+          "clientMs": 345,
+          "inputTokens": 117,
+          "cost": 4.914e-06,
+          "answers": {
+            "main_risk": {
+              "type": "choice",
+              "choice": "migration",
+              "probabilities": {
+                "migration": 0.9994167430486082,
+                "none": 0.00020334963559401716,
+                "onboarding": 0.0003799073157977198
+              },
+              "confidence": 0.9991251145729123
+            },
+            "migration_done": {
+              "type": "noul",
+              "noul": 0.001501185726092067
+            },
+            "onboarding_hard": {
+              "type": "noul",
+              "noul": 0.0013250263258087836
+            }
+          },
+          "at": 9746.40000000596
+        },
+        {
+          "rep": 3,
+          "ok": true,
+          "status": 200,
+          "ms": 290,
+          "clientMs": 290,
+          "inputTokens": 117,
+          "cost": 4.914e-06,
+          "answers": {
+            "main_risk": {
+              "type": "choice",
+              "choice": "migration",
+              "probabilities": {
+                "migration": 0.9993084773959976,
+                "none": 0.00026107798389507476,
+                "onboarding": 0.0004304446201072769
+              },
+              "confidence": 0.9989627160939965
+            },
+            "migration_done": {
+              "type": "noul",
+              "noul": 0.0017007262325075415
+            },
+            "onboarding_hard": {
+              "type": "noul",
+              "noul": 0.0011695130718213035
+            }
+          },
+          "at": 17812.90000000596
+        }
+      ]
+    },
+    {
+      "meta": {
+        "id": "calibration-fine",
+        "name": "Ambiguous reply (calibration)",
+        "category": "Calibration",
+        "complexity": "complexe",
+        "length": "court",
+        "lang": "en",
+        "questions": {
+          "is_satisfied": {
+            "type": "noul",
+            "expected": [
+              0.15,
+              0.85
+            ],
+            "size": 2
+          }
+        }
+      },
+      "runs": [
+        {
+          "rep": 1,
+          "ok": true,
+          "status": 200,
+          "ms": 294.20000000298023,
+          "clientMs": 294.20000000298023,
+          "inputTokens": 24,
+          "cost": 1.008e-06,
+          "answers": {
+            "is_satisfied": {
+              "type": "noul",
+              "noul": 0.8670361871399864
+            }
+          },
+          "at": 2047
+        },
+        {
+          "rep": 2,
+          "ok": true,
+          "status": 200,
+          "ms": 325.59999999403954,
+          "clientMs": 325.59999999403954,
+          "inputTokens": 24,
+          "cost": 1.008e-06,
+          "answers": {
+            "is_satisfied": {
+              "type": "noul",
+              "noul": 0.8670361871399864
+            }
+          },
+          "at": 10073.40000000596
+        },
+        {
+          "rep": 3,
+          "ok": true,
+          "status": 200,
+          "ms": 273,
+          "clientMs": 273,
+          "inputTokens": 24,
+          "cost": 1.008e-06,
+          "answers": {
+            "is_satisfied": {
+              "type": "noul",
+              "noul": 0.8933096381553518
+            }
+          },
+          "at": 18087.10000000894
+        }
+      ]
+    },
+    {
+      "meta": {
+        "id": "billing-ticket",
+        "name": "Billing ticket",
+        "category": "Support",
+        "complexity": "simple",
+        "length": "court",
+        "lang": "en",
+        "questions": {
+          "department": {
+            "type": "choice",
+            "expected": "billing",
+            "size": 3
+          },
+          "refund_requested": {
+            "type": "noul",
+            "expected": true,
+            "size": 2
+          },
+          "frustration": {
+            "type": "score",
+            "expected": 0,
+            "size": 3
+          }
+        }
+      },
+      "runs": [
+        {
+          "rep": 1,
+          "ok": true,
+          "status": 200,
+          "ms": 330.8999999910593,
+          "clientMs": 330.8999999910593,
+          "inputTokens": 139,
+          "cost": 5.838e-06,
+          "answers": {
+            "department": {
+              "type": "choice",
+              "choice": "billing",
+              "probabilities": {
+                "billing": 0.9984873840262662,
+                "sales": 0.0007091001901714833,
+                "technical": 0.0008035157835622088
+              },
+              "confidence": 0.9977310760393994
+            },
+            "frustration": {
+              "type": "score",
+              "score": 0.05455748136192755,
+              "legend": {
+                "0": "Calm",
+                "1": "Frustrated",
+                "2": "Very angry"
+              },
+              "probabilities": {
+                "0": 0.946035424196701,
+                "1": 0.053371670244670474,
+                "2": 0.0005929055586285366
+              },
+              "confidence": 0.9190531362950514
+            },
+            "refund_requested": {
+              "type": "noul",
+              "noul": 0.9996646497057781
+            }
+          },
+          "at": 2378.6000000089407
+        },
+        {
+          "rep": 2,
+          "ok": true,
+          "status": 200,
+          "ms": 299.59999999403954,
+          "clientMs": 299.59999999403954,
+          "inputTokens": 139,
+          "cost": 5.838e-06,
+          "answers": {
+            "department": {
+              "type": "choice",
+              "choice": "billing",
+              "probabilities": {
+                "billing": 0.9984873840262662,
+                "sales": 0.0007091001901714833,
+                "technical": 0.0008035157835622088
+              },
+              "confidence": 0.9977310760393994
+            },
+            "frustration": {
+              "type": "score",
+              "score": 0.054711046561078246,
+              "legend": {
+                "0": "Calm",
+                "1": "Frustrated",
+                "2": "Very angry"
+              },
+              "probabilities": {
+                "0": 0.9459607506770508,
+                "1": 0.053367452084820396,
+                "2": 0.0006717972381289239
+              },
+              "confidence": 0.9189411260155762
+            },
+            "refund_requested": {
+              "type": "noul",
+              "noul": 0.9995694428047309
+            }
+          },
+          "at": 10374
+        },
+        {
+          "rep": 3,
+          "ok": true,
+          "status": 200,
+          "ms": 311.59999999403954,
+          "clientMs": 311.59999999403954,
+          "inputTokens": 139,
+          "cost": 5.838e-06,
+          "answers": {
+            "department": {
+              "type": "choice",
+              "choice": "billing",
+              "probabilities": {
+                "billing": 0.9982863266435151,
+                "sales": 0.0008033540066192534,
+                "technical": 0.000910319349865644
+              },
+              "confidence": 0.9974294899652727
+            },
+            "frustration": {
+              "type": "score",
+              "score": 0.0548850351092674,
+              "legend": {
+                "0": "Calm",
+                "1": "Frustrated",
+                "2": "Very angry"
+              },
+              "probabilities": {
+                "0": 0.9458761426348578,
+                "1": 0.053362679621017046,
+                "2": 0.0007611777441251748
+              },
+              "confidence": 0.9188142139522866
+            },
+            "refund_requested": {
+              "type": "noul",
+              "noul": 0.9997040428406091
+            }
+          },
+          "at": 18401
+        }
+      ]
+    },
+    {
+      "meta": {
+        "id": "intent-calendar",
+        "name": "Assistant routing",
+        "category": "Routing",
+        "complexity": "simple",
+        "length": "court",
+        "lang": "en",
+        "questions": {
+          "tool": {
+            "type": "choice",
+            "expected": "calendar_lookup",
+            "size": 6
+          },
+          "creates_something": {
+            "type": "noul",
+            "expected": false,
+            "size": 2
+          }
+        }
+      },
+      "runs": [
+        {
+          "rep": 1,
+          "ok": true,
+          "status": 200,
+          "ms": 278.79999999701977,
+          "clientMs": 278.79999999701977,
+          "inputTokens": 131,
+          "cost": 5.502e-06,
+          "answers": {
+            "creates_something": {
+              "type": "noul",
+              "noul": 0.0013250286267232948
+            },
+            "tool": {
+              "type": "choice",
+              "choice": "calendar_lookup",
+              "probabilities": {
+                "calendar_lookup": 0.994539491574055,
+                "create_reminder": 0.0009069028223497418,
+                "get_weather": 0.0005500643671350381,
+                "none": 0.002175546774563828,
+                "search_web": 0.0008003389316688748,
+                "send_email": 0.0010276555302275489
+              },
+              "confidence": 0.993447389888866
+            }
+          },
+          "at": 2658.1000000089407
+        },
+        {
+          "rep": 2,
+          "ok": true,
+          "status": 200,
+          "ms": 392.70000000298023,
+          "clientMs": 392.70000000298023,
+          "inputTokens": 131,
+          "cost": 5.502e-06,
+          "answers": {
+            "creates_something": {
+              "type": "noul",
+              "noul": 0.001700729957286944
+            },
+            "tool": {
+              "type": "choice",
+              "choice": "calendar_lookup",
+              "probabilities": {
+                "calendar_lookup": 0.9955089050714397,
+                "create_reminder": 0.0008011189501557102,
+                "get_weather": 0.0004859032053462352,
+                "none": 0.001695968830788367,
+                "search_web": 0.0007069849921142371,
+                "send_email": 0.0008011189501557102
+              },
+              "confidence": 0.9946106860857278
+            }
+          },
+          "at": 10767.90000000596
+        },
+        {
+          "rep": 3,
+          "ok": true,
+          "status": 200,
+          "ms": 326.90000000596046,
+          "clientMs": 326.90000000596046,
+          "inputTokens": 131,
+          "cost": 5.502e-06,
+          "answers": {
+            "creates_something": {
+              "type": "noul",
+              "noul": 0.0017007306438882408
+            },
+            "tool": {
+              "type": "choice",
+              "choice": "calendar_lookup",
+              "probabilities": {
+                "calendar_lookup": 0.9955491756644098,
+                "create_reminder": 0.0008011513106009929,
+                "get_weather": 0.0005506227064653985,
+                "none": 0.0014967476973218319,
+                "search_web": 0.0008011513106009929,
+                "send_email": 0.0008011513106009929
+              },
+              "confidence": 0.9946590107972918
+            }
+          },
+          "at": 18730.60000000894
+        }
+      ]
+    },
+    {
+      "meta": {
+        "id": "moderation-threat",
+        "name": "Moderation: threat",
+        "category": "Moderation",
+        "complexity": "complexe",
+        "length": "court",
+        "lang": "en",
+        "questions": {
+          "is_threat": {
+            "type": "noul",
+            "expected": true,
+            "size": 2
+          },
+          "has_profanity": {
+            "type": "noul",
+            "expected": false,
+            "size": 2
+          },
+          "category": {
+            "type": "choice",
+            "expected": "threat",
+            "size": 4
+          }
+        }
+      },
+      "runs": [
+        {
+          "rep": 1,
+          "ok": true,
+          "status": 200,
+          "ms": 277,
+          "clientMs": 277,
+          "inputTokens": 120,
+          "cost": 5.04e-06,
+          "answers": {
+            "category": {
+              "type": "choice",
+              "choice": "threat",
+              "probabilities": {
+                "harassment": 0.012386501463355178,
+                "ok": 0.0021524512048419387,
+                "spam": 0.0014793566362085752,
+                "threat": 0.9839816906955943
+              },
+              "confidence": 0.9786422542607923
+            },
+            "has_profanity": {
+              "type": "noul",
+              "noul": 0.005220181576090021
+            },
+            "is_threat": {
+              "type": "noul",
+              "noul": 0.9669139293634739
+            }
+          },
+          "at": 2935.9000000059605
+        },
+        {
+          "rep": 2,
+          "ok": true,
+          "status": 200,
+          "ms": 286.20000000298023,
+          "clientMs": 286.20000000298023,
+          "inputTokens": 120,
+          "cost": 5.04e-06,
+          "answers": {
+            "category": {
+              "type": "choice",
+              "choice": "threat",
+              "probabilities": {
+                "harassment": 0.012386501463355178,
+                "ok": 0.0021524512048419387,
+                "spam": 0.0014793566362085752,
+                "threat": 0.9839816906955943
+              },
+              "confidence": 0.9786422542607923
+            },
+            "has_profanity": {
+              "type": "noul",
+              "noul": 0.005220181576090021
+            },
+            "is_threat": {
+              "type": "noul",
+              "noul": 0.9669139293634739
+            }
+          },
+          "at": 11055.90000000596
+        },
+        {
+          "rep": 3,
+          "ok": true,
+          "status": 200,
+          "ms": 312.40000000596046,
+          "clientMs": 312.40000000596046,
+          "inputTokens": 120,
+          "cost": 5.04e-06,
+          "answers": {
+            "category": {
+              "type": "choice",
+              "choice": "threat",
+              "probabilities": {
+                "harassment": 0.012394557527089383,
+                "ok": 0.0016774209535211316,
+                "spam": 0.0013063767521426398,
+                "threat": 0.9846216447672469
+              },
+              "confidence": 0.9794955263563292
+            },
+            "has_profanity": {
+              "type": "noul",
+              "noul": 0.005220176866963189
+            },
+            "is_threat": {
+              "type": "noul",
+              "noul": 0.9669139498880451
+            }
+          },
+          "at": 19044.40000000596
+        }
+      ]
+    },
+    {
+      "meta": {
+        "id": "moderation-criticism",
+        "name": "Moderation: harsh criticism",
+        "category": "Moderation",
+        "complexity": "complexe",
+        "length": "court",
+        "lang": "en",
+        "questions": {
+          "is_toxic": {
+            "type": "noul",
+            "expected": false,
+            "size": 2
+          },
+          "should_remove": {
+            "type": "noul",
+            "expected": false,
+            "size": 2
+          },
+          "category": {
+            "type": "choice",
+            "expected": "ok",
+            "size": 4
+          }
+        }
+      },
+      "runs": [
+        {
+          "rep": 1,
+          "ok": true,
+          "status": 200,
+          "ms": 318.40000000596046,
+          "clientMs": 318.40000000596046,
+          "inputTokens": 125,
+          "cost": 5.25e-06,
+          "answers": {
+            "category": {
+              "type": "choice",
+              "choice": "ok",
+              "probabilities": {
+                "harassment": 0.04198569920085294,
+                "ok": 0.9555902195951559,
+                "spam": 0.0014366719651820558,
+                "threat": 0.0009874092388091839
+              },
+              "confidence": 0.9407869594602079
+            },
+            "is_toxic": {
+              "type": "noul",
+              "noul": 0.05340385551871944
+            },
+            "should_remove": {
+              "type": "noul",
+              "noul": 0.017986407673501938
+            }
+          },
+          "at": 3255
+        },
+        {
+          "rep": 2,
+          "ok": true,
+          "status": 200,
+          "ms": 322.8999999910593,
+          "clientMs": 322.8999999910593,
+          "inputTokens": 125,
+          "cost": 5.25e-06,
+          "answers": {
+            "category": {
+              "type": "choice",
+              "choice": "ok",
+              "probabilities": {
+                "harassment": 0.0472814331104847,
+                "ok": 0.9496729103791427,
+                "spam": 0.001617881286386686,
+                "threat": 0.001427775223985831
+              },
+              "confidence": 0.9328972138388569
+            },
+            "is_toxic": {
+              "type": "noul",
+              "noul": 0.05340385551871944
+            },
+            "should_remove": {
+              "type": "noul",
+              "noul": 0.017986429760946134
+            }
+          },
+          "at": 11379.70000000298
+        },
+        {
+          "rep": 3,
+          "ok": true,
+          "status": 200,
+          "ms": 306,
+          "clientMs": 306,
+          "inputTokens": 125,
+          "cost": 5.25e-06,
+          "answers": {
+            "category": {
+              "type": "choice",
+              "choice": "ok",
+              "probabilities": {
+                "harassment": 0.03724227243966491,
+                "ok": 0.9604908941325276,
+                "spam": 0.0012743604845357529,
+                "threat": 0.0009924729432716991
+              },
+              "confidence": 0.9473211921767035
+            },
+            "is_toxic": {
+              "type": "noul",
+              "noul": 0.05340382577121549
+            },
+            "should_remove": {
+              "type": "noul",
+              "noul": 0.02033257655600518
+            }
+          },
+          "at": 19351.80000001192
+        }
+      ]
+    },
+    {
+      "meta": {
+        "id": "phishing",
+        "name": "Phishing email",
+        "category": "Security",
+        "complexity": "simple",
+        "length": "court",
+        "lang": "en",
+        "questions": {
+          "is_phishing": {
+            "type": "noul",
+            "expected": true,
+            "size": 2
+          },
+          "legit_domain": {
+            "type": "noul",
+            "expected": false,
+            "size": 2
+          },
+          "asks_credentials": {
+            "type": "noul",
+            "expected": true,
+            "size": 2
+          }
+        }
+      },
+      "runs": [
+        {
+          "rep": 1,
+          "ok": true,
+          "status": 200,
+          "ms": 308,
+          "clientMs": 308,
+          "inputTokens": 135,
+          "cost": 5.67e-06,
+          "answers": {
+            "asks_credentials": {
+              "type": "noul",
+              "noul": 0.995929852307053
+            },
+            "is_phishing": {
+              "type": "noul",
+              "noul": 0.9989677645107035
+            },
+            "legit_domain": {
+              "type": "noul",
+              "noul": 0.002182728811080094
+            }
+          },
+          "at": 3563.7000000029802
+        },
+        {
+          "rep": 2,
+          "ok": true,
+          "status": 200,
+          "ms": 302.09999999403954,
+          "clientMs": 302.09999999403954,
+          "inputTokens": 135,
+          "cost": 5.67e-06,
+          "answers": {
+            "asks_credentials": {
+              "type": "noul",
+              "noul": 0.9947798593436853
+            },
+            "is_phishing": {
+              "type": "noul",
+              "noul": 0.9986749709224518
+            },
+            "legit_domain": {
+              "type": "noul",
+              "noul": 0.0024726341398148884
+            }
+          },
+          "at": 11682.20000000298
+        },
+        {
+          "rep": 3,
+          "ok": true,
+          "status": 200,
+          "ms": 331.1000000089407,
+          "clientMs": 331.1000000089407,
+          "inputTokens": 135,
+          "cost": 5.67e-06,
+          "answers": {
+            "asks_credentials": {
+              "type": "noul",
+              "noul": 0.995390416474978
+            },
+            "is_phishing": {
+              "type": "noul",
+              "noul": 0.9986749721116073
+            },
+            "legit_domain": {
+              "type": "noul",
+              "noul": 0.0019267441478113014
+            }
+          },
+          "at": 19684.20000000298
+        }
+      ]
+    },
+    {
+      "meta": {
+        "id": "us-date",
+        "name": "US date format",
+        "category": "Reasoning",
+        "complexity": "complexe",
+        "length": "court",
+        "lang": "en",
+        "questions": {
+          "start_month": {
+            "type": "choice",
+            "expected": "april",
+            "size": 2
+          },
+          "ends_2027": {
+            "type": "noul",
+            "expected": true,
+            "size": 2
+          }
+        }
+      },
+      "runs": [
+        {
+          "rep": 1,
+          "ok": true,
+          "status": 200,
+          "ms": 328.70000000298023,
+          "clientMs": 328.70000000298023,
+          "inputTokens": 99,
+          "cost": 4.158e-06,
+          "answers": {
+            "ends_2027": {
+              "type": "noul",
+              "noul": 0.8933094684492403
+            },
+            "start_month": {
+              "type": "choice",
+              "choice": "april",
+              "probabilities": {
+                "april": 0.8519528038477825,
+                "may": 0.14804719615221756
+              },
+              "confidence": 0.703905607695565
+            }
+          },
+          "at": 3893.2000000029802
+        },
+        {
+          "rep": 2,
+          "ok": true,
+          "status": 200,
+          "ms": 304.20000000298023,
+          "clientMs": 304.20000000298023,
+          "inputTokens": 99,
+          "cost": 4.158e-06,
+          "answers": {
+            "ends_2027": {
+              "type": "noul",
+              "noul": 0.9465966468493603
+            },
+            "start_month": {
+              "type": "choice",
+              "choice": "april",
+              "probabilities": {
+                "april": 0.880797085800514,
+                "may": 0.11920291419948607
+              },
+              "confidence": 0.7615941716010279
+            }
+          },
+          "at": 11987.90000000596
+        },
+        {
+          "rep": 3,
+          "ok": true,
+          "status": 200,
+          "ms": 361.29999999701977,
+          "clientMs": 361.29999999701977,
+          "inputTokens": 99,
+          "cost": 4.158e-06,
+          "answers": {
+            "ends_2027": {
+              "type": "noul",
+              "noul": 0.9241418338738425
+            },
+            "start_month": {
+              "type": "choice",
+              "choice": "april",
+              "probabilities": {
+                "april": 0.9046505421702796,
+                "may": 0.09534945782972028
+              },
+              "confidence": 0.8093010843405593
+            }
+          },
+          "at": 20047
+        }
+      ]
+    },
+    {
+      "meta": {
+        "id": "recipe-math",
+        "name": "Quantity reasoning",
+        "category": "Reasoning",
+        "complexity": "complexe",
+        "length": "court",
+        "lang": "en",
+        "questions": {
+          "enough_flour": {
+            "type": "noul",
+            "expected": false,
+            "size": 2
+          },
+          "shortfall": {
+            "type": "choice",
+            "expected": "one",
+            "size": 4
+          }
+        }
+      },
+      "runs": [
+        {
+          "rep": 1,
+          "ok": true,
+          "status": 200,
+          "ms": 298.5,
+          "clientMs": 298.5,
+          "inputTokens": 98,
+          "cost": 4.116e-06,
+          "answers": {
+            "enough_flour": {
+              "type": "noul",
+              "noul": 0.07585859379954075
+            },
+            "shortfall": {
+              "type": "choice",
+              "choice": "one",
+              "probabilities": {
+                "none": 0.04279031502881001,
+                "one": 0.6693532060489572,
+                "three": 0.07054930256795844,
+                "two": 0.21730717635427427
+              },
+              "confidence": 0.5591376080652762
+            }
+          },
+          "at": 4192.9000000059605
+        },
+        {
+          "rep": 2,
+          "ok": true,
+          "status": 200,
+          "ms": 315.79999999701977,
+          "clientMs": 315.79999999701977,
+          "inputTokens": 98,
+          "cost": 4.116e-06,
+          "answers": {
+            "enough_flour": {
+              "type": "noul",
+              "noul": 0.06754708257087425
+            },
+            "shortfall": {
+              "type": "choice",
+              "choice": "one",
+              "probabilities": {
+                "none": 0.03827202274774729,
+                "one": 0.6783877947549838,
+                "three": 0.06309989797693014,
+                "two": 0.22024028452033878
+              },
+              "confidence": 0.5711837263399784
+            }
+          },
+          "at": 12304.800000011921
+        },
+        {
+          "rep": 3,
+          "ok": true,
+          "status": 200,
+          "ms": 309.30000001192093,
+          "clientMs": 309.30000001192093,
+          "inputTokens": 98,
+          "cost": 4.116e-06,
+          "answers": {
+            "enough_flour": {
+              "type": "noul",
+              "noul": 0.06754708257087425
+            },
+            "shortfall": {
+              "type": "choice",
+              "choice": "one",
+              "probabilities": {
+                "none": 0.03827202274774729,
+                "one": 0.6783877947549838,
+                "three": 0.06309989797693014,
+                "two": 0.22024028452033878
+              },
+              "confidence": 0.5711837263399784
+            }
+          },
+          "at": 20357.30000001192
+        }
+      ]
+    },
+    {
+      "meta": {
+        "id": "percent-trap",
+        "name": "Percentage trap",
+        "category": "Reasoning",
+        "complexity": "complexe",
+        "length": "court",
+        "lang": "en",
+        "questions": {
+          "back_to_original": {
+            "type": "noul",
+            "expected": false,
+            "size": 2
+          },
+          "direction": {
+            "type": "choice",
+            "expected": "lower",
+            "size": 3
+          }
+        }
+      },
+      "runs": [
+        {
+          "rep": 1,
+          "ok": true,
+          "status": 200,
+          "ms": 329.29999999701977,
+          "clientMs": 329.29999999701977,
+          "inputTokens": 100,
+          "cost": 4.2e-06,
+          "answers": {
+            "back_to_original": {
+              "type": "noul",
+              "noul": 0.02297743366891329
+            },
+            "direction": {
+              "type": "choice",
+              "choice": "lower",
+              "probabilities": {
+                "higher": 0.3542964254356498,
+                "lower": 0.5841360875660007,
+                "same": 0.06156748699834946
+              },
+              "confidence": 0.376204131349001
+            }
+          },
+          "at": 4524.5
+        },
+        {
+          "rep": 2,
+          "ok": true,
+          "status": 200,
+          "ms": 278.40000000596046,
+          "clientMs": 278.40000000596046,
+          "inputTokens": 100,
+          "cost": 4.2e-06,
+          "answers": {
+            "back_to_original": {
+              "type": "noul",
+              "noul": 0.029312300053208416
+            },
+            "direction": {
+              "type": "choice",
+              "choice": "lower",
+              "probabilities": {
+                "higher": 0.44920341902637045,
+                "lower": 0.5090141593820611,
+                "same": 0.04178242159156839
+              },
+              "confidence": 0.26352123907309166
+            }
+          },
+          "at": 12585.60000000894
+        },
+        {
+          "rep": 3,
+          "ok": true,
+          "status": 200,
+          "ms": 285.70000000298023,
+          "clientMs": 285.70000000298023,
+          "inputTokens": 100,
+          "cost": 4.2e-06,
+          "answers": {
+            "back_to_original": {
+              "type": "noul",
+              "noul": 0.029312300053208416
+            },
+            "direction": {
+              "type": "choice",
+              "choice": "lower",
+              "probabilities": {
+                "higher": 0.44920341902637045,
+                "lower": 0.5090141593820611,
+                "same": 0.04178242159156839
+              },
+              "confidence": 0.26352123907309166
+            }
+          },
+          "at": 20643.70000000298
+        }
+      ]
+    },
+    {
+      "meta": {
+        "id": "logic-interns",
+        "name": "Logical deduction",
+        "category": "Reasoning",
+        "complexity": "complexe",
+        "length": "court",
+        "lang": "en",
+        "questions": {
+          "dana_intern": {
+            "type": "noul",
+            "expected": false,
+            "size": 2
+          },
+          "lee_intern": {
+            "type": "choice",
+            "expected": "unknown",
+            "size": 3
+          }
+        }
+      },
+      "runs": [
+        {
+          "rep": 1,
+          "ok": true,
+          "status": 200,
+          "ms": 351,
+          "clientMs": 351,
+          "inputTokens": 90,
+          "cost": 3.78e-06,
+          "answers": {
+            "dana_intern": {
+              "type": "noul",
+              "noul": 0.0052201527638938774
+            },
+            "lee_intern": {
+              "type": "choice",
+              "choice": "unknown",
+              "probabilities": {
+                "no": 0.015801616699470993,
+                "unknown": 0.9776112894490019,
+                "yes": 0.006587093851527124
+              },
+              "confidence": 0.9664169341735027
+            }
+          },
+          "at": 4876.20000000298
+        },
+        {
+          "rep": 2,
+          "ok": true,
+          "status": 200,
+          "ms": 297.5,
+          "clientMs": 297.5,
+          "inputTokens": 90,
+          "cost": 3.78e-06,
+          "answers": {
+            "dana_intern": {
+              "type": "noul",
+              "noul": 0.004609599405177145
+            },
+            "lee_intern": {
+              "type": "choice",
+              "choice": "unknown",
+              "probabilities": {
+                "no": 0.015813857032524428,
+                "unknown": 0.9783685500795853,
+                "yes": 0.005817592887890168
+              },
+              "confidence": 0.9675528251193781
+            }
+          },
+          "at": 12884.10000000894
+        },
+        {
+          "rep": 3,
+          "ok": true,
+          "status": 200,
+          "ms": 341,
+          "clientMs": 341,
+          "inputTokens": 90,
+          "cost": 3.78e-06,
+          "answers": {
+            "dana_intern": {
+              "type": "noul",
+              "noul": 0.0052201527638938774
+            },
+            "lee_intern": {
+              "type": "choice",
+              "choice": "unknown",
+              "probabilities": {
+                "no": 0.015801616699470993,
+                "unknown": 0.9776112894490019,
+                "yes": 0.006587093851527124
+              },
+              "confidence": 0.9664169341735027
+            }
+          },
+          "at": 20985.70000000298
+        }
+      ]
+    },
+    {
+      "meta": {
+        "id": "timeline",
+        "name": "Career timeline",
+        "category": "Reasoning",
+        "complexity": "complexe",
+        "length": "court",
+        "lang": "en",
+        "questions": {
+          "shopify_2018": {
+            "type": "noul",
+            "expected": true,
+            "size": 2
+          },
+          "current_employer": {
+            "type": "choice",
+            "expected": "stripe",
+            "size": 3
+          }
+        }
+      },
+      "runs": [
+        {
+          "rep": 1,
+          "ok": true,
+          "status": 200,
+          "ms": 281.59999999403954,
+          "clientMs": 281.59999999403954,
+          "inputTokens": 98,
+          "cost": 4.116e-06,
+          "answers": {
+            "current_employer": {
+              "type": "choice",
+              "choice": "stripe",
+              "probabilities": {
+                "shopify": 0.0007095069558754294,
+                "stripe": 0.9990601498602918,
+                "unknown": 0.00023034318383286997
+              },
+              "confidence": 0.9985902247904377
+            },
+            "shopify_2018": {
+              "type": "noul",
+              "noul": 0.9982992774544095
+            }
+          },
+          "at": 5158.9000000059605
+        },
+        {
+          "rep": 2,
+          "ok": true,
+          "status": 200,
+          "ms": 344.59999999403954,
+          "clientMs": 344.59999999403954,
+          "inputTokens": 98,
+          "cost": 4.116e-06,
+          "answers": {
+            "current_employer": {
+              "type": "choice",
+              "choice": "stripe",
+              "probabilities": {
+                "shopify": 0.0007095069558754294,
+                "stripe": 0.9990601498602918,
+                "unknown": 0.00023034318383286997
+              },
+              "confidence": 0.9985902247904377
+            },
+            "shopify_2018": {
+              "type": "noul",
+              "noul": 0.9975273763379299
+            }
+          },
+          "at": 13230
+        },
+        {
+          "rep": 3,
+          "ok": true,
+          "status": 200,
+          "ms": 539.9000000059605,
+          "clientMs": 539.9000000059605,
+          "inputTokens": 98,
+          "cost": 4.116e-06,
+          "answers": {
+            "current_employer": {
+              "type": "choice",
+              "choice": "stripe",
+              "probabilities": {
+                "shopify": 0.0009108413309991514,
+                "stripe": 0.9988588618052147,
+                "unknown": 0.0002302968637861586
+              },
+              "confidence": 0.998288292707822
+            },
+            "shopify_2018": {
+              "type": "noul",
+              "noul": 0.9971990718838982
+            }
+          },
+          "at": 21526.20000000298
+        }
+      ]
+    },
+    {
+      "meta": {
+        "id": "claim-causation",
+        "name": "Correlation vs causation",
+        "category": "Reasoning",
+        "complexity": "complexe",
+        "length": "court",
+        "lang": "en",
+        "questions": {
+          "supported": {
+            "type": "noul",
+            "expected": false,
+            "size": 2
+          },
+          "causation_shown": {
+            "type": "noul",
+            "expected": false,
+            "size": 2
+          },
+          "association_found": {
+            "type": "noul",
+            "expected": true,
+            "size": 2
+          }
+        }
+      },
+      "runs": [
+        {
+          "rep": 1,
+          "ok": true,
+          "status": 200,
+          "ms": 298.90000000596046,
+          "clientMs": 298.90000000596046,
+          "inputTokens": 138,
+          "cost": 5.796e-06,
+          "answers": {
+            "association_found": {
+              "type": "noul",
+              "noul": 0.9980732647327946
+            },
+            "causation_shown": {
+              "type": "noul",
+              "noul": 0.0015011872155723297
+            },
+            "supported": {
+              "type": "noul",
+              "noul": 0.0024726343644632985
+            }
+          },
+          "at": 5458.100000008941
+        },
+        {
+          "rep": 2,
+          "ok": true,
+          "status": 200,
+          "ms": 345,
+          "clientMs": 345,
+          "inputTokens": 138,
+          "cost": 5.796e-06,
+          "answers": {
+            "association_found": {
+              "type": "noul",
+              "noul": 0.998299277138211
+            },
+            "causation_shown": {
+              "type": "noul",
+              "noul": 0.00132502711160269
+            },
+            "supported": {
+              "type": "noul",
+              "noul": 0.0035936174469141046
+            }
+          },
+          "at": 13575.90000000596
+        },
+        {
+          "rep": 3,
+          "ok": true,
+          "status": 200,
+          "ms": 369.70000000298023,
+          "clientMs": 369.70000000298023,
+          "inputTokens": 138,
+          "cost": 5.796e-06,
+          "answers": {
+            "association_found": {
+              "type": "noul",
+              "noul": 0.9986749769008801
+            },
+            "causation_shown": {
+              "type": "noul",
+              "noul": 0.0017007289475234491
+            },
+            "supported": {
+              "type": "noul",
+              "noul": 0.0028009404955706934
+            }
+          },
+          "at": 21897.30000001192
+        }
+      ]
+    },
+    {
+      "meta": {
+        "id": "resume-screening",
+        "name": "Résumé screening",
+        "category": "Structured data",
+        "complexity": "complexe",
+        "length": "court",
+        "lang": "en",
+        "questions": {
+          "meets_all": {
+            "type": "noul",
+            "expected": false,
+            "size": 2
+          },
+          "missing": {
+            "type": "choice",
+            "expected": "experience",
+            "size": 4
+          }
+        }
+      },
+      "runs": [
+        {
+          "rep": 1,
+          "ok": true,
+          "status": 200,
+          "ms": 312.40000000596046,
+          "clientMs": 312.40000000596046,
+          "inputTokens": 153,
+          "cost": 6.426e-06,
+          "answers": {
+            "meets_all": {
+              "type": "noul",
+              "noul": 0.022977549000128474
+            },
+            "missing": {
+              "type": "choice",
+              "choice": "experience",
+              "probabilities": {
+                "authorization": 0.001687023720990203,
+                "experience": 0.990258503579074,
+                "none": 0.005888291363629226,
+                "python": 0.0021661813363065495
+              },
+              "confidence": 0.987011338105432
+            }
+          },
+          "at": 5770.9000000059605
+        },
+        {
+          "rep": 2,
+          "ok": true,
+          "status": 200,
+          "ms": 323.09999999403954,
+          "clientMs": 323.09999999403954,
+          "inputTokens": 153,
+          "cost": 6.426e-06,
+          "answers": {
+            "meets_all": {
+              "type": "noul",
+              "noul": 0.029312416044903814
+            },
+            "missing": {
+              "type": "choice",
+              "choice": "experience",
+              "probabilities": {
+                "authorization": 0.0014886593807682156,
+                "experience": 0.9901691941680982,
+                "none": 0.00588776206523373,
+                "python": 0.0024543843858998386
+              },
+              "confidence": 0.9868922588907977
+            }
+          },
+          "at": 13899.5
+        },
+        {
+          "rep": 3,
+          "ok": true,
+          "status": 200,
+          "ms": 328.1000000089407,
+          "clientMs": 328.1000000089407,
+          "inputTokens": 153,
+          "cost": 6.426e-06,
+          "answers": {
+            "meets_all": {
+              "type": "noul",
+              "noul": 0.02931243885766985
+            },
+            "missing": {
+              "type": "choice",
+              "choice": "experience",
+              "probabilities": {
+                "authorization": 0.0016865378512375367,
+                "experience": 0.9899729685432235,
+                "none": 0.005886595511559764,
+                "python": 0.0024538980939792453
+              },
+              "confidence": 0.986630624724298
+            }
+          },
+          "at": 22226.60000000894
+        }
+      ]
+    },
+    {
+      "meta": {
+        "id": "code-async",
+        "name": "Code review: async bug",
+        "category": "Code",
+        "complexity": "complexe",
+        "length": "moyen",
+        "lang": "en",
+        "questions": {
+          "has_bug": {
+            "type": "noul",
+            "expected": true,
+            "size": 2
+          },
+          "issue_type": {
+            "type": "choice",
+            "expected": "async_not_awaited",
+            "size": 5
+          },
+          "returns_zero": {
+            "type": "noul",
+            "expected": true,
+            "size": 2
+          }
+        }
+      },
+      "runs": [
+        {
+          "rep": 1,
+          "ok": true,
+          "status": 200,
+          "ms": 320.6000000089407,
+          "clientMs": 320.6000000089407,
+          "inputTokens": 229,
+          "cost": 9.618e-06,
+          "answers": {
+            "has_bug": {
+              "type": "noul",
+              "noul": 0.9840935938120573
+            },
+            "issue_type": {
+              "type": "choice",
+              "choice": "async_not_awaited",
+              "probabilities": {
+                "async_not_awaited": 0.9957985612823755,
+                "none": 0.002796993318135559,
+                "off_by_one": 0.0006240935670096754,
+                "sql_injection": 0.0005507606398090102,
+                "xss": 0.00022959119267021148
+              },
+              "confidence": 0.9947482016029694
+            },
+            "returns_zero": {
+              "type": "noul",
+              "noul": 0.05340374392933281
+            }
+          },
+          "at": 6091.800000011921
+        },
+        {
+          "rep": 2,
+          "ok": true,
+          "status": 200,
+          "ms": 334.09999999403954,
+          "clientMs": 334.09999999403954,
+          "inputTokens": 229,
+          "cost": 9.618e-06,
+          "answers": {
+            "has_bug": {
+              "type": "noul",
+              "noul": 0.9820137679433181
+            },
+            "issue_type": {
+              "type": "choice",
+              "choice": "async_not_awaited",
+              "probabilities": {
+                "async_not_awaited": 0.9953624423640579,
+                "none": 0.0027957685854462302,
+                "off_by_one": 0.0007068809991078327,
+                "sql_injection": 0.0008010011106413732,
+                "xss": 0.0003339069407466912
+              },
+              "confidence": 0.9942030529550725
+            },
+            "returns_zero": {
+              "type": "noul",
+              "noul": 0.07585856820170198
+            }
+          },
+          "at": 14235
+        },
+        {
+          "rep": 3,
+          "ok": true,
+          "status": 200,
+          "ms": 357,
+          "clientMs": 357,
+          "inputTokens": 229,
+          "cost": 9.618e-06,
+          "answers": {
+            "has_bug": {
+              "type": "noul",
+              "noul": 0.9840935938120573
+            },
+            "issue_type": {
+              "type": "choice",
+              "choice": "async_not_awaited",
+              "probabilities": {
+                "async_not_awaited": 0.9957985612823755,
+                "none": 0.002796993318135559,
+                "off_by_one": 0.0006240935670096754,
+                "sql_injection": 0.0005507606398090102,
+                "xss": 0.00022959119267021148
+              },
+              "confidence": 0.9947482016029694
+            },
+            "returns_zero": {
+              "type": "noul",
+              "noul": 0.05340374392933281
+            }
+          },
+          "at": 22584.70000000298
+        }
+      ]
+    },
+    {
+      "meta": {
+        "id": "return-policy",
+        "name": "Return policy check",
+        "category": "Reasoning",
+        "complexity": "complexe",
+        "length": "moyen",
+        "lang": "en",
+        "questions": {
+          "eligible": {
+            "type": "noul",
+            "expected": false,
+            "size": 2
+          },
+          "reason": {
+            "type": "choice",
+            "expected": "window",
+            "size": 5
+          }
+        }
+      },
+      "runs": [
+        {
+          "rep": 1,
+          "ok": true,
+          "status": 200,
+          "ms": 328,
+          "clientMs": 328,
+          "inputTokens": 226,
+          "cost": 9.492e-06,
+          "answers": {
+            "eligible": {
+              "type": "noul",
+              "noul": 0.3775441166936238
+            },
+            "reason": {
+              "type": "choice",
+              "choice": "window",
+              "probabilities": {
+                "accessories": 0.0020622446102854038,
+                "final_sale": 0.004947067645730462,
+                "none": 0.02512328251029522,
+                "opened": 0.02512328251029522,
+                "window": 0.9427441227233937
+              },
+              "confidence": 0.9284301534042421
+            }
+          },
+          "at": 6420.20000000298
+        },
+        {
+          "rep": 2,
+          "ok": true,
+          "status": 200,
+          "ms": 332.29999999701977,
+          "clientMs": 332.29999999701977,
+          "inputTokens": 226,
+          "cost": 9.492e-06,
+          "answers": {
+            "eligible": {
+              "type": "noul",
+              "noul": 0.24508779090354
+            },
+            "reason": {
+              "type": "choice",
+              "choice": "window",
+              "probabilities": {
+                "accessories": 0.0018358598241398885,
+                "final_sale": 0.00440399877531596,
+                "none": 0.025343257095255114,
+                "opened": 0.01741815304402288,
+                "window": 0.9509987312612661
+              },
+              "confidence": 0.9387484140765827
+            }
+          },
+          "at": 14568.10000000894
+        },
+        {
+          "rep": 3,
+          "ok": true,
+          "status": 200,
+          "ms": 297,
+          "clientMs": 297,
+          "inputTokens": 226,
+          "cost": 9.492e-06,
+          "answers": {
+            "eligible": {
+              "type": "noul",
+              "noul": 0.13296552107922113
+            },
+            "reason": {
+              "type": "choice",
+              "choice": "window",
+              "probabilities": {
+                "accessories": 0.0018207082328663012,
+                "final_sale": 0.004367651997345463,
+                "none": 0.028480668655238305,
+                "opened": 0.022180767051096808,
+                "window": 0.9431502040634531
+              },
+              "confidence": 0.9289377550793163
+            }
+          },
+          "at": 22883.90000000596
+        }
+      ]
+    },
+    {
+      "meta": {
+        "id": "car-listing-10q",
+        "name": "Used car listing: 10 questions",
+        "category": "Extraction",
+        "complexity": "simple",
+        "length": "moyen",
+        "lang": "en",
+        "questions": {
+          "awd": {
+            "type": "noul",
+            "expected": true,
+            "size": 2
+          },
+          "under_70k": {
+            "type": "noul",
+            "expected": true,
+            "size": 2
+          },
+          "had_accident": {
+            "type": "noul",
+            "expected": false,
+            "size": 2
+          },
+          "negotiable": {
+            "type": "noul",
+            "expected": true,
+            "size": 2
+          },
+          "accepts_trade": {
+            "type": "noul",
+            "expected": false,
+            "size": 2
+          },
+          "card_payment": {
+            "type": "noul",
+            "expected": false,
+            "size": 2
+          },
+          "shipping": {
+            "type": "noul",
+            "expected": false,
+            "size": 2
+          },
+          "new_tires": {
+            "type": "noul",
+            "expected": true,
+            "size": 2
+          },
+          "has_cosmetic_damage": {
+            "type": "noul",
+            "expected": true,
+            "size": 2
+          },
+          "owners": {
+            "type": "choice",
+            "expected": "one",
+            "size": 4
+          }
+        }
+      },
+      "runs": [
+        {
+          "rep": 1,
+          "ok": true,
+          "status": 200,
+          "ms": 348.8999999910593,
+          "clientMs": 348.8999999910593,
+          "inputTokens": 331,
+          "cost": 1.3902e-05,
+          "answers": {
+            "accepts_trade": {
+              "type": "noul",
+              "noul": 0.0002959581916236919
+            },
+            "awd": {
+              "type": "noul",
+              "noul": 0.9982992766600944
+            },
+            "card_payment": {
+              "type": "noul",
+              "noul": 0.0007096731756352378
+            },
+            "had_accident": {
+              "type": "noul",
+              "noul": 0.0017007336088664248
+            },
+            "has_cosmetic_damage": {
+              "type": "noul",
+              "noul": 0.9995121427552417
+            },
+            "negotiable": {
+              "type": "noul",
+              "noul": 0.9947798732500048
+            },
+            "new_tires": {
+              "type": "noul",
+              "noul": 0.998498817548725
+            },
+            "owners": {
+              "type": "choice",
+              "choice": "one",
+              "probabilities": {
+                "one": 0.9859847433120298,
+                "three_plus": 0.0024440119674904847,
+                "two": 0.010953301722477538,
+                "unknown": 0.0006179429980022575
+              },
+              "confidence": 0.9813129910827064
+            },
+            "shipping": {
+              "type": "noul",
+              "noul": 0.0015011903167779753
+            },
+            "under_70k": {
+              "type": "noul",
+              "noul": 0.9986749770832885
+            }
+          },
+          "at": 6770.20000000298
+        },
+        {
+          "rep": 2,
+          "ok": true,
+          "status": 200,
+          "ms": 354.29999999701977,
+          "clientMs": 354.29999999701977,
+          "inputTokens": 331,
+          "cost": 1.3902e-05,
+          "answers": {
+            "accepts_trade": {
+              "type": "noul",
+              "noul": 0.00029595847858765185
+            },
+            "awd": {
+              "type": "noul",
+              "noul": 0.9984988162768379
+            },
+            "card_payment": {
+              "type": "noul",
+              "noul": 0.0005527811727541407
+            },
+            "had_accident": {
+              "type": "noul",
+              "noul": 0.0019267481329602334
+            },
+            "has_cosmetic_damage": {
+              "type": "noul",
+              "noul": 0.9995121427542552
+            },
+            "negotiable": {
+              "type": "noul",
+              "noul": 0.996827316264449
+            },
+            "new_tires": {
+              "type": "noul",
+              "noul": 0.9982992774091511
+            },
+            "owners": {
+              "type": "choice",
+              "choice": "one",
+              "probabilities": {
+                "one": 0.9910326119714217,
+                "three_plus": 0.0019131429229561328,
+                "two": 0.0066775249277579,
+                "unknown": 0.00037672017786434043
+              },
+              "confidence": 0.9880434826285622
+            },
+            "shipping": {
+              "type": "noul",
+              "noul": 0.0019267431377454835
+            },
+            "under_70k": {
+              "type": "noul",
+              "noul": 0.9980732640549871
+            }
+          },
+          "at": 14923.20000000298
+        },
+        {
+          "rep": 3,
+          "ok": true,
+          "status": 200,
+          "ms": 366.40000000596046,
+          "clientMs": 366.40000000596046,
+          "inputTokens": 331,
+          "cost": 1.3902e-05,
+          "answers": {
+            "accepts_trade": {
+              "type": "noul",
+              "noul": 0.0004305585687530751
+            },
+            "awd": {
+              "type": "noul",
+              "noul": 0.9982992763429058
+            },
+            "card_payment": {
+              "type": "noul",
+              "noul": 0.0006263368218400333
+            },
+            "had_accident": {
+              "type": "noul",
+              "noul": 0.0015011915749350685
+            },
+            "has_cosmetic_damage": {
+              "type": "noul",
+              "noul": 0.9993736656779141
+            },
+            "negotiable": {
+              "type": "noul",
+              "noul": 0.9968273163871259
+            },
+            "new_tires": {
+              "type": "noul",
+              "noul": 0.9986749775525
+            },
+            "owners": {
+              "type": "choice",
+              "choice": "one",
+              "probabilities": {
+                "one": 0.9909829033007453,
+                "three_plus": 0.0019130472316825863,
+                "two": 0.006677190932395187,
+                "unknown": 0.0004268585351768459
+              },
+              "confidence": 0.9879772044009938
+            },
+            "shipping": {
+              "type": "noul",
+              "noul": 0.001700729610475399
+            },
+            "under_70k": {
+              "type": "noul",
+              "noul": 0.9982992767006141
+            }
+          },
+          "at": 23251.80000001192
+        }
+      ]
+    },
+    {
+      "meta": {
+        "id": "expense-claim",
+        "name": "Expense policy check",
+        "category": "Reasoning",
+        "complexity": "complexe",
+        "length": "long",
+        "lang": "en",
+        "questions": {
+          "hotel_ok": {
+            "type": "noul",
+            "expected": false,
+            "size": 2
+          },
+          "dinner_full": {
+            "type": "noul",
+            "expected": false,
+            "size": 2
+          },
+          "dinner_under_cap": {
+            "type": "noul",
+            "expected": true,
+            "size": 2
+          },
+          "uber_ok": {
+            "type": "noul",
+            "expected": false,
+            "size": 2
+          },
+          "on_time": {
+            "type": "noul",
+            "expected": true,
+            "size": 2
+          },
+          "coffee_receipt": {
+            "type": "noul",
+            "expected": false,
+            "size": 2
+          }
+        }
+      },
+      "runs": [
+        {
+          "rep": 1,
+          "ok": true,
+          "status": 200,
+          "ms": 475.5,
+          "clientMs": 475.5,
+          "inputTokens": 703,
+          "cost": 2.9526e-05,
+          "answers": {
+            "coffee_receipt": {
+              "type": "noul",
+              "noul": 0.0021827326212045858
+            },
+            "dinner_full": {
+              "type": "noul",
+              "noul": 0.06754712131538812
+            },
+            "dinner_under_cap": {
+              "type": "noul",
+              "noul": 0.9914225140154881
+            },
+            "hotel_ok": {
+              "type": "noul",
+              "noul": 0.06754696721581897
+            },
+            "on_time": {
+              "type": "noul",
+              "noul": 0.9149008277828462
+            },
+            "uber_ok": {
+              "type": "noul",
+              "noul": 0.009708529715836576
+            }
+          },
+          "at": 7247.9000000059605
+        },
+        {
+          "rep": 2,
+          "ok": true,
+          "status": 200,
+          "ms": 382.90000000596046,
+          "clientMs": 382.90000000596046,
+          "inputTokens": 703,
+          "cost": 2.9526e-05,
+          "answers": {
+            "coffee_receipt": {
+              "type": "noul",
+              "noul": 0.0017007357011857849
+            },
+            "dinner_full": {
+              "type": "noul",
+              "noul": 0.06754713488226463
+            },
+            "dinner_under_cap": {
+              "type": "noul",
+              "noul": 0.9890130601408633
+            },
+            "hotel_ok": {
+              "type": "noul",
+              "noul": 0.07585848575494938
+            },
+            "on_time": {
+              "type": "noul",
+              "noul": 0.9046503766016901
+            },
+            "uber_ok": {
+              "type": "noul",
+              "noul": 0.009708525212228435
+            }
+          },
+          "at": 15307.10000000894
+        },
+        {
+          "rep": 3,
+          "ok": true,
+          "status": 200,
+          "ms": 363.09999999403954,
+          "clientMs": 363.09999999403954,
+          "inputTokens": 703,
+          "cost": 2.9526e-05,
+          "answers": {
+            "coffee_receipt": {
+              "type": "noul",
+              "noul": 0.0017007357011857849
+            },
+            "dinner_full": {
+              "type": "noul",
+              "noul": 0.06754713488226463
+            },
+            "dinner_under_cap": {
+              "type": "noul",
+              "noul": 0.9890130601408633
+            },
+            "hotel_ok": {
+              "type": "noul",
+              "noul": 0.07585848575494938
+            },
+            "on_time": {
+              "type": "noul",
+              "noul": 0.9046503766016901
+            },
+            "uber_ok": {
+              "type": "noul",
+              "noul": 0.009708525212228435
+            }
+          },
+          "at": 23617.5
+        }
+      ]
+    },
+    {
+      "meta": {
+        "id": "postmortem",
+        "name": "Incident postmortem",
+        "category": "Extraction",
+        "complexity": "complexe",
+        "length": "long",
+        "lang": "en",
+        "questions": {
+          "root_cause": {
+            "type": "choice",
+            "expected": "expired_certificate",
+            "size": 5
+          },
+          "duration": {
+            "type": "choice",
+            "expected": "30_to_60",
+            "size": 4
+          },
+          "all_failed": {
+            "type": "noul",
+            "expected": false,
+            "size": 2
+          },
+          "double_charged": {
+            "type": "noul",
+            "expected": false,
+            "size": 2
+          },
+          "alerting_owner": {
+            "type": "choice",
+            "expected": "Tomas",
+            "size": 4
+          },
+          "severity": {
+            "type": "score",
+            "expected": [
+              2,
+              3
+            ],
+            "size": 4
+          }
+        }
+      },
+      "runs": [
+        {
+          "rep": 1,
+          "ok": true,
+          "status": 200,
+          "ms": 376.1000000089407,
+          "clientMs": 376.1000000089407,
+          "inputTokens": 1043,
+          "cost": 4.3806e-05,
+          "answers": {
+            "alerting_owner": {
+              "type": "choice",
+              "choice": "Tomas",
+              "probabilities": {
+                "Priya": 0.0002610558257034526,
+                "Tomas": 0.999224320988747,
+                "Wei": 0.00033520231537763817,
+                "unassigned": 0.0001794208701719077
+              },
+              "confidence": 0.9989657613183294
+            },
+            "all_failed": {
+              "type": "noul",
+              "noul": 0.0002611909519561104
+            },
+            "double_charged": {
+              "type": "noul",
+              "noul": 0.000487860136480726
+            },
+            "duration": {
+              "type": "choice",
+              "choice": "30_to_60",
+              "probabilities": {
+                "15_to_30": 0.00026113163775002066,
+                "30_to_60": 0.9995143176382956,
+                "over_60": 0.00013977369345357952,
+                "under_15": 8.477703050087097e-05
+              },
+              "confidence": 0.9993524235177275
+            },
+            "root_cause": {
+              "type": "choice",
+              "choice": "expired_certificate",
+              "probabilities": {
+                "bad_deploy": 0.0002610386598904538,
+                "database": 0.0002610386598904538,
+                "ddos": 0.00013972392599164715,
+                "dns": 0.00017940907229267188,
+                "expired_certificate": 0.9991587896819347
+              },
+              "confidence": 0.9989484871024183
+            },
+            "severity": {
+              "type": "score",
+              "score": 1.999160425829461,
+              "legend": {
+                "0": "SEV4 — cosmetic",
+                "1": "SEV3 — minor",
+                "2": "SEV2 — major, partial outage",
+                "3": "SEV1 — full outage"
+              },
+              "probabilities": {
+                "0": 0.00017883225254679036,
+                "1": 0.0021786228366302723,
+                "2": 0.995945831739638,
+                "3": 0.001696713171184901
+              },
+              "confidence": 0.9945944423195173
+            }
+          },
+          "at": 7624.9000000059605
+        },
+        {
+          "rep": 2,
+          "ok": true,
+          "status": 200,
+          "ms": 388.5,
+          "clientMs": 388.5,
+          "inputTokens": 1043,
+          "cost": 4.3806e-05,
+          "answers": {
+            "alerting_owner": {
+              "type": "choice",
+              "choice": "Tomas",
+              "probabilities": {
+                "Priya": 0.00023039734569915948,
+                "Tomas": 0.9992946334402748,
+                "Wei": 0.00033522615994309885,
+                "unassigned": 0.00013974305408295088
+              },
+              "confidence": 0.9990595112536997
+            },
+            "all_failed": {
+              "type": "noul",
+              "noul": 0.00020342762924823013
+            },
+            "double_charged": {
+              "type": "noul",
+              "noul": 0.0004878599640908707
+            },
+            "duration": {
+              "type": "choice",
+              "choice": "30_to_60",
+              "probabilities": {
+                "15_to_30": 0.00023046104718463077,
+                "30_to_60": 0.9995713622958828,
+                "over_60": 0.00012335690933402787,
+                "under_15": 7.481974759847944e-05
+              },
+              "confidence": 0.9994284830611772
+            },
+            "root_cause": {
+              "type": "choice",
+              "choice": "expired_certificate",
+              "probabilities": {
+                "bad_deploy": 0.00020332575491378437,
+                "database": 0.0002303982646491994,
+                "ddos": 0.00010883243402985431,
+                "dns": 0.00015835025714543982,
+                "expired_certificate": 0.9992990932892617
+              },
+              "confidence": 0.9991238666115771
+            },
+            "severity": {
+              "type": "score",
+              "score": 1.9993455520635932,
+              "legend": {
+                "0": "SEV4 — cosmetic",
+                "1": "SEV3 — minor",
+                "2": "SEV2 — major, partial outage",
+                "3": "SEV1 — full outage"
+              },
+              "probabilities": {
+                "0": 0.00013939971327021927,
+                "1": 0.001698236165038242,
+                "2": 0.9968397764665196,
+                "3": 0.0013225876551719625
+              },
+              "confidence": 0.9957863686220261
+            }
+          },
+          "at": 15697.40000000596
+        },
+        {
+          "rep": 3,
+          "ok": true,
+          "status": 200,
+          "ms": 361.90000000596046,
+          "clientMs": 361.90000000596046,
+          "inputTokens": 1043,
+          "cost": 4.3806e-05,
+          "answers": {
+            "alerting_owner": {
+              "type": "choice",
+              "choice": "Tomas",
+              "probabilities": {
+                "Priya": 0.00023039302830671704,
+                "Tomas": 0.9992760404352558,
+                "Wei": 0.00033521987817416147,
+                "unassigned": 0.0001583466582633916
+              },
+              "confidence": 0.999034720580341
+            },
+            "all_failed": {
+              "type": "noul",
+              "noul": 0.00020342760852806518
+            },
+            "double_charged": {
+              "type": "noul",
+              "noul": 0.00043055944879363806
+            },
+            "duration": {
+              "type": "choice",
+              "choice": "30_to_60",
+              "probabilities": {
+                "15_to_30": 0.00026113163775002066,
+                "30_to_60": 0.9995143176382956,
+                "over_60": 0.00013977369345357952,
+                "under_15": 8.477703050087097e-05
+              },
+              "confidence": 0.9993524235177275
+            },
+            "root_cause": {
+              "type": "choice",
+              "choice": "expired_certificate",
+              "probabilities": {
+                "bad_deploy": 0.0002303767487005241,
+                "database": 0.00026105105641256385,
+                "ddos": 0.00012331178760700294,
+                "dns": 0.00017941759228941241,
+                "expired_certificate": 0.9992058428149905
+              },
+              "confidence": 0.9990073035187381
+            },
+            "severity": {
+              "type": "score",
+              "score": 1.9991196337121806,
+              "legend": {
+                "0": "SEV4 — cosmetic",
+                "1": "SEV3 — minor",
+                "2": "SEV2 — major, partial outage",
+                "3": "SEV1 — full outage"
+              },
+              "probabilities": {
+                "0": 0.00013936822916160073,
+                "1": 0.0019239181412462388,
+                "2": 0.9966144253178422,
+                "3": 0.0013222883117499952
+              },
+              "confidence": 0.9954859004237896
+            }
+          },
+          "at": 23980.40000000596
+        }
+      ]
+    },
+    {
+      "meta": {
+        "id": "sales-call",
+        "name": "Sales call transcript",
+        "category": "Extraction",
+        "complexity": "complexe",
+        "length": "long",
+        "lang": "en",
+        "questions": {
+          "main_objection": {
+            "type": "choice",
+            "expected": "security",
+            "size": 4
+          },
+          "budget_ok": {
+            "type": "noul",
+            "expected": true,
+            "size": 2
+          },
+          "signer_present": {
+            "type": "noul",
+            "expected": false,
+            "size": 2
+          },
+          "next_meeting": {
+            "type": "noul",
+            "expected": true,
+            "size": 2
+          },
+          "stage": {
+            "type": "choice",
+            "expected": "evaluation",
+            "size": 5
+          },
+          "interest": {
+            "type": "score",
+            "expected": [
+              2,
+              3
+            ],
+            "size": 4
+          }
+        }
+      },
+      "runs": [
+        {
+          "rep": 1,
+          "ok": true,
+          "status": 200,
+          "ms": 314.29999999701977,
+          "clientMs": 314.29999999701977,
+          "inputTokens": 895,
+          "cost": 3.759e-05,
+          "answers": {
+            "budget_ok": {
+              "type": "noul",
+              "noul": 0.9998911030570561
+            },
+            "interest": {
+              "type": "score",
+              "score": 2.9574393487817043,
+              "legend": {
+                "0": "Not interested",
+                "1": "Lukewarm",
+                "2": "Interested",
+                "3": "Very eager to buy"
+              },
+              "probabilities": {
+                "0": 5.943008266963422e-05,
+                "1": 0.0001517600325969862,
+                "2": 0.042078840905092986,
+                "3": 0.9577099689796404
+              },
+              "confidence": 0.9436132919728539
+            },
+            "main_objection": {
+              "type": "choice",
+              "choice": "security",
+              "probabilities": {
+                "features": 0.000335222533062242,
+                "price": 8.475752976410054e-05,
+                "security": 0.9992841870900696,
+                "timing": 0.00029583284710399074
+              },
+              "confidence": 0.9990455827867595
+            },
+            "next_meeting": {
+              "type": "noul",
+              "noul": 0.999769493271653
+            },
+            "signer_present": {
+              "type": "noul",
+              "noul": 0.0009110525007324599
+            },
+            "stage": {
+              "type": "choice",
+              "choice": "evaluation",
+              "probabilities": {
+                "closed_lost": 9.590662542220941e-05,
+                "closed_won": 0.00017917716523600913,
+                "discovery": 0.0001581232933346663,
+                "evaluation": 0.9978668073043403,
+                "negotiation": 0.0016999856116668168
+              },
+              "confidence": 0.9973335091304254
+            }
+          },
+          "at": 7940.20000000298
+        },
+        {
+          "rep": 2,
+          "ok": true,
+          "status": 200,
+          "ms": 360.20000000298023,
+          "clientMs": 360.20000000298023,
+          "inputTokens": 895,
+          "cost": 3.759e-05,
+          "answers": {
+            "budget_ok": {
+              "type": "noul",
+              "noul": 0.9998415637315807
+            },
+            "interest": {
+              "type": "score",
+              "score": 2.9574280137943534,
+              "legend": {
+                "0": "Not interested",
+                "1": "Lukewarm",
+                "2": "Interested",
+                "3": "Very eager to buy"
+              },
+              "probabilities": {
+                "0": 6.326273545747521e-05,
+                "1": 0.00015175941311771358,
+                "2": 0.042078679173038515,
+                "3": 0.9577062986783863
+              },
+              "confidence": 0.9436083982378484
+            },
+            "main_objection": {
+              "type": "choice",
+              "choice": "security",
+              "probabilities": {
+                "features": 0.00037983068720760853,
+                "price": 0.0001088233138796823,
+                "security": 0.9992155335622809,
+                "timing": 0.00029581243663183535
+              },
+              "confidence": 0.9989540447497078
+            },
+            "next_meeting": {
+              "type": "noul",
+              "noul": 0.9997040427092645
+            },
+            "signer_present": {
+              "type": "noul",
+              "noul": 0.0010322324400503812
+            },
+            "stage": {
+              "type": "choice",
+              "choice": "evaluation",
+              "probabilities": {
+                "closed_lost": 0.00010869452983480588,
+                "closed_won": 0.00017920698334739416,
+                "discovery": 0.00017920698334739416,
+                "evaluation": 0.9980324105182314,
+                "negotiation": 0.0015004809852390017
+              },
+              "confidence": 0.9975405131477892
+            }
+          },
+          "at": 16058.5
+        },
+        {
+          "rep": 3,
+          "ok": true,
+          "status": 200,
+          "ms": 355,
+          "clientMs": 355,
+          "inputTokens": 895,
+          "cost": 3.759e-05,
+          "answers": {
+            "budget_ok": {
+              "type": "noul",
+              "noul": 0.9998415637315807
+            },
+            "interest": {
+              "type": "score",
+              "score": 2.9574280137943534,
+              "legend": {
+                "0": "Not interested",
+                "1": "Lukewarm",
+                "2": "Interested",
+                "3": "Very eager to buy"
+              },
+              "probabilities": {
+                "0": 6.326273545747521e-05,
+                "1": 0.00015175941311771358,
+                "2": 0.042078679173038515,
+                "3": 0.9577062986783863
+              },
+              "confidence": 0.9436083982378484
+            },
+            "main_objection": {
+              "type": "choice",
+              "choice": "security",
+              "probabilities": {
+                "features": 0.00037983068720760853,
+                "price": 0.0001088233138796823,
+                "security": 0.9992155335622809,
+                "timing": 0.00029581243663183535
+              },
+              "confidence": 0.9989540447497078
+            },
+            "next_meeting": {
+              "type": "noul",
+              "noul": 0.9997040427092645
+            },
+            "signer_present": {
+              "type": "noul",
+              "noul": 0.0010322324400503812
+            },
+            "stage": {
+              "type": "choice",
+              "choice": "evaluation",
+              "probabilities": {
+                "closed_lost": 0.00010869452983480588,
+                "closed_won": 0.00017920698334739416,
+                "discovery": 0.00017920698334739416,
+                "evaluation": 0.9980324105182314,
+                "negotiation": 0.0015004809852390017
+              },
+              "confidence": 0.9975405131477892
+            }
+          },
+          "at": 24336
+        }
+      ]
+    },
+    {
+      "meta": {
+        "id": "tickets-needle",
+        "name": "Support queue (long context)",
+        "category": "Long context",
+        "complexity": "complexe",
+        "length": "très long",
+        "lang": "en",
+        "questions": {
+          "legal_threat": {
+            "type": "noul",
+            "expected": true,
+            "size": 2
+          },
+          "legal_customer": {
+            "type": "choice",
+            "expected": "halvorsen",
+            "size": 5
+          },
+          "security_incident": {
+            "type": "noul",
+            "expected": false,
+            "size": 2
+          }
+        }
+      },
+      "runs": [
+        {
+          "rep": 1,
+          "ok": true,
+          "status": 200,
+          "ms": 425.1000000089407,
+          "clientMs": 425.1000000089407,
+          "inputTokens": 3202,
+          "cost": 0.000134484,
+          "answers": {
+            "legal_customer": {
+              "type": "choice",
+              "choice": "halvorsen",
+              "probabilities": {
+                "acme": 2.7533493672217118e-05,
+                "bluefin": 3.1199535762198085e-05,
+                "cedar": 1.3005901490861742e-05,
+                "halvorsen": 0.9998929073633894,
+                "none": 3.535370568533788e-05
+              },
+              "confidence": 0.9998661342042368
+            },
+            "legal_threat": {
+              "type": "noul",
+              "noul": 0.9998204718384551
+            },
+            "security_incident": {
+              "type": "noul",
+              "noul": 0.0010322337179920957
+            }
+          },
+          "at": 8366.10000000894
+        },
+        {
+          "rep": 2,
+          "ok": true,
+          "status": 200,
+          "ms": 453.79999999701977,
+          "clientMs": 453.79999999701977,
+          "inputTokens": 3202,
+          "cost": 0.000134484,
+          "answers": {
+            "legal_customer": {
+              "type": "choice",
+              "choice": "halvorsen",
+              "probabilities": {
+                "acme": 2.4298315984550866e-05,
+                "bluefin": 3.119965530687334e-05,
+                "cedar": 1.3005951324496513e-05,
+                "halvorsen": 0.9998961422362368,
+                "none": 3.535384114720172e-05
+              },
+              "confidence": 0.9998701777952961
+            },
+            "legal_threat": {
+              "type": "noul",
+              "noul": 0.9998601778161925
+            },
+            "security_incident": {
+              "type": "noul",
+              "noul": 0.0009110534036836088
+            }
+          },
+          "at": 16513.70000000298
+        },
+        {
+          "rep": 3,
+          "ok": true,
+          "status": 200,
+          "ms": 454.30000001192093,
+          "clientMs": 454.30000001192093,
+          "inputTokens": 3202,
+          "cost": 0.000134484,
+          "answers": {
+            "legal_customer": {
+              "type": "choice",
+              "choice": "halvorsen",
+              "probabilities": {
+                "acme": 2.4298500231358086e-05,
+                "bluefin": 2.7533807949007335e-05,
+                "cedar": 1.3006049944705742e-05,
+                "halvorsen": 0.9999039617499905,
+                "none": 3.119989188445675e-05
+              },
+              "confidence": 0.9998799521874882
+            },
+            "legal_threat": {
+              "type": "noul",
+              "noul": 0.9998204718744177
+            },
+            "security_incident": {
+              "type": "noul",
+              "noul": 0.0006263357316925549
+            }
+          },
+          "at": 24790.80000001192
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "cases": 24,
+    "requests": 72,
+    "ok": 72,
+    "errorRate": 0,
+    "latency": {
+      "n": 72,
+      "mean": 343.1722222227189,
+      "min": 273,
+      "p50": 328.40000000596046,
+      "p90": 387.94000000059606,
+      "p95": 454.02500000372527,
+      "p99": 595.0870000050974,
+      "max": 730.2000000029802,
+      "stdev": 66.28835902006709
+    },
+    "inputTokens": 25332,
+    "cost": 0.0010639439999999998,
+    "tokensPerSec": 1025.2383804683159,
+    "msPerToken": 2.4870261630031116,
+    "requestsPerSec": 2.904221204848436,
+    "accuracy": 0.9736842105263158,
+    "quality": 0.9604995335956921,
+    "consistency": 1,
+    "byType": {
+      "noul": {
+        "questions": 51,
+        "accuracy": 0.9607843137254902,
+        "quality": 0.9634828436497256
+      },
+      "score": {
+        "questions": 5,
+        "accuracy": 1,
+        "quality": 0.9893247388070362
+      },
+      "choice": {
+        "questions": 20,
+        "accuracy": 1,
+        "quality": 0.9456857916550702
+      }
+    },
+    "byLength": [
+      {
+        "key": "court",
+        "cases": 17,
+        "latency": {
+          "n": 51,
+          "mean": 332.53137254919494,
+          "min": 273,
+          "p50": 318.40000000596046,
+          "p90": 366.8999999910593,
+          "p95": 383.25,
+          "p99": 635.0500000044703,
+          "max": 730.2000000029802,
+          "stdev": 70.24403317104141
+        },
+        "accuracy": 0.975,
+        "quality": 0.9637767805497358
+      },
+      {
+        "key": "moyen",
+        "cases": 3,
+        "latency": {
+          "n": 9,
+          "mean": 337.6222222215599,
+          "min": 297,
+          "p50": 334.09999999403954,
+          "p90": 358.8800000011921,
+          "p95": 362.6400000035763,
+          "p99": 365.64800000548365,
+          "max": 366.40000000596046,
+          "stdev": 21.454124182097463
+        },
+        "accuracy": 0.9333333333333333,
+        "quality": 0.9139645395208815
+      },
+      {
+        "key": "long",
+        "cases": 3,
+        "latency": {
+          "n": 9,
+          "mean": 375.27777777943345,
+          "min": 314.29999999701977,
+          "p50": 363.09999999403954,
+          "p90": 405.90000000000003,
+          "p95": 440.7,
+          "p99": 468.53999999999996,
+          "max": 475.5,
+          "stdev": 43.246640846313724
+        },
+        "accuracy": 1,
+        "quality": 0.9854750223219355
+      },
+      {
+        "key": "très long",
+        "cases": 1,
+        "latency": {
+          "n": 3,
+          "mean": 444.40000000596046,
+          "min": 425.1000000089407,
+          "p50": 453.79999999701977,
+          "p90": 454.2000000089407,
+          "p95": 454.2500000104308,
+          "p99": 454.2900000116229,
+          "max": 454.30000001192093,
+          "stdev": 16.716159843619813
+        },
+        "accuracy": 1,
+        "quality": 0.9996249455583682
+      }
+    ],
+    "byComplexity": [
+      {
+        "key": "complexe",
+        "cases": 19,
+        "latency": {
+          "n": 57,
+          "mean": 345.8614035099745,
+          "min": 273,
+          "p50": 328.1000000089407,
+          "p90": 403.14000000357623,
+          "p95": 458.54000000953664,
+          "p99": 623.6320000046487,
+          "max": 730.2000000029802,
+          "stdev": 72.74643770036948
+        },
+        "accuracy": 0.9636363636363636,
+        "quality": 0.9467021560265186
+      },
+      {
+        "key": "simple",
+        "cases": 5,
+        "latency": {
+          "n": 15,
+          "mean": 332.9533333311478,
+          "min": 278.79999999701977,
+          "p50": 330.8999999910593,
+          "p90": 366.69999999701975,
+          "p95": 374.63999999463556,
+          "p99": 389.0880000013113,
+          "max": 392.70000000298023,
+          "stdev": 31.22651956044649
+        },
+        "accuracy": 1,
+        "quality": 0.996635522467337
+      }
+    ],
+    "byCategory": [
+      {
+        "key": "Calibration",
+        "cases": 1,
+        "latency": {
+          "n": 3,
+          "mean": 297.59999999900657,
+          "min": 273,
+          "p50": 294.20000000298023,
+          "p90": 319.3199999958277,
+          "p95": 322.4599999949336,
+          "p99": 324.9719999942183,
+          "max": 325.59999999403954,
+          "stdev": 26.464315593322535
+        },
+        "accuracy": 0,
+        "quality": 0.9742059958548918
+      },
+      {
+        "key": "Code",
+        "cases": 1,
+        "latency": {
+          "n": 3,
+          "mean": 337.23333333432674,
+          "min": 320.6000000089407,
+          "p50": 334.09999999403954,
+          "p90": 352.4199999988079,
+          "p95": 354.709999999404,
+          "p99": 356.5419999998808,
+          "max": 357,
+          "stdev": 18.401177495021773
+        },
+        "accuracy": 0.6666666666666666,
+        "quality": 0.6799807307285123
+      },
+      {
+        "key": "Comprehension",
+        "cases": 1,
+        "latency": {
+          "n": 3,
+          "mean": 321.8666666646798,
+          "min": 290,
+          "p50": 330.59999999403954,
+          "p90": 342.1199999988079,
+          "p95": 343.55999999940394,
+          "p99": 344.7119999998808,
+          "max": 345,
+          "stdev": 28.52110329705495
+        },
+        "accuracy": 1,
+        "quality": 0.9988296674745968
+      },
+      {
+        "key": "Extraction",
+        "cases": 3,
+        "latency": {
+          "n": 9,
+          "mean": 358.40000000099343,
+          "min": 314.29999999701977,
+          "p50": 360.20000000298023,
+          "p90": 378.58000000715253,
+          "p95": 383.54000000357627,
+          "p99": 387.50800000071524,
+          "max": 388.5,
+          "stdev": 20.50067072354429
+        },
+        "accuracy": 1,
+        "quality": 0.9985742147966961
+      },
+      {
+        "key": "Long context",
+        "cases": 1,
+        "latency": {
+          "n": 3,
+          "mean": 444.40000000596046,
+          "min": 425.1000000089407,
+          "p50": 453.79999999701977,
+          "p90": 454.2000000089407,
+          "p95": 454.2500000104308,
+          "p99": 454.2900000116229,
+          "max": 454.30000001192093,
+          "stdev": 16.716159843619813
+        },
+        "accuracy": 1,
+        "quality": 0.9996249455583682
+      },
+      {
+        "key": "Moderation",
+        "cases": 2,
+        "latency": {
+          "n": 6,
+          "mean": 303.81666666766006,
+          "min": 277,
+          "p50": 309.20000000298023,
+          "p90": 320.6499999985099,
+          "p95": 321.7749999947846,
+          "p99": 322.6749999918044,
+          "max": 322.8999999910593,
+          "stdev": 18.356297737633597
+        },
+        "accuracy": 1,
+        "quality": 0.9714946315590002
+      },
+      {
+        "key": "Reasoning",
+        "cases": 8,
+        "latency": {
+          "n": 24,
+          "mean": 339.96666666741174,
+          "min": 278.40000000596046,
+          "p50": 329,
+          "p90": 378.9400000050664,
+          "p95": 461.6100000008939,
+          "p99": 525.0880000045895,
+          "max": 539.9000000059605,
+          "stdev": 59.95424100542385
+        },
+        "accuracy": 1,
+        "quality": 0.9197732859569205
+      },
+      {
+        "key": "Routing",
+        "cases": 1,
+        "latency": {
+          "n": 3,
+          "mean": 332.8000000019868,
+          "min": 278.79999999701977,
+          "p50": 326.90000000596046,
+          "p90": 379.54000000357627,
+          "p95": 386.1200000032783,
+          "p99": 391.38400000303983,
+          "max": 392.70000000298023,
+          "stdev": 57.17875479847635
+        },
+        "accuracy": 1,
+        "quality": 0.9968118471803344
+      },
+      {
+        "key": "Security",
+        "cases": 1,
+        "latency": {
+          "n": 3,
+          "mean": 313.73333333432674,
+          "min": 302.09999999403954,
+          "p50": 308,
+          "p90": 326.48000000715257,
+          "p95": 328.7900000080466,
+          "p99": 330.6380000087619,
+          "max": 331.1000000089407,
+          "stdev": 15.326556480760559
+        },
+        "accuracy": 1,
+        "quality": 0.997315080952419
+      },
+      {
+        "key": "Sentiment",
+        "cases": 3,
+        "latency": {
+          "n": 9,
+          "mean": 383.5666666660044,
+          "min": 307.29999999701977,
+          "p50": 359.59999999403954,
+          "p90": 445.0799999982119,
+          "p95": 587.6400000005959,
+          "p99": 701.6880000025034,
+          "max": 730.2000000029802,
+          "stdev": 132.61518578277216
+        },
+        "accuracy": 1,
+        "quality": 0.9937719759951129
+      },
+      {
+        "key": "Structured data",
+        "cases": 1,
+        "latency": {
+          "n": 3,
+          "mean": 321.20000000298023,
+          "min": 312.40000000596046,
+          "p50": 323.09999999403954,
+          "p90": 327.10000000596045,
+          "p95": 327.6000000074506,
+          "p99": 328.0000000086427,
+          "max": 328.1000000089407,
+          "stdev": 8.020598481280174
+        },
+        "accuracy": 1,
+        "quality": 0.9814663770646156
+      },
+      {
+        "key": "Support",
+        "cases": 1,
+        "latency": {
+          "n": 3,
+          "mean": 314.0333333263795,
+          "min": 299.59999999403954,
+          "p50": 311.59999999403954,
+          "p90": 327.03999999165535,
+          "p95": 328.9699999913573,
+          "p99": 330.5139999911189,
+          "max": 330.8999999910593,
+          "stdev": 15.791242297015987
+        },
+        "accuracy": 1,
+        "quality": 0.9902358276145589
+      }
+    ],
+    "byLang": [
+      {
+        "key": "en",
+        "cases": 24,
+        "latency": {
+          "n": 72,
+          "mean": 343.1722222227189,
+          "min": 273,
+          "p50": 328.40000000596046,
+          "p90": 387.94000000059606,
+          "p95": 454.02500000372527,
+          "p99": 595.0870000050974,
+          "max": 730.2000000029802,
+          "stdev": 66.28835902006709
+        },
+        "accuracy": 0.9736842105263158,
+        "quality": 0.9604995335956921
+      }
+    ]
+  }
+}
