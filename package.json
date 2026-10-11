@@ -14,7 +14,8 @@
     "lint": "oxlint",
     "preview": "vite preview",
     "validate": "node scripts/validate-suites.ts",
-    "results": "node scripts/results-table.ts"
+    "results": "node scripts/results-table.ts",
+    "paired": "node scripts/paired.ts"
   },
   "dependencies": {
     "react": "^19.2.8",

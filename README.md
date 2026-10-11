@@ -24,83 +24,88 @@ Every expected answer was checked by an independent blind annotation pass; quest
 
 ## Results
 
-Models are ranked by **quality**, the most informative metric (see [Metrics](#metrics)). Numbers in parentheses are **95 % confidence intervals**: when two models’ intervals overlap, the difference between them is not statistically significant. Tables are generated from `reports/` with `yarn results`.
+Models are ranked by **quality**, the most informative metric (see [Metrics](#metrics)). Numbers in parentheses are **95 % confidence intervals**: when two models’ intervals overlap, the difference between them is not statistically significant. Tables are generated from `reports/` with `yarn results` and `yarn paired`.
 
-The `core-fr` / `core-en` pair (v2, 325 questions per language) has not been run yet.
+### Core, in French
 
-### French native suite
-
-Suite `fr-native` v1 · 26 cases, 86 questions · 3 runs per case after 1 warm-up · concurrency 1 · run on 2026-10-11.
+Suite `core-fr` v2 · 90 cases, 325 questions · 3 runs per case after 1 warm-up · concurrency 1 · run on 2026-10-11.
 
 | Model | Quality (95 % CI) | Accuracy (95 % CI) | Stability | p50 latency | p95 latency | Cost / 1k requests | Missed questions |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| `perplexity/pplx-decider-v1.1-27b` (OpenRouter) | 98.8 % (97–100) | 98.8 % (94–100) | 100.0 % | 237 ms | 403 ms | $0.038 | 1 |
-| `openai/gpt-6-luna-decisions` (OpenRouter) | 98.2 % (96–100) | 98.8 % (94–100) | 100.0 % | 264 ms | 414 ms | $0.078 | 1 |
-| `typesafe/jev-1.13` (OpenRouter) | 96.8 % (96–98) | 100.0 % (96–100) | 100.0 % | 252 ms | 311 ms | $0.034 | 0 |
-| `microsoft/microsoft-decision-1` (OpenRouter) | 96.4 % (93–100) | 97.7 % (92–99) | 100.0 % | 315 ms | 383 ms | $0.019 | 2 |
-| Clef 27B Q8_0 (self-hosted, llama.cpp)¹ | 94.7 % (92–97) | 96.5 % (90–99) | 100.0 % | 1 200 ms | 4 795 ms | — | 3 |
+| `perplexity/pplx-decider-v1.1-27b` (OpenRouter) | 88.2 % (86–91) | 87.9 % (84–91) | 100.0 % | 387 ms | 4 255 ms | $0.048 | 40 |
+| `openai/gpt-6-luna-decisions` (OpenRouter) | 84.6 % (82–88) | 85.5 % (81–89) | 100.0 % | 256 ms | 345 ms | $0.093 | 47 |
+| `microsoft/microsoft-decision-1` (OpenRouter) | 83.8 % (81–87) | 84.3 % (80–88) | 97.5 % | 336 ms | 452 ms | $0.025 | 54 |
+| `typesafe/jev-1.13` (OpenRouter) | 82.3 % (80–85) | 85.1 % (81–89) | 96.3 % | 269 ms | 359 ms | $0.044 | 54 |
+| Clef 27B Q8_0 (self-hosted, llama.cpp)¹ | 81.4 % (78–84) | 84.9 % (81–88) | 100.0 % | 1 676 ms | 4 492 ms | — | 49 |
 
-Every model got the long documents right (lease, co-ownership minutes, a 135-line bank statement). The misses are all on short cases that test French specifically, and every model was consistent across its 3 runs:
+### Core, in English
 
-| Model | Case | What happened |
-|---|---|---|
-| Perplexity | Amounts in French format | Read “Total 1 234,50 €, deposit 300,00 €” as a balance above 1 000 € (it is 934,50 €). |
-| OpenAI | Successive discounts | Treated −30 % then −10 % as −40 % (72 € instead of 75,60 €). |
-| Microsoft | Rental listing | Did not read “1 050 € CC” as *charges comprises*, and said 68 m² is over 70 m². |
-| Clef | Irony | Did not see the irony in “Bravo, quelle ponctualité légendaire” after a 45-minute delay. |
-| Clef | Implicit threat | Missed the intimidation in “Je sais où se trouve votre magasin… vous feriez mieux de retirer cet avis”. |
-| Clef | Logic | Answered “yes” where the statements do not allow a conclusion. |
-
-### English native suite
-
-Suite `en-native` v1 · 24 cases, 76 questions · same settings · run on 2026-10-11.
+Suite `core-en` v2 · the same 90 cases, translated · same settings · run on 2026-10-11.
 
 | Model | Quality (95 % CI) | Accuracy (95 % CI) | Stability | p50 latency | p95 latency | Cost / 1k requests | Missed questions |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| `perplexity/pplx-decider-v1.1-27b` (OpenRouter) | 98.5 % (97–100) | 98.7 % (93–100) | 100.0 % | 266 ms | 389 ms | $0.028 | 1 |
-| `microsoft/microsoft-decision-1` (OpenRouter) | 96.0 % (93–99) | 97.4 % (91–99) | 100.0 % | 328 ms | 454 ms | $0.015 | 2 |
-| `typesafe/jev-1.13` (OpenRouter) | 95.1 % (93–97) | 99.6 % (94–100) | 98.7 % | 263 ms | 332 ms | $0.030 | 1 |
-| `openai/gpt-6-luna-decisions` (OpenRouter) | 94.1 % (90–98) | 94.7 % (87–98) | 100.0 % | 268 ms | 425 ms | $0.070 | 4 |
-| Clef 27B Q8_0 (self-hosted, llama.cpp)¹ | 92.5 % (89–96) | 93.4 % (86–97) | 100.0 % | 1 028 ms | 4 080 ms | — | 5 |
+| `perplexity/pplx-decider-v1.1-27b` (OpenRouter) | 88.5 % (86–91) | 87.7 % (84–91) | 100.0 % | 307 ms | 509 ms | $0.044 | 40 |
+| `openai/gpt-6-luna-decisions` (OpenRouter) | 84.4 % (81–87) | 85.8 % (82–89) | 100.0 % | 252 ms | 371 ms | $0.088 | 46 |
+| `microsoft/microsoft-decision-1` (OpenRouter) | 83.8 % (81–87) | 85.1 % (81–89) | 97.8 % | 327 ms | 403 ms | $0.022 | 52 |
+| `typesafe/jev-1.13` (OpenRouter) | 83.0 % (80–86) | 86.1 % (82–89) | 96.9 % | 279 ms | 363 ms | $0.040 | 50 |
+| Clef 27B Q8_0 (self-hosted, llama.cpp)¹ | 80.9 % (78–84) | 82.8 % (78–86) | 100.0 % | 1 649 ms | 4 130 ms | — | 56 |
 
-The English misses are mostly reasoning over rules:
-
-| Model | Case | What happened |
-|---|---|---|
-| Jev, OpenAI, Clef | Expense policy | Accepted a $210 hotel in Denver: the cap is $250 only in tier-1 cities, $180 elsewhere. Jev hesitated (P(yes) ≈ 0.5) and got it wrong in 1 run of 3. |
-| Clef | Expense policy | Said a claim submitted 18 days after the trip was late (the deadline is 30 days). |
-| OpenAI | Percentage trap | Said +20 % then −20 % brings the price back to $100 (it is $96). |
-| OpenAI | Résumé screening | Accepted a candidate with 2.5 years of experience for a 3-year requirement. |
-| OpenAI | Return policy | Accepted a laptop return after 20 days (electronics: 15 days). |
-| Microsoft | Calibration | Answered “Fine.” with 87–89 % satisfaction, where an uncertain probability is expected. |
-| Microsoft | Code review | Did not see that `forEach` with an `async` callback makes the function return 0. |
-| Perplexity | Used car listing | Did not read “$18,900 OBO” (*or best offer*) as a negotiable price. |
-| Clef | Sarcasm, threat | Missed the sarcasm about a “quick sync” and the conditional threat “you’ll find out what happens when I see you”. |
-| Clef | Quantities | Said 7 cups of flour are enough for 4 batches of 2 cups. |
+**Perplexity’s decider leads in both languages.** Its lead over Jev and Clef is significant; over OpenAI and Microsoft, the intervals still overlap by one or two points. The four others are statistically tied. Jev is a good illustration of the gap between the two metrics: second on accuracy in English (86.1 %), fourth on quality (83.0 %), because it is often right with little confidence.
 
 ### French vs English
 
-| Model | `fr-native` accuracy | `en-native` accuracy | `multilingual` accuracy |
+Every question exists in both languages, so each model can be compared with itself, question by question. This paired comparison removes the effect of the content and gives intervals much narrower than the tables above.
+
+| Model | Quality, FR − EN (95 % CI) | Accuracy, FR − EN (95 % CI) | Right only in French | Right only in English |
+|---|---:|---:|---:|---:|
+| `perplexity/pplx-decider-v1.1-27b` | −0.3 pt (−1.3 to +0.8) | +0.2 pt (−2.1 to +2.6) | 8 | 7 |
+| `openai/gpt-6-luna-decisions` | +0.2 pt (−1.4 to +1.8) | −0.3 pt (−3.1 to +2.5) | 10 | 11 |
+| `microsoft/microsoft-decision-1` | 0.0 pt (−1.4 to +1.4) | −0.8 pt (−3.4 to +1.7) | 8 | 11 |
+| `typesafe/jev-1.13` | −0.7 pt (−1.5 to +0.1) | −0.9 pt (−2.6 to +0.8) | 5 | 8 |
+| Clef 27B Q8_0 | +0.5 pt (−0.7 to +1.7) | +2.2 pt (−0.6 to +4.9) | 14 | 7 |
+
+**None of these models is worse in French.** Every difference is within about one point of quality, and every interval contains zero. The questions a model gets right in one language only (last two columns) are few and balanced: they are borderline cases where the model hesitates, not a language effect. The ranking is the same in both languages.
+
+### Where the models fail
+
+Quality by theme, averaged over French and English:
+
+| Theme | Questions per language | Perplexity | OpenAI | Microsoft | Jev | Clef |
+|---|---:|---:|---:|---:|---:|---:|
+| Long documents (email threads, contracts, changelogs, JSON datasets) | 48 | 99.1 % | 97.1 % | 97.7 % | 97.6 % | 96.7 % |
+| Support and security (phishing, IBAN fraud, distress, routing) | 53 | 97.7 % | 95.3 % | 94.1 % | 94.0 % | 91.4 % |
+| Original cases (sentiment, moderation, routing, needle in a haystack…) | 59 | 96.4 % | 94.9 % | 94.7 % | 94.1 % | 93.6 % |
+| Fine-grained language (negation, quantifiers, reported speech, irony) | 56 | 96.5 % | 90.2 % | 90.0 % | 90.8 % | 90.9 % |
+| Multi-condition rules (pricing tiers, policies, eligibility) | 52 | 79.6 % | 76.5 % | 72.9 % | 68.9 % | 64.4 % |
+| Arithmetic on tables, dates and units | 57 | 62.3 % | 54.7 % | 55.2 % | 52.2 % | 51.2 % |
+
+Reading is solved: every model finds the needle in a 45-order JSON dataset or the exception clause at the end of a contract. **Computing is not.** As soon as the answer requires chaining two or three operations, quality drops to 51–62 % for every model, in both languages. A few questions that all five models miss, in French and in English:
+
+| Case | Expected | What the models answered |
+|---|---|---|
+| A €80 jacket, −25 %, then −10 % off the sale price; shipping €4.90, free from €60 | €58.90 (54 + 4.90) | €54 or €56.90: they apply the discounts but forget that €54 is below the free-shipping threshold, or add the discounts up. |
+| A crêpe recipe for 4 (300 g of flour) scaled to 10 people, with 0.7 kg of flour at home | Not enough flour (750 g needed) | “She has everything”, sometimes “eggs” or “butter”. |
+| 3 notebooks at €2.40 and a pen at €1.90, paid with €10; €1.10 given back | Too much change (€0.90 was due) | “Exact amount” or “too little”. |
+| A hotel review praising the room and staff, and thanking the wifi for giving time to finish a novel | Main complaint: the wifi | “Breakfast” or “none”: only Clef, and only in French, read the irony. |
+
+These are the questions that separate the models. If you use a decision model on rules that involve amounts, compute the amounts in your code and pass them in the `state`.
+
+<details>
+<summary>Results on the other suites (<code>fr-native</code>, <code>en-native</code>, <code>multilingual</code>)</summary>
+
+These suites are smaller (76 to 86 questions) and easier: every model scores above 91 % and no difference between models is significant. `fr-native` and `en-native` do not contain the same cases, so comparing them does not isolate the language; the core pair above does.
+
+| Model | `fr-native` quality | `en-native` quality | `multilingual` quality |
 |---|---:|---:|---:|
-| `typesafe/jev-1.13` | **100 %** | **99.6 %** | **99.6 %** |
-| `perplexity/pplx-decider-v1.1-27b` | 98.8 % | 98.7 % | 98.8 % |
-| `openai/gpt-6-luna-decisions` | 98.8 % | 94.7 % | 96.3 % |
-| `microsoft/microsoft-decision-1` | 97.7 % | 97.4 % | 95.4 % |
-| Clef 27B Q8_0 | 96.5 % | 93.4 % | 91.3 % |
+| `perplexity/pplx-decider-v1.1-27b` | 98.8 % (97–100) | 98.5 % (97–100) | 97.9 % (96–100) |
+| `openai/gpt-6-luna-decisions` | 98.2 % (96–100) | 94.1 % (90–98) | 95.0 % (91–99) |
+| `microsoft/microsoft-decision-1` | 96.4 % (93–100) | 96.0 % (93–99) | 95.3 % (92–99) |
+| `typesafe/jev-1.13` | 96.8 % (96–98) | 95.1 % (93–97) | 96.8 % (95–98) |
+| Clef 27B Q8_0 | 94.7 % (92–97) | 92.5 % (89–96) | 92.5 % (88–97) |
 
-On these suites, **no model does worse in French than in English**, and the ranking is almost the same in both languages. None of these differences is statistically significant, though: with 76 to 86 questions per suite, the confidence intervals are 5 to 10 points wide. The French and English suites cover the same skills with different content, so part of the gap comes from the cases themselves: the English suite has more multi-rule reasoning (expense and return policies, résumé screening), which is where most English misses are. The `core-fr` / `core-en` pair, with identical cases in both languages, is the one that isolates the language effect.
+Full tables: `yarn results fr-native en-native multilingual`.
 
-### Multilingual suite
-
-Suite `multilingual` v1 · 23 cases, 80 questions (8 in French) · same settings · run on 2026-10-10.
-
-| Model | Quality (95 % CI) | Accuracy (95 % CI) | Stability | p50 latency | p95 latency | Cost / 1k requests | Missed questions |
-|---|---:|---:|---:|---:|---:|---:|---:|
-| `perplexity/pplx-decider-v1.1-27b` (OpenRouter) | 97.9 % (96–100) | 98.8 % (93–100) | 100.0 % | 308 ms | 523 ms | $0.043 | 1 |
-| `typesafe/jev-1.13` (OpenRouter) | 96.8 % (95–98) | 99.6 % (95–100) | 98.8 % | 268 ms | 364 ms | $0.037 | 1 |
-| `microsoft/microsoft-decision-1` (OpenRouter) | 95.3 % (92–99) | 95.4 % (88–98) | 98.8 % | 319 ms | 478 ms | $0.022 | 5 |
-| `openai/gpt-6-luna-decisions` (OpenRouter) | 95.0 % (91–99) | 96.3 % (90–99) | 100.0 % | 207 ms | 458 ms | $0.085 | 3 |
-| Clef 27B Q8_0 (self-hosted, llama.cpp)¹ | 92.5 % (88–97) | 91.3 % (83–96) | 100.0 % | 1 046 ms | 6 886 ms | — | 7 |
+</details>
 
 ### Metrics
 
@@ -127,14 +132,14 @@ How each question type is graded:
 | P(yes) = 0.49 | ✓ | 0.51 |
 | P(yes) = 0.60 | ✗ | 0.40 |
 
-All three first answers count as correct, but only the first one is a confident *no*. This is why Jev, with no missed question on the French suite, has a lower quality than Perplexity and OpenAI: it is always right, with less confidence.
+All three first answers count as correct, but only the first one is a confident *no*. This is why Jev ranks higher on accuracy than on quality: it is often right, with less confidence.
 
 Use **accuracy** if your code acts on the decision alone (`if noul > 0.5`), and **quality** if it uses the probabilities themselves: thresholds, ranking, combining several answers. On ambiguous cases (“Mouais, ça ira”), the expected answer is a probability *range*, and quality measures the distance to that range rather than certainty.
 
 ¹ Self-hosted on a Framework Desktop: AMD Ryzen AI Max+ 395, Radeon 8060S integrated GPU, 128 GB of unified memory, llama.cpp with the ROCm backend and flash attention. The model runs entirely on the integrated GPU, so latency reflects that machine, not the model: the API models above run on datacenter hardware. Setup and measurements in [docs/self-hosting.md](docs/self-hosting.md).
 
 > [!NOTE]
-> These suites are small: on the French suite, one missed question costs 1.2 points of accuracy. Treat the rankings as a first signal, and add cases if you want stronger conclusions.
+> With 325 questions, the confidence intervals of the core suites are about ±3 points for accuracy and ±2.5 for quality: enough to separate the leader from the pack, not to rank models that are a point apart. Contributions of new cases are welcome.
 
 The raw reports are in [`reports/`](reports/): open the app, go to **Benchmark → Saved reports**, and compare any of them side by side.
 
