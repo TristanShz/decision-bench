@@ -10,7 +10,7 @@ Almost every public evaluation of these models is in English. This project ships
 
 | Suite | Cases | Questions | Content |
 |---|---:|---:|---|
-| `core-fr` / `core-en` — Core | 20 + 20 | 59 + 59 | **The same cases in French and in English, simply translated.** Support triage, sentiment and sarcasm, moderation, phishing, routing, arithmetic and logic traps, résumé screening, medical triage, return policy, committee minutes, a 70-ticket support queue. |
+| `core-fr` / `core-en` — Core | 90 + 90 | 325 + 325 | **The same cases in French and in English, simply translated.** Built to separate strong models: multi-condition policies, arithmetic on tables, dates and units, negation and quantifiers, reported speech, implicature, calibration, subtle phishing and payment fraud, distress signals, routing at the border of two teams, email threads where a later message overrides an earlier one, contracts with a distant exception clause, changelogs, incident timelines, and long JSON datasets with planted needles. |
 | `fr-native` — Français natif | 26 | 86 | Written directly in French: litotes, irony, *ne… que* and double negation, register, French date and number formats, residential lease law, co-ownership meeting minutes, bank statement. |
 | `en-native` — English native | 24 | 76 | Written directly in English: understatement, idioms, US dates, phishing, expense policy, incident postmortem, sales call, support queue. |
 | `multilingual` — Multilingue | 23 | 80 | The original suite: 8 French cases, 12 English, 1 German, 1 Spanish, 1 code. Frozen so the results below stay comparable. |
@@ -24,19 +24,21 @@ Every expected answer was checked by an independent blind annotation pass; quest
 
 ## Results
 
-The `core-fr` / `core-en` pair has not been run yet.
+Models are ranked by **quality**, the most informative metric (see [Metrics](#metrics)). Numbers in parentheses are **95 % confidence intervals**: when two models’ intervals overlap, the difference between them is not statistically significant. Tables are generated from `reports/` with `yarn results`.
+
+The `core-fr` / `core-en` pair (v2, 325 questions per language) has not been run yet.
 
 ### French native suite
 
 Suite `fr-native` v1 · 26 cases, 86 questions · 3 runs per case after 1 warm-up · concurrency 1 · run on 2026-10-11.
 
-| Model | Accuracy | Quality | Stability | p50 latency | p95 latency | Cost / 1k requests | Missed questions |
+| Model | Quality (95 % CI) | Accuracy (95 % CI) | Stability | p50 latency | p95 latency | Cost / 1k requests | Missed questions |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| `typesafe/jev-1.13` (OpenRouter) | **100 %** | 96.8 % | **100 %** | 252 ms | **311 ms** | $0.034 | **0** |
-| `perplexity/pplx-decider-v1.1-27b` (OpenRouter) | 98.8 % | **98.8 %** | **100 %** | **237 ms** | 403 ms | $0.038 | 1 |
-| `openai/gpt-6-luna-decisions` (OpenRouter) | 98.8 % | 98.2 % | **100 %** | 264 ms | 414 ms | $0.078 | 1 |
-| `microsoft/microsoft-decision-1` (OpenRouter) | 97.7 % | 96.4 % | **100 %** | 315 ms | 383 ms | **$0.019** | 2 |
-| Clef 27B Q8_0 (self-hosted, llama.cpp)¹ | 96.5 % | 94.7 % | **100 %** | 1 200 ms | 4 795 ms | — | 3 |
+| `perplexity/pplx-decider-v1.1-27b` (OpenRouter) | 98.8 % (97–100) | 98.8 % (94–100) | 100.0 % | 237 ms | 403 ms | $0.038 | 1 |
+| `openai/gpt-6-luna-decisions` (OpenRouter) | 98.2 % (96–100) | 98.8 % (94–100) | 100.0 % | 264 ms | 414 ms | $0.078 | 1 |
+| `typesafe/jev-1.13` (OpenRouter) | 96.8 % (96–98) | 100.0 % (96–100) | 100.0 % | 252 ms | 311 ms | $0.034 | 0 |
+| `microsoft/microsoft-decision-1` (OpenRouter) | 96.4 % (93–100) | 97.7 % (92–99) | 100.0 % | 315 ms | 383 ms | $0.019 | 2 |
+| Clef 27B Q8_0 (self-hosted, llama.cpp)¹ | 94.7 % (92–97) | 96.5 % (90–99) | 100.0 % | 1 200 ms | 4 795 ms | — | 3 |
 
 Every model got the long documents right (lease, co-ownership minutes, a 135-line bank statement). The misses are all on short cases that test French specifically, and every model was consistent across its 3 runs:
 
@@ -53,13 +55,13 @@ Every model got the long documents right (lease, co-ownership minutes, a 135-lin
 
 Suite `en-native` v1 · 24 cases, 76 questions · same settings · run on 2026-10-11.
 
-| Model | Accuracy | Quality | Stability | p50 latency | p95 latency | Cost / 1k requests | Missed questions |
+| Model | Quality (95 % CI) | Accuracy (95 % CI) | Stability | p50 latency | p95 latency | Cost / 1k requests | Missed questions |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| `typesafe/jev-1.13` (OpenRouter) | **99.6 %** | 95.1 % | 98.7 % | **263 ms** | **332 ms** | $0.030 | 1 (1 run of 3) |
-| `perplexity/pplx-decider-v1.1-27b` (OpenRouter) | 98.7 % | **98.5 %** | **100 %** | 266 ms | 389 ms | $0.028 | 1 |
-| `microsoft/microsoft-decision-1` (OpenRouter) | 97.4 % | 96.0 % | **100 %** | 328 ms | 454 ms | **$0.015** | 2 |
-| `openai/gpt-6-luna-decisions` (OpenRouter) | 94.7 % | 94.1 % | **100 %** | 268 ms | 425 ms | $0.070 | 4 |
-| Clef 27B Q8_0 (self-hosted, llama.cpp)¹ | 93.4 % | 92.5 % | **100 %** | 1 028 ms | 4 080 ms | — | 5 |
+| `perplexity/pplx-decider-v1.1-27b` (OpenRouter) | 98.5 % (97–100) | 98.7 % (93–100) | 100.0 % | 266 ms | 389 ms | $0.028 | 1 |
+| `microsoft/microsoft-decision-1` (OpenRouter) | 96.0 % (93–99) | 97.4 % (91–99) | 100.0 % | 328 ms | 454 ms | $0.015 | 2 |
+| `typesafe/jev-1.13` (OpenRouter) | 95.1 % (93–97) | 99.6 % (94–100) | 98.7 % | 263 ms | 332 ms | $0.030 | 1 |
+| `openai/gpt-6-luna-decisions` (OpenRouter) | 94.1 % (90–98) | 94.7 % (87–98) | 100.0 % | 268 ms | 425 ms | $0.070 | 4 |
+| Clef 27B Q8_0 (self-hosted, llama.cpp)¹ | 92.5 % (89–96) | 93.4 % (86–97) | 100.0 % | 1 028 ms | 4 080 ms | — | 5 |
 
 The English misses are mostly reasoning over rules:
 
@@ -86,19 +88,19 @@ The English misses are mostly reasoning over rules:
 | `microsoft/microsoft-decision-1` | 97.7 % | 97.4 % | 95.4 % |
 | Clef 27B Q8_0 | 96.5 % | 93.4 % | 91.3 % |
 
-On these suites, **no model does worse in French than in English**, and the ranking is almost the same in both languages. The French and English suites cover the same skills with different content, so part of the gap comes from the cases themselves: the English suite has more multi-rule reasoning (expense and return policies, résumé screening), which is where most English misses are. The `core-fr` / `core-en` pair, with identical cases in both languages, is the one that isolates the language effect.
+On these suites, **no model does worse in French than in English**, and the ranking is almost the same in both languages. None of these differences is statistically significant, though: with 76 to 86 questions per suite, the confidence intervals are 5 to 10 points wide. The French and English suites cover the same skills with different content, so part of the gap comes from the cases themselves: the English suite has more multi-rule reasoning (expense and return policies, résumé screening), which is where most English misses are. The `core-fr` / `core-en` pair, with identical cases in both languages, is the one that isolates the language effect.
 
 ### Multilingual suite
 
 Suite `multilingual` v1 · 23 cases, 80 questions (8 in French) · same settings · run on 2026-10-10.
 
-| Model | Accuracy | Quality | Stability | Accuracy on French cases | p50 latency | p95 latency | Cost / 1k requests |
+| Model | Quality (95 % CI) | Accuracy (95 % CI) | Stability | p50 latency | p95 latency | Cost / 1k requests | Missed questions |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| `typesafe/jev-1.13` (OpenRouter) | **99.6 %** | 96.8 % | 98.8 % | **100 %** | 268 ms | **364 ms** | $0.037 |
-| `perplexity/pplx-decider-v1.1-27b` (OpenRouter) | 98.8 % | **97.9 %** | **100 %** | **100 %** | 308 ms | 523 ms | $0.043 |
-| `openai/gpt-6-luna-decisions` (OpenRouter) | 96.3 % | 95.0 % | **100 %** | 94.7 % | **207 ms** | 458 ms | $0.085 |
-| `microsoft/microsoft-decision-1` (OpenRouter) | 95.4 % | 95.3 % | 98.8 % | 95.6 % | 319 ms | 478 ms | **$0.022** |
-| Clef 27B Q8_0 (self-hosted, llama.cpp)¹ | 91.3 % | 92.5 % | **100 %** | 92.1 % | 1 046 ms | 6 886 ms | — |
+| `perplexity/pplx-decider-v1.1-27b` (OpenRouter) | 97.9 % (96–100) | 98.8 % (93–100) | 100.0 % | 308 ms | 523 ms | $0.043 | 1 |
+| `typesafe/jev-1.13` (OpenRouter) | 96.8 % (95–98) | 99.6 % (95–100) | 98.8 % | 268 ms | 364 ms | $0.037 | 1 |
+| `microsoft/microsoft-decision-1` (OpenRouter) | 95.3 % (92–99) | 95.4 % (88–98) | 98.8 % | 319 ms | 478 ms | $0.022 | 5 |
+| `openai/gpt-6-luna-decisions` (OpenRouter) | 95.0 % (91–99) | 96.3 % (90–99) | 100.0 % | 207 ms | 458 ms | $0.085 | 3 |
+| Clef 27B Q8_0 (self-hosted, llama.cpp)¹ | 92.5 % (88–97) | 91.3 % (83–96) | 100.0 % | 1 046 ms | 6 886 ms | — | 7 |
 
 ### Metrics
 
@@ -107,7 +109,6 @@ Suite `multilingual` v1 · 23 cases, 80 questions (8 in French) · same settings
 - **Stability**: share of questions where all runs gave the same decision.
 - **p50 / p95 latency**: median response time, and the time under which 95 % of requests complete.
 - **Cost / 1k requests**: cost billed by OpenRouter, scaled to 1,000 requests of the suite.
-- **Accuracy on French cases**: only the 8 cases of the `multilingual` suite that are written in French.
 
 How each question type is graded:
 
@@ -225,8 +226,8 @@ The full guide, including expectation formats and what makes a good case, is in 
 ```
 src/
   bench/
+    core/              core benchmark, one file per theme, each case with its French and English version
     suites/            benchmark suites, one folder per suite
-      core.ts          core benchmark, each case with its French and English version
       core-fr/         core benchmark in French
       core-en/         same cases in English
       fr-native/       cases written in French

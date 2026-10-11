@@ -1,7 +1,7 @@
 import type { BenchSuite } from '../../types'
-import { CORE_VERSION, coreCases } from '../core.ts'
+import { CORE_VERSION, coreCases } from '../../core/index.ts'
 
-// Les cas sont définis une seule fois, avec leur traduction française, dans ../core.ts.
+// Les cas sont définis une seule fois, avec leur traduction française, dans src/bench/core/.
 export const suite: BenchSuite = {
   id: 'core-en',
   name: 'Core (EN)',

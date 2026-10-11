@@ -5,7 +5,7 @@ The most useful contributions are **benchmark suites in new languages**, **new c
 ## Adding a suite
 
 1. Create a folder named after your suite in `src/bench/suites/`, e.g. `src/bench/suites/es-native/`. Use lowercase letters, digits and dashes, and pick a name that says what the suite contains. Two conventions:
-   - `<name>-<lang>` for the **same cases translated** into several languages (`core-fr`, `core-en`). Add `core-es` by translating [`core.ts`](src/bench/suites/core.ts): add an `es` side to every case, keep the question ids, types and option keys, and create `core-es/suite.ts` like `core-fr/suite.ts`. The comparison screen then pairs each case with its translation.
+   - `<name>-<lang>` for the **same cases translated** into several languages (`core-fr`, `core-en`). Add `core-es` by translating the files of [`src/bench/core/`](src/bench/core/): add an `es` side to every case, keep the question ids, types and option keys, and create `core-es/suite.ts` like `core-fr/suite.ts`. The comparison screen then pairs each case with its translation.
    - `<lang>-native` (or any other descriptive name) for cases written directly in one language, which are not translations of another suite (`es-native`, `pt-br-legal`).
 2. Add a `suite.ts` exporting `suite` (see the example in the [README](README.md#adding-a-benchmark-suite), or start from [`fr-native/suite.ts`](src/bench/suites/fr-native/suite.ts)).
 3. Run `yarn validate`, then `yarn dev` and pick your suite in the **Benchmark** tab.

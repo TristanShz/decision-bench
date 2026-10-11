@@ -190,6 +190,46 @@ export function summarize(cases: CaseResult[], durationMs: number, mainLang?: st
 
 export const reportStats = (r: BenchReport) => r.cases.map(caseStats)
 
+export interface Interval {
+  lo: number
+  hi: number
+}
+
+/** Intervalle de Wilson à 95 % pour une proportion k / n (k peut être fractionnaire : moyenne des essais). */
+export function wilson(k: number, n: number, z = 1.96): Interval | null {
+  if (!n) return null
+  const p = k / n
+  const d = 1 + (z * z) / n
+  const c = (p + (z * z) / (2 * n)) / d
+  const h = (z * Math.sqrt((p * (1 - p)) / n + (z * z) / (4 * n * n))) / d
+  return { lo: Math.max(0, c - h), hi: Math.min(1, c + h) }
+}
+
+/** Intervalle à 95 % d'une moyenne de valeurs entre 0 et 1 (approximation normale). */
+export function meanInterval(xs: number[], z = 1.96): Interval | null {
+  if (xs.length < 2) return null
+  const m = xs.reduce((s, x) => s + x, 0) / xs.length
+  const sd = Math.sqrt(xs.reduce((s, x) => s + (x - m) ** 2, 0) / (xs.length - 1))
+  const h = (z * sd) / Math.sqrt(xs.length)
+  return { lo: Math.max(0, m - h), hi: Math.min(1, m + h) }
+}
+
+/**
+ * Précision statistique d'un rapport. L'unité est la question (les essais d'une même question
+ * ne sont pas indépendants : un modèle stable répond pareil à chaque essai).
+ */
+export function confidence(cases: CaseResult[]): { questions: number; accuracy: Interval | null; quality: Interval | null } {
+  const qs = cases.flatMap((c) => Object.values(caseStats(c).questions))
+  const acc = defined(qs.map((q) => q.accuracy))
+  const qual = defined(qs.map((q) => q.quality))
+  return { questions: acc.length, accuracy: wilson(acc.reduce((s, x) => s + x, 0), acc.length), quality: meanInterval(qual) }
+}
+
+/** Deux intervalles qui se chevauchent : l'écart n'est pas significatif à 95 %. */
+export const overlaps = (a: Interval | null, b: Interval | null) => !a || !b || (a.lo <= b.hi && b.lo <= a.hi)
+
+export const fmtInterval = (i: Interval | null) => (i ? `${(i.lo * 100).toFixed(1)} – ${(i.hi * 100).toFixed(1)} %` : '—')
+
 export const fmtMs = (v: number | null | undefined) =>
   v == null || Number.isNaN(v) ? '—' : v >= 10000 ? `${(v / 1000).toFixed(1)} s` : `${Math.round(v).toLocaleString('fr-FR')} ms`
 export const fmtUsd = (v: number | null | undefined) => (v == null ? '—' : `${v < 0.01 ? v.toFixed(5) : v.toFixed(3)} $`)

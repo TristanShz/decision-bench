@@ -1,5 +1,5 @@
 import { Fragment, useMemo, useState } from 'react'
-import { answerLabel, caseStats, fmtMs, fmtNum, fmtPct, fmtUsd, formatExpected, toneFor } from './stats'
+import { answerLabel, caseStats, confidence, fmtInterval, fmtMs, fmtNum, fmtPct, fmtUsd, formatExpected, toneFor } from './stats'
 import { LEGACY_SUITE_ID } from './suites'
 import type { BenchReport, GroupStats } from './types'
 import { Kpi, Scatter, Tag } from './ui'
@@ -31,16 +31,18 @@ export function ReportHeader({ report }: { report: BenchReport }) {
 
 export function SummaryKpis({ report }: { report: BenchReport }) {
   const s = report.summary
+  const ci = useMemo(() => confidence(report.cases), [report.cases])
   return (
     <div className="kpis">
+      <Kpi label="Qualité" value={fmtPct(s.quality)} tone={toneFor(s.quality, 0.8, 0.6)} sub={<span title="Probabilité donnée à la bonne réponse, intervalle de confiance à 95 %">IC 95 % {fmtInterval(ci.quality)}</span>} />
+      <Kpi label="Exactitude" value={fmtPct(s.accuracy)} tone={toneFor(s.accuracy, 0.85, 0.7)} sub={<span title={`Décisions correctes sur ${ci.questions} questions, intervalle de confiance à 95 %`}>IC 95 % {fmtInterval(ci.accuracy)}</span>} />
+      <Kpi label="Stabilité" value={fmtPct(s.consistency)} tone={toneFor(s.consistency, 0.95, 0.85)} sub="mêmes décisions entre essais" />
+      <Kpi label="Questions" value={ci.questions} sub="unité de mesure de la précision" />
       <Kpi label="Latence p50" value={fmtMs(s.latency.p50)} sub={`p95 ${fmtMs(s.latency.p95)}`} />
       <Kpi label="Latence moyenne" value={fmtMs(s.latency.mean)} sub={`σ ${fmtMs(s.latency.stdev)}`} />
       <Kpi label="Débit d'entrée" value={s.tokensPerSec ? `${fmtNum(s.tokensPerSec)} tok/s` : '—'} sub={s.msPerToken ? `${fmtNum(s.msPerToken, 2)} ms / token` : undefined} />
       <Kpi label="Requêtes / s" value={fmtNum(s.requestsPerSec, 2)} sub={`${s.ok}/${s.requests} réussies${s.cost != null ? ` · coût ${fmtUsd(s.cost)}` : ''}`} />
       <Kpi label="Erreurs" value={fmtPct(s.errorRate)} tone={s.errorRate === 0 ? 'ok' : s.errorRate < 0.05 ? 'mid' : 'ko'} />
-      <Kpi label="Exactitude" value={fmtPct(s.accuracy)} tone={toneFor(s.accuracy, 0.85, 0.7)} sub="décisions correctes" />
-      <Kpi label="Qualité" value={fmtPct(s.quality)} tone={toneFor(s.quality, 0.8, 0.6)} sub="proba. de la bonne réponse" />
-      <Kpi label="Stabilité" value={fmtPct(s.consistency)} tone={toneFor(s.consistency, 0.95, 0.85)} sub="mêmes décisions entre essais" />
     </div>
   )
 }

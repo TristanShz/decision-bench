@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react'
-import { answerLabel, caseStats, decision, fmtMs, fmtNum, fmtPct, fmtUsd, formatExpected, grade, type CaseStats } from './stats'
+import { answerLabel, caseStats, confidence, decision, fmtInterval, fmtMs, fmtNum, fmtPct, fmtUsd, formatExpected, grade, overlaps, type CaseStats, type Interval } from './stats'
 import { LEGACY_SUITE_ID } from './suites'
 import type { BenchReport, CaseResult, GroupStats } from './types'
 import { Scatter } from './ui'
@@ -17,6 +17,8 @@ interface Metric {
   better: 'low' | 'high'
   /** Écart exprimé en points (pourcentages) plutôt qu'en relatif. */
   points?: boolean
+  /** Intervalles de confiance à 95 % : un écart dans l'intervalle n'est pas significatif. */
+  ci?: (Interval | null)[]
 }
 
 /** Indices des meilleurs rapports ; vide si tous sont à égalité (écart < 2 % relatif ou < 0,5 point). */
@@ -24,6 +26,12 @@ function winners(m: Metric): number[] {
   const vals = m.values.map((v, i) => ({ v, i })).filter((x): x is { v: number; i: number } => x.v != null)
   if (vals.length < 2) return []
   const best = m.better === 'low' ? Math.min(...vals.map((x) => x.v)) : Math.max(...vals.map((x) => x.v))
+  if (m.ci) {
+    // Gagnants : les rapports statistiquement à égalité avec le meilleur.
+    const ib = vals.find((x) => x.v === best)!.i
+    const top = vals.filter((x) => overlaps(m.ci![x.i], m.ci![ib])).map((x) => x.i)
+    return top.length === vals.length ? [] : top
+  }
   const tol = (v: number) => (m.points ? 0.005 : Math.max(Math.abs(v), Math.abs(best)) * 0.02)
   const top = vals.filter((x) => Math.abs(x.v - best) <= tol(x.v)).map((x) => x.i)
   return top.length === vals.length ? [] : top
@@ -45,6 +53,7 @@ function delta(m: Metric, i: number): string {
 
 function metrics(reports: BenchReport[]): Metric[] {
   const S = reports.map((r) => r.summary)
+  const C = reports.map((r) => confidence(r.cases))
   // Sans aucune requête réussie, les latences valent 0 : on les traite comme absentes.
   const lat = (f: (l: BenchReport['summary']['latency']) => number) => S.map((s) => (s.latency.n ? f(s.latency) : null))
   const ms = (v: number | null) => fmtMs(v)
@@ -61,8 +70,8 @@ function metrics(reports: BenchReport[]): Metric[] {
     { label: 'Requêtes / s', values: S.map((s) => s.requestsPerSec), fmt: (v) => fmtNum(v, 2), better: 'high' },
     { label: 'Coût pour 1 000 requêtes', values: S.map((s) => (s.cost != null && s.ok ? (s.cost / s.ok) * 1000 : null)), fmt: (v) => fmtUsd(v), better: 'low' },
     { label: 'Taux d’erreur', values: S.map((s) => s.errorRate), fmt: pct, better: 'low', points: true },
-    { label: 'Exactitude', values: S.map((s) => s.accuracy), fmt: pct, better: 'high', points: true },
-    { label: 'Qualité', values: S.map((s) => s.quality), fmt: pct, better: 'high', points: true },
+    { label: 'Qualité', values: S.map((s) => s.quality), fmt: pct, better: 'high', points: true, ci: C.map((c) => c.quality) },
+    { label: 'Exactitude', values: S.map((s) => s.accuracy), fmt: pct, better: 'high', points: true, ci: C.map((c) => c.accuracy) },
     { label: 'Stabilité', values: S.map((s) => s.consistency), fmt: pct, better: 'high', points: true },
   ]
 }
@@ -149,7 +158,7 @@ function toMarkdown(reports: BenchReport[], ms: Metric[], rows: CaseRow[]): stri
     `|---|${L.map(() => '---').join('|')}|---|`,
     ...ms.map((m) => {
       const w = winners(m)
-      return `| ${m.label} | ${m.values.map((v, i) => `${m.fmt(v)}${delta(m, i) ? ` (${delta(m, i)})` : ''}`).join(' | ')} | ${w.length ? w.map((i) => L[i]).join(', ') : '='} |`
+      return `| ${m.label} | ${m.values.map((v, i) => `${m.fmt(v)}${delta(m, i) ? ` (${delta(m, i)})` : ''}${m.ci ? ` [IC ${fmtInterval(m.ci[i])}]` : ''}`).join(' | ')} | ${w.length ? w.map((i) => L[i]).join(', ') : m.ci ? '= (non significatif)' : '='} |`
     }),
     '',
     `| Cas | Profil | ${L.map((l) => `p50 ${l}`).join(' | ')} | ${L.map((l) => `Exact. ${l}`).join(' | ')} | Accord |`,
@@ -263,11 +272,15 @@ export function CompareView({ reports, onReference, onRemove }: Props) {
               const w = winners(m)
               return (
                 <tr key={m.label}>
-                  <td>{m.label}</td>
+                  <td>
+                    {m.label}
+                    {m.ci && !w.length && <span className="delta" title="Les intervalles de confiance à 95 % se chevauchent">écart non significatif</span>}
+                  </td>
                   {m.values.map((v, i) => (
                     <td key={i} className={`num ${w.includes(i) ? 'good' : ''}`}>
                       {m.fmt(v)}
                       {delta(m, i) && <span className="delta">{delta(m, i)}</span>}
+                      {m.ci && <span className="delta" title="Intervalle de confiance à 95 %">IC {fmtInterval(m.ci[i])}</span>}
                     </td>
                   ))}
                 </tr>
