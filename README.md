@@ -57,10 +57,33 @@ The English suite has not been run yet: reports are welcome.
 
 ### Metrics
 
-- **Accuracy**: share of questions where the decision is correct (`noul` on the right side of 0.5, expected `choice` option, `score` within the expected range).
-- **Quality**: how much probability the model put on the right answer (0–1). A model that is right at 51 % scores lower than one that is right at 99 %. This is why Jev, with no miss on the French suite, has a lower quality than Perplexity and OpenAI: it is right with less confidence.
+- **Accuracy**: share of questions where the decision is correct. It is binary: right or wrong.
+- **Quality**: how much probability the model put on the right answer, from 0 to 1. It tells you how confidently the model was right.
 - **Stability**: share of questions where all runs gave the same decision.
+- **p50 / p95 latency**: median response time, and the time under which 95 % of requests complete.
+- **Cost / 1k requests**: cost billed by OpenRouter, scaled to 1,000 requests of the suite.
 - **Accuracy on French cases**: only the 8 cases of the `mixed` suite that are written in French.
+
+How each question type is graded:
+
+| Type | Correct (accuracy) when… | Quality |
+|---|---|---|
+| Yes/no (`noul`) | the probability of “yes” is on the expected side of 0.5 | probability given to the expected answer |
+| Choice | the most likely option is an expected one | total probability given to the expected options |
+| Score | the returned level is within the expected range (± 0.5) | 1 − distance to the expected range, relative to the length of the scale |
+
+**Example.** The expected answer to “Is the customer satisfied?” is *no*.
+
+| Model answer | Accuracy | Quality |
+|---|---:|---:|
+| P(yes) = 0.01 | ✓ | 0.99 |
+| P(yes) = 0.15 | ✓ | 0.85 |
+| P(yes) = 0.49 | ✓ | 0.51 |
+| P(yes) = 0.60 | ✗ | 0.40 |
+
+All three first answers count as correct, but only the first one is a confident *no*. This is why Jev, with no missed question on the French suite, has a lower quality than Perplexity and OpenAI: it is always right, with less confidence.
+
+Use **accuracy** if your code acts on the decision alone (`if noul > 0.5`), and **quality** if it uses the probabilities themselves: thresholds, ranking, combining several answers. On ambiguous cases (“Mouais, ça ira”), the expected answer is a probability *range*, and quality measures the distance to that range rather than certainty.
 
 ¹ Self-hosted on an AMD Ryzen AI Max+ 395 iGPU: latency reflects that machine, not the model. Hardware notes in [docs/self-hosting.md](docs/self-hosting.md).
 
