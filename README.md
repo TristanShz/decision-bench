@@ -18,7 +18,32 @@ Almost every public evaluation of these models is in English. This project ships
 
 ## Results
 
-Suite `mixed` v1 · 23 cases, 80 questions · 3 runs per case after 1 warm-up · concurrency 1 · run on 2026-10-10. The `fr` and `en` suites have not been run yet: reports are welcome.
+### French suite
+
+Suite `fr` v1 · 26 cases, 86 questions · 3 runs per case after 1 warm-up · concurrency 1 · run on 2026-10-11.
+
+| Model | Accuracy | Quality | Stability | p50 latency | p95 latency | Cost / 1k requests | Missed questions |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| `typesafe/jev-1.13` (OpenRouter) | **100 %** | 96.8 % | **100 %** | 252 ms | **311 ms** | $0.034 | **0** |
+| `perplexity/pplx-decider-v1.1-27b` (OpenRouter) | 98.8 % | **98.8 %** | **100 %** | **237 ms** | 403 ms | $0.038 | 1 |
+| `openai/gpt-6-luna-decisions` (OpenRouter) | 98.8 % | 98.2 % | **100 %** | 264 ms | 414 ms | $0.078 | 1 |
+| `microsoft/microsoft-decision-1` (OpenRouter) | 97.7 % | 96.4 % | **100 %** | 315 ms | 383 ms | **$0.019** | 2 |
+| Clef 27B Q8_0 (self-hosted, llama.cpp)¹ | 96.5 % | 94.7 % | **100 %** | 1 200 ms | 4 795 ms | — | 3 |
+
+Every model got the long documents right (lease, co-ownership minutes, a 135-line bank statement). The misses are all on short cases that test French specifically, and every model was consistent across its 3 runs:
+
+| Model | Case | What happened |
+|---|---|---|
+| Perplexity | Amounts in French format | Read “Total 1 234,50 €, deposit 300,00 €” as a balance above 1 000 € (it is 934,50 €). |
+| OpenAI | Successive discounts | Treated −30 % then −10 % as −40 % (72 € instead of 75,60 €). |
+| Microsoft | Rental listing | Did not read “1 050 € CC” as *charges comprises*, and said 68 m² is over 70 m². |
+| Clef | Irony | Did not see the irony in “Bravo, quelle ponctualité légendaire” after a 45-minute delay. |
+| Clef | Implicit threat | Missed the intimidation in “Je sais où se trouve votre magasin… vous feriez mieux de retirer cet avis”. |
+| Clef | Logic | Answered “yes” where the statements do not allow a conclusion. |
+
+### Mixed suite
+
+Suite `mixed` v1 · 23 cases, 80 questions (8 in French) · same settings · run on 2026-10-10.
 
 | Model | Accuracy | Quality | Stability | Accuracy on French cases | p50 latency | p95 latency | Cost / 1k requests |
 |---|---:|---:|---:|---:|---:|---:|---:|
@@ -28,15 +53,19 @@ Suite `mixed` v1 · 23 cases, 80 questions · 3 runs per case after 1 warm-up ·
 | `microsoft/microsoft-decision-1` (OpenRouter) | 95.4 % | 95.3 % | 98.8 % | 95.6 % | 319 ms | 478 ms | **$0.022** |
 | Clef 27B Q8_0 (self-hosted, llama.cpp)¹ | 91.3 % | 92.5 % | **100 %** | 92.1 % | 1 046 ms | 6 886 ms | — |
 
+The English suite has not been run yet: reports are welcome.
+
+### Metrics
+
 - **Accuracy**: share of questions where the decision is correct (`noul` on the right side of 0.5, expected `choice` option, `score` within the expected range).
-- **Quality**: how much probability the model put on the right answer (0–1). A model that is right at 51 % scores lower than one that is right at 99 %.
+- **Quality**: how much probability the model put on the right answer (0–1). A model that is right at 51 % scores lower than one that is right at 99 %. This is why Jev, with no miss on the French suite, has a lower quality than Perplexity and OpenAI: it is right with less confidence.
 - **Stability**: share of questions where all runs gave the same decision.
 - **Accuracy on French cases**: only the 8 cases of the `mixed` suite that are written in French.
 
 ¹ Self-hosted on an AMD Ryzen AI Max+ 395 iGPU: latency reflects that machine, not the model. Hardware notes in [docs/self-hosting.md](docs/self-hosting.md).
 
 > [!NOTE]
-> 23 cases is small. Differences of a point or two between models are within noise. Treat this table as a first signal, and add cases if you want stronger conclusions.
+> These suites are small: on the French suite, one missed question costs 1.2 points of accuracy. Treat the rankings as a first signal, and add cases if you want stronger conclusions.
 
 The raw reports are in [`reports/`](reports/): open the app, go to **Benchmark → Saved reports**, and compare any of them side by side.
 

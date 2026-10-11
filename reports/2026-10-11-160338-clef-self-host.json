@@ -1,0 +1,3811 @@
+{
+  "id": "2026-10-11-160338-clef-self-host",
+  "name": "Clef — self-host — 11/10/2026 16:03:38",
+  "createdAt": "2026-10-11T14:03:38.630Z",
+  "suiteId": "fr",
+  "suiteVersion": "1",
+  "target": {
+    "kind": "systemone",
+    "label": "Clef — self-host",
+    "url": "http://localhost:8080",
+    "model": "local",
+    "proxy": false,
+    "serverModel": "Clef-Q8_0.gguf",
+    "serverCtx": 8192
+  },
+  "settings": {
+    "repetitions": 3,
+    "warmup": 1,
+    "concurrency": 1,
+    "timeoutMs": 120000
+  },
+  "durationMs": 162680.59999999404,
+  "cases": [
+    {
+      "meta": {
+        "id": "avis-restaurant",
+        "name": "Avis de restaurant",
+        "category": "Sentiment",
+        "complexity": "simple",
+        "length": "court",
+        "lang": "fr",
+        "questions": {
+          "is_positive": {
+            "type": "noul",
+            "expected": true,
+            "size": 2
+          },
+          "will_return": {
+            "type": "noul",
+            "expected": true,
+            "size": 2
+          },
+          "sentiment": {
+            "type": "score",
+            "expected": [
+              3,
+              4
+            ],
+            "size": 5
+          }
+        }
+      },
+      "runs": [
+        {
+          "rep": 1,
+          "ok": true,
+          "status": 200,
+          "ms": 1042.699999988079,
+          "clientMs": 1042.699999988079,
+          "inputTokens": 375,
+          "answers": {
+            "is_positive": {
+              "type": "noul",
+              "noul": 0.9824694141294072
+            },
+            "will_return": {
+              "type": "noul",
+              "noul": 0.9873100663947716
+            },
+            "sentiment": {
+              "type": "score",
+              "score": 3.3511055853436456,
+              "legend": {
+                "0": "Très négatif",
+                "1": "Négatif",
+                "2": "Neutre",
+                "3": "Positif",
+                "4": "Très positif"
+              },
+              "probabilities": {
+                "0": 0.016010528325750246,
+                "1": 0.013468831985798754,
+                "2": 0.022559776021903975,
+                "3": 0.4993262533521497,
+                "4": 0.44863461031439744
+              },
+              "confidence": 0.5448636372623754
+            }
+          },
+          "at": 1043.699999988079
+        },
+        {
+          "rep": 2,
+          "ok": true,
+          "status": 200,
+          "ms": 1040.9000000059605,
+          "clientMs": 1040.9000000059605,
+          "inputTokens": 375,
+          "answers": {
+            "is_positive": {
+              "type": "noul",
+              "noul": 0.9824694141294072
+            },
+            "will_return": {
+              "type": "noul",
+              "noul": 0.9873100663947716
+            },
+            "sentiment": {
+              "type": "score",
+              "score": 3.3511055853436456,
+              "legend": {
+                "0": "Très négatif",
+                "1": "Négatif",
+                "2": "Neutre",
+                "3": "Positif",
+                "4": "Très positif"
+              },
+              "probabilities": {
+                "0": 0.016010528325750246,
+                "1": 0.013468831985798754,
+                "2": 0.022559776021903975,
+                "3": 0.4993262533521497,
+                "4": 0.44863461031439744
+              },
+              "confidence": 0.5448636372623754
+            }
+          },
+          "at": 55552.69999998808
+        },
+        {
+          "rep": 3,
+          "ok": true,
+          "status": 200,
+          "ms": 1078.800000011921,
+          "clientMs": 1078.800000011921,
+          "inputTokens": 375,
+          "answers": {
+            "is_positive": {
+              "type": "noul",
+              "noul": 0.9824694141294072
+            },
+            "will_return": {
+              "type": "noul",
+              "noul": 0.9873100663947716
+            },
+            "sentiment": {
+              "type": "score",
+              "score": 3.3511055853436456,
+              "legend": {
+                "0": "Très négatif",
+                "1": "Négatif",
+                "2": "Neutre",
+                "3": "Positif",
+                "4": "Très positif"
+              },
+              "probabilities": {
+                "0": 0.016010528325750246,
+                "1": 0.013468831985798754,
+                "2": 0.022559776021903975,
+                "3": 0.4993262533521497,
+                "4": 0.44863461031439744
+              },
+              "confidence": 0.5448636372623754
+            }
+          },
+          "at": 109575.59999999404
+        }
+      ]
+    },
+    {
+      "meta": {
+        "id": "litote",
+        "name": "Litote",
+        "category": "Sentiment",
+        "complexity": "complexe",
+        "length": "court",
+        "lang": "fr",
+        "questions": {
+          "is_compliment": {
+            "type": "noul",
+            "expected": true,
+            "size": 2
+          },
+          "sentiment": {
+            "type": "score",
+            "expected": [
+              3,
+              4
+            ],
+            "size": 5
+          }
+        }
+      },
+      "runs": [
+        {
+          "rep": 1,
+          "ok": true,
+          "status": 200,
+          "ms": 935.5,
+          "clientMs": 935.5,
+          "inputTokens": 294,
+          "answers": {
+            "is_compliment": {
+              "type": "noul",
+              "noul": 0.9569756486848339
+            },
+            "sentiment": {
+              "type": "score",
+              "score": 3.0201188507615626,
+              "legend": {
+                "0": "Très négatif",
+                "1": "Négatif",
+                "2": "Neutre",
+                "3": "Positif",
+                "4": "Très positif"
+              },
+              "probabilities": {
+                "0": 0.013045790776259867,
+                "1": 0.023629150350359472,
+                "2": 0.11781400686648662,
+                "3": 0.6211825213493457,
+                "4": 0.22432853065754826
+              },
+              "confidence": 0.6428848245387222
+            }
+          },
+          "at": 1979.7999999970198
+        },
+        {
+          "rep": 2,
+          "ok": true,
+          "status": 200,
+          "ms": 936.8999999910593,
+          "clientMs": 936.8999999910593,
+          "inputTokens": 294,
+          "answers": {
+            "is_compliment": {
+              "type": "noul",
+              "noul": 0.9569756486848339
+            },
+            "sentiment": {
+              "type": "score",
+              "score": 3.0201188507615626,
+              "legend": {
+                "0": "Très négatif",
+                "1": "Négatif",
+                "2": "Neutre",
+                "3": "Positif",
+                "4": "Très positif"
+              },
+              "probabilities": {
+                "0": 0.013045790776259867,
+                "1": 0.023629150350359472,
+                "2": 0.11781400686648662,
+                "3": 0.6211825213493457,
+                "4": 0.22432853065754826
+              },
+              "confidence": 0.6428848245387222
+            }
+          },
+          "at": 56491.39999999106
+        },
+        {
+          "rep": 3,
+          "ok": true,
+          "status": 200,
+          "ms": 918,
+          "clientMs": 918,
+          "inputTokens": 294,
+          "answers": {
+            "is_compliment": {
+              "type": "noul",
+              "noul": 0.9569756486848339
+            },
+            "sentiment": {
+              "type": "score",
+              "score": 3.0201188507615626,
+              "legend": {
+                "0": "Très négatif",
+                "1": "Négatif",
+                "2": "Neutre",
+                "3": "Positif",
+                "4": "Très positif"
+              },
+              "probabilities": {
+                "0": 0.013045790776259867,
+                "1": 0.023629150350359472,
+                "2": 0.11781400686648662,
+                "3": 0.6211825213493457,
+                "4": 0.22432853065754826
+              },
+              "confidence": 0.6428848245387222
+            }
+          },
+          "at": 110495.69999998808
+        }
+      ]
+    },
+    {
+      "meta": {
+        "id": "ironie-transport",
+        "name": "Ironie",
+        "category": "Sentiment",
+        "complexity": "complexe",
+        "length": "court",
+        "lang": "fr",
+        "questions": {
+          "is_ironic": {
+            "type": "noul",
+            "expected": true,
+            "size": 2
+          },
+          "is_satisfied": {
+            "type": "noul",
+            "expected": false,
+            "size": 2
+          },
+          "complaint": {
+            "type": "choice",
+            "expected": "retard",
+            "size": 5
+          }
+        }
+      },
+      "runs": [
+        {
+          "rep": 1,
+          "ok": true,
+          "status": 200,
+          "ms": 1218.8999999910593,
+          "clientMs": 1218.8999999910593,
+          "inputTokens": 403,
+          "answers": {
+            "is_ironic": {
+              "type": "noul",
+              "noul": 0.4227741725088271
+            },
+            "is_satisfied": {
+              "type": "noul",
+              "noul": 0.027370185546826287
+            },
+            "complaint": {
+              "type": "choice",
+              "choice": "retard",
+              "probabilities": {
+                "aucune": 0.020955674995387735,
+                "personnel": 0.01979129984362507,
+                "prix": 0.009991464536105533,
+                "proprete": 0.008377474760819537,
+                "retard": 0.9408840858640621
+              },
+              "confidence": 0.9261051073300777
+            }
+          },
+          "at": 3200.5
+        },
+        {
+          "rep": 2,
+          "ok": true,
+          "status": 200,
+          "ms": 1200.1000000089407,
+          "clientMs": 1200.1000000089407,
+          "inputTokens": 403,
+          "answers": {
+            "is_ironic": {
+              "type": "noul",
+              "noul": 0.4227741725088271
+            },
+            "is_satisfied": {
+              "type": "noul",
+              "noul": 0.027370185546826287
+            },
+            "complaint": {
+              "type": "choice",
+              "choice": "retard",
+              "probabilities": {
+                "aucune": 0.020955674995387735,
+                "personnel": 0.01979129984362507,
+                "prix": 0.009991464536105533,
+                "proprete": 0.008377474760819537,
+                "retard": 0.9408840858640621
+              },
+              "confidence": 0.9261051073300777
+            }
+          },
+          "at": 57692.5
+        },
+        {
+          "rep": 3,
+          "ok": true,
+          "status": 200,
+          "ms": 1197.4000000059605,
+          "clientMs": 1197.4000000059605,
+          "inputTokens": 403,
+          "answers": {
+            "is_ironic": {
+              "type": "noul",
+              "noul": 0.4227741725088271
+            },
+            "is_satisfied": {
+              "type": "noul",
+              "noul": 0.027370185546826287
+            },
+            "complaint": {
+              "type": "choice",
+              "choice": "retard",
+              "probabilities": {
+                "aucune": 0.020955674995387735,
+                "personnel": 0.01979129984362507,
+                "prix": 0.009991464536105533,
+                "proprete": 0.008377474760819537,
+                "retard": 0.9408840858640621
+              },
+              "confidence": 0.9261051073300777
+            }
+          },
+          "at": 111695.69999998808
+        }
+      ]
+    },
+    {
+      "meta": {
+        "id": "calibration-mouais",
+        "name": "Réponse ambiguë (calibration)",
+        "category": "Calibration",
+        "complexity": "complexe",
+        "length": "court",
+        "lang": "fr",
+        "questions": {
+          "is_satisfied": {
+            "type": "noul",
+            "expected": [
+              0.15,
+              0.85
+            ],
+            "size": 2
+          }
+        }
+      },
+      "runs": [
+        {
+          "rep": 1,
+          "ok": true,
+          "status": 200,
+          "ms": 496.5,
+          "clientMs": 496.5,
+          "inputTokens": 152,
+          "answers": {
+            "is_satisfied": {
+              "type": "noul",
+              "noul": 0.6284172624682053
+            }
+          },
+          "at": 3698.0999999940395
+        },
+        {
+          "rep": 2,
+          "ok": true,
+          "status": 200,
+          "ms": 478.8999999910593,
+          "clientMs": 478.8999999910593,
+          "inputTokens": 152,
+          "answers": {
+            "is_satisfied": {
+              "type": "noul",
+              "noul": 0.6284172624682053
+            }
+          },
+          "at": 58172.19999998808
+        },
+        {
+          "rep": 3,
+          "ok": true,
+          "status": 200,
+          "ms": 484.09999999403954,
+          "clientMs": 484.09999999403954,
+          "inputTokens": 152,
+          "answers": {
+            "is_satisfied": {
+              "type": "noul",
+              "noul": 0.6284172624682053
+            }
+          },
+          "at": 112181.39999999106
+        }
+      ]
+    },
+    {
+      "meta": {
+        "id": "negation-restrictive",
+        "name": "Négation restrictive",
+        "category": "Compréhension",
+        "complexity": "complexe",
+        "length": "court",
+        "lang": "fr",
+        "questions": {
+          "received_nothing": {
+            "type": "noul",
+            "expected": false,
+            "size": 2
+          },
+          "received_all": {
+            "type": "noul",
+            "expected": false,
+            "size": 2
+          },
+          "received_count": {
+            "type": "choice",
+            "expected": "deux",
+            "size": 4
+          }
+        }
+      },
+      "runs": [
+        {
+          "rep": 1,
+          "ok": true,
+          "status": 200,
+          "ms": 1045.4000000059605,
+          "clientMs": 1045.4000000059605,
+          "inputTokens": 368,
+          "answers": {
+            "received_nothing": {
+              "type": "noul",
+              "noul": 0.009749155659087034
+            },
+            "received_all": {
+              "type": "noul",
+              "noul": 0.011022081488418801
+            },
+            "received_count": {
+              "type": "choice",
+              "choice": "deux",
+              "probabilities": {
+                "deux": 0.9725481913607318,
+                "trois": 0.006253986814877866,
+                "un": 0.016014313225400076,
+                "zero": 0.005183508598990558
+              },
+              "confidence": 0.9633975884809757
+            }
+          },
+          "at": 4744
+        },
+        {
+          "rep": 2,
+          "ok": true,
+          "status": 200,
+          "ms": 1015.9000000059605,
+          "clientMs": 1015.9000000059605,
+          "inputTokens": 368,
+          "answers": {
+            "received_nothing": {
+              "type": "noul",
+              "noul": 0.009749155659087034
+            },
+            "received_all": {
+              "type": "noul",
+              "noul": 0.011022081488418801
+            },
+            "received_count": {
+              "type": "choice",
+              "choice": "deux",
+              "probabilities": {
+                "deux": 0.9725481913607318,
+                "trois": 0.006253986814877866,
+                "un": 0.016014313225400076,
+                "zero": 0.005183508598990558
+              },
+              "confidence": 0.9633975884809757
+            }
+          },
+          "at": 59188.5
+        },
+        {
+          "rep": 3,
+          "ok": true,
+          "status": 200,
+          "ms": 1021.5999999940395,
+          "clientMs": 1021.5999999940395,
+          "inputTokens": 368,
+          "answers": {
+            "received_nothing": {
+              "type": "noul",
+              "noul": 0.009749155659087034
+            },
+            "received_all": {
+              "type": "noul",
+              "noul": 0.011022081488418801
+            },
+            "received_count": {
+              "type": "choice",
+              "choice": "deux",
+              "probabilities": {
+                "deux": 0.9725481913607318,
+                "trois": 0.006253986814877866,
+                "un": 0.016014313225400076,
+                "zero": 0.005183508598990558
+              },
+              "confidence": 0.9633975884809757
+            }
+          },
+          "at": 113205.19999998808
+        }
+      ]
+    },
+    {
+      "meta": {
+        "id": "double-negation",
+        "name": "Double négation",
+        "category": "Compréhension",
+        "complexity": "complexe",
+        "length": "court",
+        "lang": "fr",
+        "questions": {
+          "is_certain": {
+            "type": "noul",
+            "expected": false,
+            "size": 2
+          },
+          "is_possible": {
+            "type": "noul",
+            "expected": true,
+            "size": 2
+          },
+          "status": {
+            "type": "choice",
+            "expected": "incertain",
+            "size": 4
+          }
+        }
+      },
+      "runs": [
+        {
+          "rep": 1,
+          "ok": true,
+          "status": 200,
+          "ms": 1072.2999999970198,
+          "clientMs": 1072.2999999970198,
+          "inputTokens": 377,
+          "answers": {
+            "is_certain": {
+              "type": "noul",
+              "noul": 0.016285640400988777
+            },
+            "is_possible": {
+              "type": "noul",
+              "noul": 0.9673954965698995
+            },
+            "status": {
+              "type": "choice",
+              "choice": "incertain",
+              "probabilities": {
+                "annule": 0.006095327923413995,
+                "incertain": 0.9548729111431008,
+                "maintenu": 0.031098877516450223,
+                "reporte": 0.007932883417035144
+              },
+              "confidence": 0.939830548190801
+            }
+          },
+          "at": 5817.29999999702
+        },
+        {
+          "rep": 2,
+          "ok": true,
+          "status": 200,
+          "ms": 1019.4000000059605,
+          "clientMs": 1019.4000000059605,
+          "inputTokens": 377,
+          "answers": {
+            "is_certain": {
+              "type": "noul",
+              "noul": 0.016285640400988777
+            },
+            "is_possible": {
+              "type": "noul",
+              "noul": 0.9673954965698995
+            },
+            "status": {
+              "type": "choice",
+              "choice": "incertain",
+              "probabilities": {
+                "annule": 0.006095327923413995,
+                "incertain": 0.9548729111431008,
+                "maintenu": 0.031098877516450223,
+                "reporte": 0.007932883417035144
+              },
+              "confidence": 0.939830548190801
+            }
+          },
+          "at": 60209.19999998808
+        },
+        {
+          "rep": 3,
+          "ok": true,
+          "status": 200,
+          "ms": 1025.1000000089407,
+          "clientMs": 1025.1000000089407,
+          "inputTokens": 377,
+          "answers": {
+            "is_certain": {
+              "type": "noul",
+              "noul": 0.016285640400988777
+            },
+            "is_possible": {
+              "type": "noul",
+              "noul": 0.9673954965698995
+            },
+            "status": {
+              "type": "choice",
+              "choice": "incertain",
+              "probabilities": {
+                "annule": 0.006095327923413995,
+                "incertain": 0.9548729111431008,
+                "maintenu": 0.031098877516450223,
+                "reporte": 0.007932883417035144
+              },
+              "confidence": 0.939830548190801
+            }
+          },
+          "at": 114231
+        }
+      ]
+    },
+    {
+      "meta": {
+        "id": "registre",
+        "name": "Registre de langue",
+        "category": "Classification",
+        "complexity": "simple",
+        "length": "court",
+        "lang": "fr",
+        "questions": {
+          "is_formal": {
+            "type": "noul",
+            "expected": false,
+            "size": 2
+          },
+          "uses_slang": {
+            "type": "noul",
+            "expected": true,
+            "size": 2
+          },
+          "register": {
+            "type": "score",
+            "expected": [
+              3,
+              4
+            ],
+            "size": 5
+          }
+        }
+      },
+      "runs": [
+        {
+          "rep": 1,
+          "ok": true,
+          "status": 200,
+          "ms": 1213.2000000029802,
+          "clientMs": 1213.2000000029802,
+          "inputTokens": 387,
+          "answers": {
+            "is_formal": {
+              "type": "noul",
+              "noul": 0.037359319299196614
+            },
+            "uses_slang": {
+              "type": "noul",
+              "noul": 0.8114457314767903
+            },
+            "register": {
+              "type": "score",
+              "score": 3.162824510281167,
+              "legend": {
+                "0": "Très soutenu",
+                "1": "Soutenu",
+                "2": "Courant",
+                "3": "Familier",
+                "4": "Argotique"
+              },
+              "probabilities": {
+                "0": 0.011140967398652129,
+                "1": 0.013497745188209558,
+                "2": 0.13549396760335342,
+                "3": 0.4811304493528895,
+                "4": 0.3587368704568955
+              },
+              "confidence": 0.5377923078061464
+            }
+          },
+          "at": 7032.399999991059
+        },
+        {
+          "rep": 2,
+          "ok": true,
+          "status": 200,
+          "ms": 1205.5999999940395,
+          "clientMs": 1205.5999999940395,
+          "inputTokens": 387,
+          "answers": {
+            "is_formal": {
+              "type": "noul",
+              "noul": 0.037359319299196614
+            },
+            "uses_slang": {
+              "type": "noul",
+              "noul": 0.8114457314767903
+            },
+            "register": {
+              "type": "score",
+              "score": 3.162824510281167,
+              "legend": {
+                "0": "Très soutenu",
+                "1": "Soutenu",
+                "2": "Courant",
+                "3": "Familier",
+                "4": "Argotique"
+              },
+              "probabilities": {
+                "0": 0.011140967398652129,
+                "1": 0.013497745188209558,
+                "2": 0.13549396760335342,
+                "3": 0.4811304493528895,
+                "4": 0.3587368704568955
+              },
+              "confidence": 0.5377923078061464
+            }
+          },
+          "at": 61417.59999999404
+        },
+        {
+          "rep": 3,
+          "ok": true,
+          "status": 200,
+          "ms": 1211.5,
+          "clientMs": 1211.5,
+          "inputTokens": 387,
+          "answers": {
+            "is_formal": {
+              "type": "noul",
+              "noul": 0.037359319299196614
+            },
+            "uses_slang": {
+              "type": "noul",
+              "noul": 0.8114457314767903
+            },
+            "register": {
+              "type": "score",
+              "score": 3.162824510281167,
+              "legend": {
+                "0": "Très soutenu",
+                "1": "Soutenu",
+                "2": "Courant",
+                "3": "Familier",
+                "4": "Argotique"
+              },
+              "probabilities": {
+                "0": 0.011140967398652129,
+                "1": 0.013497745188209558,
+                "2": 0.13549396760335342,
+                "3": 0.4811304493528895,
+                "4": 0.3587368704568955
+              },
+              "confidence": 0.5377923078061464
+            }
+          },
+          "at": 115444.89999999106
+        }
+      ]
+    },
+    {
+      "meta": {
+        "id": "reponse-inadaptee",
+        "name": "Réponse au mauvais ton",
+        "category": "Support",
+        "complexity": "complexe",
+        "length": "court",
+        "lang": "fr",
+        "questions": {
+          "tone_appropriate": {
+            "type": "noul",
+            "expected": false,
+            "size": 2
+          },
+          "mentions_refund": {
+            "type": "noul",
+            "expected": false,
+            "size": 2
+          },
+          "request_type": {
+            "type": "choice",
+            "expected": "remboursement",
+            "size": 4
+          }
+        }
+      },
+      "runs": [
+        {
+          "rep": 1,
+          "ok": true,
+          "status": 200,
+          "ms": 1247.0999999940395,
+          "clientMs": 1247.0999999940395,
+          "inputTokens": 441,
+          "answers": {
+            "tone_appropriate": {
+              "type": "noul",
+              "noul": 0.012870070708227667
+            },
+            "mentions_refund": {
+              "type": "noul",
+              "noul": 0.025945183268883433
+            },
+            "request_type": {
+              "type": "choice",
+              "choice": "remboursement",
+              "probabilities": {
+                "information": 0.0023631137352104156,
+                "reclamation_produit": 0.010329854599891454,
+                "remboursement": 0.9843313228808834,
+                "resiliation": 0.0029757087840146293
+              },
+              "confidence": 0.9791084305078446
+            }
+          },
+          "at": 8280.199999988079
+        },
+        {
+          "rep": 2,
+          "ok": true,
+          "status": 200,
+          "ms": 1222.0999999940395,
+          "clientMs": 1222.0999999940395,
+          "inputTokens": 441,
+          "answers": {
+            "tone_appropriate": {
+              "type": "noul",
+              "noul": 0.012870070708227667
+            },
+            "mentions_refund": {
+              "type": "noul",
+              "noul": 0.025945183268883433
+            },
+            "request_type": {
+              "type": "choice",
+              "choice": "remboursement",
+              "probabilities": {
+                "information": 0.0023631137352104156,
+                "reclamation_produit": 0.010329854599891454,
+                "remboursement": 0.9843313228808834,
+                "resiliation": 0.0029757087840146293
+              },
+              "confidence": 0.9791084305078446
+            }
+          },
+          "at": 62640.79999999702
+        },
+        {
+          "rep": 3,
+          "ok": true,
+          "status": 200,
+          "ms": 1220.5999999940395,
+          "clientMs": 1220.5999999940395,
+          "inputTokens": 441,
+          "answers": {
+            "tone_appropriate": {
+              "type": "noul",
+              "noul": 0.012870070708227667
+            },
+            "mentions_refund": {
+              "type": "noul",
+              "noul": 0.025945183268883433
+            },
+            "request_type": {
+              "type": "choice",
+              "choice": "remboursement",
+              "probabilities": {
+                "information": 0.0023631137352104156,
+                "reclamation_produit": 0.010329854599891454,
+                "remboursement": 0.9843313228808834,
+                "resiliation": 0.0029757087840146293
+              },
+              "confidence": 0.9791084305078446
+            }
+          },
+          "at": 116666.59999999404
+        }
+      ]
+    },
+    {
+      "meta": {
+        "id": "routage-assistant",
+        "name": "Routage d’assistant vocal",
+        "category": "Routage",
+        "complexity": "simple",
+        "length": "court",
+        "lang": "fr",
+        "questions": {
+          "tool": {
+            "type": "choice",
+            "expected": "musique",
+            "size": 6
+          },
+          "has_explicit_time": {
+            "type": "noul",
+            "expected": false,
+            "size": 2
+          }
+        }
+      },
+      "runs": [
+        {
+          "rep": 1,
+          "ok": true,
+          "status": 200,
+          "ms": 1005,
+          "clientMs": 1005,
+          "inputTokens": 350,
+          "answers": {
+            "tool": {
+              "type": "choice",
+              "choice": "musique",
+              "probabilities": {
+                "agenda": 0.0029640092967189832,
+                "aucune": 0.009043572291742383,
+                "domotique": 0.0028815171545902686,
+                "meteo": 0.0036643517946785558,
+                "musique": 0.9785113069029756,
+                "rappel": 0.0029352425592941407
+              },
+              "confidence": 0.9742135682835708
+            },
+            "has_explicit_time": {
+              "type": "noul",
+              "noul": 0.010793468252914107
+            }
+          },
+          "at": 9286.199999988079
+        },
+        {
+          "rep": 2,
+          "ok": true,
+          "status": 200,
+          "ms": 1006,
+          "clientMs": 1006,
+          "inputTokens": 350,
+          "answers": {
+            "tool": {
+              "type": "choice",
+              "choice": "musique",
+              "probabilities": {
+                "agenda": 0.0029640092967189832,
+                "aucune": 0.009043572291742383,
+                "domotique": 0.0028815171545902686,
+                "meteo": 0.0036643517946785558,
+                "musique": 0.9785113069029756,
+                "rappel": 0.0029352425592941407
+              },
+              "confidence": 0.9742135682835708
+            },
+            "has_explicit_time": {
+              "type": "noul",
+              "noul": 0.010793468252914107
+            }
+          },
+          "at": 63648.69999998808
+        },
+        {
+          "rep": 3,
+          "ok": true,
+          "status": 200,
+          "ms": 1012.2000000029802,
+          "clientMs": 1012.2000000029802,
+          "inputTokens": 350,
+          "answers": {
+            "tool": {
+              "type": "choice",
+              "choice": "musique",
+              "probabilities": {
+                "agenda": 0.0029640092967189832,
+                "aucune": 0.009043572291742383,
+                "domotique": 0.0028815171545902686,
+                "meteo": 0.0036643517946785558,
+                "musique": 0.9785113069029756,
+                "rappel": 0.0029352425592941407
+              },
+              "confidence": 0.9742135682835708
+            },
+            "has_explicit_time": {
+              "type": "noul",
+              "noul": 0.010793468252914107
+            }
+          },
+          "at": 117679.39999999106
+        }
+      ]
+    },
+    {
+      "meta": {
+        "id": "moderation-insulte",
+        "name": "Modération : insulte",
+        "category": "Modération",
+        "complexity": "simple",
+        "length": "court",
+        "lang": "fr",
+        "questions": {
+          "is_toxic": {
+            "type": "noul",
+            "expected": true,
+            "size": 2
+          },
+          "is_threat": {
+            "type": "noul",
+            "expected": false,
+            "size": 2
+          },
+          "is_spam": {
+            "type": "noul",
+            "expected": false,
+            "size": 2
+          },
+          "category": {
+            "type": "choice",
+            "expected": "harcelement",
+            "size": 4
+          }
+        }
+      },
+      "runs": [
+        {
+          "rep": 1,
+          "ok": true,
+          "status": 200,
+          "ms": 1300.8999999910593,
+          "clientMs": 1300.8999999910593,
+          "inputTokens": 465,
+          "answers": {
+            "is_toxic": {
+              "type": "noul",
+              "noul": 0.9800319176080429
+            },
+            "is_threat": {
+              "type": "noul",
+              "noul": 0.01193303334098972
+            },
+            "is_spam": {
+              "type": "noul",
+              "noul": 0.021220768400846503
+            },
+            "category": {
+              "type": "choice",
+              "choice": "harcelement",
+              "probabilities": {
+                "harcelement": 0.9537148750751159,
+                "menace": 0.014799088821497552,
+                "ok": 0.01912013266320625,
+                "spam": 0.012365903440180424
+              },
+              "confidence": 0.9382865001001545
+            }
+          },
+          "at": 10588.199999988079
+        },
+        {
+          "rep": 2,
+          "ok": true,
+          "status": 200,
+          "ms": 1308.7999999970198,
+          "clientMs": 1308.7999999970198,
+          "inputTokens": 465,
+          "answers": {
+            "is_toxic": {
+              "type": "noul",
+              "noul": 0.9800319176080429
+            },
+            "is_threat": {
+              "type": "noul",
+              "noul": 0.01193303334098972
+            },
+            "is_spam": {
+              "type": "noul",
+              "noul": 0.021220768400846503
+            },
+            "category": {
+              "type": "choice",
+              "choice": "harcelement",
+              "probabilities": {
+                "harcelement": 0.9537148750751159,
+                "menace": 0.014799088821497552,
+                "ok": 0.01912013266320625,
+                "spam": 0.012365903440180424
+              },
+              "confidence": 0.9382865001001545
+            }
+          },
+          "at": 64958.59999999404
+        },
+        {
+          "rep": 3,
+          "ok": true,
+          "status": 200,
+          "ms": 1316.7999999970198,
+          "clientMs": 1316.7999999970198,
+          "inputTokens": 465,
+          "answers": {
+            "is_toxic": {
+              "type": "noul",
+              "noul": 0.9800319176080429
+            },
+            "is_threat": {
+              "type": "noul",
+              "noul": 0.01193303334098972
+            },
+            "is_spam": {
+              "type": "noul",
+              "noul": 0.021220768400846503
+            },
+            "category": {
+              "type": "choice",
+              "choice": "harcelement",
+              "probabilities": {
+                "harcelement": 0.9537148750751159,
+                "menace": 0.014799088821497552,
+                "ok": 0.01912013266320625,
+                "spam": 0.012365903440180424
+              },
+              "confidence": 0.9382865001001545
+            }
+          },
+          "at": 118997.29999999702
+        }
+      ]
+    },
+    {
+      "meta": {
+        "id": "moderation-menace-implicite",
+        "name": "Modération : menace implicite",
+        "category": "Modération",
+        "complexity": "complexe",
+        "length": "court",
+        "lang": "fr",
+        "questions": {
+          "is_threat": {
+            "type": "noul",
+            "expected": true,
+            "size": 2
+          },
+          "has_insult": {
+            "type": "noul",
+            "expected": false,
+            "size": 2
+          },
+          "category": {
+            "type": "choice",
+            "expected": "menace",
+            "size": 4
+          }
+        }
+      },
+      "runs": [
+        {
+          "rep": 1,
+          "ok": true,
+          "status": 200,
+          "ms": 1199.4000000059605,
+          "clientMs": 1199.4000000059605,
+          "inputTokens": 385,
+          "answers": {
+            "is_threat": {
+              "type": "noul",
+              "noul": 0.41293617684770456
+            },
+            "has_insult": {
+              "type": "noul",
+              "noul": 0.027292694487811305
+            },
+            "category": {
+              "type": "choice",
+              "choice": "menace",
+              "probabilities": {
+                "harcelement": 0.027254065428430736,
+                "menace": 0.9405386005465629,
+                "ok": 0.02069901793478042,
+                "spam": 0.01150831609022592
+              },
+              "confidence": 0.9207181340620839
+            }
+          },
+          "at": 11788.39999999106
+        },
+        {
+          "rep": 2,
+          "ok": true,
+          "status": 200,
+          "ms": 1187.6000000089407,
+          "clientMs": 1187.6000000089407,
+          "inputTokens": 385,
+          "answers": {
+            "is_threat": {
+              "type": "noul",
+              "noul": 0.41293617684770456
+            },
+            "has_insult": {
+              "type": "noul",
+              "noul": 0.027292694487811305
+            },
+            "category": {
+              "type": "choice",
+              "choice": "menace",
+              "probabilities": {
+                "harcelement": 0.027254065428430736,
+                "menace": 0.9405386005465629,
+                "ok": 0.02069901793478042,
+                "spam": 0.01150831609022592
+              },
+              "confidence": 0.9207181340620839
+            }
+          },
+          "at": 66148.09999999404
+        },
+        {
+          "rep": 3,
+          "ok": true,
+          "status": 200,
+          "ms": 1221.7999999970198,
+          "clientMs": 1221.7999999970198,
+          "inputTokens": 385,
+          "answers": {
+            "is_threat": {
+              "type": "noul",
+              "noul": 0.41293617684770456
+            },
+            "has_insult": {
+              "type": "noul",
+              "noul": 0.027292694487811305
+            },
+            "category": {
+              "type": "choice",
+              "choice": "menace",
+              "probabilities": {
+                "harcelement": 0.027254065428430736,
+                "menace": 0.9405386005465629,
+                "ok": 0.02069901793478042,
+                "spam": 0.01150831609022592
+              },
+              "confidence": 0.9207181340620839
+            }
+          },
+          "at": 120220.09999999404
+        }
+      ]
+    },
+    {
+      "meta": {
+        "id": "moderation-critique",
+        "name": "Modération : critique légitime",
+        "category": "Modération",
+        "complexity": "complexe",
+        "length": "court",
+        "lang": "fr",
+        "questions": {
+          "is_toxic": {
+            "type": "noul",
+            "expected": false,
+            "size": 2
+          },
+          "should_remove": {
+            "type": "noul",
+            "expected": false,
+            "size": 2
+          },
+          "category": {
+            "type": "choice",
+            "expected": "ok",
+            "size": 4
+          }
+        }
+      },
+      "runs": [
+        {
+          "rep": 1,
+          "ok": true,
+          "status": 200,
+          "ms": 1187.1000000089407,
+          "clientMs": 1187.1000000089407,
+          "inputTokens": 401,
+          "answers": {
+            "is_toxic": {
+              "type": "noul",
+              "noul": 0.02190319389077723
+            },
+            "should_remove": {
+              "type": "noul",
+              "noul": 0.05386181750496142
+            },
+            "category": {
+              "type": "choice",
+              "choice": "ok",
+              "probabilities": {
+                "harcelement": 0.012091456603883702,
+                "menace": 0.010292278783815655,
+                "ok": 0.9680100757336635,
+                "spam": 0.009606188878637094
+              },
+              "confidence": 0.9573467676448847
+            }
+          },
+          "at": 12976.39999999106
+        },
+        {
+          "rep": 2,
+          "ok": true,
+          "status": 200,
+          "ms": 1218,
+          "clientMs": 1218,
+          "inputTokens": 401,
+          "answers": {
+            "is_toxic": {
+              "type": "noul",
+              "noul": 0.02190319389077723
+            },
+            "should_remove": {
+              "type": "noul",
+              "noul": 0.05386181750496142
+            },
+            "category": {
+              "type": "choice",
+              "choice": "ok",
+              "probabilities": {
+                "harcelement": 0.012091456603883702,
+                "menace": 0.010292278783815655,
+                "ok": 0.9680100757336635,
+                "spam": 0.009606188878637094
+              },
+              "confidence": 0.9573467676448847
+            }
+          },
+          "at": 67367.59999999404
+        },
+        {
+          "rep": 3,
+          "ok": true,
+          "status": 200,
+          "ms": 1223.7000000029802,
+          "clientMs": 1223.7000000029802,
+          "inputTokens": 401,
+          "answers": {
+            "is_toxic": {
+              "type": "noul",
+              "noul": 0.02190319389077723
+            },
+            "should_remove": {
+              "type": "noul",
+              "noul": 0.05386181750496142
+            },
+            "category": {
+              "type": "choice",
+              "choice": "ok",
+              "probabilities": {
+                "harcelement": 0.012091456603883702,
+                "menace": 0.010292278783815655,
+                "ok": 0.9680100757336635,
+                "spam": 0.009606188878637094
+              },
+              "confidence": 0.9573467676448847
+            }
+          },
+          "at": 121447
+        }
+      ]
+    },
+    {
+      "meta": {
+        "id": "date-format",
+        "name": "Date au format français",
+        "category": "Raisonnement",
+        "complexity": "complexe",
+        "length": "court",
+        "lang": "fr",
+        "questions": {
+          "month": {
+            "type": "choice",
+            "expected": "mai",
+            "size": 2
+          },
+          "is_morning": {
+            "type": "noul",
+            "expected": true,
+            "size": 2
+          }
+        }
+      },
+      "runs": [
+        {
+          "rep": 1,
+          "ok": true,
+          "status": 200,
+          "ms": 836.9000000059605,
+          "clientMs": 836.9000000059605,
+          "inputTokens": 260,
+          "answers": {
+            "month": {
+              "type": "choice",
+              "choice": "mai",
+              "probabilities": {
+                "avril": 0.00758588059623538,
+                "mai": 0.9924141194037646
+              },
+              "confidence": 0.9848282388075291
+            },
+            "is_morning": {
+              "type": "noul",
+              "noul": 0.9850013504637725
+            }
+          },
+          "at": 13815.09999999404
+        },
+        {
+          "rep": 2,
+          "ok": true,
+          "status": 200,
+          "ms": 843.2000000029802,
+          "clientMs": 843.2000000029802,
+          "inputTokens": 260,
+          "answers": {
+            "month": {
+              "type": "choice",
+              "choice": "mai",
+              "probabilities": {
+                "avril": 0.00758588059623538,
+                "mai": 0.9924141194037646
+              },
+              "confidence": 0.9848282388075291
+            },
+            "is_morning": {
+              "type": "noul",
+              "noul": 0.9850013504637725
+            }
+          },
+          "at": 68212.09999999404
+        },
+        {
+          "rep": 3,
+          "ok": true,
+          "status": 200,
+          "ms": 846,
+          "clientMs": 846,
+          "inputTokens": 260,
+          "answers": {
+            "month": {
+              "type": "choice",
+              "choice": "mai",
+              "probabilities": {
+                "avril": 0.00758588059623538,
+                "mai": 0.9924141194037646
+              },
+              "confidence": 0.9848282388075291
+            },
+            "is_morning": {
+              "type": "noul",
+              "noul": 0.9850013504637725
+            }
+          },
+          "at": 122293.59999999404
+        }
+      ]
+    },
+    {
+      "meta": {
+        "id": "montants-format",
+        "name": "Montants au format français",
+        "category": "Raisonnement",
+        "complexity": "complexe",
+        "length": "court",
+        "lang": "fr",
+        "questions": {
+          "total_over_1000": {
+            "type": "noul",
+            "expected": true,
+            "size": 2
+          },
+          "balance_over_1000": {
+            "type": "noul",
+            "expected": false,
+            "size": 2
+          },
+          "balance": {
+            "type": "choice",
+            "expected": "s93450",
+            "size": 4
+          }
+        }
+      },
+      "runs": [
+        {
+          "rep": 1,
+          "ok": true,
+          "status": 200,
+          "ms": 1305.7000000029802,
+          "clientMs": 1305.7000000029802,
+          "inputTokens": 464,
+          "answers": {
+            "total_over_1000": {
+              "type": "noul",
+              "noul": 0.9474871517472325
+            },
+            "balance_over_1000": {
+              "type": "noul",
+              "noul": 0.05311977483709452
+            },
+            "balance": {
+              "type": "choice",
+              "choice": "s93450",
+              "probabilities": {
+                "s1234": 0.003629260003012164,
+                "s1534": 0.004256401093409164,
+                "s300": 0.004028354100574585,
+                "s93450": 0.9880859848030042
+              },
+              "confidence": 0.9841146464040057
+            }
+          },
+          "at": 15121.699999988079
+        },
+        {
+          "rep": 2,
+          "ok": true,
+          "status": 200,
+          "ms": 1312.1000000089407,
+          "clientMs": 1312.1000000089407,
+          "inputTokens": 464,
+          "answers": {
+            "total_over_1000": {
+              "type": "noul",
+              "noul": 0.9474871517472325
+            },
+            "balance_over_1000": {
+              "type": "noul",
+              "noul": 0.05311977483709452
+            },
+            "balance": {
+              "type": "choice",
+              "choice": "s93450",
+              "probabilities": {
+                "s1234": 0.003629260003012164,
+                "s1534": 0.004256401093409164,
+                "s300": 0.004028354100574585,
+                "s93450": 0.9880859848030042
+              },
+              "confidence": 0.9841146464040057
+            }
+          },
+          "at": 69525.5
+        },
+        {
+          "rep": 3,
+          "ok": true,
+          "status": 200,
+          "ms": 1315.7000000029802,
+          "clientMs": 1315.7000000029802,
+          "inputTokens": 464,
+          "answers": {
+            "total_over_1000": {
+              "type": "noul",
+              "noul": 0.9474871517472325
+            },
+            "balance_over_1000": {
+              "type": "noul",
+              "noul": 0.05311977483709452
+            },
+            "balance": {
+              "type": "choice",
+              "choice": "s93450",
+              "probabilities": {
+                "s1234": 0.003629260003012164,
+                "s1534": 0.004256401093409164,
+                "s300": 0.004028354100574585,
+                "s93450": 0.9880859848030042
+              },
+              "confidence": 0.9841146464040057
+            }
+          },
+          "at": 123612
+        }
+      ]
+    },
+    {
+      "meta": {
+        "id": "remises-successives",
+        "name": "Remises successives",
+        "category": "Raisonnement",
+        "complexity": "complexe",
+        "length": "court",
+        "lang": "fr",
+        "questions": {
+          "final_price": {
+            "type": "choice",
+            "expected": "p7560",
+            "size": 4
+          },
+          "is_40_percent_off": {
+            "type": "noul",
+            "expected": false,
+            "size": 2
+          }
+        }
+      },
+      "runs": [
+        {
+          "rep": 1,
+          "ok": true,
+          "status": 200,
+          "ms": 925.7000000029802,
+          "clientMs": 925.7000000029802,
+          "inputTokens": 323,
+          "answers": {
+            "final_price": {
+              "type": "choice",
+              "choice": "p7560",
+              "probabilities": {
+                "p72": 0.022581798774409675,
+                "p7560": 0.8840040183535954,
+                "p78": 0.02070307767151896,
+                "p84": 0.07271110520047593
+              },
+              "confidence": 0.8453386911381272
+            },
+            "is_40_percent_off": {
+              "type": "noul",
+              "noul": 0.053746096970503116
+            }
+          },
+          "at": 16049.5
+        },
+        {
+          "rep": 2,
+          "ok": true,
+          "status": 200,
+          "ms": 932.2000000029802,
+          "clientMs": 932.2000000029802,
+          "inputTokens": 323,
+          "answers": {
+            "final_price": {
+              "type": "choice",
+              "choice": "p7560",
+              "probabilities": {
+                "p72": 0.022581798774409675,
+                "p7560": 0.8840040183535954,
+                "p78": 0.02070307767151896,
+                "p84": 0.07271110520047593
+              },
+              "confidence": 0.8453386911381272
+            },
+            "is_40_percent_off": {
+              "type": "noul",
+              "noul": 0.053746096970503116
+            }
+          },
+          "at": 70459
+        },
+        {
+          "rep": 3,
+          "ok": true,
+          "status": 200,
+          "ms": 934.6000000089407,
+          "clientMs": 934.6000000089407,
+          "inputTokens": 323,
+          "answers": {
+            "final_price": {
+              "type": "choice",
+              "choice": "p7560",
+              "probabilities": {
+                "p72": 0.022581798774409675,
+                "p7560": 0.8840040183535954,
+                "p78": 0.02070307767151896,
+                "p84": 0.07271110520047593
+              },
+              "confidence": 0.8453386911381272
+            },
+            "is_40_percent_off": {
+              "type": "noul",
+              "noul": 0.053746096970503116
+            }
+          },
+          "at": 124549.39999999106
+        }
+      ]
+    },
+    {
+      "meta": {
+        "id": "deduction-teletravail",
+        "name": "Déduction logique",
+        "category": "Raisonnement",
+        "complexity": "complexe",
+        "length": "court",
+        "lang": "fr",
+        "questions": {
+          "julie_remote": {
+            "type": "noul",
+            "expected": false,
+            "size": 2
+          },
+          "thomas_remote": {
+            "type": "choice",
+            "expected": "indetermine",
+            "size": 3
+          }
+        }
+      },
+      "runs": [
+        {
+          "rep": 1,
+          "ok": true,
+          "status": 200,
+          "ms": 928.5,
+          "clientMs": 928.5,
+          "inputTokens": 293,
+          "answers": {
+            "julie_remote": {
+              "type": "noul",
+              "noul": 0.021139208180605818
+            },
+            "thomas_remote": {
+              "type": "choice",
+              "choice": "oui",
+              "probabilities": {
+                "indetermine": 0.3966739098933404,
+                "non": 0.0464943185730002,
+                "oui": 0.5568317715336594
+              },
+              "confidence": 0.33524765730048905
+            }
+          },
+          "at": 16979.29999999702
+        },
+        {
+          "rep": 2,
+          "ok": true,
+          "status": 200,
+          "ms": 917.8000000119209,
+          "clientMs": 917.8000000119209,
+          "inputTokens": 293,
+          "answers": {
+            "julie_remote": {
+              "type": "noul",
+              "noul": 0.021139208180605818
+            },
+            "thomas_remote": {
+              "type": "choice",
+              "choice": "oui",
+              "probabilities": {
+                "indetermine": 0.3966739098933404,
+                "non": 0.0464943185730002,
+                "oui": 0.5568317715336594
+              },
+              "confidence": 0.33524765730048905
+            }
+          },
+          "at": 71379.59999999404
+        },
+        {
+          "rep": 3,
+          "ok": true,
+          "status": 200,
+          "ms": 916.7000000029802,
+          "clientMs": 916.7000000029802,
+          "inputTokens": 293,
+          "answers": {
+            "julie_remote": {
+              "type": "noul",
+              "noul": 0.021139208180605818
+            },
+            "thomas_remote": {
+              "type": "choice",
+              "choice": "oui",
+              "probabilities": {
+                "indetermine": 0.3966739098933404,
+                "non": 0.0464943185730002,
+                "oui": 0.5568317715336594
+              },
+              "confidence": 0.33524765730048905
+            }
+          },
+          "at": 125467.39999999106
+        }
+      ]
+    },
+    {
+      "meta": {
+        "id": "triage-medical-benin",
+        "name": "Triage médical (bénin)",
+        "category": "Support",
+        "complexity": "simple",
+        "length": "court",
+        "lang": "fr",
+        "questions": {
+          "call_emergency": {
+            "type": "noul",
+            "expected": false,
+            "size": 2
+          },
+          "priority": {
+            "type": "score",
+            "expected": [
+              0,
+              1
+            ],
+            "size": 5
+          }
+        }
+      },
+      "runs": [
+        {
+          "rep": 1,
+          "ok": true,
+          "status": 200,
+          "ms": 924.2000000029802,
+          "clientMs": 924.2000000029802,
+          "inputTokens": 324,
+          "answers": {
+            "call_emergency": {
+              "type": "noul",
+              "noul": 0.01671148764037055
+            },
+            "priority": {
+              "type": "score",
+              "score": 0.4121042596628206,
+              "legend": {
+                "0": "Surveillance à domicile",
+                "1": "Consultation non urgente",
+                "2": "Consultation dans la journée",
+                "3": "Urgences dans l’heure",
+                "4": "Urgence vitale immédiate"
+              },
+              "probabilities": {
+                "0": 0.6861809457207064,
+                "1": 0.24109514900479237,
+                "2": 0.05554724554239823,
+                "3": 0.0087920193551801,
+                "4": 0.008384640376922853
+              },
+              "confidence": 0.6565797836143162
+            }
+          },
+          "at": 17904.29999999702
+        },
+        {
+          "rep": 2,
+          "ok": true,
+          "status": 200,
+          "ms": 953.4000000059605,
+          "clientMs": 953.4000000059605,
+          "inputTokens": 324,
+          "answers": {
+            "call_emergency": {
+              "type": "noul",
+              "noul": 0.01671148764037055
+            },
+            "priority": {
+              "type": "score",
+              "score": 0.4121042596628206,
+              "legend": {
+                "0": "Surveillance à domicile",
+                "1": "Consultation non urgente",
+                "2": "Consultation dans la journée",
+                "3": "Urgences dans l’heure",
+                "4": "Urgence vitale immédiate"
+              },
+              "probabilities": {
+                "0": 0.6861809457207064,
+                "1": 0.24109514900479237,
+                "2": 0.05554724554239823,
+                "3": 0.0087920193551801,
+                "4": 0.008384640376922853
+              },
+              "confidence": 0.6565797836143162
+            }
+          },
+          "at": 72334.69999998808
+        },
+        {
+          "rep": 3,
+          "ok": true,
+          "status": 200,
+          "ms": 955,
+          "clientMs": 955,
+          "inputTokens": 324,
+          "answers": {
+            "call_emergency": {
+              "type": "noul",
+              "noul": 0.01671148764037055
+            },
+            "priority": {
+              "type": "score",
+              "score": 0.4121042596628206,
+              "legend": {
+                "0": "Surveillance à domicile",
+                "1": "Consultation non urgente",
+                "2": "Consultation dans la journée",
+                "3": "Urgences dans l’heure",
+                "4": "Urgence vitale immédiate"
+              },
+              "probabilities": {
+                "0": 0.6861809457207064,
+                "1": 0.24109514900479237,
+                "2": 0.05554724554239823,
+                "3": 0.0087920193551801,
+                "4": 0.008384640376922853
+              },
+              "confidence": 0.6565797836143162
+            }
+          },
+          "at": 126424.69999998808
+        }
+      ]
+    },
+    {
+      "meta": {
+        "id": "demande-rgpd",
+        "name": "Demande RGPD",
+        "category": "Juridique",
+        "complexity": "simple",
+        "length": "court",
+        "lang": "fr",
+        "questions": {
+          "right": {
+            "type": "choice",
+            "expected": "effacement",
+            "size": 5
+          },
+          "identity_attached": {
+            "type": "noul",
+            "expected": true,
+            "size": 2
+          },
+          "wants_copy_of_data": {
+            "type": "noul",
+            "expected": false,
+            "size": 2
+          }
+        }
+      },
+      "runs": [
+        {
+          "rep": 1,
+          "ok": true,
+          "status": 200,
+          "ms": 1304.5999999940395,
+          "clientMs": 1304.5999999940395,
+          "inputTokens": 463,
+          "answers": {
+            "right": {
+              "type": "choice",
+              "choice": "effacement",
+              "probabilities": {
+                "acces": 0.005069975017904856,
+                "effacement": 0.9770354800883713,
+                "opposition": 0.007752834835165433,
+                "portabilite": 0.005076874567999213,
+                "rectification": 0.005064835490559292
+              },
+              "confidence": 0.9712943501104639
+            },
+            "identity_attached": {
+              "type": "noul",
+              "noul": 0.9881134121912256
+            },
+            "wants_copy_of_data": {
+              "type": "noul",
+              "noul": 0.02274696261445534
+            }
+          },
+          "at": 19210.5
+        },
+        {
+          "rep": 2,
+          "ok": true,
+          "status": 200,
+          "ms": 1312.2999999970198,
+          "clientMs": 1312.2999999970198,
+          "inputTokens": 463,
+          "answers": {
+            "right": {
+              "type": "choice",
+              "choice": "effacement",
+              "probabilities": {
+                "acces": 0.005069975017904856,
+                "effacement": 0.9770354800883713,
+                "opposition": 0.007752834835165433,
+                "portabilite": 0.005076874567999213,
+                "rectification": 0.005064835490559292
+              },
+              "confidence": 0.9712943501104639
+            },
+            "identity_attached": {
+              "type": "noul",
+              "noul": 0.9881134121912256
+            },
+            "wants_copy_of_data": {
+              "type": "noul",
+              "noul": 0.02274696261445534
+            }
+          },
+          "at": 73648.29999999702
+        },
+        {
+          "rep": 3,
+          "ok": true,
+          "status": 200,
+          "ms": 1316.3999999910593,
+          "clientMs": 1316.3999999910593,
+          "inputTokens": 463,
+          "answers": {
+            "right": {
+              "type": "choice",
+              "choice": "effacement",
+              "probabilities": {
+                "acces": 0.005069975017904856,
+                "effacement": 0.9770354800883713,
+                "opposition": 0.007752834835165433,
+                "portabilite": 0.005076874567999213,
+                "rectification": 0.005064835490559292
+              },
+              "confidence": 0.9712943501104639
+            },
+            "identity_attached": {
+              "type": "noul",
+              "noul": 0.9881134121912256
+            },
+            "wants_copy_of_data": {
+              "type": "noul",
+              "noul": 0.02274696261445534
+            }
+          },
+          "at": 127741.69999998808
+        }
+      ]
+    },
+    {
+      "meta": {
+        "id": "verif-citation-loi-1905",
+        "name": "Vérification de citation",
+        "category": "Raisonnement",
+        "complexity": "complexe",
+        "length": "court",
+        "lang": "fr",
+        "questions": {
+          "supported": {
+            "type": "noul",
+            "expected": false,
+            "size": 2
+          },
+          "support_level": {
+            "type": "score",
+            "expected": 0,
+            "size": 4
+          }
+        }
+      },
+      "runs": [
+        {
+          "rep": 1,
+          "ok": true,
+          "status": 200,
+          "ms": 1187.2000000029802,
+          "clientMs": 1187.2000000029802,
+          "inputTokens": 392,
+          "answers": {
+            "supported": {
+              "type": "noul",
+              "noul": 0.007671212366902629
+            },
+            "support_level": {
+              "type": "score",
+              "score": 0.18398034768384938,
+              "legend": {
+                "0": "La source contredit l’affirmation",
+                "1": "La source n’aborde pas le sujet",
+                "2": "La source soutient partiellement l’affirmation",
+                "3": "La source soutient entièrement l’affirmation"
+              },
+              "probabilities": {
+                "0": 0.9011966770196259,
+                "1": 0.027936992613841697,
+                "2": 0.05655563602958962,
+                "3": 0.01431069433694281
+              },
+              "confidence": 0.8160196523161506
+            }
+          },
+          "at": 20399
+        },
+        {
+          "rep": 2,
+          "ok": true,
+          "status": 200,
+          "ms": 1197.5,
+          "clientMs": 1197.5,
+          "inputTokens": 392,
+          "answers": {
+            "supported": {
+              "type": "noul",
+              "noul": 0.007671212366902629
+            },
+            "support_level": {
+              "type": "score",
+              "score": 0.18398034768384938,
+              "legend": {
+                "0": "La source contredit l’affirmation",
+                "1": "La source n’aborde pas le sujet",
+                "2": "La source soutient partiellement l’affirmation",
+                "3": "La source soutient entièrement l’affirmation"
+              },
+              "probabilities": {
+                "0": 0.9011966770196259,
+                "1": 0.027936992613841697,
+                "2": 0.05655563602958962,
+                "3": 0.01431069433694281
+              },
+              "confidence": 0.8160196523161506
+            }
+          },
+          "at": 74848.59999999404
+        },
+        {
+          "rep": 3,
+          "ok": true,
+          "status": 200,
+          "ms": 1200.7000000029802,
+          "clientMs": 1200.7000000029802,
+          "inputTokens": 392,
+          "answers": {
+            "supported": {
+              "type": "noul",
+              "noul": 0.007671212366902629
+            },
+            "support_level": {
+              "type": "score",
+              "score": 0.18398034768384938,
+              "legend": {
+                "0": "La source contredit l’affirmation",
+                "1": "La source n’aborde pas le sujet",
+                "2": "La source soutient partiellement l’affirmation",
+                "3": "La source soutient entièrement l’affirmation"
+              },
+              "probabilities": {
+                "0": 0.9011966770196259,
+                "1": 0.027936992613841697,
+                "2": 0.05655563602958962,
+                "3": 0.01431069433694281
+              },
+              "confidence": 0.8160196523161506
+            }
+          },
+          "at": 128945.39999999106
+        }
+      ]
+    },
+    {
+      "meta": {
+        "id": "doublon-adresse",
+        "name": "Déduplication d’adresses",
+        "category": "Données structurées",
+        "complexity": "complexe",
+        "length": "court",
+        "lang": "fr",
+        "questions": {
+          "same_as_a": {
+            "type": "noul",
+            "expected": true,
+            "size": 2
+          },
+          "same_as_b": {
+            "type": "noul",
+            "expected": false,
+            "size": 2
+          }
+        }
+      },
+      "runs": [
+        {
+          "rep": 1,
+          "ok": true,
+          "status": 200,
+          "ms": 921.7000000029802,
+          "clientMs": 921.7000000029802,
+          "inputTokens": 320,
+          "answers": {
+            "same_as_a": {
+              "type": "noul",
+              "noul": 0.921973990890308
+            },
+            "same_as_b": {
+              "type": "noul",
+              "noul": 0.0662776654958838
+            }
+          },
+          "at": 21321.89999999106
+        },
+        {
+          "rep": 2,
+          "ok": true,
+          "status": 200,
+          "ms": 928,
+          "clientMs": 928,
+          "inputTokens": 320,
+          "answers": {
+            "same_as_a": {
+              "type": "noul",
+              "noul": 0.921973990890308
+            },
+            "same_as_b": {
+              "type": "noul",
+              "noul": 0.0662776654958838
+            }
+          },
+          "at": 75777.69999998808
+        },
+        {
+          "rep": 3,
+          "ok": true,
+          "status": 200,
+          "ms": 967.7999999970198,
+          "clientMs": 967.7999999970198,
+          "inputTokens": 320,
+          "answers": {
+            "same_as_a": {
+              "type": "noul",
+              "noul": 0.921973990890308
+            },
+            "same_as_b": {
+              "type": "noul",
+              "noul": 0.0662776654958838
+            }
+          },
+          "at": 129914.89999999106
+        }
+      ]
+    },
+    {
+      "meta": {
+        "id": "annonce-immobiliere",
+        "name": "Annonce immobilière : 10 questions",
+        "category": "Extraction",
+        "complexity": "simple",
+        "length": "moyen",
+        "lang": "fr",
+        "questions": {
+          "has_elevator": {
+            "type": "noul",
+            "expected": false,
+            "size": 2
+          },
+          "charges_included": {
+            "type": "noul",
+            "expected": true,
+            "size": 2
+          },
+          "has_balcony": {
+            "type": "noul",
+            "expected": true,
+            "size": 2
+          },
+          "mentions_parking": {
+            "type": "noul",
+            "expected": false,
+            "size": 2
+          },
+          "pets_allowed": {
+            "type": "noul",
+            "expected": false,
+            "size": 2
+          },
+          "agency_fees": {
+            "type": "noul",
+            "expected": false,
+            "size": 2
+          },
+          "over_70m2": {
+            "type": "noul",
+            "expected": false,
+            "size": 2
+          },
+          "bedrooms_two": {
+            "type": "noul",
+            "expected": true,
+            "size": 2
+          },
+          "energy_class": {
+            "type": "choice",
+            "expected": "E",
+            "size": 7
+          },
+          "rooms": {
+            "type": "choice",
+            "expected": "T3",
+            "size": 4
+          }
+        }
+      },
+      "runs": [
+        {
+          "rep": 1,
+          "ok": true,
+          "status": 200,
+          "ms": 3009.300000011921,
+          "clientMs": 3009.300000011921,
+          "inputTokens": 1075,
+          "answers": {
+            "has_elevator": {
+              "type": "noul",
+              "noul": 0.020622529366039404
+            },
+            "charges_included": {
+              "type": "noul",
+              "noul": 0.9240108789497402
+            },
+            "has_balcony": {
+              "type": "noul",
+              "noul": 0.9619030105234531
+            },
+            "mentions_parking": {
+              "type": "noul",
+              "noul": 0.037915936607494004
+            },
+            "pets_allowed": {
+              "type": "noul",
+              "noul": 0.024491864005287273
+            },
+            "agency_fees": {
+              "type": "noul",
+              "noul": 0.03427215317861403
+            },
+            "over_70m2": {
+              "type": "noul",
+              "noul": 0.029513362911878695
+            },
+            "bedrooms_two": {
+              "type": "noul",
+              "noul": 0.9139641731967859
+            },
+            "energy_class": {
+              "type": "choice",
+              "choice": "E",
+              "probabilities": {
+                "A": 0.004042793923406501,
+                "B": 0.004727645496739739,
+                "C": 0.0069109589696982245,
+                "D": 0.013362447038768788,
+                "E": 0.955870856179002,
+                "F": 0.008975255820237728,
+                "G": 0.0061100425721470186
+              },
+              "confidence": 0.9485159988755022
+            },
+            "rooms": {
+              "type": "choice",
+              "choice": "T3",
+              "probabilities": {
+                "T1": 0.008697331398824807,
+                "T2": 0.03167982539715404,
+                "T3": 0.9202105729345056,
+                "T4": 0.03941227026951547
+              },
+              "confidence": 0.8936140972460075
+            }
+          },
+          "at": 24332.09999999404
+        },
+        {
+          "rep": 2,
+          "ok": true,
+          "status": 200,
+          "ms": 3002,
+          "clientMs": 3002,
+          "inputTokens": 1075,
+          "answers": {
+            "has_elevator": {
+              "type": "noul",
+              "noul": 0.020622529366039404
+            },
+            "charges_included": {
+              "type": "noul",
+              "noul": 0.9240108789497402
+            },
+            "has_balcony": {
+              "type": "noul",
+              "noul": 0.9619030105234531
+            },
+            "mentions_parking": {
+              "type": "noul",
+              "noul": 0.037915936607494004
+            },
+            "pets_allowed": {
+              "type": "noul",
+              "noul": 0.024491864005287273
+            },
+            "agency_fees": {
+              "type": "noul",
+              "noul": 0.03427215317861403
+            },
+            "over_70m2": {
+              "type": "noul",
+              "noul": 0.029513362911878695
+            },
+            "bedrooms_two": {
+              "type": "noul",
+              "noul": 0.9139641731967859
+            },
+            "energy_class": {
+              "type": "choice",
+              "choice": "E",
+              "probabilities": {
+                "A": 0.004042793923406501,
+                "B": 0.004727645496739739,
+                "C": 0.0069109589696982245,
+                "D": 0.013362447038768788,
+                "E": 0.955870856179002,
+                "F": 0.008975255820237728,
+                "G": 0.0061100425721470186
+              },
+              "confidence": 0.9485159988755022
+            },
+            "rooms": {
+              "type": "choice",
+              "choice": "T3",
+              "probabilities": {
+                "T1": 0.008697331398824807,
+                "T2": 0.03167982539715404,
+                "T3": 0.9202105729345056,
+                "T4": 0.03941227026951547
+              },
+              "confidence": 0.8936140972460075
+            }
+          },
+          "at": 78780.89999999106
+        },
+        {
+          "rep": 3,
+          "ok": true,
+          "status": 200,
+          "ms": 3016.1000000089407,
+          "clientMs": 3016.1000000089407,
+          "inputTokens": 1075,
+          "answers": {
+            "has_elevator": {
+              "type": "noul",
+              "noul": 0.020622529366039404
+            },
+            "charges_included": {
+              "type": "noul",
+              "noul": 0.9240108789497402
+            },
+            "has_balcony": {
+              "type": "noul",
+              "noul": 0.9619030105234531
+            },
+            "mentions_parking": {
+              "type": "noul",
+              "noul": 0.037915936607494004
+            },
+            "pets_allowed": {
+              "type": "noul",
+              "noul": 0.024491864005287273
+            },
+            "agency_fees": {
+              "type": "noul",
+              "noul": 0.03427215317861403
+            },
+            "over_70m2": {
+              "type": "noul",
+              "noul": 0.029513362911878695
+            },
+            "bedrooms_two": {
+              "type": "noul",
+              "noul": 0.9139641731967859
+            },
+            "energy_class": {
+              "type": "choice",
+              "choice": "E",
+              "probabilities": {
+                "A": 0.004042793923406501,
+                "B": 0.004727645496739739,
+                "C": 0.0069109589696982245,
+                "D": 0.013362447038768788,
+                "E": 0.955870856179002,
+                "F": 0.008975255820237728,
+                "G": 0.0061100425721470186
+              },
+              "confidence": 0.9485159988755022
+            },
+            "rooms": {
+              "type": "choice",
+              "choice": "T3",
+              "probabilities": {
+                "T1": 0.008697331398824807,
+                "T2": 0.03167982539715404,
+                "T3": 0.9202105729345056,
+                "T4": 0.03941227026951547
+              },
+              "confidence": 0.8936140972460075
+            }
+          },
+          "at": 132933.29999999702
+        }
+      ]
+    },
+    {
+      "meta": {
+        "id": "offre-parrainage",
+        "name": "Conditions d’une offre",
+        "category": "Raisonnement",
+        "complexity": "complexe",
+        "length": "moyen",
+        "lang": "fr",
+        "questions": {
+          "eligible": {
+            "type": "noul",
+            "expected": false,
+            "size": 2
+          },
+          "reason": {
+            "type": "choice",
+            "expected": "ancien_client",
+            "size": 5
+          },
+          "sponsor_bonus": {
+            "type": "noul",
+            "expected": false,
+            "size": 2
+          }
+        }
+      },
+      "runs": [
+        {
+          "rep": 1,
+          "ok": true,
+          "status": 200,
+          "ms": 1639.2000000029802,
+          "clientMs": 1639.2000000029802,
+          "inputTokens": 605,
+          "answers": {
+            "eligible": {
+              "type": "noul",
+              "noul": 0.026829399592935562
+            },
+            "reason": {
+              "type": "choice",
+              "choice": "ancien_client",
+              "probabilities": {
+                "ancien_client": 0.9315775654230225,
+                "aucune": 0.028222857538195544,
+                "cumul": 0.017771289099551953,
+                "date": 0.010136828586205817,
+                "paiements": 0.012291459353024243
+              },
+              "confidence": 0.9144719567787781
+            },
+            "sponsor_bonus": {
+              "type": "noul",
+              "noul": 0.04671759980993828
+            }
+          },
+          "at": 25972.79999999702
+        },
+        {
+          "rep": 2,
+          "ok": true,
+          "status": 200,
+          "ms": 1675,
+          "clientMs": 1675,
+          "inputTokens": 605,
+          "answers": {
+            "eligible": {
+              "type": "noul",
+              "noul": 0.026829399592935562
+            },
+            "reason": {
+              "type": "choice",
+              "choice": "ancien_client",
+              "probabilities": {
+                "ancien_client": 0.9315775654230225,
+                "aucune": 0.028222857538195544,
+                "cumul": 0.017771289099551953,
+                "date": 0.010136828586205817,
+                "paiements": 0.012291459353024243
+              },
+              "confidence": 0.9144719567787781
+            },
+            "sponsor_bonus": {
+              "type": "noul",
+              "noul": 0.04671759980993828
+            }
+          },
+          "at": 80457.5
+        },
+        {
+          "rep": 3,
+          "ok": true,
+          "status": 200,
+          "ms": 1676.7999999970198,
+          "clientMs": 1676.7999999970198,
+          "inputTokens": 605,
+          "answers": {
+            "eligible": {
+              "type": "noul",
+              "noul": 0.026829399592935562
+            },
+            "reason": {
+              "type": "choice",
+              "choice": "ancien_client",
+              "probabilities": {
+                "ancien_client": 0.9315775654230225,
+                "aucune": 0.028222857538195544,
+                "cumul": 0.017771289099551953,
+                "date": 0.010136828586205817,
+                "paiements": 0.012291459353024243
+              },
+              "confidence": 0.9144719567787781
+            },
+            "sponsor_bonus": {
+              "type": "noul",
+              "noul": 0.04671759980993828
+            }
+          },
+          "at": 134612.39999999106
+        }
+      ]
+    },
+    {
+      "meta": {
+        "id": "mail-resiliation",
+        "name": "Demande de résiliation",
+        "category": "Support",
+        "complexity": "simple",
+        "length": "moyen",
+        "lang": "fr",
+        "questions": {
+          "intent": {
+            "type": "choice",
+            "expected": "resiliation",
+            "size": 4
+          },
+          "reason": {
+            "type": "choice",
+            "expected": "demenagement",
+            "size": 4
+          },
+          "asks_equipment_return": {
+            "type": "noul",
+            "expected": true,
+            "size": 2
+          },
+          "wants_phone_call": {
+            "type": "noul",
+            "expected": false,
+            "size": 2
+          },
+          "is_unhappy": {
+            "type": "noul",
+            "expected": false,
+            "size": 2
+          }
+        }
+      },
+      "runs": [
+        {
+          "rep": 1,
+          "ok": true,
+          "status": 200,
+          "ms": 2125.2999999970198,
+          "clientMs": 2125.2999999970198,
+          "inputTokens": 769,
+          "answers": {
+            "intent": {
+              "type": "choice",
+              "choice": "resiliation",
+              "probabilities": {
+                "changement_offre": 0.009417092418622154,
+                "information": 0.025410345274697932,
+                "reclamation": 0.006486902591205117,
+                "resiliation": 0.9586856597154748
+              },
+              "confidence": 0.9449142129539664
+            },
+            "reason": {
+              "type": "choice",
+              "choice": "demenagement",
+              "probabilities": {
+                "concurrent": 0.008497628752847736,
+                "demenagement": 0.9785357621239527,
+                "prix": 0.006259591864309613,
+                "qualite": 0.006707017258889981
+              },
+              "confidence": 0.9713810161652702
+            },
+            "asks_equipment_return": {
+              "type": "noul",
+              "noul": 0.9843177839744632
+            },
+            "wants_phone_call": {
+              "type": "noul",
+              "noul": 0.013573062114728935
+            },
+            "is_unhappy": {
+              "type": "noul",
+              "noul": 0.018516972660674223
+            }
+          },
+          "at": 28099.5
+        },
+        {
+          "rep": 2,
+          "ok": true,
+          "status": 200,
+          "ms": 2136.7999999970198,
+          "clientMs": 2136.7999999970198,
+          "inputTokens": 769,
+          "answers": {
+            "intent": {
+              "type": "choice",
+              "choice": "resiliation",
+              "probabilities": {
+                "changement_offre": 0.009417092418622154,
+                "information": 0.025410345274697932,
+                "reclamation": 0.006486902591205117,
+                "resiliation": 0.9586856597154748
+              },
+              "confidence": 0.9449142129539664
+            },
+            "reason": {
+              "type": "choice",
+              "choice": "demenagement",
+              "probabilities": {
+                "concurrent": 0.008497628752847736,
+                "demenagement": 0.9785357621239527,
+                "prix": 0.006259591864309613,
+                "qualite": 0.006707017258889981
+              },
+              "confidence": 0.9713810161652702
+            },
+            "asks_equipment_return": {
+              "type": "noul",
+              "noul": 0.9843177839744632
+            },
+            "wants_phone_call": {
+              "type": "noul",
+              "noul": 0.013573062114728935
+            },
+            "is_unhappy": {
+              "type": "noul",
+              "noul": 0.018516972660674223
+            }
+          },
+          "at": 82596.89999999106
+        },
+        {
+          "rep": 3,
+          "ok": true,
+          "status": 200,
+          "ms": 2142.800000011921,
+          "clientMs": 2142.800000011921,
+          "inputTokens": 769,
+          "answers": {
+            "intent": {
+              "type": "choice",
+              "choice": "resiliation",
+              "probabilities": {
+                "changement_offre": 0.009417092418622154,
+                "information": 0.025410345274697932,
+                "reclamation": 0.006486902591205117,
+                "resiliation": 0.9586856597154748
+              },
+              "confidence": 0.9449142129539664
+            },
+            "reason": {
+              "type": "choice",
+              "choice": "demenagement",
+              "probabilities": {
+                "concurrent": 0.008497628752847736,
+                "demenagement": 0.9785357621239527,
+                "prix": 0.006259591864309613,
+                "qualite": 0.006707017258889981
+              },
+              "confidence": 0.9713810161652702
+            },
+            "asks_equipment_return": {
+              "type": "noul",
+              "noul": 0.9843177839744632
+            },
+            "wants_phone_call": {
+              "type": "noul",
+              "noul": 0.013573062114728935
+            },
+            "is_unhappy": {
+              "type": "noul",
+              "noul": 0.018516972660674223
+            }
+          },
+          "at": 136756.09999999404
+        }
+      ]
+    },
+    {
+      "meta": {
+        "id": "bail-habitation",
+        "name": "Bail d’habitation",
+        "category": "Juridique",
+        "complexity": "complexe",
+        "length": "long",
+        "lang": "fr",
+        "questions": {
+          "tenant_notice": {
+            "type": "choice",
+            "expected": "un_mois",
+            "size": 4
+          },
+          "monthly_total": {
+            "type": "choice",
+            "expected": "m840",
+            "size": 4
+          },
+          "deposit_above_rent": {
+            "type": "noul",
+            "expected": false,
+            "size": 2
+          },
+          "free_sublet": {
+            "type": "noul",
+            "expected": false,
+            "size": 2
+          },
+          "pets_allowed": {
+            "type": "noul",
+            "expected": true,
+            "size": 2
+          },
+          "rent_can_change": {
+            "type": "noul",
+            "expected": true,
+            "size": 2
+          },
+          "landlord_any_time": {
+            "type": "noul",
+            "expected": false,
+            "size": 2
+          }
+        }
+      },
+      "runs": [
+        {
+          "rep": 1,
+          "ok": true,
+          "status": 200,
+          "ms": 4793,
+          "clientMs": 4793,
+          "inputTokens": 1736,
+          "answers": {
+            "tenant_notice": {
+              "type": "choice",
+              "choice": "un_mois",
+              "probabilities": {
+                "deux_mois": 0.008621079095696333,
+                "six_mois": 0.005870761874352295,
+                "trois_mois": 0.01106922018544037,
+                "un_mois": 0.974438938844511
+              },
+              "confidence": 0.9659185851260147
+            },
+            "monthly_total": {
+              "type": "choice",
+              "choice": "m840",
+              "probabilities": {
+                "m720": 0.005442327136440186,
+                "m780": 0.0057481964549398025,
+                "m840": 0.9830367400399823,
+                "m900": 0.005772736368637873
+              },
+              "confidence": 0.9773823200533097
+            },
+            "deposit_above_rent": {
+              "type": "noul",
+              "noul": 0.021537328232486816
+            },
+            "free_sublet": {
+              "type": "noul",
+              "noul": 0.026025640058522276
+            },
+            "pets_allowed": {
+              "type": "noul",
+              "noul": 0.9638415735512592
+            },
+            "rent_can_change": {
+              "type": "noul",
+              "noul": 0.9511591480370581
+            },
+            "landlord_any_time": {
+              "type": "noul",
+              "noul": 0.02889615213415839
+            }
+          },
+          "at": 32894.29999999702
+        },
+        {
+          "rep": 2,
+          "ok": true,
+          "status": 200,
+          "ms": 4786.0999999940395,
+          "clientMs": 4786.0999999940395,
+          "inputTokens": 1736,
+          "answers": {
+            "tenant_notice": {
+              "type": "choice",
+              "choice": "un_mois",
+              "probabilities": {
+                "deux_mois": 0.008621079095696333,
+                "six_mois": 0.005870761874352295,
+                "trois_mois": 0.01106922018544037,
+                "un_mois": 0.974438938844511
+              },
+              "confidence": 0.9659185851260147
+            },
+            "monthly_total": {
+              "type": "choice",
+              "choice": "m840",
+              "probabilities": {
+                "m720": 0.005442327136440186,
+                "m780": 0.0057481964549398025,
+                "m840": 0.9830367400399823,
+                "m900": 0.005772736368637873
+              },
+              "confidence": 0.9773823200533097
+            },
+            "deposit_above_rent": {
+              "type": "noul",
+              "noul": 0.021537328232486816
+            },
+            "free_sublet": {
+              "type": "noul",
+              "noul": 0.026025640058522276
+            },
+            "pets_allowed": {
+              "type": "noul",
+              "noul": 0.9638415735512592
+            },
+            "rent_can_change": {
+              "type": "noul",
+              "noul": 0.9511591480370581
+            },
+            "landlord_any_time": {
+              "type": "noul",
+              "noul": 0.02889615213415839
+            }
+          },
+          "at": 87384.79999999702
+        },
+        {
+          "rep": 3,
+          "ok": true,
+          "status": 200,
+          "ms": 4805.5999999940395,
+          "clientMs": 4805.5999999940395,
+          "inputTokens": 1736,
+          "answers": {
+            "tenant_notice": {
+              "type": "choice",
+              "choice": "un_mois",
+              "probabilities": {
+                "deux_mois": 0.008621079095696333,
+                "six_mois": 0.005870761874352295,
+                "trois_mois": 0.01106922018544037,
+                "un_mois": 0.974438938844511
+              },
+              "confidence": 0.9659185851260147
+            },
+            "monthly_total": {
+              "type": "choice",
+              "choice": "m840",
+              "probabilities": {
+                "m720": 0.005442327136440186,
+                "m780": 0.0057481964549398025,
+                "m840": 0.9830367400399823,
+                "m900": 0.005772736368637873
+              },
+              "confidence": 0.9773823200533097
+            },
+            "deposit_above_rent": {
+              "type": "noul",
+              "noul": 0.021537328232486816
+            },
+            "free_sublet": {
+              "type": "noul",
+              "noul": 0.026025640058522276
+            },
+            "pets_allowed": {
+              "type": "noul",
+              "noul": 0.9638415735512592
+            },
+            "rent_can_change": {
+              "type": "noul",
+              "noul": 0.9511591480370581
+            },
+            "landlord_any_time": {
+              "type": "noul",
+              "noul": 0.02889615213415839
+            }
+          },
+          "at": 141563.59999999404
+        }
+      ]
+    },
+    {
+      "meta": {
+        "id": "ag-copropriete",
+        "name": "Procès-verbal d’AG de copropriété",
+        "category": "Extraction",
+        "complexity": "complexe",
+        "length": "long",
+        "lang": "fr",
+        "questions": {
+          "facade_adopted": {
+            "type": "noul",
+            "expected": true,
+            "size": 2
+          },
+          "ev_charging": {
+            "type": "choice",
+            "expected": "rejetee",
+            "size": 3
+          },
+          "intercom": {
+            "type": "choice",
+            "expected": "ajournee",
+            "size": 3
+          },
+          "syndic_changed": {
+            "type": "noul",
+            "expected": false,
+            "size": 2
+          },
+          "budget_up": {
+            "type": "noul",
+            "expected": true,
+            "size": 2
+          },
+          "leak_decided": {
+            "type": "noul",
+            "expected": false,
+            "size": 2
+          }
+        }
+      },
+      "runs": [
+        {
+          "rep": 1,
+          "ok": true,
+          "status": 200,
+          "ms": 4690.5,
+          "clientMs": 4690.5,
+          "inputTokens": 1668,
+          "answers": {
+            "facade_adopted": {
+              "type": "noul",
+              "noul": 0.963270369700117
+            },
+            "ev_charging": {
+              "type": "choice",
+              "choice": "rejetee",
+              "probabilities": {
+                "adoptee": 0.008517126139541059,
+                "ajournee": 0.0073415494981705735,
+                "rejetee": 0.9841413243622884
+              },
+              "confidence": 0.9762119865434324
+            },
+            "intercom": {
+              "type": "choice",
+              "choice": "ajournee",
+              "probabilities": {
+                "adoptee": 0.010864914385391817,
+                "ajournee": 0.972143479199991,
+                "rejetee": 0.016991606414617215
+              },
+              "confidence": 0.9582152187999865
+            },
+            "syndic_changed": {
+              "type": "noul",
+              "noul": 0.03818034922597003
+            },
+            "budget_up": {
+              "type": "noul",
+              "noul": 0.9510976404372933
+            },
+            "leak_decided": {
+              "type": "noul",
+              "noul": 0.04038270245351255
+            }
+          },
+          "at": 37588.19999998808
+        },
+        {
+          "rep": 2,
+          "ok": true,
+          "status": 200,
+          "ms": 4733.9000000059605,
+          "clientMs": 4733.9000000059605,
+          "inputTokens": 1668,
+          "answers": {
+            "facade_adopted": {
+              "type": "noul",
+              "noul": 0.963270369700117
+            },
+            "ev_charging": {
+              "type": "choice",
+              "choice": "rejetee",
+              "probabilities": {
+                "adoptee": 0.008517126139541059,
+                "ajournee": 0.0073415494981705735,
+                "rejetee": 0.9841413243622884
+              },
+              "confidence": 0.9762119865434324
+            },
+            "intercom": {
+              "type": "choice",
+              "choice": "ajournee",
+              "probabilities": {
+                "adoptee": 0.010864914385391817,
+                "ajournee": 0.972143479199991,
+                "rejetee": 0.016991606414617215
+              },
+              "confidence": 0.9582152187999865
+            },
+            "syndic_changed": {
+              "type": "noul",
+              "noul": 0.03818034922597003
+            },
+            "budget_up": {
+              "type": "noul",
+              "noul": 0.9510976404372933
+            },
+            "leak_decided": {
+              "type": "noul",
+              "noul": 0.04038270245351255
+            }
+          },
+          "at": 92119.89999999106
+        },
+        {
+          "rep": 3,
+          "ok": true,
+          "status": 200,
+          "ms": 4742,
+          "clientMs": 4742,
+          "inputTokens": 1668,
+          "answers": {
+            "facade_adopted": {
+              "type": "noul",
+              "noul": 0.963270369700117
+            },
+            "ev_charging": {
+              "type": "choice",
+              "choice": "rejetee",
+              "probabilities": {
+                "adoptee": 0.008517126139541059,
+                "ajournee": 0.0073415494981705735,
+                "rejetee": 0.9841413243622884
+              },
+              "confidence": 0.9762119865434324
+            },
+            "intercom": {
+              "type": "choice",
+              "choice": "ajournee",
+              "probabilities": {
+                "adoptee": 0.010864914385391817,
+                "ajournee": 0.972143479199991,
+                "rejetee": 0.016991606414617215
+              },
+              "confidence": 0.9582152187999865
+            },
+            "syndic_changed": {
+              "type": "noul",
+              "noul": 0.03818034922597003
+            },
+            "budget_up": {
+              "type": "noul",
+              "noul": 0.9510976404372933
+            },
+            "leak_decided": {
+              "type": "noul",
+              "noul": 0.04038270245351255
+            }
+          },
+          "at": 146307.19999998808
+        }
+      ]
+    },
+    {
+      "meta": {
+        "id": "releve-bancaire",
+        "name": "Relevé bancaire (contexte long)",
+        "category": "Contexte long",
+        "complexity": "complexe",
+        "length": "très long",
+        "lang": "fr",
+        "questions": {
+          "has_duplicate": {
+            "type": "noul",
+            "expected": true,
+            "size": 2
+          },
+          "duplicate_merchant": {
+            "type": "choice",
+            "expected": "fnac",
+            "size": 5
+          },
+          "rejected_debit": {
+            "type": "noul",
+            "expected": true,
+            "size": 2
+          },
+          "salary_each_month": {
+            "type": "noul",
+            "expected": true,
+            "size": 2
+          }
+        }
+      },
+      "runs": [
+        {
+          "rep": 1,
+          "ok": true,
+          "status": 200,
+          "ms": 16918.90000000596,
+          "clientMs": 16918.90000000596,
+          "inputTokens": 5574,
+          "answers": {
+            "has_duplicate": {
+              "type": "noul",
+              "noul": 0.9428690794502126
+            },
+            "duplicate_merchant": {
+              "type": "choice",
+              "choice": "fnac",
+              "probabilities": {
+                "amazon": 0.00353340549005148,
+                "carrefour": 0.0030869946390371587,
+                "fnac": 0.9838519880441926,
+                "monoprix": 0.002716073467108867,
+                "sncf": 0.00681153835960985
+              },
+              "confidence": 0.9798149850552407
+            },
+            "rejected_debit": {
+              "type": "noul",
+              "noul": 0.9859106499301119
+            },
+            "salary_each_month": {
+              "type": "noul",
+              "noul": 0.985538561700932
+            }
+          },
+          "at": 54508.89999999106
+        },
+        {
+          "rep": 2,
+          "ok": true,
+          "status": 200,
+          "ms": 16369.90000000596,
+          "clientMs": 16369.90000000596,
+          "inputTokens": 5574,
+          "answers": {
+            "has_duplicate": {
+              "type": "noul",
+              "noul": 0.9428690794502126
+            },
+            "duplicate_merchant": {
+              "type": "choice",
+              "choice": "fnac",
+              "probabilities": {
+                "amazon": 0.00353340549005148,
+                "carrefour": 0.0030869946390371587,
+                "fnac": 0.9838519880441926,
+                "monoprix": 0.002716073467108867,
+                "sncf": 0.00681153835960985
+              },
+              "confidence": 0.9798149850552407
+            },
+            "rejected_debit": {
+              "type": "noul",
+              "noul": 0.9859106499301119
+            },
+            "salary_each_month": {
+              "type": "noul",
+              "noul": 0.985538561700932
+            }
+          },
+          "at": 108492.5
+        },
+        {
+          "rep": 3,
+          "ok": true,
+          "status": 200,
+          "ms": 16370.90000000596,
+          "clientMs": 16370.90000000596,
+          "inputTokens": 5574,
+          "answers": {
+            "has_duplicate": {
+              "type": "noul",
+              "noul": 0.9428690794502126
+            },
+            "duplicate_merchant": {
+              "type": "choice",
+              "choice": "fnac",
+              "probabilities": {
+                "amazon": 0.00353340549005148,
+                "carrefour": 0.0030869946390371587,
+                "fnac": 0.9838519880441926,
+                "monoprix": 0.002716073467108867,
+                "sncf": 0.00681153835960985
+              },
+              "confidence": 0.9798149850552407
+            },
+            "rejected_debit": {
+              "type": "noul",
+              "noul": 0.9859106499301119
+            },
+            "salary_each_month": {
+              "type": "noul",
+              "noul": 0.985538561700932
+            }
+          },
+          "at": 162679.79999999702
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "cases": 26,
+    "requests": 78,
+    "ok": 78,
+    "errorRate": 0,
+    "latency": {
+      "n": 78,
+      "mean": 2084.023076924185,
+      "min": 478.8999999910593,
+      "p50": 1199.7500000074506,
+      "p90": 4703.520000001788,
+      "p95": 4794.889999999105,
+      "p99": 16496.94000000596,
+      "max": 16918.90000000596,
+      "stdev": 3097.818190440569
+    },
+    "inputTokens": 55992,
+    "cost": null,
+    "tokensPerSec": 344.4521137000195,
+    "msPerToken": 2.8755428571587514,
+    "requestsPerSec": 0.4794671276108083,
+    "accuracy": 0.9651162790697675,
+    "quality": 0.9473034222396636,
+    "consistency": 1,
+    "byType": {
+      "noul": {
+        "questions": 58,
+        "accuracy": 0.9655172413793104,
+        "quality": 0.9475052297630389
+      },
+      "score": {
+        "questions": 5,
+        "accuracy": 1,
+        "quality": 0.9877346434877434
+      },
+      "choice": {
+        "questions": 23,
+        "accuracy": 0.9565217391304348,
+        "quality": 0.9380051203876564
+      }
+    },
+    "byLength": [
+      {
+        "key": "court",
+        "cases": 20,
+        "latency": {
+          "n": 60,
+          "mean": 1065.328333334128,
+          "min": 478.8999999910593,
+          "p50": 1044.0499999970198,
+          "p90": 1306.0100000023842,
+          "p95": 1312.4699999973177,
+          "p99": 1316.563999993503,
+          "max": 1316.7999999970198,
+          "stdev": 199.8317437088838
+        },
+        "accuracy": 0.9411764705882353,
+        "quality": 0.9353959531106852
+      },
+      {
+        "key": "moyen",
+        "cases": 3,
+        "latency": {
+          "n": 9,
+          "mean": 2269.255555558536,
+          "min": 1639.2000000029802,
+          "p50": 2136.7999999970198,
+          "p90": 3010.660000011325,
+          "p95": 3013.380000010133,
+          "p99": 3015.556000009179,
+          "max": 3016.1000000089407,
+          "stdev": 591.3679863515218
+        },
+        "accuracy": 1,
+        "quality": 0.9598124101540448
+      },
+      {
+        "key": "long",
+        "cases": 2,
+        "latency": {
+          "n": 6,
+          "mean": 4758.516666665673,
+          "min": 4690.5,
+          "p50": 4764.04999999702,
+          "p90": 4799.29999999702,
+          "p95": 4802.44999999553,
+          "p99": 4804.969999994338,
+          "max": 4805.5999999940395,
+          "stdev": 43.98142410643335
+        },
+        "accuracy": 1,
+        "quality": 0.9683159263129115
+      },
+      {
+        "key": "très long",
+        "cases": 1,
+        "latency": {
+          "n": 3,
+          "mean": 16553.233333339293,
+          "min": 16369.90000000596,
+          "p50": 16370.90000000596,
+          "p90": 16809.300000005962,
+          "p95": 16864.10000000596,
+          "p99": 16907.94000000596,
+          "max": 16918.90000000596,
+          "stdev": 316.6770173746957
+        },
+        "accuracy": 1,
+        "quality": 0.9745425697813623
+      }
+    ],
+    "byComplexity": [
+      {
+        "key": "complexe",
+        "cases": 18,
+        "latency": {
+          "n": 54,
+          "mean": 2344.6888888903236,
+          "min": 478.8999999910593,
+          "p50": 1192.5000000074506,
+          "p90": 4772.869999995828,
+          "p95": 8853.104999998146,
+          "p99": 16628.460000005958,
+          "max": 16918.90000000596,
+          "stdev": 3676.1375461200532
+        },
+        "accuracy": 0.9444444444444444,
+        "quality": 0.9354006357692684
+      },
+      {
+        "key": "simple",
+        "cases": 8,
+        "latency": {
+          "n": 24,
+          "mean": 1497.5250000003725,
+          "min": 924.2000000029802,
+          "p50": 1257.0499999970198,
+          "p90": 2744.240000003576,
+          "p95": 3008.2050000101326,
+          "p99": 3014.536000009626,
+          "max": 3016.1000000089407,
+          "stdev": 684.0673175959714
+        },
+        "accuracy": 1,
+        "quality": 0.967389374408456
+      }
+    ],
+    "byCategory": [
+      {
+        "key": "Calibration",
+        "cases": 1,
+        "latency": {
+          "n": 3,
+          "mean": 486.49999999503297,
+          "min": 478.8999999910593,
+          "p50": 484.09999999403954,
+          "p90": 494.0199999988079,
+          "p95": 495.25999999940393,
+          "p99": 496.2519999998808,
+          "max": 496.5,
+          "stdev": 9.042123648914252
+        },
+        "accuracy": 1,
+        "quality": 1
+      },
+      {
+        "key": "Classification",
+        "cases": 1,
+        "latency": {
+          "n": 3,
+          "mean": 1210.0999999990065,
+          "min": 1205.5999999940395,
+          "p50": 1211.5,
+          "p90": 1212.8600000023841,
+          "p95": 1213.0300000026823,
+          "p99": 1213.1660000029206,
+          "max": 1213.2000000029802,
+          "stdev": 3.9887341395561586
+        },
+        "accuracy": 1,
+        "quality": 0.9246954707258647
+      },
+      {
+        "key": "Compréhension",
+        "cases": 2,
+        "latency": {
+          "n": 6,
+          "mean": 1033.2833333363135,
+          "min": 1015.9000000059605,
+          "p50": 1023.3500000014901,
+          "p90": 1058.8500000014901,
+          "p95": 1065.574999999255,
+          "p99": 1070.9549999974668,
+          "max": 1072.2999999970198,
+          "stdev": 21.760093441276567
+        },
+        "accuracy": 1,
+        "quality": 0.9762932869208729
+      },
+      {
+        "key": "Contexte long",
+        "cases": 1,
+        "latency": {
+          "n": 3,
+          "mean": 16553.233333339293,
+          "min": 16369.90000000596,
+          "p50": 16370.90000000596,
+          "p90": 16809.300000005962,
+          "p95": 16864.10000000596,
+          "p99": 16907.94000000596,
+          "max": 16918.90000000596,
+          "stdev": 316.6770173746957
+        },
+        "accuracy": 1,
+        "quality": 0.9745425697813623
+      },
+      {
+        "key": "Données structurées",
+        "cases": 1,
+        "latency": {
+          "n": 3,
+          "mean": 939.1666666666666,
+          "min": 921.7000000029802,
+          "p50": 928,
+          "p90": 959.8399999976158,
+          "p95": 963.8199999973178,
+          "p99": 967.0039999970794,
+          "max": 967.7999999970198,
+          "stdev": 24.99646641419432
+        },
+        "accuracy": 1,
+        "quality": 0.9278481626972122
+      },
+      {
+        "key": "Extraction",
+        "cases": 2,
+        "latency": {
+          "n": 6,
+          "mean": 3865.633333337804,
+          "min": 3002,
+          "p50": 3853.3000000044703,
+          "p90": 4737.95000000298,
+          "p95": 4739.97500000149,
+          "p99": 4741.595000000298,
+          "max": 4742,
+          "stdev": 938.4227995214179
+        },
+        "accuracy": 1,
+        "quality": 0.9575770879833988
+      },
+      {
+        "key": "Juridique",
+        "cases": 2,
+        "latency": {
+          "n": 6,
+          "mean": 3052.999999995033,
+          "min": 1304.5999999940395,
+          "p50": 3051.2499999925494,
+          "p90": 4799.29999999702,
+          "p95": 4802.44999999553,
+          "p99": 4804.969999994338,
+          "max": 4805.5999999940395,
+          "stdev": 1908.1698551240515
+        },
+        "accuracy": 1,
+        "quality": 0.9738419209712784
+      },
+      {
+        "key": "Modération",
+        "cases": 3,
+        "latency": {
+          "n": 9,
+          "mean": 1240.455555556549,
+          "min": 1187.1000000089407,
+          "p50": 1221.7999999970198,
+          "p90": 1310.3999999970197,
+          "p95": 1313.5999999970197,
+          "p99": 1316.1599999970197,
+          "max": 1316.7999999970198,
+          "stdev": 53.16493465845425
+        },
+        "accuracy": 0.9,
+        "quality": 0.9119020138185704
+      },
+      {
+        "key": "Raisonnement",
+        "cases": 6,
+        "latency": {
+          "n": 18,
+          "mean": 1143.9722222255336,
+          "min": 836.9000000059605,
+          "p50": 1060.9000000059605,
+          "p90": 1649.9400000020862,
+          "p95": 1675.269999999553,
+          "p99": 1676.4939999975263,
+          "max": 1676.7999999970198,
+          "stdev": 293.26941599611797
+        },
+        "accuracy": 0.9285714285714286,
+        "quality": 0.9181924304120336
+      },
+      {
+        "key": "Routage",
+        "cases": 1,
+        "latency": {
+          "n": 3,
+          "mean": 1007.7333333343267,
+          "min": 1005,
+          "p50": 1006,
+          "p90": 1010.9600000023842,
+          "p95": 1011.5800000026823,
+          "p99": 1012.0760000029206,
+          "max": 1012.2000000029802,
+          "stdev": 3.9004273287224613
+        },
+        "accuracy": 1,
+        "quality": 0.9838589193250309
+      },
+      {
+        "key": "Sentiment",
+        "cases": 3,
+        "latency": {
+          "n": 9,
+          "mean": 1063.2444444447756,
+          "min": 918,
+          "p50": 1042.699999988079,
+          "p90": 1203.8600000053643,
+          "p95": 1211.3799999982118,
+          "p99": 1217.3959999924898,
+          "max": 1218.8999999910593,
+          "stdev": 120.15440182653467
+        },
+        "accuracy": 0.875,
+        "quality": 0.9078804002543845
+      },
+      {
+        "key": "Support",
+        "cases": 3,
+        "latency": {
+          "n": 9,
+          "mean": 1436.3666666663355,
+          "min": 924.2000000029802,
+          "p50": 1222.0999999940395,
+          "p90": 2138,
+          "p95": 2140.4000000059605,
+          "p99": 2142.320000010729,
+          "max": 2142.800000011921,
+          "stdev": 538.4998537612538
+        },
+        "accuracy": 1,
+        "quality": 0.9818253752301889
+      }
+    ],
+    "byLang": [
+      {
+        "key": "fr",
+        "cases": 26,
+        "latency": {
+          "n": 78,
+          "mean": 2084.023076924185,
+          "min": 478.8999999910593,
+          "p50": 1199.7500000074506,
+          "p90": 4703.520000001788,
+          "p95": 4794.889999999105,
+          "p99": 16496.94000000596,
+          "max": 16918.90000000596,
+          "stdev": 3097.818190440569
+        },
+        "accuracy": 0.9651162790697675,
+        "quality": 0.9473034222396636
+      }
+    ]
+  }
+}
