@@ -1,0 +1,3843 @@
+{
+  "id": "2026-10-10-122004-perplexity-decider-v1-api-openrouter",
+  "name": "Perplexity Decider v1 — API Openrouter — 10/10/2026 12:20:04",
+  "createdAt": "2026-10-10T10:20:04.569Z",
+  "suiteId": "mixed",
+  "suiteVersion": "1",
+  "target": {
+    "kind": "systemone",
+    "label": "Perplexity Decider v1 — API Openrouter",
+    "url": "https://openrouter.ai/api/",
+    "model": "perplexity/pplx-decider-v1.1-27b",
+    "proxy": false
+  },
+  "settings": {
+    "repetitions": 3,
+    "warmup": 1,
+    "concurrency": 1,
+    "timeoutMs": 120000
+  },
+  "durationMs": 25127.800000000745,
+  "cases": [
+    {
+      "meta": {
+        "id": "lang-detect",
+        "name": "Détection de langue",
+        "category": "Classification",
+        "complexity": "simple",
+        "length": "court",
+        "lang": "es",
+        "questions": {
+          "language": {
+            "type": "choice",
+            "expected": "es",
+            "size": 6
+          }
+        }
+      },
+      "runs": [
+        {
+          "rep": 1,
+          "ok": true,
+          "status": 200,
+          "ms": 383.8999999985099,
+          "clientMs": 383.8999999985099,
+          "inputTokens": 122,
+          "cost": 0.00000244,
+          "answers": {
+            "language": {
+              "type": "choice",
+              "choice": "es",
+              "probabilities": {
+                "fr": 0.0000757427403946122,
+                "en": 0.00006973703459203526,
+                "es": 0.9990683236404826,
+                "de": 0.000037667840159377396,
+                "it": 0.00017242675403562175,
+                "pt": 0.0005761019903356576
+              },
+              "confidence": 0.9988819883685791
+            }
+          },
+          "at": 384.69999999925494
+        },
+        {
+          "rep": 2,
+          "ok": true,
+          "status": 200,
+          "ms": 314.9000000022352,
+          "clientMs": 314.9000000022352,
+          "inputTokens": 122,
+          "cost": 0.00000244,
+          "answers": {
+            "language": {
+              "type": "choice",
+              "choice": "es",
+              "probabilities": {
+                "fr": 0.0000757427403946122,
+                "en": 0.00006973703459203526,
+                "es": 0.9990683236404826,
+                "de": 0.000037667840159377396,
+                "it": 0.00017242675403562175,
+                "pt": 0.0005761019903356576
+              },
+              "confidence": 0.9988819883685791
+            }
+          },
+          "at": 8033.10000000149
+        },
+        {
+          "rep": 3,
+          "ok": true,
+          "status": 200,
+          "ms": 254.10000000149012,
+          "clientMs": 254.10000000149012,
+          "inputTokens": 122,
+          "cost": 0.00000244,
+          "answers": {
+            "language": {
+              "type": "choice",
+              "choice": "es",
+              "probabilities": {
+                "fr": 0.0000757427403946122,
+                "en": 0.00006973703459203526,
+                "es": 0.9990683236404826,
+                "de": 0.000037667840159377396,
+                "it": 0.00017242675403562175,
+                "pt": 0.0005761019903356576
+              },
+              "confidence": 0.9988819883685791
+            }
+          },
+          "at": 17404.300000000745
+        }
+      ]
+    },
+    {
+      "meta": {
+        "id": "sentiment-en",
+        "name": "Sentiment court (EN)",
+        "category": "Sentiment",
+        "complexity": "simple",
+        "length": "court",
+        "lang": "en",
+        "questions": {
+          "is_positive": {
+            "type": "noul",
+            "expected": true,
+            "size": 2
+          },
+          "sentiment": {
+            "type": "score",
+            "expected": [
+              3,
+              4
+            ],
+            "size": 5
+          }
+        }
+      },
+      "runs": [
+        {
+          "rep": 1,
+          "ok": true,
+          "status": 200,
+          "ms": 299.0999999977648,
+          "clientMs": 299.0999999977648,
+          "inputTokens": 206,
+          "cost": 0.00000412,
+          "answers": {
+            "is_positive": {
+              "type": "noul",
+              "noul": 0.9997513875925659
+            },
+            "sentiment": {
+              "type": "score",
+              "score": 3.7388192243050486,
+              "legend": {
+                "0": "Very negative",
+                "1": "Negative",
+                "2": "Neutral",
+                "3": "Positive",
+                "4": "Very positive"
+              },
+              "probabilities": {
+                "0": 0.00039502002731376745,
+                "1": 0.00045546205616249513,
+                "2": 0.0011885886262542743,
+                "3": 0.2558571321647004,
+                "4": 0.7421037971255691
+              },
+              "confidence": 0.8694096121525242
+            }
+          },
+          "at": 685
+        },
+        {
+          "rep": 2,
+          "ok": true,
+          "status": 200,
+          "ms": 409.69999999925494,
+          "clientMs": 409.69999999925494,
+          "inputTokens": 206,
+          "cost": 0.00000412,
+          "answers": {
+            "is_positive": {
+              "type": "noul",
+              "noul": 0.9997513875925659
+            },
+            "sentiment": {
+              "type": "score",
+              "score": 3.7388192243050486,
+              "legend": {
+                "0": "Very negative",
+                "1": "Negative",
+                "2": "Neutral",
+                "3": "Positive",
+                "4": "Very positive"
+              },
+              "probabilities": {
+                "0": 0.00039502002731376745,
+                "1": 0.00045546205616249513,
+                "2": 0.0011885886262542743,
+                "3": 0.2558571321647004,
+                "4": 0.7421037971255691
+              },
+              "confidence": 0.8694096121525242
+            }
+          },
+          "at": 8443.800000000745
+        },
+        {
+          "rep": 3,
+          "ok": true,
+          "status": 200,
+          "ms": 293.79999999701977,
+          "clientMs": 293.79999999701977,
+          "inputTokens": 206,
+          "cost": 0.00000412,
+          "answers": {
+            "is_positive": {
+              "type": "noul",
+              "noul": 0.9997513875925659
+            },
+            "sentiment": {
+              "type": "score",
+              "score": 3.7388192243050486,
+              "legend": {
+                "0": "Very negative",
+                "1": "Negative",
+                "2": "Neutral",
+                "3": "Positive",
+                "4": "Very positive"
+              },
+              "probabilities": {
+                "0": 0.00039502002731376745,
+                "1": 0.00045546205616249513,
+                "2": 0.0011885886262542743,
+                "3": 0.2558571321647004,
+                "4": 0.7421037971255691
+              },
+              "confidence": 0.8694096121525242
+            }
+          },
+          "at": 17701
+        }
+      ]
+    },
+    {
+      "meta": {
+        "id": "sarcasm-fr",
+        "name": "Sarcasme (FR)",
+        "category": "Sentiment",
+        "complexity": "complexe",
+        "length": "court",
+        "lang": "fr",
+        "questions": {
+          "is_satisfied": {
+            "type": "noul",
+            "expected": false,
+            "size": 2
+          },
+          "is_sarcastic": {
+            "type": "noul",
+            "expected": true,
+            "size": 2
+          },
+          "sentiment": {
+            "type": "score",
+            "expected": [
+              0,
+              1
+            ],
+            "size": 5
+          }
+        }
+      },
+      "runs": [
+        {
+          "rep": 1,
+          "ok": true,
+          "status": 200,
+          "ms": 361.5999999977648,
+          "clientMs": 361.5999999977648,
+          "inputTokens": 339,
+          "cost": 0.00000678,
+          "answers": {
+            "is_satisfied": {
+              "type": "noul",
+              "noul": 0.004442981409874724
+            },
+            "is_sarcastic": {
+              "type": "noul",
+              "noul": 0.9997132134813519
+            },
+            "sentiment": {
+              "type": "score",
+              "score": 0.4096877730303587,
+              "legend": {
+                "0": "Très négatif",
+                "1": "Négatif",
+                "2": "Neutre",
+                "3": "Positif",
+                "4": "Très positif"
+              },
+              "probabilities": {
+                "0": 0.6109749128942985,
+                "1": 0.3779495488123454,
+                "2": 0.0031683294743826535,
+                "3": 0.006227270006646038,
+                "4": 0.001679938812327481
+              },
+              "confidence": 0.7951561134848206
+            }
+          },
+          "at": 1047.800000000745
+        },
+        {
+          "rep": 2,
+          "ok": true,
+          "status": 200,
+          "ms": 266.4000000022352,
+          "clientMs": 266.4000000022352,
+          "inputTokens": 339,
+          "cost": 0.00000678,
+          "answers": {
+            "is_satisfied": {
+              "type": "noul",
+              "noul": 0.004477909260055347
+            },
+            "is_sarcastic": {
+              "type": "noul",
+              "noul": 0.9997132134813519
+            },
+            "sentiment": {
+              "type": "score",
+              "score": 0.4096877730303587,
+              "legend": {
+                "0": "Très négatif",
+                "1": "Négatif",
+                "2": "Neutre",
+                "3": "Positif",
+                "4": "Très positif"
+              },
+              "probabilities": {
+                "0": 0.6109749128942985,
+                "1": 0.3779495488123454,
+                "2": 0.0031683294743826535,
+                "3": 0.006227270006646038,
+                "4": 0.001679938812327481
+              },
+              "confidence": 0.7951561134848206
+            }
+          },
+          "at": 8710.800000000745
+        },
+        {
+          "rep": 3,
+          "ok": true,
+          "status": 200,
+          "ms": 471.8999999985099,
+          "clientMs": 471.8999999985099,
+          "inputTokens": 339,
+          "cost": 0.00000678,
+          "answers": {
+            "is_satisfied": {
+              "type": "noul",
+              "noul": 0.004477909260055347
+            },
+            "is_sarcastic": {
+              "type": "noul",
+              "noul": 0.9997132134813519
+            },
+            "sentiment": {
+              "type": "score",
+              "score": 0.4096877730303587,
+              "legend": {
+                "0": "Très négatif",
+                "1": "Négatif",
+                "2": "Neutre",
+                "3": "Positif",
+                "4": "Très positif"
+              },
+              "probabilities": {
+                "0": 0.6109749128942985,
+                "1": 0.3779495488123454,
+                "2": 0.0031683294743826535,
+                "3": 0.006227270006646038,
+                "4": 0.001679938812327481
+              },
+              "confidence": 0.7951561134848206
+            }
+          },
+          "at": 18174.300000000745
+        }
+      ]
+    },
+    {
+      "meta": {
+        "id": "review-de",
+        "name": "Avis mitigé (DE)",
+        "category": "Sentiment",
+        "complexity": "complexe",
+        "length": "court",
+        "lang": "de",
+        "questions": {
+          "delivery_problem": {
+            "type": "noul",
+            "expected": true,
+            "size": 2
+          },
+          "product_works": {
+            "type": "noul",
+            "expected": true,
+            "size": 2
+          },
+          "main_complaint": {
+            "type": "choice",
+            "expected": "delivery",
+            "size": 4
+          }
+        }
+      },
+      "runs": [
+        {
+          "rep": 1,
+          "ok": true,
+          "status": 200,
+          "ms": 348.80000000074506,
+          "clientMs": 348.80000000074506,
+          "inputTokens": 383,
+          "cost": 0.00000766,
+          "answers": {
+            "delivery_problem": {
+              "type": "noul",
+              "noul": 0.9981289338756848
+            },
+            "product_works": {
+              "type": "noul",
+              "noul": 0.9996627878098009
+            },
+            "main_complaint": {
+              "type": "choice",
+              "choice": "delivery",
+              "probabilities": {
+                "delivery": 0.9998759423965128,
+                "quality": 0.00007991544427711714,
+                "price": 0.00002160363857559297,
+                "service": 0.00002253852063450224
+              },
+              "confidence": 0.999834589862017
+            }
+          },
+          "at": 1398.1000000014901
+        },
+        {
+          "rep": 2,
+          "ok": true,
+          "status": 200,
+          "ms": 345.5,
+          "clientMs": 345.5,
+          "inputTokens": 383,
+          "cost": 0.00000766,
+          "answers": {
+            "delivery_problem": {
+              "type": "noul",
+              "noul": 0.9981289338756848
+            },
+            "product_works": {
+              "type": "noul",
+              "noul": 0.9996627878098009
+            },
+            "main_complaint": {
+              "type": "choice",
+              "choice": "delivery",
+              "probabilities": {
+                "delivery": 0.9998759423965128,
+                "quality": 0.00007991544427711714,
+                "price": 0.00002160363857559297,
+                "service": 0.00002253852063450224
+              },
+              "confidence": 0.999834589862017
+            }
+          },
+          "at": 9056.89999999851
+        },
+        {
+          "rep": 3,
+          "ok": true,
+          "status": 200,
+          "ms": 305.5,
+          "clientMs": 305.5,
+          "inputTokens": 383,
+          "cost": 0.00000766,
+          "answers": {
+            "delivery_problem": {
+              "type": "noul",
+              "noul": 0.9981289338756848
+            },
+            "product_works": {
+              "type": "noul",
+              "noul": 0.9996627878098009
+            },
+            "main_complaint": {
+              "type": "choice",
+              "choice": "delivery",
+              "probabilities": {
+                "delivery": 0.9998759423965128,
+                "quality": 0.00007991544427711714,
+                "price": 0.00002160363857559297,
+                "service": 0.00002253852063450224
+              },
+              "confidence": 0.999834589862017
+            }
+          },
+          "at": 18481.5
+        }
+      ]
+    },
+    {
+      "meta": {
+        "id": "support-triage",
+        "name": "Triage de support",
+        "category": "Support",
+        "complexity": "simple",
+        "length": "court",
+        "lang": "en",
+        "questions": {
+          "is_urgent": {
+            "type": "noul",
+            "expected": true,
+            "size": 2
+          },
+          "department": {
+            "type": "choice",
+            "expected": "technical",
+            "size": 3
+          },
+          "frustration": {
+            "type": "score",
+            "expected": [
+              1,
+              2
+            ],
+            "size": 3
+          }
+        }
+      },
+      "runs": [
+        {
+          "rep": 1,
+          "ok": true,
+          "status": 200,
+          "ms": 284.3999999985099,
+          "clientMs": 284.3999999985099,
+          "inputTokens": 374,
+          "cost": 0.00000748,
+          "answers": {
+            "is_urgent": {
+              "type": "noul",
+              "noul": 0.9995682378778071
+            },
+            "department": {
+              "type": "choice",
+              "choice": "technical",
+              "probabilities": {
+                "billing": 0.00006990997469851572,
+                "technical": 0.9998642739810274,
+                "sales": 0.00006581604427425265
+              },
+              "confidence": 0.9997964109715409
+            },
+            "frustration": {
+              "type": "score",
+              "score": 1.9670005826650074,
+              "legend": {
+                "0": "Calm",
+                "1": "Frustrated",
+                "2": "Very angry"
+              },
+              "probabilities": {
+                "0": 0.0005448224659045334,
+                "1": 0.03190977240318353,
+                "2": 0.9675454051309119
+              },
+              "confidence": 0.9670005826650074
+            }
+          },
+          "at": 1683.699999999255
+        },
+        {
+          "rep": 2,
+          "ok": true,
+          "status": 200,
+          "ms": 296.1000000014901,
+          "clientMs": 296.1000000014901,
+          "inputTokens": 374,
+          "cost": 0.00000748,
+          "answers": {
+            "is_urgent": {
+              "type": "noul",
+              "noul": 0.9995682378778071
+            },
+            "department": {
+              "type": "choice",
+              "choice": "technical",
+              "probabilities": {
+                "billing": 0.00006990997469851572,
+                "technical": 0.9998642739810274,
+                "sales": 0.00006581604427425265
+              },
+              "confidence": 0.9997964109715409
+            },
+            "frustration": {
+              "type": "score",
+              "score": 1.9670005826650074,
+              "legend": {
+                "0": "Calm",
+                "1": "Frustrated",
+                "2": "Very angry"
+              },
+              "probabilities": {
+                "0": 0.0005448224659045334,
+                "1": 0.03190977240318353,
+                "2": 0.9675454051309119
+              },
+              "confidence": 0.9670005826650074
+            }
+          },
+          "at": 9353.699999999255
+        },
+        {
+          "rep": 3,
+          "ok": true,
+          "status": 200,
+          "ms": 296.29999999701977,
+          "clientMs": 296.29999999701977,
+          "inputTokens": 374,
+          "cost": 0.00000748,
+          "answers": {
+            "is_urgent": {
+              "type": "noul",
+              "noul": 0.9995682378778071
+            },
+            "department": {
+              "type": "choice",
+              "choice": "technical",
+              "probabilities": {
+                "billing": 0.00006990997469851572,
+                "technical": 0.9998642739810274,
+                "sales": 0.00006581604427425265
+              },
+              "confidence": 0.9997964109715409
+            },
+            "frustration": {
+              "type": "score",
+              "score": 1.9670005826650074,
+              "legend": {
+                "0": "Calm",
+                "1": "Frustrated",
+                "2": "Very angry"
+              },
+              "probabilities": {
+                "0": 0.0005448224659045334,
+                "1": 0.03190977240318353,
+                "2": 0.9675454051309119
+              },
+              "confidence": 0.9670005826650074
+            }
+          },
+          "at": 18779.5
+        }
+      ]
+    },
+    {
+      "meta": {
+        "id": "intent-routing",
+        "name": "Routage d'intention",
+        "category": "Routage",
+        "complexity": "simple",
+        "length": "court",
+        "lang": "en",
+        "questions": {
+          "tool": {
+            "type": "choice",
+            "expected": "create_reminder",
+            "size": 6
+          },
+          "has_explicit_time": {
+            "type": "noul",
+            "expected": true,
+            "size": 2
+          }
+        }
+      },
+      "runs": [
+        {
+          "rep": 1,
+          "ok": true,
+          "status": 200,
+          "ms": 247.30000000074506,
+          "clientMs": 247.30000000074506,
+          "inputTokens": 292,
+          "cost": 0.00000584,
+          "answers": {
+            "tool": {
+              "type": "choice",
+              "choice": "create_reminder",
+              "probabilities": {
+                "get_weather": 0.000051520540715667975,
+                "create_reminder": 0.9997117538323008,
+                "send_email": 0.00007352789495343413,
+                "search_web": 0.000024840396605948376,
+                "calendar_lookup": 0.00006308276167922217,
+                "none": 0.00007527457374504394
+              },
+              "confidence": 0.999654104598761
+            },
+            "has_explicit_time": {
+              "type": "noul",
+              "noul": 0.8647467416494617
+            }
+          },
+          "at": 1931.8999999985099
+        },
+        {
+          "rep": 2,
+          "ok": true,
+          "status": 200,
+          "ms": 410.1000000014901,
+          "clientMs": 410.1000000014901,
+          "inputTokens": 292,
+          "cost": 0.00000584,
+          "answers": {
+            "tool": {
+              "type": "choice",
+              "choice": "create_reminder",
+              "probabilities": {
+                "get_weather": 0.000051520540715667975,
+                "create_reminder": 0.9997117538323008,
+                "send_email": 0.00007352789495343413,
+                "search_web": 0.000024840396605948376,
+                "calendar_lookup": 0.00006308276167922217,
+                "none": 0.00007527457374504394
+              },
+              "confidence": 0.999654104598761
+            },
+            "has_explicit_time": {
+              "type": "noul",
+              "noul": 0.8647467416494617
+            }
+          },
+          "at": 9764.39999999851
+        },
+        {
+          "rep": 3,
+          "ok": true,
+          "status": 200,
+          "ms": 312.4000000022352,
+          "clientMs": 312.4000000022352,
+          "inputTokens": 292,
+          "cost": 0.00000584,
+          "answers": {
+            "tool": {
+              "type": "choice",
+              "choice": "create_reminder",
+              "probabilities": {
+                "get_weather": 0.000051520540715667975,
+                "create_reminder": 0.9997117538323008,
+                "send_email": 0.00007352789495343413,
+                "search_web": 0.000024840396605948376,
+                "calendar_lookup": 0.00006308276167922217,
+                "none": 0.00007527457374504394
+              },
+              "confidence": 0.999654104598761
+            },
+            "has_explicit_time": {
+              "type": "noul",
+              "noul": 0.8647467416494617
+            }
+          },
+          "at": 19093.199999999255
+        }
+      ]
+    },
+    {
+      "meta": {
+        "id": "moderation",
+        "name": "Modération multi-label",
+        "category": "Modération",
+        "complexity": "simple",
+        "length": "court",
+        "lang": "en",
+        "questions": {
+          "is_spam": {
+            "type": "noul",
+            "expected": true,
+            "size": 2
+          },
+          "has_personal_info": {
+            "type": "noul",
+            "expected": true,
+            "size": 2
+          },
+          "is_toxic": {
+            "type": "noul",
+            "expected": false,
+            "size": 2
+          },
+          "is_threat": {
+            "type": "noul",
+            "expected": false,
+            "size": 2
+          },
+          "category": {
+            "type": "choice",
+            "expected": "spam",
+            "size": 4
+          }
+        }
+      },
+      "runs": [
+        {
+          "rep": 1,
+          "ok": true,
+          "status": 200,
+          "ms": 343.30000000074506,
+          "clientMs": 343.30000000074506,
+          "inputTokens": 656,
+          "cost": 0.00001312,
+          "answers": {
+            "is_spam": {
+              "type": "noul",
+              "noul": 0.9992698005732248
+            },
+            "has_personal_info": {
+              "type": "noul",
+              "noul": 0.9996013835782402
+            },
+            "is_toxic": {
+              "type": "noul",
+              "noul": 0.0007171119835478769
+            },
+            "is_threat": {
+              "type": "noul",
+              "noul": 0.00008537941717865997
+            },
+            "category": {
+              "type": "choice",
+              "choice": "spam",
+              "probabilities": {
+                "ok": 0.0037603023101846914,
+                "spam": 0.9959455444833354,
+                "harassment": 0.00023127124616912053,
+                "hate": 0.00006288196031070499
+              },
+              "confidence": 0.9945940593111139
+            }
+          },
+          "at": 2275.5
+        },
+        {
+          "rep": 2,
+          "ok": true,
+          "status": 200,
+          "ms": 314.5999999977648,
+          "clientMs": 314.5999999977648,
+          "inputTokens": 656,
+          "cost": 0.00001312,
+          "answers": {
+            "is_spam": {
+              "type": "noul",
+              "noul": 0.9992698005732248
+            },
+            "has_personal_info": {
+              "type": "noul",
+              "noul": 0.9996013835782402
+            },
+            "is_toxic": {
+              "type": "noul",
+              "noul": 0.0007171119835478769
+            },
+            "is_threat": {
+              "type": "noul",
+              "noul": 0.00008537941717865997
+            },
+            "category": {
+              "type": "choice",
+              "choice": "spam",
+              "probabilities": {
+                "ok": 0.0037603023101846914,
+                "spam": 0.9959455444833354,
+                "harassment": 0.00023127124616912053,
+                "hate": 0.00006288196031070499
+              },
+              "confidence": 0.9945940593111139
+            }
+          },
+          "at": 10081.5
+        },
+        {
+          "rep": 3,
+          "ok": true,
+          "status": 200,
+          "ms": 460.30000000074506,
+          "clientMs": 460.30000000074506,
+          "inputTokens": 656,
+          "cost": 0.00001312,
+          "answers": {
+            "is_spam": {
+              "type": "noul",
+              "noul": 0.9992698005732248
+            },
+            "has_personal_info": {
+              "type": "noul",
+              "noul": 0.9996013835782402
+            },
+            "is_toxic": {
+              "type": "noul",
+              "noul": 0.0007171119835478769
+            },
+            "is_threat": {
+              "type": "noul",
+              "noul": 0.00008537941717865997
+            },
+            "category": {
+              "type": "choice",
+              "choice": "spam",
+              "probabilities": {
+                "ok": 0.0037603023101846914,
+                "spam": 0.9959455444833354,
+                "harassment": 0.00023127124616912053,
+                "hate": 0.00006288196031070499
+              },
+              "confidence": 0.9945940593111139
+            }
+          },
+          "at": 19555.199999999255
+        }
+      ]
+    },
+    {
+      "meta": {
+        "id": "dedup-positive",
+        "name": "Déduplication (même personne)",
+        "category": "Données structurées",
+        "complexity": "complexe",
+        "length": "court",
+        "lang": "en",
+        "questions": {
+          "same_person": {
+            "type": "noul",
+            "expected": true,
+            "size": 2
+          }
+        }
+      },
+      "runs": [
+        {
+          "rep": 1,
+          "ok": true,
+          "status": 200,
+          "ms": 252.5,
+          "clientMs": 252.5,
+          "inputTokens": 177,
+          "cost": 0.00000354,
+          "answers": {
+            "same_person": {
+              "type": "noul",
+              "noul": 0.24858958321803495
+            }
+          },
+          "at": 2528.39999999851
+        },
+        {
+          "rep": 2,
+          "ok": true,
+          "status": 200,
+          "ms": 243.19999999925494,
+          "clientMs": 243.19999999925494,
+          "inputTokens": 177,
+          "cost": 0.00000354,
+          "answers": {
+            "same_person": {
+              "type": "noul",
+              "noul": 0.24858958321803495
+            }
+          },
+          "at": 10326.39999999851
+        },
+        {
+          "rep": 3,
+          "ok": true,
+          "status": 200,
+          "ms": 240.19999999925494,
+          "clientMs": 240.19999999925494,
+          "inputTokens": 177,
+          "cost": 0.00000354,
+          "answers": {
+            "same_person": {
+              "type": "noul",
+              "noul": 0.24858958321803495
+            }
+          },
+          "at": 19797
+        }
+      ]
+    },
+    {
+      "meta": {
+        "id": "dedup-negative",
+        "name": "Déduplication (homonyme)",
+        "category": "Données structurées",
+        "complexity": "complexe",
+        "length": "court",
+        "lang": "en",
+        "questions": {
+          "same_person": {
+            "type": "noul",
+            "expected": false,
+            "size": 2
+          }
+        }
+      },
+      "runs": [
+        {
+          "rep": 1,
+          "ok": true,
+          "status": 200,
+          "ms": 297.69999999925494,
+          "clientMs": 297.69999999925494,
+          "inputTokens": 207,
+          "cost": 0.00000414,
+          "answers": {
+            "same_person": {
+              "type": "noul",
+              "noul": 0.00006337539415226638
+            }
+          },
+          "at": 2826.300000000745
+        },
+        {
+          "rep": 2,
+          "ok": true,
+          "status": 200,
+          "ms": 370.69999999925494,
+          "clientMs": 370.69999999925494,
+          "inputTokens": 207,
+          "cost": 0.00000414,
+          "answers": {
+            "same_person": {
+              "type": "noul",
+              "noul": 0.00006337539415226638
+            }
+          },
+          "at": 10698
+        },
+        {
+          "rep": 3,
+          "ok": true,
+          "status": 200,
+          "ms": 526.3999999985099,
+          "clientMs": 526.3999999985099,
+          "inputTokens": 207,
+          "cost": 0.00000414,
+          "answers": {
+            "same_person": {
+              "type": "noul",
+              "noul": 0.00006337539415226638
+            }
+          },
+          "at": 20325
+        }
+      ]
+    },
+    {
+      "meta": {
+        "id": "citation-check",
+        "name": "Vérification de citation",
+        "category": "Raisonnement",
+        "complexity": "complexe",
+        "length": "court",
+        "lang": "en",
+        "questions": {
+          "supported": {
+            "type": "noul",
+            "expected": false,
+            "size": 2
+          },
+          "support_level": {
+            "type": "score",
+            "expected": 0,
+            "size": 4
+          }
+        }
+      },
+      "runs": [
+        {
+          "rep": 1,
+          "ok": true,
+          "status": 200,
+          "ms": 299.5,
+          "clientMs": 299.5,
+          "inputTokens": 363,
+          "cost": 0.00000726,
+          "answers": {
+            "supported": {
+              "type": "noul",
+              "noul": 0.002525949496305614
+            },
+            "support_level": {
+              "type": "score",
+              "score": 0.13052256073014096,
+              "legend": {
+                "0": "The source contradicts the claim",
+                "1": "The source does not address the claim",
+                "2": "The source partially supports the claim",
+                "3": "The source fully supports the claim"
+              },
+              "probabilities": {
+                "0": 0.935158801364125,
+                "1": 0.0036879145128572276,
+                "2": 0.05662520615176946,
+                "3": 0.004528077971248265
+              },
+              "confidence": 0.9129849595132393
+            }
+          },
+          "at": 3126.5
+        },
+        {
+          "rep": 2,
+          "ok": true,
+          "status": 200,
+          "ms": 282.30000000074506,
+          "clientMs": 282.30000000074506,
+          "inputTokens": 363,
+          "cost": 0.00000726,
+          "answers": {
+            "supported": {
+              "type": "noul",
+              "noul": 0.002525949496305614
+            },
+            "support_level": {
+              "type": "score",
+              "score": 0.13052256073014096,
+              "legend": {
+                "0": "The source contradicts the claim",
+                "1": "The source does not address the claim",
+                "2": "The source partially supports the claim",
+                "3": "The source fully supports the claim"
+              },
+              "probabilities": {
+                "0": 0.935158801364125,
+                "1": 0.0036879145128572276,
+                "2": 0.05662520615176946,
+                "3": 0.004528077971248265
+              },
+              "confidence": 0.9129849595132393
+            }
+          },
+          "at": 10981.800000000745
+        },
+        {
+          "rep": 3,
+          "ok": true,
+          "status": 200,
+          "ms": 269.80000000074506,
+          "clientMs": 269.80000000074506,
+          "inputTokens": 363,
+          "cost": 0.00000726,
+          "answers": {
+            "supported": {
+              "type": "noul",
+              "noul": 0.002525949496305614
+            },
+            "support_level": {
+              "type": "score",
+              "score": 0.13052256073014096,
+              "legend": {
+                "0": "The source contradicts the claim",
+                "1": "The source does not address the claim",
+                "2": "The source partially supports the claim",
+                "3": "The source fully supports the claim"
+              },
+              "probabilities": {
+                "0": 0.935158801364125,
+                "1": 0.0036879145128572276,
+                "2": 0.05662520615176946,
+                "3": 0.004528077971248265
+              },
+              "confidence": 0.9129849595132393
+            }
+          },
+          "at": 20596.60000000149
+        }
+      ]
+    },
+    {
+      "meta": {
+        "id": "arithmetic",
+        "name": "Arithmétique (FR)",
+        "category": "Raisonnement",
+        "complexity": "complexe",
+        "length": "court",
+        "lang": "fr",
+        "questions": {
+          "change_correct": {
+            "type": "noul",
+            "expected": true,
+            "size": 2
+          },
+          "error_direction": {
+            "type": "choice",
+            "expected": "exact",
+            "size": 3
+          }
+        }
+      },
+      "runs": [
+        {
+          "rep": 1,
+          "ok": true,
+          "status": 200,
+          "ms": 342.5,
+          "clientMs": 342.5,
+          "inputTokens": 300,
+          "cost": 0.000006,
+          "answers": {
+            "change_correct": {
+              "type": "noul",
+              "noul": 0.8199855594427604
+            },
+            "error_direction": {
+              "type": "choice",
+              "choice": "exact",
+              "probabilities": {
+                "exact": 0.833647597490402,
+                "too_much": 0.0825447229301603,
+                "too_little": 0.08380767957943769
+              },
+              "confidence": 0.7504713962356028
+            }
+          },
+          "at": 3470.5
+        },
+        {
+          "rep": 2,
+          "ok": true,
+          "status": 200,
+          "ms": 432.1000000014901,
+          "clientMs": 432.1000000014901,
+          "inputTokens": 300,
+          "cost": 0.000006,
+          "answers": {
+            "change_correct": {
+              "type": "noul",
+              "noul": 0.8199855594427604
+            },
+            "error_direction": {
+              "type": "choice",
+              "choice": "exact",
+              "probabilities": {
+                "exact": 0.833647597490402,
+                "too_much": 0.0825447229301603,
+                "too_little": 0.08380767957943769
+              },
+              "confidence": 0.7504713962356028
+            }
+          },
+          "at": 11414.89999999851
+        },
+        {
+          "rep": 3,
+          "ok": true,
+          "status": 200,
+          "ms": 247.5,
+          "clientMs": 247.5,
+          "inputTokens": 300,
+          "cost": 0.000006,
+          "answers": {
+            "change_correct": {
+              "type": "noul",
+              "noul": 0.8199855594427604
+            },
+            "error_direction": {
+              "type": "choice",
+              "choice": "exact",
+              "probabilities": {
+                "exact": 0.833647597490402,
+                "too_much": 0.0825447229301603,
+                "too_little": 0.08380767957943769
+              },
+              "confidence": 0.7504713962356028
+            }
+          },
+          "at": 20846.39999999851
+        }
+      ]
+    },
+    {
+      "meta": {
+        "id": "logic",
+        "name": "Déduction logique",
+        "category": "Raisonnement",
+        "complexity": "complexe",
+        "length": "court",
+        "lang": "en",
+        "questions": {
+          "paul_board": {
+            "type": "noul",
+            "expected": false,
+            "size": 2
+          },
+          "laura_board": {
+            "type": "choice",
+            "expected": "unknown",
+            "size": 3
+          }
+        }
+      },
+      "runs": [
+        {
+          "rep": 1,
+          "ok": true,
+          "status": 200,
+          "ms": 365.0999999977648,
+          "clientMs": 365.0999999977648,
+          "inputTokens": 251,
+          "cost": 0.00000502,
+          "answers": {
+            "paul_board": {
+              "type": "noul",
+              "noul": 0.00004757287406556168
+            },
+            "laura_board": {
+              "type": "choice",
+              "choice": "unknown",
+              "probabilities": {
+                "yes": 0.0009627585266814584,
+                "no": 0.0003719957852607509,
+                "unknown": 0.9986652456880578
+              },
+              "confidence": 0.9979978685320867
+            }
+          },
+          "at": 3836.89999999851
+        },
+        {
+          "rep": 2,
+          "ok": true,
+          "status": 200,
+          "ms": 289,
+          "clientMs": 289,
+          "inputTokens": 251,
+          "cost": 0.00000502,
+          "answers": {
+            "paul_board": {
+              "type": "noul",
+              "noul": 0.00004757287406556168
+            },
+            "laura_board": {
+              "type": "choice",
+              "choice": "unknown",
+              "probabilities": {
+                "yes": 0.0009627585266814584,
+                "no": 0.0003719957852607509,
+                "unknown": 0.9986652456880578
+              },
+              "confidence": 0.9979978685320867
+            }
+          },
+          "at": 11705.10000000149
+        },
+        {
+          "rep": 3,
+          "ok": true,
+          "status": 200,
+          "ms": 297.6000000014901,
+          "clientMs": 297.6000000014901,
+          "inputTokens": 251,
+          "cost": 0.00000502,
+          "answers": {
+            "paul_board": {
+              "type": "noul",
+              "noul": 0.00004757287406556168
+            },
+            "laura_board": {
+              "type": "choice",
+              "choice": "unknown",
+              "probabilities": {
+                "yes": 0.0009627585266814584,
+                "no": 0.0003719957852607509,
+                "unknown": 0.9986652456880578
+              },
+              "confidence": 0.9979978685320867
+            }
+          },
+          "at": 21145.10000000149
+        }
+      ]
+    },
+    {
+      "meta": {
+        "id": "code-review",
+        "name": "Revue de code",
+        "category": "Code",
+        "complexity": "complexe",
+        "length": "moyen",
+        "lang": "code",
+        "questions": {
+          "has_security_issue": {
+            "type": "noul",
+            "expected": true,
+            "size": 2
+          },
+          "issue_type": {
+            "type": "choice",
+            "expected": "sql_injection",
+            "size": 5
+          },
+          "severity": {
+            "type": "score",
+            "expected": [
+              3,
+              4
+            ],
+            "size": 5
+          }
+        }
+      },
+      "runs": [
+        {
+          "rep": 1,
+          "ok": true,
+          "status": 200,
+          "ms": 295.6000000014901,
+          "clientMs": 295.6000000014901,
+          "inputTokens": 646,
+          "cost": 0.00001292,
+          "answers": {
+            "has_security_issue": {
+              "type": "noul",
+              "noul": 0.9998727526144575
+            },
+            "issue_type": {
+              "type": "choice",
+              "choice": "sql_injection",
+              "probabilities": {
+                "sql_injection": 0.9998965579958364,
+                "xss": 0.00001425873377650306,
+                "race_condition": 0.000009701992140310504,
+                "performance": 0.000010466172061582966,
+                "none": 0.00006901510618514579
+              },
+              "confidence": 0.9998706974947954
+            },
+            "severity": {
+              "type": "score",
+              "score": 3.8900632279566865,
+              "legend": {
+                "0": "None",
+                "1": "Low",
+                "2": "Medium",
+                "3": "High",
+                "4": "Critical"
+              },
+              "probabilities": {
+                "0": 0.0011351121722429185,
+                "1": 0.0009898679479203663,
+                "2": 0.0032724497035829547,
+                "3": 0.09588182010341474,
+                "4": 0.898720750072839
+              },
+              "confidence": 0.9450316139783432
+            }
+          },
+          "at": 4133.39999999851
+        },
+        {
+          "rep": 2,
+          "ok": true,
+          "status": 200,
+          "ms": 322.19999999925494,
+          "clientMs": 322.19999999925494,
+          "inputTokens": 646,
+          "cost": 0.00001292,
+          "answers": {
+            "has_security_issue": {
+              "type": "noul",
+              "noul": 0.9998727526144575
+            },
+            "issue_type": {
+              "type": "choice",
+              "choice": "sql_injection",
+              "probabilities": {
+                "sql_injection": 0.9998965579958364,
+                "xss": 0.00001425873377650306,
+                "race_condition": 0.000009701992140310504,
+                "performance": 0.000010466172061582966,
+                "none": 0.00006901510618514579
+              },
+              "confidence": 0.9998706974947954
+            },
+            "severity": {
+              "type": "score",
+              "score": 3.8900632279566865,
+              "legend": {
+                "0": "None",
+                "1": "Low",
+                "2": "Medium",
+                "3": "High",
+                "4": "Critical"
+              },
+              "probabilities": {
+                "0": 0.0011351121722429185,
+                "1": 0.0009898679479203663,
+                "2": 0.0032724497035829547,
+                "3": 0.09588182010341474,
+                "4": 0.898720750072839
+              },
+              "confidence": 0.9450316139783432
+            }
+          },
+          "at": 12028.300000000745
+        },
+        {
+          "rep": 3,
+          "ok": true,
+          "status": 200,
+          "ms": 280.1000000014901,
+          "clientMs": 280.1000000014901,
+          "inputTokens": 646,
+          "cost": 0.00001292,
+          "answers": {
+            "has_security_issue": {
+              "type": "noul",
+              "noul": 0.9998727526144575
+            },
+            "issue_type": {
+              "type": "choice",
+              "choice": "sql_injection",
+              "probabilities": {
+                "sql_injection": 0.9998965579958364,
+                "xss": 0.00001425873377650306,
+                "race_condition": 0.000009701992140310504,
+                "performance": 0.000010466172061582966,
+                "none": 0.00006901510618514579
+              },
+              "confidence": 0.9998706974947954
+            },
+            "severity": {
+              "type": "score",
+              "score": 3.8900632279566865,
+              "legend": {
+                "0": "None",
+                "1": "Low",
+                "2": "Medium",
+                "3": "High",
+                "4": "Critical"
+              },
+              "probabilities": {
+                "0": 0.0011351121722429185,
+                "1": 0.0009898679479203663,
+                "2": 0.0032724497035829547,
+                "3": 0.09588182010341474,
+                "4": 0.898720750072839
+              },
+              "confidence": 0.9450316139783432
+            }
+          },
+          "at": 21426.89999999851
+        }
+      ]
+    },
+    {
+      "meta": {
+        "id": "medical-triage",
+        "name": "Triage médical (FR)",
+        "category": "Support",
+        "complexity": "simple",
+        "length": "court",
+        "lang": "fr",
+        "questions": {
+          "call_emergency": {
+            "type": "noul",
+            "expected": true,
+            "size": 2
+          },
+          "priority": {
+            "type": "score",
+            "expected": 3,
+            "size": 4
+          }
+        }
+      },
+      "runs": [
+        {
+          "rep": 1,
+          "ok": true,
+          "status": 200,
+          "ms": 411.5999999977648,
+          "clientMs": 411.5999999977648,
+          "inputTokens": 289,
+          "cost": 0.00000578,
+          "answers": {
+            "call_emergency": {
+              "type": "noul",
+              "noul": 0.9998764565844116
+            },
+            "priority": {
+              "type": "score",
+              "score": 2.997667527166058,
+              "legend": {
+                "0": "Consultation non urgente",
+                "1": "Consultation dans la journée",
+                "2": "Urgences dans l’heure",
+                "3": "Urgence vitale immédiate"
+              },
+              "probabilities": {
+                "0": 0.000029710246944549338,
+                "1": 0.000036004572055606786,
+                "2": 0.0021713329489964645,
+                "3": 0.9977629522320033
+              },
+              "confidence": 0.9984450181107057
+            }
+          },
+          "at": 4546.5
+        },
+        {
+          "rep": 2,
+          "ok": true,
+          "status": 200,
+          "ms": 355.1000000014901,
+          "clientMs": 355.1000000014901,
+          "inputTokens": 289,
+          "cost": 0.00000578,
+          "answers": {
+            "call_emergency": {
+              "type": "noul",
+              "noul": 0.9998764565844116
+            },
+            "priority": {
+              "type": "score",
+              "score": 2.997667527166058,
+              "legend": {
+                "0": "Consultation non urgente",
+                "1": "Consultation dans la journée",
+                "2": "Urgences dans l’heure",
+                "3": "Urgence vitale immédiate"
+              },
+              "probabilities": {
+                "0": 0.000029710246944549338,
+                "1": 0.000036004572055606786,
+                "2": 0.0021713329489964645,
+                "3": 0.9977629522320033
+              },
+              "confidence": 0.9984450181107057
+            }
+          },
+          "at": 12384.800000000745
+        },
+        {
+          "rep": 3,
+          "ok": true,
+          "status": 200,
+          "ms": 290,
+          "clientMs": 290,
+          "inputTokens": 289,
+          "cost": 0.00000578,
+          "answers": {
+            "call_emergency": {
+              "type": "noul",
+              "noul": 0.9998764565844116
+            },
+            "priority": {
+              "type": "score",
+              "score": 2.997667527166058,
+              "legend": {
+                "0": "Consultation non urgente",
+                "1": "Consultation dans la journée",
+                "2": "Urgences dans l’heure",
+                "3": "Urgence vitale immédiate"
+              },
+              "probabilities": {
+                "0": 0.000029710246944549338,
+                "1": 0.000036004572055606786,
+                "2": 0.0021713329489964645,
+                "3": 0.9977629522320033
+              },
+              "confidence": 0.9984450181107057
+            }
+          },
+          "at": 21718
+        }
+      ]
+    },
+    {
+      "meta": {
+        "id": "ambiguous",
+        "name": "Message ambigu (calibration)",
+        "category": "Calibration",
+        "complexity": "complexe",
+        "length": "court",
+        "lang": "fr",
+        "questions": {
+          "is_satisfied": {
+            "type": "noul",
+            "expected": [
+              0.15,
+              0.85
+            ],
+            "size": 2
+          }
+        }
+      },
+      "runs": [
+        {
+          "rep": 1,
+          "ok": true,
+          "status": 200,
+          "ms": 252.40000000223517,
+          "clientMs": 252.40000000223517,
+          "inputTokens": 88,
+          "cost": 0.00000176,
+          "answers": {
+            "is_satisfied": {
+              "type": "noul",
+              "noul": 0.8440427865225911
+            }
+          },
+          "at": 4800.10000000149
+        },
+        {
+          "rep": 2,
+          "ok": true,
+          "status": 200,
+          "ms": 214.60000000149012,
+          "clientMs": 214.60000000149012,
+          "inputTokens": 88,
+          "cost": 0.00000176,
+          "answers": {
+            "is_satisfied": {
+              "type": "noul",
+              "noul": 0.8440427865225911
+            }
+          },
+          "at": 12600.199999999255
+        },
+        {
+          "rep": 3,
+          "ok": true,
+          "status": 200,
+          "ms": 232.5,
+          "clientMs": 232.5,
+          "inputTokens": 88,
+          "cost": 0.00000176,
+          "answers": {
+            "is_satisfied": {
+              "type": "noul",
+              "noul": 0.8440427865225911
+            }
+          },
+          "at": 21951.699999999255
+        }
+      ]
+    },
+    {
+      "meta": {
+        "id": "essay-rubric",
+        "name": "Correction sur grille",
+        "category": "Évaluation",
+        "complexity": "complexe",
+        "length": "moyen",
+        "lang": "en",
+        "questions": {
+          "mentions_scattering": {
+            "type": "noul",
+            "expected": true,
+            "size": 2
+          },
+          "has_factual_error": {
+            "type": "noul",
+            "expected": false,
+            "size": 2
+          },
+          "grade": {
+            "type": "score",
+            "expected": [
+              3,
+              4
+            ],
+            "size": 5
+          }
+        }
+      },
+      "runs": [
+        {
+          "rep": 1,
+          "ok": true,
+          "status": 200,
+          "ms": 292.3999999985099,
+          "clientMs": 292.3999999985099,
+          "inputTokens": 635,
+          "cost": 0.0000127,
+          "answers": {
+            "mentions_scattering": {
+              "type": "noul",
+              "noul": 0.9996475252437357
+            },
+            "has_factual_error": {
+              "type": "noul",
+              "noul": 0.0021298081999202093
+            },
+            "grade": {
+              "type": "score",
+              "score": 3.9767758205604227,
+              "legend": {
+                "0": "Off-topic or wrong",
+                "1": "Major misconceptions",
+                "2": "Partially correct",
+                "3": "Correct but incomplete",
+                "4": "Complete, precise and well explained"
+              },
+              "probabilities": {
+                "0": 0.00015530305411144067,
+                "1": 0.0003060839766603056,
+                "2": 0.004197061466630696,
+                "3": 0.013290592359889792,
+                "4": 0.9820509591427079
+              },
+              "confidence": 0.9883879102802111
+            }
+          },
+          "at": 5092.89999999851
+        },
+        {
+          "rep": 2,
+          "ok": true,
+          "status": 200,
+          "ms": 304.80000000074506,
+          "clientMs": 304.80000000074506,
+          "inputTokens": 635,
+          "cost": 0.0000127,
+          "answers": {
+            "mentions_scattering": {
+              "type": "noul",
+              "noul": 0.9996475252437357
+            },
+            "has_factual_error": {
+              "type": "noul",
+              "noul": 0.0021298081999202093
+            },
+            "grade": {
+              "type": "score",
+              "score": 3.9767758205604227,
+              "legend": {
+                "0": "Off-topic or wrong",
+                "1": "Major misconceptions",
+                "2": "Partially correct",
+                "3": "Correct but incomplete",
+                "4": "Complete, precise and well explained"
+              },
+              "probabilities": {
+                "0": 0.00015530305411144067,
+                "1": 0.0003060839766603056,
+                "2": 0.004197061466630696,
+                "3": 0.013290592359889792,
+                "4": 0.9820509591427079
+              },
+              "confidence": 0.9883879102802111
+            }
+          },
+          "at": 12906.60000000149
+        },
+        {
+          "rep": 3,
+          "ok": true,
+          "status": 200,
+          "ms": 395.5999999977648,
+          "clientMs": 395.5999999977648,
+          "inputTokens": 635,
+          "cost": 0.0000127,
+          "answers": {
+            "mentions_scattering": {
+              "type": "noul",
+              "noul": 0.9996475252437357
+            },
+            "has_factual_error": {
+              "type": "noul",
+              "noul": 0.0021298081999202093
+            },
+            "grade": {
+              "type": "score",
+              "score": 3.9767758205604227,
+              "legend": {
+                "0": "Off-topic or wrong",
+                "1": "Major misconceptions",
+                "2": "Partially correct",
+                "3": "Correct but incomplete",
+                "4": "Complete, precise and well explained"
+              },
+              "probabilities": {
+                "0": 0.00015530305411144067,
+                "1": 0.0003060839766603056,
+                "2": 0.004197061466630696,
+                "3": 0.013290592359889792,
+                "4": 0.9820509591427079
+              },
+              "confidence": 0.9883879102802111
+            }
+          },
+          "at": 22348.39999999851
+        }
+      ]
+    },
+    {
+      "meta": {
+        "id": "product-16q",
+        "name": "Annonce : 16 questions",
+        "category": "Extraction",
+        "complexity": "simple",
+        "length": "moyen",
+        "lang": "fr",
+        "questions": {
+          "is_used": {
+            "type": "noul",
+            "expected": true,
+            "size": 2
+          },
+          "is_smartphone": {
+            "type": "noul",
+            "expected": true,
+            "size": 2
+          },
+          "is_android": {
+            "type": "noul",
+            "expected": false,
+            "size": 2
+          },
+          "mentions_storage": {
+            "type": "noul",
+            "expected": true,
+            "size": 2
+          },
+          "mentions_color": {
+            "type": "noul",
+            "expected": true,
+            "size": 2
+          },
+          "price_under_500": {
+            "type": "noul",
+            "expected": true,
+            "size": 2
+          },
+          "free_shipping": {
+            "type": "noul",
+            "expected": true,
+            "size": 2
+          },
+          "battery_above_90": {
+            "type": "noul",
+            "expected": false,
+            "size": 2
+          },
+          "has_scratches": {
+            "type": "noul",
+            "expected": true,
+            "size": 2
+          },
+          "screen_damaged": {
+            "type": "noul",
+            "expected": false,
+            "size": 2
+          },
+          "charger_included": {
+            "type": "noul",
+            "expected": false,
+            "size": 2
+          },
+          "original_box": {
+            "type": "noul",
+            "expected": true,
+            "size": 2
+          },
+          "carrier_locked": {
+            "type": "noul",
+            "expected": false,
+            "size": 2
+          },
+          "pickup_possible": {
+            "type": "noul",
+            "expected": true,
+            "size": 2
+          },
+          "professional_seller": {
+            "type": "noul",
+            "expected": false,
+            "size": 2
+          },
+          "accepts_trade": {
+            "type": "noul",
+            "expected": false,
+            "size": 2
+          }
+        }
+      },
+      "runs": [
+        {
+          "rep": 1,
+          "ok": true,
+          "status": 200,
+          "ms": 472.8999999985099,
+          "clientMs": 472.8999999985099,
+          "inputTokens": 2938,
+          "cost": 0.00005876,
+          "answers": {
+            "is_used": {
+              "type": "noul",
+              "noul": 0.9998672776636243
+            },
+            "is_smartphone": {
+              "type": "noul",
+              "noul": 0.9998522549142137
+            },
+            "is_android": {
+              "type": "noul",
+              "noul": 0.00009433829337315971
+            },
+            "mentions_storage": {
+              "type": "noul",
+              "noul": 0.999814155400484
+            },
+            "mentions_color": {
+              "type": "noul",
+              "noul": 0.9998507617706992
+            },
+            "price_under_500": {
+              "type": "noul",
+              "noul": 0.9999263042820089
+            },
+            "free_shipping": {
+              "type": "noul",
+              "noul": 0.9998728966357247
+            },
+            "battery_above_90": {
+              "type": "noul",
+              "noul": 0.00010403387548670016
+            },
+            "has_scratches": {
+              "type": "noul",
+              "noul": 0.9991220499616468
+            },
+            "screen_damaged": {
+              "type": "noul",
+              "noul": 0.00007248799565144825
+            },
+            "charger_included": {
+              "type": "noul",
+              "noul": 0.00006731187606135113
+            },
+            "original_box": {
+              "type": "noul",
+              "noul": 0.9998636386285462
+            },
+            "carrier_locked": {
+              "type": "noul",
+              "noul": 0.0001130683308787119
+            },
+            "pickup_possible": {
+              "type": "noul",
+              "noul": 0.9998667979875591
+            },
+            "professional_seller": {
+              "type": "noul",
+              "noul": 0.00018517519837914096
+            },
+            "accepts_trade": {
+              "type": "noul",
+              "noul": 0.0006856344397626665
+            }
+          },
+          "at": 5566.39999999851
+        },
+        {
+          "rep": 2,
+          "ok": true,
+          "status": 200,
+          "ms": 526.3000000007451,
+          "clientMs": 526.3000000007451,
+          "inputTokens": 2938,
+          "cost": 0.00005876,
+          "answers": {
+            "is_used": {
+              "type": "noul",
+              "noul": 0.9998672776636243
+            },
+            "is_smartphone": {
+              "type": "noul",
+              "noul": 0.9998522549142137
+            },
+            "is_android": {
+              "type": "noul",
+              "noul": 0.00009433829337315971
+            },
+            "mentions_storage": {
+              "type": "noul",
+              "noul": 0.999814155400484
+            },
+            "mentions_color": {
+              "type": "noul",
+              "noul": 0.9998507617706992
+            },
+            "price_under_500": {
+              "type": "noul",
+              "noul": 0.9999263042820089
+            },
+            "free_shipping": {
+              "type": "noul",
+              "noul": 0.9998728966357247
+            },
+            "battery_above_90": {
+              "type": "noul",
+              "noul": 0.00010403387548670016
+            },
+            "has_scratches": {
+              "type": "noul",
+              "noul": 0.9991220499616468
+            },
+            "screen_damaged": {
+              "type": "noul",
+              "noul": 0.00007248799565144825
+            },
+            "charger_included": {
+              "type": "noul",
+              "noul": 0.00006731187606135113
+            },
+            "original_box": {
+              "type": "noul",
+              "noul": 0.9998636386285462
+            },
+            "carrier_locked": {
+              "type": "noul",
+              "noul": 0.0001130683308787119
+            },
+            "pickup_possible": {
+              "type": "noul",
+              "noul": 0.9998667979875591
+            },
+            "professional_seller": {
+              "type": "noul",
+              "noul": 0.00018517519837914096
+            },
+            "accepts_trade": {
+              "type": "noul",
+              "noul": 0.0006856344397626665
+            }
+          },
+          "at": 13434.60000000149
+        },
+        {
+          "rep": 3,
+          "ok": true,
+          "status": 200,
+          "ms": 517.8000000007451,
+          "clientMs": 517.8000000007451,
+          "inputTokens": 2938,
+          "cost": 0.00005876,
+          "answers": {
+            "is_used": {
+              "type": "noul",
+              "noul": 0.9998672776636243
+            },
+            "is_smartphone": {
+              "type": "noul",
+              "noul": 0.9998522549142137
+            },
+            "is_android": {
+              "type": "noul",
+              "noul": 0.00009433829337315971
+            },
+            "mentions_storage": {
+              "type": "noul",
+              "noul": 0.999814155400484
+            },
+            "mentions_color": {
+              "type": "noul",
+              "noul": 0.9998507617706992
+            },
+            "price_under_500": {
+              "type": "noul",
+              "noul": 0.9999263042820089
+            },
+            "free_shipping": {
+              "type": "noul",
+              "noul": 0.9998728966357247
+            },
+            "battery_above_90": {
+              "type": "noul",
+              "noul": 0.00010403387548670016
+            },
+            "has_scratches": {
+              "type": "noul",
+              "noul": 0.9991220499616468
+            },
+            "screen_damaged": {
+              "type": "noul",
+              "noul": 0.00007248799565144825
+            },
+            "charger_included": {
+              "type": "noul",
+              "noul": 0.00006731187606135113
+            },
+            "original_box": {
+              "type": "noul",
+              "noul": 0.9998636386285462
+            },
+            "carrier_locked": {
+              "type": "noul",
+              "noul": 0.0001130683308787119
+            },
+            "pickup_possible": {
+              "type": "noul",
+              "noul": 0.9998667979875591
+            },
+            "professional_seller": {
+              "type": "noul",
+              "noul": 0.00018517519837914096
+            },
+            "accepts_trade": {
+              "type": "noul",
+              "noul": 0.0006856344397626665
+            }
+          },
+          "at": 22868.10000000149
+        }
+      ]
+    },
+    {
+      "meta": {
+        "id": "orders-table",
+        "name": "Agrégation sur tableau JSON",
+        "category": "Données structurées",
+        "complexity": "complexe",
+        "length": "moyen",
+        "lang": "en",
+        "questions": {
+          "paid_total_over_2000": {
+            "type": "noul",
+            "expected": true,
+            "size": 2
+          },
+          "top_customer": {
+            "type": "choice",
+            "expected": "Globex",
+            "size": 3
+          },
+          "has_refund": {
+            "type": "noul",
+            "expected": true,
+            "size": 2
+          }
+        }
+      },
+      "runs": [
+        {
+          "rep": 1,
+          "ok": true,
+          "status": 200,
+          "ms": 242.80000000074506,
+          "clientMs": 242.80000000074506,
+          "inputTokens": 993,
+          "cost": 0.00001986,
+          "answers": {
+            "paid_total_over_2000": {
+              "type": "noul",
+              "noul": 0.6824119278474999
+            },
+            "top_customer": {
+              "type": "choice",
+              "choice": "Globex",
+              "probabilities": {
+                "Acme": 0.000716491839697359,
+                "Globex": 0.9953391143300547,
+                "Initech": 0.00394439383024803
+              },
+              "confidence": 0.9930086714950821
+            },
+            "has_refund": {
+              "type": "noul",
+              "noul": 0.999970139567788
+            }
+          },
+          "at": 5809.800000000745
+        },
+        {
+          "rep": 2,
+          "ok": true,
+          "status": 200,
+          "ms": 256.5,
+          "clientMs": 256.5,
+          "inputTokens": 993,
+          "cost": 0.00001986,
+          "answers": {
+            "paid_total_over_2000": {
+              "type": "noul",
+              "noul": 0.6824119278474999
+            },
+            "top_customer": {
+              "type": "choice",
+              "choice": "Globex",
+              "probabilities": {
+                "Acme": 0.000716491839697359,
+                "Globex": 0.9953391143300547,
+                "Initech": 0.00394439383024803
+              },
+              "confidence": 0.9930086714950821
+            },
+            "has_refund": {
+              "type": "noul",
+              "noul": 0.999970139567788
+            }
+          },
+          "at": 13692.699999999255
+        },
+        {
+          "rep": 3,
+          "ok": true,
+          "status": 200,
+          "ms": 423.0999999977648,
+          "clientMs": 423.0999999977648,
+          "inputTokens": 993,
+          "cost": 0.00001986,
+          "answers": {
+            "paid_total_over_2000": {
+              "type": "noul",
+              "noul": 0.6824119278474999
+            },
+            "top_customer": {
+              "type": "choice",
+              "choice": "Globex",
+              "probabilities": {
+                "Acme": 0.000716491839697359,
+                "Globex": 0.9953391143300547,
+                "Initech": 0.00394439383024803
+              },
+              "confidence": 0.9930086714950821
+            },
+            "has_refund": {
+              "type": "noul",
+              "noul": 0.999970139567788
+            }
+          },
+          "at": 23293
+        }
+      ]
+    },
+    {
+      "meta": {
+        "id": "email-long-fr",
+        "name": "E-mail client long (FR)",
+        "category": "Support",
+        "complexity": "complexe",
+        "length": "long",
+        "lang": "fr",
+        "questions": {
+          "category": {
+            "type": "choice",
+            "expected": "retard_livraison",
+            "size": 5
+          },
+          "has_deadline": {
+            "type": "noul",
+            "expected": true,
+            "size": 2
+          },
+          "threatens_escalation": {
+            "type": "noul",
+            "expected": true,
+            "size": 2
+          },
+          "asks_refund": {
+            "type": "noul",
+            "expected": true,
+            "size": 2
+          },
+          "is_insulting": {
+            "type": "noul",
+            "expected": false,
+            "size": 2
+          },
+          "tone": {
+            "type": "score",
+            "expected": 2,
+            "size": 4
+          }
+        }
+      },
+      "runs": [
+        {
+          "rep": 1,
+          "ok": true,
+          "status": 200,
+          "ms": 279.8999999985099,
+          "clientMs": 279.8999999985099,
+          "inputTokens": 3289,
+          "cost": 0.00006578,
+          "answers": {
+            "category": {
+              "type": "choice",
+              "choice": "retard_livraison",
+              "probabilities": {
+                "retard_livraison": 0.9998376463432657,
+                "produit_defectueux": 0.000025844948451602218,
+                "facturation": 0.000025497724204398975,
+                "demande_devis": 0.000006283521638773484,
+                "autre": 0.00010472746243961743
+              },
+              "confidence": 0.9997970579290821
+            },
+            "has_deadline": {
+              "type": "noul",
+              "noul": 0.9998846303824684
+            },
+            "threatens_escalation": {
+              "type": "noul",
+              "noul": 0.9997584653091997
+            },
+            "asks_refund": {
+              "type": "noul",
+              "noul": 0.9997282097785322
+            },
+            "is_insulting": {
+              "type": "noul",
+              "noul": 0.00011256333166346583
+            },
+            "tone": {
+              "type": "score",
+              "score": 1.9990683546365875,
+              "legend": {
+                "0": "Cordial et détendu",
+                "1": "Neutre",
+                "2": "Ferme mais poli",
+                "3": "Agressif"
+              },
+              "probabilities": {
+                "0": 0.00010097746943599528,
+                "1": 0.0009973050015929783,
+                "2": 0.9986341029519185,
+                "3": 0.00026761457705250225
+              },
+              "confidence": 0.9985331254824825
+            }
+          },
+          "at": 6090
+        },
+        {
+          "rep": 2,
+          "ok": true,
+          "status": 200,
+          "ms": 485.30000000074506,
+          "clientMs": 485.30000000074506,
+          "inputTokens": 3289,
+          "cost": 0.00006578,
+          "answers": {
+            "category": {
+              "type": "choice",
+              "choice": "retard_livraison",
+              "probabilities": {
+                "retard_livraison": 0.9998376463432657,
+                "produit_defectueux": 0.000025844948451602218,
+                "facturation": 0.000025497724204398975,
+                "demande_devis": 0.000006283521638773484,
+                "autre": 0.00010472746243961743
+              },
+              "confidence": 0.9997970579290821
+            },
+            "has_deadline": {
+              "type": "noul",
+              "noul": 0.9998846303824684
+            },
+            "threatens_escalation": {
+              "type": "noul",
+              "noul": 0.9997584653091997
+            },
+            "asks_refund": {
+              "type": "noul",
+              "noul": 0.9997282097785322
+            },
+            "is_insulting": {
+              "type": "noul",
+              "noul": 0.00011256333166346583
+            },
+            "tone": {
+              "type": "score",
+              "score": 1.9990683546365875,
+              "legend": {
+                "0": "Cordial et détendu",
+                "1": "Neutre",
+                "2": "Ferme mais poli",
+                "3": "Agressif"
+              },
+              "probabilities": {
+                "0": 0.00010097746943599528,
+                "1": 0.0009973050015929783,
+                "2": 0.9986341029519185,
+                "3": 0.00026761457705250225
+              },
+              "confidence": 0.9985331254824825
+            }
+          },
+          "at": 14179
+        },
+        {
+          "rep": 3,
+          "ok": true,
+          "status": 200,
+          "ms": 407.4000000022352,
+          "clientMs": 407.4000000022352,
+          "inputTokens": 3289,
+          "cost": 0.00006578,
+          "answers": {
+            "category": {
+              "type": "choice",
+              "choice": "retard_livraison",
+              "probabilities": {
+                "retard_livraison": 0.9998376463432657,
+                "produit_defectueux": 0.000025844948451602218,
+                "facturation": 0.000025497724204398975,
+                "demande_devis": 0.000006283521638773484,
+                "autre": 0.00010472746243961743
+              },
+              "confidence": 0.9997970579290821
+            },
+            "has_deadline": {
+              "type": "noul",
+              "noul": 0.9998846303824684
+            },
+            "threatens_escalation": {
+              "type": "noul",
+              "noul": 0.9997584653091997
+            },
+            "asks_refund": {
+              "type": "noul",
+              "noul": 0.9997282097785322
+            },
+            "is_insulting": {
+              "type": "noul",
+              "noul": 0.00011256333166346583
+            },
+            "tone": {
+              "type": "score",
+              "score": 1.9990683546365875,
+              "legend": {
+                "0": "Cordial et détendu",
+                "1": "Neutre",
+                "2": "Ferme mais poli",
+                "3": "Agressif"
+              },
+              "probabilities": {
+                "0": 0.00010097746943599528,
+                "1": 0.0009973050015929783,
+                "2": 0.9986341029519185,
+                "3": 0.00026761457705250225
+              },
+              "confidence": 0.9985331254824825
+            }
+          },
+          "at": 23703.699999999255
+        }
+      ]
+    },
+    {
+      "meta": {
+        "id": "meeting-long-fr",
+        "name": "Compte rendu de réunion (FR)",
+        "category": "Extraction",
+        "complexity": "complexe",
+        "length": "long",
+        "lang": "fr",
+        "questions": {
+          "launch_decision": {
+            "type": "choice",
+            "expected": "maintenu",
+            "size": 4
+          },
+          "go_nogo_owner": {
+            "type": "choice",
+            "expected": "Karim",
+            "size": 5
+          },
+          "budget_approved": {
+            "type": "noul",
+            "expected": false,
+            "size": 2
+          },
+          "sales_can_announce_date": {
+            "type": "noul",
+            "expected": false,
+            "size": 2
+          },
+          "tension_level": {
+            "type": "score",
+            "expected": 1,
+            "size": 4
+          }
+        }
+      },
+      "runs": [
+        {
+          "rep": 1,
+          "ok": true,
+          "status": 200,
+          "ms": 304.20000000298023,
+          "clientMs": 304.20000000298023,
+          "inputTokens": 3881,
+          "cost": 0.00007762,
+          "answers": {
+            "launch_decision": {
+              "type": "choice",
+              "choice": "maintenu",
+              "probabilities": {
+                "maintenu": 0.9999576872806788,
+                "decale_janvier": 0.000013617373381929443,
+                "annule": 0.000009580680722579816,
+                "pas_de_decision": 0.000019114665216567103
+              },
+              "confidence": 0.999943583040905
+            },
+            "go_nogo_owner": {
+              "type": "choice",
+              "choice": "Karim",
+              "probabilities": {
+                "Sophie": 0.00011282047175281676,
+                "Karim": 0.9997760304714443,
+                "Ines": 0.0000421345776309907,
+                "Marc": 0.000015561067378176666,
+                "Julie": 0.00005345341179362862
+              },
+              "confidence": 0.9997200380893053
+            },
+            "budget_approved": {
+              "type": "noul",
+              "noul": 0.0000650595172719508
+            },
+            "sales_can_announce_date": {
+              "type": "noul",
+              "noul": 0.00008858062018878148
+            },
+            "tension_level": {
+              "type": "score",
+              "score": 0.9568356227443885,
+              "legend": {
+                "0": "Aucune tension",
+                "1": "Désaccords légers et constructifs",
+                "2": "Tensions marquées",
+                "3": "Conflit ouvert"
+              },
+              "probabilities": {
+                "0": 0.04996330616699767,
+                "1": 0.943708074832961,
+                "2": 0.005858309088695986,
+                "3": 0.00047030991134513426
+              },
+              "confidence": 0.943237764921616
+            }
+          },
+          "at": 6394.699999999255
+        },
+        {
+          "rep": 2,
+          "ok": true,
+          "status": 200,
+          "ms": 298.30000000074506,
+          "clientMs": 298.30000000074506,
+          "inputTokens": 3881,
+          "cost": 0.00007762,
+          "answers": {
+            "launch_decision": {
+              "type": "choice",
+              "choice": "maintenu",
+              "probabilities": {
+                "maintenu": 0.9999576872806788,
+                "decale_janvier": 0.000013617373381929443,
+                "annule": 0.000009580680722579816,
+                "pas_de_decision": 0.000019114665216567103
+              },
+              "confidence": 0.999943583040905
+            },
+            "go_nogo_owner": {
+              "type": "choice",
+              "choice": "Karim",
+              "probabilities": {
+                "Sophie": 0.00011282047175281676,
+                "Karim": 0.9997760304714443,
+                "Ines": 0.0000421345776309907,
+                "Marc": 0.000015561067378176666,
+                "Julie": 0.00005345341179362862
+              },
+              "confidence": 0.9997200380893053
+            },
+            "budget_approved": {
+              "type": "noul",
+              "noul": 0.0000650595172719508
+            },
+            "sales_can_announce_date": {
+              "type": "noul",
+              "noul": 0.00008858062018878148
+            },
+            "tension_level": {
+              "type": "score",
+              "score": 0.9568356227443885,
+              "legend": {
+                "0": "Aucune tension",
+                "1": "Désaccords légers et constructifs",
+                "2": "Tensions marquées",
+                "3": "Conflit ouvert"
+              },
+              "probabilities": {
+                "0": 0.04996330616699767,
+                "1": 0.943708074832961,
+                "2": 0.005858309088695986,
+                "3": 0.00047030991134513426
+              },
+              "confidence": 0.943237764921616
+            }
+          },
+          "at": 14478.89999999851
+        },
+        {
+          "rep": 3,
+          "ok": true,
+          "status": 200,
+          "ms": 308.1000000014901,
+          "clientMs": 308.1000000014901,
+          "inputTokens": 3881,
+          "cost": 0.00007762,
+          "answers": {
+            "launch_decision": {
+              "type": "choice",
+              "choice": "maintenu",
+              "probabilities": {
+                "maintenu": 0.9999576872806788,
+                "decale_janvier": 0.000013617373381929443,
+                "annule": 0.000009580680722579816,
+                "pas_de_decision": 0.000019114665216567103
+              },
+              "confidence": 0.999943583040905
+            },
+            "go_nogo_owner": {
+              "type": "choice",
+              "choice": "Karim",
+              "probabilities": {
+                "Sophie": 0.00011282047175281676,
+                "Karim": 0.9997760304714443,
+                "Ines": 0.0000421345776309907,
+                "Marc": 0.000015561067378176666,
+                "Julie": 0.00005345341179362862
+              },
+              "confidence": 0.9997200380893053
+            },
+            "budget_approved": {
+              "type": "noul",
+              "noul": 0.0000650595172719508
+            },
+            "sales_can_announce_date": {
+              "type": "noul",
+              "noul": 0.00008858062018878148
+            },
+            "tension_level": {
+              "type": "score",
+              "score": 0.9568356227443885,
+              "legend": {
+                "0": "Aucune tension",
+                "1": "Désaccords légers et constructifs",
+                "2": "Tensions marquées",
+                "3": "Conflit ouvert"
+              },
+              "probabilities": {
+                "0": 0.04996330616699767,
+                "1": 0.943708074832961,
+                "2": 0.005858309088695986,
+                "3": 0.00047030991134513426
+              },
+              "confidence": 0.943237764921616
+            }
+          },
+          "at": 24013.60000000149
+        }
+      ]
+    },
+    {
+      "meta": {
+        "id": "contract-long-en",
+        "name": "Analyse de contrat (EN)",
+        "category": "Juridique",
+        "complexity": "complexe",
+        "length": "long",
+        "lang": "en",
+        "questions": {
+          "auto_renewal": {
+            "type": "noul",
+            "expected": true,
+            "size": 2
+          },
+          "non_renewal_notice": {
+            "type": "choice",
+            "expected": "90_days",
+            "size": 5
+          },
+          "governing_law": {
+            "type": "choice",
+            "expected": "england",
+            "size": 5
+          },
+          "termination_for_convenience": {
+            "type": "noul",
+            "expected": false,
+            "size": 2
+          },
+          "liability_capped": {
+            "type": "noul",
+            "expected": true,
+            "size": 2
+          },
+          "eu_hosting": {
+            "type": "noul",
+            "expected": true,
+            "size": 2
+          },
+          "customer_risk": {
+            "type": "score",
+            "expected": [
+              1,
+              2
+            ],
+            "size": 4
+          }
+        }
+      },
+      "runs": [
+        {
+          "rep": 1,
+          "ok": true,
+          "status": 200,
+          "ms": 300.0999999977648,
+          "clientMs": 300.0999999977648,
+          "inputTokens": 6855,
+          "cost": 0.0001371,
+          "answers": {
+            "auto_renewal": {
+              "type": "noul",
+              "noul": 0.9999099454530265
+            },
+            "non_renewal_notice": {
+              "type": "choice",
+              "choice": "90_days",
+              "probabilities": {
+                "30_days": 0.000008621208604652889,
+                "45_days": 0.000011903316583946186,
+                "60_days": 0.0000724174831142517,
+                "90_days": 0.9998974494420957,
+                "none": 0.000009608549601291378
+              },
+              "confidence": 0.9998718118026195
+            },
+            "governing_law": {
+              "type": "choice",
+              "choice": "england",
+              "probabilities": {
+                "france": 0.000034010169169041,
+                "england": 0.9999357691481442,
+                "us": 0.000011995596129772866,
+                "eu": 0.000006156833877794463,
+                "unspecified": 0.000012068252679050987
+              },
+              "confidence": 0.9999197114351801
+            },
+            "termination_for_convenience": {
+              "type": "noul",
+              "noul": 0.00003775898641979556
+            },
+            "liability_capped": {
+              "type": "noul",
+              "noul": 0.9998436939442868
+            },
+            "eu_hosting": {
+              "type": "noul",
+              "noul": 0.9999251098118856
+            },
+            "customer_risk": {
+              "type": "score",
+              "score": 1.8222010534494926,
+              "legend": {
+                "0": "Very favourable to Customer",
+                "1": "Balanced",
+                "2": "Somewhat restrictive",
+                "3": "Very restrictive"
+              },
+              "probabilities": {
+                "0": 0.003290067877496837,
+                "1": 0.2147602086622912,
+                "2": 0.7384083255934343,
+                "3": 0.04354139786677758
+              },
+              "confidence": 0.7351182577159375
+            }
+          },
+          "at": 6696
+        },
+        {
+          "rep": 2,
+          "ok": true,
+          "status": 200,
+          "ms": 416.1000000014901,
+          "clientMs": 416.1000000014901,
+          "inputTokens": 6855,
+          "cost": 0.0001371,
+          "answers": {
+            "auto_renewal": {
+              "type": "noul",
+              "noul": 0.9999099454530265
+            },
+            "non_renewal_notice": {
+              "type": "choice",
+              "choice": "90_days",
+              "probabilities": {
+                "30_days": 0.000008621208604652889,
+                "45_days": 0.000011903316583946186,
+                "60_days": 0.0000724174831142517,
+                "90_days": 0.9998974494420957,
+                "none": 0.000009608549601291378
+              },
+              "confidence": 0.9998718118026195
+            },
+            "governing_law": {
+              "type": "choice",
+              "choice": "england",
+              "probabilities": {
+                "france": 0.000034010169169041,
+                "england": 0.9999357691481442,
+                "us": 0.000011995596129772866,
+                "eu": 0.000006156833877794463,
+                "unspecified": 0.000012068252679050987
+              },
+              "confidence": 0.9999197114351801
+            },
+            "termination_for_convenience": {
+              "type": "noul",
+              "noul": 0.00003775898641979556
+            },
+            "liability_capped": {
+              "type": "noul",
+              "noul": 0.9998436939442868
+            },
+            "eu_hosting": {
+              "type": "noul",
+              "noul": 0.9999251098118856
+            },
+            "customer_risk": {
+              "type": "score",
+              "score": 1.8222010534494926,
+              "legend": {
+                "0": "Very favourable to Customer",
+                "1": "Balanced",
+                "2": "Somewhat restrictive",
+                "3": "Very restrictive"
+              },
+              "probabilities": {
+                "0": 0.003290067877496837,
+                "1": 0.2147602086622912,
+                "2": 0.7384083255934343,
+                "3": 0.04354139786677758
+              },
+              "confidence": 0.7351182577159375
+            }
+          },
+          "at": 14896.199999999255
+        },
+        {
+          "rep": 3,
+          "ok": true,
+          "status": 200,
+          "ms": 311.9000000022352,
+          "clientMs": 311.9000000022352,
+          "inputTokens": 6855,
+          "cost": 0.0001371,
+          "answers": {
+            "auto_renewal": {
+              "type": "noul",
+              "noul": 0.9999099454530265
+            },
+            "non_renewal_notice": {
+              "type": "choice",
+              "choice": "90_days",
+              "probabilities": {
+                "30_days": 0.000008621208604652889,
+                "45_days": 0.000011903316583946186,
+                "60_days": 0.0000724174831142517,
+                "90_days": 0.9998974494420957,
+                "none": 0.000009608549601291378
+              },
+              "confidence": 0.9998718118026195
+            },
+            "governing_law": {
+              "type": "choice",
+              "choice": "england",
+              "probabilities": {
+                "france": 0.000034010169169041,
+                "england": 0.9999357691481442,
+                "us": 0.000011995596129772866,
+                "eu": 0.000006156833877794463,
+                "unspecified": 0.000012068252679050987
+              },
+              "confidence": 0.9999197114351801
+            },
+            "termination_for_convenience": {
+              "type": "noul",
+              "noul": 0.00003775898641979556
+            },
+            "liability_capped": {
+              "type": "noul",
+              "noul": 0.9998436939442868
+            },
+            "eu_hosting": {
+              "type": "noul",
+              "noul": 0.9999251098118856
+            },
+            "customer_risk": {
+              "type": "score",
+              "score": 1.8222010534494926,
+              "legend": {
+                "0": "Very favourable to Customer",
+                "1": "Balanced",
+                "2": "Somewhat restrictive",
+                "3": "Very restrictive"
+              },
+              "probabilities": {
+                "0": 0.003290067877496837,
+                "1": 0.2147602086622912,
+                "2": 0.7384083255934343,
+                "3": 0.04354139786677758
+              },
+              "confidence": 0.7351182577159375
+            }
+          },
+          "at": 24327.10000000149
+        }
+      ]
+    },
+    {
+      "meta": {
+        "id": "catalog-needle",
+        "name": "Aiguille dans un catalogue",
+        "category": "Contexte long",
+        "complexity": "complexe",
+        "length": "très long",
+        "lang": "fr",
+        "questions": {
+          "audio_out_of_stock": {
+            "type": "noul",
+            "expected": false,
+            "size": 2
+          },
+          "video_out_of_stock": {
+            "type": "noul",
+            "expected": false,
+            "size": 2
+          },
+          "out_of_stock_category": {
+            "type": "choice",
+            "expected": "maison",
+            "size": 5
+          }
+        }
+      },
+      "runs": [
+        {
+          "rep": 1,
+          "ok": true,
+          "status": 200,
+          "ms": 444.5,
+          "clientMs": 444.5,
+          "inputTokens": 8378,
+          "cost": 0.00016756,
+          "answers": {
+            "audio_out_of_stock": {
+              "type": "noul",
+              "noul": 0.000008898426143614547
+            },
+            "video_out_of_stock": {
+              "type": "noul",
+              "noul": 0.000006298215173047843
+            },
+            "out_of_stock_category": {
+              "type": "choice",
+              "choice": "maison",
+              "probabilities": {
+                "audio": 0.000004465118860766834,
+                "video": 0.000005032573162840829,
+                "informatique": 0.000005854015852796936,
+                "maison": 0.9999788887980904,
+                "sport": 0.0000057594940331786
+              },
+              "confidence": 0.9999736109976128
+            }
+          },
+          "at": 7142.89999999851
+        },
+        {
+          "rep": 2,
+          "ok": true,
+          "status": 200,
+          "ms": 302.5,
+          "clientMs": 302.5,
+          "inputTokens": 8378,
+          "cost": 0.00016756,
+          "answers": {
+            "audio_out_of_stock": {
+              "type": "noul",
+              "noul": 0.000008898426143614547
+            },
+            "video_out_of_stock": {
+              "type": "noul",
+              "noul": 0.000006298215173047843
+            },
+            "out_of_stock_category": {
+              "type": "choice",
+              "choice": "maison",
+              "probabilities": {
+                "audio": 0.000004465118860766834,
+                "video": 0.000005032573162840829,
+                "informatique": 0.000005854015852796936,
+                "maison": 0.9999788887980904,
+                "sport": 0.0000057594940331786
+              },
+              "confidence": 0.9999736109976128
+            }
+          },
+          "at": 15200.300000000745
+        },
+        {
+          "rep": 3,
+          "ok": true,
+          "status": 200,
+          "ms": 397.8999999985099,
+          "clientMs": 397.8999999985099,
+          "inputTokens": 8378,
+          "cost": 0.00016756,
+          "answers": {
+            "audio_out_of_stock": {
+              "type": "noul",
+              "noul": 0.000008898426143614547
+            },
+            "video_out_of_stock": {
+              "type": "noul",
+              "noul": 0.000006298215173047843
+            },
+            "out_of_stock_category": {
+              "type": "choice",
+              "choice": "maison",
+              "probabilities": {
+                "audio": 0.000004465118860766834,
+                "video": 0.000005032573162840829,
+                "informatique": 0.000005854015852796936,
+                "maison": 0.9999788887980904,
+                "sport": 0.0000057594940331786
+              },
+              "confidence": 0.9999736109976128
+            }
+          },
+          "at": 24726.800000000745
+        }
+      ]
+    },
+    {
+      "meta": {
+        "id": "logs-incident",
+        "name": "Analyse de logs (incident)",
+        "category": "Contexte long",
+        "complexity": "complexe",
+        "length": "très long",
+        "lang": "en",
+        "questions": {
+          "root_cause": {
+            "type": "choice",
+            "expected": "memory",
+            "size": 5
+          },
+          "affected_service": {
+            "type": "choice",
+            "expected": "orders",
+            "size": 5
+          },
+          "users_impacted": {
+            "type": "noul",
+            "expected": true,
+            "size": 2
+          },
+          "severity": {
+            "type": "score",
+            "expected": [
+              2,
+              3
+            ],
+            "size": 4
+          }
+        }
+      },
+      "runs": [
+        {
+          "rep": 1,
+          "ok": true,
+          "status": 200,
+          "ms": 573.1000000014901,
+          "clientMs": 573.1000000014901,
+          "inputTokens": 17600,
+          "cost": 0.000352,
+          "answers": {
+            "root_cause": {
+              "type": "choice",
+              "choice": "memory",
+              "probabilities": {
+                "memory": 0.9999629926037253,
+                "disk": 0.000013461269496968545,
+                "network": 0.000008160274515768186,
+                "auth": 0.0000010725081904077894,
+                "config": 0.000014313344071709695
+              },
+              "confidence": 0.9999537407546566
+            },
+            "affected_service": {
+              "type": "choice",
+              "choice": "orders",
+              "probabilities": {
+                "api-gateway": 0.0009087899797999468,
+                "auth": 0.0000055617753825387465,
+                "orders": 0.9990302964417379,
+                "payments": 0.00002591783218915735,
+                "catalog": 0.00002943397089058216
+              },
+              "confidence": 0.9987878705521724
+            },
+            "users_impacted": {
+              "type": "noul",
+              "noul": 0.9968310279126177
+            },
+            "severity": {
+              "type": "score",
+              "score": 1.7976776868341953,
+              "legend": {
+                "0": "SEV4 — cosmetic",
+                "1": "SEV3 — minor",
+                "2": "SEV2 — major, partial outage",
+                "3": "SEV1 — full outage"
+              },
+              "probabilities": {
+                "0": 0.003195112085121541,
+                "1": 0.19782847490108202,
+                "2": 0.7970800271082759,
+                "3": 0.0018963859055205702
+              },
+              "confidence": 0.7938849150231544
+            }
+          },
+          "at": 7717.5
+        },
+        {
+          "rep": 2,
+          "ok": true,
+          "status": 200,
+          "ms": 1947.1000000014901,
+          "clientMs": 1947.1000000014901,
+          "inputTokens": 17600,
+          "cost": 0.000352,
+          "answers": {
+            "root_cause": {
+              "type": "choice",
+              "choice": "memory",
+              "probabilities": {
+                "memory": 0.9999629926037253,
+                "disk": 0.000013461269496968545,
+                "network": 0.000008160274515768186,
+                "auth": 0.0000010725081904077894,
+                "config": 0.000014313344071709695
+              },
+              "confidence": 0.9999537407546566
+            },
+            "affected_service": {
+              "type": "choice",
+              "choice": "orders",
+              "probabilities": {
+                "api-gateway": 0.0009087899797999468,
+                "auth": 0.0000055617753825387465,
+                "orders": 0.9990302964417379,
+                "payments": 0.00002591783218915735,
+                "catalog": 0.00002943397089058216
+              },
+              "confidence": 0.9987878705521724
+            },
+            "users_impacted": {
+              "type": "noul",
+              "noul": 0.9968310279126177
+            },
+            "severity": {
+              "type": "score",
+              "score": 1.7976776868341953,
+              "legend": {
+                "0": "SEV4 — cosmetic",
+                "1": "SEV3 — minor",
+                "2": "SEV2 — major, partial outage",
+                "3": "SEV1 — full outage"
+              },
+              "probabilities": {
+                "0": 0.003195112085121541,
+                "1": 0.19782847490108202,
+                "2": 0.7970800271082759,
+                "3": 0.0018963859055205702
+              },
+              "confidence": 0.7938849150231544
+            }
+          },
+          "at": 17148.60000000149
+        },
+        {
+          "rep": 3,
+          "ok": true,
+          "status": 200,
+          "ms": 398.19999999925494,
+          "clientMs": 398.19999999925494,
+          "inputTokens": 17600,
+          "cost": 0.000352,
+          "answers": {
+            "root_cause": {
+              "type": "choice",
+              "choice": "memory",
+              "probabilities": {
+                "memory": 0.9999629926037253,
+                "disk": 0.000013461269496968545,
+                "network": 0.000008160274515768186,
+                "auth": 0.0000010725081904077894,
+                "config": 0.000014313344071709695
+              },
+              "confidence": 0.9999537407546566
+            },
+            "affected_service": {
+              "type": "choice",
+              "choice": "orders",
+              "probabilities": {
+                "api-gateway": 0.0009087899797999468,
+                "auth": 0.0000055617753825387465,
+                "orders": 0.9990302964417379,
+                "payments": 0.00002591783218915735,
+                "catalog": 0.00002943397089058216
+              },
+              "confidence": 0.9987878705521724
+            },
+            "users_impacted": {
+              "type": "noul",
+              "noul": 0.9968310279126177
+            },
+            "severity": {
+              "type": "score",
+              "score": 1.7976776868341953,
+              "legend": {
+                "0": "SEV4 — cosmetic",
+                "1": "SEV3 — minor",
+                "2": "SEV2 — major, partial outage",
+                "3": "SEV1 — full outage"
+              },
+              "probabilities": {
+                "0": 0.003195112085121541,
+                "1": 0.19782847490108202,
+                "2": 0.7970800271082759,
+                "3": 0.0018963859055205702
+              },
+              "confidence": 0.7938849150231544
+            }
+          },
+          "at": 25127
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "cases": 23,
+    "requests": 69,
+    "ok": 69,
+    "errorRate": 0,
+    "latency": {
+      "n": 69,
+      "mean": 362.8550724638221,
+      "min": 214.60000000149012,
+      "p50": 308.1000000014901,
+      "p90": 472.0999999985099,
+      "p95": 522.900000000745,
+      "p99": 1012.7800000014807,
+      "max": 1947.1000000014901,
+      "stdev": 210.0468690949305
+    },
+    "inputTokens": 147786,
+    "cost": 0.00295572,
+    "tokensPerSec": 5902.703998081959,
+    "msPerToken": 0.7917112299505084,
+    "requestsPerSec": 2.745962638989404,
+    "accuracy": 0.9875,
+    "quality": 0.9785875454449494,
+    "consistency": 1,
+    "byType": {
+      "choice": {
+        "questions": 17,
+        "accuracy": 1,
+        "quality": 0.9894347714333643
+      },
+      "noul": {
+        "questions": 52,
+        "accuracy": 0.9807692307692307,
+        "quality": 0.9729430188015074
+      },
+      "score": {
+        "questions": 11,
+        "accuracy": 1,
+        "quality": 0.9885068675954873
+      }
+    },
+    "byLength": [
+      {
+        "key": "court",
+        "cases": 14,
+        "latency": {
+          "n": 42,
+          "mean": 322.1976190475481,
+          "min": 214.60000000149012,
+          "p50": 299.2999999988824,
+          "p90": 411.44999999813734,
+          "p95": 458.8900000007822,
+          "p99": 504.0549999985097,
+          "max": 526.3999999985099,
+          "stdev": 70.78640660464934
+        },
+        "accuracy": 0.9666666666666667,
+        "quality": 0.956782736673295
+      },
+      {
+        "key": "moyen",
+        "cases": 4,
+        "latency": {
+          "n": 12,
+          "mean": 360.8416666664804,
+          "min": 242.80000000074506,
+          "p50": 313.5,
+          "p90": 513.3100000005215,
+          "p95": 521.6250000007451,
+          "p99": 525.3650000007451,
+          "max": 526.3000000007451,
+          "stdev": 102.05547028496831
+        },
+        "accuracy": 1,
+        "quality": 0.9868688918653747
+      },
+      {
+        "key": "long",
+        "cases": 3,
+        "latency": {
+          "n": 9,
+          "mean": 345.7000000009106,
+          "min": 279.8999999985099,
+          "p50": 308.1000000014901,
+          "p90": 429.9400000013411,
+          "p95": 457.6200000010431,
+          "p99": 479.7640000008047,
+          "max": 485.30000000074506,
+          "stdev": 71.75080138969918
+        },
+        "accuracy": 1,
+        "quality": 0.9990806667057301
+      },
+      {
+        "key": "très long",
+        "cases": 2,
+        "latency": {
+          "n": 6,
+          "mean": 677.2166666667908,
+          "min": 302.5,
+          "p50": 421.34999999962747,
+          "p90": 1260.1000000014901,
+          "p95": 1603.6000000014901,
+          "p99": 1878.4000000014903,
+          "max": 1947.1000000014901,
+          "stdev": 628.312293105595
+        },
+        "accuracy": 1,
+        "quality": 0.9897638911513695
+      }
+    ],
+    "byComplexity": [
+      {
+        "key": "complexe",
+        "cases": 16,
+        "latency": {
+          "n": 48,
+          "mean": 365.47916666682187,
+          "min": 214.60000000149012,
+          "p50": 304.50000000186265,
+          "p90": 452.71999999955307,
+          "p95": 512.0149999992922,
+          "p99": 1301.3200000014917,
+          "max": 1947.1000000014901,
+          "stdev": 246.60485315448358
+        },
+        "accuracy": 0.9795918367346939,
+        "quality": 0.9680503189166029
+      },
+      {
+        "key": "simple",
+        "cases": 7,
+        "latency": {
+          "n": 21,
+          "mean": 356.8571428569655,
+          "min": 247.30000000074506,
+          "p50": 314.9000000022352,
+          "p90": 472.8999999985099,
+          "p95": 517.8000000007451,
+          "p99": 524.600000000745,
+          "max": 526.3000000007451,
+          "stdev": 83.9037875870226
+        },
+        "accuracy": 1,
+        "quality": 0.9952431615703998
+      }
+    ],
+    "byCategory": [
+      {
+        "key": "Calibration",
+        "cases": 1,
+        "latency": {
+          "n": 3,
+          "mean": 233.16666666790843,
+          "min": 214.60000000149012,
+          "p50": 232.5,
+          "p90": 248.42000000178814,
+          "p95": 250.41000000201166,
+          "p99": 252.00200000219047,
+          "max": 252.40000000223517,
+          "stdev": 18.908816286289756
+        },
+        "accuracy": 1,
+        "quality": 1
+      },
+      {
+        "key": "Classification",
+        "cases": 1,
+        "latency": {
+          "n": 3,
+          "mean": 317.6333333340784,
+          "min": 254.10000000149012,
+          "p50": 314.9000000022352,
+          "p90": 370.0999999992549,
+          "p95": 376.9999999988824,
+          "p99": 382.51999999858435,
+          "max": 383.8999999985099,
+          "stdev": 64.94315462875058
+        },
+        "accuracy": 1,
+        "quality": 0.9990683236404826
+      },
+      {
+        "key": "Code",
+        "cases": 1,
+        "latency": {
+          "n": 3,
+          "mean": 299.30000000074506,
+          "min": 280.1000000014901,
+          "p50": 295.6000000014901,
+          "p90": 316.87999999970197,
+          "p95": 319.5399999994785,
+          "p99": 321.66799999929964,
+          "max": 322.19999999925494,
+          "stdev": 21.292486936682963
+        },
+        "accuracy": 1,
+        "quality": 0.9999231035367645
+      },
+      {
+        "key": "Contexte long",
+        "cases": 2,
+        "latency": {
+          "n": 6,
+          "mean": 677.2166666667908,
+          "min": 302.5,
+          "p50": 421.34999999962747,
+          "p90": 1260.1000000014901,
+          "p95": 1603.6000000014901,
+          "p99": 1878.4000000014903,
+          "max": 1947.1000000014901,
+          "stdev": 628.312293105595
+        },
+        "accuracy": 1,
+        "quality": 0.9897638911513695
+      },
+      {
+        "key": "Données structurées",
+        "cases": 3,
+        "latency": {
+          "n": 9,
+          "mean": 317.01111111044884,
+          "min": 240.19999999925494,
+          "p50": 256.5,
+          "p90": 443.75999999791384,
+          "p95": 485.0799999982118,
+          "p99": 518.1359999984503,
+          "max": 526.3999999985099,
+          "stdev": 101.87772627508751
+        },
+        "accuracy": 0.8,
+        "quality": 0.7852494779138451
+      },
+      {
+        "key": "Évaluation",
+        "cases": 1,
+        "latency": {
+          "n": 3,
+          "mean": 330.93333333233994,
+          "min": 292.3999999985099,
+          "p50": 304.80000000074506,
+          "p90": 377.43999999836086,
+          "p95": 386.5199999980629,
+          "p99": 393.7839999978244,
+          "max": 395.5999999977648,
+          "stdev": 56.345126969656754
+        },
+        "accuracy": 1,
+        "quality": 0.9991725723479385
+      },
+      {
+        "key": "Extraction",
+        "cases": 2,
+        "latency": {
+          "n": 6,
+          "mean": 404.6000000008692,
+          "min": 298.30000000074506,
+          "p50": 390.5,
+          "p90": 522.0500000007451,
+          "p95": 524.1750000007451,
+          "p99": 525.8750000007451,
+          "max": 526.3000000007451,
+          "stdev": 112.23379170205564
+        },
+        "accuracy": 1,
+        "quality": 0.9991383828141764
+      },
+      {
+        "key": "Juridique",
+        "cases": 1,
+        "latency": {
+          "n": 3,
+          "mean": 342.7000000004967,
+          "min": 300.0999999977648,
+          "p50": 311.9000000022352,
+          "p90": 395.2600000016391,
+          "p95": 405.6800000015646,
+          "p99": 414.016000001505,
+          "max": 416.1000000014901,
+          "stdev": 63.83948621453457
+        },
+        "accuracy": 1,
+        "quality": 0.9999248869732885
+      },
+      {
+        "key": "Modération",
+        "cases": 1,
+        "latency": {
+          "n": 3,
+          "mean": 372.733333333085,
+          "min": 314.5999999977648,
+          "p50": 343.30000000074506,
+          "p90": 436.9000000007451,
+          "p95": 448.600000000745,
+          "p99": 457.960000000745,
+          "max": 460.30000000074506,
+          "stdev": 77.1807186640976
+        },
+        "accuracy": 1,
+        "quality": 0.9988028474468148
+      },
+      {
+        "key": "Raisonnement",
+        "cases": 3,
+        "latency": {
+          "n": 9,
+          "mean": 313.9333333335817,
+          "min": 247.5,
+          "p50": 297.6000000014901,
+          "p90": 378.4999999985099,
+          "p95": 405.29999999999995,
+          "p99": 426.7400000011921,
+          "max": 432.1000000014901,
+          "stdev": 56.85070360158467
+        },
+        "accuracy": 1,
+        "quality": 0.9343695600012447
+      },
+      {
+        "key": "Routage",
+        "cases": 1,
+        "latency": {
+          "n": 3,
+          "mean": 323.2666666681568,
+          "min": 247.30000000074506,
+          "p50": 312.4000000022352,
+          "p90": 390.56000000163914,
+          "p95": 400.3300000015646,
+          "p99": 408.146000001505,
+          "max": 410.1000000014901,
+          "stdev": 81.94219507300153
+        },
+        "accuracy": 1,
+        "quality": 0.9322292477408812
+      },
+      {
+        "key": "Sentiment",
+        "cases": 3,
+        "latency": {
+          "n": 9,
+          "mean": 344.69999999925494,
+          "min": 266.4000000022352,
+          "p50": 345.5,
+          "p90": 422.13999999910595,
+          "p95": 447.01999999880786,
+          "p99": 466.92399999856946,
+          "max": 471.8999999985099,
+          "stdev": 64.27052201399549
+        },
+        "accuracy": 1,
+        "quality": 0.9990832498140735
+      },
+      {
+        "key": "Support",
+        "cases": 3,
+        "latency": {
+          "n": 9,
+          "mean": 345.12222222197386,
+          "min": 279.8999999985099,
+          "p50": 296.29999999701977,
+          "p90": 426.3399999983609,
+          "p95": 455.8199999995529,
+          "p99": 479.40400000050664,
+          "max": 485.30000000074506,
+          "stdev": 74.0046920440654
+        },
+        "accuracy": 1,
+        "quality": 0.9997561197750847
+      }
+    ],
+    "byLang": [
+      {
+        "key": "fr",
+        "cases": 8,
+        "latency": {
+          "n": 24,
+          "mean": 359.30416666700813,
+          "min": 214.60000000149012,
+          "p50": 348.80000000074506,
+          "p90": 481.5800000000745,
+          "p95": 512.925000000745,
+          "p99": 524.345000000745,
+          "max": 526.3000000007451,
+          "stdev": 94.90475994424794
+        },
+        "accuracy": 1,
+        "quality": 0.9902272273866516
+      },
+      {
+        "key": "code",
+        "cases": 1,
+        "latency": {
+          "n": 3,
+          "mean": 299.30000000074506,
+          "min": 280.1000000014901,
+          "p50": 295.6000000014901,
+          "p90": 316.87999999970197,
+          "p95": 319.5399999994785,
+          "p99": 321.66799999929964,
+          "max": 322.19999999925494,
+          "stdev": 21.292486936682963
+        },
+        "accuracy": 1,
+        "quality": 0.9999231035367645
+      },
+      {
+        "key": "de",
+        "cases": 1,
+        "latency": {
+          "n": 3,
+          "mean": 333.266666666915,
+          "min": 305.5,
+          "p50": 345.5,
+          "p90": 348.14000000059605,
+          "p95": 348.47000000067055,
+          "p99": 348.73400000073013,
+          "max": 348.80000000074506,
+          "stdev": 24.103180979798214
+        },
+        "accuracy": 1,
+        "quality": 0.9992225546939996
+      },
+      {
+        "key": "en",
+        "cases": 12,
+        "latency": {
+          "n": 36,
+          "mean": 376.75277777750875,
+          "min": 240.19999999925494,
+          "p50": 299.7999999988824,
+          "p90": 441.69999999925494,
+          "p95": 538.0749999992549,
+          "p99": 1466.2000000014882,
+          "max": 1947.1000000014901,
+          "stdev": 280.52709417035214
+        },
+        "accuracy": 0.9714285714285714,
+        "quality": 0.9617675341877261
+      },
+      {
+        "key": "es",
+        "cases": 1,
+        "latency": {
+          "n": 3,
+          "mean": 317.6333333340784,
+          "min": 254.10000000149012,
+          "p50": 314.9000000022352,
+          "p90": 370.0999999992549,
+          "p95": 376.9999999988824,
+          "p99": 382.51999999858435,
+          "max": 383.8999999985099,
+          "stdev": 64.94315462875058
+        },
+        "accuracy": 1,
+        "quality": 0.9990683236404826
+      }
+    ]
+  }
+}
