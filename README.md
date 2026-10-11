@@ -17,7 +17,7 @@ Almost every public evaluation of these models is in English. This project ships
 > [!IMPORTANT]
 > `fr-native` and `en-native` **do not contain the same cases**. Neither is a translation of the other: each one is written directly in its language and tests what is hard in that language (French number formats and litotes, English understatement and US dates…). They cover the same skills (sentiment, moderation, routing, reasoning traps, long documents, a very long needle-in-a-haystack case), so their scores show how a model handles each language's pitfalls, not the effect of the language alone.
 
- Every expected answer was checked by an independent blind annotation pass; questions where annotators could reasonably disagree were reworded or accept a range of answers.
+Every expected answer was checked by an independent blind annotation pass; questions where annotators could reasonably disagree were reworded or accept a range of answers.
 
 ## Results
 
