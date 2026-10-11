@@ -1,29 +1,67 @@
 # DecisionBench
 
-**A benchmark and playground for decision models, built to answer one question: how good are they _in French_?**
+**How good are decision models in French? About as good as in English, and all of them struggle with arithmetic.**
 
-Decision models (TypeSafe's Jev, OpenAI, Microsoft and Perplexity decision models, or open-weight models such as Clef served by llama.cpp) don't generate text. They take a `state` and a set of questions and return **calibrated probabilities**: yes/no (`noul`), one option among several (`choice`) or a level on a scale (`score`). They all speak the same `POST /v1/systemone` contract.
+DecisionBench is a benchmark for decision models: 325 questions in French, the same 325 translated into English, a web app to run them against any model, and the raw reports so you can check every number.
 
-Almost every public evaluation of these models is in English. This project ships **a 325-question benchmark in French and the same one translated into English**, plus a smaller mixed multilingual suite, a web app to run it against any endpoint, and the raw reports so you can check the numbers yourself. Suites are plain TypeScript files, so **adding a benchmark in your own language takes one folder** (see [Adding a benchmark suite](#adding-a-benchmark-suite)).
+## Key findings
 
-## Suites
+- **No model is worse in French than in English.** Compared question by question on identical cases, the gap stays within one point for every model tested.
+- **Perplexity’s decider comes first** in both languages (88 % quality). OpenAI, Microsoft, Jev and the self-hosted Clef follow, between 81 and 85 %, too close to tell apart.
+- **Reading is solved, computing is not.** Every model finds a detail buried in a long contract or a 45-order dataset, but drops to 51–62 % as soon as an answer requires chaining two or three calculations.
 
-| Suite | Cases | Questions | Content |
-|---|---:|---:|---|
-| `core-fr` / `core-en` — Core | 90 + 90 | 325 + 325 | **The same cases in French and in English, simply translated.** Built to separate strong models: multi-condition policies, arithmetic on tables, dates and units, negation and quantifiers, reported speech, implicature, calibration, subtle phishing and payment fraud, distress signals, routing at the border of two teams, email threads where a later message overrides an earlier one, contracts with a distant exception clause, changelogs, incident timelines, and long JSON datasets with planted needles. |
-| `multilingual` — Multilingue | 23 | 80 | The original suite: 8 French cases, 12 English, 1 German, 1 Spanish, 1 code. Frozen so the results below stay comparable. |
+| Model | Quality in French | Quality in English | Median latency | Cost / 1k requests |
+|---|---:|---:|---:|---:|
+| Perplexity `pplx-decider-v1.1-27b` | **88.2 %** | **88.5 %** | 387 ms | $0.048 |
+| OpenAI `gpt-6-luna-decisions` | 84.6 % | 84.4 % | 256 ms | $0.093 |
+| Microsoft `microsoft-decision-1` | 83.8 % | 83.8 % | 336 ms | $0.025 |
+| TypeSafe `jev-1.13` | 82.3 % | 83.0 % | 269 ms | $0.044 |
+| Clef 27B Q8_0, self-hosted¹ | 81.4 % | 80.9 % | 1 676 ms | — |
 
-**Naming convention:** `<name>-<lang>` suites contain the same cases translated (`core-fr` = `core-en`), so comparing them isolates the effect of the language.
+*Quality* is the probability a model puts on the right answer: 100 % means always right and fully confident. API models were called through OpenRouter on 2026-10-11; details, confidence intervals and the other metrics are [below](#detailed-results).
 
-Every expected answer was checked by an independent blind annotation pass; questions where annotators could reasonably disagree were reworded or accept a range of answers.
+¹ Self-hosted on a Framework Desktop: AMD Ryzen AI Max+ 395, Radeon 8060S integrated GPU, 128 GB of unified memory, llama.cpp with the ROCm backend and flash attention. Latency reflects that machine, not the model: the API models run on datacenter hardware. Setup and measurements in [docs/self-hosting.md](docs/self-hosting.md).
 
-## Results
+## What is a decision model?
 
-Models are ranked by **quality**, the most informative metric (see [Metrics](#metrics)). Numbers in parentheses are **95 % confidence intervals**: when two models’ intervals overlap, the difference between them is not statistically significant. Tables are generated from `reports/` with `yarn results` and `yarn paired`.
+Decision models don’t write text. You send them a `state` (a message, a document, some JSON) and questions, and they return **probabilities**: yes or no (`noul`), one option among several (`choice`), or a level on a scale (`score`). They are used to triage tickets, moderate content or apply business rules. They all share the same API, `POST /v1/systemone`:
+
+```json
+{
+  "model": "typesafe/jev-1.13",
+  "state": "Since this morning every webhook returns HTTP 500. Our production is down!",
+  "questions": {
+    "is_urgent": { "type": "noul", "instructions": "Is this request urgent?" },
+    "team": { "type": "choice", "instructions": "Which team should handle it?",
+              "criteria": { "billing": "Invoices, payments", "technical": "Bugs, outages" } }
+  }
+}
+```
+
+Almost every public evaluation of these models is in English. This project measures them in French, and makes it easy to add other languages.
+
+## Run it yourself
+
+Requires Node.js 22.18 or later and Yarn.
+
+```bash
+yarn
+yarn dev          # http://localhost:5173
+```
+
+1. Click **Models** and connect a model: its base URL, its `model` name and, if needed, an API key. Any System One-compatible API works the same way, self-hosted or not.
+2. Open the **Benchmark** tab, pick `core-fr` or `core-en`, and run it. The report is saved in `reports/`.
+3. Compare reports side by side in **Benchmark → Saved reports**.
+
+The app also has a **playground** to try a model on your own text and questions. Its interface is in French.
+
+## Detailed results
+
+Numbers in parentheses are **95 % confidence intervals**: when two models’ intervals overlap, the difference between them is not significant. All runs: 3 runs per case after 1 warm-up, concurrency 1, on 2026-10-11. Tables are generated from `reports/` with `yarn results` and `yarn paired`.
 
 ### Core, in French
 
-Suite `core-fr` v2 · 90 cases, 325 questions · 3 runs per case after 1 warm-up · concurrency 1 · run on 2026-10-11.
+Suite `core-fr` v2 · 90 cases, 325 questions.
 
 | Model | Quality (95 % CI) | Accuracy (95 % CI) | Stability | p50 latency | p95 latency | Cost / 1k requests | Missed questions |
 |---|---:|---:|---:|---:|---:|---:|---:|
@@ -35,7 +73,7 @@ Suite `core-fr` v2 · 90 cases, 325 questions · 3 runs per case after 1 warm-up
 
 ### Core, in English
 
-Suite `core-en` v2 · the same 90 cases, translated · same settings · run on 2026-10-11.
+Suite `core-en` v2 · the same 90 cases, translated.
 
 | Model | Quality (95 % CI) | Accuracy (95 % CI) | Stability | p50 latency | p95 latency | Cost / 1k requests | Missed questions |
 |---|---:|---:|---:|---:|---:|---:|---:|
@@ -45,11 +83,11 @@ Suite `core-en` v2 · the same 90 cases, translated · same settings · run on 2
 | `typesafe/jev-1.13` (OpenRouter) | 83.0 % (80–86) | 86.1 % (82–89) | 96.9 % | 279 ms | 363 ms | $0.040 | 50 |
 | Clef 27B Q8_0 (self-hosted, llama.cpp)¹ | 80.9 % (78–84) | 82.8 % (78–86) | 100.0 % | 1 649 ms | 4 130 ms | — | 56 |
 
-**Perplexity’s decider leads in both languages.** Its lead over Jev and Clef is significant; over OpenAI and Microsoft, the intervals still overlap by one or two points. The four others are statistically tied. Jev is a good illustration of the gap between the two metrics: second on accuracy in English (86.1 %), fourth on quality (83.0 %), because it is often right with little confidence.
+Perplexity’s lead over Jev and Clef is significant; over OpenAI and Microsoft, the intervals still overlap by one or two points. Jev shows the gap between the two metrics: second on accuracy in English (86.1 %), fourth on quality (83.0 %), because it is often right with little confidence.
 
 ### French vs English
 
-Every question exists in both languages, so each model can be compared with itself, question by question. This paired comparison removes the effect of the content and gives intervals much narrower than the tables above.
+Every question exists in both languages, so each model can be compared with itself, question by question. This removes the effect of the content and gives much narrower intervals than the tables above.
 
 | Model | Quality, FR − EN (95 % CI) | Accuracy, FR − EN (95 % CI) | Right only in French | Right only in English |
 |---|---:|---:|---:|---:|
@@ -59,7 +97,7 @@ Every question exists in both languages, so each model can be compared with itse
 | `typesafe/jev-1.13` | −0.7 pt (−1.5 to +0.1) | −0.9 pt (−2.6 to +0.8) | 5 | 8 |
 | Clef 27B Q8_0 | +0.5 pt (−0.7 to +1.7) | +2.2 pt (−0.6 to +4.9) | 14 | 7 |
 
-**None of these models is worse in French.** Every difference is within about one point of quality, and every interval contains zero. The questions a model gets right in one language only (last two columns) are few and balanced: they are borderline cases where the model hesitates, not a language effect. The ranking is the same in both languages.
+Every interval contains zero. The questions a model gets right in one language only are few and balanced between the two: borderline cases where the model hesitates, not a language effect.
 
 ### Where the models fail
 
@@ -74,7 +112,7 @@ Quality by theme, averaged over French and English:
 | Multi-condition rules (pricing tiers, policies, eligibility) | 52 | 79.6 % | 76.5 % | 72.9 % | 68.9 % | 64.4 % |
 | Arithmetic on tables, dates and units | 57 | 62.3 % | 54.7 % | 55.2 % | 52.2 % | 51.2 % |
 
-Reading is solved: every model finds the needle in a 45-order JSON dataset or the exception clause at the end of a contract. **Computing is not.** As soon as the answer requires chaining two or three operations, quality drops to 51–62 % for every model, in both languages. A few questions that all five models miss, in French and in English:
+A few questions that all five models miss, in French and in English:
 
 | Case | Expected | What the models answered |
 |---|---|---|
@@ -83,7 +121,7 @@ Reading is solved: every model finds the needle in a 45-order JSON dataset or th
 | 3 notebooks at €2.40 and a pen at €1.90, paid with €10; €1.10 given back | Too much change (€0.90 was due) | “Exact amount” or “too little”. |
 | A hotel review praising the room and staff, and thanking the wifi for giving time to finish a novel | Main complaint: the wifi | “Breakfast” or “none”: only Clef, and only in French, read the irony. |
 
-These are the questions that separate the models. If you use a decision model on rules that involve amounts, compute the amounts in your code and pass them in the `state`.
+If you use a decision model on rules that involve amounts, compute the amounts in your code and pass them in the `state`.
 
 <details>
 <summary>Results on the <code>multilingual</code> suite</summary>
@@ -102,21 +140,13 @@ Full table: `yarn results multilingual`.
 
 </details>
 
-### Metrics
+## How answers are scored
 
-- **Accuracy**: share of questions where the decision is correct. It is binary: right or wrong.
-- **Quality**: how much probability the model put on the right answer, from 0 to 1. It tells you how confidently the model was right.
+- **Quality**: how much probability the model put on the right answer, from 0 to 1. The main metric.
+- **Accuracy**: share of questions where the decision is correct. Right or wrong, regardless of confidence.
 - **Stability**: share of questions where all runs gave the same decision.
 - **p50 / p95 latency**: median response time, and the time under which 95 % of requests complete.
 - **Cost / 1k requests**: cost billed by OpenRouter, scaled to 1,000 requests of the suite.
-
-How each question type is graded:
-
-| Type | Correct (accuracy) when… | Quality |
-|---|---|---|
-| Yes/no (`noul`) | the probability of “yes” is on the expected side of 0.5 | probability given to the expected answer |
-| Choice | the most likely option is an expected one | total probability given to the expected options |
-| Score | the returned level is within the expected range (± 0.5) | 1 − distance to the expected range, relative to the length of the scale |
 
 **Example.** The expected answer to “Is the customer satisfied?” is *no*.
 
@@ -127,41 +157,35 @@ How each question type is graded:
 | P(yes) = 0.49 | ✓ | 0.51 |
 | P(yes) = 0.60 | ✗ | 0.40 |
 
-All three first answers count as correct, but only the first one is a confident *no*. This is why Jev ranks higher on accuracy than on quality: it is often right, with less confidence.
+The first three answers are all correct, but only the first one is a confident *no*. Use **accuracy** if your code acts on the decision alone (`if noul > 0.5`), and **quality** if it uses the probabilities themselves: thresholds, ranking, combining several answers.
 
-Use **accuracy** if your code acts on the decision alone (`if noul > 0.5`), and **quality** if it uses the probabilities themselves: thresholds, ranking, combining several answers. On ambiguous cases (a customer who only replies “Ok.”), the expected answer is a probability *range*, and quality measures the distance to that range rather than certainty.
+How each question type is graded:
 
-¹ Self-hosted on a Framework Desktop: AMD Ryzen AI Max+ 395, Radeon 8060S integrated GPU, 128 GB of unified memory, llama.cpp with the ROCm backend and flash attention. The model runs entirely on the integrated GPU, so latency reflects that machine, not the model: the API models above run on datacenter hardware. Setup and measurements in [docs/self-hosting.md](docs/self-hosting.md).
+| Type | Correct (accuracy) when… | Quality |
+|---|---|---|
+| Yes/no (`noul`) | the probability of “yes” is on the expected side of 0.5 | probability given to the expected answer |
+| Choice | the most likely option is an expected one | total probability given to the expected options |
+| Score | the returned level is within the expected range (± 0.5) | 1 − distance to the expected range, relative to the length of the scale |
+
+On ambiguous cases (a customer who only replies “Ok.”), the expected answer is a probability *range*, and quality measures the distance to that range.
 
 > [!NOTE]
-> With 325 questions, the confidence intervals of the core suites are about ±3 points for accuracy and ±2.5 for quality: enough to separate the leader from the pack, not to rank models that are a point apart. Contributions of new cases are welcome.
+> With 325 questions, the confidence intervals are about ±3 points for accuracy and ±2.5 for quality: enough to separate the leader from the pack, not to rank models that are a point apart.
 
-The raw reports are in [`reports/`](reports/): open the app, go to **Benchmark → Saved reports**, and compare any of them side by side.
+## What the benchmark contains
 
-## What's inside
+| Suite | Cases | Questions | Content |
+|---|---:|---:|---|
+| `core-fr` / `core-en` | 90 + 90 | 325 + 325 | The same cases in French and in English. Multi-condition policies, arithmetic on tables, dates and units, negation, reported speech, irony, calibration, phishing and payment fraud, distress signals, routing, email threads where a later message overrides an earlier one, contracts with a distant exception clause, changelogs, and long JSON datasets with planted details. From ~100 to ~4 800 tokens. |
+| `multilingual` | 23 | 80 | The original suite, mostly in English, with a few French, German and Spanish cases. Frozen so older reports stay comparable. |
 
-- **Benchmark suites** (`src/bench/suites/`): cases with expected answers, from ~100 to ~4 800 tokens. Sentiment and irony, moderation, routing, support and medical triage, arithmetic and logic traps, contracts, meeting minutes, postmortems, code review, needle-in-a-haystack, calibration on ambiguous inputs.
-- **Benchmark runner**: repetitions, warm-up, concurrency, timeouts. Runs are interleaved to smooth out drift.
-- **Reports**: latency percentiles, tokens/s, error rate, accuracy, quality, stability, cost, with breakdowns by length, complexity, category, **language** and question type, plus a per-case and per-question drill-down. Saved as JSON in `reports/`.
-- **A/B comparison** of up to 4 reports: metric deltas, decision agreement, list of divergences, Markdown export. Warns when suites, versions or settings differ.
-- **Playground**: pick a connected model, write the text to judge, add yes/no, choice and score questions, and see the probabilities. Text or JSON state, images, batch mode, request preview and a ready-to-paste `curl` example (with the API key left as `$API_KEY`).
+Every expected answer was checked by independent annotators who answered the questions without seeing the expected answers. Questions they could reasonably disagree on were reworded or accept a range of answers.
 
-The app's interface is currently in French.
+Suites named `<name>-<lang>` contain the same cases translated: `core-fr` and `core-en` differ only by their language.
 
-## Getting started
+## Connecting models
 
-Requires Node.js 22.18 or later and Yarn.
-
-```bash
-yarn
-yarn dev          # http://localhost:5173
-```
-
-Run the benchmark through `yarn dev` or `yarn preview`: the Vite server saves reports to `reports/` and provides a local proxy for APIs without CORS.
-
-### Connecting models
-
-Click **Models** in the header (or open the model picker) to connect a model once and reuse it in the playground and the benchmark. Every System One API is configured the same way, whoever serves it. Models without a key show whether their server answers; models with a key are not probed (use **Test connection**).
+Every System One API is configured the same way, whoever serves it. Models without a key show whether their server answers; models with a key are not probed (use **Test connection**).
 
 | Model | API type | URL | `model` | Auth |
 |---|---|---|---|---|
@@ -173,9 +197,11 @@ Click **Models** in the header (or open the model picker) to connect a model onc
 - API keys stay in your browser's local storage and are **never written to reports**.
 - The **chat adapter** lets you compare a regular chat model on the same suite: each question becomes a `chat/completions` call answered in one token (yes/no, an option letter or a level digit), and probabilities are rebuilt from `top_logprobs`.
 
-## Adding a benchmark suite
+## Adding a language or a suite
 
-A suite is a folder in `src/bench/suites/` containing a `suite.ts` file. It is picked up automatically: no registry to edit.
+**To add a language to core**, translate the cases in [`src/bench/core/`](src/bench/core/): each case has a `fr` and an `en` version sharing the same expected answers, so add an `es` version, keep the question ids and option keys, and create `src/bench/suites/core-es/suite.ts` like `core-fr`. Your results become directly comparable with French and English.
+
+**To add a suite of your own**, create a folder in `src/bench/suites/` with a `suite.ts` file. It is picked up automatically:
 
 ```ts
 // src/bench/suites/de-support/suite.ts
@@ -213,13 +239,15 @@ export const suite: BenchSuite = {
 }
 ```
 
-Then check it:
+Then check it with `yarn validate`. The full guide, including expectation formats and what makes a good case, is in [CONTRIBUTING.md](CONTRIBUTING.md). Pull requests with new languages, new cases or new reports are welcome.
 
-```bash
-yarn validate
-```
+## App features
 
-The full guide, including expectation formats and what makes a good case, is in [CONTRIBUTING.md](CONTRIBUTING.md). Pull requests with new suites, new cases or new reports are welcome.
+- **Benchmark runner**: repetitions, warm-up, concurrency, timeouts. Runs are interleaved to smooth out drift.
+- **Reports**: latency percentiles, tokens/s, error rate, quality, accuracy, stability, cost, with breakdowns by length, complexity, category, language and question type, plus a per-case and per-question drill-down.
+- **Comparison** of up to 4 reports: metric deltas with confidence intervals, decision agreement, list of divergences, Markdown export.
+- **Playground**: text or JSON state, images, batch mode, request preview and a ready-to-paste `curl` example (with the API key left as `$API_KEY`).
+- **Chat adapter**: runs a regular chat model on the same suites, one call per question answered in one token, with probabilities rebuilt from `top_logprobs`.
 
 ## Project structure
 
