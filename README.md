@@ -10,17 +10,20 @@ Almost every public evaluation of these models is in English. This project ships
 
 | Suite | Cases | Questions | Content |
 |---|---:|---:|---|
-| `fr` — Français | 26 | 86 | Written natively in French: litotes, irony, *ne… que* and double negation, register, French date and number formats, residential lease law, co-ownership meeting minutes, bank statement. |
-| `en` — English | 24 | 76 | Written natively in English: understatement, idioms, US dates, phishing, expense policy, incident postmortem, sales call, support queue. |
-| `mixed` — Mixte | 23 | 80 | The original suite: 8 French cases, 12 English, 1 German, 1 Spanish, 1 code. Frozen so the results below stay comparable. |
+| `fr-native` — Français natif | 26 | 86 | Written directly in French: litotes, irony, *ne… que* and double negation, register, French date and number formats, residential lease law, co-ownership meeting minutes, bank statement. |
+| `en-native` — English native | 24 | 76 | Written directly in English: understatement, idioms, US dates, phishing, expense policy, incident postmortem, sales call, support queue. |
+| `multilingual` — Multilingue | 23 | 80 | The original suite: 8 French cases, 12 English, 1 German, 1 Spanish, 1 code. Frozen so the results below stay comparable. |
 
-`fr` and `en` cover the same skills (sentiment, moderation, routing, reasoning traps, long documents, a very long needle-in-a-haystack case) with **different content**, so you can measure how much a model loses when it switches from English to French. Neither is a translation of the other. Every expected answer was checked by an independent blind annotation pass; questions where annotators could reasonably disagree were reworded or accept a range of answers.
+> [!IMPORTANT]
+> `fr-native` and `en-native` **do not contain the same cases**. Neither is a translation of the other: each one is written directly in its language and tests what is hard in that language (French number formats and litotes, English understatement and US dates…). They cover the same skills (sentiment, moderation, routing, reasoning traps, long documents, a very long needle-in-a-haystack case), so their scores show how a model handles each language's pitfalls, not the effect of the language alone.
+
+ Every expected answer was checked by an independent blind annotation pass; questions where annotators could reasonably disagree were reworded or accept a range of answers.
 
 ## Results
 
-### French suite
+### French native suite
 
-Suite `fr` v1 · 26 cases, 86 questions · 3 runs per case after 1 warm-up · concurrency 1 · run on 2026-10-11.
+Suite `fr-native` v1 · 26 cases, 86 questions · 3 runs per case after 1 warm-up · concurrency 1 · run on 2026-10-11.
 
 | Model | Accuracy | Quality | Stability | p50 latency | p95 latency | Cost / 1k requests | Missed questions |
 |---|---:|---:|---:|---:|---:|---:|---:|
@@ -41,9 +44,9 @@ Every model got the long documents right (lease, co-ownership minutes, a 135-lin
 | Clef | Implicit threat | Missed the intimidation in “Je sais où se trouve votre magasin… vous feriez mieux de retirer cet avis”. |
 | Clef | Logic | Answered “yes” where the statements do not allow a conclusion. |
 
-### English suite
+### English native suite
 
-Suite `en` v1 · 24 cases, 76 questions · same settings · run on 2026-10-11.
+Suite `en-native` v1 · 24 cases, 76 questions · same settings · run on 2026-10-11.
 
 | Model | Accuracy | Quality | Stability | p50 latency | p95 latency | Cost / 1k requests | Missed questions |
 |---|---:|---:|---:|---:|---:|---:|---:|
@@ -70,7 +73,7 @@ The English misses are mostly reasoning over rules:
 
 ### French vs English
 
-| Model | `fr` accuracy | `en` accuracy | `mixed` accuracy |
+| Model | `fr-native` accuracy | `en-native` accuracy | `multilingual` accuracy |
 |---|---:|---:|---:|
 | `typesafe/jev-1.13` | **100 %** | **99.6 %** | **99.6 %** |
 | `perplexity/pplx-decider-v1.1-27b` | 98.8 % | 98.7 % | 98.8 % |
@@ -80,9 +83,9 @@ The English misses are mostly reasoning over rules:
 
 On these suites, **no model does worse in French than in English**, and the ranking is almost the same in both languages. The French and English suites cover the same skills with different content, so part of the gap comes from the cases themselves: the English suite has more multi-rule reasoning (expense and return policies, résumé screening), which is where most English misses are. A translated pair of suites would isolate the language effect, at the cost of testing translation-friendly content.
 
-### Mixed suite
+### Multilingual suite
 
-Suite `mixed` v1 · 23 cases, 80 questions (8 in French) · same settings · run on 2026-10-10.
+Suite `multilingual` v1 · 23 cases, 80 questions (8 in French) · same settings · run on 2026-10-10.
 
 | Model | Accuracy | Quality | Stability | Accuracy on French cases | p50 latency | p95 latency | Cost / 1k requests |
 |---|---:|---:|---:|---:|---:|---:|---:|
@@ -99,7 +102,7 @@ Suite `mixed` v1 · 23 cases, 80 questions (8 in French) · same settings · run
 - **Stability**: share of questions where all runs gave the same decision.
 - **p50 / p95 latency**: median response time, and the time under which 95 % of requests complete.
 - **Cost / 1k requests**: cost billed by OpenRouter, scaled to 1,000 requests of the suite.
-- **Accuracy on French cases**: only the 8 cases of the `mixed` suite that are written in French.
+- **Accuracy on French cases**: only the 8 cases of the `multilingual` suite that are written in French.
 
 How each question type is graded:
 
@@ -169,12 +172,12 @@ Click **Models** in the header (or open the model picker) to connect a model onc
 A suite is a folder in `src/bench/suites/` containing a `suite.ts` file. It is picked up automatically: no registry to edit.
 
 ```ts
-// src/bench/suites/de/suite.ts
+// src/bench/suites/de-native/suite.ts
 import type { BenchSuite } from '../../types'
 
 export const suite: BenchSuite = {
-  id: 'de', // must match the folder name
-  name: 'Deutsch',
+  id: 'de-native', // must match the folder name
+  name: 'Deutsch nativ',
   description: 'Decisions written in German: support, contracts, reviews…',
   lang: 'de',
   version: '1', // bump whenever a case changes
@@ -218,9 +221,9 @@ The full guide, including expectation formats and what makes a good case, is in 
 src/
   bench/
     suites/            benchmark suites, one folder per suite
-      fr/suite.ts      French suite
-      en/suite.ts      English suite
-      mixed/suite.ts   original multilingual suite
+      fr-native/       cases written in French
+      en-native/       different cases written in English
+      multilingual/    original suite, mixed languages
       validate.ts      suite checks (used by the app and `yarn validate`)
     runner.ts          runs a suite against a target
     stats.ts           grading and metrics

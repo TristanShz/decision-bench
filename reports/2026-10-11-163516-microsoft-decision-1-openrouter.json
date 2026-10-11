@@ -2,7 +2,7 @@
   "id": "2026-10-11-163516-microsoft-decision-1-openrouter",
   "name": "self-host-english",
   "createdAt": "2026-10-11T14:35:16.803Z",
-  "suiteId": "en",
+  "suiteId": "en-native",
   "suiteVersion": "1",
   "target": {
     "kind": "systemone",

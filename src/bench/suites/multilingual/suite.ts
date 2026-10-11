@@ -130,8 +130,8 @@ const PRODUCT_LISTING = `iPhone 13 — 128 Go — bleu. Occasion, très bon éta
 // ─── Suite ───────────────────────────────────────────────────────────────────
 
 export const suite: BenchSuite = {
-  id: 'mixed',
-  name: 'Mixte',
+  id: 'multilingual',
+  name: 'Multilingue (suite d’origine)',
   description: 'Suite d’origine : 8 cas en français, 12 en anglais, 1 en allemand, 1 en espagnol et 1 de code. Figée pour rester comparable aux premiers rapports.',
   lang: 'mul',
   // À incrémenter dès qu'un cas change : la comparaison signale les rapports de versions différentes.

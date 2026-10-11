@@ -1,6 +1,6 @@
 import type { BenchSuite } from '../../types'
 
-// Cas rédigés directement en français (aucune traduction) et distincts de la suite « mixed »,
+// Cas rédigés directement en français (aucune traduction) et distincts des suites « en-native » et « multilingual »,
 // pour que les deux mesures restent indépendantes.
 
 // ─── Textes longs ────────────────────────────────────────────────────────────
@@ -122,9 +122,9 @@ function syntheticStatement() {
 // ─── Suite ───────────────────────────────────────────────────────────────────
 
 export const suite: BenchSuite = {
-  id: 'fr',
-  name: 'Français',
-  description: 'Cas rédigés en français : litote, ironie, négation, registre, dates et montants au format français, droit du logement, copropriété, relevé bancaire.',
+  id: 'fr-native',
+  name: 'Français natif',
+  description: 'Cas écrits directement en français et propres à la langue : litote, ironie, négation, registre, dates et montants au format français, droit du logement, copropriété, relevé bancaire. Ce n’est pas une traduction de en-native.',
   lang: 'fr',
   version: '1',
   cases: [

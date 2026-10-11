@@ -1,6 +1,6 @@
 import type { BenchSuite } from '../../types'
 
-// Cas rédigés directement en anglais et distincts de la suite « mixed », pour que les deux mesures restent indépendantes.
+// Cas rédigés directement en anglais et distincts des suites « fr-native » et « multilingual », pour que les mesures restent indépendantes.
 
 // ─── Textes longs ────────────────────────────────────────────────────────────
 
@@ -160,9 +160,9 @@ function syntheticTickets() {
 // ─── Suite ───────────────────────────────────────────────────────────────────
 
 export const suite: BenchSuite = {
-  id: 'en',
-  name: 'English',
-  description: 'Cases written in English: understatement, idioms, US dates, phishing, expense policy, postmortem, sales call, support tickets.',
+  id: 'en-native',
+  name: 'English native',
+  description: 'Cases written directly in English: understatement, idioms, US dates, phishing, expense policy, postmortem, sales call, support tickets. Not a translation of fr-native.',
   lang: 'en',
   version: '1',
   cases: [

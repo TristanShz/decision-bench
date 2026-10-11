@@ -2,7 +2,7 @@
   "id": "2026-10-11-163420-perplexity-decider-v1-api-openrouter",
   "name": "self-host-english",
   "createdAt": "2026-10-11T14:34:20.969Z",
-  "suiteId": "en",
+  "suiteId": "en-native",
   "suiteVersion": "1",
   "target": {
     "kind": "systemone",

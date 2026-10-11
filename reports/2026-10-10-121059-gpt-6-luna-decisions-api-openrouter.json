@@ -2,7 +2,7 @@
   "id": "2026-10-10-121059-gpt-6-luna-decisions-api-openrouter",
   "name": "GPT 6 Luna Decisions — API Openrouter — 10/10/2026 12:10:59",
   "createdAt": "2026-10-10T10:10:59.382Z",
-  "suiteId": "mixed",
+  "suiteId": "multilingual",
   "suiteVersion": "1",
   "target": {
     "kind": "systemone",

@@ -2,7 +2,7 @@
   "id": "2026-10-11-163314-clef-self-host",
   "name": "self-host-english",
   "createdAt": "2026-10-11T14:33:14.063Z",
-  "suiteId": "en",
+  "suiteId": "en-native",
   "suiteVersion": "1",
   "target": {
     "kind": "systemone",

@@ -2,7 +2,7 @@
   "id": "2026-10-10-114119-clef-self-host",
   "name": "Clef — self-host — 10/10/2026 11:41:19",
   "createdAt": "2026-10-10T09:41:19.262Z",
-  "suiteId": "mixed",
+  "suiteId": "multilingual",
   "suiteVersion": "1",
   "target": {
     "label": "Clef — self-host",

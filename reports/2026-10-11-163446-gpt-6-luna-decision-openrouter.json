@@ -2,7 +2,7 @@
   "id": "2026-10-11-163446-gpt-6-luna-decision-openrouter",
   "name": "self-host-english",
   "createdAt": "2026-10-11T14:34:46.089Z",
-  "suiteId": "en",
+  "suiteId": "en-native",
   "suiteVersion": "1",
   "target": {
     "kind": "systemone",

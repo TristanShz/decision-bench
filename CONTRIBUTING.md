@@ -4,8 +4,8 @@ The most useful contributions are **benchmark suites in new languages**, **new c
 
 ## Adding a suite
 
-1. Create a folder named after your suite in `src/bench/suites/`, e.g. `src/bench/suites/es/`. Use lowercase letters, digits and dashes (`es`, `pt-br`, `en-legal`).
-2. Add a `suite.ts` exporting `suite` (see the example in the [README](README.md#adding-a-benchmark-suite), or start from [`fr/suite.ts`](src/bench/suites/fr/suite.ts)).
+1. Create a folder named after your suite in `src/bench/suites/`, e.g. `src/bench/suites/es-native/`. Use lowercase letters, digits and dashes, and pick a name that says what the suite contains (`es-native`, `pt-br-legal`, `fr-en-parallel`).
+2. Add a `suite.ts` exporting `suite` (see the example in the [README](README.md#adding-a-benchmark-suite), or start from [`fr-native/suite.ts`](src/bench/suites/fr-native/suite.ts)).
 3. Run `yarn validate`, then `yarn dev` and pick your suite in the **Benchmark** tab.
 
 The suite is discovered automatically. If it fails validation, the app skips it and logs the reason in the browser console.
@@ -49,14 +49,14 @@ The suite is discovered automatically. If it fails validation, the app skips it 
 ## What makes a good case
 
 - **One defensible answer.** If two careful native speakers could disagree, use a range or a list of acceptable answers, or drop the question.
-- **Cover the same skills as `fr` and `en`.** Sentiment, moderation, routing, reasoning traps, long documents and one very long case make suites comparable across languages, while their content stays different.
+- **Cover the same skills as `fr-native` and `en-native`.** Sentiment, moderation, routing, reasoning traps, long documents and one very long case make suites comparable across languages, while their content stays different.
 - **Get the answers checked.** Ask someone (or a model) to answer your questions blind, then look at every disagreement: either the expected answer is wrong, or the question needs a clearer wording or a range.
 - **Write natively, don't translate.** Idioms, irony, politeness conventions, dates, currencies and legal concepts are where models struggle in a given language. A translated English case mostly tests translation.
 - **Mix difficulty.** A few easy cases catch broken setups; the hard ones (sarcasm, negation, numbers, long context with a detail buried in the middle) separate models.
 - **Vary length.** Latency and accuracy both depend on the number of input tokens.
 - **Explain non-obvious answers** in a comment next to `expected`, e.g. the arithmetic behind it.
 - **No personal data.** Use invented names, addresses and numbers.
-- **Deterministic content.** If you generate a long state (logs, catalogs), use a seeded generator as in `fr/suite.ts`, so every run sends exactly the same request.
+- **Deterministic content.** If you generate a long state (logs, catalogs), use a seeded generator as in `fr-native/suite.ts`, so every run sends exactly the same request.
 
 ## Contributing reports
 

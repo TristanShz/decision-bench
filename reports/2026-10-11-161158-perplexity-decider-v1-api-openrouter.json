@@ -2,7 +2,7 @@
   "id": "2026-10-11-161158-perplexity-decider-v1-api-openrouter",
   "name": "Perplexity Decider v1 — API Openrouter — 11/10/2026 16:11:58",
   "createdAt": "2026-10-11T14:11:58.423Z",
-  "suiteId": "fr",
+  "suiteId": "fr-native",
   "suiteVersion": "1",
   "target": {
     "kind": "systemone",
