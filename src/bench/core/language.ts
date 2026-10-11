@@ -67,6 +67,118 @@ Once back home, she called her sister to let her know she wouldn’t be arriving
 The next day, she went to pick up her badge before taking the train again.`,
 }
 
+const STEERING_MINUTES = {
+  fr: `Compte rendu — comité de pilotage du projet Horizon
+Date : 6 novembre
+Présents : Claire Dumas (direction des opérations), Gilles Marchand, Rémi Faure, Sonia Petit (cheffe de projet), Antoine Leroy (sécurité), Yasmine Haddad (achats)
+Excusé : Laurent Brun (finance)
+
+1. Gouvernance technique
+Gilles Marchand a quitté la direction technique le 31 octobre ; Rémi Faure lui a succédé le 2 novembre. L’ancien directeur technique reste disponible jusqu’à la fin de l’année pour assurer la passation, mais toutes les décisions d’architecture relèvent désormais du nouveau. Claire Dumas rappelle que la validation du schéma d’architecture cible était initialement prévue avec Gilles Marchand ; elle se fera finalement avec Rémi Faure, et c’est ce dernier qui signera le document.
+
+2. Calendrier
+La mise en production de la nouvelle plateforme est fixée au 3 mars. La recette utilisateurs se déroulera du 1er au 19 février. Sonia Petit précise que la reprise des données historiques n’est pas incluse dans ce lot : elle fera l’objet d’un lot séparé, dont le calendrier sera établi au printemps.
+
+3. Engagements
+Sonia Petit s’engage à livrer le plan de migration détaillé le 14 novembre au plus tard. Antoine Leroy aimerait finaliser l’audit de sécurité avant la fin du mois, mais précise qu’il ne peut pas s’y engager tant que le prestataire d’audit n’a pas confirmé ses disponibilités. Yasmine Haddad envisage de relancer l’appel d’offres sur l’hébergement si les deux offres reçues ne sont pas révisées d’ici le 20 novembre.
+
+4. Prestataires et formations
+Les prestataires qui interviendront sur le projet doivent avoir suivi la formation RGPD avant tout accès à l’environnement de production ; aucun accès ne sera ouvert sans l’attestation correspondante. Ils devraient également suivre la formation à l’outil de ticketing, mais ce point n’est pas bloquant : un prestataire peut commencer sans l’avoir suivie. Antoine Leroy demande que la liste des comptes prestataires soit revue chaque mois ; la proposition est acceptée.
+
+5. Budget
+Le dépassement estimé s’élève à 40 000 €. Un budget complémentaire pourrait être accordé si le comité financier du 20 novembre donne son accord ; Laurent Brun, excusé, n’a pas pu donner d’indication à ce sujet. En l’absence d’accord, le périmètre du lot 1 sera réduit.
+
+6. Risques
+Le fournisseur de l’API de paiement a annoncé une maintenance majeure la semaine du 15 février, en pleine fin de recette. Compte tenu de ce risque, le comité décide de décaler la mise en production de deux semaines par rapport à la date fixée au point 2. Les dates de recette restent inchangées.
+
+7. Communication
+Le client n’a pas encore été informé du nouveau calendrier : Rémi Faure s’en chargera lors du point hebdomadaire de lundi. D’ici là, il est demandé à chacun de ne communiquer aucune date au client.
+
+8. Divers
+La salle Horizon sera réservée tous les jeudis matin pour les ateliers de recette. Yasmine Haddad rappelle que les notes de frais liées aux déplacements à Lille doivent être déposées avant le 5 du mois suivant.
+
+Prochain comité : 4 décembre.`,
+  en: `Minutes — Horizon project steering committee
+Date: November 6
+Present: Claire Dumas (operations), Gilles Marchand, Rémi Faure, Sonia Petit (project manager), Antoine Leroy (security), Yasmine Haddad (procurement)
+Apologies: Laurent Brun (finance)
+
+1. Technical governance
+Gilles Marchand stepped down as CTO on October 31; Rémi Faure succeeded him on November 2. The former CTO remains available until the end of the year for the handover, but all architecture decisions now rest with the new one. Claire Dumas points out that the sign-off of the target architecture diagram was originally planned with Gilles Marchand; it will in the end be done with Rémi Faure, and it is the latter who will sign the document.
+
+2. Schedule
+The go-live of the new platform is set for March 3. User acceptance testing will run from February 1 to February 19. Sonia Petit adds that the migration of historical data is not part of this phase: it will be a separate phase, whose schedule will be set in the spring.
+
+3. Commitments
+Sonia Petit commits to delivering the detailed migration plan by November 14 at the latest. Antoine Leroy would like to finish the security audit before the end of the month, but says he cannot commit to it until the audit provider has confirmed its availability. Yasmine Haddad is considering re-running the hosting tender if the two bids received are not revised by November 20.
+
+4. Contractors and training
+Contractors working on the project must have completed the GDPR training before any access to the production environment; no access will be opened without the corresponding certificate. They should also complete the ticketing tool training, but this is not blocking: a contractor can start without having done it. Antoine Leroy asks for the list of contractor accounts to be reviewed every month; the proposal is accepted.
+
+5. Budget
+The estimated overrun is €40,000. Additional budget could be granted if the finance committee of November 20 approves it; Laurent Brun, who sent apologies, could not give any indication on this. Without approval, the scope of phase 1 will be reduced.
+
+6. Risks
+The payment API provider has announced major maintenance during the week of February 15, right at the end of acceptance testing. Given this risk, the committee decides to push the go-live back by two weeks from the date set in item 2. The acceptance testing dates remain unchanged.
+
+7. Communication
+The client has not yet been informed of the new schedule: Rémi Faure will do so at Monday’s weekly meeting. Until then, everyone is asked not to give the client any date.
+
+8. Other business
+The Horizon room will be booked every Thursday morning for the acceptance testing workshops. Yasmine Haddad reminds everyone that expense claims for trips to Lille must be submitted before the 5th of the following month.
+
+Next committee: December 4.`,
+}
+
+const CLAIM_LETTER = {
+  fr: `Objet : Votre déclaration de sinistre n° DS-48213 — dégât des eaux du 9 septembre
+
+Madame,
+
+Nous faisons suite à votre déclaration du 11 septembre ainsi qu’au rapport de l’expert, M. Joly, qui s’est rendu à votre domicile le 3 octobre. Nous vous remercions pour votre patience et pour les nombreux documents que vous nous avez transmis.
+
+Certes, l’expert confirme que la fuite provient de l’appartement situé au-dessus du vôtre, occupé par M. Olivier. Toutefois, en application de la convention d’indemnisation entre assureurs, c’est à nous, en tant qu’assureur de votre logement, qu’il revient de vous indemniser directement ; nous exercerons ensuite, le cas échéant, un recours contre l’assureur de M. Olivier. Vous n’avez donc aucune démarche à effectuer auprès de votre voisin.
+
+Recherche de fuite. Les frais de recherche de fuite (190 €) ont été engagés et réglés par M. Olivier ; ils ne figurent donc pas dans votre dossier.
+
+Plafond et peinture. Les travaux de réfection du plafond du séjour (devis de l’entreprise Marin : 2 340 €) et de peinture du couloir (devis : 860 €) sont pris en charge, déduction faite de la franchise contractuelle de 380 €, qui ne s’applique qu’une seule fois par sinistre. Le règlement interviendra par virement sous quinze jours.
+
+Parquet. Vous nous avez également signalé le gonflement du parquet de la chambre. L’expert relève que ce parquet présentait déjà, avant le sinistre, des traces d’humidité anciennes liées à un défaut d’aération, sans lien avec la fuite du 9 septembre. Après examen attentif de votre dossier, nous ne sommes malheureusement pas en mesure de réserver une suite favorable à cette partie de votre demande.
+
+Ordinateur portable. Vous indiquez qu’un ordinateur portable, posé sur le bureau du séjour, a été endommagé par l’eau. Faute de facture d’achat, nous ne pouvons pas, à ce stade, déterminer sa valeur ni, par conséquent, l’indemniser. Il ne s’agit pas d’un refus : si vous nous faites parvenir la facture ou tout autre justificatif d’achat avant le 15 décembre, ce poste sera examiné et indemnisé selon la valeur d’usage prévue au contrat. Passé ce délai, il ne pourra plus être pris en compte.
+
+Relogement. Votre logement étant resté habitable, aucune indemnité de relogement n’est due, ce que vous n’aviez d’ailleurs pas demandé.
+
+Nous mesurons que cette réponse ne vous donne pas entière satisfaction sur tous les points ; nous restons néanmoins à votre disposition pour tout complément d’information. Si vous contestez les conclusions de l’expert, vous pouvez demander une contre-expertise, à vos frais, dans un délai de trente jours à compter de la réception de ce courrier.
+
+Nous vous prions d’agréer, Madame, l’expression de nos salutations distinguées.
+
+Le service Sinistres`,
+  en: `Re: Your claim no. DS-48213 — water damage of September 9
+
+Dear Madam,
+
+We are writing further to your claim of September 11 and to the report of the loss adjuster, Mr. Joly, who visited your home on October 3. Thank you for your patience and for the many documents you sent us.
+
+Admittedly, the adjuster confirms that the leak came from the flat above yours, occupied by Mr. Olivier. However, under the compensation agreement between insurers, it is up to us, as the insurer of your home, to compensate you directly; we will then, where appropriate, seek recovery from Mr. Olivier’s insurer. You therefore have nothing to do with regard to your neighbour.
+
+Leak detection. The leak detection costs (€190) were incurred and paid by Mr. Olivier; they are therefore not part of your claim.
+
+Ceiling and paint. The repair of the living-room ceiling (quote from the Marin company: €2,340) and the repainting of the hallway (quote: €860) are covered, minus the contractual deductible of €380, which applies only once per claim. Payment will be made by bank transfer within fifteen days.
+
+Floorboards. You also reported that the bedroom’s wooden floor has swollen. The adjuster notes that this floor already showed, before the incident, old signs of damp caused by poor ventilation, unrelated to the leak of September 9. After careful review of your file, we are unfortunately not in a position to respond favourably to this part of your claim.
+
+Laptop. You state that a laptop, left on the desk in the living room, was damaged by the water. In the absence of a purchase invoice, we cannot, at this stage, determine its value or, consequently, compensate you for it. This is not a refusal: if you send us the invoice or any other proof of purchase before December 15, this item will be reviewed and compensated at the depreciated value set out in the policy. After that date, it can no longer be taken into account.
+
+Alternative accommodation. As your home remained habitable, no alternative accommodation allowance is due, which, in any case, you had not requested.
+
+We appreciate that this reply does not fully satisfy you on every point; we nevertheless remain at your disposal for any further information. If you dispute the adjuster’s conclusions, you may request a second assessment, at your own expense, within thirty days of receiving this letter.
+
+Yours faithfully,
+
+Claims Department`,
+}
+
 // ─── Options partagées ───────────────────────────────────────────────────────
 
 const NLI = {
@@ -766,6 +878,758 @@ export const LANGUAGE: Pair[] = [
           type: 'choice',
           instructions: 'According to Mathilde, who caused last month’s delay?',
           criteria: { delcourt: 'Delcourt', carrier: 'The carrier', mathilde_team: 'Mathilde’s team', unknown: 'Unknown' },
+        },
+      },
+    },
+  },
+  {
+    id: 'lang-double-negation',
+    category: 'Comprehension',
+    complexity: 'complexe',
+    length: 'court',
+    // Deux négations s’annulent : « ne nie pas avoir reçu » ⇒ il l’a reçu ; « aucun… sans l’accord » ⇒ le dossier 14 clôturé avait l’accord ;
+    // « rien n’interdit » ⇒ permis ; « pas un seul n’a échappé » ⇒ tous les serveurs ont été mis à jour.
+    expected: { garnier_received: true, client_14_agreed: true, interns_forbidden: false, server_skipped: false },
+    fr: {
+      name: 'Double négation',
+      description: 'Négations qui s’annulent : « ne pas nier », « aucun… sans », « rien n’interdit », « pas un seul… n’a échappé ».',
+      state:
+        '1. « Je ne nie pas avoir reçu votre courrier du 4 mars, mais j’en conteste le contenu. » (M. Garnier)\n2. Aucun dossier n’est clôturé sans l’accord écrit du client. Le dossier 14 a été clôturé hier.\n3. Rien n’interdit aux stagiaires de s’inscrire à la formation.\n4. Pas un seul des cinq serveurs n’a échappé à la mise à jour de cette nuit.',
+      questions: {
+        garnier_received: { type: 'noul', instructions: 'M. Garnier a-t-il reçu le courrier du 4 mars ?' },
+        client_14_agreed: { type: 'noul', instructions: 'Le client du dossier 14 a-t-il donné son accord écrit ?' },
+        interns_forbidden: { type: 'noul', instructions: 'Les stagiaires ont-ils l’interdiction de s’inscrire à la formation ?' },
+        server_skipped: { type: 'noul', instructions: 'L’un des cinq serveurs a-t-il échappé à la mise à jour de cette nuit ?' },
+      },
+    },
+    en: {
+      name: 'Double negation',
+      description: 'Negations that cancel out: “not deny”, “no… without”, “nothing prevents”, “not a single one… escaped”.',
+      state:
+        '1. “I do not deny having received your letter of March 4, but I dispute its content.” (Mr. Garnier)\n2. No file is closed without the client’s written consent. File 14 was closed yesterday.\n3. Nothing prevents interns from signing up for the training.\n4. Not a single one of the five servers escaped last night’s update.',
+      questions: {
+        garnier_received: { type: 'noul', instructions: 'Did Mr. Garnier receive the letter of March 4?' },
+        client_14_agreed: { type: 'noul', instructions: 'Did the client of file 14 give written consent?' },
+        interns_forbidden: { type: 'noul', instructions: 'Are interns forbidden from signing up for the training?' },
+        server_skipped: { type: 'noul', instructions: 'Did one of the five servers escape last night’s update?' },
+      },
+    },
+  },
+  {
+    id: 'lang-not-all-scope',
+    category: 'Comprehension',
+    complexity: 'simple',
+    length: 'court',
+    // « Pas tous » restreint sans exclure : Sami (trois ans) remplit la condition nécessaire et suffisante.
+    // 1 200 € > 1 000 € : passage par la comptabilité, une semaine. Iris est l’exception du vendredi.
+    expected: { sami_remote: true, refund_48h: false, iris_friday: true },
+    fr: {
+      name: 'Portée de « pas tous »',
+      description: '« Tous… ne… pas », « pas tous », « sauf » dans un règlement intérieur.',
+      state:
+        'Règlement intérieur (extraits) :\n– Tous les employés n’ont pas droit au télétravail : y ont droit ceux qui ont au moins un an d’ancienneté, et eux seuls.\n– Les remboursements de frais ne sont pas tous traités sous 48 h : ceux de plus de 1 000 € passent par la comptabilité, qui met une semaine.\n– Les salles de réunion ne sont pas réservables le vendredi, sauf la salle Iris.',
+      questions: {
+        sami_remote: { type: 'noul', instructions: 'Sami, trois ans d’ancienneté, a-t-il droit au télétravail ?' },
+        refund_48h: { type: 'noul', instructions: 'Un remboursement de frais de 1 200 € sera-t-il traité sous 48 h ?' },
+        iris_friday: { type: 'noul', instructions: 'Peut-on réserver la salle Iris un vendredi ?' },
+      },
+    },
+    en: {
+      name: 'Scope of “not all”',
+      description: '“Not all”, “not every”, “except” in company rules.',
+      state:
+        'Company rules (extracts):\n– Not all employees are entitled to remote work: those with at least one year’s seniority are, and only they are.\n– Not all expense refunds are processed within 48 hours: those over €1,000 go through accounting, which takes a week.\n– Meeting rooms cannot be booked on Fridays, except the Iris room.',
+      questions: {
+        sami_remote: { type: 'noul', instructions: 'Is Sami, with three years’ seniority, entitled to remote work?' },
+        refund_48h: { type: 'noul', instructions: 'Will a €1,200 expense refund be processed within 48 hours?' },
+        iris_friday: { type: 'noul', instructions: 'Can the Iris room be booked on a Friday?' },
+      },
+    },
+  },
+  {
+    id: 'lang-presupposition',
+    category: 'Comprehension',
+    complexity: 'complexe',
+    length: 'court',
+    // Les présupposés survivent à la négation : « ne regrette pas d’avoir refusé » ⇒ elle a refusé ; « n’a pas arrêté de » ⇒ il le fait encore.
+    // « Découvrir que » est factif (la sauvegarde a bien échoué) ; « croire que » ne l’est pas : on ignore si le contrat est signé.
+    expected: { claire_accepted: false, vega_signed: 'unknown', backup_failed: true, malik_weekends: true },
+    fr: {
+      name: 'Présupposés',
+      description: 'Ce qu’une phrase tient pour acquis, même sous la négation ; verbes factifs ou non.',
+      state:
+        'Notes de réunion :\n– Claire ne regrette pas d’avoir refusé le poste à Lyon.\n– Hugo croit que le contrat Vega est signé.\n– Nina a découvert que la sauvegarde de mardi avait échoué.\n– Malik n’a toujours pas arrêté de travailler le week-end.',
+      questions: {
+        claire_accepted: { type: 'noul', instructions: 'Claire a-t-elle accepté le poste à Lyon ?' },
+        vega_signed: {
+          type: 'choice',
+          instructions: 'Le contrat Vega est-il signé ?',
+          criteria: { yes: 'Oui', no: 'Non', unknown: 'Les notes ne permettent pas de le savoir' },
+        },
+        backup_failed: { type: 'noul', instructions: 'La sauvegarde de mardi a-t-elle échoué ?' },
+        malik_weekends: { type: 'noul', instructions: 'Malik travaille-t-il encore le week-end ?' },
+      },
+    },
+    en: {
+      name: 'Presuppositions',
+      description: 'What a sentence takes for granted, even under negation; factive and non-factive verbs.',
+      state:
+        'Meeting notes:\n– Claire does not regret turning down the job in Lyon.\n– Hugo believes the Vega contract is signed.\n– Nina discovered that Tuesday’s backup had failed.\n– Malik still hasn’t stopped working weekends.',
+      questions: {
+        claire_accepted: { type: 'noul', instructions: 'Did Claire accept the job in Lyon?' },
+        vega_signed: {
+          type: 'choice',
+          instructions: 'Is the Vega contract signed?',
+          criteria: { yes: 'Yes', no: 'No', unknown: 'The notes do not say' },
+        },
+        backup_failed: { type: 'noul', instructions: 'Did Tuesday’s backup fail?' },
+        malik_weekends: { type: 'noul', instructions: 'Does Malik still work weekends?' },
+      },
+    },
+  },
+  {
+    id: 'lang-necessary-sufficient',
+    category: 'Comprehension',
+    complexity: 'complexe',
+    length: 'court',
+    // Le master est nécessaire, pas suffisant ; la moyenne > 14 est suffisante pour un étudiant de master.
+    // Chloé a exactement 14 : « inférieure ou égale à 14 » ⇒ entretien. Tout boursier est forcément en master (condition nécessaire).
+    expected: { ana_granted: true, chloe_outcome: 'interview', master_sufficient: false, holder_in_master: true },
+    fr: {
+      name: 'Condition nécessaire ou suffisante',
+      description: 'Règlement de bourse : ce qui est exigé, ce qui suffit, et le cas limite.',
+      state:
+        'Règlement de la bourse Horizon : seuls les étudiants inscrits en master peuvent prétendre à la bourse. Pour un étudiant de master, une moyenne strictement supérieure à 14/20 suffit pour l’obtenir. Les étudiants de master dont la moyenne est inférieure ou égale à 14/20 sont convoqués à un entretien, à l’issue duquel le jury décide.\n\nDossiers reçus : Ana, master 1, moyenne 15,2. Bilal, licence 3, moyenne 17,5. Chloé, master 2, moyenne 14.',
+      questions: {
+        ana_granted: { type: 'noul', instructions: 'Ana obtient-elle la bourse ?' },
+        chloe_outcome: {
+          type: 'choice',
+          instructions: 'Qu’en est-il du dossier de Chloé ?',
+          criteria: { granted: 'Elle obtient la bourse', interview: 'Elle est convoquée à un entretien', ineligible: 'Elle n’est pas éligible', refused: 'Sa demande est refusée' },
+        },
+        master_sufficient: { type: 'noul', instructions: 'D’après le règlement, être inscrit en master suffit-il pour obtenir la bourse ?' },
+        holder_in_master: { type: 'noul', instructions: 'Un étudiant qui a obtenu la bourse Horizon est-il forcément inscrit en master ?' },
+      },
+    },
+    en: {
+      name: 'Necessary or sufficient condition',
+      description: 'Scholarship rules: what is required, what is enough, and the borderline case.',
+      state:
+        'Horizon scholarship rules: only students enrolled in a master’s programme can apply for the scholarship. For a master’s student, an average strictly above 14/20 is enough to obtain it. Master’s students whose average is less than or equal to 14/20 are invited to an interview, after which the panel decides.\n\nApplications received: Ana, first-year master’s, average 15.2. Bilal, third-year bachelor’s, average 17.5. Chloé, second-year master’s, average 14.',
+      questions: {
+        ana_granted: { type: 'noul', instructions: 'Does Ana obtain the scholarship?' },
+        chloe_outcome: {
+          type: 'choice',
+          instructions: 'What happens with Chloé’s application?',
+          criteria: { granted: 'She obtains the scholarship', interview: 'She is invited to an interview', ineligible: 'She is not eligible', refused: 'Her application is rejected' },
+        },
+        master_sufficient: { type: 'noul', instructions: 'According to the rules, is being enrolled in a master’s programme enough to obtain the scholarship?' },
+        holder_in_master: { type: 'noul', instructions: 'Is a student who has obtained the Horizon scholarship necessarily enrolled in a master’s programme?' },
+      },
+    },
+  },
+  {
+    id: 'lang-comparatives',
+    category: 'Comprehension',
+    complexity: 'complexe',
+    length: 'court',
+    // Ordre : Gamma < Alpha < Bêta ≤ Delta < Epsilon. « Pas moins cher » autorise l’égalité : Delta peut coûter autant que Bêta,
+    // on ne peut donc pas affirmer qu’il est plus cher. Delta ≥ Bêta > Alpha, donc Delta est bien plus cher qu’Alpha.
+    expected: { cheapest: 'gamma', second_cheapest: 'alpha', delta_above_alpha: true, delta_above_beta: false },
+    fr: {
+      name: 'Comparatifs et superlatifs',
+      description: 'Classer cinq devis à partir de comparaisons partielles, dont « pas moins cher ».',
+      state:
+        'Comparatif des devis de rénovation : le devis Alpha est moins cher que le devis Bêta, mais plus cher que le devis Gamma. Le devis Delta n’est pas moins cher que le devis Bêta. Aucun devis n’est aussi cher que le devis Epsilon.',
+      questions: {
+        cheapest: {
+          type: 'choice',
+          instructions: 'Quel est le devis le moins cher ?',
+          criteria: { alpha: 'Alpha', beta: 'Bêta', gamma: 'Gamma', delta: 'Delta', epsilon: 'Epsilon' },
+        },
+        second_cheapest: {
+          type: 'choice',
+          instructions: 'Quel est le deuxième devis le moins cher ?',
+          criteria: { alpha: 'Alpha', beta: 'Bêta', gamma: 'Gamma', delta: 'Delta', epsilon: 'Epsilon' },
+        },
+        delta_above_alpha: { type: 'noul', instructions: 'Le devis Delta est-il plus cher que le devis Alpha ?' },
+        delta_above_beta: { type: 'noul', instructions: 'Le texte permet-il d’affirmer que le devis Delta est plus cher que le devis Bêta ?' },
+      },
+    },
+    en: {
+      name: 'Comparatives and superlatives',
+      description: 'Ranking five quotes from partial comparisons, including “not cheaper”.',
+      state:
+        'Renovation quote comparison: the Alpha quote is cheaper than the Beta quote, but more expensive than the Gamma quote. The Delta quote is not cheaper than the Beta quote. No quote is as expensive as the Epsilon quote.',
+      questions: {
+        cheapest: {
+          type: 'choice',
+          instructions: 'Which quote is the cheapest?',
+          criteria: { alpha: 'Alpha', beta: 'Beta', gamma: 'Gamma', delta: 'Delta', epsilon: 'Epsilon' },
+        },
+        second_cheapest: {
+          type: 'choice',
+          instructions: 'Which quote is the second cheapest?',
+          criteria: { alpha: 'Alpha', beta: 'Beta', gamma: 'Gamma', delta: 'Delta', epsilon: 'Epsilon' },
+        },
+        delta_above_alpha: { type: 'noul', instructions: 'Is the Delta quote more expensive than the Alpha quote?' },
+        delta_above_beta: { type: 'noul', instructions: 'Does the text allow us to state that the Delta quote is more expensive than the Beta quote?' },
+      },
+    },
+  },
+  {
+    id: 'lang-coordination-scope',
+    category: 'Comprehension',
+    complexity: 'simple',
+    length: 'court',
+    // Coordination ambiguë levée par la précision qui suit : l’âge vaut pour les cadres comme pour les techniciens,
+    // mais « en chêne » ne porte que sur les tables.
+    expected: { manager_50: false, technician_58: true, pine_chair: true, pine_table: false },
+    fr: {
+      name: 'Coordination ambiguë',
+      description: 'À quoi se rapporte le complément ? Ambiguïté levée par le contexte.',
+      state:
+        'Note RH : « Les cadres et les techniciens de plus de 55 ans peuvent demander une préretraite. » Précision de la DRH : la condition d’âge vaut pour les deux catégories.\n\nAffiche du magasin : « Remise de 10 % sur les chaises et les tables en chêne. » Précision du vendeur : toutes les chaises sont concernées, quel que soit le bois ; pour les tables, seules celles en chêne.',
+      questions: {
+        manager_50: { type: 'noul', instructions: 'Un cadre de 50 ans peut-il demander une préretraite ?' },
+        technician_58: { type: 'noul', instructions: 'Un technicien de 58 ans peut-il demander une préretraite ?' },
+        pine_chair: { type: 'noul', instructions: 'Une chaise en pin bénéficie-t-elle de la remise ?' },
+        pine_table: { type: 'noul', instructions: 'Une table en pin bénéficie-t-elle de la remise ?' },
+      },
+    },
+    en: {
+      name: 'Ambiguous coordination',
+      description: 'What does the modifier attach to? Ambiguity resolved by context.',
+      state:
+        'HR memo: “Managers and technicians over 55 may apply for early retirement.” HR clarification: the age condition applies to both categories.\n\nShop poster: “10% off chairs and tables made of oak.” Clarification from the salesperson: all chairs qualify, whatever the wood; for tables, only oak ones.',
+      questions: {
+        manager_50: { type: 'noul', instructions: 'Can a 50-year-old manager apply for early retirement?' },
+        technician_58: { type: 'noul', instructions: 'Can a 58-year-old technician apply for early retirement?' },
+        pine_chair: { type: 'noul', instructions: 'Does a pine chair get the discount?' },
+        pine_table: { type: 'noul', instructions: 'Does a pine table get the discount?' },
+      },
+    },
+  },
+  {
+    id: 'lang-indirect-speech-acts',
+    category: 'Comprehension',
+    complexity: 'simple',
+    length: 'court',
+    // Actes de langage indirects : u1 est une demande déguisée en question, u2 une offre, u3 un reproche ironique (40 minutes de retard),
+    // u4 une vraie demande d’information (répondre « oui » ne suffirait pas, mais le visiteur ne demande aucune tâche).
+    expected: { u1: 'request', u2: 'offer', u3: 'reproach', u4: 'information' },
+    fr: {
+      name: 'Actes de langage indirects',
+      description: 'Ce que le locuteur cherche vraiment à obtenir, derrière la forme de la phrase.',
+      state: {
+        u1: 'La directrice, à son assistant, à 10 h : « Serait-il possible d’avoir le rapport avant midi ? »',
+        u2: 'Un collègue, à Inès qui prépare sa soutenance : « Tu veux que je relise ta présentation ce soir ? »',
+        u3: 'Le responsable, à Tom qui entre à 9 h 40 dans une réunion commencée à 9 h : « Ah, tu as fini par trouver la salle ! »',
+        u4: 'Un visiteur, à l’hôtesse d’accueil du musée : « Savez-vous à quelle heure le musée ferme ce soir ? »',
+      },
+      questions: {
+        u1: {
+          type: 'choice',
+          instructions: 'Que cherche avant tout à faire la locutrice de `u1` ?',
+          criteria: { ability: 'Savoir si c’est faisable', request: 'Demander à l’interlocuteur d’accomplir une tâche', offer: 'Proposer son aide', reproach: 'Faire un reproche', information: 'Obtenir une information' },
+        },
+        u2: {
+          type: 'choice',
+          instructions: 'Que cherche avant tout à faire le locuteur de `u2` ?',
+          criteria: { ability: 'Savoir si c’est faisable', request: 'Demander à l’interlocuteur d’accomplir une tâche', offer: 'Proposer son aide', reproach: 'Faire un reproche', information: 'Obtenir une information' },
+        },
+        u3: {
+          type: 'choice',
+          instructions: 'Que cherche avant tout à faire le locuteur de `u3` ?',
+          criteria: { ability: 'Savoir si c’est faisable', request: 'Demander à l’interlocuteur d’accomplir une tâche', offer: 'Proposer son aide', reproach: 'Faire un reproche', information: 'Obtenir une information' },
+        },
+        u4: {
+          type: 'choice',
+          instructions: 'Que cherche avant tout à faire le locuteur de `u4` ?',
+          criteria: { ability: 'Savoir si c’est faisable', request: 'Demander à l’interlocuteur d’accomplir une tâche', offer: 'Proposer son aide', reproach: 'Faire un reproche', information: 'Obtenir une information' },
+        },
+      },
+    },
+    en: {
+      name: 'Indirect speech acts',
+      description: 'What the speaker really wants, behind the form of the sentence.',
+      state: {
+        u1: 'The director, to her assistant, at 10 am: “Would it be possible to have the report before noon?”',
+        u2: 'A colleague, to Inès, who is preparing her thesis defence: “Do you want me to look over your presentation tonight?”',
+        u3: 'The manager, to Tom, who walks in at 9:40 am to a meeting that started at 9: “Ah, so you found the room in the end!”',
+        u4: 'A visitor, to the museum receptionist: “Do you know what time the museum closes tonight?”',
+      },
+      questions: {
+        u1: {
+          type: 'choice',
+          instructions: 'What is the speaker of `u1` mainly trying to do?',
+          criteria: { ability: 'Find out whether it is feasible', request: 'Ask the listener to carry out a task', offer: 'Offer help', reproach: 'Reproach the listener', information: 'Obtain a piece of information' },
+        },
+        u2: {
+          type: 'choice',
+          instructions: 'What is the speaker of `u2` mainly trying to do?',
+          criteria: { ability: 'Find out whether it is feasible', request: 'Ask the listener to carry out a task', offer: 'Offer help', reproach: 'Reproach the listener', information: 'Obtain a piece of information' },
+        },
+        u3: {
+          type: 'choice',
+          instructions: 'What is the speaker of `u3` mainly trying to do?',
+          criteria: { ability: 'Find out whether it is feasible', request: 'Ask the listener to carry out a task', offer: 'Offer help', reproach: 'Reproach the listener', information: 'Obtain a piece of information' },
+        },
+        u4: {
+          type: 'choice',
+          instructions: 'What is the speaker of `u4` mainly trying to do?',
+          criteria: { ability: 'Find out whether it is feasible', request: 'Ask the listener to carry out a task', offer: 'Offer help', reproach: 'Reproach the listener', information: 'Obtain a piece of information' },
+        },
+      },
+    },
+  },
+  {
+    id: 'lang-concession',
+    category: 'Comprehension',
+    complexity: 'simple',
+    length: 'court',
+    // Dans « certes… mais » et « cela dit », c’est ce qui suit qui porte la conclusion : Anne recommande Pragma
+    // et soutient Durand, tout en reconnaissant que Nordis est moins cher et que Durand manque d’expérience.
+    expected: { supplier: 'pragma', nordis_cheaper: true, durand_second_interview: true, durand_experienced: false },
+    fr: {
+      name: 'Concession',
+      description: '« Certes… mais », « cela dit » : ce qui est concédé et ce qui est conclu.',
+      state:
+        'Avis d’Anne sur le fournisseur : « Certes, Nordis est 15 % moins cher que Pragma, mais ses délais de livraison sont incompatibles avec notre calendrier. Je recommande donc Pragma. »\n\nAvis d’Anne sur le candidat : « M. Durand n’a pas l’expérience demandée ; cela dit, son test technique est le meilleur que nous ayons vu, et je suis favorable à un second entretien. »',
+      questions: {
+        supplier: {
+          type: 'choice',
+          instructions: 'Quel fournisseur Anne recommande-t-elle ?',
+          criteria: { nordis: 'Nordis', either: 'Indifféremment l’un ou l’autre', pragma: 'Pragma', undecided: 'Elle ne se prononce pas' },
+        },
+        nordis_cheaper: { type: 'noul', instructions: 'Selon Anne, Nordis est-il moins cher que Pragma ?' },
+        durand_second_interview: { type: 'noul', instructions: 'Anne est-elle favorable à un second entretien pour M. Durand ?' },
+        durand_experienced: { type: 'noul', instructions: 'Selon Anne, M. Durand a-t-il l’expérience demandée ?' },
+      },
+    },
+    en: {
+      name: 'Concession',
+      description: '“Admittedly… but”, “that said”: what is conceded and what is concluded.',
+      state:
+        'Anne’s view on the supplier: “Admittedly, Nordis is 15% cheaper than Pragma, but its delivery times are incompatible with our schedule. I therefore recommend Pragma.”\n\nAnne’s view on the candidate: “Mr. Durand does not have the required experience; that said, his technical test is the best we have seen, and I am in favour of a second interview.”',
+      questions: {
+        supplier: {
+          type: 'choice',
+          instructions: 'Which supplier does Anne recommend?',
+          criteria: { nordis: 'Nordis', either: 'Either one', pragma: 'Pragma', undecided: 'She does not take a position' },
+        },
+        nordis_cheaper: { type: 'noul', instructions: 'According to Anne, is Nordis cheaper than Pragma?' },
+        durand_second_interview: { type: 'noul', instructions: 'Is Anne in favour of a second interview for Mr. Durand?' },
+        durand_experienced: { type: 'noul', instructions: 'According to Anne, does Mr. Durand have the required experience?' },
+      },
+    },
+  },
+  {
+    id: 'lang-litotes-euphemisms',
+    category: 'Comprehension',
+    complexity: 'complexe',
+    length: 'court',
+    // « Se séparer de » est un euphémisme de licenciement ; « n’est pas sans savoir » = sait ; « je ne suis pas ravi » = mécontent ;
+    // « quelques ajustements de calendrier » masque huit mois de retard (mars → novembre) : retard important.
+    expected: { lambert: 'dismissal', costa_knows: true, author_satisfied: false, delay: 2 },
+    fr: {
+      name: 'Litotes et euphémismes',
+      description: 'Dire moins pour signifier plus, ou adoucir une mauvaise nouvelle.',
+      state:
+        'Extraits de courriels internes :\n1. « Après mûre réflexion, nous avons décidé de nous séparer de M. Lambert. »\n2. « Mme Costa n’est pas sans savoir que la date limite de dépôt est vendredi. »\n3. « Je ne vous cache pas que je ne suis pas ravi du résultat. »\n4. « Le projet a connu quelques ajustements de calendrier : livraison prévue en mars, effectuée en novembre. »',
+      questions: {
+        lambert: {
+          type: 'choice',
+          instructions: 'Que signifie l’extrait 1 pour M. Lambert ?',
+          criteria: {
+            team_change: 'Il change d’équipe',
+            dismissal: 'L’entreprise met fin à son contrat',
+            office_move: 'Il change de bureau',
+            leave: 'Il part en congé',
+          },
+        },
+        costa_knows: { type: 'noul', instructions: 'D’après l’extrait 2, Mme Costa sait-elle que la date limite est vendredi ?' },
+        author_satisfied: { type: 'noul', instructions: 'L’auteur de l’extrait 3 est-il satisfait du résultat ?' },
+        delay: { type: 'score', instructions: 'Retard du projet décrit dans l’extrait 4', criteria: ['Aucun retard', 'Léger retard', 'Retard important'] },
+      },
+    },
+    en: {
+      name: 'Litotes and euphemisms',
+      description: 'Saying less to mean more, or softening bad news.',
+      state:
+        'Extracts from internal emails:\n1. “After careful consideration, we have decided to part ways with Mr. Lambert.”\n2. “Ms. Costa is not unaware that the submission deadline is Friday.”\n3. “I won’t hide from you that I am not thrilled with the result.”\n4. “The project went through a few schedule adjustments: delivery planned for March, completed in November.”',
+      questions: {
+        lambert: {
+          type: 'choice',
+          instructions: 'What does extract 1 mean for Mr. Lambert?',
+          criteria: {
+            team_change: 'He is moving to another team',
+            dismissal: 'The company is ending his contract',
+            office_move: 'He is moving to another office',
+            leave: 'He is going on leave',
+          },
+        },
+        costa_knows: { type: 'noul', instructions: 'According to extract 2, does Ms. Costa know that the deadline is Friday?' },
+        author_satisfied: { type: 'noul', instructions: 'Is the author of extract 3 satisfied with the result?' },
+        delay: { type: 'score', instructions: 'Project delay described in extract 4', criteria: ['No delay', 'Slight delay', 'Significant delay'] },
+      },
+    },
+  },
+  {
+    id: 'lang-workplace-sarcasm',
+    category: 'Comprehension',
+    complexity: 'complexe',
+    length: 'moyen',
+    // Karim est sarcastique deux fois (« merveilleuse façon », « en faire une tradition ») : il veut arrêter les déploiements du vendredi soir.
+    // Le « merci » à Théo est ironique : une erreur trouvée en trente secondes a échappé à sa relecture. Le merci à Bastien est sincère.
+    expected: { karim_pleased: false, theo_review: 'superficial', bastien_thanks_sincere: true, karim_friday: 'stop' },
+    fr: {
+      name: 'Sarcasme au bureau',
+      description: 'Fil de discussion après un incident : remerciements ironiques et sincères.',
+      state:
+        '#prod — lundi, 9 h 02\nKarim : Super, le déploiement de vendredi 18 h a encore cassé la facturation. Quelle merveilleuse façon de commencer la semaine.\nNadia : Oui, et merci à Théo pour sa relecture particulièrement approfondie du script de migration : il nous a fallu trente secondes pour trouver l’erreur.\nSophie : Plus sérieusement, merci Bastien d’avoir passé la nuit à restaurer la base. Sans toi, on serait encore à l’arrêt.\nKarim : Excellente idée, ces déploiements du vendredi soir. On devrait en faire une tradition.',
+      questions: {
+        karim_pleased: { type: 'noul', instructions: 'Karim est-il content de la façon dont la semaine commence ?' },
+        theo_review: {
+          type: 'choice',
+          instructions: 'Selon Nadia, comment Théo a-t-il relu le script de migration ?',
+          criteria: { thorough: 'De façon approfondie', superficial: 'Superficiellement', not_reviewed: 'Il n’était pas chargé de le relire' },
+        },
+        bastien_thanks_sincere: { type: 'noul', instructions: 'Les remerciements de Sophie à Bastien sont-ils sincères ?' },
+        karim_friday: {
+          type: 'choice',
+          instructions: 'Que pense réellement Karim des déploiements du vendredi soir ?',
+          criteria: { continue: 'Il faut continuer', more: 'Il faut en faire davantage', stop: 'Il faut arrêter', indifferent: 'Cela lui est égal' },
+        },
+      },
+    },
+    en: {
+      name: 'Sarcasm at work',
+      description: 'Chat thread after an incident: ironic and sincere thanks.',
+      state:
+        '#prod — Monday, 9:02 am\nKarim: Great, Friday’s 6 pm deployment broke billing again. What a wonderful way to start the week.\nNadia: Yes, and thanks to Théo for his particularly thorough review of the migration script: it took us thirty seconds to find the bug.\nSophie: On a serious note, thank you Bastien for spending the night restoring the database. Without you, we would still be down.\nKarim: Excellent idea, these Friday evening deployments. We should make it a tradition.',
+      questions: {
+        karim_pleased: { type: 'noul', instructions: 'Is Karim happy with the way the week is starting?' },
+        theo_review: {
+          type: 'choice',
+          instructions: 'According to Nadia, how did Théo review the migration script?',
+          criteria: { thorough: 'Thoroughly', superficial: 'Superficially', not_reviewed: 'He was not in charge of reviewing it' },
+        },
+        bastien_thanks_sincere: { type: 'noul', instructions: 'Are Sophie’s thanks to Bastien sincere?' },
+        karim_friday: {
+          type: 'choice',
+          instructions: 'What does Karim really think of Friday evening deployments?',
+          criteria: { continue: 'They should continue', more: 'There should be more of them', stop: 'They should stop', indifferent: 'He doesn’t care' },
+        },
+      },
+    },
+  },
+  {
+    id: 'lang-false-belief',
+    category: 'Comprehension',
+    complexity: 'complexe',
+    length: 'moyen',
+    // Le contrat est en reprographie (Marc l’y a laissé). Paul n’a jamais été prévenu : il cherchera dans le classeur bleu.
+    // Anne croit Paul prévenu, donc l’imagine chercher dans le tiroir. Lucie croit le contrat dans le tiroir : elle se trompe.
+    expected: { actual_location: 'copy_room', paul_looks: 'blue_folder', anne_expects: 'drawer', lucie_knows: false },
+    fr: {
+      name: 'Qui sait quoi',
+      description: 'Un document déplacé deux fois : croyances de chacun et réalité.',
+      state:
+        'Lundi matin, Paul range le contrat Ferrand dans le classeur bleu de son bureau, puis part en rendez-vous. Pendant son absence, Anne déplace le contrat dans le tiroir de la salle de réunion et demande à Lucie, l’assistante de Paul, de le prévenir. Lucie oublie de le faire, mais Anne reste persuadée que Paul est au courant. Un peu plus tard, Marc prend le contrat dans le tiroir pour le numériser et le laisse dans la salle de reprographie ; il n’en parle à personne. Paul revient en fin de journée et veut relire le contrat.',
+      questions: {
+        actual_location: {
+          type: 'choice',
+          instructions: 'Où se trouve réellement le contrat quand Paul revient ?',
+          criteria: { blue_folder: 'Dans le classeur bleu', drawer: 'Dans le tiroir de la salle de réunion', copy_room: 'Dans la salle de reprographie', unknown: 'On ne peut pas le savoir' },
+        },
+        paul_looks: {
+          type: 'choice',
+          instructions: 'Où Paul va-t-il chercher le contrat en premier ?',
+          criteria: { blue_folder: 'Dans le classeur bleu', drawer: 'Dans le tiroir de la salle de réunion', copy_room: 'Dans la salle de reprographie', unknown: 'On ne peut pas le savoir' },
+        },
+        anne_expects: {
+          type: 'choice',
+          instructions: 'Où Anne pense-t-elle que Paul ira chercher le contrat ?',
+          criteria: { blue_folder: 'Dans le classeur bleu', drawer: 'Dans le tiroir de la salle de réunion', copy_room: 'Dans la salle de reprographie', unknown: 'On ne peut pas le savoir' },
+        },
+        lucie_knows: { type: 'noul', instructions: 'Lucie sait-elle où se trouve le contrat quand Paul revient ?' },
+      },
+    },
+    en: {
+      name: 'Who knows what',
+      description: 'A document moved twice: each person’s beliefs and reality.',
+      state:
+        'On Monday morning, Paul puts the Ferrand contract in the blue binder in his office, then leaves for a meeting. While he is away, Anne moves the contract to the drawer in the meeting room and asks Lucie, Paul’s assistant, to let him know. Lucie forgets to do so, but Anne remains convinced that Paul knows. A little later, Marc takes the contract from the drawer to scan it and leaves it in the copy room; he tells no one. Paul comes back at the end of the day and wants to reread the contract.',
+      questions: {
+        actual_location: {
+          type: 'choice',
+          instructions: 'Where is the contract actually located when Paul comes back?',
+          criteria: { blue_folder: 'In the blue binder', drawer: 'In the meeting room drawer', copy_room: 'In the copy room', unknown: 'There is no way to know' },
+        },
+        paul_looks: {
+          type: 'choice',
+          instructions: 'Where will Paul look for the contract first?',
+          criteria: { blue_folder: 'In the blue binder', drawer: 'In the meeting room drawer', copy_room: 'In the copy room', unknown: 'There is no way to know' },
+        },
+        anne_expects: {
+          type: 'choice',
+          instructions: 'Where does Anne think Paul will look for the contract?',
+          criteria: { blue_folder: 'In the blue binder', drawer: 'In the meeting room drawer', copy_room: 'In the copy room', unknown: 'There is no way to know' },
+        },
+        lucie_knows: { type: 'noul', instructions: 'Does Lucie know where the contract is when Paul comes back?' },
+      },
+    },
+  },
+  {
+    id: 'lang-implicit-negation',
+    category: 'Comprehension',
+    complexity: 'complexe',
+    length: 'court',
+    // Négation implicite : « faute de quorum » ⇒ pas de quorum ; « sans l’intervention de Noé, le serveur serait tombé » ⇒ Noé est intervenu
+    // et le serveur n’est pas tombé ; « a failli rater » ⇒ il ne l’a pas raté ; « personne n’a manqué de remarquer » ⇒ tout le monde l’a remarquée.
+    expected: { quorum_reached: false, server_crashed: false, noe_intervened: true, caught_plane: true, everyone_noticed: true },
+    fr: {
+      name: 'Négation implicite',
+      description: '« Faute de », « sans », « a failli », « n’a pas manqué de ».',
+      state:
+        '1. Faute de quorum, l’assemblée générale n’a pas pu voter.\n2. Sans l’intervention de Noé, le serveur serait tombé en panne.\n3. Victor a failli rater son avion.\n4. Personne n’a manqué de remarquer la faute dans le slogan.',
+      questions: {
+        quorum_reached: { type: 'noul', instructions: 'Le quorum a-t-il été atteint ?' },
+        server_crashed: { type: 'noul', instructions: 'Le serveur est-il tombé en panne ?' },
+        noe_intervened: { type: 'noul', instructions: 'Noé est-il intervenu ?' },
+        caught_plane: { type: 'noul', instructions: 'Victor a-t-il pris son avion ?' },
+        everyone_noticed: { type: 'noul', instructions: 'Tout le monde a-t-il remarqué la faute dans le slogan ?' },
+      },
+    },
+    en: {
+      name: 'Implicit negation',
+      description: '“For lack of”, “without”, “nearly”, “no one failed to”.',
+      state:
+        '1. For lack of a quorum, the general meeting was unable to vote.\n2. Without Noé’s intervention, the server would have crashed.\n3. Victor nearly missed his plane.\n4. No one failed to notice the typo in the slogan.',
+      questions: {
+        quorum_reached: { type: 'noul', instructions: 'Was the quorum reached?' },
+        server_crashed: { type: 'noul', instructions: 'Did the server crash?' },
+        noe_intervened: { type: 'noul', instructions: 'Did Noé intervene?' },
+        caught_plane: { type: 'noul', instructions: 'Did Victor catch his plane?' },
+        everyone_noticed: { type: 'noul', instructions: 'Did everyone notice the typo in the slogan?' },
+      },
+    },
+  },
+  {
+    id: 'lang-nli-hard',
+    category: 'Comprehension',
+    complexity: 'complexe',
+    length: 'moyen',
+    // a : trois projets sur cinq en retard, c’est la majorité ⇒ implication. b : nier n’est pas prouver ⇒ neutre.
+    // c : modus tollens ⇒ contradiction. d : affirmation du conséquent, Inès peut avoir eu un certificat autrement ⇒ neutre.
+    // e : « cesser de travailler pour » présuppose d’y avoir travaillé ⇒ implication.
+    expected: { pair_a: 'entailment', pair_b: 'neutral', pair_c: 'contradiction', pair_d: 'neutral', pair_e: 'entailment' },
+    fr: {
+      name: 'Inférence en langue naturelle (difficile)',
+      description: 'Implication, contradiction ou neutralité : proportions, démentis, conditionnels, présupposés.',
+      state: {
+        pair_a: { A: 'Seuls deux des cinq projets ont été livrés à temps.', B: 'La plupart des projets n’ont pas été livrés à temps.' },
+        pair_b: { A: 'Le directeur a nié avoir signé la lettre.', B: 'Le directeur n’a pas signé la lettre.' },
+        pair_c: {
+          A: 'Tous les participants qui ont terminé le test ont reçu un certificat. Lucas n’a pas reçu de certificat.',
+          B: 'Lucas a terminé le test.',
+        },
+        pair_d: {
+          A: 'Tous les participants qui ont terminé le test ont reçu un certificat. Inès a reçu un certificat.',
+          B: 'Inès a terminé le test.',
+        },
+        pair_e: { A: 'Nadia a cessé de travailler pour Orbis en 2022.', B: 'Nadia a travaillé pour Orbis.' },
+      },
+      questions: {
+        pair_a: { type: 'choice', instructions: 'Relation entre A et B dans `pair_a`', criteria: NLI.fr },
+        pair_b: { type: 'choice', instructions: 'Relation entre A et B dans `pair_b`', criteria: NLI.fr },
+        pair_c: { type: 'choice', instructions: 'Relation entre A et B dans `pair_c`', criteria: NLI.fr },
+        pair_d: { type: 'choice', instructions: 'Relation entre A et B dans `pair_d`', criteria: NLI.fr },
+        pair_e: { type: 'choice', instructions: 'Relation entre A et B dans `pair_e`', criteria: NLI.fr },
+      },
+    },
+    en: {
+      name: 'Natural language inference (hard)',
+      description: 'Entailment, contradiction or neutrality: proportions, denials, conditionals, presuppositions.',
+      state: {
+        pair_a: { A: 'Only two of the five projects were delivered on time.', B: 'Most of the projects were not delivered on time.' },
+        pair_b: { A: 'The director denied having signed the letter.', B: 'The director did not sign the letter.' },
+        pair_c: {
+          A: 'All participants who completed the test received a certificate. Lucas did not receive a certificate.',
+          B: 'Lucas completed the test.',
+        },
+        pair_d: {
+          A: 'All participants who completed the test received a certificate. Inès received a certificate.',
+          B: 'Inès completed the test.',
+        },
+        pair_e: { A: 'Nadia stopped working for Orbis in 2022.', B: 'Nadia worked for Orbis.' },
+      },
+      questions: {
+        pair_a: { type: 'choice', instructions: 'Relation between A and B in `pair_a`', criteria: NLI.en },
+        pair_b: { type: 'choice', instructions: 'Relation between A and B in `pair_b`', criteria: NLI.en },
+        pair_c: { type: 'choice', instructions: 'Relation between A and B in `pair_c`', criteria: NLI.en },
+        pair_d: { type: 'choice', instructions: 'Relation between A and B in `pair_d`', criteria: NLI.en },
+        pair_e: { type: 'choice', instructions: 'Relation between A and B in `pair_e`', criteria: NLI.en },
+      },
+    },
+  },
+  {
+    id: 'lang-calibration-should',
+    category: 'Calibration',
+    complexity: 'complexe',
+    length: 'court',
+    // « Devrait normalement » exprime une probabilité élevée sans garantie, nuancée par la mise en garde : probabilité plutôt haute.
+    expected: { delivered_thursday: [0.5, 0.95], guaranteed: false },
+    fr: {
+      name: '« Devrait » (calibration)',
+      description: 'Modalité épistémique : probable, pas certain.',
+      state:
+        'Suivi de commande : « Votre colis a été remis au transporteur. Il devrait normalement être livré jeudi. Les délais peuvent varier en période de forte activité. »',
+      questions: {
+        delivered_thursday: { type: 'noul', instructions: 'Le colis sera-t-il livré jeudi ?' },
+        guaranteed: { type: 'noul', instructions: 'La livraison jeudi est-elle garantie ?' },
+      },
+    },
+    en: {
+      name: '“Should” (calibration)',
+      description: 'Epistemic modality: likely, not certain.',
+      state:
+        'Order tracking: “Your parcel has been handed over to the carrier. It should normally be delivered on Thursday. Delivery times may vary during busy periods.”',
+      questions: {
+        delivered_thursday: { type: 'noul', instructions: 'Will the parcel be delivered on Thursday?' },
+        guaranteed: { type: 'noul', instructions: 'Is delivery on Thursday guaranteed?' },
+      },
+    },
+  },
+  {
+    id: 'lang-steering-minutes',
+    category: 'Comprehension',
+    complexity: 'complexe',
+    length: 'long',
+    // « Ce dernier » renvoie au nouveau directeur technique, Rémi Faure. Seule Sonia s’engage ferme (Antoine « aimerait », Yasmine « envisage »).
+    // La formation RGPD est obligatoire (« doivent »), celle au ticketing seulement recommandée (« devraient », non bloquante).
+    // Point 6 : 3 mars + deux semaines = 17 mars. Le client n’a pas encore été informé (point 7).
+    expected: { architecture_signer: 'remi', firm_commitment: 'sonia', contractor_access: true, go_live: 'march_17', client_informed: false },
+    fr: {
+      name: 'Compte rendu de comité de pilotage',
+      description: 'Chaînes de références, engagements et intentions, modalité, décision modifiée plus loin dans le texte.',
+      state: STEERING_MINUTES.fr,
+      questions: {
+        architecture_signer: {
+          type: 'choice',
+          instructions: 'Qui signera le schéma d’architecture cible ?',
+          criteria: { gilles: 'Gilles Marchand', claire: 'Claire Dumas', remi: 'Rémi Faure', sonia: 'Sonia Petit' },
+        },
+        firm_commitment: {
+          type: 'choice',
+          instructions: 'Parmi Sonia Petit, Antoine Leroy et Yasmine Haddad, qui a pris un engagement ferme sur une échéance ?',
+          criteria: {
+            sonia: 'Sonia Petit uniquement',
+            sonia_antoine: 'Sonia Petit et Antoine Leroy',
+            all_three: 'Tous les trois',
+            nobody: 'Aucun des trois',
+          },
+        },
+        contractor_access: {
+          type: 'noul',
+          instructions: 'Un prestataire qui a suivi la formation RGPD, mais pas celle à l’outil de ticketing, peut-il obtenir un accès à l’environnement de production ?',
+        },
+        go_live: {
+          type: 'choice',
+          instructions: 'À quelle date la mise en production est-elle désormais prévue ?',
+          criteria: { march_3: 'Le 3 mars', march_10: 'Le 10 mars', march_17: 'Le 17 mars', undetermined: 'Pas encore fixée' },
+        },
+        client_informed: { type: 'noul', instructions: 'Au moment du comité, le client sait-il que la mise en production est décalée ?' },
+      },
+    },
+    en: {
+      name: 'Steering committee minutes',
+      description: 'Reference chains, commitments and intentions, modality, a decision changed later in the text.',
+      state: STEERING_MINUTES.en,
+      questions: {
+        architecture_signer: {
+          type: 'choice',
+          instructions: 'Who will sign the target architecture diagram?',
+          criteria: { gilles: 'Gilles Marchand', claire: 'Claire Dumas', remi: 'Rémi Faure', sonia: 'Sonia Petit' },
+        },
+        firm_commitment: {
+          type: 'choice',
+          instructions: 'Among Sonia Petit, Antoine Leroy and Yasmine Haddad, who made a firm commitment to a deadline?',
+          criteria: {
+            sonia: 'Sonia Petit only',
+            sonia_antoine: 'Sonia Petit and Antoine Leroy',
+            all_three: 'All three',
+            nobody: 'None of them',
+          },
+        },
+        contractor_access: {
+          type: 'noul',
+          instructions: 'Can a contractor who has completed the GDPR training, but not the ticketing tool training, be given access to the production environment?',
+        },
+        go_live: {
+          type: 'choice',
+          instructions: 'On what date is the go-live now planned?',
+          criteria: { march_3: 'March 3', march_10: 'March 10', march_17: 'March 17', undetermined: 'Not set yet' },
+        },
+        client_informed: { type: 'noul', instructions: 'At the time of the committee, does the client know that the go-live has been pushed back?' },
+      },
+    },
+  },
+  {
+    id: 'lang-claim-letter',
+    category: 'Comprehension',
+    complexity: 'complexe',
+    length: 'long',
+    // Plafond et peinture : 2 340 + 860 − 380 (franchise appliquée une seule fois) = 2 820 €. Les 190 € de recherche de fuite
+    // ont été réglés par le voisin, l’ordinateur est en attente de justificatif : ni l’un ni l’autre n’est versé maintenant.
+    // « Pas en mesure de réserver une suite favorable » est un refus poli ; « certes » concède que la fuite vient de chez M. Olivier.
+    expected: { leak_from_neighbour: true, payout: 'eur_2820', floor_covered: false, laptop: 'pending' },
+    fr: {
+      name: 'Courrier d’assureur',
+      description: 'Concession, refus euphémisé, « faute de » et condition, montant à recalculer.',
+      state: CLAIM_LETTER.fr,
+      questions: {
+        leak_from_neighbour: { type: 'noul', instructions: 'Le courrier reconnaît-il que la fuite provient de chez M. Olivier ?' },
+        payout: {
+          type: 'choice',
+          instructions: 'Quel montant l’assureur s’engage-t-il à verser dès maintenant ?',
+          criteria: { eur_1960: '1 960 €', eur_2440: '2 440 €', eur_2820: '2 820 €', eur_3010: '3 010 €', eur_3200: '3 200 €' },
+        },
+        floor_covered: { type: 'noul', instructions: 'Le parquet de la chambre est-il pris en charge ?' },
+        laptop: {
+          type: 'choice',
+          instructions: 'Qu’en est-il de l’ordinateur portable ?',
+          criteria: {
+            covered: 'Il est indemnisé dès maintenant',
+            refused: 'Il est définitivement refusé',
+            pending: 'Il sera examiné si un justificatif d’achat est envoyé avant le 15 décembre',
+            neighbour: 'Il faut s’adresser à l’assureur de M. Olivier',
+          },
+        },
+      },
+    },
+    en: {
+      name: 'Insurer’s letter',
+      description: 'Concession, euphemistic refusal, “in the absence of” and a condition, an amount to recompute.',
+      state: CLAIM_LETTER.en,
+      questions: {
+        leak_from_neighbour: { type: 'noul', instructions: 'Does the letter acknowledge that the leak came from Mr. Olivier’s flat?' },
+        payout: {
+          type: 'choice',
+          instructions: 'What amount does the insurer commit to paying now?',
+          criteria: { eur_1960: '€1,960', eur_2440: '€2,440', eur_2820: '€2,820', eur_3010: '€3,010', eur_3200: '€3,200' },
+        },
+        floor_covered: { type: 'noul', instructions: 'Is the bedroom floor covered?' },
+        laptop: {
+          type: 'choice',
+          instructions: 'What about the laptop?',
+          criteria: {
+            covered: 'It is compensated now',
+            refused: 'It is definitively refused',
+            pending: 'It will be reviewed if proof of purchase is sent before December 15',
+            neighbour: 'Mr. Olivier’s insurer must be contacted',
+          },
         },
       },
     },

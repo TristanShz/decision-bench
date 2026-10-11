@@ -1,4 +1,4 @@
-// Comparaison appariée d'une paire traduite (ex. core-fr / core-en) : yarn paired [famille]
+// Comparaison appariée d'une paire traduite (ex. core-fr / core-en) : yarn paired [famille[@version]]
 // Chaque question existe dans les deux langues avec le même identifiant : on compare la même
 // question d'une langue à l'autre, ce qui élimine l'effet du contenu.
 import { readdir, readFile } from 'node:fs/promises'
@@ -7,13 +7,19 @@ import { caseStats } from '../src/bench/stats.ts'
 import type { BenchReport } from '../src/bench/types.ts'
 
 const dir = path.resolve(import.meta.dirname, '../reports')
-const family = process.argv[2] ?? 'core'
+const [family, pinned] = (process.argv[2] ?? 'core').split('@')
 const [a, b] = ['fr', 'en'].map((l) => `${family}-${l}`)
 
-const latest = new Map<string, BenchReport>()
+const all: BenchReport[] = []
 for (const f of (await readdir(dir)).filter((f) => f.endsWith('.json'))) {
   const r = JSON.parse(await readFile(path.join(dir, f), 'utf8')) as BenchReport
-  if (r.aborted || (r.suiteId !== a && r.suiteId !== b)) continue
+  if (!r.aborted && (r.suiteId === a || r.suiteId === b)) all.push(r)
+}
+// Seule la dernière version de la famille (ou celle demandée) est comparée : les cas changent d'une version à l'autre.
+const version = pinned ? Number(pinned) : Math.max(0, ...all.map((r) => Number(r.suiteVersion) || 0))
+const latest = new Map<string, BenchReport>()
+for (const r of all) {
+  if ((Number(r.suiteVersion) || 0) !== version) continue
   const key = `${r.suiteId}|${r.target.url}|${r.target.model}`
   const prev = latest.get(key)
   if (!prev || prev.createdAt < r.createdAt) latest.set(key, r)

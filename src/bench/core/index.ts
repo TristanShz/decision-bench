@@ -5,15 +5,32 @@ import { LANGUAGE } from './language.ts'
 import { NUMBERS } from './numbers.ts'
 import { OPERATIONS } from './operations.ts'
 import { RULES } from './rules.ts'
+import { ROBUSTNESS } from './robustness.ts'
+import { TIME } from './time.ts'
+import { LOGIC } from './logic.ts'
+import { ABSTENTION } from './abstention.ts'
+import { TECHNICAL } from './technical.ts'
 import { checkPair, type CoreLang } from './pair.ts'
 
 export type { CoreLang } from './pair.ts'
 
 /** À incrémenter dès qu'un cas change, dans l'une ou l'autre langue. */
-export const CORE_VERSION = '2'
+export const CORE_VERSION = '3'
 
 // Un fichier par thème ; l'ordre des cas suit l'ordre de cette liste.
-const PAIRS = [...BASE, ...LANGUAGE, ...OPERATIONS, ...RULES, ...NUMBERS, ...DOCUMENTS]
+const PAIRS = [
+  ...BASE,
+  ...LANGUAGE,
+  ...OPERATIONS,
+  ...RULES,
+  ...NUMBERS,
+  ...DOCUMENTS,
+  ...TIME,
+  ...LOGIC,
+  ...ABSTENTION,
+  ...ROBUSTNESS,
+  ...TECHNICAL,
+]
 
 /** Les cas du benchmark core dans une langue ; identifiants identiques d'une langue à l'autre. */
 export function coreCases(lang: CoreLang): BenchCase[] {

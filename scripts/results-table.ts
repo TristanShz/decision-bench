@@ -1,18 +1,27 @@
-// Tableaux de résultats en Markdown, à partir des rapports de reports/ : yarn results [suite…]
-// Pour chaque suite et chaque modèle, le rapport complet le plus récent est retenu.
+// Tableaux de résultats en Markdown, à partir des rapports de reports/ : yarn results [suite[@version]…]
+// Pour chaque suite, seule la dernière version est retenue (ou celle demandée, ex. core-fr@2),
+// et pour chaque modèle son rapport complet le plus récent.
 import { readdir, readFile } from 'node:fs/promises'
 import path from 'node:path'
 import { caseStats, confidence, type Interval } from '../src/bench/stats.ts'
 import type { BenchReport } from '../src/bench/types.ts'
 
 const dir = path.resolve(import.meta.dirname, '../reports')
-const only = process.argv.slice(2)
+const args = process.argv.slice(2).map((a) => a.split('@'))
+const only = args.map(([suite]) => suite)
+const pinned = new Map(args.filter(([, v]) => v).map(([suite, v]) => [suite, Number(v)]))
 
-const reports: BenchReport[] = []
+const all: BenchReport[] = []
 for (const f of (await readdir(dir)).filter((f) => f.endsWith('.json'))) {
   const r = JSON.parse(await readFile(path.join(dir, f), 'utf8')) as BenchReport
-  if (!r.aborted) reports.push(r)
+  if (!r.aborted) all.push(r)
 }
+// Des versions différentes d'une suite n'ont pas les mêmes cas : on ne les mélange pas dans un tableau.
+const suiteOf = (r: BenchReport) => r.suiteId ?? 'multilingual'
+const versionOf = (r: BenchReport) => Number(r.suiteVersion) || 0
+const version = new Map(pinned)
+for (const r of all) if (!pinned.has(suiteOf(r))) version.set(suiteOf(r), Math.max(version.get(suiteOf(r)) ?? 0, versionOf(r)))
+const reports = all.filter((r) => versionOf(r) === version.get(suiteOf(r)))
 
 const pct = (v: number | null) => (v == null ? '—' : `${(v * 100).toFixed(1)} %`)
 const ci = (i: Interval | null) => (i ? `${(i.lo * 100).toFixed(0)}–${(i.hi * 100).toFixed(0)}` : '—')

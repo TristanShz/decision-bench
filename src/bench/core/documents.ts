@@ -610,6 +610,548 @@ Agent: Romain
 [14:21] Romain: My pleasure. I’ll email you a summary. Have a nice day!`,
 }
 
+const MAINTENANCE_CONTRACT = {
+  fr: `CONTRAT DE MAINTENANCE INFORMATIQUE N° HX-2026-014
+Entre Hexalis SAS, 12 rue des Forges, 26000 Valence (le « Prestataire »), et la Coopérative agricole de Valmont, 4 route de Chabeuil, 26000 Valence (le « Client »).
+Signé à Valence le 15 mars 2026.
+
+Article 1 — Objet
+Le Prestataire assure la maintenance préventive et corrective du parc informatique du Client (postes de travail, serveurs, imprimantes et équipements réseau) sur les sites listés à l’annexe A.
+
+Article 2 — Durée
+Le contrat prend effet le 1er avril 2026 pour une durée de 24 mois. Il se renouvelle ensuite tacitement par périodes de 12 mois.
+
+Article 3 — Prix
+3.1 Le forfait mensuel est de 2 400 € HT, payable à 30 jours fin de mois.
+3.2 Le forfait est révisé à chaque date anniversaire du contrat selon l’indice Syntec, la hausse étant plafonnée à 3 % par an.
+
+Article 4 — Niveaux de service
+4.1 Un incident est critique lorsqu’il empêche au moins dix utilisateurs de travailler ou bloque la chaîne de facturation.
+4.2 Le délai d’intervention est de 8 heures ouvrées pour un incident critique et de 3 jours ouvrés pour tout autre incident, à compter de sa déclaration sur le portail du Prestataire.
+4.3 Les heures ouvrées sont celles de la plage de couverture définie à l’annexe A.
+
+Article 5 — Pénalités
+5.1 Tout dépassement du délai d’intervention applicable à un incident critique donne lieu à une pénalité de 1 % du forfait mensuel par heure ouvrée de retard.
+5.2 Le total des pénalités d’un même mois est plafonné à 10 % du forfait mensuel.
+5.3 Les pénalités sont déduites de la facture du mois suivant.
+
+Article 6 — Résiliation
+6.1 Chaque partie peut s’opposer au renouvellement par lettre recommandée avec accusé de réception, moyennant un préavis de 3 mois avant l’échéance.
+6.2 En cas de manquement grave non corrigé dans les 30 jours suivant une mise en demeure, l’autre partie peut résilier le contrat sans préavis.
+
+Article 7 — Frais de déplacement
+Les frais de déplacement du Prestataire sont à la charge du Client et facturés au réel, sur justificatifs.
+
+Article 8 — Documents contractuels et ordre de priorité
+Le contrat est constitué du présent document et de ses annexes signées par les deux parties. En cas de contradiction, les annexes prévalent sur le présent document et, entre deux annexes, la plus récente prévaut. Un document qui n’est pas signé par les deux parties n’a aucune valeur contractuelle.
+
+Article 9 — Confidentialité
+Chaque partie s’engage à ne pas divulguer les informations confidentielles de l’autre partie pendant la durée du contrat et les cinq années qui suivent.
+
+Article 10 — Litiges
+Tout litige relève du tribunal de commerce de Romans-sur-Isère.
+
+—
+
+ANNEXE A — Périmètre et plage de couverture (signée avec le contrat le 15 mars 2026)
+Sites couverts, avec leur distance au siège du Client :
+- Valence, siège social : 0 km ;
+- Romans-sur-Isère, entrepôt : 20 km ;
+- Crest, magasin : 30 km.
+Plage de couverture : du lundi au vendredi, de 8 h à 18 h, hors jours fériés.
+Interlocuteur du Client : M. Gilles Arnoux, responsable informatique.
+
+—
+
+ANNEXE B — Avenant n° 1 (signé par les deux parties le 2 juin 2026)
+1. Le délai d’intervention pour un incident critique est ramené à 4 heures ouvrées.
+2. Le plafond mensuel des pénalités est porté à 15 % du forfait mensuel.
+3. Le magasin de Crest, fermé le 30 juin 2026, est retiré du périmètre à compter du 1er juillet 2026. Le magasin de Die, situé à 65 km du siège, y est ajouté à la même date.
+4. Les frais de déplacement vers les sites situés à moins de 50 km du siège sont inclus dans le forfait ; au-delà, ils restent facturés au réel.
+Les autres dispositions du contrat et de l’annexe A sont inchangées.
+
+—
+
+PROJET D’ANNEXE C — Avenant n° 2 (transmis par le Prestataire le 9 septembre 2026, non signé)
+1. Le préavis de non-renouvellement prévu à l’article 6.1 est réduit à 1 mois.
+2. Le forfait mensuel passe à 2 650 € HT à compter du 1er octobre 2026.
+
+—
+
+JOURNAL DES INCIDENTS — septembre 2026 (heure de déclaration sur le portail, puis heure d’intervention)
+- Mardi 8 septembre, 9 h : panne du serveur de facturation au siège (incident critique). Intervention sur place à 11 h le même jour.
+- Lundi 14 septembre, 8 h : coupure réseau à l’entrepôt de Romans-sur-Isère, 25 utilisateurs bloqués (incident critique). Intervention le mardi 15 septembre à 14 h.
+- Jeudi 24 septembre, 10 h : imprimante hors service au magasin de Die (incident non critique). Intervention le lundi 28 septembre à 9 h.
+Aucun autre incident n’a été déclaré en septembre.`,
+  en: `IT MAINTENANCE CONTRACT NO. HX-2026-014
+Between Hexalis SAS, 12 rue des Forges, 26000 Valence, France (the "Provider"), and the Valmont Farming Cooperative, 4 route de Chabeuil, 26000 Valence, France (the "Customer").
+Signed in Valence on March 15, 2026.
+
+Article 1 — Purpose
+The Provider performs preventive and corrective maintenance of the Customer’s IT equipment (workstations, servers, printers and network devices) at the sites listed in Appendix A.
+
+Article 2 — Term
+The contract takes effect on April 1, 2026 for a term of 24 months. It then renews automatically for successive 12-month periods.
+
+Article 3 — Price
+3.1 The monthly fee is €2,400 excluding VAT, payable 30 days end of month.
+3.2 The fee is revised on each anniversary date of the contract according to the Syntec index, with the increase capped at 3% per year.
+
+Article 4 — Service levels
+4.1 An incident is critical when it prevents at least ten users from working or blocks the invoicing process.
+4.2 The response time is 8 business hours for a critical incident and 3 business days for any other incident, from the time it is reported on the Provider’s portal.
+4.3 Business hours are those of the coverage window defined in Appendix A.
+
+Article 5 — Penalties
+5.1 Any overrun of the response time applicable to a critical incident gives rise to a penalty of 1% of the monthly fee per business hour of delay.
+5.2 Total penalties for any one month are capped at 10% of the monthly fee.
+5.3 Penalties are deducted from the following month’s invoice.
+
+Article 6 — Termination
+6.1 Either party may opt out of the renewal by registered letter with acknowledgment of receipt, giving 3 months’ notice before the expiry date.
+6.2 In the event of a serious breach not remedied within 30 days of a formal notice, the other party may terminate the contract without notice.
+
+Article 7 — Travel expenses
+The Provider’s travel expenses are borne by the Customer and invoiced at cost, with receipts.
+
+Article 8 — Contract documents and order of precedence
+The contract consists of this document and its appendices signed by both parties. In the event of a conflict, the appendices prevail over this document and, between two appendices, the more recent one prevails. A document that has not been signed by both parties has no contractual value.
+
+Article 9 — Confidentiality
+Each party undertakes not to disclose the other party’s confidential information for the term of the contract and the following five years.
+
+Article 10 — Disputes
+Any dispute falls under the jurisdiction of the Romans-sur-Isère commercial court.
+
+—
+
+APPENDIX A — Scope and coverage window (signed with the contract on March 15, 2026)
+Sites covered, with their distance from the Customer’s head office:
+- Valence, head office: 0 km;
+- Romans-sur-Isère, warehouse: 20 km;
+- Crest, store: 30 km.
+Coverage window: Monday to Friday, 8 am to 6 pm, excluding public holidays.
+Customer contact: Mr. Gilles Arnoux, IT manager.
+
+—
+
+APPENDIX B — Amendment no. 1 (signed by both parties on June 2, 2026)
+1. The response time for a critical incident is reduced to 4 business hours.
+2. The monthly penalty cap is raised to 15% of the monthly fee.
+3. The Crest store, closed on June 30, 2026, is removed from the scope as of July 1, 2026. The Die store, located 65 km from the head office, is added on the same date.
+4. Travel expenses to sites less than 50 km from the head office are included in the fee; beyond that, they are still invoiced at cost.
+The other provisions of the contract and of Appendix A are unchanged.
+
+—
+
+DRAFT APPENDIX C — Amendment no. 2 (sent by the Provider on September 9, 2026, not signed)
+1. The notice period for opting out of the renewal set out in article 6.1 is reduced to 1 month.
+2. The monthly fee rises to €2,650 excluding VAT as of October 1, 2026.
+
+—
+
+INCIDENT LOG — September 2026 (time reported on the portal, then response time)
+- Tuesday, September 8, 9 am: billing server failure at the head office (critical incident). On-site response at 11 am the same day.
+- Monday, September 14, 8 am: network outage at the Romans-sur-Isère warehouse, 25 users blocked (critical incident). Response on Tuesday, September 15 at 2 pm.
+- Thursday, September 24, 10 am: printer out of order at the Die store (non-critical incident). Response on Monday, September 28 at 9 am.
+No other incident was reported in September.`,
+}
+
+const GENERAL_MEETING = {
+  fr: `PROCÈS-VERBAL DE L’ASSEMBLÉE GÉNÉRALE ORDINAIRE ET EXTRAORDINAIRE
+Association « Les Jardins partagés du Moulin »
+Samedi 14 mars 2026, salle polyvalente de Saint-Avit, de 18 h 30 à 21 h 45
+
+Rappel des statuts (articles 11 et 12)
+- L’assemblée ne délibère valablement que si la moitié au moins des membres à jour de cotisation sont présents ou représentés. Le quorum s’apprécie au moment de chaque vote.
+- Un membre présent ne peut détenir plus de deux pouvoirs ; les pouvoirs excédentaires sont nuls.
+- Les décisions ordinaires sont prises à la majorité simple des suffrages exprimés. Les abstentions et les bulletins blancs ne sont pas des suffrages exprimés.
+- Les modifications des statuts requièrent au moins les deux tiers des suffrages exprimés.
+- Si le quorum n’est plus atteint en cours de séance, les points restants ne peuvent pas être mis aux voix : ils sont reportés à une nouvelle assemblée, convoquée sous quinze jours, qui délibère alors sans condition de quorum.
+
+Feuille de présence
+Membres à jour de cotisation : 60.
+Membres présents à l’ouverture : 24.
+Pouvoirs remis : 9. Mme Josiane Roche en détient 3, M. Patrice Blin 2, et quatre autres membres présents 1 chacun.
+Le président, M. Hervé Clément, constate que le quorum est atteint et ouvre la séance. Secrétaire de séance : Mme Nadia Ferhat.
+
+1. Rapport moral et rapport financier
+Le président présente le bilan de l’année : 112 parcelles cultivées, deux nouvelles serres, un partenariat avec l’école Jules-Ferry et une fête des récoltes qui a réuni près de 300 visiteurs. Il remercie les bénévoles qui ont repeint l’abri à outils.
+Il détaille ensuite les projets pour 2026 : l’aménagement d’une parcelle accessible aux personnes en fauteuil roulant, la création d’une grainothèque dans l’ancien local à vélos et l’accueil de deux classes de l’école Jules-Ferry un mardi sur deux, d’avril à juin. La liste d’attente compte 23 foyers ; le bureau envisage de diviser les plus grandes parcelles pour en libérer six.
+La trésorière, Mme Brigitte Lenoir, présente les comptes : 18 430 € de recettes (dont 9 000 € de cotisations, 6 200 € de subventions de la commune et 3 230 € de recettes de la fête des récoltes), 17 960 € de dépenses, soit un excédent de 470 €, reporté sur l’exercice suivant. Le vérificateur aux comptes, M. Ludovic Perrin, déclare n’avoir relevé aucune anomalie. Elle annonce qu’elle ne se représentera pas à son poste, après six années de mandat.
+Résolution 1 — Approbation des comptes de l’exercice 2025 : pour 28, contre 2, abstentions 2.
+
+2. Montant de la cotisation
+Le bureau propose de porter la cotisation annuelle de 15 € à 20 € pour financer le remplacement du système d’arrosage, dont la pompe est tombée en panne trois fois l’été dernier. Plusieurs membres jugent la hausse trop forte. M. Blin propose 18 €, mais sa proposition n’est pas mise aux voix, faute d’avoir été inscrite à l’ordre du jour.
+Résolution 2 — Cotisation annuelle portée à 20 € à partir du 1er janvier 2027 : pour 14, contre 13, abstentions 5.
+
+3. Modification des statuts (partie extraordinaire)
+Le bureau propose de permettre le vote électronique lors des prochaines assemblées, en modifiant l’article 12. Mme Roche s’inquiète pour les membres qui n’ont pas d’ordinateur ; le président précise que le vote papier resterait possible.
+Résolution 3 — Modification de l’article 12 (vote électronique) : pour 19, contre 10, abstentions 3.
+
+4. Questions diverses
+Mme Roche demande que l’accès aux composteurs soit réservé aux membres. Le président répond que le point sera étudié en réunion de bureau. M. Ludovic Perrin signale que la clôture côté rivière est abîmée ; un chantier collectif est proposé pour le samedi 4 avril.
+À 21 h 10, cinq membres présents quittent la séance, dont M. Blin. Les pouvoirs que M. Blin détenait ne sont plus exercés ; les quatre autres membres partis n’en détenaient pas.
+
+5. Élection du trésorier
+Une seule candidate se présente : Mme Aurélie Garcin, membre depuis 2021. Le président fait procéder au vote malgré les départs, « pour ne pas laisser le poste vacant ».
+Résolution 4 — Élection de Mme Garcin au poste de trésorière : pour 15, contre 3, abstentions 7.
+
+L’ordre du jour étant épuisé, le président lève la séance à 21 h 45 et remercie Mme Lenoir pour son engagement.
+
+Le président, Hervé Clément — La secrétaire de séance, Nadia Ferhat`,
+  en: `MINUTES OF THE ORDINARY AND EXTRAORDINARY GENERAL MEETING
+"Les Jardins partagés du Moulin" community garden association
+Saturday, March 14, 2026, Saint-Avit community hall, 6:30 pm to 9:45 pm
+
+Reminder of the bylaws (articles 11 and 12)
+- The meeting can validly decide only if at least half of the members whose dues are paid are present or represented. The quorum is assessed at the time of each vote.
+- A member present may not hold more than two proxies; any proxies beyond that are void.
+- Ordinary decisions are taken by a simple majority of the votes cast. Abstentions and blank ballots are not votes cast.
+- Amendments to the bylaws require at least two thirds of the votes cast.
+- If the quorum is no longer met during the meeting, the remaining items cannot be put to a vote: they are postponed to a new meeting, called within fifteen days, which then decides with no quorum requirement.
+
+Attendance sheet
+Members whose dues are paid: 60.
+Members present at the opening: 24.
+Proxies handed in: 9. Ms. Josiane Roche holds 3, Mr. Patrice Blin 2, and four other members present 1 each.
+The chair, Mr. Hervé Clément, notes that the quorum is met and opens the meeting. Secretary of the meeting: Ms. Nadia Ferhat.
+
+1. Activity report and financial report
+The chair reviews the year: 112 plots cultivated, two new greenhouses, a partnership with the Jules-Ferry school and a harvest festival that drew nearly 300 visitors. He thanks the volunteers who repainted the tool shed.
+He then outlines the projects for 2026: a plot made accessible to wheelchair users, a seed library in the former bike shed, and hosting two classes from the Jules-Ferry school every other Tuesday from April to June. The waiting list has 23 households; the board is considering splitting the largest plots to free up six.
+The treasurer, Ms. Brigitte Lenoir, presents the accounts: €18,430 in income (including €9,000 in dues, €6,200 in grants from the town and €3,230 from the harvest festival) and €17,960 in expenses, a surplus of €470 carried forward to the next year. The auditor, Mr. Ludovic Perrin, states that he found no irregularities. She announces that she will not stand again for the position, after six years in office.
+Resolution 1 — Approval of the 2025 accounts: for 28, against 2, abstentions 2.
+
+2. Membership dues
+The board proposes raising the annual dues from €15 to €20 to fund the replacement of the watering system, whose pump broke down three times last summer. Several members consider the increase too steep. Mr. Blin proposes €18, but his proposal is not put to a vote, since it was not on the agenda.
+Resolution 2 — Annual dues raised to €20 from January 1, 2027: for 14, against 13, abstentions 5.
+
+3. Amendment to the bylaws (extraordinary part)
+The board proposes allowing electronic voting at future meetings by amending article 12. Ms. Roche is concerned about members who do not have a computer; the chair explains that paper voting would remain possible.
+Resolution 3 — Amendment to article 12 (electronic voting): for 19, against 10, abstentions 3.
+
+4. Other business
+Ms. Roche asks for access to the compost bins to be restricted to members. The chair replies that the matter will be looked at in a board meeting. Mr. Ludovic Perrin reports that the fence on the river side is damaged; a group work day is proposed for Saturday, April 4.
+At 9:10 pm, five members present leave the meeting, including Mr. Blin. The proxies Mr. Blin held are no longer exercised; the other four members who left held none.
+
+5. Election of the treasurer
+There is a single candidate: Ms. Aurélie Garcin, a member since 2021. The chair has the vote held despite the departures, "so as not to leave the position vacant."
+Resolution 4 — Election of Ms. Garcin as treasurer: for 15, against 3, abstentions 7.
+
+The agenda being completed, the chair closes the meeting at 9:45 pm and thanks Ms. Lenoir for her commitment.
+
+The chair, Hervé Clément — The secretary of the meeting, Nadia Ferhat`,
+}
+
+const TRAVEL_POLICY = {
+  fr: `POLITIQUE DE REMBOURSEMENT DES FRAIS DE DÉPLACEMENT — Groupe Altamar
+
+═══ Version 1 — applicable aux déplacements effectués du 1er janvier 2025 au 31 août 2026 ═══
+
+1. Principe. Les frais engagés pour un déplacement professionnel autorisé par le manager sont remboursés sur justificatifs, dans les limites ci-dessous.
+2. Transport. Le train est privilégié pour tout trajet de moins de 5 heures. Le voyage se fait en 2de classe ; la 1re classe est autorisée lorsque la durée du trajet dépasse 3 heures.
+3. Hébergement. Plafond par nuit, petit-déjeuner compris : 150 € à Paris, 110 € dans les autres villes.
+4. Repas. 20 € par repas, sur justificatif. Aucun repas n’est remboursé lorsqu’il est fourni par l’organisateur.
+5. Taxis et VTC. Remboursés sans accord préalable pour un trajet commencé après 21 h ; dans les autres cas, avec l’accord écrit du manager.
+6. Véhicule personnel. Indemnité de 0,40 € par kilomètre, sur présentation de la carte grise et d’une attestation d’assurance.
+7. Délais. La note de frais et ses justificatifs sont transmis dans les 30 jours suivant la fin du déplacement ; au-delà, les frais ne sont pas remboursés.
+8. Avances. Une avance de 50 % des frais estimés peut être demandée pour tout déplacement de plus de trois jours.
+9. Location de voiture. Autorisée lorsqu’aucun transport en commun ne permet de rejoindre le lieu de la mission dans un délai raisonnable ; catégorie économique uniquement, carburant remboursé sur justificatif.
+10. Déplacements à l’étranger. Soumis à l’accord préalable du directeur de département ; les plafonds d’hébergement et de repas sont ceux du barème annexé, par pays.
+
+═══ Version 2 — applicable aux déplacements commencés à partir du 1er septembre 2026 ═══
+
+1. Principe. Les frais engagés pour un déplacement professionnel autorisé par le manager sont remboursés sur justificatifs, dans les limites ci-dessous.
+2. Transport. Le train est privilégié pour tout trajet de moins de 5 heures. Le voyage se fait en 2de classe ; la 1re classe est autorisée lorsque la durée du trajet dépasse 4 heures.
+3. Hébergement. Plafond par nuit, petit-déjeuner compris : 170 € à Paris, 110 € dans les autres villes.
+4. Repas. 22 € par repas, sur justificatif. Aucun repas n’est remboursé lorsqu’il est fourni par l’organisateur.
+5. Taxis et VTC. Remboursés uniquement avec l’accord écrit préalable du manager, quelle que soit l’heure du trajet.
+6. Véhicule personnel. Indemnité de 0,40 € par kilomètre, sur présentation de la carte grise et d’une attestation d’assurance.
+7. Délais. La note de frais et ses justificatifs sont transmis dans les 45 jours suivant la fin du déplacement ; au-delà, les frais ne sont pas remboursés.
+8. Avances. Une avance de 50 % des frais estimés peut être demandée pour tout déplacement de plus de trois jours.
+9. Location de voiture. Autorisée lorsqu’aucun transport en commun ne permet de rejoindre le lieu de la mission dans un délai raisonnable ; catégorie économique uniquement, carburant remboursé sur justificatif.
+10. Déplacements à l’étranger. Soumis à l’accord préalable du directeur de département ; les plafonds d’hébergement et de repas sont ceux du barème annexé, par pays.
+
+═══ Notes de frais de Mme Carole Vignal (service commercial, basée à Lyon) ═══
+
+Déplacement n° 1 — Paris, du mardi 25 au mercredi 26 août 2026 (salon professionnel)
+- Train Lyon–Paris aller-retour, 1 h 56 par trajet, 2de classe : 98 €.
+- Hôtel, 1 nuit, petit-déjeuner compris : 160 €.
+- Taxi du salon à l’hôtel, le 25 août à 22 h 10, sans accord préalable : 27 €.
+- Dîner du 25 août : 19,50 €.
+
+Déplacement n° 2 — Strasbourg, du mercredi 14 au vendredi 16 octobre 2026 (rendez-vous clients)
+- Train Lyon–Strasbourg aller-retour, 3 h 40 par trajet, 1re classe : 212 €.
+- Hôtel, 2 nuits à 104 €, petit-déjeuner compris : 208 €.
+- Déjeuner du 15 octobre, offert par le client : non déclaré.
+- Dîners des 14 et 15 octobre : 21 € et 22 €.
+
+Déplacement n° 3 — Paris, du mardi 3 au mercredi 4 novembre 2026 (formation interne)
+- Train Lyon–Paris aller-retour, 1 h 56 par trajet, 2de classe : 104 €.
+- Hôtel, 1 nuit, petit-déjeuner compris : 165 €.
+- Taxi de la gare à l’hôtel, le 3 novembre à 21 h 40, accord écrit du manager obtenu la veille : 24 €.`,
+  en: `TRAVEL EXPENSE REIMBURSEMENT POLICY — Altamar Group
+
+═══ Version 1 — applies to trips taken from January 1, 2025 to August 31, 2026 ═══
+
+1. Principle. Expenses incurred for a business trip authorized by the manager are reimbursed on presentation of receipts, within the limits below.
+2. Transport. Train is preferred for any journey of less than 5 hours. Travel is in second class; first class is allowed when the journey takes more than 3 hours.
+3. Accommodation. Cap per night, breakfast included: €150 in Paris, €110 in other cities.
+4. Meals. €20 per meal, with a receipt. No meal is reimbursed when it is provided by the organizer.
+5. Taxis and ride-hailing. Reimbursed without prior approval for a ride starting after 9 pm; otherwise, with the manager’s written approval.
+6. Personal vehicle. Allowance of €0.40 per kilometer, on presentation of the vehicle registration and a certificate of insurance.
+7. Deadlines. The expense report and its receipts must be submitted within 30 days of the end of the trip; after that, expenses are not reimbursed.
+8. Advances. An advance of 50% of the estimated expenses may be requested for any trip of more than three days.
+9. Car rental. Allowed when no public transport can reach the place of the assignment within a reasonable time; economy category only, fuel reimbursed with a receipt.
+10. Travel abroad. Subject to the department director’s prior approval; accommodation and meal caps are those of the attached schedule, by country.
+
+═══ Version 2 — applies to trips starting on or after September 1, 2026 ═══
+
+1. Principle. Expenses incurred for a business trip authorized by the manager are reimbursed on presentation of receipts, within the limits below.
+2. Transport. Train is preferred for any journey of less than 5 hours. Travel is in second class; first class is allowed when the journey takes more than 4 hours.
+3. Accommodation. Cap per night, breakfast included: €170 in Paris, €110 in other cities.
+4. Meals. €22 per meal, with a receipt. No meal is reimbursed when it is provided by the organizer.
+5. Taxis and ride-hailing. Reimbursed only with the manager’s prior written approval, whatever the time of the ride.
+6. Personal vehicle. Allowance of €0.40 per kilometer, on presentation of the vehicle registration and a certificate of insurance.
+7. Deadlines. The expense report and its receipts must be submitted within 45 days of the end of the trip; after that, expenses are not reimbursed.
+8. Advances. An advance of 50% of the estimated expenses may be requested for any trip of more than three days.
+9. Car rental. Allowed when no public transport can reach the place of the assignment within a reasonable time; economy category only, fuel reimbursed with a receipt.
+10. Travel abroad. Subject to the department director’s prior approval; accommodation and meal caps are those of the attached schedule, by country.
+
+═══ Expense reports of Ms. Carole Vignal (sales department, based in Lyon) ═══
+
+Trip no. 1 — Paris, Tuesday, August 25 to Wednesday, August 26, 2026 (trade show)
+- Lyon–Paris train, round trip, 1 h 56 min each way, second class: €98.
+- Hotel, 1 night, breakfast included: €160.
+- Taxi from the trade show to the hotel, August 25 at 10:10 pm, without prior approval: €27.
+- Dinner on August 25: €19.50.
+
+Trip no. 2 — Strasbourg, Wednesday, October 14 to Friday, October 16, 2026 (customer meetings)
+- Lyon–Strasbourg train, round trip, 3 h 40 min each way, first class: €212.
+- Hotel, 2 nights at €104, breakfast included: €208.
+- Lunch on October 15, paid for by the customer: not claimed.
+- Dinners on October 14 and 15: €21 and €22.
+
+Trip no. 3 — Paris, Tuesday, November 3 to Wednesday, November 4, 2026 (internal training)
+- Lyon–Paris train, round trip, 1 h 56 min each way, second class: €104.
+- Hotel, 1 night, breakfast included: €165.
+- Taxi from the station to the hotel, November 3 at 9:40 pm, manager’s written approval obtained the day before: €24.`,
+}
+
+const AUDIT_REPORT = {
+  fr: `RAPPORT D’AUDIT QUALITÉ ET SÉCURITÉ — 2e trimestre 2026
+Réseau de centres de maintenance Novaclim (climatisation et froid commercial)
+Rédigé par le cabinet Certis Conseil pour la direction des opérations, le 12 juin 2026
+
+RÉSUMÉ POUR LA DIRECTION
+Les quatre centres audités ce trimestre (Lille, Metz, Reims et Amiens) ont obtenu un taux de conformité moyen de 92 %, en progression par rapport au trimestre précédent. Aucune non-conformité majeure n’a été relevée et aucun centre ne nécessite d’audit de suivi. Nous recommandons le maintien de la certification pour l’ensemble du réseau.
+
+1. Méthodologie
+Chaque centre est évalué sur 50 points de contrôle répartis en cinq domaines : sécurité des personnes, gestion des fluides frigorigènes, traçabilité des interventions, sauvegarde des données et formation. Le taux de conformité est la part des points de contrôle satisfaits.
+Une non-conformité est majeure lorsqu’elle expose les personnes à un danger immédiat ou qu’elle rend impossible la reconstitution des interventions réalisées ; elle est mineure dans les autres cas.
+Règles de décision :
+- la certification d’un centre est maintenue si son taux de conformité est d’au moins 85 % et qu’aucune non-conformité majeure n’est ouverte à la clôture de l’audit ;
+- un audit de suivi est programmé sous 60 jours pour tout centre dont le taux est inférieur à 80 % ou qui présente une non-conformité majeure ouverte à la clôture de l’audit.
+
+2. Résultats détaillés
+
+2.1 Lille (audit du 7 avril 2026) — taux de conformité : 96 % (48 points sur 50)
+Deux non-conformités mineures : la fiche de sécurité d’un produit de nettoyage était absente de l’atelier et le registre de formation n’était pas signé par le formateur. Le centre a corrigé les deux points avant la clôture de l’audit. Les auditeurs soulignent la bonne tenue du registre des fluides.
+
+2.2 Metz (audit du 22 avril 2026) — taux de conformité : 94 % (47 points sur 50)
+Une non-conformité majeure : les sauvegardes du logiciel de suivi des interventions ne sont plus testées depuis novembre 2025, et la restauration tentée pendant l’audit a échoué. L’historique des interventions de 2025 ne peut donc pas être reconstitué. Deux non-conformités mineures portent sur l’étiquetage des bouteilles de fluide. La non-conformité majeure était toujours ouverte à la clôture de l’audit ; le responsable du centre doit présenter un plan d’action avant le 30 juin.
+
+2.3 Reims (audit du 13 mai 2026) — taux de conformité : 78 % (39 points sur 50)
+Onze non-conformités mineures, principalement de traçabilité : bons d’intervention incomplets, dates de contrôle des détecteurs de fuite manquantes, signatures des clients absentes. Aucune n’expose les personnes à un danger immédiat et aucune ne rend impossible la reconstitution des interventions. L’équipe, renouvelée à moitié en mars, connaît encore mal les procédures.
+
+2.4 Amiens (audit du 27 mai 2026) — taux de conformité : 92 % (46 points sur 50)
+Au trimestre précédent, Amiens présentait une non-conformité majeure (extincteurs de l’atelier non vérifiés depuis deux ans). Elle a été levée : les extincteurs ont été contrôlés le 3 avril 2026 et le certificat a été présenté aux auditeurs. Quatre non-conformités mineures ont été relevées, dont trois corrigées pendant l’audit ; la dernière (un affichage de consignes à remplacer) est à traiter avant la fin juillet.
+
+3. Comparaison avec le trimestre précédent
+Taux de conformité du 1er trimestre 2026 : Lille 93 %, Metz 95 %, Reims 84 %, Amiens 88 %, soit une moyenne de 90 %.
+
+4. Recommandations
+- Généraliser à tous les centres le test trimestriel de restauration des sauvegardes.
+- Prévoir une journée de formation aux procédures de traçabilité pour les nouveaux arrivants.
+- Mettre à jour la liste des fiches de sécurité lors de chaque changement de fournisseur de produits.
+
+5. Calendrier des prochains audits
+Le troisième trimestre couvrira les centres de Rouen, Caen, Le Havre et Évreux, entre le 1er septembre et le 15 octobre 2026. Les audits de suivi éventuels du deuxième trimestre s’ajoutent à ce calendrier et sont menés par la même équipe d’auditeurs, afin d’assurer la continuité des constats.
+
+Annexe — Équipe d’audit : Marion Lefèvre (auditrice principale), Karim Bensaïd (auditeur fluides frigorigènes), Lucie Dumas (auditrice systèmes d’information).`,
+  en: `QUALITY AND SAFETY AUDIT REPORT — Q2 2026
+Novaclim maintenance center network (air conditioning and commercial refrigeration)
+Written by Certis Conseil for the operations department, June 12, 2026
+
+EXECUTIVE SUMMARY
+The four centers audited this quarter (Lille, Metz, Reims and Amiens) achieved an average compliance rate of 92%, up from the previous quarter. No major nonconformity was found and no center requires a follow-up audit. We recommend maintaining certification for the whole network.
+
+1. Methodology
+Each center is assessed on 50 checkpoints across five areas: personal safety, refrigerant management, traceability of service calls, data backup, and training. The compliance rate is the share of checkpoints met.
+A nonconformity is major when it exposes people to immediate danger or makes it impossible to reconstruct the service calls carried out; it is minor in all other cases.
+Decision rules:
+- a center’s certification is maintained if its compliance rate is at least 85% and no major nonconformity is open when the audit closes;
+- a follow-up audit is scheduled within 60 days for any center whose rate is below 80% or that has a major nonconformity open when the audit closes.
+
+2. Detailed results
+
+2.1 Lille (audit of April 7, 2026) — compliance rate: 96% (48 points out of 50)
+Two minor nonconformities: the safety data sheet for a cleaning product was missing from the workshop, and the training register had not been signed by the trainer. The center fixed both points before the audit closed. The auditors highlight the well-kept refrigerant register.
+
+2.2 Metz (audit of April 22, 2026) — compliance rate: 94% (47 points out of 50)
+One major nonconformity: backups of the service-call tracking software have not been tested since November 2025, and the restore attempted during the audit failed. The 2025 service-call history therefore cannot be reconstructed. Two minor nonconformities concern the labeling of refrigerant cylinders. The major nonconformity was still open when the audit closed; the center manager must present an action plan before June 30.
+
+2.3 Reims (audit of May 13, 2026) — compliance rate: 78% (39 points out of 50)
+Eleven minor nonconformities, mostly about traceability: incomplete service reports, missing inspection dates for leak detectors, missing customer signatures. None exposes people to immediate danger and none makes it impossible to reconstruct the service calls. The team, half of which was replaced in March, is still unfamiliar with the procedures.
+
+2.4 Amiens (audit of May 27, 2026) — compliance rate: 92% (46 points out of 50)
+In the previous quarter, Amiens had a major nonconformity (workshop fire extinguishers not inspected for two years). It has been cleared: the extinguishers were inspected on April 3, 2026 and the certificate was shown to the auditors. Four minor nonconformities were found, three of which were fixed during the audit; the last one (a safety notice to be replaced) must be dealt with before the end of July.
+
+3. Comparison with the previous quarter
+Q1 2026 compliance rates: Lille 93%, Metz 95%, Reims 84%, Amiens 88%, an average of 90%.
+
+4. Recommendations
+- Roll out a quarterly backup restore test to all centers.
+- Plan a training day on traceability procedures for new staff.
+- Update the list of safety data sheets whenever the product supplier changes.
+
+5. Upcoming audit schedule
+The third quarter will cover the Rouen, Caen, Le Havre and Évreux centers, between September 1 and October 15, 2026. Any follow-up audits arising from the second quarter are added to this schedule and are carried out by the same team of auditors, to ensure continuity of findings.
+
+Appendix — Audit team: Marion Lefèvre (lead auditor), Karim Bensaïd (refrigerant auditor), Lucie Dumas (information systems auditor).`,
+}
+
+const PROJECT_MEETINGS = {
+  fr: `COMPTES RENDUS — Comité projet « Migration ERP », Fromagerie Bellerive
+Membres du comité : Agnès Morel (cheffe de projet), Nicolas Ferrand (achats), Nicolas Duval (DSI), Inès Brahimi (contrôle de gestion), Paul Lemoine (responsable de production), Sylvie Caron (ressources humaines).
+Dans ces comptes rendus, « Nicolas F. » désigne Nicolas Ferrand et « Nicolas D. » Nicolas Duval.
+
+━━ Réunion du lundi 5 octobre 2026 ━━
+Présents : tous.
+1. Calendrier. Agnès confirme la bascule sur le nouvel ERP le mardi 1er décembre 2026. Les données seront figées le vendredi 27 novembre au soir.
+2. Actions décidées :
+- A1 — Rédiger le cahier de recette : Nicolas D., pour le 20 octobre.
+- A2 — Négocier les licences supplémentaires avec l’éditeur : Nicolas F., pour le 16 octobre.
+- A3 — Préparer la formation des utilisateurs clés de la production : Inès, plan à présenter le 19 octobre.
+- A4 — Rédiger la note d’information aux salariés : Sylvie, pour le 26 octobre.
+3. Budget. Inès présente le suivi budgétaire : 148 000 € engagés sur un budget de 175 000 €. Le poste « licences » risque de dépasser de 6 000 € si l’éditeur n’accorde pas de remise.
+4. Divers. Paul rappelle que la semaine du 23 novembre est chargée en production (commandes de fin d’année) : aucune formation ne pourra avoir lieu cette semaine-là.
+
+━━ Réunion du lundi 12 octobre 2026 ━━
+Présents : tous sauf Nicolas Duval, mobilisé par une panne réseau sur le site d’affinage de Poligny.
+1. A1 — Nicolas D. étant absorbé par la panne de Poligny pour une durée indéterminée, Agnès confie le cahier de recette à Inès. L’échéance est repoussée au 27 octobre.
+2. A2 — Nicolas F. annonce avoir obtenu une remise de 12 % ; les licences sont commandées. Action close.
+3. A3 — Inès ne pouvant pas mener de front la recette et la formation, la préparation de la formation passe à Paul, qui connaît les équipes de production. Échéance inchangée.
+4. Calendrier. L’éditeur annonce un retard de livraison du module qualité. Agnès propose de repousser la bascule au mardi 12 janvier 2027 ; la décision revient au comité de pilotage du jeudi 15 octobre.
+5. A4 — Sylvie a fait relire la note par la direction ; diffusion prévue la semaine prochaine.
+6. Budget. Grâce à la remise sur les licences, Inès ramène la prévision de dépassement à zéro ; il reste une marge de 3 000 €.
+7. Risques. Paul s’inquiète des étiquettes de traçabilité des meules, que l’ancien système imprimait directement. Agnès demande à l’éditeur une démonstration du module d’étiquetage avant la fin du mois.
+
+━━ Réunion du lundi 19 octobre 2026 ━━
+Présents : tous.
+1. Calendrier. Le comité de pilotage du 15 octobre a refusé le report : le module qualité sera activé après la bascule, qui est maintenue au mardi 1er décembre 2026.
+2. A1 — Inès indique que le cahier de recette ne pourra pas être prêt le 27 octobre : la clôture mensuelle l’occupe toute la semaine. La panne de Poligny étant résolue, Nicolas (DSI) reprend finalement le cahier de recette, avec une nouvelle échéance au 3 novembre. Inès en relira la partie comptable.
+3. A3 — Paul présente le plan de formation : quatre sessions de deux heures, les 9, 10, 16 et 17 novembre. Plan validé ; action close.
+4. A4 — Note diffusée le 16 octobre. Action close.
+5. Nouvelles actions :
+- A5 — Reprendre les données fournisseurs dans le nouvel ERP : Nicolas F., pour le 6 novembre.
+- A6 — Vérifier les droits d’accès de chaque utilisateur : Nicolas D., pour le 13 novembre.
+- A7 — Organiser la permanence d’assistance des deux premières semaines après la bascule : Sylvie, pour le 20 novembre.
+6. Étiquetage. La démonstration de l’éditeur a eu lieu le 16 octobre : le module imprime les étiquettes de traçabilité au format actuel. Le risque soulevé par Paul est levé.
+Prochaine réunion : lundi 26 octobre 2026.`,
+  en: `MINUTES — "ERP Migration" project committee, Bellerive Cheese Dairy
+Committee members: Agnès Morel (project manager), Nicolas Ferrand (purchasing), Nicolas Duval (IT director), Inès Brahimi (management control), Paul Lemoine (production manager), Sylvie Caron (human resources).
+In these minutes, "Nicolas F." refers to Nicolas Ferrand and "Nicolas D." to Nicolas Duval.
+
+━━ Meeting of Monday, October 5, 2026 ━━
+Attendees: everyone.
+1. Schedule. Agnès confirms the switchover to the new ERP on Tuesday, December 1, 2026. Data will be frozen on the evening of Friday, November 27.
+2. Action items:
+- A1 — Write the acceptance test plan: Nicolas D., by October 20.
+- A2 — Negotiate the additional licenses with the vendor: Nicolas F., by October 16.
+- A3 — Prepare the training for production key users: Inès, plan to be presented on October 19.
+- A4 — Write the information memo for employees: Sylvie, by October 26.
+3. Budget. Inès presents the budget tracking: €148,000 committed out of a €175,000 budget. The licenses line may overrun by €6,000 if the vendor grants no discount.
+4. Other business. Paul reminds everyone that the week of November 23 is busy in production (year-end orders): no training can take place that week.
+
+━━ Meeting of Monday, October 12, 2026 ━━
+Attendees: everyone except Nicolas Duval, busy with a network outage at the Poligny ripening site.
+1. A1 — As Nicolas D. is tied up with the Poligny outage for an unknown length of time, Agnès gives the acceptance test plan to Inès. The deadline is pushed back to October 27.
+2. A2 — Nicolas F. announces he obtained a 12% discount; the licenses have been ordered. Item closed.
+3. A3 — As Inès cannot handle both the acceptance tests and the training, preparing the training moves to Paul, who knows the production teams. Deadline unchanged.
+4. Schedule. The vendor announces a delay in delivering the quality module. Agnès proposes postponing the switchover to Tuesday, January 12, 2027; the decision lies with the steering committee on Thursday, October 15.
+5. A4 — Sylvie had the memo reviewed by management; it will go out next week.
+6. Budget. Thanks to the license discount, Inès brings the forecast overrun down to zero; there is €3,000 of headroom left.
+7. Risks. Paul is worried about the traceability labels for the cheese wheels, which the old system printed directly. Agnès asks the vendor for a demo of the labeling module before the end of the month.
+
+━━ Meeting of Monday, October 19, 2026 ━━
+Attendees: everyone.
+1. Schedule. The steering committee of October 15 refused the postponement: the quality module will be enabled after the switchover, which remains on Tuesday, December 1, 2026.
+2. A1 — Inès says the acceptance test plan cannot be ready by October 27: the month-end close keeps her busy all week. As the Poligny outage is resolved, Nicolas (IT) finally takes the acceptance test plan back, with a new deadline of November 3. Inès will review its accounting part.
+3. A3 — Paul presents the training plan: four two-hour sessions on November 9, 10, 16 and 17. Plan approved; item closed.
+4. A4 — Memo sent out on October 16. Item closed.
+5. New action items:
+- A5 — Migrate supplier data into the new ERP: Nicolas F., by November 6.
+- A6 — Check each user’s access rights: Nicolas D., by November 13.
+- A7 — Organize the help desk for the first two weeks after the switchover: Sylvie, by November 20.
+6. Labeling. The vendor’s demo took place on October 16: the module prints traceability labels in the current format. The risk raised by Paul is cleared.
+Next meeting: Monday, October 26, 2026.`,
+}
+
+const HOSTING_CHAT = {
+  fr: `Canal #portail-clients — messages du 2 au 18 novembre 2026
+Contexte : choix de l’hébergeur du nouveau portail clients de la mutuelle d’assurance Solvea.
+
+[lun. 2 nov., 10:14] Margaux Deschamps (directrice technique) : Après comparaison des trois offres, je propose d’héberger le portail chez Nuagine, région Paris : 1 850 € HT par mois pour l’ensemble, support 24 h/24 compris. Sans objection d’ici mercredi, on part là-dessus.
+[lun. 2 nov., 11:02] Rayan Mbaye (développeur) : OK pour moi. Leur base de données gérée nous économise pas mal de travail d’exploitation.
+[lun. 2 nov., 11:30] Chloé Arnaud (designer) : Rien à dire sur l’hébergement. Je dépose les maquettes de l’espace adhérent cet après-midi.
+[mer. 4 nov., 09:30] Margaux : Pas d’objection : décision prise, on part sur Nuagine, région Paris. Rayan, tu peux préparer l’environnement de recette.
+[mer. 4 nov., 14:18] Rayan : C’est parti, je crée le réseau et la base de recette.
+[mer. 4 nov., 16:02] Chloé : Question : on garde l’ancien nom de domaine portail.solvea.fr ou on passe à espace.solvea.fr ? Le service communication préfère le second.
+[mer. 4 nov., 16:20] Margaux : On garde portail.solvea.fr pour ne pas casser les liens des courriers déjà envoyés aux adhérents.
+[jeu. 5 nov., 16:47] Élodie Fabre (juriste) : Je dois vous arrêter. Le contrat type de Nuagine prévoit que les sauvegardes peuvent être stockées hors de l’Union européenne. Or nos conventions avec les mutuelles partenaires exigent que toutes les données, sauvegardes comprises, restent dans l’UE. En l’état, on ne peut pas signer.
+[jeu. 5 nov., 17:20] Margaux : Merci Élodie. Dans ce cas, Nuagine est abandonné. Rayan, arrête la recette. Je relance Stratus, qui était deuxième : 2 100 € HT par mois, région Francfort, et tout est garanti dans l’UE.
+[ven. 6 nov., 10:05] Rayan : Arrêté. Je n’avais créé que le réseau, rien n’a été facturé.
+[ven. 6 nov., 15:22] Chloé : Les maquettes sont validées par le service adhérents, avec deux corrections mineures sur le formulaire de remboursement.
+[lun. 9 nov., 14:12] Margaux : Décision : on part sur Stratus, région Francfort. Le contrat sera signé par Thierry, puisque ma délégation de signature s’arrête à 20 000 € par an.
+[mar. 10 nov., 08:55] Thierry Wauters (directeur financier) : Je signerai, mais pas avant d’avoir vu la clause de réversibilité : si on part, je veux récupérer toutes nos données dans un format standard, sans frais.
+[mar. 10 nov., 09:40] Rayan : J’ai ouvert un compte d’essai chez Stratus pour tester le déploiement.
+[mer. 11 nov., 10:15] Chloé : Le test d’accessibilité des maquettes est terminé : contraste insuffisant sur les boutons secondaires, je corrige.
+[jeu. 12 nov., 11:40] Rayan : Mauvaise surprise chez Stratus : les 2 100 € ne comprennent pas la base de données gérée. Avec elle, on passe à 2 900 € HT par mois.
+[jeu. 12 nov., 15:03] Élodie : Bonne nouvelle de mon côté : Nuagine accepte un avenant qui garantit le stockage de toutes les données, sauvegardes comprises, dans l’UE. Condition : choisir la région Strasbourg, car la région Paris réplique ses sauvegardes à Montréal. Le tarif reste de 1 850 € HT par mois.
+[ven. 13 nov., 10:20] Margaux : Dans ce cas, on revient à Nuagine, en région Strasbourg, avec l’avenant obtenu par Élodie. Stratus est abandonné. Rayan, tu peux relancer la recette, sur Strasbourg cette fois.
+[ven. 13 nov., 10:31] Rayan : Je relance sur Strasbourg et je ferme le compte d’essai Stratus.
+[ven. 13 nov., 11:05] Chloé : Je mets à jour le schéma d’architecture dans le dossier projet.
+[lun. 16 nov., 09:12] Thierry : J’ai lu l’avenant Nuagine : la clause de réversibilité me convient (export complet au format standard, sans frais). 1 850 € × 12 = 22 200 € par an : c’est bien à moi de signer. Je signe cette semaine.
+[mer. 18 nov., 17:45] Margaux : Contrat et avenant signés par Thierry ce matin. Mise en production prévue le lundi 7 décembre. Merci à tous !`,
+  en: `#customer-portal channel — messages from November 2 to 18, 2026
+Context: choosing the hosting provider for the new customer portal of the Solvea mutual insurance company.
+
+[Mon, Nov 2, 10:14] Margaux Deschamps (CTO): After comparing the three offers, I suggest hosting the portal with Nuagine, Paris region: €1,850 excluding VAT per month for everything, 24/7 support included. Unless anyone objects by Wednesday, we’ll go with that.
+[Mon, Nov 2, 11:02] Rayan Mbaye (developer): Fine with me. Their managed database saves us quite a lot of operations work.
+[Mon, Nov 2, 11:30] Chloé Arnaud (designer): Nothing to add on hosting. I’ll upload the member area mockups this afternoon.
+[Wed, Nov 4, 09:30] Margaux: No objections: decision made, we’re going with Nuagine, Paris region. Rayan, you can set up the staging environment.
+[Wed, Nov 4, 14:18] Rayan: On it, I’m creating the network and the staging database.
+[Wed, Nov 4, 16:02] Chloé: Question: do we keep the old portail.solvea.fr domain or switch to espace.solvea.fr? The communications team prefers the second one.
+[Wed, Nov 4, 16:20] Margaux: We keep portail.solvea.fr so we don’t break the links in the letters already sent to members.
+[Thu, Nov 5, 16:47] Élodie Fabre (legal counsel): I have to stop you. Nuagine’s standard contract allows backups to be stored outside the European Union. But our agreements with our partner insurers require all data, backups included, to stay in the EU. As things stand, we can’t sign.
+[Thu, Nov 5, 17:20] Margaux: Thanks Élodie. In that case, Nuagine is dropped. Rayan, stop the staging work. I’m getting back to Stratus, which came second: €2,100 excluding VAT per month, Frankfurt region, and everything is guaranteed to stay in the EU.
+[Fri, Nov 6, 10:05] Rayan: Stopped. I had only created the network, nothing was billed.
+[Fri, Nov 6, 15:22] Chloé: The mockups have been approved by the member services team, with two minor fixes on the claim form.
+[Mon, Nov 9, 14:12] Margaux: Decision: we’re going with Stratus, Frankfurt region. Thierry will sign the contract, since my signing authority stops at €20,000 a year.
+[Tue, Nov 10, 08:55] Thierry Wauters (CFO): I’ll sign, but not before I’ve seen the reversibility clause: if we leave, I want to get all our data back in a standard format, at no cost.
+[Tue, Nov 10, 09:40] Rayan: I’ve opened a trial account with Stratus to test the deployment.
+[Wed, Nov 11, 10:15] Chloé: The accessibility test of the mockups is done: insufficient contrast on the secondary buttons, I’m fixing it.
+[Thu, Nov 12, 11:40] Rayan: Bad surprise at Stratus: the €2,100 doesn’t include the managed database. With it, we’re at €2,900 excluding VAT per month.
+[Thu, Nov 12, 15:03] Élodie: Good news on my side: Nuagine accepts an amendment guaranteeing that all data, backups included, is stored in the EU. Condition: we must pick the Strasbourg region, because the Paris region replicates its backups to Montreal. The price stays at €1,850 excluding VAT per month.
+[Fri, Nov 13, 10:20] Margaux: In that case, we’re going back to Nuagine, Strasbourg region, with the amendment Élodie obtained. Stratus is dropped. Rayan, you can restart the staging work, on Strasbourg this time.
+[Fri, Nov 13, 10:31] Rayan: Restarting on Strasbourg and closing the Stratus trial account.
+[Fri, Nov 13, 11:05] Chloé: I’m updating the architecture diagram in the project folder.
+[Mon, Nov 16, 09:12] Thierry: I’ve read the Nuagine amendment: the reversibility clause works for me (full export in a standard format, at no cost). €1,850 × 12 = €22,200 a year: it’s indeed up to me to sign. I’ll sign this week.
+[Wed, Nov 18, 17:45] Margaux: Contract and amendment signed by Thierry this morning. Go-live planned for Monday, December 7. Thanks everyone!`,
+}
+
 // ─── Jeux de données générés ─────────────────────────────────────────────────
 
 /** Générateur pseudo-aléatoire déterministe (Park–Miller), identique d’une langue à l’autre. */
@@ -764,6 +1306,336 @@ function syntheticLogs(lang: CoreLang) {
     if (i === 63) return { ts, level: 'ERROR', service: 'auth', host: 'web-2', msg: needles[lang].error }
     return { ts, level: isWarn ? 'WARN' : 'INFO', service, host, msg }
   })
+}
+
+/** Date ISO (AAAA-MM-JJ) du n-ième jour de 2026 (1 = 1er janvier). */
+function day2026(n: number) {
+  return new Date(Date.UTC(2026, 0, n)).toISOString().slice(0, 10)
+}
+
+/**
+ * 90 factures fournisseurs du premier semestre 2026, arrêtées au 30 juin 2026. Échéance = émission + 30 jours.
+ * Hors aiguilles : payée si l’échéance est passée, impayée sinon (jamais d’échéance le 30 juin). Aiguilles :
+ * 4 factures impayées en retard (Cléon Transports ×2, Ecotherm, Fibrolink) ; 3 factures en litige (Delta
+ * Nettoyage ×2, Arvel Papeterie) pour 4 767,90 € ; leurre : une facture Bricoval payée dont la note parle
+ * d’un litige clos.
+ */
+function syntheticInvoices(lang: CoreLang) {
+  const rnd = seeded(5150)
+  const suppliers = ['Arvel Papeterie', 'Bricoval', 'Cléon Transports', 'Delta Nettoyage', 'Ecotherm', 'Fibrolink']
+  const centers: Record<CoreLang, string[]> = {
+    fr: ['Logistique', 'Commercial', 'Production', 'Administration'],
+    en: ['Logistics', 'Sales', 'Production', 'Administration'],
+  }
+  const asOf = 181 // 30 juin 2026
+  const overdue: Record<number, string> = { 20: 'Cléon Transports', 33: 'Ecotherm', 41: 'Cléon Transports', 58: 'Fibrolink' }
+  const disputed: Record<number, [string, number]> = { 12: ['Delta Nettoyage', 1840], 47: ['Delta Nettoyage', 2315.5], 66: ['Arvel Papeterie', 612.4] }
+  const closedDispute: Record<CoreLang, string> = {
+    fr: 'Litige du 12 mars clos : avoir reçu, solde réglé',
+    en: 'Dispute of March 12 closed: credit note received, balance paid',
+  }
+  const invoices = Array.from({ length: 90 }, (_, i) => {
+    const issued = 2 + 2 * i
+    const due = issued + 30
+    const invoice: Record<string, Json> = {
+      id: `FAC-26-${String(101 + i).padStart(4, '0')}`,
+      supplier: suppliers[Math.floor(rnd() * suppliers.length)],
+      issued: day2026(issued),
+      due: day2026(due),
+      amount_eur: Math.round((80 + rnd() ** 2 * 2600) * 100) / 100,
+      cost_center: centers[lang][Math.floor(rnd() * 4)],
+      status: due < asOf ? 'paid' : 'unpaid',
+    }
+    if (overdue[i]) Object.assign(invoice, { supplier: overdue[i], status: 'unpaid' })
+    if (disputed[i]) Object.assign(invoice, { supplier: disputed[i][0], amount_eur: disputed[i][1], status: 'disputed' })
+    if (i === 30) Object.assign(invoice, { supplier: 'Bricoval', status: 'paid', note: closedDispute[lang] })
+    return invoice
+  })
+  return { company: 'Maison Ferrandi', as_of: day2026(asOf), currency: 'EUR', invoices }
+}
+
+/**
+ * 85 incidents de septembre 2026 sur dix serveurs. Hors aiguilles : gravité low/medium/high, durée de 5 à 120 min,
+ * tous résolus, jamais sur srv-db-02 (absence). Aiguilles : 3 incidents critiques sur srv-web-02, tous résolus ;
+ * 1 incident critique encore ouvert sur srv-app-01 ; la plus longue panne (418 min, gravité high) sur srv-cache-01.
+ */
+function syntheticIncidents(lang: CoreLang) {
+  const rnd = seeded(9091)
+  const servers = ['srv-web-01', 'srv-web-02', 'srv-web-03', 'srv-app-01', 'srv-app-02', 'srv-db-01', 'srv-db-03', 'srv-cache-01', 'srv-mail-01']
+  const summaries: Record<CoreLang, string[]> = {
+    fr: [
+      'Utilisation CPU au-dessus de 90 % pendant plusieurs minutes',
+      'Certificat TLS renouvelé en retard',
+      'Latence réseau élevée vers la passerelle',
+      'Redémarrage inattendu du service',
+      'File d’attente des tâches saturée',
+      'Espace disque faible sur la partition de journaux',
+      'Échecs intermittents du contrôle de santé',
+      'Synchronisation de l’horloge perdue',
+    ],
+    en: [
+      'CPU usage above 90% for several minutes',
+      'TLS certificate renewed late',
+      'High network latency to the gateway',
+      'Unexpected service restart',
+      'Job queue saturated',
+      'Low disk space on the log partition',
+      'Intermittent health check failures',
+      'Clock synchronization lost',
+    ],
+  }
+  const critical: Record<CoreLang, string[]> = {
+    fr: ['Erreurs 502 en cascade derrière le répartiteur de charge', 'Site indisponible après une mise à jour du noyau', 'Saturation des connexions, pages blanches pour les clients', 'Fuite mémoire : le processus applicatif est tué en boucle'],
+    en: ['Cascading 502 errors behind the load balancer', 'Site down after a kernel update', 'Connection pool exhausted, blank pages for customers', 'Memory leak: the application process is killed repeatedly'],
+  }
+  const cacheOutage: Record<CoreLang, string> = { fr: 'Cluster de cache reconstruit après corruption des données', en: 'Cache cluster rebuilt after data corruption' }
+  const severities = ['low', 'low', 'medium', 'medium', 'high']
+  let t = 0
+  return Array.from({ length: 85 }, (_, i) => {
+    t += 180 + Math.floor(rnd() * 320)
+    const d = 1 + Math.floor(t / 1440)
+    const opened = `2026-09-${String(d).padStart(2, '0')}T${String(Math.floor((t % 1440) / 60)).padStart(2, '0')}:${String(t % 60).padStart(2, '0')}`
+    const incident: Record<string, Json> = {
+      id: `INC-${5300 + i}`,
+      opened,
+      server: servers[Math.floor(rnd() * servers.length)],
+      severity: severities[Math.floor(rnd() * severities.length)],
+      summary: summaries[lang][Math.floor(rnd() * summaries[lang].length)],
+      duration_min: 5 + Math.floor(rnd() * 116),
+      status: 'resolved',
+    }
+    const crit = [14, 39, 61].indexOf(i)
+    if (crit >= 0) Object.assign(incident, { server: 'srv-web-02', severity: 'critical', summary: critical[lang][crit], duration_min: [74, 112, 58][crit] })
+    if (i === 77) Object.assign(incident, { server: 'srv-app-01', severity: 'critical', summary: critical[lang][3], duration_min: null, status: 'open' })
+    if (i === 50) Object.assign(incident, { server: 'srv-cache-01', severity: 'high', summary: cacheOutage[lang], duration_min: 418 })
+    return incident
+  })
+}
+
+/**
+ * 70 tickets de support. Deux agents homonymes : Julien Martin (Réseau) et Julien Martin (Facturation), jamais
+ * tirés au hasard. Julien Martin (Réseau) : 6 tickets dont 4 résolus ; Julien Martin (Facturation) : 7 tickets dont
+ * 5 résolus. Deux clientes homonymes : Claire Petit de Lyon (« Coupure de connexion », Sarah Benali, résolu) et
+ * Claire Petit de Lille (« Facture en double », Julien Martin de la Facturation, ouvert). Seuls deux tickets sont
+ * « urgent », tous deux à l’équipe Réseau.
+ */
+function syntheticTickets(lang: CoreLang) {
+  const rnd = seeded(31337)
+  const teams: Record<CoreLang, { network: string; billing: string; accounts: string }> = {
+    fr: { network: 'Réseau', billing: 'Facturation', accounts: 'Comptes' },
+    en: { network: 'Network', billing: 'Billing', accounts: 'Accounts' },
+  }
+  const T = teams[lang]
+  const agents = [
+    { name: 'Sarah Benali', team: T.network },
+    { name: 'Hugo Lambert', team: T.billing },
+    { name: 'Maëlle Roux', team: T.accounts },
+    { name: 'Victor Leblanc', team: T.accounts },
+  ]
+  const requesters = [
+    ['Alain Morin', 'Nantes'], ['Bérénice Caron', 'Lyon'], ['Cyril Dupont', 'Lille'], ['Delphine Royer', 'Rennes'],
+    ['Éric Vidal', 'Toulouse'], ['Fanny Mercier', 'Lyon'], ['Gaël Henry', 'Brest'], ['Hélène Picard', 'Lille'],
+    ['Ibrahim Diallo', 'Marseille'], ['Jeanne Colin', 'Dijon'], ['Kevin Masson', 'Nancy'], ['Laure Fabre', 'Montpellier'],
+  ]
+  const subjects: Record<CoreLang, string[]> = {
+    fr: ['Débit internet lent', 'Changement d’adresse de facturation', 'Mot de passe oublié', 'Demande de duplicata de facture', 'Boîtier qui redémarre seul', 'Prélèvement rejeté', 'Ajout d’un utilisateur au compte', 'Wi-Fi instable à l’étage'],
+    en: ['Slow internet speed', 'Billing address change', 'Forgotten password', 'Request for a copy of an invoice', 'Box restarts on its own', 'Direct debit rejected', 'Adding a user to the account', 'Unstable Wi-Fi upstairs'],
+  }
+  const special: Record<CoreLang, { outage: string; duplicate: string }> = {
+    fr: { outage: 'Coupure de connexion', duplicate: 'Facture en double' },
+    en: { outage: 'Connection outage', duplicate: 'Duplicate invoice' },
+  }
+  const priorities = ['low', 'normal', 'normal', 'high']
+  const jmNetwork: Record<number, string> = { 5: 'resolved', 17: 'resolved', 29: 'open', 44: 'resolved', 52: 'open', 63: 'resolved' }
+  const jmBilling: Record<number, string> = { 9: 'resolved', 22: 'resolved', 36: 'resolved', 40: 'open', 48: 'resolved', 57: 'open', 66: 'resolved' }
+  return Array.from({ length: 70 }, (_, i) => {
+    const [name, city] = requesters[Math.floor(rnd() * requesters.length)]
+    const agent = agents[Math.floor(rnd() * agents.length)]
+    const ticket: Record<string, Json> = {
+      id: `TK-${4100 + i}`,
+      opened: day2026(244 + Math.floor(i / 3)),
+      requester: { name, city },
+      subject: subjects[lang][Math.floor(rnd() * subjects[lang].length)],
+      priority: priorities[Math.floor(rnd() * priorities.length)],
+      assignee: { ...agent },
+      status: rnd() < 0.7 ? 'resolved' : 'open',
+    }
+    if (jmNetwork[i]) Object.assign(ticket, { assignee: { name: 'Julien Martin', team: T.network }, status: jmNetwork[i] })
+    if (jmBilling[i]) Object.assign(ticket, { assignee: { name: 'Julien Martin', team: T.billing }, status: jmBilling[i] })
+    if (i === 24) Object.assign(ticket, { requester: { name: 'Claire Petit', city: 'Lyon' }, subject: special[lang].outage, assignee: { name: 'Sarah Benali', team: T.network }, status: 'resolved' })
+    if (i === 40) Object.assign(ticket, { requester: { name: 'Claire Petit', city: 'Lille' }, subject: special[lang].duplicate })
+    if (i === 31 || i === 52) ticket.priority = 'urgent'
+    if (i === 31) Object.assign(ticket, { assignee: { name: 'Sarah Benali', team: T.network } })
+    return ticket
+  })
+}
+
+/**
+ * Journal git de 95 commits, du plus récent au plus ancien. Événements (index chronologiques, 0 = le plus ancien) :
+ * 8 délai HTTP 30 → 45 s (Mehdi) ; 15 SSO (Anaïs) ; 22 revert du 45 s (Tom) ; 34 export XLSX (Lucie) ; 41 revert du
+ * SSO (Mehdi) ; 55 délai HTTP 30 → 60 s (Inès) ; 63 reapply du SSO (Tom) ; 72 revert de l’export XLSX (Lucie) ;
+ * 80 leurre : documentation du délai de 90 s du proxy. Au final : 60 s, SSO présent, XLSX absent, 3 reverts.
+ */
+function syntheticGitLog(lang: CoreLang) {
+  const rnd = seeded(777)
+  const authors = ['Lucie Faure', 'Mehdi Saïdi', 'Anaïs Perret', 'Tom Girard', 'Inès Koné']
+  const noise: Record<CoreLang, [string, string][]> = {
+    fr: [
+      ['fix(ui) : aligne les boutons de la fenêtre des paramètres', 'src/ui/settings.tsx'],
+      ['chore : met à jour les dépendances de développement', 'package.json'],
+      ['test(api) : couvre la pagination des factures', 'test/api/invoices.test.ts'],
+      ['refactor(db) : extrait les requêtes de clients dans un module', 'src/db/customers.ts'],
+      ['fix(pdf) : corrige les sauts de page des longs tableaux', 'src/pdf/table.ts'],
+      ['docs : précise l’installation locale', 'README.md'],
+      ['style : reformate les fichiers du dossier api', 'src/api/index.ts'],
+      ['perf(search) : met en cache les suggestions fréquentes', 'src/search/suggest.ts'],
+      ['fix(i18n) : traduit les messages d’erreur manquants', 'src/i18n/fr.json'],
+      ['ci : met en cache les modules entre deux exécutions', '.github/workflows/ci.yml'],
+      ['feat(ui) : affiche le nombre de factures en attente', 'src/ui/dashboard.tsx'],
+      ['fix(api) : renvoie 404 pour une facture supprimée', 'src/api/invoices.ts'],
+    ],
+    en: [
+      ['fix(ui): align the buttons in the settings dialog', 'src/ui/settings.tsx'],
+      ['chore: update dev dependencies', 'package.json'],
+      ['test(api): cover invoice pagination', 'test/api/invoices.test.ts'],
+      ['refactor(db): move customer queries into a module', 'src/db/customers.ts'],
+      ['fix(pdf): fix page breaks in long tables', 'src/pdf/table.ts'],
+      ['docs: clarify local setup', 'README.md'],
+      ['style: reformat files in the api folder', 'src/api/index.ts'],
+      ['perf(search): cache frequent suggestions', 'src/search/suggest.ts'],
+      ['fix(i18n): translate missing error messages', 'src/i18n/en.json'],
+      ['ci: cache modules between runs', '.github/workflows/ci.yml'],
+      ['feat(ui): show the number of pending invoices', 'src/ui/dashboard.tsx'],
+      ['fix(api): return 404 for a deleted invoice', 'src/api/invoices.ts'],
+    ],
+  }
+  const m: Record<CoreLang, Record<string, string>> = {
+    fr: {
+      t45: 'config : passe le délai d’expiration HTTP de 30 s à 45 s',
+      sso: 'feat(auth) : ajoute la connexion SSO',
+      xlsx: 'feat(export) : ajoute l’export XLSX des factures',
+      t60: 'config : passe le délai d’expiration HTTP de 30 s à 60 s',
+      proxy: 'docs : documente le délai de 90 s du proxy inverse',
+      rev: 'Revert « %s »',
+      reapply: 'Reapply « %s »',
+      why41: 'Casse la connexion des comptes invités.',
+      why63: 'Version corrigée : les comptes invités se connectent de nouveau.',
+      why72: 'Fichiers corrompus au-delà de 10 000 lignes ; à reprendre plus tard.',
+      why22: 'Délai trop long pour le répartiteur de charge.',
+    },
+    en: {
+      t45: 'config: raise the HTTP timeout from 30 s to 45 s',
+      sso: 'feat(auth): add SSO login',
+      xlsx: 'feat(export): add XLSX export of invoices',
+      t60: 'config: raise the HTTP timeout from 30 s to 60 s',
+      proxy: 'docs: document the 90 s reverse proxy timeout',
+      rev: 'Revert "%s"',
+      reapply: 'Reapply "%s"',
+      why41: 'Breaks guest account login.',
+      why63: 'Fixed version: guest accounts can log in again.',
+      why72: 'Files corrupted beyond 10,000 rows; to be redone later.',
+      why22: 'Timeout too long for the load balancer.',
+    },
+  }
+  const M = m[lang]
+  const special: Record<number, [string, string, string, string?]> = {
+    8: ['Mehdi Saïdi', M.t45, 'config/http.ts'],
+    15: ['Anaïs Perret', M.sso, 'src/auth/sso.ts'],
+    22: ['Tom Girard', M.rev.replace('%s', M.t45), 'config/http.ts', M.why22],
+    34: ['Lucie Faure', M.xlsx, 'src/export/xlsx.ts'],
+    41: ['Mehdi Saïdi', M.rev.replace('%s', M.sso), 'src/auth/sso.ts', M.why41],
+    55: ['Inès Koné', M.t60, 'config/http.ts'],
+    63: ['Tom Girard', M.reapply.replace('%s', M.sso), 'src/auth/sso.ts', M.why63],
+    72: ['Lucie Faure', M.rev.replace('%s', M.xlsx), 'src/export/xlsx.ts', M.why72],
+    80: ['Anaïs Perret', M.proxy, 'docs/deploy.md'],
+  }
+  const commits: string[] = []
+  let t = 0
+  for (let i = 0; i < 95; i++) {
+    t += 120 + Math.floor(rnd() * 900)
+    const hash = Math.floor(rnd() * 0xfffffff).toString(16).padStart(7, '0')
+    let author = authors[Math.floor(rnd() * authors.length)]
+    let [msg, file] = noise[lang][Math.floor(rnd() * noise[lang].length)]
+    const plus = 1 + Math.floor(rnd() * 60)
+    const minus = Math.floor(rnd() * 30)
+    let body: string | undefined
+    if (special[i]) [author, msg, file, body] = special[i]
+    const d = new Date(Date.UTC(2026, 4, 4) + t * 60000)
+    const date = `${d.toISOString().slice(0, 10)} ${d.toISOString().slice(11, 16)}`
+    commits.push([`commit ${hash}`, `Author: ${author}`, `Date:   ${date}`, '', `    ${msg}`, ...(body ? ['', `    ${body}`] : []), '', ` ${file} | +${plus} −${minus}`].join('\n'))
+  }
+  return commits.reverse().join('\n\n')
+}
+
+/**
+ * Annuaire de 108 salariés répartis en 9 équipes (membre i → équipe i % 9, la responsable de l’équipe k est le
+ * salarié k). Bureau : bâtiment de l’équipe, étage 1 à 4. Aiguilles : Léon Garnier (salarié 41, équipe 5) ; seule
+ * arrivée le 2025-03-03 = salarié 56 (équipe 2), leurre arrivé le 2024-03-03 = salarié 70 (équipe 7) ; deux
+ * membres de l’équipe Juridique (salariés 21 et 48) ont un bureau dans le bâtiment C ; trois bureaux au
+ * rez-de-chaussée (étage 0), aucun dans l’équipe Paie.
+ */
+function syntheticDirectory(lang: CoreLang) {
+  const rnd = seeded(60606)
+  const teamNames: Record<CoreLang, string[]> = {
+    fr: ['Comptabilité', 'Paie', 'Achats', 'Juridique', 'Contrôle de gestion', 'Logistique', 'Informatique', 'Communication', 'Qualité'],
+    en: ['Accounting', 'Payroll', 'Purchasing', 'Legal', 'Financial control', 'Logistics', 'IT', 'Communications', 'Quality'],
+  }
+  const buildings = ['A', 'A', 'B', 'B', 'A', 'D', 'C', 'B', 'D']
+  const first = ['Agathe', 'Basile', 'Céline', 'Damien', 'Elsa', 'Florent', 'Gisèle', 'Hector', 'Iris', 'Jules', 'Katia', 'Lucas', 'Manon', 'Noé', 'Olga', 'Pierre', 'Romy', 'Simon', 'Tess', 'Ugo']
+  const last = ['Arnaud', 'Besson', 'Chevalier', 'Delorme', 'Esnault', 'Fournier', 'Gauthier', 'Huet', 'Jacob', 'Leroy', 'Marchand', 'Navarro', 'Olivier', 'Poulain', 'Renard', 'Sanchez', 'Tessier', 'Vasseur']
+  const titles: Record<CoreLang, string[]> = {
+    fr: ['Chargé·e de mission', 'Analyste', 'Assistant·e', 'Gestionnaire', 'Technicien·ne', 'Coordinateur·rice'],
+    en: ['Project officer', 'Analyst', 'Assistant', 'Administrator', 'Technician', 'Coordinator'],
+  }
+  const lead: Record<CoreLang, string> = { fr: 'Responsable d’équipe', en: 'Team lead' }
+  const used = new Set<string>()
+  const usedExt = new Set<number>()
+  const employees = Array.from({ length: 108 }, (_, i) => {
+    let name = ''
+    do name = `${first[Math.floor(rnd() * first.length)]} ${last[Math.floor(rnd() * last.length)]}`
+    while (used.has(name))
+    used.add(name)
+    let ext = 0
+    do ext = 2000 + Math.floor(rnd() * 800)
+    while (usedExt.has(ext))
+    usedExt.add(ext)
+    const team = i % 9
+    const floor = 1 + Math.floor(rnd() * 4)
+    const room = 10 + Math.floor(rnd() * 40)
+    const y = 2015 + Math.floor(rnd() * 11)
+    let start = `${y}-${String(1 + Math.floor(rnd() * 12)).padStart(2, '0')}-${String(1 + Math.floor(rnd() * 28)).padStart(2, '0')}`
+    if (start.endsWith('-03-03')) start = `${y}-03-04`
+    const titleIdx = Math.floor(rnd() * titles[lang].length)
+    const e: Record<string, Json> = {
+      name,
+      team: teamNames[lang][team],
+      title: i < 9 ? lead[lang] : titles[lang][titleIdx],
+      office: `${buildings[team]}-${floor}${room}`,
+      ext,
+      start_date: start,
+    }
+    return e
+  })
+  employees[41].name = 'Léon Garnier'
+  employees[56].start_date = '2025-03-03'
+  employees[70].start_date = '2024-03-03'
+  employees[21].office = 'C-214'
+  employees[48].office = 'C-231'
+  employees[13].office = 'A-012'
+  employees[33].office = 'C-005'
+  employees[77].office = 'D-018'
+  const notices: Record<CoreLang, string[]> = {
+    fr: [
+      'Badge d’accès retrouvé le 2 octobre 2026 dans la salle de pause du bâtiment B. D’après le service sécurité, il appartient à la personne entrée dans l’entreprise le 3 mars 2025 ; merci de prévenir sa ou son responsable d’équipe.',
+      'Travaux sur l’ascenseur du bâtiment D du 5 au 9 octobre 2026 : merci d’emprunter l’escalier.',
+    ],
+    en: [
+      'Access badge found on October 2, 2026 in the break room of building B. According to the security team, it belongs to the person who joined the company on March 3, 2025; please let their team lead know.',
+      'Elevator works in building D from October 5 to 9, 2026: please use the stairs.',
+    ],
+  }
+  const teams = teamNames[lang].map((n, k) => ({ name: n, building: buildings[k], lead: employees[k].name }))
+  return { notices: notices[lang], teams, employees }
 }
 
 // ─── Cas ─────────────────────────────────────────────────────────────────────
@@ -1357,6 +2229,639 @@ export const DOCUMENTS: Pair[] = [
           type: 'score',
           instructions: 'How many entries have level `ERROR`?',
           criteria: ['None', 'One', '2 to 5', 'More than 5'],
+        },
+      },
+    },
+  },
+  {
+    id: 'doc-contract-amendment',
+    category: 'Comprehension',
+    complexity: 'complexe',
+    length: 'long',
+    // Article 8 : les annexes signées priment, la plus récente l’emporte ; le projet d’annexe C n’est pas signé, donc
+    // sans effet (préavis 3 mois, forfait 2 400 €, révision seulement à la date anniversaire, le 1er avril 2027).
+    // Pénalité de septembre : incident de Romans déclaré lundi 8 h, intervention mardi 14 h = 10 h + 6 h = 16 heures
+    // ouvrées ; délai de l’annexe B = 4 h, donc 12 h de retard × 1 % × 2 400 € = 288 €, sous le plafond de 15 % (360 €).
+    // Leurres : 192 € (délai de 8 h du contrat initial), 240 € (ancien plafond de 10 %), 384 € (16 h sans déduire le
+    // délai). L’incident du 8 septembre (2 h) est dans les temps. Die est à 65 km (> 50) ; Crest est retiré au 1er juillet.
+    expected: { september_penalty: 'eur_288', die_travel_billed: true, crest_covered: false, notice_period: 'm3', october_fee: 'eur_2400' },
+    fr: {
+      name: 'Contrat et avenants (annexe qui prime)',
+      description: 'Contrat de maintenance modifié par un avenant signé et par un projet d’avenant non signé.',
+      state: MAINTENANCE_CONTRACT.fr,
+      questions: {
+        september_penalty: {
+          type: 'choice',
+          instructions: 'Quel montant total de pénalités le Prestataire doit-il au titre des incidents de septembre 2026 ?',
+          criteria: { eur_0: '0 €', eur_192: '192 €', eur_240: '240 €', eur_288: '288 €', eur_384: '384 €' },
+        },
+        die_travel_billed: { type: 'noul', instructions: 'Les frais de déplacement vers le magasin de Die sont-ils facturés au Client en plus du forfait ?' },
+        crest_covered: { type: 'noul', instructions: 'Le magasin de Crest est-il couvert par le contrat en septembre 2026 ?' },
+        notice_period: {
+          type: 'choice',
+          instructions: 'Quel préavis le Client doit-il respecter pour s’opposer au renouvellement du contrat ?',
+          criteria: { m1: '1 mois', m2: '2 mois', m3: '3 mois', m6: '6 mois' },
+        },
+        october_fee: {
+          type: 'choice',
+          instructions: 'Quel forfait mensuel s’applique en octobre 2026 ?',
+          criteria: { eur_2400: '2 400 € HT', eur_2472: '2 472 € HT', eur_2650: '2 650 € HT' },
+        },
+      },
+    },
+    en: {
+      name: 'Contract and amendments (appendix prevails)',
+      description: 'Maintenance contract changed by a signed amendment and by an unsigned draft amendment.',
+      state: MAINTENANCE_CONTRACT.en,
+      questions: {
+        september_penalty: {
+          type: 'choice',
+          instructions: 'What total amount of penalties does the Provider owe for the September 2026 incidents?',
+          criteria: { eur_0: '€0', eur_192: '€192', eur_240: '€240', eur_288: '€288', eur_384: '€384' },
+        },
+        die_travel_billed: { type: 'noul', instructions: 'Are travel expenses to the Die store invoiced to the Customer on top of the fee?' },
+        crest_covered: { type: 'noul', instructions: 'Is the Crest store covered by the contract in September 2026?' },
+        notice_period: {
+          type: 'choice',
+          instructions: 'How much notice must the Customer give to opt out of the contract renewal?',
+          criteria: { m1: '1 month', m2: '2 months', m3: '3 months', m6: '6 months' },
+        },
+        october_fee: {
+          type: 'choice',
+          instructions: 'What monthly fee applies in October 2026?',
+          criteria: { eur_2400: '€2,400 excluding VAT', eur_2472: '€2,472 excluding VAT', eur_2650: '€2,650 excluding VAT' },
+        },
+      },
+    },
+  },
+  {
+    id: 'doc-general-meeting-quorum',
+    category: 'Comprehension',
+    complexity: 'complexe',
+    length: 'long',
+    // Ouverture : 24 présents + 8 pouvoirs valables (Mme Roche est limitée à 2, son 3e pouvoir est nul) = 32 voix ≥ 30.
+    // Résolution 2 : 14 pour, 13 contre (abstentions non comptées) → adoptée. Résolution 3 (statuts) : 19 sur 29
+    // exprimés < 2/3 (19,33) → rejetée malgré la majorité. Après les départs : 19 présents + 6 pouvoirs = 25 < 30,
+    // quorum perdu → l’élection du trésorier n’est pas valable. Résolutions valablement adoptées : 1 et 2.
+    expected: { votes_at_opening: 'v32', res2_adopted: true, res3_adopted: false, treasurer_valid: false, adopted_count: 2 },
+    fr: {
+      name: 'Procès-verbal d’assemblée (quorum et majorités)',
+      description: 'Pouvoirs plafonnés, majorité des deux tiers et quorum perdu en cours de séance.',
+      state: GENERAL_MEETING.fr,
+      questions: {
+        votes_at_opening: {
+          type: 'choice',
+          instructions: 'De combien de voix (membres présents et pouvoirs valables) l’assemblée dispose-t-elle à l’ouverture ?',
+          criteria: { v24: '24', v30: '30', v32: '32', v33: '33' },
+        },
+        res2_adopted: { type: 'noul', instructions: 'La résolution 2 (hausse de la cotisation) est-elle adoptée ?' },
+        res3_adopted: { type: 'noul', instructions: 'La résolution 3 (modification des statuts) est-elle adoptée ?' },
+        treasurer_valid: { type: 'noul', instructions: 'L’élection de Mme Garcin au poste de trésorière est-elle valable au regard des statuts ?' },
+        adopted_count: {
+          type: 'score',
+          instructions: 'Combien de résolutions ont été valablement adoptées lors de cette assemblée ?',
+          criteria: ['Aucune', 'Une', 'Deux', 'Trois', 'Quatre'],
+        },
+      },
+    },
+    en: {
+      name: 'General meeting minutes (quorum and majorities)',
+      description: 'Capped proxies, a two-thirds majority and a quorum lost during the meeting.',
+      state: GENERAL_MEETING.en,
+      questions: {
+        votes_at_opening: {
+          type: 'choice',
+          instructions: 'How many votes (members present and valid proxies) does the meeting have at the opening?',
+          criteria: { v24: '24', v30: '30', v32: '32', v33: '33' },
+        },
+        res2_adopted: { type: 'noul', instructions: 'Is resolution 2 (dues increase) adopted?' },
+        res3_adopted: { type: 'noul', instructions: 'Is resolution 3 (amendment to the bylaws) adopted?' },
+        treasurer_valid: { type: 'noul', instructions: 'Is the election of Ms. Garcin as treasurer valid under the bylaws?' },
+        adopted_count: {
+          type: 'score',
+          instructions: 'How many resolutions were validly adopted at this meeting?',
+          criteria: ['None', 'One', 'Two', 'Three', 'Four'],
+        },
+      },
+    },
+  },
+  {
+    id: 'doc-policy-versions',
+    category: 'Extraction',
+    complexity: 'complexe',
+    length: 'long',
+    // La date du déplacement choisit la version : août → v1, octobre et novembre → v2. Août : plafond Paris 150 €
+    // (l’hôtel à 160 € le dépasse), taxi après 21 h sans accord remboursable en v1. Strasbourg (v2) : 1re classe
+    // seulement au-delà de 4 h, or le trajet dure 3 h 40 (en v1, il aurait été remboursable) ; fin le 16 octobre +
+    // 45 jours = 30 novembre (30 jours de la v1 → 15 novembre). Novembre : 165 € ≤ 170 € (plafond Paris de la v2).
+    expected: { august_hotel_cap: 'eur_150', august_taxi_ok: true, strasbourg_first_class_ok: false, november_hotel_ok: true, strasbourg_deadline: 'nov_30' },
+    fr: {
+      name: 'Deux versions d’une politique de frais',
+      description: 'Notes de frais à contrôler contre la version de la politique en vigueur à la date du déplacement.',
+      state: TRAVEL_POLICY.fr,
+      questions: {
+        august_hotel_cap: {
+          type: 'choice',
+          instructions: 'Quel plafond d’hôtel par nuit s’applique au déplacement n° 1 (Paris, août 2026) ?',
+          criteria: { eur_110: '110 €', eur_150: '150 €', eur_170: '170 €' },
+        },
+        august_taxi_ok: { type: 'noul', instructions: 'Le taxi du 25 août 2026 est-il remboursable ?' },
+        strasbourg_first_class_ok: { type: 'noul', instructions: 'Le billet de train en 1re classe du déplacement n° 2 (Strasbourg) est-il remboursable ?' },
+        november_hotel_ok: { type: 'noul', instructions: 'L’hôtel du déplacement n° 3 (Paris, novembre 2026) respecte-t-il le plafond applicable ?' },
+        strasbourg_deadline: {
+          type: 'choice',
+          instructions: 'Jusqu’à quelle date Mme Vignal peut-elle transmettre la note de frais du déplacement n° 2 ?',
+          criteria: { nov_15: '15 novembre 2026', nov_30: '30 novembre 2026', dec_15: '15 décembre 2026' },
+        },
+      },
+    },
+    en: {
+      name: 'Two versions of an expense policy',
+      description: 'Expense reports to check against the policy version in force on the date of the trip.',
+      state: TRAVEL_POLICY.en,
+      questions: {
+        august_hotel_cap: {
+          type: 'choice',
+          instructions: 'What hotel cap per night applies to trip no. 1 (Paris, August 2026)?',
+          criteria: { eur_110: '€110', eur_150: '€150', eur_170: '€170' },
+        },
+        august_taxi_ok: { type: 'noul', instructions: 'Is the taxi of August 25, 2026 reimbursable?' },
+        strasbourg_first_class_ok: { type: 'noul', instructions: 'Is the first-class train ticket for trip no. 2 (Strasbourg) reimbursable?' },
+        november_hotel_ok: { type: 'noul', instructions: 'Is the hotel for trip no. 3 (Paris, November 2026) within the applicable cap?' },
+        strasbourg_deadline: {
+          type: 'choice',
+          instructions: 'By what date can Ms. Vignal submit the expense report for trip no. 2?',
+          criteria: { nov_15: 'November 15, 2026', nov_30: 'November 30, 2026', dec_15: 'December 15, 2026' },
+        },
+      },
+    },
+  },
+  {
+    id: 'doc-audit-summary-mismatch',
+    category: 'Comprehension',
+    complexity: 'complexe',
+    length: 'long',
+    // Le résumé de tête est faux sur trois points : moyenne (96 + 94 + 78 + 92) / 4 = 90 % et non 92 %, sans progression
+    // (90 % au trimestre précédent) ; non-conformité majeure ouverte à Metz ; audits de suivi pour Metz (majeure ouverte)
+    // et Reims (78 % < 80 %), soit 2. Reims, le plus mauvais taux, n’a que des non-conformités mineures. Amiens : 92 % et
+    // sa majeure du trimestre précédent est levée, donc certification maintenue.
+    expected: { summary_accurate: false, major_nc_site: 'metz', average_rate: 'p90', follow_up_count: 2, amiens_certified: true },
+    fr: {
+      name: 'Rapport d’audit (résumé contredit par le détail)',
+      description: 'Le résumé pour la direction ne correspond pas aux résultats détaillés par centre.',
+      state: AUDIT_REPORT.fr,
+      questions: {
+        summary_accurate: { type: 'noul', instructions: 'Le résumé pour la direction est-il fidèle aux résultats détaillés du rapport ?' },
+        major_nc_site: {
+          type: 'choice',
+          instructions: 'Quel centre présente une non-conformité majeure ouverte à la clôture de son audit du 2e trimestre ?',
+          criteria: { lille: 'Lille', metz: 'Metz', reims: 'Reims', amiens: 'Amiens', none: 'Aucun' },
+        },
+        average_rate: {
+          type: 'choice',
+          instructions: 'D’après les résultats détaillés, quel est le taux de conformité moyen des quatre centres ce trimestre ?',
+          criteria: { p86: '86 %', p88: '88 %', p90: '90 %', p92: '92 %' },
+        },
+        follow_up_count: {
+          type: 'score',
+          instructions: 'D’après les règles de décision, combien de centres doivent faire l’objet d’un audit de suivi ?',
+          criteria: ['Aucun', 'Un', 'Deux', 'Trois', 'Quatre'],
+        },
+        amiens_certified: { type: 'noul', instructions: 'D’après les règles de décision, la certification du centre d’Amiens est-elle maintenue ?' },
+      },
+    },
+    en: {
+      name: 'Audit report (summary contradicted by the details)',
+      description: 'The executive summary does not match the detailed results per center.',
+      state: AUDIT_REPORT.en,
+      questions: {
+        summary_accurate: { type: 'noul', instructions: 'Is the executive summary faithful to the detailed results of the report?' },
+        major_nc_site: {
+          type: 'choice',
+          instructions: 'Which center has a major nonconformity open when its Q2 audit closed?',
+          criteria: { lille: 'Lille', metz: 'Metz', reims: 'Reims', amiens: 'Amiens', none: 'None' },
+        },
+        average_rate: {
+          type: 'choice',
+          instructions: 'According to the detailed results, what is the average compliance rate of the four centers this quarter?',
+          criteria: { p86: '86%', p88: '88%', p90: '90%', p92: '92%' },
+        },
+        follow_up_count: {
+          type: 'score',
+          instructions: 'Under the decision rules, how many centers must have a follow-up audit?',
+          criteria: ['None', 'One', 'Two', 'Three', 'Four'],
+        },
+        amiens_certified: { type: 'noul', instructions: 'Under the decision rules, is the Amiens center’s certification maintained?' },
+      },
+    },
+  },
+  {
+    id: 'doc-meeting-reassignment',
+    category: 'Extraction',
+    complexity: 'complexe',
+    length: 'long',
+    // Cahier de recette : Nicolas D. (5 oct.) → Inès (12 oct., échéance 27 oct.) → « Nicolas (DSI) », c’est-à-dire
+    // Nicolas Duval (19 oct., échéance 3 nov.). Le report de la bascule au 12 janvier est refusé par le comité de
+    // pilotage : 1er décembre maintenu. Nicolas Ferrand : A2 close, A5 ouverte → 1 action ouverte (Nicolas Duval en a 2 :
+    // A1 et A6).
+    expected: { test_plan_owner: 'nicolas_d', test_plan_deadline: 'nov_3', switchover_kept: true, ferrand_open_actions: 1 },
+    fr: {
+      name: 'Comptes rendus successifs (action réattribuée)',
+      description: 'Trois réunions : une action change deux fois de responsable, avec deux Nicolas dans l’équipe.',
+      state: PROJECT_MEETINGS.fr,
+      questions: {
+        test_plan_owner: {
+          type: 'choice',
+          instructions: 'À l’issue de la réunion du 19 octobre, qui est responsable du cahier de recette ?',
+          criteria: { nicolas_d: 'Nicolas Duval', nicolas_f: 'Nicolas Ferrand', ines: 'Inès Brahimi', agnes: 'Agnès Morel' },
+        },
+        test_plan_deadline: {
+          type: 'choice',
+          instructions: 'Quelle est l’échéance en vigueur du cahier de recette ?',
+          criteria: { oct_20: '20 octobre 2026', oct_27: '27 octobre 2026', nov_3: '3 novembre 2026', nov_6: '6 novembre 2026' },
+        },
+        switchover_kept: { type: 'noul', instructions: 'La bascule sur le nouvel ERP est-elle toujours prévue le 1er décembre 2026 ?' },
+        ferrand_open_actions: {
+          type: 'score',
+          instructions: 'À l’issue de la réunion du 19 octobre, combien d’actions ouvertes Nicolas Ferrand a-t-il à sa charge ?',
+          criteria: ['Aucune', 'Une', 'Deux', 'Trois ou plus'],
+        },
+      },
+    },
+    en: {
+      name: 'Successive minutes (reassigned action item)',
+      description: 'Three meetings: an action item changes owner twice, with two Nicolases on the team.',
+      state: PROJECT_MEETINGS.en,
+      questions: {
+        test_plan_owner: {
+          type: 'choice',
+          instructions: 'After the October 19 meeting, who owns the acceptance test plan?',
+          criteria: { nicolas_d: 'Nicolas Duval', nicolas_f: 'Nicolas Ferrand', ines: 'Inès Brahimi', agnes: 'Agnès Morel' },
+        },
+        test_plan_deadline: {
+          type: 'choice',
+          instructions: 'What is the current deadline for the acceptance test plan?',
+          criteria: { oct_20: 'October 20, 2026', oct_27: 'October 27, 2026', nov_3: 'November 3, 2026', nov_6: 'November 6, 2026' },
+        },
+        switchover_kept: { type: 'noul', instructions: 'Is the switchover to the new ERP still planned for December 1, 2026?' },
+        ferrand_open_actions: {
+          type: 'score',
+          instructions: 'After the October 19 meeting, how many open action items does Nicolas Ferrand own?',
+          criteria: ['None', 'One', 'Two', 'Three or more'],
+        },
+      },
+    },
+  },
+  {
+    id: 'doc-hosting-decision',
+    category: 'Extraction',
+    complexity: 'complexe',
+    length: 'long',
+    // Nuagine Paris (décidé le 4 nov.) → abandonné (sauvegardes hors UE) → Stratus Francfort (9 nov.) → abandonné
+    // (2 900 € avec la base gérée) → retour à Nuagine, région Strasbourg, avec l’avenant UE (13 nov.), à 1 850 € par
+    // mois. 1 850 × 12 = 22 200 € > 20 000 € de délégation de Margaux : c’est Thierry qui signe.
+    expected: { final_provider: 'nuagine', region: 'strasbourg', monthly_cost: 'eur_1850', backups_in_eu: true, cto_could_sign: false },
+    fr: {
+      name: 'Fil de discussion (décision annulée puis rétablie)',
+      description: 'Choix d’un hébergeur : décidé, abandonné, remplacé, puis rétabli sous condition.',
+      state: HOSTING_CHAT.fr,
+      questions: {
+        final_provider: {
+          type: 'choice',
+          instructions: 'Quel hébergeur a finalement été retenu pour le portail ?',
+          criteria: { stratus: 'Stratus', in_house: 'Un hébergement interne', nuagine: 'Nuagine', undecided: 'Aucune décision définitive n’a été prise' },
+        },
+        region: {
+          type: 'choice',
+          instructions: 'Dans quelle région le portail sera-t-il hébergé ?',
+          criteria: { strasbourg: 'Strasbourg', paris: 'Paris', frankfurt: 'Francfort', montreal: 'Montréal' },
+        },
+        monthly_cost: {
+          type: 'choice',
+          instructions: 'Quel est le coût mensuel de l’hébergement retenu ?',
+          criteria: { eur_1850: '1 850 € HT', eur_2100: '2 100 € HT', eur_2900: '2 900 € HT' },
+        },
+        backups_in_eu: { type: 'noul', instructions: 'Avec la solution retenue, les sauvegardes du portail restent-elles dans l’Union européenne ?' },
+        cto_could_sign: { type: 'noul', instructions: 'Margaux Deschamps aurait-elle pu signer seule le contrat finalement retenu ?' },
+      },
+    },
+    en: {
+      name: 'Discussion thread (decision reversed, then restored)',
+      description: 'Choosing a hosting provider: decided, dropped, replaced, then restored under a condition.',
+      state: HOSTING_CHAT.en,
+      questions: {
+        final_provider: {
+          type: 'choice',
+          instructions: 'Which hosting provider was finally chosen for the portal?',
+          criteria: { stratus: 'Stratus', in_house: 'In-house hosting', nuagine: 'Nuagine', undecided: 'No final decision has been made' },
+        },
+        region: {
+          type: 'choice',
+          instructions: 'In which region will the portal be hosted?',
+          criteria: { strasbourg: 'Strasbourg', paris: 'Paris', frankfurt: 'Frankfurt', montreal: 'Montreal' },
+        },
+        monthly_cost: {
+          type: 'choice',
+          instructions: 'What is the monthly cost of the chosen hosting?',
+          criteria: { eur_1850: '€1,850 excluding VAT', eur_2100: '€2,100 excluding VAT', eur_2900: '€2,900 excluding VAT' },
+        },
+        backups_in_eu: { type: 'noul', instructions: 'With the chosen solution, do the portal’s backups stay in the European Union?' },
+        cto_could_sign: { type: 'noul', instructions: 'Could Margaux Deschamps have signed the contract finally chosen on her own?' },
+      },
+    },
+  },
+  {
+    id: 'doc-invoices-aggregate',
+    category: 'Structured data',
+    complexity: 'complexe',
+    length: 'très long',
+    // syntheticInvoices : 19 factures `unpaid`, dont seulement 4 en retard au 30 juin (échéance dépassée) : Cléon
+    // Transports ×2, Ecotherm ×1, Fibrolink ×1 — Ecotherm a pourtant le plus de factures impayées au total (5).
+    // Litiges : 1 840 + 2 315,50 + 612,40 = 4 767,90 €. Bricoval : aucune facture `disputed` (seulement une note de
+    // litige clos sur une facture payée).
+    expected: { overdue_count: 2, overdue_top_supplier: 'cleon', disputed_total: 'from_4000_to_6000', bricoval_disputed: false },
+    fr: {
+      name: 'Factures fournisseurs (agrégation sous condition)',
+      description: '90 factures en JSON : compter et additionner selon le statut et l’échéance.',
+      state: syntheticInvoices('fr'),
+      questions: {
+        overdue_count: {
+          type: 'score',
+          instructions: 'Au 30 juin 2026 (`as_of`), combien de factures sont impayées (`unpaid`) alors que leur échéance (`due`) est dépassée ?',
+          criteria: ['Aucune', '1 ou 2', '3 ou 4', 'De 5 à 8', 'Plus de 8'],
+        },
+        overdue_top_supplier: {
+          type: 'choice',
+          instructions: 'Quel fournisseur compte le plus de factures impayées dont l’échéance est dépassée au 30 juin 2026 ?',
+          criteria: { arvel: 'Arvel Papeterie', bricoval: 'Bricoval', cleon: 'Cléon Transports', ecotherm: 'Ecotherm', fibrolink: 'Fibrolink' },
+        },
+        disputed_total: {
+          type: 'choice',
+          instructions: 'Quel est le montant total des factures au statut `disputed` ?',
+          criteria: { under_2000: 'Moins de 2 000 €', from_2000_to_4000: 'De 2 000 à 4 000 €', from_4000_to_6000: 'De 4 000 à 6 000 €', over_6000: 'Plus de 6 000 €' },
+        },
+        bricoval_disputed: { type: 'noul', instructions: 'Une facture de Bricoval est-elle actuellement en litige (statut `disputed`) ?' },
+      },
+    },
+    en: {
+      name: 'Supplier invoices (conditional aggregation)',
+      description: '90 invoices in JSON: count and add up by status and due date.',
+      state: syntheticInvoices('en'),
+      questions: {
+        overdue_count: {
+          type: 'score',
+          instructions: 'As of June 30, 2026 (`as_of`), how many invoices are unpaid (`unpaid`) even though their due date (`due`) has passed?',
+          criteria: ['None', '1 or 2', '3 or 4', '5 to 8', 'More than 8'],
+        },
+        overdue_top_supplier: {
+          type: 'choice',
+          instructions: 'Which supplier has the most unpaid invoices past their due date as of June 30, 2026?',
+          criteria: { arvel: 'Arvel Papeterie', bricoval: 'Bricoval', cleon: 'Cléon Transports', ecotherm: 'Ecotherm', fibrolink: 'Fibrolink' },
+        },
+        disputed_total: {
+          type: 'choice',
+          instructions: 'What is the total amount of the invoices with status `disputed`?',
+          criteria: { under_2000: 'Less than €2,000', from_2000_to_4000: '€2,000 to €4,000', from_4000_to_6000: '€4,000 to €6,000', over_6000: 'More than €6,000' },
+        },
+        bricoval_disputed: { type: 'noul', instructions: 'Is any Bricoval invoice currently in dispute (status `disputed`)?' },
+      },
+    },
+  },
+  {
+    id: 'doc-server-incidents',
+    category: 'Long context',
+    complexity: 'complexe',
+    length: 'très long',
+    // syntheticIncidents : aucun incident sur srv-db-02 (srv-db-01 et srv-db-03 en ont) ; 4 incidents `critical`, dont 3
+    // sur srv-web-02 (tous résolus) et 1 encore ouvert sur srv-app-01 ; la plus longue durée (418 min) est sur
+    // srv-cache-01, en gravité `high` — le plus long incident critique (112 min) est sur srv-web-02.
+    expected: { db02_incident: false, web02_critical_count: 3, open_critical_server: 'srv_app_01', longest_outage_server: 'srv_cache_01', web02_all_resolved: true },
+    fr: {
+      name: 'Incidents serveurs (contexte long)',
+      description: '85 incidents en JSON : compter par serveur et par gravité, constater une absence.',
+      state: { incidents: syntheticIncidents('fr') },
+      questions: {
+        db02_incident: { type: 'noul', instructions: 'Le serveur srv-db-02 a-t-il connu au moins un incident en septembre 2026 ?' },
+        web02_critical_count: {
+          type: 'score',
+          instructions: 'Combien d’incidents de gravité `critical` concernent le serveur srv-web-02 ?',
+          criteria: ['Aucun', 'Un', 'Deux', 'Trois', 'Quatre ou plus'],
+        },
+        open_critical_server: {
+          type: 'choice',
+          instructions: 'Sur quel serveur un incident de gravité `critical` est-il encore ouvert ?',
+          criteria: { srv_web_02: 'srv-web-02', srv_app_01: 'srv-app-01', srv_app_02: 'srv-app-02', srv_db_01: 'srv-db-01', none: 'Aucun' },
+        },
+        longest_outage_server: {
+          type: 'choice',
+          instructions: 'Quel serveur a connu l’incident le plus long (`duration_min`) ?',
+          criteria: { srv_cache_01: 'srv-cache-01', srv_web_02: 'srv-web-02', srv_db_03: 'srv-db-03', srv_app_01: 'srv-app-01' },
+        },
+        web02_all_resolved: { type: 'noul', instructions: 'Tous les incidents de gravité `critical` du serveur srv-web-02 sont-ils résolus ?' },
+      },
+    },
+    en: {
+      name: 'Server incidents (long context)',
+      description: '85 incidents in JSON: count by server and severity, notice an absence.',
+      state: { incidents: syntheticIncidents('en') },
+      questions: {
+        db02_incident: { type: 'noul', instructions: 'Did server srv-db-02 have at least one incident in September 2026?' },
+        web02_critical_count: {
+          type: 'score',
+          instructions: 'How many incidents with severity `critical` involve server srv-web-02?',
+          criteria: ['None', 'One', 'Two', 'Three', 'Four or more'],
+        },
+        open_critical_server: {
+          type: 'choice',
+          instructions: 'On which server is an incident with severity `critical` still open?',
+          criteria: { srv_web_02: 'srv-web-02', srv_app_01: 'srv-app-01', srv_app_02: 'srv-app-02', srv_db_01: 'srv-db-01', none: 'None' },
+        },
+        longest_outage_server: {
+          type: 'choice',
+          instructions: 'Which server had the longest incident (`duration_min`)?',
+          criteria: { srv_cache_01: 'srv-cache-01', srv_web_02: 'srv-web-02', srv_db_03: 'srv-db-03', srv_app_01: 'srv-app-01' },
+        },
+        web02_all_resolved: { type: 'noul', instructions: 'Are all incidents with severity `critical` on server srv-web-02 resolved?' },
+      },
+    },
+  },
+  {
+    id: 'doc-tickets-homonyms',
+    category: 'Structured data',
+    complexity: 'complexe',
+    length: 'très long',
+    // syntheticTickets : deux agents « Julien Martin » — Réseau : 6 tickets dont 4 résolus ; Facturation : 7 tickets
+    // dont 5 résolus (9 résolus en confondant les deux). Deux clientes « Claire Petit » : celle de Lille a le ticket
+    // « Facture en double », traité par Julien Martin de la Facturation et encore ouvert ; celle de Lyon, « Coupure de
+    // connexion », est résolu. Les deux seuls tickets `urgent` sont à l’équipe Réseau.
+    expected: { jm_network_resolved: 2, petit_lille_subject: 'duplicate', petit_lille_team: 'billing', urgent_accounts: false, petit_lille_open: true },
+    fr: {
+      name: 'Tickets de support (homonymes)',
+      description: '70 tickets en JSON avec deux agents et deux clientes homonymes à distinguer.',
+      state: { tickets: syntheticTickets('fr') },
+      questions: {
+        jm_network_resolved: {
+          type: 'score',
+          instructions: 'Combien de tickets au statut `resolved` sont assignés à Julien Martin de l’équipe Réseau ?',
+          criteria: ['Aucun', '1 ou 2', '3 ou 4', '5 ou 6', '7 ou plus'],
+        },
+        petit_lille_subject: {
+          type: 'choice',
+          instructions: 'Quel est l’objet du ticket ouvert par Claire Petit, cliente à Lille ?',
+          criteria: { outage: 'Coupure de connexion', duplicate: 'Facture en double', password: 'Mot de passe oublié', address: 'Changement d’adresse de facturation' },
+        },
+        petit_lille_team: {
+          type: 'choice',
+          instructions: 'Quelle équipe traite le ticket de Claire Petit, cliente à Lille ?',
+          criteria: { network: 'Réseau', billing: 'Facturation', accounts: 'Comptes' },
+        },
+        urgent_accounts: { type: 'noul', instructions: 'Un ticket de priorité `urgent` est-il assigné à l’équipe Comptes ?' },
+        petit_lille_open: { type: 'noul', instructions: 'Le ticket de Claire Petit, cliente à Lille, est-il encore ouvert ?' },
+      },
+    },
+    en: {
+      name: 'Support tickets (namesakes)',
+      description: '70 tickets in JSON with two agents and two customers sharing the same name.',
+      state: { tickets: syntheticTickets('en') },
+      questions: {
+        jm_network_resolved: {
+          type: 'score',
+          instructions: 'How many tickets with status `resolved` are assigned to Julien Martin from the Network team?',
+          criteria: ['None', '1 or 2', '3 or 4', '5 or 6', '7 or more'],
+        },
+        petit_lille_subject: {
+          type: 'choice',
+          instructions: 'What is the subject of the ticket opened by Claire Petit, the customer in Lille?',
+          criteria: { outage: 'Connection outage', duplicate: 'Duplicate invoice', password: 'Forgotten password', address: 'Billing address change' },
+        },
+        petit_lille_team: {
+          type: 'choice',
+          instructions: 'Which team is handling the ticket of Claire Petit, the customer in Lille?',
+          criteria: { network: 'Network', billing: 'Billing', accounts: 'Accounts' },
+        },
+        urgent_accounts: { type: 'noul', instructions: 'Is any ticket with priority `urgent` assigned to the Accounts team?' },
+        petit_lille_open: { type: 'noul', instructions: 'Is the ticket of Claire Petit, the customer in Lille, still open?' },
+      },
+    },
+  },
+  {
+    id: 'doc-git-log-reverts',
+    category: 'Long context',
+    complexity: 'complexe',
+    length: 'très long',
+    // syntheticGitLog (du plus récent au plus ancien) : délai HTTP 30 → 45 s, annulé par un revert, puis 30 → 60 s :
+    // 60 s au final (les 90 s concernent le proxy inverse). SSO ajouté par Anaïs, annulé par Mehdi, réappliqué par
+    // Tom : présent. Export XLSX ajouté puis annulé par Lucie : absent. Exactement 3 commits dont le message commence par
+    // « Revert » (la question exclut explicitement le « Reapply », qui est techniquement un revert de revert).
+    expected: { http_timeout: 's60', sso_present: true, xlsx_present: false, revert_count: 3, sso_reapplied_by: 'tom' },
+    fr: {
+      name: 'Journal git avec reverts (contexte long)',
+      description: '95 commits : reconstituer l’état final malgré les annulations et les réapplications.',
+      state: syntheticGitLog('fr'),
+      questions: {
+        http_timeout: {
+          type: 'choice',
+          instructions: 'Dans la version la plus récente, quel est le délai d’expiration HTTP défini dans config/http.ts ?',
+          criteria: { s30: '30 secondes', s45: '45 secondes', s90: '90 secondes', s60: '60 secondes' },
+        },
+        sso_present: { type: 'noul', instructions: 'La connexion SSO est-elle présente dans la version la plus récente ?' },
+        xlsx_present: { type: 'noul', instructions: 'L’export XLSX des factures est-il présent dans la version la plus récente ?' },
+        revert_count: {
+          type: 'score',
+          instructions: 'Combien de commits du journal ont un message qui commence par « Revert » ? (Un commit « Reapply » ne compte pas.)',
+          criteria: ['Aucun', 'Un', 'Deux', 'Trois', 'Quatre ou plus'],
+        },
+        sso_reapplied_by: {
+          type: 'choice',
+          instructions: 'Qui a réintroduit la connexion SSO après son annulation ?',
+          criteria: { anais: 'Anaïs Perret', mehdi: 'Mehdi Saïdi', lucie: 'Lucie Faure', ines: 'Inès Koné', tom: 'Tom Girard' },
+        },
+      },
+    },
+    en: {
+      name: 'Git log with reverts (long context)',
+      description: '95 commits: work out the final state despite reverts and reapplies.',
+      state: syntheticGitLog('en'),
+      questions: {
+        http_timeout: {
+          type: 'choice',
+          instructions: 'In the latest version, what is the HTTP timeout set in config/http.ts?',
+          criteria: { s30: '30 seconds', s45: '45 seconds', s90: '90 seconds', s60: '60 seconds' },
+        },
+        sso_present: { type: 'noul', instructions: 'Is SSO login present in the latest version?' },
+        xlsx_present: { type: 'noul', instructions: 'Is the XLSX export of invoices present in the latest version?' },
+        revert_count: {
+          type: 'score',
+          instructions: 'How many commits in the log have a message starting with “Revert”? (A “Reapply” commit does not count.)',
+          criteria: ['None', 'One', 'Two', 'Three', 'Four or more'],
+        },
+        sso_reapplied_by: {
+          type: 'choice',
+          instructions: 'Who brought SSO login back after it was reverted?',
+          criteria: { anais: 'Anaïs Perret', mehdi: 'Mehdi Saïdi', lucie: 'Lucie Faure', ines: 'Inès Koné', tom: 'Tom Girard' },
+        },
+      },
+    },
+  },
+  {
+    id: 'doc-directory-multihop',
+    category: 'Structured data',
+    complexity: 'complexe',
+    length: 'très long',
+    // syntheticDirectory : Léon Garnier est en Logistique, dont la responsable est Elsa Sanchez, poste 2448 (2113 = Léon,
+    // 2301 = Elsa Arnaud, de la même équipe, 2318 = Elsa Besson). Badge : seule arrivée le 2025-03-03 = Elsa Besson,
+    // Achats (Olga Arnaud, arrivée le 2024-03-03, est en Communication). Juridique (bâtiment B) : 2 bureaux en C
+    // (C-214, C-231). Étage 0 : trois bureaux (Contrôle de gestion, Informatique, Logistique), aucun en Paie.
+    expected: { lead_ext: 'e2448', badge_team: 'purchasing', legal_outside_building: 2, payroll_ground_floor: false },
+    fr: {
+      name: 'Annuaire interne (multi-sauts)',
+      description: '108 salariés et 9 équipes en JSON : enchaîner plusieurs recherches pour répondre.',
+      state: syntheticDirectory('fr'),
+      questions: {
+        lead_ext: {
+          type: 'choice',
+          instructions: 'Quel est le numéro de poste (`ext`) de la personne qui dirige l’équipe de Léon Garnier ?',
+          criteria: { e2113: '2113', e2301: '2301', e2448: '2448', e2318: '2318' },
+        },
+        badge_team: {
+          type: 'choice',
+          instructions: 'À quelle équipe appartient la personne dont le badge a été retrouvé ?',
+          criteria: { purchasing: 'Achats', communications: 'Communication', logistics: 'Logistique', legal: 'Juridique' },
+        },
+        legal_outside_building: {
+          type: 'score',
+          instructions: 'Combien de membres de l’équipe Juridique ont leur bureau dans un autre bâtiment que celui de leur équipe ? (La lettre du bureau indique le bâtiment.)',
+          criteria: ['Aucun', 'Un', 'Deux', 'Trois ou plus'],
+        },
+        payroll_ground_floor: {
+          type: 'noul',
+          instructions: 'Un membre de l’équipe Paie a-t-il son bureau au rez-de-chaussée ? (Le premier chiffre du bureau indique l’étage, 0 pour le rez-de-chaussée.)',
+        },
+      },
+    },
+    en: {
+      name: 'Staff directory (multi-hop)',
+      description: '108 employees and 9 teams in JSON: chain several lookups to answer.',
+      state: syntheticDirectory('en'),
+      questions: {
+        lead_ext: {
+          type: 'choice',
+          instructions: 'What is the extension number (`ext`) of the person who leads Léon Garnier’s team?',
+          criteria: { e2113: '2113', e2301: '2301', e2448: '2448', e2318: '2318' },
+        },
+        badge_team: {
+          type: 'choice',
+          instructions: 'Which team does the person whose badge was found belong to?',
+          criteria: { purchasing: 'Purchasing', communications: 'Communications', logistics: 'Logistics', legal: 'Legal' },
+        },
+        legal_outside_building: {
+          type: 'score',
+          instructions: 'How many members of the Legal team have their office in a different building from their team’s? (The office letter gives the building.)',
+          criteria: ['None', 'One', 'Two', 'Three or more'],
+        },
+        payroll_ground_floor: {
+          type: 'noul',
+          instructions: 'Does any member of the Payroll team have an office on the ground floor? (The first digit of the office gives the floor, 0 for the ground floor.)',
         },
       },
     },

@@ -97,6 +97,91 @@ const sales = (lang: 'fr' | 'en') =>
     status: SALE_WORDS[lang][status],
   }))
 
+// Mouvements de stock d’un mois : réception (in), expédition (out), retour client remis en stock (return), mise au rebut (scrap).
+type Move = [n: number, day: number, sku: string, kind: 'in' | 'out' | 'return' | 'scrap', qty: number]
+const MOVES: Move[] = [
+  [1, 2, 'A-100', 'out', 60],
+  [2, 2, 'B-200', 'out', 25],
+  [3, 3, 'C-300', 'out', 70],
+  [4, 4, 'D-400', 'out', 45],
+  [5, 5, 'A-100', 'out', 75],
+  [6, 6, 'B-200', 'return', 4],
+  [7, 7, 'C-300', 'in', 40],
+  [8, 8, 'D-400', 'scrap', 6],
+  [9, 9, 'B-200', 'out', 40],
+  [10, 10, 'A-100', 'in', 120],
+  [11, 11, 'C-300', 'return', 3],
+  [12, 12, 'D-400', 'out', 38],
+  [13, 13, 'B-200', 'in', 50],
+  [14, 14, 'A-100', 'out', 90],
+  [15, 15, 'C-300', 'out', 25],
+  [16, 16, 'B-200', 'scrap', 3],
+  [17, 17, 'D-400', 'return', 5],
+  [18, 18, 'A-100', 'out', 48],
+]
+const MOVE_WORDS = {
+  fr: { in: 'réception fournisseur', out: 'expédition client', return: 'retour client remis en stock', scrap: 'mise au rebut' },
+  en: { in: 'supplier receipt', out: 'customer shipment', return: 'customer return put back in stock', scrap: 'scrapped' },
+}
+const moves = (lang: 'fr' | 'en') =>
+  MOVES.map(([n, day, sku, kind, quantity]) => ({ n, date: lang === 'fr' ? `${day} avril 2026` : `April ${day}, 2026`, sku, movement: MOVE_WORDS[lang][kind], quantity }))
+
+// Salariés (taux horaire chargé) et heures déclarées sur trois semaines : la jointure se fait sur employee_id.
+type Staff = [id: string, name: string, team: 'support' | 'dev' | 'design', rate: number]
+const STAFF: Staff[] = [
+  ['E01', 'Aline Morvan', 'support', 24],
+  ['E02', 'Bilal Hadj', 'support', 22],
+  ['E03', 'Chloé Varenne', 'dev', 38],
+  ['E04', 'Dario Fenzi', 'dev', 41],
+  ['E05', 'Edwige Lamar', 'design', 33],
+  ['E06', 'Farid Oumou', 'support', 26],
+  ['E07', 'Gaëlle Tisserand', 'design', 35],
+  ['E08', 'Hector Blain', 'dev', 36],
+]
+const TEAM_WORDS = { fr: { support: 'Support', dev: 'Développement', design: 'Design' }, en: { support: 'Support', dev: 'Development', design: 'Design' } }
+const HOURS: [employee_id: string, week: number, hours: number][] = [
+  ['E01', 1, 35], ['E02', 1, 38], ['E03', 1, 30], ['E04', 1, 24], ['E05', 1, 32], ['E06', 1, 40], ['E07', 1, 20], ['E08', 1, 35],
+  ['E01', 2, 37], ['E02', 2, 36], ['E03', 2, 28], ['E04', 2, 22], ['E05', 2, 30], ['E06', 2, 39], ['E07', 2, 25], ['E08', 2, 33],
+  ['E06', 3, 12], ['E02', 3, 8],
+]
+
+function seeded(seed: number) {
+  return () => (seed = (seed * 16807) % 2147483647) / 2147483647
+}
+
+/**
+ * 36 notes de frais de mars 2026, générées avec une graine fixe. Statuts : 26 validées, 7 refusées, 3 en attente.
+ * Basile Corre a le plus gros total toutes notes confondues après Esther Moal, mais plusieurs de ses notes
+ * sont refusées ou en attente : en ne gardant que les validées, Anouk Ferrand le dépasse.
+ */
+function expenseLines(lang: 'fr' | 'en') {
+  const rnd = seeded(2026)
+  const words = {
+    fr: { transport: 'transport', lodging: 'hébergement', meals: 'repas', supplies: 'fournitures', approved: 'validée', rejected: 'refusée', pending: 'en attente' },
+    en: { transport: 'transport', lodging: 'lodging', meals: 'meals', supplies: 'supplies', approved: 'approved', rejected: 'rejected', pending: 'pending' },
+  }[lang]
+  const staff = ['Anouk Ferrand', 'Basile Corre', 'Célia Notari', 'Dimitri Lavaux', 'Esther Moal']
+  const cats = ['transport', 'lodging', 'meals', 'supplies'] as const
+  const ranges = { transport: [18, 240], lodging: [70, 190], meals: [12, 65], supplies: [8, 120] }
+  const lines = []
+  for (let i = 0; i < 36; i++) {
+    const cat = cats[Math.floor(rnd() * 4)]
+    const [lo, hi] = ranges[cat]
+    const amount_eur = Math.round((lo + rnd() * (hi - lo)) * 100) / 100
+    const s = rnd()
+    const day = 2 + Math.floor(i * 0.8)
+    lines.push({
+      id: `NDF-${301 + i}`,
+      date: lang === 'fr' ? `${day} mars 2026` : `March ${day}, 2026`,
+      employee: staff[Math.floor(rnd() * 5)],
+      category: words[cat],
+      amount_eur,
+      status: words[s < 0.75 ? 'approved' : s < 0.9 ? 'rejected' : 'pending'],
+    })
+  }
+  return lines
+}
+
 // ─── Cas ─────────────────────────────────────────────────────────────────────
 
 export const NUMBERS: Pair[] = [
@@ -837,6 +922,956 @@ export const NUMBERS: Pair[] = [
           criteria: { january: 'January', february: 'February', march: 'March' },
         },
         avg_order_above_900: { type: 'noul', instructions: 'Is the average revenue per delivered order above €900?' },
+      },
+    },
+  },
+  {
+    id: 'num-vat-mixed-rates',
+    category: 'Reasoning',
+    complexity: 'complexe',
+    length: 'court',
+    // Fournitures : 1 440 / 1,20 = 1 200,00 € HT (piège : 1 440 × 0,80 = 1 152). Livres : 316,50 / 1,055 = 300,00 € HT.
+    // TVA totale : 240 + 16,50 = 256,50 € (> 250). Total HT : 1 500 € (> 1 480) ; en retirant 20 % et 5,5 % des TTC on trouverait 1 451 € (< 1 480).
+    expected: { supplies_ex_vat: 'eur_1200', total_vat_above_250: true, total_ex_vat_above_1480: true },
+    fr: {
+      name: 'TVA à deux taux',
+      description: 'Retrouver le HT à partir du TTC : diviser, pas retrancher le taux.',
+      state:
+        'Facture de la librairie-papeterie Ombelle pour l’école Jean-Rostand. Fournitures scolaires : 1 440,00 € TTC, TVA à 20 %. Lot de livres : 316,50 € TTC, TVA à 5,5 %. Les montants TTC indiqués incluent déjà la TVA ; aucune remise ne s’applique.',
+      questions: {
+        supplies_ex_vat: {
+          type: 'choice',
+          instructions: 'Quel est le montant hors taxes des fournitures scolaires ?',
+          criteria: { eur_1152: '1 152,00 €', eur_1200: '1 200,00 €', eur_1420: '1 420,00 €', eur_1728: '1 728,00 €' },
+        },
+        total_vat_above_250: { type: 'noul', instructions: 'Le montant total de TVA de la facture dépasse-t-il 250 € ?' },
+        total_ex_vat_above_1480: { type: 'noul', instructions: 'Le total hors taxes de la facture (fournitures et livres) dépasse-t-il 1 480 € ?' },
+      },
+    },
+    en: {
+      name: 'VAT at two rates',
+      description: 'Recovering the pre-tax amount from the gross: divide, do not subtract the rate.',
+      state:
+        'Invoice from the Ombelle bookshop and stationer for Jean-Rostand school. School supplies: €1,440.00 including VAT, at a 20% VAT rate. Batch of books: €316.50 including VAT, at a 5.5% VAT rate. The amounts shown already include VAT; no discount applies.',
+      questions: {
+        supplies_ex_vat: {
+          type: 'choice',
+          instructions: 'What is the amount excluding VAT for the school supplies?',
+          criteria: { eur_1152: '€1,152.00', eur_1200: '€1,200.00', eur_1420: '€1,420.00', eur_1728: '€1,728.00' },
+        },
+        total_vat_above_250: { type: 'noul', instructions: 'Does the total VAT on the invoice exceed €250?' },
+        total_ex_vat_above_1480: { type: 'noul', instructions: 'Does the invoice total excluding VAT (supplies and books) exceed €1,480?' },
+      },
+    },
+  },
+  {
+    id: 'num-markup-rate',
+    category: 'Reasoning',
+    complexity: 'complexe',
+    length: 'court',
+    // Théière : marge 78 − 52 = 26 € ; taux de marque 26 / 78 = 33,3 % (< 35 %) ; taux de marge 26 / 52 = 50 %, le piège.
+    // Prix minimal pour 35 % de taux de marque : 52 / (1 − 0,35) = 80,00 € (et non 52 × 1,35 = 70,20 €).
+    // Lampe : marge 18 €, taux de marque 18 / 48 = 37,5 % → conforme.
+    expected: { teapot_markup_rate: 'pct_33', teapot_compliant: false, teapot_min_price: 'eur_80_00', lamp_compliant: true },
+    fr: {
+      name: 'Taux de marque',
+      description: 'Taux de marque (sur le prix de vente) et taux de marge (sur le coût) à ne pas confondre.',
+      state:
+        'Boutique Lisière, règle du gérant : chaque article doit dégager un taux de marque d’au moins 35 %, le taux de marque étant la marge divisée par le prix de vente hors taxes. Tous les montants sont hors taxes. Théière en fonte : achetée 52 € au fournisseur, vendue 78 €. Lampe en rotin : achetée 30 €, vendue 48 €.',
+      questions: {
+        teapot_markup_rate: {
+          type: 'choice',
+          instructions: 'Quel est le taux de marque de la théière ?',
+          criteria: { pct_26: '26 %', pct_33: '33,3 %', pct_50: '50 %', pct_67: '66,7 %' },
+        },
+        teapot_compliant: { type: 'noul', instructions: 'La théière respecte-t-elle la règle du gérant ?' },
+        teapot_min_price: {
+          type: 'choice',
+          instructions: 'Quel est le prix de vente hors taxes minimal de la théière pour respecter la règle ?',
+          criteria: { eur_70_20: '70,20 €', eur_78_00: '78,00 €', eur_80_00: '80,00 €', eur_87_00: '87,00 €' },
+        },
+        lamp_compliant: { type: 'noul', instructions: 'La lampe en rotin respecte-t-elle la règle du gérant ?' },
+      },
+    },
+    en: {
+      name: 'Margin on selling price',
+      description: 'Margin rate on the selling price versus markup on cost, not to be confused.',
+      state:
+        'Lisière shop, the manager’s rule: every item must earn a margin of at least 35% of its selling price, the margin rate being the profit divided by the selling price excluding VAT. All amounts exclude VAT. Cast-iron teapot: bought for €52 from the supplier, sold for €78. Rattan lamp: bought for €30, sold for €48.',
+      questions: {
+        teapot_markup_rate: {
+          type: 'choice',
+          instructions: 'What is the teapot’s margin rate, as defined by the manager’s rule?',
+          criteria: { pct_26: '26%', pct_33: '33.3%', pct_50: '50%', pct_67: '66.7%' },
+        },
+        teapot_compliant: { type: 'noul', instructions: 'Does the teapot comply with the manager’s rule?' },
+        teapot_min_price: {
+          type: 'choice',
+          instructions: 'What is the minimum selling price excluding VAT for the teapot to comply with the rule?',
+          criteria: { eur_70_20: '€70.20', eur_78_00: '€78.00', eur_80_00: '€80.00', eur_87_00: '€87.00' },
+        },
+        lamp_compliant: { type: 'noul', instructions: 'Does the rattan lamp comply with the manager’s rule?' },
+      },
+    },
+  },
+  {
+    id: 'num-percentage-points',
+    category: 'Reasoning',
+    complexity: 'complexe',
+    length: 'court',
+    // Taux : 2,4 % → 3,0 %, soit +0,6 point de pourcentage et +25 % en relatif (0,6 / 2,4).
+    // Commandes : mars 18 000 × 2,4 % = 432 ; avril 15 000 × 3 % = 450 → hausse malgré la baisse des visites.
+    // « Le taux a augmenté de 0,6 % » est faux : c’est 0,6 point, soit 25 %.
+    expected: { increase_in_points: 'p0_6', relative_increase_above_20: true, orders_fell: false, claim_correct: false },
+    fr: {
+      name: 'Points de pourcentage',
+      description: 'Variation absolue en points contre variation relative en pourcentage.',
+      state:
+        'Boutique en ligne Ardoise. Mars 2026 : 18 000 visites, taux de conversion de 2,4 % (part des visites qui aboutissent à une commande). Avril 2026 : 15 000 visites, taux de conversion de 3,0 %. Dans son rapport, le directeur commercial écrit : « En avril, notre taux de conversion a augmenté de 0,6 %. »',
+      questions: {
+        increase_in_points: {
+          type: 'choice',
+          instructions: 'De combien de points de pourcentage le taux de conversion a-t-il augmenté entre mars et avril ?',
+          criteria: { p0_6: '0,6 point', p1_25: '1,25 point', p6: '6 points', p25: '25 points' },
+        },
+        relative_increase_above_20: { type: 'noul', instructions: 'En valeur relative, le taux de conversion a-t-il augmenté de plus de 20 % ?' },
+        orders_fell: { type: 'noul', instructions: 'Le nombre de commandes a-t-il baissé en avril par rapport à mars ?' },
+        claim_correct: { type: 'noul', instructions: 'La phrase du directeur commercial décrit-elle correctement l’évolution du taux de conversion ?' },
+      },
+    },
+    en: {
+      name: 'Percentage points',
+      description: 'Absolute change in points versus relative change in percent.',
+      state:
+        'Ardoise online shop. March 2026: 18,000 visits, conversion rate of 2.4% (share of visits that lead to an order). April 2026: 15,000 visits, conversion rate of 3.0%. In his report, the sales director writes: “In April, our conversion rate increased by 0.6%.”',
+      questions: {
+        increase_in_points: {
+          type: 'choice',
+          instructions: 'By how many percentage points did the conversion rate increase between March and April?',
+          criteria: { p0_6: '0.6 points', p1_25: '1.25 points', p6: '6 points', p25: '25 points' },
+        },
+        relative_increase_above_20: { type: 'noul', instructions: 'In relative terms, did the conversion rate increase by more than 20%?' },
+        orders_fell: { type: 'noul', instructions: 'Did the number of orders fall in April compared with March?' },
+        claim_correct: { type: 'noul', instructions: 'Does the sales director’s sentence correctly describe the change in the conversion rate?' },
+      },
+    },
+  },
+  {
+    id: 'num-compound-interest',
+    category: 'Reasoning',
+    complexity: 'complexe',
+    length: 'court',
+    // A (composés 4 %) : 10 000 × 1,04⁶ = 12 653,19 € ; B (simples 4,6 %) : 10 000 × (1 + 6 × 0,046) = 12 760 € → B l’emporte sur 6 ans.
+    // Intérêts de A sur 6 ans : 2 653,19 € (> 2 600 ; en intérêts simples à 4 % on trouverait 2 400).
+    // A sur 18 ans : 1,04¹⁸ = 2,026 → 20 258 €, le capital a doublé. Seuil de 13 000 € : 1,04⁶ = 1,2653, 1,04⁷ = 1,3159 → 7 ans
+    // (en intérêts simples à 4 %, on trouverait 8 ans).
+    expected: { better_offer_6y: 'offer_b', interest_a_above_2600: true, doubled_after_18y: true, years_to_13000: 'years_7' },
+    fr: {
+      name: 'Intérêts composés',
+      description: 'Intérêts composés contre intérêts simples à taux plus élevé.',
+      state:
+        'Nadia place 10 000 €. Offre A : 4 % par an, intérêts composés (les intérêts de chaque année sont ajoutés au capital à la fin de l’année). Offre B : 4,6 % par an en intérêts simples (calculés chaque année sur les 10 000 € de départ uniquement). Aucun frais, aucun impôt, aucun retrait ; les intérêts ne sont versés qu’en fin d’année.',
+      questions: {
+        better_offer_6y: {
+          type: 'choice',
+          instructions: 'Au bout de 6 ans, quelle offre donne le capital le plus élevé ?',
+          criteria: { offer_a: 'L’offre A', offer_b: 'L’offre B', equal: 'Les deux donnent le même capital' },
+        },
+        interest_a_above_2600: { type: 'noul', instructions: 'Avec l’offre A, les intérêts cumulés au bout de 6 ans dépassent-ils 2 600 € ?' },
+        doubled_after_18y: { type: 'noul', instructions: 'Avec l’offre A, le capital aura-t-il au moins doublé au bout de 18 ans ?' },
+        years_to_13000: {
+          type: 'choice',
+          instructions: 'Avec l’offre A, au bout de combien d’années pleines le capital dépasse-t-il 13 000 € pour la première fois ?',
+          criteria: { years_6: '6 ans', years_7: '7 ans', years_8: '8 ans', years_9: '9 ans' },
+        },
+      },
+    },
+    en: {
+      name: 'Compound interest',
+      description: 'Compound interest versus simple interest at a higher rate.',
+      state:
+        'Nadia invests €10,000. Offer A: 4% per year, compound interest (each year’s interest is added to the capital at the end of the year). Offer B: 4.6% per year, simple interest (calculated each year on the initial €10,000 only). No fees, no tax, no withdrawals; interest is only paid at year end.',
+      questions: {
+        better_offer_6y: {
+          type: 'choice',
+          instructions: 'After 6 years, which offer gives the higher capital?',
+          criteria: { offer_a: 'Offer A', offer_b: 'Offer B', equal: 'Both give the same capital' },
+        },
+        interest_a_above_2600: { type: 'noul', instructions: 'With offer A, does the cumulative interest after 6 years exceed €2,600?' },
+        doubled_after_18y: { type: 'noul', instructions: 'With offer A, will the capital have at least doubled after 18 years?' },
+        years_to_13000: {
+          type: 'choice',
+          instructions: 'With offer A, after how many full years does the capital first exceed €13,000?',
+          criteria: { years_6: '6 years', years_7: '7 years', years_8: '8 years', years_9: '9 years' },
+        },
+      },
+    },
+  },
+  {
+    id: 'num-flatshare-split',
+    category: 'Reasoning',
+    complexity: 'complexe',
+    length: 'court',
+    // Loyer au prorata des chambres (16 + 12 + 12 = 40 m²) : Inès 540, Paolo 405, Yuki 405 ; charges 150 / 3 = 50 chacun.
+    // Parts : Inès 590, Paolo 455, Yuki 455. Déjà payé : Inès 36, Paolo 114, Yuki 1 350.
+    // Inès doit 590 − 36 = 554 € à Yuki (> 500 ; à parts égales on trouverait 464) ; Paolo 455 − 114 = 341 € ; Yuki récupère 895 € (< 1 000).
+    expected: { ines_share: 'eur_590', ines_owes_above_500: true, paolo_transfer: 'eur_341', yuki_gets_above_1000: false },
+    fr: {
+      name: 'Partage de frais en colocation',
+      description: 'Loyer au prorata des surfaces, charges à parts égales, avances à déduire.',
+      state:
+        'Colocation de la rue Pasteur, mois d’avril. Règle écrite dans le bail interne : le loyer de 1 350 € est réparti au prorata de la surface de chaque chambre (Inès 16 m², Paolo 12 m², Yuki 12 m²) ; les charges communes sont partagées à parts égales. Charges du mois : internet 36 €, électricité 114 €. Ce mois-ci, Yuki a payé tout le loyer au propriétaire, Inès a payé internet et Paolo l’électricité. Chacun rembourse ce qu’il doit directement à Yuki.',
+      questions: {
+        ines_share: {
+          type: 'choice',
+          instructions: 'Quelle est la part totale d’Inès (loyer et charges) pour le mois ?',
+          criteria: { eur_500: '500 €', eur_540: '540 €', eur_554: '554 €', eur_590: '590 €' },
+        },
+        ines_owes_above_500: { type: 'noul', instructions: 'Inès doit-elle virer plus de 500 € à Yuki ?' },
+        paolo_transfer: {
+          type: 'choice',
+          instructions: 'Combien Paolo doit-il virer à Yuki ?',
+          criteria: { eur_341: '341 €', eur_386: '386 €', eur_405: '405 €', eur_455: '455 €' },
+        },
+        yuki_gets_above_1000: { type: 'noul', instructions: 'Au total, Yuki doit-elle récupérer plus de 1 000 € auprès de ses colocataires ?' },
+      },
+    },
+    en: {
+      name: 'Splitting flatshare costs',
+      description: 'Rent pro rata to room size, bills split equally, advances to deduct.',
+      state:
+        'Flatshare on Pasteur Street, month of April. Rule written in the house agreement: the €1,350 rent is split in proportion to the size of each bedroom (Inès 16 m², Paolo 12 m², Yuki 12 m²); shared bills are split equally. This month’s bills: internet €36, electricity €114. This month, Yuki paid the whole rent to the landlord, Inès paid the internet and Paolo paid the electricity. Everyone pays back what they owe directly to Yuki.',
+      questions: {
+        ines_share: {
+          type: 'choice',
+          instructions: 'What is Inès’s total share (rent and bills) for the month?',
+          criteria: { eur_500: '€500', eur_540: '€540', eur_554: '€554', eur_590: '€590' },
+        },
+        ines_owes_above_500: { type: 'noul', instructions: 'Does Inès have to transfer more than €500 to Yuki?' },
+        paolo_transfer: {
+          type: 'choice',
+          instructions: 'How much does Paolo have to transfer to Yuki?',
+          criteria: { eur_341: '€341', eur_386: '€386', eur_405: '€405', eur_455: '€455' },
+        },
+        yuki_gets_above_1000: { type: 'noul', instructions: 'In total, does Yuki get back more than €1,000 from her flatmates?' },
+      },
+    },
+  },
+  {
+    id: 'num-unit-conversions',
+    category: 'Reasoning',
+    complexity: 'simple',
+    length: 'court',
+    // Drone : 22 m/s × 3,6 = 79,2 km/h (< 90). Écran : 32 × 2,54 = 81,28 cm (> 80). Sirop : 2,5 mL × 3 = 7,5 mL/jour ; 0,15 L = 150 mL → 20 jours.
+    expected: { drone_above_90: false, screen_above_80cm: true, syrup_days: 'days_20' },
+    fr: {
+      name: 'Conversions d’unités',
+      description: 'm/s en km/h, pouces en centimètres, litres en millilitres.',
+      state:
+        'Trois vérifications rapides. Un drone de livraison vole à 22 m/s ; la limite fixée par l’opérateur est de 90 km/h. Un écran est annoncé avec une diagonale de 32 pouces (1 pouce = 2,54 cm). Un flacon de sirop contient 0,15 L ; la posologie est de 2,5 mL trois fois par jour.',
+      questions: {
+        drone_above_90: { type: 'noul', instructions: 'Le drone vole-t-il au-dessus de la limite de 90 km/h ?' },
+        screen_above_80cm: { type: 'noul', instructions: 'La diagonale de l’écran dépasse-t-elle 80 cm ?' },
+        syrup_days: {
+          type: 'choice',
+          instructions: 'Combien de jours complets de traitement le flacon de sirop permet-il ?',
+          criteria: { days_2: '2 jours', days_6: '6 jours', days_20: '20 jours', days_60: '60 jours' },
+        },
+      },
+    },
+    en: {
+      name: 'Unit conversions',
+      description: 'm/s to km/h, inches to centimetres, litres to millilitres.',
+      state:
+        'Three quick checks. A delivery drone flies at 22 m/s; the operator’s limit is 90 km/h. A screen is advertised with a 32-inch diagonal (1 inch = 2.54 cm). A bottle of syrup contains 0.15 L; the dosage is 2.5 mL three times a day.',
+      questions: {
+        drone_above_90: { type: 'noul', instructions: 'Is the drone flying above the 90 km/h limit?' },
+        screen_above_80cm: { type: 'noul', instructions: 'Does the screen’s diagonal exceed 80 cm?' },
+        syrup_days: {
+          type: 'choice',
+          instructions: 'How many full days of treatment does the bottle of syrup provide?',
+          criteria: { days_2: '2 days', days_6: '6 days', days_20: '20 days', days_60: '60 days' },
+        },
+      },
+    },
+  },
+  {
+    id: 'num-appliance-energy',
+    category: 'Structured data',
+    complexity: 'complexe',
+    length: 'court',
+    // kWh par jour = puissance (W) × heures / 1 000 : radiateur 8, chauffe-eau 7,2, réfrigérateur 3,6, téléviseur 0,6, box 0,288.
+    // Le chauffe-eau est le plus puissant, mais le radiateur consomme le plus. Total 19,688 kWh/jour × 30 = 590,64 kWh,
+    // soit 147,66 € (< 150). Radiateur à 3 h au lieu de 4 : 2 kWh/jour × 30 × 0,25 = 15 €.
+    expected: { top_consumer: 'heater', fridge_above_3kwh: true, monthly_cost_above_150: false, heater_saving: 'eur_15' },
+    fr: {
+      name: 'Consommation des appareils',
+      description: 'Puissance × durée : l’appareil le plus puissant n’est pas le plus gourmand.',
+      state: {
+        housing: 'Studio de la rue Mercière',
+        price_per_kwh_eur: 0.25,
+        period: '30 jours, usage identique chaque jour',
+        appliances: [
+          { name: 'Radiateur électrique', power_w: 2000, hours_per_day: 4 },
+          { name: 'Chauffe-eau', power_w: 2400, hours_per_day: 3 },
+          { name: 'Réfrigérateur', power_w: 150, hours_per_day: 24 },
+          { name: 'Téléviseur', power_w: 120, hours_per_day: 5 },
+          { name: 'Box internet', power_w: 12, hours_per_day: 24 },
+        ],
+      },
+      questions: {
+        top_consumer: {
+          type: 'choice',
+          instructions: 'Quel appareil consomme le plus d’énergie sur une journée ?',
+          criteria: { heater: 'Le radiateur électrique', water_heater: 'Le chauffe-eau', fridge: 'Le réfrigérateur', router: 'La box internet' },
+        },
+        fridge_above_3kwh: { type: 'noul', instructions: 'Le réfrigérateur consomme-t-il plus de 3 kWh par jour ?' },
+        monthly_cost_above_150: { type: 'noul', instructions: 'Le coût de l’électricité de ces appareils sur les 30 jours dépasse-t-il 150 € ?' },
+        heater_saving: {
+          type: 'choice',
+          instructions: 'Combien économiserait-on sur les 30 jours en faisant fonctionner le radiateur 3 heures par jour au lieu de 4 ?',
+          criteria: { eur_0_50: '0,50 €', eur_15: '15 €', eur_60: '60 €', eur_150: '150 €' },
+        },
+      },
+    },
+    en: {
+      name: 'Appliance consumption',
+      description: 'Power × time: the most powerful appliance is not the hungriest.',
+      state: {
+        housing: 'Studio flat on Mercière Street',
+        price_per_kwh_eur: 0.25,
+        period: '30 days, same usage every day',
+        appliances: [
+          { name: 'Electric heater', power_w: 2000, hours_per_day: 4 },
+          { name: 'Water heater', power_w: 2400, hours_per_day: 3 },
+          { name: 'Fridge', power_w: 150, hours_per_day: 24 },
+          { name: 'Television', power_w: 120, hours_per_day: 5 },
+          { name: 'Internet router', power_w: 12, hours_per_day: 24 },
+        ],
+      },
+      questions: {
+        top_consumer: {
+          type: 'choice',
+          instructions: 'Which appliance uses the most energy in a day?',
+          criteria: { heater: 'The electric heater', water_heater: 'The water heater', fridge: 'The fridge', router: 'The internet router' },
+        },
+        fridge_above_3kwh: { type: 'noul', instructions: 'Does the fridge use more than 3 kWh per day?' },
+        monthly_cost_above_150: { type: 'noul', instructions: 'Does the electricity cost of these appliances over the 30 days exceed €150?' },
+        heater_saving: {
+          type: 'choice',
+          instructions: 'How much would be saved over the 30 days by running the heater 3 hours a day instead of 4?',
+          criteria: { eur_0_50: '€0.50', eur_15: '€15', eur_60: '€60', eur_150: '€150' },
+        },
+      },
+    },
+  },
+  {
+    id: 'num-invoice-check',
+    category: 'Structured data',
+    complexity: 'complexe',
+    length: 'moyen',
+    // Ligne 2 : 3 × 68,90 = 206,70 €, facturée 260,70 € (chiffres inversés) ; toutes les autres lignes sont justes.
+    // Sous-total facturé 661,55 € → correct 607,55 € ; après remise de 5 % : 577,17 € HT (> 550) ; TTC correct 577,17 + 115,43 = 692,60 € (< 700).
+    // Trop-perçu TTC : 54 × 0,95 × 1,20 = 61,56 € (54 € avant remise et TVA, 51,30 € HT après remise, 64,80 € sans la remise).
+    expected: { wrong_line: 'line_2', correct_net_above_550: true, correct_total_above_700: false, overcharge: 'eur_61_56' },
+    fr: {
+      name: 'Facture à vérifier',
+      description: 'Une ligne mal multipliée, puis remise et TVA à répercuter sur l’écart.',
+      state: {
+        invoice: 'Facture FA-8812 — Bureautique Vasseur',
+        notes: ['Prix unitaires et totaux de ligne hors taxes.', 'Remise commerciale de 5 % sur le sous-total HT, puis TVA à 20 % sur le montant remisé.'],
+        lines: [
+          { line: 1, item: 'Ramette papier A4', quantity: 20, unit_price_eur: 4.35, line_total_eur: 87.0 },
+          { line: 2, item: 'Cartouche de toner', quantity: 3, unit_price_eur: 68.9, line_total_eur: 260.7 },
+          { line: 3, item: 'Classeur à levier', quantity: 45, unit_price_eur: 2.15, line_total_eur: 96.75 },
+          { line: 4, item: 'Boîte de stylos', quantity: 12, unit_price_eur: 7.8, line_total_eur: 93.6 },
+          { line: 5, item: 'Agrafeuse', quantity: 4, unit_price_eur: 16.25, line_total_eur: 65.0 },
+          { line: 6, item: 'Bloc de notes adhésives', quantity: 30, unit_price_eur: 1.95, line_total_eur: 58.5 },
+        ],
+        subtotal_eur: 661.55,
+        discount_eur: 33.08,
+        net_eur: 628.47,
+        vat_eur: 125.69,
+        total_eur: 754.16,
+      },
+      questions: {
+        wrong_line: {
+          type: 'choice',
+          instructions: 'Quelle ligne de la facture comporte un total erroné ?',
+          criteria: { line_1: 'Ligne 1', line_2: 'Ligne 2', line_3: 'Ligne 3', line_4: 'Ligne 4', line_6: 'Ligne 6' },
+        },
+        correct_net_above_550: { type: 'noul', instructions: 'Une fois l’erreur corrigée, le montant HT après remise dépasse-t-il 550 € ?' },
+        correct_total_above_700: { type: 'noul', instructions: 'Une fois l’erreur corrigée, le total TTC dépasse-t-il 700 € ?' },
+        overcharge: {
+          type: 'choice',
+          instructions: 'De combien le total TTC facturé dépasse-t-il le total TTC correct ?',
+          criteria: { eur_51_30: '51,30 €', eur_54_00: '54,00 €', eur_61_56: '61,56 €', eur_64_80: '64,80 €' },
+        },
+      },
+    },
+    en: {
+      name: 'Invoice to check',
+      description: 'One line multiplied wrong, then discount and VAT to carry over to the difference.',
+      state: {
+        invoice: 'Invoice FA-8812 — Vasseur Office Supplies',
+        notes: ['Unit prices and line totals exclude VAT.', '5% trade discount on the subtotal excluding VAT, then 20% VAT on the discounted amount.'],
+        lines: [
+          { line: 1, item: 'Ream of A4 paper', quantity: 20, unit_price_eur: 4.35, line_total_eur: 87.0 },
+          { line: 2, item: 'Toner cartridge', quantity: 3, unit_price_eur: 68.9, line_total_eur: 260.7 },
+          { line: 3, item: 'Lever arch file', quantity: 45, unit_price_eur: 2.15, line_total_eur: 96.75 },
+          { line: 4, item: 'Box of pens', quantity: 12, unit_price_eur: 7.8, line_total_eur: 93.6 },
+          { line: 5, item: 'Stapler', quantity: 4, unit_price_eur: 16.25, line_total_eur: 65.0 },
+          { line: 6, item: 'Sticky note pad', quantity: 30, unit_price_eur: 1.95, line_total_eur: 58.5 },
+        ],
+        subtotal_eur: 661.55,
+        discount_eur: 33.08,
+        net_eur: 628.47,
+        vat_eur: 125.69,
+        total_eur: 754.16,
+      },
+      questions: {
+        wrong_line: {
+          type: 'choice',
+          instructions: 'Which invoice line has an incorrect total?',
+          criteria: { line_1: 'Line 1', line_2: 'Line 2', line_3: 'Line 3', line_4: 'Line 4', line_6: 'Line 6' },
+        },
+        correct_net_above_550: { type: 'noul', instructions: 'Once the error is corrected, does the amount excluding VAT after discount exceed €550?' },
+        correct_total_above_700: { type: 'noul', instructions: 'Once the error is corrected, does the total including VAT exceed €700?' },
+        overcharge: {
+          type: 'choice',
+          instructions: 'By how much does the invoiced total including VAT exceed the correct total including VAT?',
+          criteria: { eur_51_30: '€51.30', eur_54_00: '€54.00', eur_61_56: '€61.56', eur_64_80: '€64.80' },
+        },
+      },
+    },
+  },
+  {
+    id: 'num-stock-movements',
+    category: 'Structured data',
+    complexity: 'complexe',
+    length: 'moyen',
+    // Stocks au 1er avril : A-100 240, B-200 85, C-300 60, D-400 130. Réceptions et retours ajoutent, expéditions et rebuts retirent.
+    // Fin de mois : A-100 87, B-200 85 − 25 + 4 − 40 + 50 − 3 = 71, C-300 8, D-400 46. Seul C-300 est sous son seuil (8 < 40).
+    // Distracteurs B-200 : 63 (retour compté en sortie), 74 (rebut oublié), 77 (rebut ajouté).
+    // C-300 tombe à −10 le 3 avril (expédition de 70 avant la réception du 7). Expéditions : 60 + 25 + 70 + 45 + 75 + 40 + 38 + 90 + 25 + 48 = 516 (< 550).
+    expected: { b200_final: 'units_71', below_threshold: 'c300', went_negative: true, shipped_above_550: false },
+    fr: {
+      name: 'Mouvements de stock',
+      description: 'Rejouer 18 mouvements de quatre types, dans l’ordre, à partir du stock initial.',
+      state: {
+        warehouse: 'Entrepôt de Saint-Priest — avril 2026',
+        opening_stock: { 'A-100': 240, 'B-200': 85, 'C-300': 60, 'D-400': 130 },
+        reorder_threshold: { 'A-100': 80, 'B-200': 60, 'C-300': 40, 'D-400': 40 },
+        notes: ['Les mouvements sont listés dans l’ordre chronologique.', 'Un retour client remis en stock augmente le stock ; une mise au rebut le diminue.'],
+        movements: moves('fr'),
+      },
+      questions: {
+        b200_final: {
+          type: 'choice',
+          instructions: 'Quel est le stock de B-200 à la fin du mois ?',
+          criteria: { units_63: '63', units_71: '71', units_74: '74', units_77: '77' },
+        },
+        below_threshold: {
+          type: 'choice',
+          instructions: 'Quelle référence termine le mois sous son seuil de réapprovisionnement ?',
+          criteria: { a100: 'A-100', b200: 'B-200', c300: 'C-300', d400: 'D-400' },
+        },
+        went_negative: { type: 'noul', instructions: 'Le stock d’une référence est-il passé sous zéro à un moment du mois ?' },
+        shipped_above_550: { type: 'noul', instructions: 'Le total des unités expédiées aux clients sur le mois dépasse-t-il 550 ?' },
+      },
+    },
+    en: {
+      name: 'Stock movements',
+      description: 'Replaying 18 movements of four kinds, in order, from the opening stock.',
+      state: {
+        warehouse: 'Saint-Priest warehouse — April 2026',
+        opening_stock: { 'A-100': 240, 'B-200': 85, 'C-300': 60, 'D-400': 130 },
+        reorder_threshold: { 'A-100': 80, 'B-200': 60, 'C-300': 40, 'D-400': 40 },
+        notes: ['Movements are listed in chronological order.', 'A customer return put back in stock increases the stock; a scrapped item decreases it.'],
+        movements: moves('en'),
+      },
+      questions: {
+        b200_final: {
+          type: 'choice',
+          instructions: 'What is the stock of B-200 at the end of the month?',
+          criteria: { units_63: '63', units_71: '71', units_74: '74', units_77: '77' },
+        },
+        below_threshold: {
+          type: 'choice',
+          instructions: 'Which item ends the month below its reorder threshold?',
+          criteria: { a100: 'A-100', b200: 'B-200', c300: 'C-300', d400: 'D-400' },
+        },
+        went_negative: { type: 'noul', instructions: 'Did any item’s stock fall below zero at some point during the month?' },
+        shipped_above_550: { type: 'noul', instructions: 'Does the total number of units shipped to customers over the month exceed 550?' },
+      },
+    },
+  },
+  {
+    id: 'num-cooking-yield',
+    category: 'Reasoning',
+    complexity: 'complexe',
+    length: 'court',
+    // 18 kg × (1 − 0,40) = 10,8 kg paré ; × (1 − 0,15) = 9,18 kg cuit ; / 0,12 kg = 76,5 → 76 portions (< 80).
+    // Pertes additionnées à tort (55 %) : 67 portions ; cuisson oubliée : 90. Pour 80 portions : 9,6 / 0,85 / 0,6 = 18,82 kg → 19 kg.
+    // Coût matière : 18 × 24 = 432 € / 76 portions = 5,68 € (> 5,50).
+    expected: { portions: 'p76', enough_for_80: false, kg_for_80: 'kg_19', cost_per_portion_above_5_50: true },
+    fr: {
+      name: 'Rendement et pertes',
+      description: 'Deux pertes successives à enchaîner, pas à additionner.',
+      state:
+        'Le traiteur Maison Ilda prépare du saumon pour un banquet. Il dispose de 18 kg de saumon entier acheté 24 € le kilo. Le parage (tête, arêtes, peau) fait perdre 40 % du poids entier ; la cuisson fait ensuite perdre 15 % du poids paré. Chaque portion servie pèse 120 g de saumon cuit ; seules les portions complètes sont servies.',
+      questions: {
+        portions: {
+          type: 'choice',
+          instructions: 'Combien de portions complètes le traiteur peut-il servir avec ses 18 kg ?',
+          criteria: { p67: '67', p76: '76', p85: '85', p90: '90' },
+        },
+        enough_for_80: { type: 'noul', instructions: 'Les 18 kg suffisent-ils pour servir 80 portions ?' },
+        kg_for_80: {
+          type: 'choice',
+          instructions: 'Combien de kilos entiers de saumon faut-il au minimum pour servir 80 portions ?',
+          criteria: { kg_16: '16 kg', kg_19: '19 kg', kg_22: '22 kg', kg_24: '24 kg' },
+        },
+        cost_per_portion_above_5_50: { type: 'noul', instructions: 'Avec les 18 kg, le coût du saumon par portion servie dépasse-t-il 5,50 € ?' },
+      },
+    },
+    en: {
+      name: 'Yield and losses',
+      description: 'Two successive losses to chain, not to add up.',
+      state:
+        'The caterer Maison Ilda is preparing salmon for a banquet. They have 18 kg of whole salmon bought at €24 per kilo. Trimming (head, bones, skin) loses 40% of the whole weight; cooking then loses 15% of the trimmed weight. Each portion served weighs 120 g of cooked salmon; only full portions are served.',
+      questions: {
+        portions: {
+          type: 'choice',
+          instructions: 'How many full portions can the caterer serve with the 18 kg?',
+          criteria: { p67: '67', p76: '76', p85: '85', p90: '90' },
+        },
+        enough_for_80: { type: 'noul', instructions: 'Are the 18 kg enough to serve 80 portions?' },
+        kg_for_80: {
+          type: 'choice',
+          instructions: 'What is the minimum whole number of kilos of salmon needed to serve 80 portions?',
+          criteria: { kg_16: '16 kg', kg_19: '19 kg', kg_22: '22 kg', kg_24: '24 kg' },
+        },
+        cost_per_portion_above_5_50: { type: 'noul', instructions: 'With the 18 kg, does the cost of salmon per portion served exceed €5.50?' },
+      },
+    },
+  },
+  {
+    id: 'num-magnitude-estimates',
+    category: 'Reasoning',
+    complexity: 'complexe',
+    length: 'court',
+    // Téléchargement : 3,2 × 10⁹ × 8 = 25,6 Gbit / 40 Mbit/s = 640 s = 10 min 40 s (> 10 min ; oublier les bits donne 80 s).
+    // 1 000 000 s / 86 400 = 11,6 jours (< 14). Fuite : 86 400 × 365 / 20 mL = 1 576,8 L (> 1 000). Pile : 10⁶ × 0,1 mm = 100 m (< 330 m).
+    expected: { download_over_10min: true, million_seconds_over_2_weeks: false, leak_over_1000l: true, stack_taller_than_tower: false },
+    fr: {
+      name: 'Ordres de grandeur',
+      description: 'Quatre estimations « plus ou moins » qui exigent une conversion d’unité.',
+      state:
+        'Quatre questions de culture numérique posées lors d’un quiz d’entreprise. Conventions : 1 Go = 1 000 000 000 octets, 1 octet = 8 bits, 1 Mbit = 1 000 000 bits ; une année compte 365 jours ; la tour Eiffel mesure 330 m.',
+      questions: {
+        download_over_10min: { type: 'noul', instructions: 'Télécharger un fichier de 3,2 Go à un débit constant de 40 Mbit/s prend-il plus de 10 minutes ?' },
+        million_seconds_over_2_weeks: { type: 'noul', instructions: 'Un million de secondes représentent-elles plus de deux semaines ?' },
+        leak_over_1000l: { type: 'noul', instructions: 'Un robinet qui fuit d’une goutte par seconde, à raison de 20 gouttes par millilitre, perd-il plus de 1 000 litres en un an ?' },
+        stack_taller_than_tower: { type: 'noul', instructions: 'Une pile d’un million de feuilles de papier de 0,1 mm d’épaisseur serait-elle plus haute que la tour Eiffel ?' },
+      },
+    },
+    en: {
+      name: 'Orders of magnitude',
+      description: 'Four “more or less” estimates that need a unit conversion.',
+      state:
+        'Four numeracy questions from a company quiz. Conventions: 1 GB = 1,000,000,000 bytes, 1 byte = 8 bits, 1 Mbit = 1,000,000 bits; a year has 365 days; the Eiffel Tower is 330 m tall.',
+      questions: {
+        download_over_10min: { type: 'noul', instructions: 'Does downloading a 3.2 GB file at a constant 40 Mbit/s take more than 10 minutes?' },
+        million_seconds_over_2_weeks: { type: 'noul', instructions: 'Is one million seconds more than two weeks?' },
+        leak_over_1000l: { type: 'noul', instructions: 'Does a tap leaking one drop per second, at 20 drops per millilitre, lose more than 1,000 litres in a year?' },
+        stack_taller_than_tower: { type: 'noul', instructions: 'Would a stack of one million sheets of paper, each 0.1 mm thick, be taller than the Eiffel Tower?' },
+      },
+    },
+  },
+  {
+    id: 'num-car-rental-offers',
+    category: 'Reasoning',
+    complexity: 'complexe',
+    length: 'court',
+    // 5 jours, 760 km : A 5 × 45 = 225 € ; B 5 × 29 + 760 × 0,18 = 281,80 € ; C 199 € (760 ≤ 1 000 km) → C.
+    // 5 jours, 400 km : B 145 + 72 = 217 € < A 225 €. 7 jours, 1 400 km : A 315 € ; B 203 + 252 = 455 € ; C 199 + 400 × 0,30 = 319 € → A.
+    expected: { cheapest_trip: 'offer_c', b_above_a: true, b_cheaper_at_400km: true, cheapest_long_trip: 'offer_a' },
+    fr: {
+      name: 'Comparaison d’offres de location',
+      description: 'Trois tarifications différentes ; la meilleure offre change avec le kilométrage.',
+      state:
+        'Location d’une voiture compacte, carburant non compris. Offre A : 45 € par jour, kilométrage illimité. Offre B : 29 € par jour plus 0,18 € par kilomètre parcouru. Offre C : forfait de 199 € pour une location de 1 à 7 jours, 1 000 km inclus, puis 0,30 € par kilomètre au-delà. Le premier voyage prévu dure 5 jours pour 760 km.',
+      questions: {
+        cheapest_trip: {
+          type: 'choice',
+          instructions: 'Pour le voyage de 5 jours et 760 km, quelle offre est la moins chère ?',
+          criteria: { offer_a: 'L’offre A', offer_b: 'L’offre B', offer_c: 'L’offre C' },
+        },
+        b_above_a: { type: 'noul', instructions: 'Pour ce voyage de 5 jours et 760 km, l’offre B coûte-t-elle plus cher que l’offre A ?' },
+        b_cheaper_at_400km: { type: 'noul', instructions: 'Pour 5 jours et seulement 400 km, l’offre B serait-elle moins chère que l’offre A ?' },
+        cheapest_long_trip: {
+          type: 'choice',
+          instructions: 'Pour un autre voyage de 7 jours et 1 400 km, quelle offre est la moins chère ?',
+          criteria: { offer_a: 'L’offre A', offer_b: 'L’offre B', offer_c: 'L’offre C' },
+        },
+      },
+    },
+    en: {
+      name: 'Comparing rental offers',
+      description: 'Three pricing schemes; the best offer changes with the mileage.',
+      state:
+        'Rental of a compact car, fuel not included. Offer A: €45 per day, unlimited mileage. Offer B: €29 per day plus €0.18 per kilometre driven. Offer C: flat fee of €199 for a rental of 1 to 7 days, 1,000 km included, then €0.30 per kilometre beyond. The first planned trip lasts 5 days and covers 760 km.',
+      questions: {
+        cheapest_trip: {
+          type: 'choice',
+          instructions: 'For the 5-day, 760 km trip, which offer is the cheapest?',
+          criteria: { offer_a: 'Offer A', offer_b: 'Offer B', offer_c: 'Offer C' },
+        },
+        b_above_a: { type: 'noul', instructions: 'For this 5-day, 760 km trip, does offer B cost more than offer A?' },
+        b_cheaper_at_400km: { type: 'noul', instructions: 'For 5 days and only 400 km, would offer B be cheaper than offer A?' },
+        cheapest_long_trip: {
+          type: 'choice',
+          instructions: 'For another trip of 7 days and 1,400 km, which offer is the cheapest?',
+          criteria: { offer_a: 'Offer A', offer_b: 'Offer B', offer_c: 'Offer C' },
+        },
+      },
+    },
+  },
+  {
+    id: 'num-staff-cost-join',
+    category: 'Structured data',
+    complexity: 'complexe',
+    length: 'moyen',
+    // Jointure heures × taux : coûts par salarié E01 1 728, E02 1 804, E03 2 204, E04 1 886, E05 2 046, E06 2 366, E07 1 575, E08 2 448.
+    // Hector (E08) coûte le plus ; Farid (E06) a le plus d’heures (91) et Dario (E04) le taux le plus élevé.
+    // Par équipe : développement 6 538 €, support 5 898 € (pourtant 245 h contre 172), design 3 621 €. Total 16 057 € (< 16 500) pour 524 h.
+    expected: { top_cost_employee: 'hector', top_cost_team: 'dev', total_above_16500: false, total_hours: 2 },
+    fr: {
+      name: 'Coût de main-d’œuvre par équipe',
+      description: 'Jointure entre une table des salariés et une table des heures, puis agrégation par équipe.',
+      state: {
+        project: 'Refonte du portail client — semaines 1 à 3',
+        notes: ['Coût d’une ligne d’heures = heures × taux horaire chargé du salarié.', 'Les heures sont déclarées par semaine ; un salarié peut ne rien déclarer certaines semaines.'],
+        employees: STAFF.map(([employee_id, name, team, hourly_rate_eur]) => ({ employee_id, name, team: TEAM_WORDS.fr[team], hourly_rate_eur })),
+        timesheets: HOURS.map(([employee_id, week, hours]) => ({ employee_id, week, hours })),
+      },
+      questions: {
+        top_cost_employee: {
+          type: 'choice',
+          instructions: 'Quel salarié a coûté le plus cher au projet sur les trois semaines ?',
+          criteria: { chloe: 'Chloé Varenne', dario: 'Dario Fenzi', farid: 'Farid Oumou', hector: 'Hector Blain' },
+        },
+        top_cost_team: {
+          type: 'choice',
+          instructions: 'Quelle équipe représente le coût total le plus élevé ?',
+          criteria: { support: 'Support', dev: 'Développement', design: 'Design' },
+        },
+        total_above_16500: { type: 'noul', instructions: 'Le coût total de main-d’œuvre du projet dépasse-t-il 16 500 € ?' },
+        total_hours: {
+          type: 'score',
+          instructions: 'Nombre total d’heures déclarées sur le projet',
+          criteria: ['Moins de 450 h', '450 à 500 h', '500 à 550 h', 'Plus de 550 h'],
+        },
+      },
+    },
+    en: {
+      name: 'Labour cost by team',
+      description: 'Join between an employee table and a timesheet table, then aggregation by team.',
+      state: {
+        project: 'Customer portal redesign — weeks 1 to 3',
+        notes: ['Cost of a timesheet line = hours × the employee’s loaded hourly rate.', 'Hours are reported per week; an employee may report nothing in some weeks.'],
+        employees: STAFF.map(([employee_id, name, team, hourly_rate_eur]) => ({ employee_id, name, team: TEAM_WORDS.en[team], hourly_rate_eur })),
+        timesheets: HOURS.map(([employee_id, week, hours]) => ({ employee_id, week, hours })),
+      },
+      questions: {
+        top_cost_employee: {
+          type: 'choice',
+          instructions: 'Which employee cost the project the most over the three weeks?',
+          criteria: { chloe: 'Chloé Varenne', dario: 'Dario Fenzi', farid: 'Farid Oumou', hector: 'Hector Blain' },
+        },
+        top_cost_team: {
+          type: 'choice',
+          instructions: 'Which team accounts for the highest total cost?',
+          criteria: { support: 'Support', dev: 'Development', design: 'Design' },
+        },
+        total_above_16500: { type: 'noul', instructions: 'Does the project’s total labour cost exceed €16,500?' },
+        total_hours: {
+          type: 'score',
+          instructions: 'Total number of hours reported on the project',
+          criteria: ['Under 450 h', '450 to 500 h', '500 to 550 h', 'Over 550 h'],
+        },
+      },
+    },
+  },
+  {
+    id: 'num-expense-reports',
+    category: 'Structured data',
+    complexity: 'complexe',
+    length: 'long',
+    // 36 notes générées (graine 2026) : 26 validées (2 370,40 €), 7 refusées, 3 en attente ; toutes notes confondues 3 047,30 €.
+    // Validées par salarié : Anouk 568,78, Basile 524,47, Célia 179,75 (toutes notes : Basile 880,00, Anouk 653,52, Célia 349,79).
+    // Transport validé : 110,27 + 237,84 + 119,00 + 216,14 = 683,25 € (> 650 ; 811,26 € avec la note refusée NDF-301).
+    expected: { top_of_three: 'anouk', approved_total_above_2500: false, transport_above_650: true, rejected_count: 2 },
+    fr: {
+      name: 'Notes de frais du mois',
+      description: '36 notes de frais : agrégations filtrées sur le statut, par salarié et par catégorie.',
+      state: {
+        report: 'Notes de frais — service commercial, mars 2026',
+        notes: ['Seules les notes au statut « validée » sont remboursées.', 'Montants TTC, en euros.'],
+        expenses: expenseLines('fr'),
+      },
+      questions: {
+        top_of_three: {
+          type: 'choice',
+          instructions: 'Parmi Anouk Ferrand, Basile Corre et Célia Notari, qui se fera rembourser le montant le plus élevé ?',
+          criteria: { anouk: 'Anouk Ferrand', basile: 'Basile Corre', celia: 'Célia Notari' },
+        },
+        approved_total_above_2500: { type: 'noul', instructions: 'Le montant total remboursé pour le mois dépasse-t-il 2 500 € ?' },
+        transport_above_650: { type: 'noul', instructions: 'Les frais de transport remboursés dépassent-ils 650 € ?' },
+        rejected_count: {
+          type: 'score',
+          instructions: 'Nombre de notes de frais refusées',
+          criteria: ['0 à 2', '3 à 5', '6 à 8', '9 ou plus'],
+        },
+      },
+    },
+    en: {
+      name: 'Monthly expense reports',
+      description: '36 expense claims: aggregations filtered on status, by employee and by category.',
+      state: {
+        report: 'Expense claims — sales department, March 2026',
+        notes: ['Only claims with the status “approved” are reimbursed.', 'Amounts include VAT, in euros.'],
+        expenses: expenseLines('en'),
+      },
+      questions: {
+        top_of_three: {
+          type: 'choice',
+          instructions: 'Among Anouk Ferrand, Basile Corre and Célia Notari, who will be reimbursed the highest amount?',
+          criteria: { anouk: 'Anouk Ferrand', basile: 'Basile Corre', celia: 'Célia Notari' },
+        },
+        approved_total_above_2500: { type: 'noul', instructions: 'Does the total amount reimbursed for the month exceed €2,500?' },
+        transport_above_650: { type: 'noul', instructions: 'Do the reimbursed transport expenses exceed €650?' },
+        rejected_count: {
+          type: 'score',
+          instructions: 'Number of rejected expense claims',
+          criteria: ['0 to 2', '3 to 5', '6 to 8', '9 or more'],
+        },
+      },
+    },
+  },
+  {
+    id: 'num-profit-sharing',
+    category: 'Reasoning',
+    complexity: 'simple',
+    length: 'court',
+    // Distribuable : 37 500 × 90 % = 33 750 €. Apports 24 000 / 16 000 / 10 000 = 48 % / 32 % / 20 %.
+    // Lucas 16 200, Mia 10 800, Noé 6 750 (< 7 000) ; Lucas 16 200 < Mia + Noé 17 550.
+    expected: { mia_share: 'eur_10800', noe_above_7000: false, lucas_above_others: false, noe_with_extra_above_9000: true },
+    fr: {
+      name: 'Partage d’un bénéfice',
+      description: 'Réserve à prélever avant la répartition au prorata des apports.',
+      state:
+        'Trois associés ont créé la brasserie Houblonne avec des apports de 24 000 € (Lucas), 16 000 € (Mia) et 10 000 € (Noé). Le bénéfice de l’année est de 37 500 €. Les statuts imposent de mettre d’abord 10 % du bénéfice en réserve ; le reste est distribué au prorata des apports.',
+      questions: {
+        mia_share: {
+          type: 'choice',
+          instructions: 'Combien Mia reçoit-elle ?',
+          criteria: { eur_10800: '10 800 €', eur_11250: '11 250 €', eur_12000: '12 000 €', eur_12500: '12 500 €' },
+        },
+        noe_above_7000: { type: 'noul', instructions: 'Noé reçoit-il plus de 7 000 € ?' },
+        lucas_above_others: { type: 'noul', instructions: 'Lucas reçoit-il plus que Mia et Noé réunis ?' },
+        noe_with_extra_above_9000: { type: 'noul', instructions: 'Si Noé avait apporté 5 000 € de plus, toutes choses égales par ailleurs, aurait-il reçu plus de 9 000 € ?' },
+      },
+    },
+    en: {
+      name: 'Sharing a profit',
+      description: 'A reserve to set aside before splitting pro rata to contributions.',
+      state:
+        'Three partners founded the Houblonne brewery with contributions of €24,000 (Lucas), €16,000 (Mia) and €10,000 (Noé). This year’s profit is €37,500. The articles of association require 10% of the profit to be put into reserve first; the rest is distributed in proportion to the contributions.',
+      questions: {
+        mia_share: {
+          type: 'choice',
+          instructions: 'How much does Mia receive?',
+          criteria: { eur_10800: '€10,800', eur_11250: '€11,250', eur_12000: '€12,000', eur_12500: '€12,500' },
+        },
+        noe_above_7000: { type: 'noul', instructions: 'Does Noé receive more than €7,000?' },
+        lucas_above_others: { type: 'noul', instructions: 'Does Lucas receive more than Mia and Noé combined?' },
+        noe_with_extra_above_9000: { type: 'noul', instructions: 'If Noé had contributed €5,000 more, all else being equal, would he have received more than €9,000?' },
+      },
+    },
+  },
+  {
+    id: 'num-fuel-cost',
+    category: 'Reasoning',
+    complexity: 'simple',
+    length: 'court',
+    // 540 × 6,4 / 100 = 34,56 L ; réservoir aux trois quarts : 33,75 L < 34,56 → il faut faire le plein.
+    // Coût : 34,56 × 1,85 = 63,94 € (distracteurs : 34,56 € = litres pris pour des euros, 156,09 € = 540 / 6,4 × 1,85).
+    // Électrique : 540 × 0,17 × 0,22 = 20,20 € ; économie 43,74 € (< 50).
+    expected: { refuel_needed: true, fuel_cost: 'eur_63_94', ev_saving_above_50: false },
+    fr: {
+      name: 'Coût d’un trajet',
+      description: 'Consommation aux 100 km, règle de trois et comparaison avec l’électrique.',
+      state:
+        'Joséphine prépare un trajet de 540 km. Sa voiture consomme 6,4 L aux 100 km, le carburant coûte 1,85 € le litre, et son réservoir de 45 L est rempli aux trois quarts au départ. Une voiture électrique de location consommerait 17 kWh aux 100 km, rechargés à 0,22 € le kWh.',
+      questions: {
+        refuel_needed: { type: 'noul', instructions: 'Joséphine devra-t-elle remettre du carburant pour faire le trajet ?' },
+        fuel_cost: {
+          type: 'choice',
+          instructions: 'Combien coûte le carburant consommé sur le trajet ?',
+          criteria: { eur_34_56: '34,56 €', eur_62_44: '62,44 €', eur_63_94: '63,94 €', eur_156_09: '156,09 €' },
+        },
+        ev_saving_above_50: { type: 'noul', instructions: 'Faire le trajet en voiture électrique économiserait-il plus de 50 € d’énergie ?' },
+      },
+    },
+    en: {
+      name: 'Cost of a trip',
+      description: 'Consumption per 100 km, rule of three and comparison with electric.',
+      state:
+        'Joséphine is planning a 540 km trip. Her car uses 6.4 L per 100 km, fuel costs €1.85 per litre, and her 45 L tank is three-quarters full at departure. A rented electric car would use 17 kWh per 100 km, charged at €0.22 per kWh.',
+      questions: {
+        refuel_needed: { type: 'noul', instructions: 'Will Joséphine need to add fuel to complete the trip?' },
+        fuel_cost: {
+          type: 'choice',
+          instructions: 'How much does the fuel used on the trip cost?',
+          criteria: { eur_34_56: '€34.56', eur_62_44: '€62.44', eur_63_94: '€63.94', eur_156_09: '€156.09' },
+        },
+        ev_saving_above_50: { type: 'noul', instructions: 'Would making the trip in the electric car save more than €50 in energy?' },
+      },
+    },
+  },
+  {
+    id: 'num-water-tiers',
+    category: 'Reasoning',
+    complexity: 'complexe',
+    length: 'court',
+    // 145 m³ : 30 × 2,10 = 63 ; 90 × 3,40 = 306 ; 25 × 4,80 = 120 → 489 € + abonnement 48 € = 537 € (744 € en appliquant 4,80 € à tout).
+    // Prix marginal : 4,80 €/m³ ; prix moyen 537 / 145 = 3,70 €/m³ (< 4). Économie pour 25 m³ de moins : 25 × 4,80 = 120 € (> 100 ;
+    // au prix moyen on trouverait 92,59 €).
+    expected: { annual_bill: 'eur_537', marginal_price: 'eur_4_80', saving_above_100: true, avg_price_above_4: false },
+    fr: {
+      name: 'Tarif progressif de l’eau',
+      description: 'Tarif par tranches : prix moyen et prix marginal diffèrent.',
+      state:
+        'Tarif annuel de l’eau à Bréhan, appliqué par tranches : les 30 premiers m³ à 2,10 € le m³, du 31ᵉ au 120ᵉ m³ à 3,40 € le m³, au-delà de 120 m³ à 4,80 € le m³. Un abonnement fixe de 48 € par an s’ajoute. Le foyer Kervella a consommé 145 m³ cette année.',
+      questions: {
+        annual_bill: {
+          type: 'choice',
+          instructions: 'Quel est le montant de la facture annuelle du foyer Kervella, abonnement compris ?',
+          criteria: { eur_489: '489 €', eur_537: '537 €', eur_585: '585 €', eur_744: '744 €' },
+        },
+        marginal_price: {
+          type: 'choice',
+          instructions: 'Combien coûterait au foyer un mètre cube supplémentaire consommé cette année ?',
+          criteria: { eur_2_10: '2,10 €', eur_3_40: '3,40 €', eur_3_70: '3,70 €', eur_4_80: '4,80 €' },
+        },
+        saving_above_100: { type: 'noul', instructions: 'Consommer 25 m³ de moins aurait-il fait économiser plus de 100 € au foyer ?' },
+        avg_price_above_4: { type: 'noul', instructions: 'Abonnement compris, le prix moyen payé par mètre cube dépasse-t-il 4 € ?' },
+      },
+    },
+    en: {
+      name: 'Tiered water pricing',
+      description: 'Tiered pricing: the average price and the marginal price differ.',
+      state:
+        'Annual water tariff in Bréhan, applied in tiers: the first 30 m³ at €2.10 per m³, from the 31st to the 120th m³ at €3.40 per m³, above 120 m³ at €4.80 per m³. A fixed subscription of €48 per year is added. The Kervella household used 145 m³ this year.',
+      questions: {
+        annual_bill: {
+          type: 'choice',
+          instructions: 'What is the Kervella household’s annual bill, subscription included?',
+          criteria: { eur_489: '€489', eur_537: '€537', eur_585: '€585', eur_744: '€744' },
+        },
+        marginal_price: {
+          type: 'choice',
+          instructions: 'How much would one extra cubic metre used this year cost the household?',
+          criteria: { eur_2_10: '€2.10', eur_3_40: '€3.40', eur_3_70: '€3.70', eur_4_80: '€4.80' },
+        },
+        saving_above_100: { type: 'noul', instructions: 'Would using 25 m³ less have saved the household more than €100?' },
+        avg_price_above_4: { type: 'noul', instructions: 'Subscription included, is the average price paid per cubic metre above €4?' },
+      },
+    },
+  },
+  {
+    id: 'num-salary-median',
+    category: 'Structured data',
+    complexity: 'complexe',
+    length: 'moyen',
+    // Moyenne des 15 salaires : 55 820 / 15 = 3 721,33 € (> 3 500), tirée par la directrice (14 500 €).
+    // Médiane (8ᵉ valeur sur 15 triées) : 2 750 € ; sans la directrice, elle serait de 2 685 €.
+    // Au-dessus de la moyenne : 3 900, 4 350, 4 800 et 14 500 → 4 salariés (niveau « 1 à 4 »).
+    expected: { mean_above_3500: true, median: 'eur_2750', above_mean: 1 },
+    fr: {
+      name: 'Salaire moyen et médian',
+      description: 'Une valeur extrême tire la moyenne : la médiane raconte autre chose.',
+      state: {
+        company: 'Menuiserie Arvel — salaires bruts mensuels, avril 2026',
+        employees: [
+          { name: 'Paul Iribe', role: 'Menuisier', salary_eur: 2340 },
+          { name: 'Sarah Gimel', role: 'Assistante commerciale', salary_eur: 2750 },
+          { name: 'Ophélie Dantz', role: 'Directrice générale', salary_eur: 14500 },
+          { name: 'Marc Ilou', role: 'Apprenti confirmé', salary_eur: 2150 },
+          { name: 'Inès Valcourt', role: 'Cheffe d’atelier', salary_eur: 4350 },
+          { name: 'Yanis Perreau', role: 'Menuisier', salary_eur: 2280 },
+          { name: 'Léa Bontemps', role: 'Comptable', salary_eur: 3040 },
+          { name: 'Hugo Sarrail', role: 'Responsable commercial', salary_eur: 4800 },
+          { name: 'Zoé Marchal', role: 'Menuisière', salary_eur: 2460 },
+          { name: 'Victor Anselme', role: 'Dessinateur', salary_eur: 2880 },
+          { name: 'Nina Thoraval', role: 'Menuisière', salary_eur: 2390 },
+          { name: 'Gilles Roumi', role: 'Responsable de production', salary_eur: 3900 },
+          { name: 'Ambre Lefoll', role: 'Assistante administrative', salary_eur: 2620 },
+          { name: 'Rayan Dufresne', role: 'Menuisier', salary_eur: 2210 },
+          { name: 'Clara Weiss', role: 'Chargée d’études', salary_eur: 3150 },
+        ],
+      },
+      questions: {
+        mean_above_3500: { type: 'noul', instructions: 'Le salaire moyen de l’entreprise dépasse-t-il 3 500 € ?' },
+        median: {
+          type: 'choice',
+          instructions: 'Quel est le salaire médian de l’entreprise ?',
+          criteria: { eur_2685: '2 685 €', eur_2750: '2 750 €', eur_2880: '2 880 €', eur_3721: '3 721 €' },
+        },
+        above_mean: {
+          type: 'score',
+          instructions: 'Nombre de salariés dont le salaire dépasse le salaire moyen de l’entreprise',
+          criteria: ['Aucun', '1 à 4', '5 à 8', '9 ou plus'],
+        },
+      },
+    },
+    en: {
+      name: 'Mean and median salary',
+      description: 'One extreme value pulls the mean up: the median tells another story.',
+      state: {
+        company: 'Arvel Joinery — gross monthly salaries, April 2026',
+        employees: [
+          { name: 'Paul Iribe', role: 'Joiner', salary_eur: 2340 },
+          { name: 'Sarah Gimel', role: 'Sales assistant', salary_eur: 2750 },
+          { name: 'Ophélie Dantz', role: 'Managing director', salary_eur: 14500 },
+          { name: 'Marc Ilou', role: 'Senior apprentice', salary_eur: 2150 },
+          { name: 'Inès Valcourt', role: 'Workshop manager', salary_eur: 4350 },
+          { name: 'Yanis Perreau', role: 'Joiner', salary_eur: 2280 },
+          { name: 'Léa Bontemps', role: 'Accountant', salary_eur: 3040 },
+          { name: 'Hugo Sarrail', role: 'Sales manager', salary_eur: 4800 },
+          { name: 'Zoé Marchal', role: 'Joiner', salary_eur: 2460 },
+          { name: 'Victor Anselme', role: 'Draughtsman', salary_eur: 2880 },
+          { name: 'Nina Thoraval', role: 'Joiner', salary_eur: 2390 },
+          { name: 'Gilles Roumi', role: 'Production manager', salary_eur: 3900 },
+          { name: 'Ambre Lefoll', role: 'Administrative assistant', salary_eur: 2620 },
+          { name: 'Rayan Dufresne', role: 'Joiner', salary_eur: 2210 },
+          { name: 'Clara Weiss', role: 'Design engineer', salary_eur: 3150 },
+        ],
+      },
+      questions: {
+        mean_above_3500: { type: 'noul', instructions: 'Is the company’s average salary above €3,500?' },
+        median: {
+          type: 'choice',
+          instructions: 'What is the company’s median salary?',
+          criteria: { eur_2685: '€2,685', eur_2750: '€2,750', eur_2880: '€2,880', eur_3721: '€3,721' },
+        },
+        above_mean: {
+          type: 'score',
+          instructions: 'Number of employees whose salary is above the company’s average salary',
+          criteria: ['None', '1 to 4', '5 to 8', '9 or more'],
+        },
       },
     },
   },
